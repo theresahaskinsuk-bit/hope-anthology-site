@@ -7,7 +7,7 @@ window.HA_HOME_CONTENT = {
   images: {
     logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/qCxBNIjwUhdazFfG.jpg',
     star: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/EFfVopDjXtfLRVQI.png',
-    hero: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/HGkesneQnMGpdSSC.jpg',
+    hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3f683be7-1eb6-487c-b061-91d1e96a8c63/the-hope-anthology-welcome.jpg?content-type=image%2Fjpeg',
     keep: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/IJCQxZYmcSwNTWvS.jpg',
     make: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/hBVZHGIOxZpRsXVe.jpg',
     why: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/rPGNseNwiBqKhbVZ.jpg',
@@ -26,7 +26,7 @@ window.HA_HOME_CONTENT = {
   hero: {
     eyebrow: 'Symbolic art · meaningful making',
     headlineHtml: 'An anthology of art to <em>keep</em> and things to <em>make.</em>',
-    body: "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. It all begins with a feeling — and it's all made for you.",
+    body: "Things fucker! to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. It all begins with a feeling — and it's all made for you.",
     primaryButtonLabel: 'Explore the Anthology →',
     primaryButtonUrl: '/collections',
     secondaryButtonLabel: 'Read the story',
