@@ -767,3 +767,83 @@ body.ha-collections-v1-active .Header,body.ha-collections-v1-active header.Heade
     transform:translateY(0)!important;
   }
 }
+
+
+/* Collections follow-up patch: remove Etsy ghost CTA, improve coming-soon/link readability, and reset nested CTA pill styling. */
+#ha-collections-v1 .ha-c-make-actions .ha-c-btn-ghost{
+  display:none!important;
+}
+#ha-collections-v1 .ha-c-coming-card span:not(.ha-v3-cta-text):not(.ha-v3-cta-arrow){
+  font-size:13px!important;
+  line-height:1.25!important;
+  letter-spacing:.01em!important;
+  padding:8px 17px!important;
+  border-radius:999px!important;
+  color:rgba(242,243,239,.82)!important;
+  background:rgba(242,243,239,.09)!important;
+  border:.5px solid rgba(242,243,239,.28)!important;
+}
+#ha-collections-v1 .ha-c-coming-link{
+  font-size:14px!important;
+  line-height:1.2!important;
+  min-height:40px!important;
+  padding:9px 17px!important;
+  border-radius:999px!important;
+  gap:.45em!important;
+  background:rgba(242,243,239,.09)!important;
+  border:.5px solid rgba(242,243,239,.3)!important;
+  color:rgba(242,243,239,.9)!important;
+  font-family:'DM Sans',sans-serif!important;
+  font-style:normal!important;
+  font-weight:500!important;
+  text-transform:lowercase!important;
+}
+#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-text,
+#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-arrow{
+  display:inline!important;
+  background:transparent!important;
+  border:0!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  padding:0!important;
+  margin:0!important;
+  color:inherit!important;
+  font:inherit!important;
+  line-height:inherit!important;
+  min-width:0!important;
+  min-height:0!important;
+  width:auto!important;
+  height:auto!important;
+}
+#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-arrow{
+  margin-left:.25em!important;
+  transform:none!important;
+}
+#ha-collections-v1 .ha-c-coming-link:hover,
+#ha-collections-v1 .ha-c-coming-link:focus-visible{
+  color:#fff!important;
+  background:rgba(242,243,239,.15)!important;
+  border-color:rgba(242,243,239,.55)!important;
+  text-decoration:none!important;
+}
+#ha-collections-v1 .ha-c-coming-link:hover .ha-v3-cta-arrow,
+#ha-collections-v1 .ha-c-coming-link:focus-visible .ha-v3-cta-arrow{
+  transform:translateX(.16em)!important;
+}
+
+
+/* Collections follow-up patch: prevent closed mobile menu from bleeding over the page intro. */
+@media (max-width:900px){
+  #ha-collections-v1:not(.ha-v3-menu-open) .ha-v3-nav .ha-v3-links{
+    display:none!important;
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+  }
+  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
+    display:flex!important;
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+  }
+}
