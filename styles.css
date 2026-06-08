@@ -458,3 +458,39 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
     text-align:left!important;
   }
 }
+
+
+/* Mobile hero refinement: shorter image, stronger bottom gradient, and lifted copy block. */
+@media (max-width:900px){
+  #ha-home-v3 .ha-v3-hero{
+    min-height:0!important;
+    display:block!important;
+    padding-top:min(48vh,380px)!important;
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-img{
+    height:min(48vh,380px)!important;
+    bottom:auto!important;
+    object-position:center top!important;
+  }
+  #ha-home-v3 .ha-v3-hero:after{
+    bottom:auto!important;
+    height:min(48vh,380px)!important;
+    background:linear-gradient(to bottom,rgba(7,18,20,.04) 0%,rgba(7,18,20,.16) 38%,rgba(7,18,20,.66) 76%,rgba(7,18,20,.92) 100%)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-content{
+    max-width:none!important;
+    margin-top:-58px!important;
+    padding:30px 24px 38px!important;
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-eyebrow{
+    margin-bottom:14px!important;
+  }
+  #ha-home-v3 .ha-v3-h1{
+    margin-bottom:18px!important;
+  }
+  #ha-home-v3 .ha-v3-hero-body{
+    margin-bottom:26px!important;
+  }
+}
