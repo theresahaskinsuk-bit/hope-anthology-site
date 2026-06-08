@@ -626,3 +626,144 @@ body.ha-collections-v1-active .Header,body.ha-collections-v1-active header.Heade
   .ha-c-coming,.ha-c-collective{padding-left:40px;padding-right:40px;}
   #ha-collections-v1 .ha-v3-footer-top{grid-template-columns:56px minmax(180px,260px) minmax(180px,260px)!important;justify-content:start!important;justify-items:start!important;column-gap:34px!important;row-gap:24px!important;text-align:left!important;}
 }
+
+
+/* Collections live Squarespace compatibility patch: desktop nav, logo hover, image links, and coming-card CTA. */
+#ha-collections-v1 .ha-v3-brand:hover .ha-v3-logo,
+#ha-collections-v1 .ha-v3-brand:focus-visible .ha-v3-logo{
+  filter:none!important;
+}
+#ha-collections-v1 a.ha-c-door,
+#ha-collections-v1 a.ha-c-row-img,
+#ha-collections-v1 a.ha-c-make-img,
+#ha-collections-v1 a.ha-v3-image-link{
+  position:relative!important;
+  z-index:2!important;
+  pointer-events:auto!important;
+  cursor:pointer!important;
+}
+#ha-collections-v1 a.ha-c-door img,
+#ha-collections-v1 a.ha-c-row-img img,
+#ha-collections-v1 a.ha-c-make-img img,
+#ha-collections-v1 a.ha-v3-image-link img{
+  pointer-events:none!important;
+}
+#ha-collections-v1 .ha-c-coming-link{
+  font-family:'DM Sans',sans-serif!important;
+  font-size:10px!important;
+  font-style:normal!important;
+  font-weight:500!important;
+  letter-spacing:.02em!important;
+  color:rgba(242,243,239,.82)!important;
+  background:rgba(242,243,239,.08)!important;
+  padding:5px 13px!important;
+  border-radius:20px!important;
+  display:inline-flex!important;
+  gap:.35em!important;
+  align-items:center!important;
+  border:.5px solid rgba(242,243,239,.24)!important;
+  text-transform:lowercase!important;
+  text-decoration:none!important;
+}
+#ha-collections-v1 .ha-c-coming-link:hover,
+#ha-collections-v1 .ha-c-coming-link:focus-visible{
+  color:#fff!important;
+  background:rgba(242,243,239,.14)!important;
+  border-color:rgba(242,243,239,.5)!important;
+}
+#ha-collections-v1 .ha-c-coming-link:hover .ha-v3-cta-text,
+#ha-collections-v1 .ha-c-coming-link:focus-visible .ha-v3-cta-text{
+  text-decoration:none!important;
+}
+@media (min-width:901px){
+  #ha-collections-v1 .ha-v3-menu-toggle{
+    display:none!important;
+  }
+  #ha-collections-v1 .ha-v3-nav{
+    height:72px!important;
+    padding:0 48px!important;
+    align-items:center!important;
+  }
+  #ha-collections-v1 .ha-v3-brand{
+    height:72px!important;
+    max-width:280px!important;
+  }
+  #ha-collections-v1 .ha-v3-logo{
+    height:52px!important;
+    max-width:240px!important;
+  }
+  #ha-collections-v1 .ha-v3-nav .ha-v3-links{
+    display:flex!important;
+    position:static!important;
+    inset:auto!important;
+    top:auto!important;
+    left:auto!important;
+    right:auto!important;
+    width:auto!important;
+    max-width:none!important;
+    padding:0!important;
+    background:transparent!important;
+    border:0!important;
+    box-shadow:none!important;
+    flex-direction:row!important;
+    align-items:center!important;
+    justify-content:flex-end!important;
+    gap:32px!important;
+    opacity:1!important;
+    visibility:visible!important;
+    transform:none!important;
+    pointer-events:auto!important;
+  }
+  #ha-collections-v1 .ha-v3-nav .ha-v3-links a{
+    width:auto!important;
+    padding:0!important;
+    border:0!important;
+    font-size:14px!important;
+    line-height:1.4!important;
+    color:var(--ha-cream)!important;
+    text-align:left!important;
+  }
+}
+@media (min-width:901px) and (max-width:1100px){
+  #ha-collections-v1 .ha-v3-nav{
+    padding:0 28px!important;
+  }
+  #ha-collections-v1 .ha-v3-nav .ha-v3-links{
+    gap:24px!important;
+  }
+  #ha-collections-v1 .ha-v3-brand{
+    max-width:230px!important;
+  }
+  #ha-collections-v1 .ha-v3-logo{
+    height:46px!important;
+    max-width:210px!important;
+  }
+}
+
+
+/* Collections live patch refinement: protect nav colours and fully hide closed mobile menu. */
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a:visited{
+  color:var(--ha-cream)!important;
+  text-decoration:none!important;
+}
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a:hover,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a:focus-visible{
+  color:#fff!important;
+  text-decoration:underline!important;
+  text-decoration-color:#fff!important;
+}
+@media (max-width:900px){
+  #ha-collections-v1:not(.ha-v3-menu-open) .ha-v3-nav .ha-v3-links{
+    opacity:0!important;
+    visibility:hidden!important;
+    pointer-events:none!important;
+    transform:translateY(-8px)!important;
+  }
+  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
+    opacity:1!important;
+    visibility:visible!important;
+    pointer-events:auto!important;
+    transform:translateY(0)!important;
+  }
+}

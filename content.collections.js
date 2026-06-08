@@ -1,15 +1,15 @@
 window.HA_COLLECTIONS_CONTENT = {
   images: {
     logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/qCxBNIjwUhdazFfG.jpg',
-    star: 'assets/hope-anthology-footer-star-transparent.png',
-    doorKeep: 'assets/collections-door-keep.jpg',
-    doorMake: 'assets/collections-door-make.jpg',
-    woodland: 'assets/collections-woodland-folk.jpg',
-    alphabet: 'assets/collections-meaning-alphabet.jpg',
-    anchors: 'assets/collections-everyday-anchors.jpg',
-    angelNumbers: 'assets/collections-angel-numbers.jpg',
-    farmFolk: 'assets/collections-farm-folk.jpg',
-    stainedGlass: 'assets/collections-stained-glass.jpg'
+    star: '/assets/hope-anthology-footer-star-transparent.png',
+    doorKeep: '/assets/collections-door-keep.jpg',
+    doorMake: '/assets/collections-door-make.jpg',
+    woodland: '/assets/collections-woodland-folk.jpg',
+    alphabet: '/assets/collections-meaning-alphabet.jpg',
+    anchors: '/assets/collections-everyday-anchors.jpg',
+    angelNumbers: '/assets/collections-angel-numbers.jpg',
+    farmFolk: '/assets/collections-farm-folk.jpg',
+    stainedGlass: '/assets/collections-stained-glass.jpg'
   },
 
   navigation: [
