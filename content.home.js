@@ -6,8 +6,8 @@
 window.HA_HOME_CONTENT = {
   images: {
     logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/qCxBNIjwUhdazFfG.jpg',
-    star: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/EFfVopDjXtfLRVQI.png',
-    hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3f683be7-1eb6-487c-b061-91d1e96a8c63/the-hope-anthology-welcome.jpg?content-type=image%2Fjpeg',
+    star: 'https://theresahaskinsuk-bit.github.io/hope-anthology-site/assets/hope-anthology-footer-star-transparent.png',
+    hero: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/HGkesneQnMGpdSSC.jpg',
     keep: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/IJCQxZYmcSwNTWvS.jpg',
     make: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/hBVZHGIOxZpRsXVe.jpg',
     why: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/rPGNseNwiBqKhbVZ.jpg',
@@ -26,7 +26,7 @@ window.HA_HOME_CONTENT = {
   hero: {
     eyebrow: 'Symbolic art · meaningful making',
     headlineHtml: 'An anthology of art to <em>keep</em> and things to <em>make.</em>',
-    body: "Things fucker! to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. It all begins with a feeling — and it's all made for you.",
+    body: "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. It all begins with a feeling — and it's all made for you.",
     primaryButtonLabel: 'Explore the Anthology →',
     primaryButtonUrl: '/collections',
     secondaryButtonLabel: 'Read the story',
@@ -58,11 +58,15 @@ window.HA_HOME_CONTENT = {
     kicker: 'Collective',
     heading: 'Something worth being part of.',
     body: "New designs, behind-the-scenes making, and the occasional reminder that you're doing better than you think. No noise. No pressure. Just the Anthology.",
+    emailLabel: 'Email address',
     emailPlaceholder: 'Email address',
+    emailFieldName: 'email',
     buttonLabel: 'Join the Collective',
     note: 'Occasional letters only. No noise. No pressure.',
-    // Safe starting point: this sends visitors to the Squarespace Collective page.
-    // Later, replace formAction with a real Squarespace/email-provider embed endpoint if required.
+    // Squarespace-only setup: this sends visitors to the Squarespace Collective page,
+    // where the native Squarespace newsletter/email signup should collect the address.
+    // When the final native Squarespace form endpoint is available, replace formAction with that endpoint.
+    provider: 'squarespace-email-campaigns',
     formAction: '/collective',
     formMethod: 'get'
   },

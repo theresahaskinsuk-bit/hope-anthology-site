@@ -31,6 +31,28 @@
   function safeHtml(value){ return String(value == null ? '' : value); }
   function image(content,key){ return esc((content.images && content.images[key]) || ''); }
   function navLinks(items){ return (items||[]).map(function(item){return '<a href="'+esc(item.url)+'">'+esc(item.label)+'</a>';}).join(''); }
+  function hasUrl(value){ return typeof value === 'string' && value.trim() && value.trim() !== '#'; }
+  function ctaLabel(label){
+    var clean = String(label == null ? '' : label).replace(/\s*[→›»]+\s*$/,'');
+    return '<span class="ha-v3-cta-text">'+esc(clean)+'</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span>';
+  }
+  function linkedImage(className,url,imgHtml,label){
+    if(hasUrl(url)) return '<a class="'+className+' ha-v3-image-link" href="'+esc(url)+'" aria-label="'+esc(label || 'Open section')+'">'+imgHtml+'</a>';
+    return '<div class="'+className+'">'+imgHtml+'</div>';
+  }
+  function newsletterForm(collective){
+    var action = collective.formAction || '/collective';
+    var method = (collective.formMethod || 'get').toLowerCase();
+    var emailName = collective.emailFieldName || 'email';
+    var provider = collective.provider || 'holding-page';
+    return ''+
+      '<form class="ha-v3-form" action="'+esc(action)+'" method="'+esc(method)+'" data-provider="'+esc(provider)+'">'+
+        '<label class="ha-v3-sr-only" for="ha-v3-collective-email">'+esc(collective.emailLabel || 'Email address')+'</label>'+
+        '<input id="ha-v3-collective-email" class="ha-v3-input" type="email" name="'+esc(emailName)+'" placeholder="'+esc(collective.emailPlaceholder || 'Email address')+'" autocomplete="email" required>'+
+        '<button class="ha-v3-btn-gold" type="submit">'+ctaLabel(collective.buttonLabel || 'Join the Collective')+'</button>'+
+        '<p class="ha-v3-note">'+esc(collective.note)+'</p>'+
+      '</form>';
+  }
 
   function html(){
     var C=window.HA_HOME_CONTENT || {};
@@ -41,11 +63,11 @@
     var footer=C.footer || {};
     return ''+
       '<div id="ha-home-v3">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><span class="ha-v3-wordmark">The Hope Anthology</span></a><div class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
-        '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Hope Anthology artwork, making materials and symbolic pieces"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h1 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h1><p class="ha-v3-hero-body">'+esc(hero.body)+'</p><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.primaryButtonUrl)+'">'+esc(hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+esc(hero.secondaryButtonLabel)+'</a></div></div></section>'+
-        '<section class="ha-v3-two"><div class="ha-v3-section-head"><p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p><h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){return '<article class="ha-v3-panel"><div class="ha-v3-panel-img"><img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'"></div><div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+esc(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
-        '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+esc(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){return '<article class="ha-v3-card"><div class="ha-v3-card-img"><img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'"></div><div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+esc(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
-        '<section class="ha-v3-collective"><div><p class="ha-v3-kicker">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div><form class="ha-v3-form" action="'+esc(collective.formAction || '/collective')+'" method="'+esc(collective.formMethod || 'get')+'"><input class="ha-v3-input" type="email" name="email" placeholder="'+esc(collective.emailPlaceholder)+'"><button class="ha-v3-btn-gold" type="submit">'+esc(collective.buttonLabel)+'</button><p class="ha-v3-note">'+esc(collective.note)+'</p></form></section>'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — Symbolic art and meaningful making</h1></a><div class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
+        '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Hope Anthology artwork, making materials and symbolic pieces"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><p class="ha-v3-hero-body">'+esc(hero.body)+'</p><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.primaryButtonUrl)+'">'+ctaLabel(hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div></div></section>'+
+        '<section class="ha-v3-two"><div class="ha-v3-section-head"><p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p><h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
+        '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+ctaLabel(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){var img='<img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',card.linkUrl,img,card.title)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
+        '<section class="ha-v3-collective"><div><p class="ha-v3-kicker">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.instagramUrl)+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.termsUrl)+'">Terms</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
