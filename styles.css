@@ -187,3 +187,53 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 #ha-home-v3 .ha-v3-btn-gold:focus-visible .ha-v3-cta-arrow{
   transform:translate(.18em,-.02em);
 }
+
+
+/* Small styling refinements requested after desktop review. */
+#ha-home-v3 .ha-v3-brand:hover .ha-v3-logo,
+#ha-home-v3 .ha-v3-brand:focus-visible .ha-v3-logo{
+  filter:none!important;
+}
+#ha-home-v3 .ha-v3-btn-ghost:hover,
+#ha-home-v3 .ha-v3-btn-ghost:focus-visible{
+  text-decoration:none!important;
+}
+#ha-home-v3 .ha-v3-panel-link:hover,
+#ha-home-v3 .ha-v3-panel-link:focus-visible,
+#ha-home-v3 .ha-v3-strip-link:hover,
+#ha-home-v3 .ha-v3-strip-link:focus-visible,
+#ha-home-v3 .ha-v3-card-link:hover,
+#ha-home-v3 .ha-v3-card-link:focus-visible,
+#ha-home-v3 .ha-v3-btn-gold:hover,
+#ha-home-v3 .ha-v3-btn-gold:focus-visible{
+  text-decoration:none!important;
+}
+#ha-home-v3 .ha-v3-panel-link:hover .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-panel-link:focus-visible .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-strip-link:hover .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-strip-link:focus-visible .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-card-link:hover .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-card-link:focus-visible .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-btn-gold:hover .ha-v3-cta-text,
+#ha-home-v3 .ha-v3-btn-gold:focus-visible .ha-v3-cta-text{
+  text-decoration:underline!important;
+  text-decoration-thickness:1px;
+  text-underline-offset:5px;
+}
+#ha-home-v3 .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-panel-link:hover .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-panel-link:focus-visible .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-strip-link:hover .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-strip-link:focus-visible .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-card-link:hover .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-card-link:focus-visible .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-btn-gold:hover .ha-v3-cta-arrow,
+#ha-home-v3 .ha-v3-btn-gold:focus-visible .ha-v3-cta-arrow{
+  text-decoration:none!important;
+}
+#ha-home-v3 .ha-v3-footer-top{
+  grid-template-columns:56px minmax(150px,220px) minmax(150px,220px)!important;
+  column-gap:36px!important;
+  row-gap:28px;
+  justify-content:start!important;
+}
