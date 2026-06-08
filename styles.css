@@ -237,3 +237,224 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
   row-gap:28px;
   justify-content:start!important;
 }
+
+
+/* Mobile refinement pass: menu, hero overlay, teal content block, and footer alignment. */
+#ha-home-v3 .ha-v3-menu-toggle{
+  display:none;
+  appearance:none;
+  background:transparent;
+  border:0;
+  width:44px;
+  height:44px;
+  padding:10px;
+  margin:0;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  color:var(--ha-cream);
+}
+#ha-home-v3 .ha-v3-menu-toggle span{
+  display:block;
+  width:22px;
+  height:1px;
+  background:currentColor;
+  transition:transform .2s ease,opacity .2s ease;
+}
+#ha-home-v3.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+#ha-home-v3.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
+#ha-home-v3.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+#ha-home-v3 .ha-v3-menu-toggle:hover,
+#ha-home-v3 .ha-v3-menu-toggle:focus-visible{
+  color:#fff;
+  outline:1px solid rgba(242,243,239,.45);
+  outline-offset:2px;
+}
+@media(max-width:900px){
+  #ha-home-v3 .ha-v3-nav{
+    height:68px!important;
+    padding:0 18px!important;
+    align-items:center;
+  }
+  #ha-home-v3 .ha-v3-brand{
+    height:68px!important;
+    max-width:210px!important;
+  }
+  #ha-home-v3 .ha-v3-logo{
+    height:42px!important;
+    max-width:190px!important;
+  }
+  #ha-home-v3 .ha-v3-menu-toggle{
+    display:inline-flex!important;
+    position:relative;
+    z-index:102;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links{
+    display:flex!important;
+    position:absolute;
+    left:0;
+    right:0;
+    top:68px;
+    background:var(--ha-teal);
+    border-top:1px solid rgba(242,243,239,.14);
+    box-shadow:0 18px 28px rgba(10,14,15,.22);
+    padding:18px 24px 24px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  }
+  #ha-home-v3.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links a{
+    width:100%;
+    padding:13px 0;
+    border-bottom:1px solid rgba(242,243,239,.12);
+    font-size:16px!important;
+    color:var(--ha-cream)!important;
+    text-align:left!important;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links a:last-child{border-bottom:0;}
+  #ha-home-v3 .ha-v3-hero{
+    min-height:0!important;
+    display:block!important;
+    padding-top:min(66vh,520px);
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-img{
+    height:min(66vh,520px)!important;
+    bottom:auto!important;
+  }
+  #ha-home-v3 .ha-v3-hero:after{
+    bottom:auto!important;
+    height:min(66vh,520px)!important;
+    background:linear-gradient(to top,rgba(7,18,20,.68) 0%,rgba(7,18,20,.34) 48%,rgba(7,18,20,.12) 100%)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-content{
+    max-width:none!important;
+    padding:38px 24px 46px!important;
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-footer-top{
+    grid-template-columns:1fr!important;
+    justify-items:start!important;
+    text-align:left!important;
+    gap:24px!important;
+  }
+  #ha-home-v3 .ha-v3-footer-col,
+  #ha-home-v3 .ha-v3-footer-col a,
+  #ha-home-v3 .ha-v3-footer-title{
+    align-items:flex-start!important;
+    text-align:left!important;
+  }
+}
+
+
+/* Tablet refinement pass: extend the mobile-style navigation and hero treatment to larger tablet ratios without affecting desktop. */
+@media (min-width:901px) and (max-width:1100px){
+  #ha-home-v3 .ha-v3-nav{
+    height:70px!important;
+    padding:0 28px!important;
+    align-items:center!important;
+  }
+  #ha-home-v3 .ha-v3-brand{
+    height:70px!important;
+    max-width:230px!important;
+  }
+  #ha-home-v3 .ha-v3-logo{
+    height:46px!important;
+    max-width:210px!important;
+  }
+  #ha-home-v3 .ha-v3-menu-toggle{
+    display:inline-flex!important;
+    position:relative;
+    z-index:102;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links{
+    display:flex!important;
+    position:absolute!important;
+    left:0;
+    right:0;
+    top:70px;
+    background:var(--ha-teal)!important;
+    border-top:1px solid rgba(242,243,239,.14);
+    box-shadow:0 18px 28px rgba(10,14,15,.22);
+    padding:20px 32px 26px;
+    flex-direction:column!important;
+    align-items:flex-start!important;
+    gap:0!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  }
+  #ha-home-v3.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links a{
+    width:100%;
+    padding:14px 0;
+    border-bottom:1px solid rgba(242,243,239,.12);
+    font-size:17px!important;
+    color:var(--ha-cream)!important;
+    text-align:left!important;
+  }
+  #ha-home-v3 .ha-v3-nav .ha-v3-links a:last-child{
+    border-bottom:0;
+  }
+  #ha-home-v3 .ha-v3-hero{
+    min-height:0!important;
+    display:block!important;
+    padding-top:min(58vh,560px);
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-img{
+    height:min(58vh,560px)!important;
+    bottom:auto!important;
+  }
+  #ha-home-v3 .ha-v3-hero:after{
+    bottom:auto!important;
+    height:min(58vh,560px)!important;
+    background:linear-gradient(to top,rgba(7,18,20,.68) 0%,rgba(7,18,20,.34) 48%,rgba(7,18,20,.12) 100%)!important;
+  }
+  #ha-home-v3 .ha-v3-hero-content{
+    max-width:none!important;
+    padding:46px 40px 54px!important;
+    background:var(--ha-teal)!important;
+  }
+  #ha-home-v3 .ha-v3-h1{
+    max-width:720px;
+    font-size:46px;
+  }
+  #ha-home-v3 .ha-v3-hero-body{
+    max-width:660px;
+  }
+  #ha-home-v3 .ha-v3-footer-top{
+    grid-template-columns:56px minmax(180px,260px) minmax(180px,260px)!important;
+    justify-content:start!important;
+    justify-items:start!important;
+    column-gap:34px!important;
+    row-gap:24px!important;
+    text-align:left!important;
+  }
+  #ha-home-v3 .ha-v3-footer-col,
+  #ha-home-v3 .ha-v3-footer-col a,
+  #ha-home-v3 .ha-v3-footer-title{
+    align-items:flex-start!important;
+    text-align:left!important;
+  }
+}

@@ -63,7 +63,7 @@
     var footer=C.footer || {};
     return ''+
       '<div id="ha-home-v3">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — Symbolic art and meaningful making</h1></a><div class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — Symbolic art and meaningful making</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-v3-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-v3-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
         '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Hope Anthology artwork, making materials and symbolic pieces"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><p class="ha-v3-hero-body">'+esc(hero.body)+'</p><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.primaryButtonUrl)+'">'+ctaLabel(hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div></div></section>'+
         '<section class="ha-v3-two"><div class="ha-v3-section-head"><p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p><h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+ctaLabel(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){var img='<img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',card.linkUrl,img,card.title)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
@@ -73,6 +73,25 @@
   }
 
   function isHome(){var p=location.pathname.replace(/\/$/,'');return p===''||p==='/';}
+  function bindMobileNav(root){
+    var toggle = root.querySelector('.ha-v3-menu-toggle');
+    var menu = root.querySelector('#ha-v3-mobile-menu');
+    if(!toggle || !menu || toggle.getAttribute('data-bound') === 'true') return;
+    toggle.setAttribute('data-bound','true');
+    toggle.addEventListener('click',function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      root.classList.toggle('ha-v3-menu-open', !open);
+    });
+    menu.addEventListener('click',function(event){
+      if(event.target && event.target.tagName === 'A'){
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+        root.classList.remove('ha-v3-menu-open');
+      }
+    });
+  }
   function mount(){
     if(!isHome()) return;
     if(document.getElementById('ha-home-v3')) return;
@@ -81,7 +100,9 @@
     document.body.classList.add('ha-home-v3-active');
     var wrap=document.createElement('div');
     wrap.innerHTML=html();
-    anchor.parentNode.insertBefore(wrap.firstChild,anchor);
+    var root = wrap.firstChild;
+    anchor.parentNode.insertBefore(root,anchor);
+    bindMobileNav(root);
   }
 
   loadCss();
