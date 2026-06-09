@@ -1286,3 +1286,46 @@ body.ha-collaborate-v1-active .Header,body.ha-collaborate-v1-active header.Heade
 
 #ha-collaborate-v1 .ha-v3-menu-toggle{display:none;}
 @media(max-width:900px){#ha-collaborate-v1 .ha-v3-menu-toggle{display:inline-flex;}}
+
+
+/* Collaborate follow-up patch: use the gold active-page nav state globally and keep the first collaboration as one full-width module. */
+#ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]{
+  color:var(--ha-gold)!important;
+  text-decoration:none!important;
+}
+
+#ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
+#ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible{
+  color:var(--ha-gold)!important;
+  text-decoration:underline!important;
+  text-decoration-color:rgba(254,210,47,.75)!important;
+}
+
+@media(min-width:981px){
+  #ha-collaborate-v1 .ha-col-current-grid{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+  }
+  #ha-collaborate-v1 .ha-col-featured-card{
+    grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)!important;
+    width:100%!important;
+  }
+  #ha-collaborate-v1 .ha-col-open-card{
+    max-width:640px!important;
+  }
+}
