@@ -95,7 +95,30 @@
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
           '<section class="ha-col-lanes" aria-label="Ways to collaborate">'+(C.lanes||[]).map(lane).join('')+'</section>'+ 
-          '<section class="ha-col-current"><div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div><div class="ha-col-current-grid"><article class="ha-col-featured-card"><div class="ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div><div class="ha-col-featured-body"><div class="ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div><p class="ha-col-card-label">'+esc(featured.label)+'</p><h3>'+esc(featured.title)+'</h3><p>'+esc(featured.body)+'</p><a class="ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a></div></article><article class="ha-col-open-card"><p class="ha-col-card-label">Next partnership</p><h3>'+esc(openSlot.title)+'</h3><p>'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p><a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-enquiry')+'">'+ctaLabel(openSlot.linkLabel)+'</a></article></div><p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p></section>'+ 
+          '<section class="ha-col-current">'+
+            '<div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div>'+ 
+            '<div class="ha-col-current-grid collab-cards">'+
+              '<article class="collab-card ha-col-featured-card">'+
+                '<div class="collab-card-img ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div>'+ 
+                '<div class="collab-card-body ha-col-featured-body">'+
+                  '<div class="collab-card-logo ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div>'+ 
+                  '<p class="collab-card-type ha-col-card-label">'+esc(featured.label)+'</p>'+ 
+                  '<h3 class="collab-card-title">'+esc(featured.title)+'</h3>'+ 
+                  '<p class="collab-card-body-text">'+esc(featured.body)+'</p>'+ 
+                  '<a class="collab-card-link ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a>'+ 
+                '</div>'+ 
+              '</article>'+ 
+              '<article class="collab-card collab-card-open ha-col-open-card">'+
+                '<div class="collab-card-body">'+
+                  '<p class="collab-card-type ha-col-card-label">Next partnership</p>'+ 
+                  '<h3 class="collab-card-title">'+esc(openSlot.title)+'</h3>'+ 
+                  '<p class="collab-card-body-text">'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p>'+ 
+                  '<a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-enquiry')+'">'+ctaLabel(openSlot.linkLabel)+'</a>'+ 
+                '</div>'+ 
+              '</article>'+ 
+            '</div>'+ 
+            '<p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p>'+ 
+          '</section>'+ 
           '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.body)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+ 
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
