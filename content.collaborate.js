@@ -21,20 +21,20 @@ window.HA_COLLABORATE_CONTENT = {
       number: '01',
       title: 'Craft and materials companies',
       body: "Who want to bring Hope Anthology patterns directly to their customers — encouraging them to do more, make more, and stay inspired within your world. The Creative Glass Guild are already doing exactly this, and it's a model we'd love to explore with the right partners across other mediums.",
-      url: '#collaborate-form'
+      url: '#collaborate-enquiry'
     },
     {
       number: '02',
       title: 'Makers and studios',
       body: 'Who want to create and sell finished goods using Hope Anthology designs — with the designs remaining part of the Anthology family, wherever they end up.',
-      url: '#collaborate-form'
+      url: '#collaborate-enquiry'
     },
     {
       number: '03',
       title: 'Fellow creatives',
       body: 'Artists, poets, makers, illustrators — who are working incredibly hard to get their work out into the world and think the Hope Anthology might be a good home for it.',
       note: "We're genuinely open here. From horsehair jumpers to extraordinary graffiti — if it carries the right energy, let's talk.",
-      url: '#collaborate-form'
+      url: '#collaborate-enquiry'
     }
   ],
   current: {
@@ -56,7 +56,7 @@ window.HA_COLLABORATE_CONTENT = {
       title: 'Your collaboration here',
       body: 'If your work carries the right energy,\nthere might be something worth talking about.',
       linkLabel: 'Start the conversation',
-      linkUrl: '#collaborate-form'
+      linkUrl: '#collaborate-enquiry'
     },
     note: 'More collaborations arriving as the Anthology grows.',
     noteLinkLabel: 'Join the Collective to hear first',
@@ -66,22 +66,12 @@ window.HA_COLLABORATE_CONTENT = {
     body: "No fixed terms. No pricing structures. No promises about what it will or won't become. Just a conversation between people who make things that mean something.",
     closer: "If that sounds like you — let's talk.",
     heading: 'Start the conversation',
-    formAction: '/collaborate',
-    formMethod: 'get',
-    provider: 'squarespace-native-form-pending',
-    fields: {
-      nameLabel: 'Name',
-      namePlaceholder: 'Your name',
-      emailLabel: 'Email',
-      emailPlaceholder: 'Your email address',
-      typeLabel: 'Which best describes you?',
-      typeName: 'collaboration_type',
-      options: ['Please select...', 'Craft or materials company', 'Maker or studio', 'Fellow creative', 'Something else'],
-      messageLabel: 'Tell us about what you make or do',
-      messagePlaceholder: 'Tell us a bit about your work and what you have in mind...',
-      consentLabel: 'I agree to The Hope Anthology storing my details to respond to this enquiry.',
-      buttonLabel: 'Start the conversation'
-    }
+    prompt: 'Tell us a little about what you make, what you are imagining, or where you think the Anthology might fit.',
+    emailLabel: 'Email The Hope Anthology',
+    emailAddress: 'hello@thehopeanthology.art',
+    emailSubject: 'Collaboration enquiry',
+    emailBody: 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\nA little about what I make or do:\n\n',
+    note: 'A simple email link for now — no forms, integrations, or extra setup needed.'
   },
   collective: {
     kicker: 'Collective',

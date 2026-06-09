@@ -1329,3 +1329,57 @@ body.ha-collaborate-v1-active .Header,body.ha-collaborate-v1-active header.Heade
     max-width:640px!important;
   }
 }
+
+
+/* Collaborate enquiry simplification: replace inactive form with a direct email CTA. */
+#ha-collaborate-v1 .ha-col-enquiry-panel{
+  background:#fff;
+  border:.5px solid rgba(54,68,73,.14);
+  padding:40px;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+}
+#ha-collaborate-v1 .ha-col-enquiry-panel h2{
+  font-family:'Lora',serif;
+  font-size:30px;
+  line-height:1.2;
+  color:var(--ha-teal);
+  font-weight:400;
+  margin:0 0 2px;
+}
+#ha-collaborate-v1 .ha-col-enquiry-prompt{
+  font-size:16px;
+  line-height:1.85;
+  font-weight:300;
+  color:var(--ha-dark);
+  margin:0;
+}
+#ha-collaborate-v1 .ha-col-enquiry-email{
+  font-size:14px;
+  line-height:1.7;
+  color:rgba(54,68,73,.78);
+  margin:0;
+}
+#ha-collaborate-v1 .ha-col-enquiry-email span{
+  color:var(--ha-dark);
+  font-weight:500;
+}
+#ha-collaborate-v1 .ha-col-enquiry-email a{
+  color:var(--ha-teal)!important;
+  text-decoration:underline;
+  text-decoration-thickness:1px;
+  text-underline-offset:4px;
+}
+#ha-collaborate-v1 .ha-col-enquiry-note{
+  font-size:12px;
+  line-height:1.6;
+  color:rgba(54,68,73,.58);
+  font-style:italic;
+  margin:0;
+}
+@media(max-width:640px){
+  #ha-collaborate-v1 .ha-col-enquiry-panel{
+    padding:30px 24px;
+  }
+}

@@ -63,22 +63,22 @@
         '<p class="ha-col-note">'+esc(collective.note || '')+'</p>'+ 
       '</form>';
   }
-  function conversationForm(conversation){
-    var fields = conversation.fields || {};
-    var options = fields.options || [];
+  function conversationCta(conversation){
+    var email = conversation.emailAddress || 'hello@thehopeanthology.art';
+    var subject = encodeURIComponent(conversation.emailSubject || 'Collaboration enquiry');
+    var body = encodeURIComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
+    var href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
     return ''+
-      '<form id="collaborate-form" class="ha-col-conversation-form" action="'+esc(conversation.formAction || '/collaborate')+'" method="'+esc((conversation.formMethod || 'get').toLowerCase())+'" data-provider="'+esc(conversation.provider || 'squarespace-native-form-pending')+'">'+
+      '<div id="collaborate-enquiry" class="ha-col-enquiry-panel">'+
         '<h2>'+esc(conversation.heading || 'Start the conversation')+'</h2>'+ 
-        '<div class="ha-col-field"><label for="ha-col-name">'+esc(fields.nameLabel || 'Name')+'</label><input id="ha-col-name" class="ha-col-input" type="text" name="name" placeholder="'+esc(fields.namePlaceholder || 'Your name')+'" autocomplete="name" required></div>'+ 
-        '<div class="ha-col-field"><label for="ha-col-email">'+esc(fields.emailLabel || 'Email')+'</label><input id="ha-col-email" class="ha-col-input" type="email" name="email" placeholder="'+esc(fields.emailPlaceholder || 'Your email address')+'" autocomplete="email" required></div>'+ 
-        '<div class="ha-col-field"><label for="ha-col-type">'+esc(fields.typeLabel || 'Which best describes you?')+'</label><select id="ha-col-type" class="ha-col-input" name="'+esc(fields.typeName || 'collaboration_type')+'" required>'+options.map(function(option,index){return '<option value="'+(index===0 ? '' : esc(option))+'">'+esc(option)+'</option>';}).join('')+'</select></div>'+ 
-        '<div class="ha-col-field"><label for="ha-col-message">'+esc(fields.messageLabel || 'Tell us about what you make or do')+'</label><textarea id="ha-col-message" class="ha-col-input" name="message" placeholder="'+esc(fields.messagePlaceholder || '')+'" rows="6" required></textarea></div>'+ 
-        '<label class="ha-col-check"><input type="checkbox" name="consent" value="yes" required><span>'+esc(fields.consentLabel || '')+'</span></label>'+ 
-        '<button class="ha-col-btn ha-col-btn-teal" type="submit">'+ctaLabel(fields.buttonLabel || 'Start the conversation')+'</button>'+ 
-      '</form>';
+        '<p class="ha-col-enquiry-prompt">'+esc(conversation.prompt || 'Tell us a little about what you make, what you are imagining, or where you think the Anthology might fit.')+'</p>'+ 
+        '<a class="ha-col-btn ha-col-btn-teal" href="'+esc(href)+'">'+ctaLabel(conversation.emailLabel || 'Email The Hope Anthology')+'</a>'+ 
+        '<p class="ha-col-enquiry-email"><span>Email:</span> <a href="'+esc(href)+'">'+esc(email)+'</a></p>'+ 
+        (conversation.note ? '<p class="ha-col-enquiry-note">'+esc(conversation.note)+'</p>' : '')+
+      '</div>';
   }
   function lane(card){
-    return '<a class="ha-col-lane" href="'+esc(card.url || '#collaborate-form')+'"><span class="ha-col-lane-num">'+esc(card.number)+'</span><h2>'+esc(card.title)+'</h2><span class="ha-col-lane-arrow" aria-hidden="true">↓</span><p>'+esc(card.body)+'</p>'+(card.note ? '<p class="ha-col-lane-note">('+esc(card.note)+')</p>' : '')+'</a>';
+    return '<a class="ha-col-lane" href="'+esc(card.url || '#collaborate-enquiry')+'"><span class="ha-col-lane-num">'+esc(card.number)+'</span><h2>'+esc(card.title)+'</h2><span class="ha-col-lane-arrow" aria-hidden="true">↓</span><p>'+esc(card.body)+'</p>'+(card.note ? '<p class="ha-col-lane-note">('+esc(card.note)+')</p>' : '')+'</a>';
   }
   function html(){
     var C=window.HA_COLLABORATE_CONTENT || {};
@@ -95,8 +95,8 @@
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
           '<section class="ha-col-lanes" aria-label="Ways to collaborate">'+(C.lanes||[]).map(lane).join('')+'</section>'+ 
-          '<section class="ha-col-current"><div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div><div class="ha-col-current-grid"><article class="ha-col-featured-card"><div class="ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div><div class="ha-col-featured-body"><div class="ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div><p class="ha-col-card-label">'+esc(featured.label)+'</p><h3>'+esc(featured.title)+'</h3><p>'+esc(featured.body)+'</p><a class="ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a></div></article><article class="ha-col-open-card"><p class="ha-col-card-label">Next partnership</p><h3>'+esc(openSlot.title)+'</h3><p>'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p><a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-form')+'">'+ctaLabel(openSlot.linkLabel)+'</a></article></div><p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p></section>'+ 
-          '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.body)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationForm(conversation)+'</section>'+ 
+          '<section class="ha-col-current"><div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div><div class="ha-col-current-grid"><article class="ha-col-featured-card"><div class="ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div><div class="ha-col-featured-body"><div class="ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div><p class="ha-col-card-label">'+esc(featured.label)+'</p><h3>'+esc(featured.title)+'</h3><p>'+esc(featured.body)+'</p><a class="ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a></div></article><article class="ha-col-open-card"><p class="ha-col-card-label">Next partnership</p><h3>'+esc(openSlot.title)+'</h3><p>'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p><a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-enquiry')+'">'+ctaLabel(openSlot.linkLabel)+'</a></article></div><p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p></section>'+ 
+          '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.body)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+ 
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.instagramUrl)+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a><a href="'+esc(footer.sellingUrl)+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+ 
@@ -150,7 +150,6 @@
     var root = wrap.firstChild;
     anchor.parentNode.insertBefore(root,anchor);
     bindMobileNav(root);
-    bindForms(root);
   }
 
   loadCss();
