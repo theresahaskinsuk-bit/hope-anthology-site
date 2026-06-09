@@ -95,7 +95,7 @@
     var alts = productImageAltSet(item);
     var first = set.lifestyle ? 'lifestyle' : (set.flat ? 'flat' : (set.detail ? 'detail' : ''));
     if(first){
-      return '<img src="'+esc(imageValue(content,set[first]))+'" alt="'+esc(alts[first] || item.alt || item.title)+'" loading="lazy" decoding="async" data-ha-product-image="true">';
+      return '<img src="'+esc(imageValue(content,set[first]))+'" alt="'+esc(alts[first] || item.alt || item.title)+'" loading="lazy" decoding="async" data-ha-product-image="true" data-ha-image-type="'+esc(first)+'">';
     }
     return '<div class="ha-kc-card-placeholder" aria-hidden="true"><span>'+esc(item.placeholder || item.title.charAt(0))+'</span></div>';
   }
@@ -110,7 +110,7 @@
     return '<div class="'+(available ? 'ha-kc-swap' : 'ha-kc-swap ha-kc-swap-muted')+'">'+options.map(function(option,index){
       var value = set[option.key] || '';
       var alt = alts[option.key] || item.alt || item.title || '';
-      return '<button type="button" data-ha-image-src="'+esc(value ? imageValue(content,value) : '')+'" data-ha-image-alt="'+esc(alt)+'" class="'+(index === 0 ? 'is-active' : '')+'">'+esc(option.label)+'</button>';
+      return '<button type="button" data-ha-image-src="'+esc(value ? imageValue(content,value) : '')+'" data-ha-image-alt="'+esc(alt)+'" data-ha-image-type="'+esc(option.key)+'" class="'+(index === 0 ? 'is-active' : '')+'">'+esc(option.label)+'</button>';
     }).join('')+'</div>';
   }
   function giftChips(item){
@@ -186,6 +186,7 @@
         if(img && nextSrc){
           img.src = nextSrc;
           img.alt = swap.getAttribute('data-ha-image-alt') || img.alt;
+          img.setAttribute('data-ha-image-type', swap.getAttribute('data-ha-image-type') || '');
         }
       }
     });
