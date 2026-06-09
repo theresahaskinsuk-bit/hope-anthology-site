@@ -4,6 +4,26 @@
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
 
+  function normalPath(){ return location.pathname.replace(/\/$/,'') || '/'; }
+  function isHome(){ var p=normalPath(); return p==='/' || p===''; }
+  function isBlockedCustomPage(){
+    var p=normalPath();
+    var blocked = [
+      '/story','/the-story',
+      '/make','/to-make','/collections/to-make','/collections/stained-glass-patterns'
+    ];
+    return blocked.indexOf(p) !== -1 ||
+      document.getElementById('ha-story-root') ||
+      document.getElementById('ha-make-template-v1') ||
+      document.body.classList.contains('ha-story-mounted');
+  }
+  function shouldRunHome(){
+    if(isBlockedCustomPage()) return false;
+    return isHome() || (script && script.getAttribute('data-ha-home') === 'true' && isHome());
+  }
+
+  if(!shouldRunHome()) return;
+
   function loadCss(){
     if(document.getElementById('ha-home-v3-css')) return;
     var link=document.createElement('link');
@@ -72,7 +92,6 @@
       '</div>';
   }
 
-  function isHome(){var p=location.pathname.replace(/\/$/,'');return p===''||p==='/';}
   function bindMobileNav(root){
     var toggle = root.querySelector('.ha-v3-menu-toggle');
     var menu = root.querySelector('#ha-v3-mobile-menu');
@@ -93,7 +112,7 @@
     });
   }
   function mount(){
-    if(!isHome()) return;
+    if(!shouldRunHome()) return;
     if(document.getElementById('ha-home-v3')) return;
     var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
     if(!anchor){ setTimeout(mount,150); return; }

@@ -12,6 +12,7 @@
     const makePaths = ['/make','/to-make','/collections/to-make','/collections/stained-glass-patterns'];
     if (makePaths.includes(path)) return false;
     if (document.getElementById('ha-make-template-v1')) return false;
+    if (document.getElementById('ha-home-v3') || document.body.classList.contains('ha-home-v3-active')) return false;
     if (s && s.getAttribute('data-ha-story') === 'true') return true;
     return allowedPaths.includes(path);
   }
@@ -19,6 +20,14 @@
   function loadCss(href){ if([...document.styleSheets].some(ss => ss.href && ss.href.includes('styles.css'))) return; const el=document.createElement('link'); el.rel='stylesheet'; el.href=href; document.head.appendChild(el); }
   function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function asset(path){ if(!path) return ''; return /^https?:|^data:|^\//.test(path) ? path : baseUrl()+path; }
+  function safeStoryHtml(value){
+    return String(value ?? '').replace(/<(?!\/?(?:p|em|strong|br)\b)[^>]*>/gi, '');
+  }
+  function bodyHtml(s){
+    if (s.bodyHtml) return safeStoryHtml(s.bodyHtml);
+    if (Array.isArray(s.body)) return s.body.map(p => `<p>${esc(p)}</p>`).join('');
+    return `<p>${esc(s.body)}</p>`;
+  }
   function hideSquarespaceShell(){
     const style=document.createElement('style');
     style.textContent = `body:not(.ha-story-mounted) main > .page-section:first-child h1,
@@ -28,10 +37,11 @@
   }
   function sectionHtml(s){
     const dark=s.theme === 'dark';
-    const text = `<div class="ha-story-panel-text"><div class="ha-story-num ${dark?'ha-story-num-light':''}">${esc(s.number)}</div><p class="ha-story-eyebrow ${dark?'gold':'twine'}">${esc(s.eyebrow)}</p><h2 class="ha-story-section-title">${s.titleHtml}</h2><p class="ha-story-intro">${esc(s.intro)}</p><button class="ha-story-toggle" type="button" aria-expanded="${s.open?'true':'false'}" aria-controls="${esc(s.id)}-more"><span>${s.open?'Close':'Read more'}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>`;
+    const more = `<div id="${esc(s.id)}-more" class="ha-story-more ${dark?'ha-story-more-dark':'ha-story-more-light'} ${s.open?'show':''}"><blockquote>${esc(s.quote)}</blockquote><div class="ha-story-more-prose">${bodyHtml(s)}</div></div>`;
+    const text = `<div class="ha-story-panel-text"><div class="ha-story-num ${dark?'ha-story-num-light':''}">${esc(s.number)}</div><p class="ha-story-eyebrow ${dark?'gold':'twine'}">${esc(s.eyebrow)}</p><h2 class="ha-story-section-title">${s.titleHtml}</h2><p class="ha-story-intro">${esc(s.intro)}</p><button class="ha-story-toggle" type="button" aria-expanded="${s.open?'true':'false'}" aria-controls="${esc(s.id)}-more"><span>${s.open?'Close':'Read more'}</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>${more}</div>`;
     const image = `<div class="ha-story-panel-image"><img src="${asset(s.image)}" alt="${esc(s.alt)}" loading="lazy"></div>`;
     const top = s.imageSide === 'right' ? text + image : image + text;
-    return `<div id="${esc(s.id)}" class="ha-story-anchor"></div><section class="ha-story-section ${dark?'ha-story-dark':'ha-story-light'} ${s.imageSide==='right'?'image-right':'image-left'}">${top}</section><section id="${esc(s.id)}-more" class="ha-story-more ${dark?'ha-story-more-dark':'ha-story-more-light'} ${s.open?'show':''}"><blockquote>${esc(s.quote)}</blockquote><p>${esc(s.body)}</p></section>`;
+    return `<div id="${esc(s.id)}" class="ha-story-anchor"></div><section class="ha-story-section ${dark?'ha-story-dark':'ha-story-light'} ${s.imageSide==='right'?'image-right':'image-left'}">${top}</section>`;
   }
   function render(c){
     document.title = c.meta?.title || document.title;

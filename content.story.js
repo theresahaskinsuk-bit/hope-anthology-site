@@ -70,7 +70,7 @@ window.HA_STORY_CONTENT = {
       "titleHtml": "I call it <em>relatable woo.</em>",
       "intro": "I grew up six miles from Glastonbury — so honestly, what did anyone expect? That mystical, slightly alternative, anything-is-possible energy has a way of seeping into you whether you asked for it or not.",
       "quote": "\"Yeah, but is this actually you though?\"",
-      "body": "I spent a good thirty years trying to ignore it. Building a proper career. Looking every bit the grown-up on the outside — ticking boxes, partying as hard as I was working, but holding it all together with a smile, a glass of wine and a spreadsheet. And I was genuinely good at it. But underneath, slowly, I was chipping away at myself trying to fit a shape that was never quite mine. There was always this persistent, slightly annoying voice going yeah, but is this actually you though? Reader, it was not entirely me. So here we are."
+      "bodyHtml": "<p>I spent a good thirty years trying to ignore it. Building a proper career. Looking every bit the grown-up on the outside — ticking boxes, partying as hard as I was working, but holding it all together with a smile, a glass of wine and a spreadsheet. And I was genuinely good at it. But underneath, slowly, I was chipping away at myself trying to fit a shape that was never quite mine.</p><p>There was always this persistent, slightly annoying voice going <em>yeah, but is this actually you though?</em></p><p>Reader, it was not entirely me.</p><p>So here we are.</p>"
     },
     {
       "id": "s2",
