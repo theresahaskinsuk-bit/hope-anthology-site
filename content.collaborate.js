@@ -3,8 +3,7 @@ window.HA_COLLABORATE_CONTENT = {
     logo: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc1430d50ccdfb3b30/1781017036989/01-the-hope-anthology.jpg',
     star: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc641e0d7b8f8252ea/1781017036917/04-the-hope-anthology-botanical-star.png',
     cggStudio: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc99c4ec08aeb40661/1781017037564/02-creative-glass-guild-studio-students-working-on-stained-glass-projects.jpg',
-    // TODO: after uploading /home/ubuntu/upload/creative-glass-guild-logo.webp to Squarespace Custom Files, replace this temporary fallback URL with the new Squarespace-hosted logo URL.
-    cggLogo: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc4e42565c7010dafd/1781017037239/03-creative-glass-guild-logo.png'
+    cggLogo: 'creative-glass-guild-logo.webp'
   },
   navigation: [
     { label: 'The Collections', url: '/collections' },
