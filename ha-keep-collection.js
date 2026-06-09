@@ -135,8 +135,7 @@
       '<div class="ha-kc-card-body">'+
         '<p class="ha-kc-card-collection">'+esc(collection.title)+'</p><h3>'+esc(item.title)+'</h3>'+ 
         '<div class="ha-kc-chips"><span><small>Format</small>'+esc(item.format || 'Art print')+'</span><span><small>Sizes</small>'+esc(item.sizes || 'A4 · A3')+'</span><span><small>Collection</small>'+esc(collection.title)+'</span></div>'+ 
-        '<button class="ha-kc-acc-toggle" type="button" aria-expanded="false">The meaning <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>'+ 
-        '<div class="ha-kc-acc-body" hidden><p>'+esc(item.meaning || '')+'</p>'+giftChips(item)+'</div>'+ action +
+        '<div class="ha-kc-meaning"><p>'+esc(item.meaning || '')+'</p>'+giftChips(item)+'</div>'+ action +
       '</div>'+ 
     '</article>';
   }
@@ -176,14 +175,6 @@
   }
   function bindCards(root){
     root.addEventListener('click',function(event){
-      var toggle = event.target.closest && event.target.closest('.ha-kc-acc-toggle');
-      if(toggle){
-        var body = toggle.nextElementSibling;
-        var open = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!open));
-        toggle.classList.toggle('is-open', !open);
-        if(body) body.hidden = open;
-      }
       var swap = event.target.closest && event.target.closest('.ha-kc-swap button');
       if(swap){
         var wrap = swap.parentNode;
