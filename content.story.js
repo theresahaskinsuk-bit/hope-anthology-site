@@ -24,8 +24,8 @@ window.HA_STORY_CONTENT = {
     }
   ],
   "assets": {
-    "logo": "assets/story/hope-anthology-logo.jpg",
-    "footerStar": "assets/story/hope-anthology-botanical-star.png"
+    "logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/07d106da-9929-49a9-9014-f2a6ae819d66/hope-anthology-logo.jpg?content-type=image%2Fjpeg",
+    "footerStar": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8748cff5-e861-4195-9c66-28d172c8684e/hope-anthology-botanical-star.png?content-type=image%2Fpng"
   },
   "hero": {
     "eyebrow": "The Story",
@@ -33,7 +33,7 @@ window.HA_STORY_CONTENT = {
     "subtitle": "Thirty years in the making. Here at last, when I needed it — and still need it — the most.",
     "whisper": "(There's been a lot going on behind that sentence.)",
     "scrollCue": "↓ The story starts below",
-    "image": "assets/story/story-hero-creative-desk.jpg",
+    "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b770a840-5f4e-4bed-8f8b-45c8776c140b/story-hero-creative-desk.jpg?content-type=image%2Fjpeg",
     "alt": "Theresa, creator of The Hope Anthology, photographed from above at her creative desk surrounded by colour reference books, pencils and artwork in progress"
   },
   "tabs": [
@@ -64,7 +64,7 @@ window.HA_STORY_CONTENT = {
       "number": "01",
       "theme": "light",
       "imageSide": "left",
-      "image": "assets/story/story-seeds-of-woo.jpg",
+      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ad3f4410-cdb8-4aca-9767-c3911f09e312/story-seeds-of-woo.jpg?content-type=image%2Fjpeg",
       "alt": "The Hope Anthology angel numbers and botanical art — the seeds of woo that grew into the Anthology",
       "eyebrow": "The Seeds of Woo",
       "titleHtml": "I call it <em>relatable woo.</em>",
@@ -78,7 +78,7 @@ window.HA_STORY_CONTENT = {
       "theme": "dark",
       "imageSide": "right",
       "open": true,
-      "image": "assets/story/story-the-decade.jpg",
+      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d9a8867-ad80-45e6-96ad-5d5da28ed6ac/story-the-decade.jpg?content-type=image%2Fjpeg",
       "alt": "A family together — the life that happened during the decade that shaped The Hope Anthology",
       "eyebrow": "The Decade",
       "titleHtml": "And then <em>life happened.</em>",
@@ -91,7 +91,7 @@ window.HA_STORY_CONTENT = {
       "number": "03",
       "theme": "light",
       "imageSide": "left",
-      "image": "assets/story/story-the-anthology.jpg",
+      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/826980dd-7e3d-4e87-8573-38ce0dfe2843/story-the-anthology.jpg?content-type=image%2Fjpeg",
       "alt": "A pencil sketch of a fox alongside a printed Hope Anthology fox design on a wooden table showing the creative journey from sketch to finished piece",
       "eyebrow": "The Anthology",
       "titleHtml": "What do I do now — <em>who am I now?</em>",
@@ -104,7 +104,7 @@ window.HA_STORY_CONTENT = {
       "number": "04",
       "theme": "dark",
       "imageSide": "right",
-      "image": "assets/story/story-the-making.jpg",
+      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f16342dd-ae52-47f3-8479-217dff76fa72/story-the-making.jpg?content-type=image%2Fjpeg",
       "alt": "The Hope Anthology creative desk viewed from above with colour reference books, pencils and design work in progress",
       "eyebrow": "The Making",
       "titleHtml": "My geek needed feeding as much as my <em>Gustav Klimt.</em>",
