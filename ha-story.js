@@ -8,8 +8,11 @@
   function baseUrl(){ const s=currentScript(); return s && s.src ? new URL('.', s.src).href : './'; }
   function shouldMount(){
     const s=currentScript();
-    if (s && s.getAttribute('data-ha-story') === 'true') return true;
     const path = window.location.pathname.replace(/\/$/, '') || '/';
+    const makePaths = ['/make','/to-make','/collections/to-make','/collections/stained-glass-patterns'];
+    if (makePaths.includes(path)) return false;
+    if (document.getElementById('ha-make-template-v1')) return false;
+    if (s && s.getAttribute('data-ha-story') === 'true') return true;
     return allowedPaths.includes(path);
   }
   function loadScript(src){ return new Promise((resolve,reject)=>{ if(window.HA_STORY_CONTENT) return resolve(); const el=document.createElement('script'); el.src=src; el.onload=resolve; el.onerror=reject; document.head.appendChild(el); }); }
