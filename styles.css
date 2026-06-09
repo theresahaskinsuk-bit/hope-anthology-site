@@ -2293,3 +2293,157 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
     gap:12px;
   }
 }
+/* Hope Anthology footer consistency pass — Collective footer source of truth. */
+#ha-home-v3 .ha-v3-footer-top,
+#ha-collections-v1 .ha-v3-footer-top,
+#ha-collective-v1 .ha-v3-footer-top,
+#ha-story-v1 .ha-v3-footer-top,
+#ha-keep-collection-v1 .ha-v3-footer-top,
+#ha-make-template-v1 .ha-v3-footer-top,
+#ha-collaborate-v1 .ha-v3-footer-top,
+#ha-why-v1 .ha-v3-footer-top,
+#ha-info-template-v1 .ha-v3-footer-top{
+  padding:40px 48px 32px!important;
+  display:grid!important;
+  grid-template-columns:80px 1fr 1fr!important;
+  gap:48px!important;
+  align-items:start!important;
+  justify-content:stretch!important;
+}
+#ha-home-v3 .ha-v3-footer-star,
+#ha-collections-v1 .ha-v3-footer-star,
+#ha-collective-v1 .ha-v3-footer-star,
+#ha-story-v1 .ha-v3-footer-star,
+#ha-keep-collection-v1 .ha-v3-footer-star,
+#ha-make-template-v1 .ha-v3-footer-star,
+#ha-collaborate-v1 .ha-v3-footer-star,
+#ha-why-v1 .ha-v3-footer-star,
+#ha-info-template-v1 .ha-v3-footer-star{
+  width:36px!important;
+  height:36px!important;
+  object-fit:contain!important;
+  opacity:.88!important;
+  margin-top:4px!important;
+  background:transparent!important;
+}
+#ha-home-v3 .ha-v3-footer-col,
+#ha-collections-v1 .ha-v3-footer-col,
+#ha-collective-v1 .ha-v3-footer-col,
+#ha-story-v1 .ha-v3-footer-col,
+#ha-keep-collection-v1 .ha-v3-footer-col,
+#ha-make-template-v1 .ha-v3-footer-col,
+#ha-collaborate-v1 .ha-v3-footer-col,
+#ha-why-v1 .ha-v3-footer-col,
+#ha-info-template-v1 .ha-v3-footer-col{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+#ha-home-v3 .ha-v3-footer-title,
+#ha-collections-v1 .ha-v3-footer-title,
+#ha-collective-v1 .ha-v3-footer-title,
+#ha-story-v1 .ha-v3-footer-title,
+#ha-keep-collection-v1 .ha-v3-footer-title,
+#ha-make-template-v1 .ha-v3-footer-title,
+#ha-collaborate-v1 .ha-v3-footer-title,
+#ha-why-v1 .ha-v3-footer-title,
+#ha-info-template-v1 .ha-v3-footer-title{
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+  color:rgba(242,243,239,.45)!important;
+  font-weight:500!important;
+  font-family:'DM Sans',sans-serif!important;
+  margin:0 0 6px!important;
+}
+#ha-home-v3 .ha-v3-footer-col a,
+#ha-collections-v1 .ha-v3-footer-col a,
+#ha-collective-v1 .ha-v3-footer-col a,
+#ha-story-v1 .ha-v3-footer-col a,
+#ha-keep-collection-v1 .ha-v3-footer-col a,
+#ha-make-template-v1 .ha-v3-footer-col a,
+#ha-collaborate-v1 .ha-v3-footer-col a,
+#ha-why-v1 .ha-v3-footer-col a,
+#ha-info-template-v1 .ha-v3-footer-col a{
+  font-size:13px!important;
+  color:rgba(242,243,239,.72)!important;
+  text-decoration:none!important;
+  font-family:'DM Sans',sans-serif!important;
+  line-height:1.4!important;
+  text-underline-offset:4px!important;
+}
+#ha-home-v3 .ha-v3-footer-col a:hover,
+#ha-home-v3 .ha-v3-footer-col a:focus-visible,
+#ha-collections-v1 .ha-v3-footer-col a:hover,
+#ha-collections-v1 .ha-v3-footer-col a:focus-visible,
+#ha-collective-v1 .ha-v3-footer-col a:hover,
+#ha-collective-v1 .ha-v3-footer-col a:focus-visible,
+#ha-story-v1 .ha-v3-footer-col a:hover,
+#ha-story-v1 .ha-v3-footer-col a:focus-visible,
+#ha-keep-collection-v1 .ha-v3-footer-col a:hover,
+#ha-keep-collection-v1 .ha-v3-footer-col a:focus-visible,
+#ha-make-template-v1 .ha-v3-footer-col a:hover,
+#ha-make-template-v1 .ha-v3-footer-col a:focus-visible,
+#ha-collaborate-v1 .ha-v3-footer-col a:hover,
+#ha-collaborate-v1 .ha-v3-footer-col a:focus-visible,
+#ha-why-v1 .ha-v3-footer-col a:hover,
+#ha-why-v1 .ha-v3-footer-col a:focus-visible,
+#ha-info-template-v1 .ha-v3-footer-col a:hover,
+#ha-info-template-v1 .ha-v3-footer-col a:focus-visible{
+  color:rgba(242,243,239,.98)!important;
+  text-decoration:underline!important;
+}
+#ha-home-v3 .ha-v3-footer-bottom,
+#ha-collections-v1 .ha-v3-footer-bottom,
+#ha-collective-v1 .ha-v3-footer-bottom,
+#ha-story-v1 .ha-v3-footer-bottom,
+#ha-keep-collection-v1 .ha-v3-footer-bottom,
+#ha-make-template-v1 .ha-v3-footer-bottom,
+#ha-collaborate-v1 .ha-v3-footer-bottom,
+#ha-why-v1 .ha-v3-footer-bottom,
+#ha-info-template-v1 .ha-v3-footer-bottom{
+  background:var(--ha-teal)!important;
+  border-top:.5px solid rgba(242,243,239,.1)!important;
+  padding:12px 48px!important;
+  display:flex!important;
+  justify-content:flex-start!important;
+}
+#ha-home-v3 .ha-v3-footer-bottom span,
+#ha-collections-v1 .ha-v3-footer-bottom span,
+#ha-collective-v1 .ha-v3-footer-bottom span,
+#ha-story-v1 .ha-v3-footer-bottom span,
+#ha-keep-collection-v1 .ha-v3-footer-bottom span,
+#ha-make-template-v1 .ha-v3-footer-bottom span,
+#ha-collaborate-v1 .ha-v3-footer-bottom span,
+#ha-why-v1 .ha-v3-footer-bottom span,
+#ha-info-template-v1 .ha-v3-footer-bottom span{
+  font-size:11px!important;
+  color:rgba(242,243,239,.35)!important;
+  font-family:'DM Sans',sans-serif!important;
+}
+@media(max-width:900px){
+  #ha-home-v3 .ha-v3-footer-top,
+  #ha-collections-v1 .ha-v3-footer-top,
+  #ha-collective-v1 .ha-v3-footer-top,
+  #ha-story-v1 .ha-v3-footer-top,
+  #ha-keep-collection-v1 .ha-v3-footer-top,
+  #ha-make-template-v1 .ha-v3-footer-top,
+  #ha-collaborate-v1 .ha-v3-footer-top,
+  #ha-why-v1 .ha-v3-footer-top,
+  #ha-info-template-v1 .ha-v3-footer-top{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    padding:36px 24px!important;
+  }
+  #ha-home-v3 .ha-v3-footer-bottom,
+  #ha-collections-v1 .ha-v3-footer-bottom,
+  #ha-collective-v1 .ha-v3-footer-bottom,
+  #ha-story-v1 .ha-v3-footer-bottom,
+  #ha-keep-collection-v1 .ha-v3-footer-bottom,
+  #ha-make-template-v1 .ha-v3-footer-bottom,
+  #ha-collaborate-v1 .ha-v3-footer-bottom,
+  #ha-why-v1 .ha-v3-footer-bottom,
+  #ha-info-template-v1 .ha-v3-footer-bottom{
+    padding:12px 24px!important;
+  }
+}
