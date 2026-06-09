@@ -131,3 +131,28 @@
     setTimeout(mount,600);
   });
 })();
+
+;(function(){
+  function normalPath(){ return location.pathname.replace(/\/$/,'') || '/'; }
+  function isCollaborate(){ return normalPath() === '/collaborate' || normalPath() === '/collaborations'; }
+  if(!isCollaborate()) return;
+  if(window.HA_COLLABORATE_BOOTSTRAP_ATTACHED) return;
+  window.HA_COLLABORATE_BOOTSTRAP_ATTACHED = true;
+  var scripts = document.getElementsByTagName('script');
+  var current = document.currentScript || scripts[scripts.length - 1];
+  var scriptUrl = current && current.src ? new URL(current.src) : null;
+  var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : 'https://theresahaskinsuk-bit.github.io/hope-anthology-site/';
+  var version = '67f4538';
+  function loadScript(id, filename, done){
+    if(document.getElementById(id)){ if(done) done(); return; }
+    var s = document.createElement('script');
+    s.id = id;
+    s.src = base + filename + '?v=' + encodeURIComponent(version);
+    s.onload = function(){ if(done) done(); };
+    s.onerror = function(){ console.warn('Hope Anthology Collaborations file could not be loaded:', filename); if(done) done(); };
+    document.head.appendChild(s);
+  }
+  loadScript('ha-collaborate-content-loader','content.collaborate.js',function(){
+    loadScript('ha-collaborate-renderer-loader','ha-collaborate.js');
+  });
+})();
