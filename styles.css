@@ -1508,3 +1508,290 @@ body.ha-collaborate-v1-active [data-ha-collaborate-hidden="true"]{display:none!i
 #ha-collaborate-v1 .ha-col-collective{background:var(--ha-dark);}
 @media(max-width:980px){#ha-collaborate-v1 .ha-col-lanes{grid-template-columns:1fr;padding-left:32px;padding-right:32px;}#ha-collaborate-v1 .ha-col-lane{min-height:auto;border-right:.5px solid rgba(54,68,73,.12);}#ha-collaborate-v1 .ha-col-current-grid{max-width:none;}#ha-collaborate-v1 .ha-col-open-card .collab-card-body{min-height:260px;}}
 @media(max-width:640px){#ha-collaborate-v1 .ha-col-header{padding:60px 24px 56px;}#ha-collaborate-v1 .ha-col-lanes{padding:42px 20px;}#ha-collaborate-v1 .ha-col-lane{padding:34px 24px;}#ha-collaborate-v1 .ha-col-current{padding:58px 20px;}#ha-collaborate-v1 .collab-card-img{height:230px;}#ha-collaborate-v1 .collab-card-logo{height:48px;max-width:210px;}}
+
+
+/* ─────────────────────────────────────────────
+   Collective page v1 — GitHub Pages source-file render
+   Matches HA-v1-collective while using shared HA v3 nav/footer.
+   ───────────────────────────────────────────── */
+#ha-collective-v1,
+#ha-collective-v1 *{
+  box-sizing:border-box;
+}
+#ha-collective-v1{
+  font-family:'DM Sans',sans-serif;
+  background:var(--ha-dark);
+  color:var(--ha-cream);
+  line-height:1.4;
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+#ha-collective-v1 a{
+  text-decoration:none;
+}
+#ha-collective-v1 img{
+  display:block;
+  max-width:100%;
+  height:auto;
+}
+body.ha-collective-mounted{
+  background:var(--ha-dark)!important;
+}
+body.ha-collective-mounted > :not(#ha-collective-v1):not(script):not(style):not(link):not(noscript),
+body.ha-collective-mounted #sections,
+body.ha-collective-mounted #footer-sections,
+body.ha-collective-mounted .Header,
+body.ha-collective-mounted header.Header,
+body.ha-collective-mounted #header,
+body.ha-collective-mounted [data-ha-collective-hidden="true"]{
+  display:none!important;
+}
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a{
+  color:var(--ha-cream)!important;
+  text-decoration:none!important;
+  text-underline-offset:5px;
+  text-decoration-thickness:1px;
+}
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a:hover,
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a:focus-visible{
+  color:#fff!important;
+  text-decoration:underline!important;
+  text-decoration-color:#fff!important;
+}
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]{
+  color:var(--ha-gold)!important;
+  text-decoration:none!important;
+}
+#ha-collective-v1 .ha-v3-brand:hover .ha-v3-logo,
+#ha-collective-v1 .ha-v3-brand:focus-visible .ha-v3-logo{
+  filter:none!important;
+}
+#ha-collective-v1 .ha-v3-cta-arrow{
+  display:inline-block!important;
+  flex:0 0 auto;
+  line-height:1;
+  transform:translateY(-.02em);
+  transition:transform .18s ease;
+}
+#ha-collective-v1 .ha-v3-btn-gold:hover,
+#ha-collective-v1 .ha-v3-btn-gold:focus-visible{
+  text-decoration:none!important;
+  filter:brightness(1.06);
+}
+#ha-collective-v1 .ha-v3-btn-gold:hover .ha-v3-cta-text,
+#ha-collective-v1 .ha-v3-btn-gold:focus-visible .ha-v3-cta-text{
+  text-decoration:underline!important;
+  text-decoration-thickness:1px;
+  text-underline-offset:5px;
+}
+#ha-collective-v1 .ha-v3-btn-gold:hover .ha-v3-cta-arrow,
+#ha-collective-v1 .ha-v3-btn-gold:focus-visible .ha-v3-cta-arrow{
+  transform:translate(.18em,-.02em);
+}
+.ha-collective-page{
+  background:var(--ha-dark);
+}
+.ha-collective-hero{
+  background:var(--ha-dark);
+  padding:80px 48px 56px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(280px,1fr);
+  gap:80px;
+  align-items:end;
+}
+.ha-collective-eyebrow,
+.ha-collective-form-eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ha-gold);
+  font-weight:500;
+  margin:0 0 16px;
+}
+.ha-collective-h1{
+  font-family:'Lora',serif;
+  font-size:48px;
+  color:var(--ha-cream);
+  font-weight:400;
+  margin:0;
+  line-height:1.1;
+  max-width:640px;
+}
+.ha-collective-h1 em{
+  font-style:italic;
+  color:var(--ha-gold);
+}
+.ha-collective-hero-rule{
+  height:1px;
+  background:rgba(242,243,239,.1);
+  align-self:end;
+  margin-bottom:8px;
+}
+.ha-collective-copy-section{
+  background:var(--ha-dark);
+  padding:0 48px 88px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(320px,480px);
+  gap:80px;
+  align-items:start;
+}
+.ha-collective-copy{
+  max-width:700px;
+}
+.ha-collective-copy p{
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  color:rgba(242,243,239,.72);
+  line-height:1.9;
+  font-weight:300;
+  margin:0 0 20px;
+}
+.ha-collective-copy p:last-child{
+  margin-bottom:0;
+}
+.ha-collective-copy .ha-collective-aside-copy{
+  font-style:italic;
+  color:rgba(242,243,239,.86);
+}
+.ha-collective-form-panel{
+  background:rgba(242,243,239,.045);
+  border:.5px solid rgba(242,243,239,.12);
+  padding:40px 36px;
+  box-shadow:0 24px 60px rgba(0,0,0,.08);
+}
+.ha-collective-form{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+.ha-collective-input{
+  width:100%;
+  padding:16px 18px;
+  background:rgba(242,243,239,.08);
+  border:.5px solid rgba(242,243,239,.18);
+  color:var(--ha-cream);
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  outline:none;
+  border-radius:0;
+  display:block;
+}
+.ha-collective-input::placeholder{
+  color:rgba(242,243,239,.36);
+}
+.ha-collective-input:focus{
+  border-color:rgba(254,210,47,.85);
+  box-shadow:0 0 0 1px rgba(254,210,47,.35);
+}
+.ha-collective-consent{
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  color:rgba(242,243,239,.48);
+  font-size:12px;
+  line-height:1.6;
+  font-family:'DM Sans',sans-serif;
+  margin:0 0 4px;
+}
+.ha-collective-consent input{
+  margin-top:4px;
+  flex:0 0 auto;
+  accent-color:var(--ha-gold);
+}
+.ha-collective-submit{
+  width:100%;
+  border-radius:2px!important;
+  justify-content:center;
+}
+.ha-collective-note{
+  font-size:12px!important;
+  color:rgba(242,243,239,.32)!important;
+  font-style:italic;
+  font-family:'DM Sans',sans-serif;
+  line-height:1.6!important;
+  margin:0!important;
+  text-align:center;
+}
+#ha-collective-v1 .ha-v3-footer-col a[aria-current="page"],
+#ha-collective-v1 .ha-v3-footer-col a.is-active{
+  color:rgba(254,210,47,.88)!important;
+}
+
+@media(max-width:900px){
+  #ha-collective-v1 .ha-v3-menu-toggle{
+    display:flex;
+    width:42px;
+    height:42px;
+    border:.5px solid rgba(242,243,239,.28);
+    background:rgba(242,243,239,.08);
+    border-radius:2px;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:5px;
+    padding:0;
+    cursor:pointer;
+  }
+  #ha-collective-v1 .ha-v3-menu-toggle span{
+    display:block;
+    width:18px;
+    height:1px;
+    background:var(--ha-cream);
+    transition:transform .18s ease,opacity .18s ease;
+  }
+  #ha-collective-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+  #ha-collective-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
+  #ha-collective-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+  #ha-collective-v1 .ha-v3-links{
+    display:none;
+  }
+  #ha-collective-v1.ha-v3-menu-open .ha-v3-links{
+    display:flex;
+    position:absolute;
+    top:72px;
+    left:0;
+    right:0;
+    z-index:95;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0;
+    padding:18px 24px 24px;
+    background:var(--ha-teal);
+    border-top:.5px solid rgba(242,243,239,.14);
+    box-shadow:0 18px 38px rgba(0,0,0,.18);
+  }
+  #ha-collective-v1.ha-v3-menu-open .ha-v3-links a{
+    width:100%;
+    padding:12px 0;
+  }
+  .ha-collective-hero,
+  .ha-collective-copy-section{
+    grid-template-columns:1fr;
+    gap:36px;
+    padding-left:24px;
+    padding-right:24px;
+  }
+  .ha-collective-hero{
+    padding-top:64px;
+    padding-bottom:40px;
+  }
+  .ha-collective-copy-section{
+    padding-bottom:72px;
+  }
+  .ha-collective-h1{
+    font-size:40px;
+  }
+  .ha-collective-hero-rule{
+    margin:0;
+  }
+  .ha-collective-form-panel{
+    padding:32px 24px;
+  }
+}
+@media(min-width:901px){
+  #ha-collective-v1 .ha-v3-menu-toggle{
+    display:none;
+  }
+}
