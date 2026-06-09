@@ -35,7 +35,11 @@
     if(!value) return '';
     return isAbsoluteUrl(value) ? value : base + value.replace(/^\.\//,'');
   }
-  function image(content,key){ return esc(assetUrl((content.images && content.images[key]) || '')); }
+  function imageValue(content,value){
+    var images = content.images || {};
+    return assetUrl(images[value] || value || '');
+  }
+  function image(content,key){ return esc(imageValue(content,key)); }
   function hasUrl(value){ return typeof value === 'string' && value.trim() && value.trim() !== '#'; }
   function ctaLabel(label){
     var clean = String(label == null ? '' : label).replace(/\s*[→›»]+\s*$/,'');
@@ -68,11 +72,46 @@
       return part + (index < items.length - 1 ? '<span class="ha-kc-sep" aria-hidden="true">›</span>' : '');
     }).join('')+'</div>';
   }
+  function productImageSet(item){
+    var set = item.images || {};
+    var fallback = item.imageKey || '';
+    return {
+      lifestyle: set.lifestyle || fallback,
+      flat: set.flat || fallback,
+      detail: set.detail || fallback
+    };
+  }
+  function productImageAltSet(item){
+    var set = item.imageAlts || {};
+    var fallback = item.alt || item.title || '';
+    return {
+      lifestyle: set.lifestyle || fallback,
+      flat: set.flat || fallback,
+      detail: set.detail || fallback
+    };
+  }
   function cardImage(content,item){
-    if(item.imageKey){
-      return '<img src="'+image(content,item.imageKey)+'" alt="'+esc(item.alt || item.title)+'">';
+    var set = productImageSet(item);
+    var alts = productImageAltSet(item);
+    var first = set.lifestyle ? 'lifestyle' : (set.flat ? 'flat' : (set.detail ? 'detail' : ''));
+    if(first){
+      return '<img src="'+esc(imageValue(content,set[first]))+'" alt="'+esc(alts[first] || item.alt || item.title)+'" loading="lazy" decoding="async" data-ha-product-image="true">';
     }
     return '<div class="ha-kc-card-placeholder" aria-hidden="true"><span>'+esc(item.placeholder || item.title.charAt(0))+'</span></div>';
+  }
+  function imageButtons(content,item,available){
+    var set = productImageSet(item);
+    var alts = productImageAltSet(item);
+    var options = [
+      { key: 'lifestyle', label: 'Lifestyle' },
+      { key: 'flat', label: 'Flat' },
+      { key: 'detail', label: 'Detail' }
+    ];
+    return '<div class="'+(available ? 'ha-kc-swap' : 'ha-kc-swap ha-kc-swap-muted')+'">'+options.map(function(option,index){
+      var value = set[option.key] || '';
+      var alt = alts[option.key] || item.alt || item.title || '';
+      return '<button type="button" data-ha-image-src="'+esc(value ? imageValue(content,value) : '')+'" data-ha-image-alt="'+esc(alt)+'" class="'+(index === 0 ? 'is-active' : '')+'">'+esc(option.label)+'</button>';
+    }).join('')+'</div>';
   }
   function giftChips(item){
     var chips = item.giftFor || [];
@@ -83,7 +122,6 @@
     var available = item.status === 'available';
     var badge = available ? 'Available now' : 'Coming soon';
     var cardClass = available ? 'ha-kc-card' : 'ha-kc-card ha-kc-card-inactive';
-    var swapClass = available ? 'ha-kc-swap' : 'ha-kc-swap ha-kc-swap-muted';
     var action = available && hasUrl(item.etsyUrl)
       ? '<a class="ha-kc-btn ha-kc-btn-keep" href="'+esc(item.etsyUrl)+'" target="_blank" rel="noopener">'+ctaLabel(item.etsyLabel || 'Get this print on Etsy')+'</a>'
       : available
@@ -93,7 +131,7 @@
       '<div class="ha-kc-card-img-wrap">'+
         '<span class="ha-kc-pip">To Keep</span><span class="ha-kc-badge '+(available ? 'ha-kc-badge-available' : 'ha-kc-badge-coming')+'">'+esc(badge)+'</span>'+cardImage(content,item)+
       '</div>'+ 
-      '<div class="'+swapClass+'"><button type="button" class="is-active">Lifestyle</button><button type="button">Flat</button><button type="button">Detail</button></div>'+ 
+      imageButtons(content,item,available)+ 
       '<div class="ha-kc-card-body">'+
         '<p class="ha-kc-card-collection">'+esc(collection.title)+'</p><h3>'+esc(item.title)+'</h3>'+ 
         '<div class="ha-kc-chips"><span><small>Format</small>'+esc(item.format || 'Art print')+'</span><span><small>Sizes</small>'+esc(item.sizes || 'A4 · A3')+'</span><span><small>Collection</small>'+esc(collection.title)+'</span></div>'+ 
@@ -151,6 +189,13 @@
         var wrap = swap.parentNode;
         Array.prototype.forEach.call(wrap.querySelectorAll('button'),function(btn){ btn.classList.remove('is-active'); });
         swap.classList.add('is-active');
+        var card = swap.closest('.ha-kc-card');
+        var img = card && card.querySelector('[data-ha-product-image="true"]');
+        var nextSrc = swap.getAttribute('data-ha-image-src');
+        if(img && nextSrc){
+          img.src = nextSrc;
+          img.alt = swap.getAttribute('data-ha-image-alt') || img.alt;
+        }
       }
     });
   }
