@@ -18,8 +18,9 @@
       document.body.classList.contains('ha-story-mounted');
   }
   function shouldRunHome(){
+    if(isHome()) return true;
     if(isBlockedCustomPage()) return false;
-    return isHome() || (script && script.getAttribute('data-ha-home') === 'true' && isHome());
+    return false;
   }
 
   if(!shouldRunHome()) return;
