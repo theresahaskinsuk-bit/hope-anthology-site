@@ -36,10 +36,24 @@
   }
   function hideSquarespaceShell(){
     const style=document.createElement('style');
-    style.textContent = `body:not(.ha-story-mounted) main > .page-section:first-child h1,
-      body:not(.ha-story-mounted) .entry-title,
+    style.textContent = `body.ha-story-mounted #sections,
+      body.ha-story-mounted #footer-sections,
+      body.ha-story-mounted .Header,
+      body.ha-story-mounted header.Header,
+      body.ha-story-mounted #header,
+      body.ha-story-mounted .page-title,
+      body.ha-story-mounted .entry-title,
+      body.ha-story-mounted .collection-title{display:none!important;}
       body.ha-story-mounted .sqs-block-html:has(#ha-story-root){margin:0!important;padding:0!important;}`;
     document.head.appendChild(style);
+  }
+  function navLinks(items){
+    const current = normalPath();
+    return (items || []).map(item => {
+      const href = item.href || item.url || '#';
+      const active = item.active || ((href.replace(/\/$/,'') || '/') === current);
+      return `<a href="${esc(href)}"${active ? ' aria-current="page"' : ''}>${esc(item.label)}</a>`;
+    }).join('');
   }
   function sectionHtml(s){
     const dark=s.theme === 'dark';
@@ -54,14 +68,35 @@
     const root = document.getElementById('ha-story-root') || document.createElement('div');
     root.id = 'ha-story-root';
     root.className = 'ha-story-root';
-    const nav = (c.nav||[]).map(n=>`<a href="${esc(n.href)}" class="${n.active?'active':''}">${esc(n.label)}</a>`).join('');
+    const nav = navLinks(c.nav);
     const tabs = (c.tabs||[]).map((t,i)=>`<a class="ha-story-tab ${i===0?'active':''}" href="#${esc(t.target)}" data-target="${esc(t.target)}">${esc(t.label)}</a>`).join('');
     const sections = (c.sections||[]).map(sectionHtml).join('');
     const footerCols = (c.footer?.columns||[]).map(col=>`<div class="ha-story-footer-col"><h3>${esc(col.title)}</h3>${(col.links||[]).map(l=>`<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('')}</div>`).join('');
-    root.innerHTML = `<div class="ha-story-page"><nav class="ha-story-nav"><a class="ha-story-brand" href="/"><span class="ha-story-brand-mark"><img src="${asset(c.assets.logo)}" alt="The Hope Anthology"></span><span>The Hope Anthology</span></a><div class="ha-story-nav-links">${nav}</div></nav><header class="ha-story-hero"><div class="ha-story-hero-image"><img src="${asset(c.hero.image)}" alt="${esc(c.hero.alt)}"></div><div class="ha-story-hero-text"><p class="ha-story-hero-eyebrow">${esc(c.hero.eyebrow)}</p><h1>${c.hero.titleHtml}</h1><p class="ha-story-hero-subtitle">${esc(c.hero.subtitle)}</p><p class="ha-story-hero-whisper">${esc(c.hero.whisper)}</p><p class="ha-story-scroll">${esc(c.hero.scrollCue)}</p></div></header><nav class="ha-story-section-nav" aria-label="Story sections">${tabs}</nav>${sections}<section id="${esc(c.finalSection.id)}" class="ha-story-final"><div><p class="ha-story-eyebrow gold">${esc(c.finalSection.eyebrow)}</p><h2>${c.finalSection.titleHtml}</h2><p>${esc(c.finalSection.body)}</p></div><aside><blockquote>${esc(c.finalSection.quote)}</blockquote><p>${esc(c.finalSection.signature)}</p></aside></section><section class="ha-story-collective"><div><p class="ha-story-collective-eyebrow">${esc(c.collective.eyebrow)}</p><h2>${esc(c.collective.title)}</h2><p>${esc(c.collective.body)}</p></div><form class="ha-story-email" onsubmit="event.preventDefault(); this.querySelector('.ha-story-note').textContent='Thank you — mailing list connection can be added when ready.';"><input type="email" placeholder="Email address" aria-label="Email address"><button type="submit">${esc(c.collective.button)}</button><p class="ha-story-note">${esc(c.collective.note)}</p></form></section><footer class="ha-story-footer"><div class="ha-story-footer-top"><img src="${asset(c.assets.footerStar)}" alt="The Hope Anthology botanical star">${footerCols}</div><div class="ha-story-footer-bottom"><span>${esc(c.footer.copyright)}</span></div></footer></div>`;
+    root.innerHTML = `<div id="ha-story-v1" class="ha-story-page"><nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="${asset(c.assets.logo)}" alt=""><span class="ha-v3-sr-only">The Hope Anthology</span></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-story-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-story-mobile-menu" class="ha-v3-links">${nav}</div></nav><header class="ha-story-hero"><div class="ha-story-hero-image"><img src="${asset(c.hero.image)}" alt="${esc(c.hero.alt)}"></div><div class="ha-story-hero-text"><p class="ha-story-hero-eyebrow">${esc(c.hero.eyebrow)}</p><h1>${c.hero.titleHtml}</h1><p class="ha-story-hero-subtitle">${esc(c.hero.subtitle)}</p><p class="ha-story-hero-whisper">${esc(c.hero.whisper)}</p><p class="ha-story-scroll">${esc(c.hero.scrollCue)}</p></div></header><nav class="ha-story-section-nav" aria-label="Story sections">${tabs}</nav>${sections}<section id="${esc(c.finalSection.id)}" class="ha-story-final"><div><p class="ha-story-eyebrow gold">${esc(c.finalSection.eyebrow)}</p><h2>${c.finalSection.titleHtml}</h2><p>${esc(c.finalSection.body)}</p></div><aside><blockquote>${esc(c.finalSection.quote)}</blockquote><p>${esc(c.finalSection.signature)}</p></aside></section><section class="ha-story-collective"><div><p class="ha-story-collective-eyebrow">${esc(c.collective.eyebrow)}</p><h2>${esc(c.collective.title)}</h2><p>${esc(c.collective.body)}</p></div><form class="ha-story-email" onsubmit="event.preventDefault(); this.querySelector('.ha-story-note').textContent='Thank you — mailing list connection can be added when ready.';"><input type="email" placeholder="Email address" aria-label="Email address"><button type="submit">${esc(c.collective.button)}</button><p class="ha-story-note">${esc(c.collective.note)}</p></form></section><footer class="ha-story-footer"><div class="ha-story-footer-top"><img src="${asset(c.assets.footerStar)}" alt="The Hope Anthology botanical star">${footerCols}</div><div class="ha-story-footer-bottom"><span>${esc(c.footer.copyright)}</span></div></footer></div>`;
     if(!root.parentNode) document.body.prepend(root);
     document.body.classList.add('ha-story-mounted');
     wireInteractions(root);
+    bindMobileNav(root);
+  }
+  function bindMobileNav(root){
+    const shell = root.querySelector('#ha-story-v1');
+    const toggle = root.querySelector('.ha-v3-menu-toggle');
+    const menu = root.querySelector('#ha-story-mobile-menu');
+    if(!shell || !toggle || !menu || toggle.getAttribute('data-bound') === 'true') return;
+    toggle.setAttribute('data-bound','true');
+    toggle.addEventListener('click',()=>{
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      shell.classList.toggle('ha-v3-menu-open', !open);
+    });
+    menu.addEventListener('click',event=>{
+      if(event.target && event.target.tagName === 'A'){
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+        shell.classList.remove('ha-v3-menu-open');
+      }
+    });
   }
   function wireInteractions(root){
     root.querySelectorAll('.ha-story-toggle').forEach(btn=>{
