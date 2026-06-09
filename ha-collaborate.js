@@ -1,0 +1,161 @@
+(function(){
+  var script = document.currentScript || (function(){var s=document.getElementsByTagName('script');return s[s.length-1];})();
+  var scriptUrl = script && script.src ? new URL(script.src) : null;
+  var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
+  var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
+
+  function loadCss(){
+    if(document.getElementById('ha-v3-css')) return;
+    var link=document.createElement('link');
+    link.id='ha-v3-css';
+    link.rel='stylesheet';
+    link.href=base+'styles.css?v='+encodeURIComponent(version);
+    document.head.appendChild(link);
+  }
+
+  function loadContent(done){
+    if(window.HA_COLLABORATE_CONTENT){ done(); return; }
+    var existing=document.getElementById('ha-collaborate-content');
+    if(existing){ existing.addEventListener('load', done); return; }
+    var s=document.createElement('script');
+    s.id='ha-collaborate-content';
+    s.src=base+'content.collaborate.js?v='+encodeURIComponent(version);
+    s.onload=done;
+    s.onerror=function(){ console.warn('Hope Anthology Collaborations content file could not be loaded.'); done(); };
+    document.head.appendChild(s);
+  }
+
+  function esc(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});
+  }
+  function safeHtml(value){ return String(value == null ? '' : value); }
+  function isAbsoluteUrl(value){ return /^(https?:)?\/\//.test(String(value || '')) || /^data:/.test(String(value || '')) || /^\//.test(String(value || '')); }
+  function assetUrl(value){
+    value = String(value == null ? '' : value);
+    if(!value) return '';
+    return isAbsoluteUrl(value) ? value : base + value.replace(/^\.\//,'');
+  }
+  function image(content,key){ return esc(assetUrl((content.images && content.images[key]) || '')); }
+  function isExternal(value){ return /^https?:\/\//.test(String(value || '')); }
+  function linkAttrs(url){ return isExternal(url) ? ' target="_blank" rel="noopener"' : ''; }
+  function ctaLabel(label){
+    var clean = String(label == null ? '' : label).replace(/\s*[→›»]+\s*$/,'');
+    return '<span class="ha-v3-cta-text">'+esc(clean)+'</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span>';
+  }
+  function navLinks(items){
+    var current = location.pathname.replace(/\/$/,'') || '/';
+    return (items||[]).map(function(item){
+      var href = item.url || '#';
+      var active = (href.replace(/\/$/,'') || '/') === current;
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
+    }).join('');
+  }
+  function newsletterForm(collective){
+    var action = collective.formAction || '/collective';
+    var method = (collective.formMethod || 'get').toLowerCase();
+    var emailName = collective.emailFieldName || 'email';
+    var provider = collective.provider || 'holding-page';
+    return ''+
+      '<form class="ha-col-form ha-col-collective-form" action="'+esc(action)+'" method="'+esc(method)+'" data-provider="'+esc(provider)+'">'+
+        '<label class="ha-v3-sr-only" for="ha-col-collective-email">'+esc(collective.emailLabel || 'Email address')+'</label>'+ 
+        '<input id="ha-col-collective-email" class="ha-col-input ha-col-input-dark" type="email" name="'+esc(emailName)+'" placeholder="'+esc(collective.emailPlaceholder || 'Email address')+'" autocomplete="email" required>'+ 
+        '<button class="ha-col-btn ha-col-btn-gold" type="submit">'+ctaLabel(collective.buttonLabel || 'Join the Collective')+'</button>'+ 
+        '<p class="ha-col-note">'+esc(collective.note || '')+'</p>'+ 
+      '</form>';
+  }
+  function conversationForm(conversation){
+    var fields = conversation.fields || {};
+    var options = fields.options || [];
+    return ''+
+      '<form id="collaborate-form" class="ha-col-conversation-form" action="'+esc(conversation.formAction || '/collaborate')+'" method="'+esc((conversation.formMethod || 'get').toLowerCase())+'" data-provider="'+esc(conversation.provider || 'squarespace-native-form-pending')+'">'+
+        '<h2>'+esc(conversation.heading || 'Start the conversation')+'</h2>'+ 
+        '<div class="ha-col-field"><label for="ha-col-name">'+esc(fields.nameLabel || 'Name')+'</label><input id="ha-col-name" class="ha-col-input" type="text" name="name" placeholder="'+esc(fields.namePlaceholder || 'Your name')+'" autocomplete="name" required></div>'+ 
+        '<div class="ha-col-field"><label for="ha-col-email">'+esc(fields.emailLabel || 'Email')+'</label><input id="ha-col-email" class="ha-col-input" type="email" name="email" placeholder="'+esc(fields.emailPlaceholder || 'Your email address')+'" autocomplete="email" required></div>'+ 
+        '<div class="ha-col-field"><label for="ha-col-type">'+esc(fields.typeLabel || 'Which best describes you?')+'</label><select id="ha-col-type" class="ha-col-input" name="'+esc(fields.typeName || 'collaboration_type')+'" required>'+options.map(function(option,index){return '<option value="'+(index===0 ? '' : esc(option))+'">'+esc(option)+'</option>';}).join('')+'</select></div>'+ 
+        '<div class="ha-col-field"><label for="ha-col-message">'+esc(fields.messageLabel || 'Tell us about what you make or do')+'</label><textarea id="ha-col-message" class="ha-col-input" name="message" placeholder="'+esc(fields.messagePlaceholder || '')+'" rows="6" required></textarea></div>'+ 
+        '<label class="ha-col-check"><input type="checkbox" name="consent" value="yes" required><span>'+esc(fields.consentLabel || '')+'</span></label>'+ 
+        '<button class="ha-col-btn ha-col-btn-teal" type="submit">'+ctaLabel(fields.buttonLabel || 'Start the conversation')+'</button>'+ 
+      '</form>';
+  }
+  function lane(card){
+    return '<a class="ha-col-lane" href="'+esc(card.url || '#collaborate-form')+'"><span class="ha-col-lane-num">'+esc(card.number)+'</span><h2>'+esc(card.title)+'</h2><span class="ha-col-lane-arrow" aria-hidden="true">↓</span><p>'+esc(card.body)+'</p>'+(card.note ? '<p class="ha-col-lane-note">('+esc(card.note)+')</p>' : '')+'</a>';
+  }
+  function html(){
+    var C=window.HA_COLLABORATE_CONTENT || {};
+    var page=C.page || {};
+    var current=C.current || {};
+    var featured=current.featured || {};
+    var openSlot=current.openSlot || {};
+    var conversation=C.conversation || {};
+    var collective=C.collective || {};
+    var footer=C.footer || {};
+    return ''+
+      '<div id="ha-collaborate-v1">'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">Collaborate — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
+        '<main class="ha-col-main">'+
+          '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
+          '<section class="ha-col-lanes" aria-label="Ways to collaborate">'+(C.lanes||[]).map(lane).join('')+'</section>'+ 
+          '<section class="ha-col-current"><div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div><div class="ha-col-current-grid"><article class="ha-col-featured-card"><div class="ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div><div class="ha-col-featured-body"><div class="ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div><p class="ha-col-card-label">'+esc(featured.label)+'</p><h3>'+esc(featured.title)+'</h3><p>'+esc(featured.body)+'</p><a class="ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a></div></article><article class="ha-col-open-card"><p class="ha-col-card-label">Next partnership</p><h3>'+esc(openSlot.title)+'</h3><p>'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p><a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-form')+'">'+ctaLabel(openSlot.linkLabel)+'</a></article></div><p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p></section>'+ 
+          '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.body)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationForm(conversation)+'</section>'+ 
+          '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
+        '</main>'+ 
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.instagramUrl)+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a><a href="'+esc(footer.sellingUrl)+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+ 
+      '</div>';
+  }
+  function isCollaborate(){ var p=location.pathname.replace(/\/$/,''); return p==='/collaborate' || p==='/collaborations'; }
+  function bindMobileNav(root){
+    var toggle = root.querySelector('.ha-v3-menu-toggle');
+    var menu = root.querySelector('#ha-col-mobile-menu');
+    if(!toggle || !menu || toggle.getAttribute('data-bound') === 'true') return;
+    toggle.setAttribute('data-bound','true');
+    toggle.addEventListener('click',function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      root.classList.toggle('ha-v3-menu-open', !open);
+    });
+    menu.addEventListener('click',function(event){
+      if(event.target && event.target.tagName === 'A'){
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+        root.classList.remove('ha-v3-menu-open');
+      }
+    });
+  }
+  function bindForms(root){
+    var form = root.querySelector('.ha-col-conversation-form');
+    if(!form || form.getAttribute('data-bound') === 'true') return;
+    form.setAttribute('data-bound','true');
+    form.addEventListener('submit',function(event){
+      if(form.getAttribute('data-provider') !== 'squarespace-native-form-pending') return;
+      event.preventDefault();
+      var notice = form.querySelector('.ha-col-form-notice');
+      if(!notice){
+        notice = document.createElement('p');
+        notice.className = 'ha-col-form-notice';
+        form.appendChild(notice);
+      }
+      notice.textContent = 'Thank you — the native Squarespace form connection is ready to be attached here.';
+      notice.setAttribute('role','status');
+    });
+  }
+  function mount(){
+    if(!isCollaborate()) return;
+    if(document.getElementById('ha-collaborate-v1')) return;
+    var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
+    if(!anchor){ setTimeout(mount,150); return; }
+    document.body.classList.add('ha-collaborate-v1-active');
+    var wrap=document.createElement('div');
+    wrap.innerHTML=html();
+    var root = wrap.firstChild;
+    anchor.parentNode.insertBefore(root,anchor);
+    bindMobileNav(root);
+    bindForms(root);
+  }
+
+  loadCss();
+  loadContent(function(){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mount); else mount();
+    setTimeout(mount,600);
+  });
+})();
