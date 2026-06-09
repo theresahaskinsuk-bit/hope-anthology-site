@@ -116,7 +116,7 @@ window.HA_STORY_CONTENT = {
   "finalSection": {
     "id": "s5",
     "eyebrow": "The Woo That Now Gets to Grow",
-    "titleHtml": "I hug trees. <em>Unapologetically.</em>",
+    "titleHtml": "<span class=\"ha-story-final-white\">I hug trees.</span> <em>Unapologetically.</em>",
     "body": "I'm still making my peace with who I am and what I'm doing. I probably always will be. But alongside all of that — I go to solstice events now. I stop and actually look at flowers instead of walking past them. I'm more playful. More present. More me than I have ever been in my adult life. I hug trees. Unapologetically. (Living in Bristol helps this not look quite so weird — though I won't pretend I don't still feel like a complete doughnut while I'm doing it.) And the hope I've somehow managed to build for myself — through all of it, despite all of it — I don't think it's just mine. I think hope like this gets stronger when it's shared. That's what The Hope Anthology is for. For the everyday woo. The everyday hope. And everyone who needs a little of both.",
     "quote": "\"For the everyday woo. The everyday hope. And everyone who needs a little of both.\"",
     "signature": "Welcome. I'm really glad you're here. — Theresa"

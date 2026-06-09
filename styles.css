@@ -1146,3 +1146,58 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
     margin-top:14px;
   }
 }
+
+
+/* Story v5 polish — rectangular header logo and explicit white final-section heading phrase. */
+.ha-story-root .ha-story-brand{
+  gap:0!important;
+  min-width:0;
+}
+.ha-story-root .ha-story-brand-mark{
+  width:auto!important;
+  height:52px!important;
+  min-width:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  border:0!important;
+  overflow:visible!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+}
+.ha-story-root .ha-story-brand-mark img{
+  display:block!important;
+  width:auto!important;
+  height:52px!important;
+  max-width:240px!important;
+  object-fit:contain!important;
+  object-position:left center!important;
+  border-radius:0!important;
+  background:transparent!important;
+  filter:none!important;
+}
+.ha-story-root .ha-story-brand > span:last-child:not(.ha-story-brand-mark){
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  padding:0!important;
+  margin:-1px!important;
+  overflow:hidden!important;
+  clip:rect(0,0,0,0)!important;
+  clip-path:inset(50%)!important;
+  white-space:nowrap!important;
+  border:0!important;
+}
+.ha-story-root .ha-story-final h2,
+.ha-story-root .ha-story-final h2 .ha-story-final-white{
+  color:var(--ha-cream)!important;
+}
+.ha-story-root .ha-story-final h2 em{
+  color:var(--ha-gold)!important;
+}
+@media (max-width:520px){
+  .ha-story-root .ha-story-brand-mark,
+  .ha-story-root .ha-story-brand-mark img{
+    height:46px!important;
+  }
+}
