@@ -1376,8 +1376,13 @@ body.ha-collaborate-v1-active .Header,body.ha-collaborate-v1-active header.Heade
 }
 
 /* Story follow-up patch: align Story with the shared v3 header and suppress Squarespace fallback content. */
+body.ha-story-mounted > :not(#ha-story-root):not(script):not(style):not(link):not(template),
 body.ha-story-mounted #sections,
 body.ha-story-mounted #footer-sections,
+body.ha-story-mounted main,
+body.ha-story-mounted [role="main"],
+body.ha-story-mounted .Main,
+body.ha-story-mounted .main-content,
 body.ha-story-mounted .Header,
 body.ha-story-mounted header.Header,
 body.ha-story-mounted #header,
@@ -1385,6 +1390,9 @@ body.ha-story-mounted .page-title,
 body.ha-story-mounted .entry-title,
 body.ha-story-mounted .collection-title{
   display:none!important;
+}
+body.ha-story-mounted #ha-story-root{
+  display:block!important;
 }
 #ha-story-v1 .ha-v3-menu-toggle{
   display:none;
