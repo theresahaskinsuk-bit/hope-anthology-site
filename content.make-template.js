@@ -3,7 +3,7 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     title: 'Stained Glass Patterns — The Hope Anthology',
     hiddenHeading: 'The Hope Anthology — Stained Glass Patterns',
     totalPatterns: 27,
-    visiblePatternText: 'Showing 27 stained glass patterns'
+    visiblePatternText: 'Showing 27 live stained glass patterns'
   },
   imageBase: 'assets/stained-glass/',
   images: {
