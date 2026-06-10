@@ -94,8 +94,6 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
   navigation: [
     { label: 'Home', url: '/' },
     { label: 'The Collections', url: '/collections' },
-    { label: 'To Keep', url: '/collections/to-keep' },
-    { label: 'To Make', url: '/collections/to-make', active: true },
     { label: 'The Story', url: '/story' },
     { label: 'Collective', url: '/collective' }
   ],
