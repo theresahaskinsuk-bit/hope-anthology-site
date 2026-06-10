@@ -23,7 +23,7 @@
     return isStoryRoute() || hasExplicitStoryRoot();
   }
   function loadScript(src){ return new Promise((resolve,reject)=>{ if(window.HA_STORY_CONTENT) return resolve(); const el=document.createElement('script'); el.src=src; el.onload=resolve; el.onerror=reject; document.head.appendChild(el); }); }
-  function loadCss(href){ if(document.getElementById('ha-stability-v12-css') || [...document.styleSheets].some(ss => ss.href && ss.href.includes('styles.css'))) return; const el=document.createElement('link'); el.rel='stylesheet'; el.href=href; document.head.appendChild(el); }
+  function loadCss(href){ if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || [...document.styleSheets].some(ss => ss.href && ss.href.includes('styles.css'))) return; const el=document.createElement('link'); el.rel='stylesheet'; el.href=href; document.head.appendChild(el); }
   function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function asset(path){ if(!path) return ''; return /^https?:|^data:|^\//.test(path) ? path : baseUrl()+path; }
   function safeStoryHtml(value){

@@ -3,14 +3,14 @@
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
-  var supportedPaths = ['/info-page-template','/privacy','/accessibility'];
+  var supportedPaths = ['/info-page-template','/privacy','/privacy-policy','/accessibility','/accessibility-statement'];
 
   function normalPath(){ return location.pathname.replace(/\/$/,'') || '/'; }
   function shouldRunInfoTemplate(){ return supportedPaths.indexOf(normalPath()) !== -1; }
   if(!shouldRunInfoTemplate()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-info-template-css')) return;
+    if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || document.getElementById('ha-info-template-css')) return;
     var link=document.createElement('link');
     link.id='ha-info-template-css';
     link.rel='stylesheet';

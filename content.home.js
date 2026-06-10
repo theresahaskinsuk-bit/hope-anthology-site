@@ -75,6 +75,7 @@ window.HA_HOME_CONTENT = {
     copyright: '© The Hope Anthology 2026',
     instagramUrl: 'https://www.instagram.com',
     privacyUrl: '/privacy',
-    termsUrl: '/terms'
+    accessibilityUrl: '/accessibility',
+    sellingUrl: '/why-we-sell-this-way'
   }
 };

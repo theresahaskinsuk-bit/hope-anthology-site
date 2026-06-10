@@ -9,7 +9,7 @@
   if(!shouldRunCollective()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-collective-css')) return;
+    if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || document.getElementById('ha-collective-css')) return;
     var link=document.createElement('link');
     link.id='ha-collective-css';
     link.rel='stylesheet';

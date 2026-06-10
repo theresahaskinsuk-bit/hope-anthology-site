@@ -1205,14 +1205,12 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
 }
 
 /* =========================================================
-   Hope Anthology final all-pages styling stability v12
+   Hope Anthology all-pages styling stability v12.1 repair
    Purpose: shared active navigation, stable product-card tab sizing,
-   and non-inline long-term replacement for the temporary Stained Glass
-   forced font override.
+   desktop nav cleanup, and route-safe styling without inline hacks.
    ========================================================= */
 :root{--ha-active-gold:#FED22F;}
 
-/* Shared active navigation state: use golden yellow rather than the old cream/white underline. */
 #ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"],
 #ha-home-v3 .ha-v3-nav .ha-v3-links a.active,
 #ha-home-v3 .ha-v3-nav .ha-v3-links a.is-active,
@@ -1248,7 +1246,6 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
   text-decoration-color:var(--ha-active-gold)!important;
 }
 
-/* Collections section should remain active in child collection pages, including Woodland Folk and Stained Glass Patterns. */
 body.ha-keep-collection-v1-active #ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[href*="collections"]:first-child,
 body.ha-make-template-v1-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="collections"]:first-child,
 body.ha-make-template-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="collections"]:first-child{
@@ -1257,7 +1254,6 @@ body.ha-make-template-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="col
   text-decoration-color:var(--ha-active-gold)!important;
 }
 
-/* Product-card image selector typography: clean long-term version of the Stained Glass v11b emergency override. */
 #ha-make-template-v1 .ha-mv1-swap-cell{
   font-size:16px!important;
   line-height:1.18!important;
@@ -1266,9 +1262,22 @@ body.ha-make-template-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="col
   padding:12px 10px!important;
 }
 
-/* Keep/Woodland reference selector scale remains intentionally smaller. */
 #ha-keep-collection-v1 .ha-kc-swap button{
   font-size:11px;
   line-height:1.1;
+}
+
+@media (min-width: 769px){
+  #ha-home-v3 .ha-v3-menu-toggle,
+  #ha-collections-v1 .ha-v3-menu-toggle,
+  #ha-keep-collection-v1 .ha-v3-menu-toggle,
+  #ha-collaborate-v1 .ha-v3-menu-toggle,
+  #ha-collective-v1 .ha-v3-menu-toggle,
+  #ha-why-v1 .ha-v3-menu-toggle,
+  #ha-info-template-v1 .ha-v3-menu-toggle,
+  .ha-story-root .ha-story-menu-toggle,
+  .ha-story-root .ha-v3-menu-toggle{
+    display:none!important;
+  }
 }
 
