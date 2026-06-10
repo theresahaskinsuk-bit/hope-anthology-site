@@ -17,7 +17,7 @@
   function safe(v){return String(v==null?'':v);}
   function isAbs(v){return /^(https?:)?\/\//.test(String(v||'')) || /^data:/.test(String(v||'')) || /^\//.test(String(v||''));}
   function asset(v){v=String(v==null?'':v); return !v?'':(isAbs(v)?v:base+v.replace(/^\.\//,''));}
-  function imageBase(C){var b=(window.HA_MAKE_ASSET_BASES&&window.HA_MAKE_ASSET_BASES.stainedGlass)||window.HA_MAKE_STAINED_GLASS_IMAGE_BASE||(C&&C.imageBase)||''; return String(b||'').replace(/\/?$/,'/');} function imageUrl(C,key){var v=C.images&&C.images[key]; if(!v)return ''; v=String(v); if(isAbs(v)||v.indexOf('/')!==-1)return asset(v); var b=imageBase(C); return asset((b||'')+v);} function img(C,key){return esc(imageUrl(C,key));}
+  function imageBase(C){var b=(window.HA_MAKE_ASSET_BASES&&window.HA_MAKE_ASSET_BASES.stainedGlass)||window.HA_MAKE_STAINED_GLASS_IMAGE_BASE||(C&&C.imageBase)||''; var host=(window.location&&window.location.hostname)||''; var isGithub=/github\.io$/i.test(host); var isLocal=/^(localhost|127\.0\.0\.1)$/i.test(host)||host===''; if(!((window.HA_MAKE_ASSET_BASES&&window.HA_MAKE_ASSET_BASES.stainedGlass)||window.HA_MAKE_STAINED_GLASS_IMAGE_BASE) && String(b)==='assets/make/stained-glass/' && !isGithub && !isLocal){b='/s/';} return String(b||'').replace(/\/?$/,'/');} function imageUrl(C,key){var v=C.images&&C.images[key]; if(!v)return ''; v=String(v); if(isAbs(v)||v.indexOf('/')!==-1)return asset(v); var b=imageBase(C); return asset((b||'')+v);} function img(C,key){return esc(imageUrl(C,key));}
   function hasUrl(v){return typeof v==='string' && v.trim() && v.trim() !== '#';}
   function ext(v){return /^https?:\/\//.test(String(v||''));}
   function attrs(url){return ext(url)?' target="_blank" rel="noopener"':'';}
