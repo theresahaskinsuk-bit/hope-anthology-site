@@ -1203,3 +1203,72 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
     height:46px!important;
   }
 }
+
+/* =========================================================
+   Hope Anthology final all-pages styling stability v12
+   Purpose: shared active navigation, stable product-card tab sizing,
+   and non-inline long-term replacement for the temporary Stained Glass
+   forced font override.
+   ========================================================= */
+:root{--ha-active-gold:#FED22F;}
+
+/* Shared active navigation state: use golden yellow rather than the old cream/white underline. */
+#ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-home-v3 .ha-v3-nav .ha-v3-links a.active,
+#ha-home-v3 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-collections-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-make-template-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-make-template-v1 .ha-mv1-nav-links a[aria-current="page"],
+#ha-make-template-v1 .ha-mv1-nav-links a.active,
+#ha-make-template-v1 .ha-mv1-nav-links a.is-active,
+.ha-story-root .ha-story-nav-links a[aria-current="page"],
+.ha-story-root .ha-story-nav-links a.active,
+.ha-story-root .ha-story-nav-links a.is-active,
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-collaborate-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-collective-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-why-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-why-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-why-v1 .ha-v3-nav .ha-v3-links a.is-active,
+#ha-info-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
+#ha-info-template-v1 .ha-v3-nav .ha-v3-links a.active,
+#ha-info-template-v1 .ha-v3-nav .ha-v3-links a.is-active{
+  color:var(--ha-active-gold)!important;
+  border-bottom-color:var(--ha-active-gold)!important;
+  text-decoration-color:var(--ha-active-gold)!important;
+}
+
+/* Collections section should remain active in child collection pages, including Woodland Folk and Stained Glass Patterns. */
+body.ha-keep-collection-v1-active #ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[href*="collections"]:first-child,
+body.ha-make-template-v1-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="collections"]:first-child,
+body.ha-make-template-active #ha-make-template-v1 .ha-mv1-nav-links a[href*="collections"]:first-child{
+  color:var(--ha-active-gold)!important;
+  border-bottom:1px solid var(--ha-active-gold)!important;
+  text-decoration-color:var(--ha-active-gold)!important;
+}
+
+/* Product-card image selector typography: clean long-term version of the Stained Glass v11b emergency override. */
+#ha-make-template-v1 .ha-mv1-swap-cell{
+  font-size:16px!important;
+  line-height:1.18!important;
+  min-height:58px!important;
+  font-weight:400!important;
+  padding:12px 10px!important;
+}
+
+/* Keep/Woodland reference selector scale remains intentionally smaller. */
+#ha-keep-collection-v1 .ha-kc-swap button{
+  font-size:11px;
+  line-height:1.1;
+}
+

@@ -9,7 +9,7 @@
   if(!shouldRunWhy()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-why-css')) return;
+    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-why-css')) return;
     var link=document.createElement('link');
     link.id='ha-why-css';
     link.rel='stylesheet';

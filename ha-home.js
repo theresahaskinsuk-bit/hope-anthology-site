@@ -26,7 +26,7 @@
   if(!shouldRunHome()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-home-v3-css')) return;
+    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-home-v3-css')) return;
     var link=document.createElement('link');
     link.id='ha-home-v3-css';
     link.rel='stylesheet';

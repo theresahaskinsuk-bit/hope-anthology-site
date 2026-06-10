@@ -10,7 +10,7 @@
   if(!shouldRunInfoTemplate()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-info-template-css')) return;
+    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-info-template-css')) return;
     var link=document.createElement('link');
     link.id='ha-info-template-css';
     link.rel='stylesheet';

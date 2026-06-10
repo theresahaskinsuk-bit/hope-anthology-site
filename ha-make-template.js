@@ -6,7 +6,7 @@
   var HIDDEN_H1_STYLE = 'position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;';
 
   function loadCss(){
-    if(document.getElementById('ha-v3-css')) return;
+    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-v3-css')) return;
     var link=document.createElement('link'); link.id='ha-v3-css'; link.rel='stylesheet'; link.href=base+'styles.css?v='+encodeURIComponent(version); document.head.appendChild(link);
   }
   function loadContent(done){
@@ -43,7 +43,7 @@
       holder.setAttribute('data-ha-hidden-v11','true');
     });
   }
-  function isMakeRoute(){var p=location.pathname.replace(/\/$/,'')||'/'; var storyPaths=['/story','/the-story']; if(storyPaths.indexOf(p)!==-1 || document.body.classList.contains('ha-story-mounted')) return false; return p==='/make'||p==='/to-make'||p==='/collections/to-make'||p==='/collections/stained-glass-patterns'||/local-preview-make/i.test(p)||!!document.querySelector('#ha-make-template-root[data-ha-page="make"], #ha-make-template-root[data-ha-make-template-root="true"]');}
+  function isMakeRoute(){var p=location.pathname.replace(/\/$/,'')||'/'; var storyPaths=['/story','/the-story']; if(storyPaths.indexOf(p)!==-1 || document.body.classList.contains('ha-story-mounted')) return false; return p==='/make'||p==='/to-make'||p==='/collections/to-make'||p==='/collections/stained-glass-patterns'||p==='/collections/stained-glass'||/local-preview-make/i.test(p)||!!document.querySelector('#ha-make-template-root[data-ha-page="make"], #ha-make-template-root[data-ha-make-template-root="true"]');}
   function mount(){if(!isMakeRoute())return; if(repairExisting())return; var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild||document.body; document.body.classList.add('ha-make-template-active','ha-make-template-v1-active'); hideHostHeaderSubnav(); setTimeout(hideHostHeaderSubnav,250); setTimeout(hideHostHeaderSubnav,1000); var tmp=document.createElement('div'); tmp.innerHTML=html(); var root=tmp.firstChild; anchor.parentNode.insertBefore(root,anchor); bind(root);}
   loadCss(); loadContent(function(){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount(); setTimeout(mount,500);});
 })();

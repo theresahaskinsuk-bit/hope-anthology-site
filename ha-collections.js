@@ -5,7 +5,7 @@
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
 
   function loadCss(){
-    if(document.getElementById('ha-v3-css')) return;
+    if(document.getElementById('ha-stability-v12-css') || document.getElementById('ha-v3-css')) return;
     var link=document.createElement('link');
     link.id='ha-v3-css';
     link.rel='stylesheet';
