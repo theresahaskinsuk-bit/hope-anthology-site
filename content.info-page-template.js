@@ -91,10 +91,9 @@ window.HA_INFO_TEMPLATE_CONTENT = {
       },
       sections: [
         {
-          heading: 'Overview',
+          heading: 'Privacy',
           paragraphs: [
-            'This privacy policy explains how The Hope Anthology handles information when you use this website, contact the project, enquire about a collaboration, or choose to hear from us.',
-            'This placeholder policy is written so it can be replaced with final legal wording before publication. Please check the final version carefully before making the page live.'
+            'This page explains how The Hope Anthology handles information when you use this website, contact the project, enquire about a collaboration, or choose to hear from us.This privacy policy explains how The Hope Anthology handles information when you use this website, contact the project, enquire about a collaboration, or choose to hear from us.',
           ]
         },
         {
