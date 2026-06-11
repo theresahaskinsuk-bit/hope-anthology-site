@@ -5,8 +5,8 @@
 */
 window.HA_COLLECTIVE_CONTENT = {
   images: {
-    logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/qCxBNIjwUhdazFfG.jpg',
-    star: 'https://theresahaskinsuk-bit.github.io/hope-anthology-site/assets/hope-anthology-footer-star-transparent.png'
+    logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa8353db-ac25-4607-8465-ec79555f4f6f/collections-logo-hope-anthology.jpg?content-type=image%2Fjpeg',
+    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0956e10d-38c6-4fd7-8e06-7f2579fb75d6/collections-footer-star-hope-anthology.png?content-type=image%2Fpng',
   },
 
   navigation: [
