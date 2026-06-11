@@ -129,7 +129,25 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
     "angelNumber999Detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3018b40d-e577-4b7a-8036-638d38aaf0dd/angel-number-999-detail.jpg?content-type=image%2Fjpeg",
     "angelNumber1111Lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e35970c6-0dc6-4f96-bd55-234d05adfa86/angel-number-1111-lifestyle.jpg?content-type=image%2Fjpeg",
     "angelNumber1111Flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bef13fda-5e74-4430-9e01-b0a8e19a167a/angel-number-1111-flat.jpg?content-type=image%2Fjpeg",
-    "angelNumber1111Detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1578588-73e1-4880-97aa-15f0fea1414c/angel-number-1111-detail.jpg?content-type=image%2Fjpeg"
+    "angelNumber1111Detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1578588-73e1-4880-97aa-15f0fea1414c/angel-number-1111-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkCowLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d2a1b08a-5c92-4012-a92d-acda12743cf5/farm-folk-cow-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkCowFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18eb5fc2-436e-4cac-9a68-11b0acebbd8c/farm-folk-cow-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkCowDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7644b748-8ef2-42e5-babf-0262e353c3d9/farm-folk-cow-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkGoatLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d5903897-d5bf-481c-847f-d76fb3e68135/farm-folk-goat-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkGoatFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6988de5f-7e77-450e-b94c-c3f9ce40b595/farm-folk-goat-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkGoatDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e98997eb-449c-49f0-b54f-8dc01b2ef5bf/farm-folk-goat-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkChickenLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1d385192-a6af-47de-81a8-847401ed4b58/farm-folk-chicken-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkChickenFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56993690-1bd6-4f65-b7a7-da3b043b0940/farm-folk-chicken-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkChickenDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c99171ee-c35f-442c-814c-b72dc5103417/farm-folk-chicken-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkPigLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c79c75a9-7e7a-4f1c-8826-09d2f537899a/farm-folk-pig-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkPigFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c183973-6a5b-440b-ba14-1b3c398f41e1/farm-folk-pig-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkPigDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ed9da0a-e968-4155-91b0-4a94f9dd6fe1/farm-folk-pig-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkSheepLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/55a62899-8f1d-41ce-8ae4-cb670a46c38d/farm-folk-sheep-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkSheepFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3c857f30-9207-457b-9b01-c32ee2cdaac0/farm-folk-sheep-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkSheepDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/799092b9-6a58-482e-a209-c7748329d01f/farm-folk-sheep-detail.jpg?content-type=image%2Fjpeg",
+    "farmFolkDonkeyLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b2a7fc76-e6c7-46dd-bf94-d8b286bde1c3/farm-folk-donkey-lifestyle.jpg?content-type=image%2Fjpeg",
+    "farmFolkDonkeyFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0b304337-6b4a-42a1-961e-412153e55dcb/farm-folk-donkey-flat.jpg?content-type=image%2Fjpeg",
+    "farmFolkDonkeyDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a0943668-77cd-4d2f-85d2-e85e02245a85/farm-folk-donkey-detail.jpg?content-type=image%2Fjpeg"
   },
   "navigation": [
     {
@@ -1280,6 +1298,187 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
             "Awakening and awareness",
             "Setting powerful intentions",
             "Those stepping into their power"
+          ],
+          "comingLabel": "On its way"
+        }
+      ]
+    },
+    "farm-folk": {
+      "slug": "farm-folk",
+      "path": "/collections/farm-folk",
+      "world": "To Keep",
+      "title": "Farm Folk",
+      "titleHtml": "Farm <em>Folk</em>",
+      "description": "A gentle collection of symbolic farm animal art prints for steadiness, self-reliance, care, contentment, community, and quiet determination.",
+      "gridEyebrow": "Farm Folk — 6 symbolic prints",
+      "breadcrumbs": [
+        {
+          "label": "The Collections",
+          "url": "/collections"
+        },
+        {
+          "label": "To Keep",
+          "url": "/collections#to-keep"
+        },
+        {
+          "label": "Farm Folk"
+        }
+      ],
+      "products": [
+        {
+          "slug": "farm-folk-cow",
+          "title": "Cow",
+          "status": "available",
+          "images": {
+            "lifestyle": "farmFolkCowLifestyle",
+            "flat": "farmFolkCowFlat",
+            "detail": "farmFolkCowDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Cow folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Cow folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Cow folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "C",
+          "alt": "Cow folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Watchful, calm, and firmly rooted. A print for those who find their strength in stillness and their comfort in steady, quiet things.",
+          "giftFor": [
+            "Gentle souls",
+            "Finding comfort",
+            "Slow and steady living"
+          ],
+          "etsyUrl": "#",
+          "etsyLabel": "Get this print on Etsy"
+        },
+        {
+          "slug": "farm-folk-goat",
+          "title": "Goat",
+          "status": "coming",
+          "images": {
+            "lifestyle": "farmFolkGoatLifestyle",
+            "flat": "farmFolkGoatFlat",
+            "detail": "farmFolkGoatDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Goat folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Goat folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Goat folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "G",
+          "alt": "Goat folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Determined and free-spirited, embodying self-reliance, courage, and inner purpose. A print for those who find their own way — and trust it.",
+          "giftFor": [
+            "Problem solvers",
+            "Determined spirits",
+            "Those who find their own path"
+          ],
+          "comingLabel": "On its way"
+        },
+        {
+          "slug": "farm-folk-chicken",
+          "title": "Chicken",
+          "status": "coming",
+          "images": {
+            "lifestyle": "farmFolkChickenLifestyle",
+            "flat": "farmFolkChickenFlat",
+            "detail": "farmFolkChickenDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Chicken folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Chicken folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Chicken folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "C",
+          "alt": "Chicken folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Watchful and nurturing, a symbol of protection, abundance, and new beginnings. A print for those who care deeply and create warmth wherever they go.",
+          "giftFor": [
+            "Hard workers",
+            "Everyday purpose",
+            "Those who show up"
+          ],
+          "comingLabel": "On its way"
+        },
+        {
+          "slug": "farm-folk-pig",
+          "title": "Pig",
+          "status": "coming",
+          "images": {
+            "lifestyle": "farmFolkPigLifestyle",
+            "flat": "farmFolkPigFlat",
+            "detail": "farmFolkPigDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Pig folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Pig folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Pig folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "P",
+          "alt": "Pig folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Grounded and content, embodying self-care, gratitude, and balance in the everyday. A print for those who know that a good life is built in small, nourishing moments.",
+          "giftFor": [
+            "Quiet confidence",
+            "Self-knowing spirits",
+            "Those who live well"
+          ],
+          "comingLabel": "On its way"
+        },
+        {
+          "slug": "farm-folk-sheep",
+          "title": "Sheep",
+          "status": "coming",
+          "images": {
+            "lifestyle": "farmFolkSheepLifestyle",
+            "flat": "farmFolkSheepFlat",
+            "detail": "farmFolkSheepDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Sheep folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Sheep folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Sheep folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "S",
+          "alt": "Sheep folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Gentle and compassionate, embodying peace, care, and harmonious living. A print for those who bring calm to the spaces and people around them.",
+          "giftFor": [
+            "Community and belonging",
+            "Gentle courage",
+            "Those who are better together"
+          ],
+          "comingLabel": "On its way"
+        },
+        {
+          "slug": "farm-folk-donkey",
+          "title": "Donkey",
+          "status": "coming",
+          "images": {
+            "lifestyle": "farmFolkDonkeyLifestyle",
+            "flat": "farmFolkDonkeyFlat",
+            "detail": "farmFolkDonkeyDetail"
+          },
+          "imageAlts": {
+            "lifestyle": "Donkey folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Donkey folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Donkey folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          },
+          "placeholder": "D",
+          "alt": "Donkey folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+          "format": "Art print",
+          "sizes": "11\" × 14\" · 16\" × 20\"",
+          "meaning": "Gentle, grounded, and true to itself. A print for those who know that real strength comes from the heart, not the noise.",
+          "giftFor": [
+            "Patient perseverance",
+            "Quiet determination",
+            "Those who keep going"
           ],
           "comingLabel": "On its way"
         }
