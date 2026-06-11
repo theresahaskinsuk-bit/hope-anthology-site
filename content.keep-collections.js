@@ -264,7 +264,8 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           giftFor: [],
           comingLabel: 'On its way'
         }
-      ],
+      ]
+    },
     'meaning-alphabet': {
       slug: "meaning-alphabet",
       path: "/collections/meaning-alphabet",
@@ -836,7 +837,6 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
                   comingLabel: "On its way"
         }
       ]
-    }
     }
   }
 };
