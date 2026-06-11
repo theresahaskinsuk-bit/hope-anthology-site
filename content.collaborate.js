@@ -1,9 +1,9 @@
 window.HA_COLLABORATE_CONTENT = {
   images: {
-    logo: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc1430d50ccdfb3b30/1781017036989/01-the-hope-anthology.jpg',
-    star: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc641e0d7b8f8252ea/1781017036917/04-the-hope-anthology-botanical-star.png',
-    cggStudio: 'https://static1.squarespace.com/static/6a258894c750534b28845855/t/6a2829cc99c4ec08aeb40661/1781017037564/02-creative-glass-guild-studio-students-working-on-stained-glass-projects.jpg',
-    cggLogo: 'creative-glass-guild-logo.webp'
+    logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg',
+    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng',
+    cggStudio: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc4182c0-cb7d-46ba-8ab1-e314ac33c320/02-creative-glass-guild-studio-students-working-on-stained-glass-projects.jpg?content-type=image%2Fjpeg',
+    cggLogo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8c5b5ba1-5625-4a27-8681-1ab82945a3bc/03-creative-glass-guild-logo.webp?content-type=image%2Fwebp'
   },
   navigation: [
     { label: 'The Collections', url: '/collections' },
