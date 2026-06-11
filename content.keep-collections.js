@@ -180,6 +180,24 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
     "buttonLabel": "Join the Collective",
     "buttonUrl": "/collective"
   },
+    "everydayAnchorsCalmLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69444f62-dd68-4981-9903-b140cb0b2419/everyday-anchors-calm-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsCalmFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/14c1fc78-10d7-4237-b987-475fe5c16caa/everyday-anchors-calm-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsCalmDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/27f28592-69d0-43f1-994f-cef1d1e7cf69/everyday-anchors-calm-detail.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHaltLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e952c7b3-0489-4ed3-bff8-cc16b2857029/everyday-anchors-halt-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHaltFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5af49f9b-d303-4ccb-b128-2e46f531bb47/everyday-anchors-halt-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHaltDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1bf10d8c-0933-45ca-9622-8231f0d91441/everyday-anchors-halt-detail.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHopeLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/80f67d92-451a-451a-bfe4-dd24b37b5052/everyday-anchors-hope-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHopeFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b944f1be-c1b4-4fb5-94bc-889e76424d70/everyday-anchors-hope-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsHopeDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/923da728-6957-40a7-af80-50c3231ad951/everyday-anchors-hope-detail.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRiseLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5da953f-82e2-4c74-8a64-2eb039dd8d66/everyday-anchors-rise-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRiseFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6994c19-7e81-44b4-9446-600c32d0ef0c/everyday-anchors-rise-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRiseDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/da286b3e-8abb-405f-bfb4-4c9bcf5a3323/everyday-anchors-rise-detail.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRootLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c28bfb3-fc6c-4964-adc6-ea2d09fca07f/everyday-anchors-root-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRootFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3e822dfb-da08-4146-904c-62d6399c5317/everyday-anchors-root-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsRootDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/70c25f18-476c-4950-86cc-a0adcca36060/everyday-anchors-root-detail.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsSoarLifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e3c75ebe-b01f-4cfb-be7c-09a0491553d1/everyday-anchors-soar-lifestyle.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsSoarFlat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ece2c76a-d04d-4c3a-b6f4-da01328529e7/everyday-anchors-soar-flat.jpg?content-type=image%2Fjpeg",
+    "everydayAnchorsSoarDetail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/287609f2-d7a0-4732-85f4-06ef294aeb85/everyday-anchors-soar-detail.jpg?content-type=image%2Fjpeg",
   "collections": {
     "woodland-folk": {
       "slug": "woodland-folk",
@@ -1482,7 +1500,188 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           ],
           "comingLabel": "On its way"
         }
-      ]
+      ],
+    "everyday-anchors": {
+          "slug": "everyday-anchors",
+          "path": "/collections/everyday-anchors",
+          "world": "To Keep",
+          "title": "Everyday Anchors",
+          "titleHtml": "Everyday <em>Anchors</em>",
+          "description": "A grounding collection of symbolic word-based art prints for calm, reflection, resilience, and everyday emotional check-ins.",
+          "gridEyebrow": "Everyday Anchors — 6 symbolic prints",
+          "breadcrumbs": [
+                {
+                      "label": "The Collections",
+                      "url": "/collections"
+                },
+                {
+                      "label": "To Keep",
+                      "url": "/collections#to-keep"
+                },
+                {
+                      "label": "Everyday Anchors"
+                }
+          ],
+          "products": [
+                {
+                      "slug": "everyday-anchors-calm",
+                      "title": "CALM",
+                      "status": "coming",
+                      "images": {
+                            "lifestyle": "everydayAnchorsCalmLifestyle",
+                            "flat": "everydayAnchorsCalmFlat",
+                            "detail": "everydayAnchorsCalmDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "CALM fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "CALM fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of CALM fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "C",
+                      "alt": "CALM fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Centered, Accepting, Loving, Mindful — A print for the moments when you need to slow down and come back to yourself.",
+                      "giftFor": [
+                            "Finding stillness",
+                            "Mindful living",
+                            "Centered, Accepting, Loving, Mindful"
+                      ],
+                      "comingLabel": "On its way"
+                },
+                {
+                      "slug": "everyday-anchors-halt",
+                      "title": "HALT",
+                      "status": "coming",
+                      "images": {
+                            "lifestyle": "everydayAnchorsHaltLifestyle",
+                            "flat": "everydayAnchorsHaltFlat",
+                            "detail": "everydayAnchorsHaltDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "HALT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "HALT fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of HALT fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "H",
+                      "alt": "HALT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Hungry, Angry, Lonely, Tired — Check in before you react. A print that reminds you why that matters.",
+                      "giftFor": [
+                            "Self-awareness",
+                            "Checking in",
+                            "Hungry, Angry, Lonely, Tired"
+                      ],
+                      "comingLabel": "On its way"
+                },
+                {
+                      "slug": "everyday-anchors-hope",
+                      "title": "HOPE",
+                      "status": "coming",
+                      "images": {
+                            "lifestyle": "everydayAnchorsHopeLifestyle",
+                            "flat": "everydayAnchorsHopeFlat",
+                            "detail": "everydayAnchorsHopeDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "HOPE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "HOPE fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of HOPE fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "H",
+                      "alt": "HOPE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Honest, Open, Patient, Evolving — For the ones who keep going. A print that means it.",
+                      "giftFor": [
+                            "Keeping the faith",
+                            "Quiet optimism",
+                            "Honest, Open, Patient, Evolving"
+                      ],
+                      "comingLabel": "On its way"
+                },
+                {
+                      "slug": "everyday-anchors-rise",
+                      "title": "RISE",
+                      "status": "coming",
+                      "images": {
+                            "lifestyle": "everydayAnchorsRiseLifestyle",
+                            "flat": "everydayAnchorsRiseFlat",
+                            "detail": "everydayAnchorsRiseDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "RISE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "RISE fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of RISE fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "R",
+                      "alt": "RISE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Rested, Intentional, Self-aware, Empowered — A print for anyone building something better, starting with themselves.",
+                      "giftFor": [
+                            "Personal growth",
+                            "Empowered living",
+                            "Rested, Intentional, Self-aware, Empowered"
+                      ],
+                      "comingLabel": "On its way"
+                },
+                {
+                      "slug": "everyday-anchors-root",
+                      "title": "ROOT",
+                      "status": "coming",
+                      "images": {
+                            "lifestyle": "everydayAnchorsRootLifestyle",
+                            "flat": "everydayAnchorsRootFlat",
+                            "detail": "everydayAnchorsRootDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "ROOT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "ROOT fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of ROOT fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "R",
+                      "alt": "ROOT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Reaching out, Owning choices, On track, Thankful — A print for staying grounded when life pulls in every direction.",
+                      "giftFor": [
+                            "Staying grounded",
+                            "Gratitude and connection",
+                            "Reaching out, Owning choices, On track, Thankful"
+                      ],
+                      "comingLabel": "On its way"
+                },
+                {
+                      "slug": "everyday-anchors-soar",
+                      "title": "SOAR",
+                      "status": "available",
+                      "images": {
+                            "lifestyle": "everydayAnchorsSoarLifestyle",
+                            "flat": "everydayAnchorsSoarFlat",
+                            "detail": "everydayAnchorsSoarDetail"
+                      },
+                      "imageAlts": {
+                            "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                            "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+                      },
+                      "placeholder": "S",
+                      "alt": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+                      "format": "Art print",
+                      "sizes": "11\" × 14\" · 16\" × 20\"",
+                      "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
+                      "giftFor": [
+                            "Bold next steps",
+                            "Resilient spirits",
+                            "Steady, Open, Aware, Resilient"
+                      ],
+                      "etsyUrl": "#",
+                      "etsyLabel": "Get this print on Etsy"
+                }
+          ]
+    }
     }
   }
 };
