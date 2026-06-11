@@ -15,6 +15,7 @@
     if(p==='/' || p==='') return {key:'home', root:'ha-home-v3', contentId:'ha-home-v3-content', content:'content.home.js', renderer:'ha-home.js'};
     if(p==='/collections') return {key:'collections', root:'ha-collections-v1', contentId:'ha-collections-content', content:'content.collections.js', renderer:'ha-collections.js'};
     if(p==='/collections/woodland-folk' || p==='/woodland-folk') return {key:'woodland', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
+    if(p==='/collections/meaning-alphabet' || p==='/meaning-alphabet') return {key:'meaning-alphabet', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
     if(p==='/collections/stained-glass-patterns' || p==='/collections/stained-glass' || p==='/stained-glass-patterns') return {key:'stained-glass', root:'ha-make-template-v1', contentId:'ha-make-template-content', content:'content.make-template.js', renderer:'ha-make-template.js'};
     if(p==='/story' || p==='/the-story') return {key:'story', root:'ha-story-root', contentId:'ha-story-content', content:'content.story.js', renderer:'ha-story.js'};
     if(p==='/collaborate' || p==='/collaborations') return {key:'collaborate', root:'ha-collaborate-v1', contentId:'ha-collaborate-content', content:'content.collaborate.js', renderer:'ha-collaborate.js'};
