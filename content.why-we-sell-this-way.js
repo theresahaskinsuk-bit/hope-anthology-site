@@ -19,37 +19,38 @@ window.HA_WHY_CONTENT = {
 
   page: {
     eyebrow: 'How orders work',
-    title: 'Why we sell this way',
+    title: 'Why I Set Up The Buying Journey This Way',
     lastUpdated: 'Last updated: June 2026'
   },
 
   sections: [
     {
-      heading: 'A slower, clearer way to buy',
+      heading: 'A friend asked me a simple question.',
       paragraphs: [
-        'This page is placeholder text for the final explanation of how The Hope Anthology sells patterns, digital files, printed pieces, or other items. Replace this paragraph with the finished copy in Theresa’s preferred wording.',
-        'Use this section to explain why the current buying process is intentionally simple, low-pressure, and personal.'
+        '"How would I find you?"'
+        'I said, oh, just search for such and such on Etsy. And then it hit me. What I make and what someone would type into a search bar are completely different things. You don't search for art that makes you feel something. You stumble into it. You see it and you know.',
+        'That moment changed everything.'
       ]
     },
     {
-      heading: 'No checkout for now',
+      heading: 'I have two very different sides to my brain.',
       paragraphs: [
-        'This placeholder section can explain that the site may not use a conventional online checkout at this stage. Replace this copy with the final practical details Theresa wants visitors to understand.',
-        'If orders are handled by email, message, invoice, or another manual process, this is the place to describe that clearly.'
+        'One is a geek. Analytical, strategic, problem-solving, genuinely enjoys a battle with an algorithm. The other sees a hundred greens in one bush, the different shapes and patterns in animals and nature, and how they could be turned into something completely new.',
+        'I know I'm very lucky to have that geeky brain. I'm also very aware that many, many people don't — and the stress of trying to keep your work afloat, on top of actually making it, can be unbearable. What I have is a gift — but without it, I know how heavy the work of getting your art seen outside a physical space can be. It's often gruelling, and unlikely to spark joy in people who would far rather be spending their time using their craft and their skills.'
       ]
     },
     {
-      heading: 'Payment and order details',
+      heading: 'The Hope Anthology is not a traditional online shop. Here's why.',
       paragraphs: [
-        'This placeholder text should be replaced with the final wording about how payment is requested, what details are collected, and how those details are handled.',
-        'Keep the tone plain, calm, and direct so visitors know exactly what will happen before they get in touch or place an order.'
+        'I've spent decades working in ecommerce. Sleepless nights with payment gateways, always making sure people's data was properly protected. It was a weight I carried for a long time. Even as much as I enjoyed the challenge, it was time to move on from that world entirely.',
+        'Most online marketplaces handle fulfilment, payments, and customer service brilliantly — and for those not on the high street, they do an extraordinary job. What The Hope Anthology does is curate from a much more personal level.'
       ]
     },
     {
-      heading: 'Questions before you buy',
+      heading: 'Curation Means Something.',
       paragraphs: [
-        'This placeholder section can reassure visitors that questions are welcome before they decide to buy. Replace it with Theresa’s final customer-facing wording.',
-        'The aim is to make the process feel transparent rather than automated, especially while The Hope Anthology grows.'
+        'That's whay this is an anthology and not just a shop. As well every artist and creative knows, work can so easily be copied and resold on the very same marketplace where the original was listed — which means fighting against yourself.',
+        'There is no self-serve form here, no spin-it-up-in-an-hour onboarding. Every artist on The Hope Anthology is seen as a person, talked to, known.'
       ]
     }
   ],
