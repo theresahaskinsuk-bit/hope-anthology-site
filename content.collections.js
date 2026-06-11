@@ -109,7 +109,7 @@ window.HA_COLLECTIONS_CONTENT = {
       imageKey: 'stainedGlass',
       alt: 'Hope Anthology stained glass bee pattern — pattern sheets on workbench and finished bee suncatcher in a window with flowers',
       linkLabel: 'Enter this collection →',
-      linkUrl: '/collections/stained-glass'
+      linkUrl: '/collections/stained-glass-patterns'
     },
     coming: [
       { title: 'Felt & embroidery', body: 'The Woodland Folk animals in felt. Small enough to make in an evening.', tag: 'in development' },
