@@ -5,15 +5,15 @@
 */
 window.HA_HOME_CONTENT = {
   images: {
-    logo: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/qCxBNIjwUhdazFfG.jpg',
-    star: 'https://theresahaskinsuk-bit.github.io/hope-anthology-site/assets/hope-anthology-footer-star-transparent.png',
-    hero: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/HGkesneQnMGpdSSC.jpg',
-    keep: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/IJCQxZYmcSwNTWvS.jpg',
-    make: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/hBVZHGIOxZpRsXVe.jpg',
-    why: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/rPGNseNwiBqKhbVZ.jpg',
-    woodland: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/YuJYtKipiqoszDua.jpg',
-    alphabet: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/HeOgrQASgDmnRJqf.jpg',
-    glass: 'https://files.manuscdn.com/user_upload_by_module/session_file/310519663685783666/WIsTuKbrFNrEbKcI.jpg'
+    logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e789bc30-2f5c-4037-8190-a9355d3a8d20/home-logo-hope-anthology.jpg?content-type=image%2Fjpeg',
+    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1852dfa4-ea60-4e93-83b5-ac8ea2f0498d/home-footer-star-hope-anthology.png?content-type=image%2Fpng',
+    hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ac43f8a-1dbb-47cd-a379-492308c77625/home-hero-hope-anthology-art-and-making.jpg?content-type=image%2Fjpeg',
+    keep: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18cea152-1a12-4535-8cef-3099aab45bd5/home-panel-to-keep-symbolic-art.jpg?content-type=image%2Fjpeg',
+    make: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/87b77105-e104-46b9-9a52-6ce6020a42db/home-panel-to-make-stained-glass-patterns.jpg?content-type=image%2Fjpeg',
+    why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a17dae6b-9d9f-4d2c-8d0b-9575d564d1d3/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg',
+    woodland: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cf4d1bc3-53df-4e5e-89db-b7f81fe4780c/home-card-woodland-folk-collection.jpg?content-type=image%2Fjpeg',
+    alphabet: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e2a2c195-ccee-4a99-a325-6c4637e5be17/home-card-meaning-alphabet-collection.jpg?content-type=image%2Fjpeg',
+    glass: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d6c1011-8dfc-46d3-a7c8-14b636cafb68/home-card-stained-glass-patterns-collection.jpg?content-type=image%2Fjpeg'
   },
 
   navigation: [
