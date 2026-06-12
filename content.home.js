@@ -33,6 +33,16 @@ window.HA_HOME_CONTENT = {
     secondaryButtonUrl: '/story'
   },
 
+  intro: {
+    backgroundImageKey: 'hero',
+    primaryButtonLabel: 'Explore the Anthology →',
+    primaryButtonUrl: '/collections',
+    secondaryButtonLabel: 'Read the story →',
+    secondaryButtonUrl: '/story',
+    bodyHtml: 'The Hope Anthology brings together material suppliers, designers, hobbyists, independent makers, artists — all rooted in the belief that when different crafts <em>come together</em>, something <em>greater is made.</em> A curated collection by many hands.<br>William Morris believed that too — and much like here, he held that the things we make and live with should <em>carry meaning</em>, and that the people who make them should <em>be valued.</em>',
+    kicker: 'Two worlds. One anthology.'
+  },
+
   worlds: {
     kicker: 'Two worlds. One anthology.',
     heading: "What's here for you",

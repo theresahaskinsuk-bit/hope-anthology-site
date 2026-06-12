@@ -61,6 +61,29 @@
     if(hasUrl(url)) return '<a class="'+className+' ha-v3-image-link" href="'+esc(url)+'" aria-label="'+esc(label || 'Open section')+'">'+imgHtml+'</a>';
     return '<div class="'+className+'">'+imgHtml+'</div>';
   }
+  function renderIntro(C,intro){
+    intro = intro || {};
+    if(!intro.bodyHtml && !intro.kicker) return '';
+    var bgKey = intro.backgroundImageKey || 'hero';
+    var primaryLabel = intro.primaryButtonLabel || (C.hero && C.hero.primaryButtonLabel) || 'Explore the Anthology';
+    var primaryUrl = intro.primaryButtonUrl || (C.hero && C.hero.primaryButtonUrl) || '/collections';
+    var secondaryLabel = intro.secondaryButtonLabel || (C.hero && C.hero.secondaryButtonLabel) || 'Read the story';
+    var secondaryUrl = intro.secondaryButtonUrl || (C.hero && C.hero.secondaryButtonUrl) || '/story';
+    return ''+
+      '<section class="ha-v3-intro" aria-label="The Hope Anthology introduction">'+
+        '<div class="ha-v3-intro-visual">'+
+          '<img class="ha-v3-intro-img" src="'+image(C,bgKey)+'" alt="">'+
+          '<div class="ha-v3-intro-shade" aria-hidden="true"></div>'+
+          '<div class="ha-v3-intro-actions">'+
+            '<a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(primaryUrl)+'">'+ctaLabel(primaryLabel)+'</a>'+
+            '<a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(secondaryUrl)+'">'+ctaLabel(secondaryLabel)+'</a>'+
+          '</div>'+
+        '</div>'+
+        '<div class="ha-v3-intro-copy"><p>'+safeHtml(intro.bodyHtml)+'</p></div>'+
+        '<div class="ha-v3-intro-kicker"><p>'+esc(intro.kicker)+'</p></div>'+
+      '</section>';
+  }
+
   function newsletterForm(collective){
     var action = collective.formAction || '/collective';
     var method = (collective.formMethod || 'get').toLowerCase();
@@ -80,13 +103,15 @@
     var worlds=C.worlds || {panels:[]};
     var collections=C.collections || {cards:[]};
     var hero=C.hero || {};
+    var intro=C.intro || {};
     var collective=C.collective || {};
     var footer=C.footer || {};
     return ''+
       '<div id="ha-home-v3">'+
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — Symbolic art and meaningful making</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-v3-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-v3-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
         '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Hope Anthology artwork, making materials and symbolic pieces"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><p class="ha-v3-hero-body">'+esc(hero.body)+'</p><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.primaryButtonUrl)+'">'+ctaLabel(hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div></div></section>'+
-        '<section class="ha-v3-two"><div class="ha-v3-section-head"><p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p><h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
+        renderIntro(C,intro)+
+        '<section class="ha-v3-two"><div class="ha-v3-section-head">'+(intro.kicker ? '' : '<p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p>')+'<h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+ctaLabel(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){var img='<img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',card.linkUrl,img,card.title)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-collective"><div><p class="ha-v3-kicker">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.instagramUrl || 'https://www.instagram.com')+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a><a href="'+esc(footer.sellingUrl || footer.whySellUrl || '/why-we-sell-this-way')+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
