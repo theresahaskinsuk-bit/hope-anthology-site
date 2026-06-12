@@ -6,8 +6,8 @@
 */
 window.HA_WHY_CONTENT = {
   images: {
-    logo: `https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg`,
-    star: `https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng`,
+    logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e789bc30-2f5c-4037-8190-a9355d3a8d20/home-logo-hope-anthology.jpg?content-type=image%2Fjpeg',
+    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1852dfa4-ea60-4e93-83b5-ac8ea2f0498d/home-footer-star-hope-anthology.png?content-type=image%2Fpng',
   },
 
   navigation: [
