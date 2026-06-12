@@ -1486,3 +1486,56 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
   }
 }
 
+
+/* Homepage correction — 2026-06-12: remove duplicate under-hero image/buttons, soften intro copy on mobile, and tighten the Two worlds heading spacing. */
+#ha-home-v3 .ha-v3-intro-visual{
+  display:none!important;
+}
+
+#ha-home-v3 .ha-v3-intro-copy{
+  padding:22px 34px 24px!important;
+}
+
+#ha-home-v3 .ha-v3-section-head{
+  padding:36px 48px 0!important;
+}
+
+#ha-home-v3 .ha-v3-section-head .ha-v3-h2,
+#ha-home-v3 .ha-v3-h2{
+  margin-bottom:30px!important;
+}
+
+#ha-home-v3 .ha-v3-section-head .ha-v3-kicker{
+  margin-bottom:8px!important;
+}
+
+@media (max-width:900px){
+  #ha-home-v3 .ha-v3-intro-copy{
+    padding:20px 22px 22px!important;
+  }
+  #ha-home-v3 .ha-v3-intro-copy p{
+    font-size:15px!important;
+    line-height:1.55!important;
+    max-width:34em!important;
+  }
+  #ha-home-v3 .ha-v3-intro-kicker{
+    padding:16px 20px 20px!important;
+  }
+  #ha-home-v3 .ha-v3-section-head{
+    padding:30px 24px 0!important;
+  }
+  #ha-home-v3 .ha-v3-section-head .ha-v3-h2,
+  #ha-home-v3 .ha-v3-h2{
+    margin-bottom:26px!important;
+  }
+}
+
+@media (max-width:560px){
+  #ha-home-v3 .ha-v3-intro-copy p{
+    font-size:14.5px!important;
+    line-height:1.55!important;
+  }
+  #ha-home-v3 .ha-v3-section-head{
+    padding-top:26px!important;
+  }
+}
