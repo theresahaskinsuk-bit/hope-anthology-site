@@ -78,7 +78,7 @@ window.HA_STORY_CONTENT = {
       "theme": "dark",
       "imageSide": "right",
       "open": true,
-      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/843c0456-8db7-4f1f-b422-a0e64c24e4a7/story-the-decade.jpg?content-type=image%2Fjpeg",
+      "image": "...images.squarespace-cdn.com/content/6a258894c750534b28845855/8f80970a-be62-45cb-9321-d25068d0d4bf/story-the-decade.jpg?content-type=image%2Fjpeg",
       "alt": "A family together — the life that happened during the decade that shaped The Hope Anthology",
       "eyebrow": "The Decade",
       "titleHtml": "And then <em>life happened.</em>",
