@@ -72,6 +72,7 @@ window.HA_STORY_CONTENT = {
       "quote": "\"Yeah, but is this actually you though?\"",
       "bodyHtml": "<p>I spent a good thirty years trying to ignore it. Building a proper career. Looking every bit the grown-up on the outside — ticking boxes, partying as hard as I was working, but holding it all together with a smile, a glass of wine and a spreadsheet. And I was genuinely good at it. But underneath, slowly, I was chipping away at myself trying to fit a shape that was never quite mine.</p><p>There was always this persistent, slightly annoying voice going <em>yeah, but is this actually you though?</em></p><p>Reader, it was not entirely me.</p><p>So here we are.</p>"
     },
+
     {
       "id": "s2",
       "number": "02",
@@ -84,8 +85,9 @@ window.HA_STORY_CONTENT = {
       "titleHtml": "And then <em>life happened.</em>",
       "intro": "Rather a lot of it, at what felt like all at once — but was actually over a decade. A story a lot of people will recognise — in whole or in part.",
       "quote": "\"It was time to actually find myself again.\"",
-      "body": "A marriage that ended. Betrayals that reshaped what trust meant. Money worries that had no clean solution. Finding my soulmate when I really didn't want one — and then being very glad I did. Fertility treatment that tested every version of strength I had — and then gave me the thing I hadn't dared to fully hope for. My son. My first baby, at forty-two, in the middle of a global pandemic with the world locked down and no one allowed in. So wanted. So loved. So completely worth everything it took to get to him. And yet — even with all of that love — motherhood did not come naturally to me. (I had spreadsheets to track feeding times and nappy changes. That's how much I was not a natural mother.) So I stopped. Not dramatically. Just — I stopped. For him. For me. And then came a diagnosis — ADHD — that reframed about forty years of \"why am I like this\" into something that finally, finally made sense. Not poor me. Genuinely — not poor me. Every single one of those things shaped something. It was time to actually find myself again."
+      "body": "A marriage that ended. Betrayals that reshaped what trust meant. Money worries that had no clean solution. Finding my soulmate when I really didn't want one — and then being very glad I did. Fertility treatment that tested every version of strength I had — and then gave me the thing I hadn't dared to fully hope for. My son. My first baby, at forty-two, in the middle of a global pandemic with the world locked down and no one allowed in. So wanted. So loved. So completely worth everything it took to get to him. And yet — even with all of that love — motherhood did not come naturally to me. (I had spreadsheets to track feeding times and nappy changes. That's how much I was not a natural mother.) And somewhere in that fog I realised that the glass of wine I'd been using to hold everything together wasn't holding anything together anymore. So I stopped. Not dramatically. Just — I stopped. For him. For me. And then came a diagnosis — ADHD — that reframed about forty years of \"why am I like this\" into something that finally, finally made sense. Not poor me. Genuinely — not poor me. Every single one of those things shaped something. It was time to actually find myself again."
     },
+
     {
       "id": "s3",
       "number": "03",
