@@ -1539,3 +1539,140 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     padding-top:26px!important;
   }
 }
+
+/* Make collection product-card alignment with Keep collection cards — 2026-06-12
+   Scope: stained-glass Make template only. Keeps the working Keep collection untouched. */
+#ha-make-template-v1 .ha-mv1-card-grid{
+  gap:16px;
+}
+#ha-make-template-v1 .ha-mv1-card-img-wrap{
+  aspect-ratio:3/2;
+  height:auto;
+  background:#fafbf6;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+#ha-make-template-v1 .ha-mv1-card-img-wrap img{
+  background:#fafbf6;
+}
+#ha-make-template-v1 .ha-mv1-img-swap{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(54,68,73,.16);
+}
+#ha-make-template-v1 .ha-mv1-swap-cell{
+  min-height:34px;
+  height:34px;
+  padding:6px 8px;
+  font-size:11px;
+  font-weight:500;
+  line-height:1.1;
+  color:var(--readable-muted);
+  background:rgba(54,68,73,.08);
+  white-space:nowrap;
+  box-shadow:none;
+}
+#ha-make-template-v1 .ha-mv1-swap-cell.active-make{
+  background:rgba(38,91,112,.12);
+  outline:1px solid var(--teal);
+  outline-offset:-1px;
+  box-shadow:none;
+  color:var(--teal);
+}
+#ha-make-template-v1 .ha-mv1-card-body{
+  padding:14px 16px 16px;
+}
+#ha-make-template-v1 .ha-mv1-card-collection{
+  font-size:11px;
+  font-weight:700;
+  color:var(--readable-muted);
+  letter-spacing:.06em;
+  margin:0 0 5px;
+}
+#ha-make-template-v1 .ha-mv1-card-title{
+  font-size:18px;
+  font-weight:700;
+  line-height:1.2;
+  margin:0 0 12px;
+  color:var(--dark);
+}
+#ha-make-template-v1 .ha-mv1-chips{
+  gap:7px;
+  margin:0 0 12px;
+}
+#ha-make-template-v1 .ha-mv1-chip-item{
+  border-radius:5px;
+  padding:7px 10px;
+  background:rgba(54,68,73,.06);
+  border:.5px solid rgba(54,68,73,.14);
+}
+#ha-make-template-v1 .ha-mv1-chip-lbl{
+  font-size:9px;
+  font-weight:700;
+  line-height:1.2;
+  letter-spacing:.06em;
+  color:var(--teal);
+}
+#ha-make-template-v1 .ha-mv1-chip-val{
+  font-size:13px;
+  font-weight:700;
+  color:var(--dark);
+}
+#ha-make-template-v1 .ha-mv1-card-detail{
+  padding:11px 0 3px;
+  margin:0 0 10px;
+  border-top:.5px solid rgba(54,68,73,.16);
+}
+#ha-make-template-v1 .ha-mv1-acc-text{
+  font-size:14px !important;
+  line-height:1.6;
+  color:var(--readable-muted);
+  margin:0 0 10px;
+}
+#ha-make-template-v1 .ha-mv1-gf-chips{
+  gap:7px;
+  margin:0 0 10px;
+}
+#ha-make-template-v1 .ha-mv1-gf-chip{
+  font-size:12px;
+  line-height:1.2;
+  color:var(--readable-muted);
+  background:rgba(54,68,73,.09);
+  padding:6px 10px;
+  border-radius:4px;
+  white-space:nowrap;
+}
+#ha-make-template-v1 .ha-mv1-btn-make,
+#ha-make-template-v1 .ha-mv1-btn-cgg,
+#ha-make-template-v1 .ha-mv1-btn-etsy-ghost,
+#ha-make-template-v1 .ha-mv1-disabled{
+  display:block;
+  width:100%;
+  padding:10px;
+  border-radius:4px;
+  text-align:center;
+  font-size:13px;
+  font-weight:700;
+  margin-top:8px;
+  font-family:'DM Sans',sans-serif;
+}
+@media(max-width:760px){
+  #ha-make-template-v1 .ha-mv1-card-img-wrap{
+    aspect-ratio:3/2;
+    height:auto;
+  }
+}
+@media(max-width:520px){
+  #ha-make-template-v1 .ha-mv1-card-img-wrap{
+    aspect-ratio:3/2;
+    height:auto;
+  }
+  #ha-make-template-v1 .ha-mv1-swap-cell{
+    font-size:11px;
+    min-height:34px;
+    height:34px;
+    padding:6px 6px;
+  }
+}
