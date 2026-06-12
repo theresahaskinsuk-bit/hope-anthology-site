@@ -61,7 +61,7 @@ window.HA_WHY_CONTENT = {
   contact: {
     heading: `Need to ask something first?`,
     paragraphs: [
-      `If anything is unclear, you are welcome to get in touch before ordering. This contact block is placeholder copy and should be replaced with the final wording.`
+      `If anything is unclear, you are welcome to get in touch.`
     ],
     emailLabel: `Email The Hope Anthology`,
     emailUrl: `mailto:hello@thehopeanthology.com`
