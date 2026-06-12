@@ -3,47 +3,269 @@
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
-  var HIDDEN_H1_STYLE = 'position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;';
+
+  function hasSharedStylesheet(){
+    if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || document.getElementById('ha-v3-css')) return true;
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for(var i=0;i<links.length;i++){
+      var href = links[i].href || '';
+      if(/hope-anthology-site/i.test(href) && /styles\.css/i.test(href)) return true;
+    }
+    return false;
+  }
 
   function loadCss(){
-    if(document.getElementById('ha-v3-css')) return;
-    var link=document.createElement('link'); link.id='ha-v3-css'; link.rel='stylesheet'; link.href=base+'styles.css?v='+encodeURIComponent(version); document.head.appendChild(link);
+    if(hasSharedStylesheet()) return;
+    var link=document.createElement('link');
+    link.id='ha-v3-css';
+    link.rel='stylesheet';
+    link.href=base+'styles.css?v='+encodeURIComponent(version);
+    document.head.appendChild(link);
   }
-  function loadContent(done){
-    if(window.HA_MAKE_TEMPLATE_CONTENT){done();return;}
-    var s=document.createElement('script'); s.id='ha-make-template-content'; s.src=base+'content.make-template.js?v='+encodeURIComponent(version); s.onload=done; s.onerror=done; document.head.appendChild(s);
-  }
-  function esc(v){return String(v==null?'':v).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});}
-  function safe(v){return String(v==null?'':v);}
-  function isAbs(v){return /^(https?:)?\/\//.test(String(v||'')) || /^data:/.test(String(v||'')) || /^\//.test(String(v||''));}
-  function asset(v){v=String(v==null?'':v); return !v?'':(isAbs(v)?v:base+v.replace(/^\.\//,''));}
-  var STAINED_GLASS_CDN_BASE='https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e72eeb24-efb1-43b5-960c-595687e29da2/'; var STAINED_GLASS_BAD_SINGLE_ASSET_BASE=STAINED_GLASS_CDN_BASE; var STAINED_GLASS_GITHUB_ASSET_BASE=base+'assets/stained-glass/';
-  function imageBase(C){var override=(window.HA_MAKE_ASSET_BASES&&window.HA_MAKE_ASSET_BASES.stainedGlass)||window.HA_MAKE_STAINED_GLASS_IMAGE_BASE; var b=override||(C&&C.imageBase)||''; var host=(window.location&&window.location.hostname)||''; var isGithub=/github\.io$/i.test(host); var isLocal=/^(localhost|127\.0\.0\.1)$/i.test(host)||host===''; var bad=String(b||'').replace(/\/?$/,'/')===STAINED_GLASS_BAD_SINGLE_ASSET_BASE; if(bad){b=STAINED_GLASS_GITHUB_ASSET_BASE;} if(!override && String(b)==='assets/make/stained-glass/' && !isGithub && !isLocal){b=STAINED_GLASS_GITHUB_ASSET_BASE;} return String(b||'').replace(/\/?$/,'/');} function imageUrl(C,key){var v=C.images&&C.images[key]; if(!v)return ''; v=String(v); if(isAbs(v)||v.indexOf('/')!==-1)return asset(v); var b=imageBase(C); return asset((b||'')+v);} function img(C,key){return esc(imageUrl(C,key));}
-  function hasUrl(v){return typeof v==='string' && v.trim() && v.trim() !== '#';}
-  function ext(v){return /^https?:\/\//.test(String(v||''));}
-  function attrs(url){return ext(url)?' target="_blank" rel="noopener"':'';}
-  function nav(items){return (items||[]).map(function(item){return '<a href="'+esc(item.url||'#')+'"'+(item.active?' class="active" aria-current="page"':'')+'>'+esc(item.label)+'</a>';}).join('');}
-  function breadcrumbs(items){return '<div class="ha-mv1-breadcrumb ha-kc-breadcrumb" aria-label="Breadcrumb">'+(items||[]).map(function(item,i){var sep=i?'<span class="ha-mv1-bc-sep ha-kc-sep">›</span>':''; var last=i===(items.length-1)||!item.url; return sep+(last?'<span class="ha-mv1-current ha-kc-current">'+esc(item.label)+'</span>':'<a href="'+esc(item.url)+'">'+esc(item.label)+'</a>');}).join('')+'</div>';}
-  function button(cls,label,url){return hasUrl(url)?'<a class="'+cls+'" href="'+esc(url)+'"'+attrs(url)+'>'+esc(label)+'</a>':'<span class="'+cls+' ha-mv1-disabled" aria-disabled="true">'+esc(label||'Coming soon')+'</span>';}
-  function filterButtons(C){return '<div class="ha-mv1-filter-bar" role="region" aria-label="Filter stained glass patterns"><span class="ha-mv1-filter-label">Filter</span>'+((C.filters||[]).map(function(f,i){return '<button class="ha-mv1-chip '+(i===0?'active':'')+'" type="button" data-filter="'+esc(f)+'">'+esc(f)+'</button>';}).join(''))+'<span class="ha-mv1-filter-count">'+esc((C.page&&C.page.totalPatterns)||61)+' patterns</span></div>';}
-  function card(C,p){var workbench=p.images&&p.images.workbench; var alts=p.imageAlts||{}; var initialAlt=alts.workbench||p.alt||p.title; var goodFor=(p.goodFor||[]).map(function(g){return '<span class="ha-mv1-gf-chip ha-kc-gf-chip">'+esc(g)+'</span>';}).join(''); var detail='<div class="ha-mv1-card-detail ha-kc-meaning"><div class="ha-mv1-acc-label">About</div><p class="ha-mv1-acc-text">'+esc(p.about||'')+'</p><div class="ha-mv1-acc-label">Good for</div><div class="ha-mv1-gf-chips ha-kc-gf-chips">'+goodFor+'</div></div>'; var category=p.category||p.collection||'Stained glass'; return '<article class="ha-mv1-card ha-kc-card ha-make-card" data-title="'+esc(p.title)+'" data-category="'+esc(p.category)+'" data-difficulty="'+esc(p.difficulty)+'" data-tags="'+esc((p.tags||[]).join('|'))+'"><div class="ha-mv1-card-img-wrap ha-kc-card-img-wrap"><div class="ha-mv1-card-pip ha-kc-pip">To Make</div><div class="ha-mv1-card-badge ha-kc-badge ha-kc-badge-available">Available now</div><img src="'+img(C,workbench)+'" alt="'+esc(initialAlt)+'" data-alt-base="'+esc(p.alt||p.title)+'" data-ha-product-image="true" data-ha-image-type="lifestyle" loading="lazy" decoding="async"></div><div class="ha-mv1-img-swap ha-kc-swap" role="group" aria-label="Image view for '+esc(p.title)+'"><button class="ha-mv1-swap-cell active-make is-active" type="button" data-view="workbench" data-ha-image-type="lifestyle" data-img="'+esc(p.images&&p.images.workbench||'')+'" data-alt="'+esc(alts.workbench||p.alt||p.title)+'">Lifestyle</button><button class="ha-mv1-swap-cell" type="button" data-view="lifestyle" data-ha-image-type="flat" data-img="'+esc(p.images&&p.images.lifestyle||'')+'" data-alt="'+esc(alts.lifestyle||((p.alt||p.title)+' — Flat'))+'">Flat</button><button class="ha-mv1-swap-cell" type="button" data-view="inside" data-ha-image-type="detail" data-img="'+esc(p.images&&p.images.inside||'')+'" data-alt="'+esc(alts.inside||((p.alt||p.title)+' — Detail'))+'">Detail</button></div><div class="ha-mv1-card-body ha-kc-card-body"><div class="ha-mv1-card-collection ha-kc-card-collection">'+esc(p.collection||'Stained glass')+'</div><h2 class="ha-mv1-card-title ha-kc-title-proxy" role="heading" aria-level="3">'+esc(p.title)+'</h2><div class="ha-mv1-chips ha-kc-chips"><div class="ha-mv1-chip-item ha-kc-chip-proxy"><div class="ha-mv1-chip-lbl">Format</div><div class="ha-mv1-chip-val">'+esc(p.format||'PDF pattern')+'</div></div><div class="ha-mv1-chip-item ha-kc-chip-proxy"><div class="ha-mv1-chip-lbl">Size</div><div class="ha-mv1-chip-val">'+esc(p.size||p.download||'Digital download')+'</div></div><div class="ha-mv1-chip-item ha-kc-chip-proxy"><div class="ha-mv1-chip-lbl">Collection</div><div class="ha-mv1-chip-val">'+esc(category)+'</div></div></div>'+detail+(p.collab?'<p class="ha-mv1-collab-note"><strong>Buy direct from Creative Glass Guild</strong> — temporary test link for the two-button product-card layout.</p>':'')+button((p.collab?'ha-mv1-btn-cgg':'ha-mv1-btn-make')+' ha-kc-btn ha-kc-btn-keep',p.primaryLabel,p.primaryUrl)+(p.secondaryLabel?button('ha-mv1-btn-etsy-ghost ha-kc-btn ha-kc-btn-collective',p.secondaryLabel,p.secondaryUrl):'')+'</div></article>';}
-    function html(){var C=window.HA_MAKE_TEMPLATE_CONTENT||{}; var page=C.page||{}; var header=C.collectionHeader||{}; var footer=C.footer||{}; var collective=C.collective||{}; var bySlug={}; (C.patterns||[]).forEach(function(p){bySlug[p.slug]=p;}); return '<div id="ha-make-template-v1" class="ha-make-root ha-make-stained-glass"><nav class="ha-mv1-nav ha-v3-nav" aria-label="Hope Anthology navigation"><div class="ha-mv1-nav-left ha-v3-brand"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-mv1-logo ha-v3-logo" src="'+img(C,'logo')+'" alt="The Hope Anthology"></a></div><button class="ha-mv1-menu-toggle ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ha-kc-mobile-menu"><span></span><span></span><span></span></button><div id="ha-kc-mobile-menu" class="ha-mv1-nav-links ha-v3-links">'+nav(C.navigation)+'</div></nav><h1 class="ha-mv1-sr-only" style="'+HIDDEN_H1_STYLE+'">'+esc(page.hiddenHeading||page.title||'Stained Glass Patterns')+'</h1>'+breadcrumbs(C.breadcrumbs)+'<main><section class="ha-mv1-col-header ha-kc-header"><div class="ha-mv1-col-eyebrow ha-kc-eyebrow">'+esc(header.eyebrow||'To Make')+'</div><div class="ha-mv1-col-h1">'+safe(header.headingHtml||'Stained <em>glass</em>')+'</div><p class="ha-mv1-col-desc">'+esc(header.description||'')+'</p><div class="ha-mv1-col-stats ha-kc-stats">'+(header.stats||[]).map(function(s){return '<div><span class="ha-mv1-stat-val">'+esc(s.value)+'</span><span class="ha-mv1-stat-label">'+esc(s.label)+'</span></div>';}).join('')+'</div></section>'+filterButtons(C)+'<section class="ha-mv1-grid-section ha-kc-grid-section">'+(C.sections||[]).map(function(section){var cards=(section.patternSlugs||[]).map(function(slug){return bySlug[slug]?card(C,bySlug[slug]):'';}).join(''); return '<div class="ha-mv1-section-group"><div class="ha-mv1-grid-eyebrow ha-kc-grid-eyebrow">'+esc(section.heading)+'</div><div class="ha-mv1-card-grid ha-kc-card-grid">'+cards+'</div></div>';}).join('')+'</section><section class="ha-mv1-collective-bar ha-kc-collective"><div><div class="ha-mv1-cb-title">'+esc(collective.heading||'Something worth being part of.')+'</div><p class="ha-mv1-cb-sub">'+esc(collective.body||'')+'</p></div><form class="ha-mv1-cb-form" action="'+esc(collective.formAction||'/collective')+'" method="'+esc(collective.formMethod||'get')+'"><label class="ha-mv1-sr-only" for="ha-mv1-email">Email address</label><input id="ha-mv1-email" class="ha-mv1-cb-input" type="email" name="'+esc(collective.emailFieldName||'email')+'" placeholder="'+esc(collective.emailPlaceholder||'Your email address')+'"><button class="ha-mv1-cb-btn ha-kc-collective-btn" type="submit">'+esc(collective.buttonLabel||'Join the Collective →')+'</button></form></section></main><footer class="ha-mv1-footer"><div class="ha-mv1-footer-top"><div class="ha-mv1-footer-brand"><img class="ha-mv1-footer-star" src="'+img(C,'star')+'" alt="The Hope Anthology botanical star"></div><div class="ha-mv1-footer-col"><div class="ha-mv1-footer-col-title">Navigate</div><a href="/">Home</a><a href="/collections">The Collections</a><a href="/story">The Story</a><a href="/collaborate">Collaborate</a><a href="/collective">Collective</a></div><div class="ha-mv1-footer-col"><div class="ha-mv1-footer-col-title">Connect &amp; legal</div><a href="'+esc(footer.instagramUrl||'#')+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl||'/privacy-policy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl||'/accessibility')+'">Accessibility</a><a href="'+esc(footer.sellingUrl||'/why-we-sell-this-way')+'">Why we sell this way</a></div></div></footer><div class="ha-mv1-footer-bottom-bar"><span>'+esc(footer.copyright||'© The Hope Anthology 2026')+'</span></div></div>';}
-  function bind(root){var toggle=root.querySelector('.ha-mv1-menu-toggle'), links=root.querySelector('.ha-mv1-nav-links'); if(toggle&&links){toggle.addEventListener('click',function(){var open=toggle.getAttribute('aria-expanded')==='true'; toggle.setAttribute('aria-expanded',String(!open)); root.classList.toggle('ha-mv1-menu-open',!open);});} root.querySelectorAll('.ha-mv1-swap-cell').forEach(function(btn){btn.addEventListener('click',function(){var wrap=btn.closest('.ha-mv1-card'); var key=btn.getAttribute('data-img'); var C=window.HA_MAKE_TEMPLATE_CONTENT||{}; if(wrap&&key&&C.images&&C.images[key]){var im=wrap.querySelector('.ha-mv1-card-img-wrap img'); im.src=imageUrl(C,key); im.alt=btn.getAttribute('data-alt')||((im.getAttribute('data-alt-base')||'Pattern image')+' — '+btn.textContent.trim());} btn.parentNode.querySelectorAll('.ha-mv1-swap-cell').forEach(function(b){b.classList.remove('active-make'); b.classList.remove('is-active');}); btn.classList.add('active-make'); btn.classList.add('is-active');});}); root.querySelectorAll('.ha-mv1-chip').forEach(function(chip){chip.addEventListener('click',function(){var f=chip.getAttribute('data-filter'); root.querySelectorAll('.ha-mv1-chip').forEach(function(c){c.classList.remove('active');}); chip.classList.add('active'); var visible=0; root.querySelectorAll('.ha-mv1-card').forEach(function(card){var hay=(card.getAttribute('data-category')+'|'+card.getAttribute('data-difficulty')+'|'+card.getAttribute('data-tags')).toLowerCase(); var show=f==='All'||hay.indexOf(f.toLowerCase())!==-1; card.style.display=show?'':'none'; if(show) visible++;}); root.querySelectorAll('.ha-mv1-section-group').forEach(function(group){var any=false; group.querySelectorAll('.ha-mv1-card').forEach(function(card){if(card.style.display!=='none') any=true;}); group.style.display=any?'':'none';}); var countEl=root.querySelector('.ha-mv1-load-count'); if(countEl) countEl.textContent = f==='All' ? ((window.HA_MAKE_TEMPLATE_CONTENT.page||{}).visiblePatternText||'Showing '+visible+' patterns') : 'Showing '+visible+' patterns';});});}
-  function repairExisting(){var root=document.getElementById('ha-make-template-v1'); var C=window.HA_MAKE_TEMPLATE_CONTENT||{}; if(!root||!C.images)return false; var logo=root.querySelector('.ha-mv1-logo'); if(logo&&C.images.logo)logo.src=imageUrl(C,'logo'); var star=root.querySelector('.ha-mv1-footer-star'); if(star&&C.images.star)star.src=imageUrl(C,'star'); root.querySelectorAll('.ha-mv1-card').forEach(function(card){var btn=card.querySelector('.ha-mv1-swap-cell.active-make')||card.querySelector('.ha-mv1-swap-cell[data-view="workbench"]')||card.querySelector('.ha-mv1-swap-cell'); var key=btn&&btn.getAttribute('data-img'); var im=card.querySelector('.ha-mv1-card-img-wrap img'); if(im&&key&&C.images[key])im.src=imageUrl(C,key);}); root.setAttribute('data-ha-image-fix','v11'); hideHostHeaderSubnav(); setTimeout(hideHostHeaderSubnav,250); bind(root); return true;}
 
-  function hideHostHeaderSubnav(){
-    var root=document.getElementById('ha-make-template-v1');
-    var labels={'to keep':true,'to make':true};
-    document.querySelectorAll('a').forEach(function(a){
-      if(root&&root.contains(a))return;
-      var txt=(a.textContent||'').replace(/\s+/g,' ').trim().toLowerCase();
-      if(!labels[txt])return;
-      var holder=a.closest('li, .Header-nav-item, .header-nav-item, .header-menu-nav-item, .header-nav-folder-item, .nav-item, .sqs-block, .Header-nav-inner > *, .header-nav-list > *')||a;
-      holder.style.setProperty('display','none','important');
-      holder.setAttribute('data-ha-hidden-v11','true');
+  function loadContent(done){
+    if(window.HA_MAKE_TEMPLATE_CONTENT){ done(); return; }
+    var existing=document.getElementById('ha-make-template-content');
+    if(existing){ existing.addEventListener('load', done); existing.addEventListener('error', done); return; }
+    var s=document.createElement('script');
+    s.id='ha-make-template-content';
+    s.src=base+'content.make-template.js?v='+encodeURIComponent(version);
+    s.onload=done;
+    s.onerror=function(){ console.warn('Hope Anthology Make template content file could not be loaded.'); done(); };
+    document.head.appendChild(s);
+  }
+
+  function injectScopedTheme(){
+    if(document.getElementById('ha-make-keep-structured-theme')) return;
+    var style=document.createElement('style');
+    style.id='ha-make-keep-structured-theme';
+    style.textContent='body.ha-make-template-v1-active > #sections,body.ha-make-template-v1-active > main:not(.ha-kc-main),body.ha-make-template-v1-active #sections,body.ha-make-template-v1-active #footer-sections,body.ha-make-template-v1-active .Header,body.ha-make-template-v1-active header.Header,body.ha-make-template-v1-active #header,body.ha-make-template-v1-active .page-title,body.ha-make-template-v1-active .entry-title,body.ha-make-template-v1-active .collection-title,body.ha-make-template-v1-active .sqs-block-html > h1,body.ha-make-template-v1-active .sqs-block-content > h1{display:none!important;}body.ha-make-template-v1-active{background:var(--ha-cream,#F2F3EF);}#ha-make-template-v1{background:#F2F3EF;min-height:100vh;}#ha-make-template-v1 #ha-keep-collection-v1{--teal:#174f5d;--dark:#24383f;--cream:#F2F3EF;--linen:#ECEEF0;--twine:#8B6040;--gold:#FED22F;--muted:#4f5a5d;--muted-strong:#414c4f;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-header{background:linear-gradient(135deg,#173f48 0%,#1f5d68 56%,#26474f 100%);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-header h2,#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-header p:not(.ha-kc-eyebrow){color:var(--cream);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-header h2 em{color:var(--gold);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-eyebrow{color:rgba(242,243,239,.78);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-stats strong{color:var(--gold);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-stats small{color:rgba(242,243,239,.76);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-bar{background:var(--cream);border-bottom:.5px solid rgba(54,68,73,.1);padding:14px 48px;display:flex;align-items:center;gap:10px;position:sticky;top:72px;z-index:80;overflow-x:auto;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-label{font-size:12px;font-weight:600;color:var(--muted-strong);white-space:nowrap;font-family:\'DM Sans\',sans-serif;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-chip{font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.24);color:var(--muted-strong);cursor:pointer;white-space:nowrap;font-family:\'DM Sans\',sans-serif;background:transparent;line-height:1.2;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-chip.is-active{background:var(--teal);color:var(--cream);border-color:var(--teal);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-count{margin-left:auto;font-size:12px;color:var(--muted-strong);white-space:nowrap;font-family:\'DM Sans\',sans-serif;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-section-group{margin-bottom:40px;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-section-group:last-child{margin-bottom:0;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card h3{font-size:18px;font-weight:700;color:var(--dark);margin:0 0 12px;line-height:1.2;font-family:\'DM Sans\',sans-serif;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-btn-secondary{background:rgba(54,68,73,.07);color:var(--muted);border:.5px solid rgba(54,68,73,.14);}#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card[data-ha-collab="true"] .ha-kc-btn-secondary{background:var(--twine);color:var(--cream);border:0;}@media (max-width:860px){#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-bar{padding:12px 24px;top:72px;}#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-count{margin-left:0;}}@media (max-width:640px){#ha-make-template-v1 #ha-keep-collection-v1 .ha-make-filter-bar{top:64px;}}';
+    document.head.appendChild(style);
+  }
+
+  function esc(value){
+    return String(value == null ? '' : value).replace(/[&<>"']/g,function(ch){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];});
+  }
+  function safeHtml(value){ return String(value == null ? '' : value); }
+  function isAbsoluteUrl(value){ return /^(https?:)?\/\//.test(String(value || '')) || /^data:/.test(String(value || '')) || /^\//.test(String(value || '')); }
+  function assetUrl(value){
+    value = String(value == null ? '' : value);
+    if(!value) return '';
+    return isAbsoluteUrl(value) ? value : base + value.replace(/^\.\//,'');
+  }
+  function imageValue(content,value){
+    var images = content.images || {};
+    return assetUrl(images[value] || value || '');
+  }
+  function image(content,key){ return esc(imageValue(content,key)); }
+  function hasUrl(value){ return typeof value === 'string' && value.trim() && value.trim() !== '#'; }
+  function isExternalUrl(value){ return /^https?:\/\//i.test(String(value || '')); }
+  function linkAttrs(url){ return isExternalUrl(url) ? ' target="_blank" rel="noopener"' : ''; }
+  function ctaLabel(label){
+    var clean = String(label == null ? '' : label).replace(/\s*[→›»↗]+\s*$/,'');
+    return '<span class="ha-v3-cta-text">'+esc(clean)+'</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span>';
+  }
+  function navLinks(items){
+    var current = location.pathname.replace(/\/$/,'') || '/';
+    return (items||[]).map(function(item){
+      var href = item.url || '#';
+      var active = (href.replace(/\/$/,'') || '/') === current;
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
+    }).join('');
+  }
+  function breadcrumbHtml(content){
+    var items = content.breadcrumbs || [];
+    return '<div class="ha-kc-breadcrumb" aria-label="Breadcrumb">'+items.map(function(item,index){
+      var isLast = index === items.length - 1 || !item.url;
+      var part = isLast ? '<span class="ha-kc-current">'+esc(item.label)+'</span>' : '<a href="'+esc(item.url)+'">'+esc(item.label)+'</a>';
+      return part + (index < items.length - 1 ? '<span class="ha-kc-sep" aria-hidden="true">›</span>' : '');
+    }).join('')+'</div>';
+  }
+  function productImageSet(item){
+    var set = item.images || {};
+    var fallback = item.imageKey || '';
+    return {
+      workbench: set.workbench || fallback,
+      lifestyle: set.lifestyle || fallback,
+      inside: set.inside || fallback
+    };
+  }
+  function productImageAltSet(item){
+    var set = item.imageAlts || {};
+    var fallback = item.alt || item.title || '';
+    return {
+      workbench: set.workbench || fallback,
+      lifestyle: set.lifestyle || fallback,
+      inside: set.inside || fallback
+    };
+  }
+  function cardImage(content,item){
+    var set = productImageSet(item);
+    var alts = productImageAltSet(item);
+    var first = set.workbench ? 'workbench' : (set.lifestyle ? 'lifestyle' : (set.inside ? 'inside' : ''));
+    if(first){
+      return '<img src="'+esc(imageValue(content,set[first]))+'" alt="'+esc(alts[first] || item.alt || item.title)+'" loading="lazy" decoding="async" data-ha-product-image="true" data-ha-image-type="'+esc(first)+'">';
+    }
+    return '<div class="ha-kc-card-placeholder" aria-hidden="true"><span>'+esc((item.title || 'P').charAt(0))+'</span></div>';
+  }
+  function imageButtons(content,item){
+    var set = productImageSet(item);
+    var alts = productImageAltSet(item);
+    var options = [
+      { key: 'workbench', label: 'Workbench' },
+      { key: 'lifestyle', label: 'Lifestyle' },
+      { key: 'inside', label: 'Inside' }
+    ];
+    return '<div class="ha-kc-swap" role="group" aria-label="Image view for '+esc(item.title || 'pattern')+'">'+options.map(function(option,index){
+      var value = set[option.key] || '';
+      var alt = alts[option.key] || item.alt || item.title || '';
+      return '<button type="button" data-ha-image-src="'+esc(value ? imageValue(content,value) : '')+'" data-ha-image-alt="'+esc(alt)+'" data-ha-image-type="'+esc(option.key)+'" class="'+(index === 0 ? 'is-active' : '')+'">'+esc(option.label)+'</button>';
+    }).join('')+'</div>';
+  }
+  function goodForChips(item){
+    var chips = item.goodFor || [];
+    if(!chips.length) return '';
+    return '<div class="ha-kc-gf-chips">'+chips.map(function(chip){ return '<span>'+esc(chip)+'</span>'; }).join('')+'</div>';
+  }
+  function makeButton(className,label,url,fallbackLabel){
+    var text = label || fallbackLabel || 'Coming soon';
+    return hasUrl(url)
+      ? '<a class="'+className+'" href="'+esc(url)+'"'+linkAttrs(url)+'>'+ctaLabel(text)+'</a>'
+      : '<button class="'+className+' ha-kc-btn-inactive" type="button" disabled>'+ctaLabel(text)+'</button>';
+  }
+  function productCard(content,item){
+    var tags = (item.tags || []).join('|');
+    var secondary = item.secondaryLabel || item.secondaryUrl ? makeButton('ha-kc-btn ha-kc-btn-secondary', item.secondaryLabel || 'View another buying option', item.secondaryUrl, 'View another buying option') : '';
+    return '<article class="ha-kc-card" data-ha-make-card="true" data-ha-collab="'+(item.collab ? 'true' : 'false')+'" data-title="'+esc(item.title)+'" data-category="'+esc(item.category || '')+'" data-difficulty="'+esc(item.difficulty || '')+'" data-tags="'+esc(tags)+'">'+
+      '<div class="ha-kc-card-img-wrap">'+
+        '<span class="ha-kc-pip">To Make</span><span class="ha-kc-badge ha-kc-badge-available">Available now</span>'+cardImage(content,item)+
+      '</div>'+ 
+      imageButtons(content,item)+ 
+      '<div class="ha-kc-card-body">'+
+        '<p class="ha-kc-card-collection">'+esc(item.collection || item.category || 'Stained glass')+'</p><h3>'+esc(item.title)+'</h3>'+ 
+        '<div class="ha-kc-chips"><span><small>Difficulty</small>'+esc(item.difficulty || 'Beginner')+'</span><span><small>Medium</small>'+esc(item.medium || 'Copper foil')+'</span><span><small>Download</small>'+esc(item.download || 'Instant')+'</span></div>'+ 
+        '<div class="ha-kc-meaning"><p>'+esc(item.about || '')+'</p>'+goodForChips(item)+'</div>'+ 
+        makeButton('ha-kc-btn ha-kc-btn-keep', item.primaryLabel || 'Get this pattern on Etsy', item.primaryUrl, 'Get this pattern on Etsy')+secondary+
+      '</div>'+ 
+    '</article>';
+  }
+  function filterBar(content,total){
+    var filters = content.filters || ['All'];
+    return '<div class="ha-make-filter-bar" role="region" aria-label="Filter stained glass patterns"><span class="ha-make-filter-label">Filter</span>'+filters.map(function(filter,index){
+      return '<button class="ha-make-filter-chip '+(index === 0 ? 'is-active' : '')+'" type="button" data-ha-filter="'+esc(filter)+'">'+esc(filter)+'</button>';
+    }).join('')+'<span class="ha-make-filter-count" aria-live="polite">'+esc((content.page && content.page.visiblePatternText) || ('Showing '+total+' patterns'))+'</span></div>';
+  }
+  function sectionHtml(content,section,bySlug){
+    var cards = (section.patternSlugs || []).map(function(slug){ return bySlug[slug] ? productCard(content,bySlug[slug]) : ''; }).join('');
+    return '<div class="ha-make-section-group" data-ha-section-category="'+esc(section.category || '')+'"><p class="ha-kc-grid-eyebrow">'+esc(section.heading || section.category || 'Stained glass patterns')+'</p><div class="ha-kc-card-grid">'+cards+'</div></div>';
+  }
+  function html(content){
+    var page = content.page || {};
+    var header = content.collectionHeader || {};
+    var patterns = content.patterns || [];
+    var bySlug = {};
+    patterns.forEach(function(pattern){ bySlug[pattern.slug]=pattern; });
+    var sections = content.sections && content.sections.length ? content.sections : [{ heading: 'Stained glass patterns', category: 'All', patternSlugs: patterns.map(function(pattern){ return pattern.slug; }) }];
+    var collective = content.collective || {};
+    var footer = content.footer || {};
+    var srOnlyStyle = 'position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;color:transparent!important;background:transparent!important;';
+    var stats = header.stats && header.stats.length ? header.stats : [{value: patterns.length, label: 'live patterns'}, {value: 'PDF', label: 'digital downloads'}];
+    return '<div id="ha-make-template-v1"><div id="ha-keep-collection-v1" class="ha-make-stained-glass">'+
+      '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(content,'logo')+'" alt=""><h1 class="ha-v3-sr-only" style="'+srOnlyStyle+'">'+esc(page.hiddenHeading || 'The Hope Anthology — Stained Glass Patterns')+'</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-kc-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-kc-mobile-menu" class="ha-v3-links">'+navLinks(content.navigation)+'</div></nav>'+
+      breadcrumbHtml(content)+
+      '<main class="ha-kc-main"><header class="ha-kc-header"><p class="ha-kc-eyebrow">'+esc(header.eyebrow || 'To Make')+'</p><h2>'+safeHtml(header.headingHtml || 'Stained <em>glass</em> patterns')+'</h2><p>'+esc(header.description || '')+'</p><div class="ha-kc-stats">'+stats.map(function(stat){ return '<span><strong>'+esc(stat.value)+'</strong><small>'+esc(stat.label)+'</small></span>'; }).join('')+'</div></header>'+ 
+      filterBar(content,patterns.length)+
+      '<section class="ha-kc-grid-section">'+sections.map(function(section){ return sectionHtml(content,section,bySlug); }).join('')+'</section>'+ 
+      '<section class="ha-kc-collective"><div><h2>'+esc(collective.heading || 'Something worth being part of.')+'</h2><p>'+esc(collective.body || 'Join the Collective for new pattern notes, quiet launches, and gentle studio updates.')+'</p></div><a class="ha-kc-collective-btn" href="'+esc(collective.buttonUrl || '/collective')+'">'+ctaLabel(collective.buttonLabel || 'Join the Collective')+'</a></section>'+ 
+      '</main>'+ 
+      '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(content,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(content.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.instagramUrl || '#')+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl || '/privacy-policy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a><a href="'+esc(footer.sellingUrl || '/why-we-sell-this-way')+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright || '© The Hope Anthology 2026')+'</span></div></footer>'+ 
+    '</div></div>';
+  }
+  function bindMobileNav(root){
+    var toggle = root.querySelector('.ha-v3-menu-toggle');
+    var menu = root.querySelector('#ha-kc-mobile-menu');
+    var keepRoot = root.querySelector('#ha-keep-collection-v1') || root;
+    if(!toggle || !menu || toggle.getAttribute('data-bound') === 'true') return;
+    toggle.setAttribute('data-bound','true');
+    toggle.addEventListener('click',function(){
+      var open = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!open));
+      toggle.setAttribute('aria-label', open ? 'Open menu' : 'Close menu');
+      keepRoot.classList.toggle('ha-v3-menu-open', !open);
+    });
+    menu.addEventListener('click',function(event){
+      if(event.target && event.target.tagName === 'A'){
+        toggle.setAttribute('aria-expanded','false');
+        toggle.setAttribute('aria-label','Open menu');
+        keepRoot.classList.remove('ha-v3-menu-open');
+      }
     });
   }
-  function isMakeRoute(){var p=location.pathname.replace(/\/$/,'')||'/'; var storyPaths=['/story','/the-story']; if(storyPaths.indexOf(p)!==-1 || document.body.classList.contains('ha-story-mounted')) return false; return p==='/make'||p==='/to-make'||p==='/collections/to-make'||p==='/collections/stained-glass-patterns'||/local-preview-make/i.test(p)||!!document.querySelector('#ha-make-template-root[data-ha-page="make"], #ha-make-template-root[data-ha-make-template-root="true"]');}
-  function mount(){if(!isMakeRoute())return; if(repairExisting())return; var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild||document.body; document.body.classList.add('ha-make-template-active','ha-make-template-v1-active'); hideHostHeaderSubnav(); setTimeout(hideHostHeaderSubnav,250); setTimeout(hideHostHeaderSubnav,1000); var tmp=document.createElement('div'); tmp.innerHTML=html(); var root=tmp.firstChild; anchor.parentNode.insertBefore(root,anchor); bind(root);}
-  loadCss(); loadContent(function(){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount(); setTimeout(mount,500);});
+  function bindCards(root){
+    root.addEventListener('click',function(event){
+      var swap = event.target.closest && event.target.closest('.ha-kc-swap button');
+      if(swap){
+        var wrap = swap.parentNode;
+        Array.prototype.forEach.call(wrap.querySelectorAll('button'),function(btn){ btn.classList.remove('is-active'); });
+        swap.classList.add('is-active');
+        var card = swap.closest('.ha-kc-card');
+        var img = card && card.querySelector('[data-ha-product-image="true"]');
+        var nextSrc = swap.getAttribute('data-ha-image-src');
+        if(img && nextSrc){
+          img.src = nextSrc;
+          img.alt = swap.getAttribute('data-ha-image-alt') || img.alt;
+          img.setAttribute('data-ha-image-type', swap.getAttribute('data-ha-image-type') || '');
+        }
+        return;
+      }
+      var filter = event.target.closest && event.target.closest('[data-ha-filter]');
+      if(filter){
+        applyFilter(root,filter.getAttribute('data-ha-filter') || 'All');
+      }
+    });
+  }
+  function applyFilter(root,filter){
+    Array.prototype.forEach.call(root.querySelectorAll('[data-ha-filter]'),function(chip){ chip.classList.toggle('is-active', chip.getAttribute('data-ha-filter') === filter); });
+    var visible = 0;
+    Array.prototype.forEach.call(root.querySelectorAll('[data-ha-make-card="true"]'),function(card){
+      var hay = ((card.getAttribute('data-category') || '')+'|'+(card.getAttribute('data-difficulty') || '')+'|'+(card.getAttribute('data-tags') || '')).toLowerCase();
+      var show = filter === 'All' || hay.indexOf(String(filter).toLowerCase()) !== -1;
+      card.style.display = show ? '' : 'none';
+      if(show) visible++;
+    });
+    Array.prototype.forEach.call(root.querySelectorAll('.ha-make-section-group'),function(group){
+      var any = false;
+      Array.prototype.forEach.call(group.querySelectorAll('[data-ha-make-card="true"]'),function(card){ if(card.style.display !== 'none') any = true; });
+      group.style.display = any ? '' : 'none';
+    });
+    var count = root.querySelector('.ha-make-filter-count');
+    if(count) count.textContent = filter === 'All' ? ((window.HA_MAKE_TEMPLATE_CONTENT.page || {}).visiblePatternText || 'Showing '+visible+' patterns') : 'Showing '+visible+' patterns';
+  }
+  function isMakeRoute(){
+    var p = location.pathname.replace(/\/$/,'') || '/';
+    return p === '/collections/stained-glass-patterns' || p === '/collections/stained-glass' || p === '/stained-glass-patterns' || /local-preview-make/i.test(p) || !!document.querySelector('#ha-make-template-root[data-ha-page="make"], #ha-make-template-root[data-ha-make-template-root="true"]');
+  }
+  function mount(){
+    if(!isMakeRoute()) return;
+    if(document.getElementById('ha-make-template-v1')) return;
+    var content = window.HA_MAKE_TEMPLATE_CONTENT || {};
+    if(!content.patterns || !content.patterns.length) return;
+    if(content.page && content.page.title) document.title = content.page.title;
+    var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
+    if(!anchor){ setTimeout(mount,150); return; }
+    injectScopedTheme();
+    document.body.classList.add('ha-make-template-v1-active','ha-make-template-active','ha-keep-collection-v1-active');
+    var wrap=document.createElement('div');
+    wrap.innerHTML=html(content);
+    var root = wrap.firstChild;
+    anchor.parentNode.insertBefore(root,anchor);
+    bindMobileNav(root);
+    bindCards(root);
+  }
+
+  loadCss();
+  loadContent(function(){
+    if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',mount); else mount();
+    setTimeout(mount,600);
+  });
 })();
