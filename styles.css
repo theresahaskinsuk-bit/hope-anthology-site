@@ -1443,16 +1443,16 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
 }
 
 #ha-home-v3 .ha-v3-intro-kicker{
-  padding:18px 24px 18px!important;
+  padding:34px 24px 14px!important;
 }
 
 #ha-home-v3 .ha-v3-section-head{
-  padding:22px 48px 0!important;
+  padding:20px 48px 0!important;
 }
 
 #ha-home-v3 .ha-v3-section-head .ha-v3-h2,
 #ha-home-v3 .ha-v3-h2{
-  margin-bottom:24px!important;
+  margin-bottom:26px!important;
 }
 
 #ha-home-v3 .ha-v3-section-head .ha-v3-kicker{
@@ -1469,14 +1469,14 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     max-width:34em!important;
   }
   #ha-home-v3 .ha-v3-intro-kicker{
-    padding:16px 20px 14px!important;
+    padding:28px 20px 12px!important;
   }
   #ha-home-v3 .ha-v3-section-head{
     padding:18px 24px 0!important;
   }
   #ha-home-v3 .ha-v3-section-head .ha-v3-h2,
   #ha-home-v3 .ha-v3-h2{
-    margin-bottom:22px!important;
+    margin-bottom:24px!important;
   }
 }
 
@@ -1486,7 +1486,7 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     line-height:1.55!important;
   }
   #ha-home-v3 .ha-v3-intro-kicker{
-    padding:14px 18px 12px!important;
+    padding:24px 18px 10px!important;
   }
   #ha-home-v3 .ha-v3-section-head{
     padding-top:16px!important;
