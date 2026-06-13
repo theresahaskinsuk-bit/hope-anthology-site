@@ -1442,17 +1442,21 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
   padding:22px 34px 24px!important;
 }
 
+#ha-home-v3 .ha-v3-intro-kicker{
+  padding:18px 24px 18px!important;
+}
+
 #ha-home-v3 .ha-v3-section-head{
-  padding:36px 48px 0!important;
+  padding:22px 48px 0!important;
 }
 
 #ha-home-v3 .ha-v3-section-head .ha-v3-h2,
 #ha-home-v3 .ha-v3-h2{
-  margin-bottom:30px!important;
+  margin-bottom:24px!important;
 }
 
 #ha-home-v3 .ha-v3-section-head .ha-v3-kicker{
-  margin-bottom:8px!important;
+  margin-bottom:6px!important;
 }
 
 @media (max-width:900px){
@@ -1465,14 +1469,14 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     max-width:34em!important;
   }
   #ha-home-v3 .ha-v3-intro-kicker{
-    padding:16px 20px 20px!important;
+    padding:16px 20px 14px!important;
   }
   #ha-home-v3 .ha-v3-section-head{
-    padding:30px 24px 0!important;
+    padding:18px 24px 0!important;
   }
   #ha-home-v3 .ha-v3-section-head .ha-v3-h2,
   #ha-home-v3 .ha-v3-h2{
-    margin-bottom:26px!important;
+    margin-bottom:22px!important;
   }
 }
 
@@ -1481,8 +1485,11 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     font-size:14.5px!important;
     line-height:1.55!important;
   }
+  #ha-home-v3 .ha-v3-intro-kicker{
+    padding:14px 18px 12px!important;
+  }
   #ha-home-v3 .ha-v3-section-head{
-    padding-top:26px!important;
+    padding-top:16px!important;
   }
 }
 
