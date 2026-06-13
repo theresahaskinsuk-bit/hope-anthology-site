@@ -92,9 +92,9 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     winter_wind_inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6bde20bd-cc30-40f8-9854-85a6b96b7202/winter-wind-stained-glass-pattern-hope-anthology-whats-included.jpg?content-type=image%2Fjpeg',
   },
   navigation: [
-    { label: 'Home', url: '/' },
     { label: 'The Collections', url: '/collections' },
     { label: 'The Story', url: '/story' },
+    { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }
   ],
   breadcrumbs: [
