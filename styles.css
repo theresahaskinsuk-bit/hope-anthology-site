@@ -1661,17 +1661,17 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
 }
 
 
-/* Make page card image — square aspect ratio 2026-06-23
+/* Make page card image — 4:3 aspect ratio 2026-06-23
    Override the shared ha-kc-card-img-wrap 3:2 rule so Make page pattern cards
-   use a 1:1 square frame. This keeps the Keep collections unaffected (they
-   remain 3:2) and gives the Make page a distinct, generous image area that
-   suits portrait suncatcher shapes and bundle images without cropping. */
+   use a 4:3 frame. This matches the intrinsic 4:3 ratio of the workbench/lifestyle
+   images exactly, so the full scene is visible with no cropping and no letterbox
+   bars. Keep collections remain at 3:2 and are unaffected. */
 #ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card-img-wrap{
-  aspect-ratio:1/1!important;
+  aspect-ratio:4/3!important;
 }
 @media(max-width:560px){
   #ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card-img-wrap{
-    aspect-ratio:1/1!important;
+    aspect-ratio:4/3!important;
   }
 }
 
