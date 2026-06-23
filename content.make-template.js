@@ -106,7 +106,7 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     eyebrow: 'To Make',
     headingHtml: 'Stained <em>glass</em> patterns',
     description: 'Beginner-friendly stained glass downloads designed for the joy of making. Each pattern includes a visual reference, a lifestyle view, and a download preview so makers can choose with confidence.',
-    stats: [{ value: "27", label: "live patterns" }, { value: "PDF", label: "digital downloads" }, { value: "Beginner", label: "friendly level" }, { value: "3 views", label: "per pattern" }]
+    stats: [{ value: "27", label: "live patterns" }, { value: "PDF/JPG", label: "digital downloads" }, { value: "Beginner", label: "friendly level" }, { value: "3 views", label: "per pattern" }]
   },
   filters: ["All", "Animals & birds", "Nature & flowers", "Insects & bugs", "Celestial", "Geometric & abstract", "Beginner"],
   sections: [
