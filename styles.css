@@ -1674,3 +1674,22 @@ body.ha-why-mounted [data-ha-why-hidden="true"]{
     aspect-ratio:1/1!important;
   }
 }
+
+/* Make page card grid — 5 columns desktop / 3 tablet / 1 mobile 2026-06-23
+   Override the shared ha-kc-card-grid 3-column rule so the Make page uses
+   5 columns on desktop, 3 on tablet/large mobile, and 1 on small mobile.
+   Keep collections (Woodland Folk, Meaning Alphabet) remain on their own
+   3/2/1 column progression and are unaffected by these rules. */
+#ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card-grid{
+  grid-template-columns:repeat(5,minmax(0,1fr))!important;
+}
+@media(max-width:900px){
+  #ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card-grid{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+}
+@media(max-width:560px){
+  #ha-make-template-v1 #ha-keep-collection-v1 .ha-kc-card-grid{
+    grid-template-columns:1fr!important;
+  }
+}
