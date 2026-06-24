@@ -138,7 +138,7 @@
     var secondary = item.secondaryLabel || item.secondaryUrl ? makeButton('ha-kc-btn ha-kc-btn-secondary', item.secondaryLabel || 'View another buying option', item.secondaryUrl, 'View another buying option') : '';
     return '<article class="ha-kc-card" data-ha-make-card="true" data-ha-collab="'+(item.collab ? 'true' : 'false')+'" data-title="'+esc(item.title)+'" data-category="'+esc(item.category || '')+'" data-difficulty="'+esc(item.difficulty || '')+'" data-tags="'+esc(tags)+'">'+
       '<div class="ha-kc-card-img-wrap">'+
-        '<span class="ha-kc-pip">To Make</span><span class="ha-kc-badge ha-kc-badge-available">Available now</span>'+cardImage(content,item)+
+        '<span class="ha-kc-pip">To Make</span>'+(item.collab ? '<span class="ha-kc-badge ha-kc-badge-collab">Buy direct &amp; save</span>' : '<span class="ha-kc-badge ha-kc-badge-available">Available now</span>')+cardImage(content,item)+
       '</div>'+ 
       imageButtons(content,item)+ 
       '<div class="ha-kc-card-body">'+
