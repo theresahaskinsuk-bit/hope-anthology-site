@@ -162,7 +162,7 @@
   function html(content){
     var page = content.page || {};
     var header = content.collectionHeader || {};
-    var patterns = content.patterns || [];
+    var patterns = (content.patterns || []).filter(function(p){ return p.show !== false; });
     var bySlug = {};
     patterns.forEach(function(pattern){ bySlug[pattern.slug]=pattern; });
     var sections = content.sections && content.sections.length ? content.sections : [{ heading: 'Stained glass patterns', category: 'All', patternSlugs: patterns.map(function(pattern){ return pattern.slug; }) }];
