@@ -27,11 +27,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three folk bird patterns in one download — easy, colourful makes that are perfect for beginners wanting to build confidence fast. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Bird lover', 'Gift for a maker', 'Colourful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4514780915/3-bird-stained-glass-patterns-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1b29d34f-b120-4110-8777-118ddbfe86d2/little-birds-collection-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Little Birds Collection stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/825045f3-cb25-4f13-94ff-6e5623f1a8d3/little-birds-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Little Birds Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/befecaf5-7d8c-40a3-bb1d-44292b088043/little-birds-collection-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Little Birds Collection stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1b29d34f-b120-4110-8777-118ddbfe86d2/little-birds-collection-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/825045f3-cb25-4f13-94ff-6e5623f1a8d3/little-birds-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/befecaf5-7d8c-40a3-bb1d-44292b088043/little-birds-collection-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Little Birds Collection stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Little Birds Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Little Birds Collection stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -43,11 +40,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three moon phases in one download — crescent, half, and three-quarter. Simple, satisfying beginner patterns with a celestial feel. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4512515823/moon-stained-glass-pattern-bundle',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f86ec013-7c7c-44fb-96eb-430cfc8a789d/moons-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Moons stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0cec12cf-4cca-4cba-913e-e52f1e15e132/moons-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Moons stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/347191a5-285d-465f-825b-9c6bfda658b5/moons-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Moons stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f86ec013-7c7c-44fb-96eb-430cfc8a789d/moons-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0cec12cf-4cca-4cba-913e-e52f1e15e132/moons-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/347191a5-285d-465f-825b-9c6bfda658b5/moons-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Moons stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Moons stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Moons stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -59,11 +53,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Four seasonal wind patterns in one download — a fun way to explore colour and shape as a beginner. Each design is easy to cut and beautiful in the window. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Colourful make', 'Seasonal theme', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4507090833/beginner-stained-glass-pattern-bundle-4',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/62412a20-c906-4b59-895d-37990aa72301/the-colour-of-wind-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'The Colour of Wind stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6669d16e-2a6a-481b-801e-8e54cd4f1ddc/the-colour-of-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'The Colour of Wind stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/04045c94-627a-42cf-a244-257222818947/the-colour-of-wind-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'The Colour of Wind stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/62412a20-c906-4b59-895d-37990aa72301/the-colour-of-wind-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6669d16e-2a6a-481b-801e-8e54cd4f1ddc/the-colour-of-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/04045c94-627a-42cf-a244-257222818947/the-colour-of-wind-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'The Colour of Wind stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'The Colour of Wind stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'The Colour of Wind stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -75,11 +66,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three of our most loved insect patterns together in one download. Easy enough for a first glass project, satisfying enough to make all three. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Nature lover', 'Gift for a maker', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4493990149/bee-butterfly-dragonfly-stained-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/153f59df-d595-44c0-ab1a-928cf76e3b4d/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Bee Butterfly and Dragonfly stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bb219edf-325b-4b16-9c38-107c076267e8/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Bee Butterfly and Dragonfly stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f388cefa-bf95-49e0-8ee6-2135ba429307/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Bee Butterfly and Dragonfly stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/153f59df-d595-44c0-ab1a-928cf76e3b4d/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bb219edf-325b-4b16-9c38-107c076267e8/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f388cefa-bf95-49e0-8ee6-2135ba429307/bee-butterfly-and-dragonfly-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Bee Butterfly and Dragonfly stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Bee Butterfly and Dragonfly stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Bee Butterfly and Dragonfly stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -91,11 +79,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three circle designs exploring colour, balance, and shape — a satisfying set for beginners who want to develop their eye as well as their technique. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Colourful make', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4501338821/beginner-stained-glass-pattern-bundle-3',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/66e006e1-47b0-4f3b-bf79-aba49cc8fdf5/form-studies-set-of-3-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Form Studies Set of 3 stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b28450ac-aecf-4e01-8151-f968fb127a3f/form-studies-set-of-3-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Form Studies Set of 3 stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7885d18b-a3e9-4366-bb51-5ac16cf95a7f/form-studies-set-of-3-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Form Studies Set of 3 stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/66e006e1-47b0-4f3b-bf79-aba49cc8fdf5/form-studies-set-of-3-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b28450ac-aecf-4e01-8151-f968fb127a3f/form-studies-set-of-3-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7885d18b-a3e9-4366-bb51-5ac16cf95a7f/form-studies-set-of-3-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Form Studies Set of 3 stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Form Studies Set of 3 stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Form Studies Set of 3 stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -107,11 +92,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'The complete set of seven circle designs — each one exploring a different quality of light and colour. A meaningful body of work for a beginner to work through at their own pace. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Meaningful make', 'Colourful make', 'Gift for a crafter'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4492840201/circle-stained-glass-pattern-bundle-7',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57726c7c-4b3b-4546-b21c-8bf368f7972f/form-studies-full-collection-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Form Studies Full Collection stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/728d25da-7551-40a0-b340-8687222b7140/form-studies-full-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Form Studies Full Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8bf474db-245b-4b9d-838c-400c8e59cefa/form-studies-full-collection-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Form Studies Full Collection stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57726c7c-4b3b-4546-b21c-8bf368f7972f/form-studies-full-collection-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/728d25da-7551-40a0-b340-8687222b7140/form-studies-full-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8bf474db-245b-4b9d-838c-400c8e59cefa/form-studies-full-collection-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Form Studies Full Collection stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Form Studies Full Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Form Studies Full Collection stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -123,11 +105,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three angel wing patterns in one download — perfect for exploring different styles before committing to glass. Each design is beginner-friendly and comes with a printable outline, visual reference, and download preview.',
       goodFor:    ['Memorial gift', 'Celestial decor', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4522337865/angel-wings-stained-glass-patterns',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d397a0cd-1f19-4ea4-9c5d-5e21aa957f62/angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Angel Wings stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/15e81610-0a14-4ceb-a901-9d8a31cabeb3/angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Angel Wings stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48fc323e-bb4b-4fed-a070-51866c3194f3/angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d397a0cd-1f19-4ea4-9c5d-5e21aa957f62/angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/15e81610-0a14-4ceb-a901-9d8a31cabeb3/angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48fc323e-bb4b-4fed-a070-51866c3194f3/angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Angel Wings stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Angel Wings stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -139,11 +118,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Sunrise, midday, and sunset — three moments of coastal light in one download. Easy, fun beginner patterns that look beautiful together in a window. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Coastal theme', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4522099181/sunrise-midday-sunset-stained-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a5fe6be9-34d2-4656-9091-71a9fa40af05/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Suns (Sunrise, Midday & Sunset) stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9a66acca-267b-4a18-a0fe-48f7ef333241/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Suns (Sunrise, Midday & Sunset) stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7a4809cc-0c6b-4c37-90f5-19cae1419615/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Suns (Sunrise, Midday & Sunset) stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a5fe6be9-34d2-4656-9091-71a9fa40af05/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9a66acca-267b-4a18-a0fe-48f7ef333241/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7a4809cc-0c6b-4c37-90f5-19cae1419615/suns-sunrise-midday-and-sunset-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Suns (Sunrise, Midday & Sunset) stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Suns (Sunrise, Midday & Sunset) stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Suns (Sunrise, Midday & Sunset) stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -155,11 +131,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Tulip, rose, and lily — three classic floral patterns in one download. Simple, satisfying beginner makes with a timeless feel. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Flower lover', 'Gift for a maker', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4530925584/flower-stained-glass-pattern-bundle',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1889bb7b-604e-4781-88fc-d94c975f8e0a/classic-floral-collection-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Classic Floral Collection stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/89f367ed-feec-4362-92e6-5df009c69098/classic-floral-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Classic Floral Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dd6f7001-9506-4074-b6c2-d5d91e59c9bb/classic-floral-collection-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Classic Floral Collection stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1889bb7b-604e-4781-88fc-d94c975f8e0a/classic-floral-collection-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/89f367ed-feec-4362-92e6-5df009c69098/classic-floral-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dd6f7001-9506-4074-b6c2-d5d91e59c9bb/classic-floral-collection-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Classic Floral Collection stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Classic Floral Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Classic Floral Collection stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -171,11 +144,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Three star patterns — five, six, and eight point — in one download. Geometric and satisfying to cut, easy enough for beginners, beautiful in any window. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Celestial decor', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4527202900/star-stained-glass-pattern-bundle',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d25ed95d-ecba-4352-9d4d-95ea66e1f6e8/distant-light-collection-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Distant Light Collection stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/51742690-5b02-42ac-8bf9-2304494b2430/distant-light-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Distant Light Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3b11db7c-ea77-430d-bf1f-17f8a202a843/distant-light-collection-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Distant Light Collection stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d25ed95d-ecba-4352-9d4d-95ea66e1f6e8/distant-light-collection-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/51742690-5b02-42ac-8bf9-2304494b2430/distant-light-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3b11db7c-ea77-430d-bf1f-17f8a202a843/distant-light-collection-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Distant Light Collection stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Distant Light Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Distant Light Collection stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -187,11 +157,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Rolling, gathering, and breaking — three wave designs that make a beautiful coastal set. Easy enough for a first glass project, satisfying enough to make all three. Includes printable outlines, visual references, and a download preview.',
       goodFor:    ['Ocean lover', 'Coastal theme', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4525405545/wave-forms-stained-glass-pattern-bundle',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6234eb97-7cb0-4257-8c69-175097d38707/wave-forms-collection-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Wave Forms Collection stained glass pattern — Bundles collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f3821a2b-5336-4ba2-bcd5-7bc10c5f4cc7/wave-forms-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Wave Forms Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/380f7299-d730-4fb9-9a9e-4b72b8772183/wave-forms-collection-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Wave Forms Collection stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6234eb97-7cb0-4257-8c69-175097d38707/wave-forms-collection-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f3821a2b-5336-4ba2-bcd5-7bc10c5f4cc7/wave-forms-collection-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/380f7299-d730-4fb9-9a9e-4b72b8772183/wave-forms-collection-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Wave Forms Collection stained glass pattern — Bundles collection by Hope Anthology', lifestyle: 'Wave Forms Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology', inside: 'Wave Forms Collection stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -203,11 +170,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This whale is one of our most loved beginner patterns — simple, bold shapes that are easy to cut and deeply satisfying to see come together in glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Nature lover', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4476347099/whale-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/073c3630-915a-4f74-a98d-965d93f1d209/whale-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Whale stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/46235243-d719-4440-9009-35ac35f272e2/whale-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Whale stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7a15c782-907d-48ff-b100-fc8bf358ea42/whale-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Whale stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/073c3630-915a-4f74-a98d-965d93f1d209/whale-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/46235243-d719-4440-9009-35ac35f272e2/whale-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7a15c782-907d-48ff-b100-fc8bf358ea42/whale-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Whale stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Whale stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Whale stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -219,11 +183,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Striking in red, this cardinal pattern is a fun and easy beginner make. Bold shapes, clean lines, and a result that looks beautiful in any window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4478590307/cardinal-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5eb7c875-3123-4ab0-919b-350be002dbd3/cardinal-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Cardinal stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bb5ce8ae-c778-4dae-a945-32bc249d725d/cardinal-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Cardinal stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6b426fdf-f3b8-4d5d-b4d6-3c0308d97a31/cardinal-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Cardinal stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5eb7c875-3123-4ab0-919b-350be002dbd3/cardinal-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bb5ce8ae-c778-4dae-a945-32bc249d725d/cardinal-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6b426fdf-f3b8-4d5d-b4d6-3c0308d97a31/cardinal-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Cardinal stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Cardinal stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Cardinal stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -235,11 +196,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Fluid and graphic, this snake pattern is a satisfying beginner project with just enough curve to keep things interesting. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'Reptile lover', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4480764315/snake-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cb803dc6-fa86-4eef-90fc-1303c238c2e1/snake-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Snake stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8a73ca65-b607-4adf-b794-80568607c5c5/snake-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Snake stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3bbd30d9-d7d9-45e7-b27f-db09c78dcd32/snake-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Snake stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cb803dc6-fa86-4eef-90fc-1303c238c2e1/snake-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8a73ca65-b607-4adf-b794-80568607c5c5/snake-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3bbd30d9-d7d9-45e7-b27f-db09c78dcd32/snake-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Snake stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Snake stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Snake stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -251,11 +209,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Cheerful and easy to cut, this duck pattern is a perfect first glass project. Simple shapes, lovely results. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'First glass project', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4472240119/duck-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0a75e1ab-11f8-4f9c-bf76-9be2629118b8/duck-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Duck stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/59ce7153-bb9d-4e35-82ec-d2e2263ae9fc/duck-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Duck stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0100a319-57ac-420c-846f-f7452cea93f6/duck-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Duck stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0a75e1ab-11f8-4f9c-bf76-9be2629118b8/duck-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/59ce7153-bb9d-4e35-82ec-d2e2263ae9fc/duck-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0100a319-57ac-420c-846f-f7452cea93f6/duck-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Duck stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Duck stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Duck stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -267,11 +222,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed for beginners, this sea turtle pattern has a calm, meaningful quality that makes it one of those pieces you\'ll want to make more than once. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Nature lover', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4483384694/sea-turtle-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d99d1f6c-71e5-47df-bd06-768908e6802b/sea-turtle-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Sea Turtle stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a54c2f68-163b-48d0-8549-79ffa35f6b0c/sea-turtle-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Sea Turtle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57c0ebda-1a3c-45c6-99c9-684deba5a920/sea-turtle-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Sea Turtle stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d99d1f6c-71e5-47df-bd06-768908e6802b/sea-turtle-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a54c2f68-163b-48d0-8549-79ffa35f6b0c/sea-turtle-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57c0ebda-1a3c-45c6-99c9-684deba5a920/sea-turtle-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Sea Turtle stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Sea Turtle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Sea Turtle stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -283,11 +235,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Fun, characterful, and easy to cut — this chicken pattern is a great beginner make with a countryside charm. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Countryside theme', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4466580325/chicken-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/166f0b18-f124-4d6a-b950-3e79e5a1135d/chicken-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Chicken stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/671dc85f-a86e-4d8c-89d0-5c677e03b06c/chicken-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Chicken stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a633b8f4-0b6f-421d-8f74-d97f19c9ff63/chicken-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Chicken stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/166f0b18-f124-4d6a-b950-3e79e5a1135d/chicken-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/671dc85f-a86e-4d8c-89d0-5c677e03b06c/chicken-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a633b8f4-0b6f-421d-8f74-d97f19c9ff63/chicken-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Chicken stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Chicken stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Chicken stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -299,11 +248,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Simple and elegant, this goose pattern is a satisfying beginner project with clean lines and a lovely result. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Nature lover', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4476785764/goose-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8ce103dd-48e7-4540-b31b-d4b240585e6a/goose-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Goose stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4bd7a42d-cb02-4bc3-a7de-60c4dab2b71d/goose-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Goose stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d64321e8-49dc-4228-b37f-52bd23016edf/goose-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Goose stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8ce103dd-48e7-4540-b31b-d4b240585e6a/goose-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4bd7a42d-cb02-4bc3-a7de-60c4dab2b71d/goose-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d64321e8-49dc-4228-b37f-52bd23016edf/goose-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Goose stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Goose stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Goose stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -315,11 +261,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold and easy to cut, this starfish pattern is a fun beginner make with a coastal feel. Perfect for a sunny window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Coastal theme', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4484417895/starfish-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9be791d7-e457-4abe-be6b-163fb67623a2/starfish-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Starfish stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/32a3f5be-b43e-4648-bc3f-ba00173e4024/starfish-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Starfish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ef2fa5bb-b545-48e3-823a-f3a84fde748a/starfish-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Starfish stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9be791d7-e457-4abe-be6b-163fb67623a2/starfish-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/32a3f5be-b43e-4648-bc3f-ba00173e4024/starfish-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ef2fa5bb-b545-48e3-823a-f3a84fde748a/starfish-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Starfish stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Starfish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Starfish stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -331,11 +274,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This folk art bird is easy to cut, full of character, and one of those satisfying makes that comes together quickly. A great first glass project. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4511006551/bird-stained-glass-pattern-beginner-bird',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c6c6fddf-3dc3-43ea-a949-b8152d10528f/little-bird-1-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Little Bird 1 stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1dddb914-c649-47e6-9f20-3df55915a8ad/little-bird-1-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Little Bird 1 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/17023cce-d069-479e-bf40-f50ae4e22ec0/little-bird-1-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Little Bird 1 stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c6c6fddf-3dc3-43ea-a949-b8152d10528f/little-bird-1-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1dddb914-c649-47e6-9f20-3df55915a8ad/little-bird-1-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/17023cce-d069-479e-bf40-f50ae4e22ec0/little-bird-1-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Little Bird 1 stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Little Bird 1 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Little Bird 1 stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -347,11 +287,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'A beginner-friendly folk bird with a modern feel — simple shapes, bold colour, and a result that looks great in any window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4511426117/beginner-bird-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ca230519-6b70-48bc-b597-8891582ca304/little-bird-2-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Little Bird 2 stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/13cba22d-24dd-4a1f-9624-2a13a5ae6972/little-bird-2-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Little Bird 2 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b1d8ce58-5cb1-4fb8-9715-ab160cb2e53d/little-bird-2-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Little Bird 2 stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ca230519-6b70-48bc-b597-8891582ca304/little-bird-2-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/13cba22d-24dd-4a1f-9624-2a13a5ae6972/little-bird-2-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b1d8ce58-5cb1-4fb8-9715-ab160cb2e53d/little-bird-2-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Little Bird 2 stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Little Bird 2 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Little Bird 2 stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -363,11 +300,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'The third in our folk bird series — easy, fun, and full of personality. A satisfying beginner make that works beautifully as part of the set. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Colourful make', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4511958639/bird-suncatcher-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7bb90cd1-bea3-4d0b-a186-87f1817d51e4/little-bird-3-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Little Bird 3 stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b48928c1-1c60-4380-93c5-9d7973c29873/little-bird-3-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Little Bird 3 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79d975d3-8768-45f2-8ef6-f5f4e81449a1/little-bird-3-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Little Bird 3 stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7bb90cd1-bea3-4d0b-a186-87f1817d51e4/little-bird-3-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b48928c1-1c60-4380-93c5-9d7973c29873/little-bird-3-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79d975d3-8768-45f2-8ef6-f5f4e81449a1/little-bird-3-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Little Bird 3 stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Little Bird 3 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Little Bird 3 stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -379,11 +313,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Colourful and striking, this peacock pattern is a fun beginner project that really shows off what stained glass can do. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Colourful make', 'Nature lover'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4485122946/peacock-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dd7abb7d-93c8-43a2-a0d4-e02ae6d8cea1/peacock-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Peacock stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/01b45b4c-a052-4a84-99cb-e585a69debd3/peacock-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Peacock stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/85703d07-78f9-44be-a1aa-065245be2e16/peacock-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Peacock stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dd7abb7d-93c8-43a2-a0d4-e02ae6d8cea1/peacock-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/01b45b4c-a052-4a84-99cb-e585a69debd3/peacock-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/85703d07-78f9-44be-a1aa-065245be2e16/peacock-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Peacock stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Peacock stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Peacock stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -395,11 +326,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Playful and easy to cut, this frog pattern is a fun weekend project for anyone just starting out with stained glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'First glass project', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4463889361/frog-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d3c74ec1-905a-401b-89b2-8e728f824261/frog-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Frog stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f4dc94d3-cdf7-4f51-96ad-47ea4e4d2f2a/frog-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Frog stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/879b8ca9-cc3d-42c4-a9b8-e25b09cb0886/frog-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Frog stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d3c74ec1-905a-401b-89b2-8e728f824261/frog-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f4dc94d3-cdf7-4f51-96ad-47ea4e4d2f2a/frog-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/879b8ca9-cc3d-42c4-a9b8-e25b09cb0886/frog-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Frog stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Frog stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Frog stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -411,11 +339,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold and graphic, this eagle pattern is a satisfying beginner make with real presence in the window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Nature lover', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4480116185/eagle-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/20962de4-a63d-4b62-82c7-093f60423b35/eagle-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Eagle stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35c93043-f3fe-4a9d-b165-e04b0dc0a99f/eagle-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Eagle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e1792995-2e8d-4f40-81e7-5b82bb4ae62d/eagle-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Eagle stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/20962de4-a63d-4b62-82c7-093f60423b35/eagle-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35c93043-f3fe-4a9d-b165-e04b0dc0a99f/eagle-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e1792995-2e8d-4f40-81e7-5b82bb4ae62d/eagle-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Eagle stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Eagle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Eagle stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -427,11 +352,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Characterful and easy to cut, this squirrel pattern is a fun beginner project with a woodland charm. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Woodland theme', 'Nature lover', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4483891468/squirrel-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eedf7f4-061c-48d2-9326-3ce2ecd91e47/squirrel-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Squirrel stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b95ddad6-ae30-4660-8de1-6a5b605f1d2a/squirrel-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Squirrel stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a00b68ba-5897-4a89-bfee-ed0f07edf348/squirrel-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Squirrel stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eedf7f4-061c-48d2-9326-3ce2ecd91e47/squirrel-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b95ddad6-ae30-4660-8de1-6a5b605f1d2a/squirrel-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a00b68ba-5897-4a89-bfee-ed0f07edf348/squirrel-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Squirrel stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Squirrel stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Squirrel stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -443,11 +365,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This octopus pattern is a fun, satisfying beginner make — the flowing shapes are easier to cut than they look and the result is always a talking point. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Nature lover', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4474876243/octopus-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ad5dc1b2-9964-40dc-8e19-4bc42b6b5215/octopus-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Octopus stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/01d79d36-ff7d-405e-822b-2f51ba4e3e5f/octopus-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Octopus stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c396b96b-026b-446d-96e1-983b4046d4d0/octopus-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Octopus stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ad5dc1b2-9964-40dc-8e19-4bc42b6b5215/octopus-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/01d79d36-ff7d-405e-822b-2f51ba4e3e5f/octopus-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c396b96b-026b-446d-96e1-983b4046d4d0/octopus-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Octopus stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Octopus stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Octopus stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -459,11 +378,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Simple, sweet, and easy to cut — this rabbit pattern is a lovely beginner make that works beautifully in soft, warm glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Woodland theme', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4477986991/rabbit-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79000686-5244-433a-9109-a75788279920/rabbit-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Rabbit stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/002fc20d-625f-4aad-8028-3c5b9776678a/rabbit-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Rabbit stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/22425a52-08ec-455b-8a9a-4157b5debddb/rabbit-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Rabbit stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79000686-5244-433a-9109-a75788279920/rabbit-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/002fc20d-625f-4aad-8028-3c5b9776678a/rabbit-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/22425a52-08ec-455b-8a9a-4157b5debddb/rabbit-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Rabbit stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Rabbit stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Rabbit stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -475,11 +391,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold and graphic, this raven pattern is a fun weekend project for anyone just starting out with stained glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Meaningful make', 'Nature lover'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4477171538/raven-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e44d4a6f-fa14-4d40-8dac-755c266cad6a/raven-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Raven stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9f3d2d40-b6cf-4920-87b1-09216da76ccd/raven-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Raven stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19d3aa16-08e9-4832-8ea6-6a052bdad6ca/raven-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Raven stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e44d4a6f-fa14-4d40-8dac-755c266cad6a/raven-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9f3d2d40-b6cf-4920-87b1-09216da76ccd/raven-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19d3aa16-08e9-4832-8ea6-6a052bdad6ca/raven-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Raven stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Raven stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Raven stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -491,11 +404,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Clean, simple, and easy to cut — this fish pattern is a perfect first glass project with a lovely result. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'First glass project', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4473594107/fish-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d7c0f18-d3b4-4a50-a78d-5a2230da8ca7/fish-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Fish stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f1ffe00a-147f-413c-8dc0-966e099fff56/fish-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Fish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3b8ea861-b220-4996-aa93-033525fe6ab7/fish-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Fish stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d7c0f18-d3b4-4a50-a78d-5a2230da8ca7/fish-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f1ffe00a-147f-413c-8dc0-966e099fff56/fish-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3b8ea861-b220-4996-aa93-033525fe6ab7/fish-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Fish stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Fish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Fish stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -507,11 +417,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This bear pattern is a satisfying beginner make — simple shapes, bold presence, and a result that looks great in any window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Woodland theme', 'Nature lover', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4473394048/bear-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/769c2359-5070-400c-beb1-8582149d52bd/bear-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Bear stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aca4c050-92b9-41ea-8335-c993595221df/bear-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Bear stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fa266e4b-624a-4cd5-bb1b-d5a4b2024667/bear-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Bear stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/769c2359-5070-400c-beb1-8582149d52bd/bear-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aca4c050-92b9-41ea-8335-c993595221df/bear-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fa266e4b-624a-4cd5-bb1b-d5a4b2024667/bear-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Bear stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Bear stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Bear stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -523,11 +430,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Every cat lover\'s favourite beginner project — simple, characterful, and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Gift for cat lovers', 'Pet lover gift', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4471194272/cat-stained-glass-pattern-beginner-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5cf6bc2-89ab-4200-87e9-306c158a5c70/cat-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Cat stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/424ab554-4fa9-4649-a3ee-50f3be35868f/cat-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Cat stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48b21431-16e8-4c34-baa7-c6fdb3941a7f/cat-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Cat stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5cf6bc2-89ab-4200-87e9-306c158a5c70/cat-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/424ab554-4fa9-4649-a3ee-50f3be35868f/cat-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48b21431-16e8-4c34-baa7-c6fdb3941a7f/cat-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Cat stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Cat stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Cat stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -539,11 +443,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed with beginners in mind, this fox pattern has a warmth and character that makes it one of our most gifted designs. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Woodland theme', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4460856013/fox-stained-glass-pattern-beginner-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bfbf620a-a3b2-444c-ac5a-33c60b6ce4e1/fox-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Fox stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/04468c02-8bff-4861-9d64-e53ca409cd4a/fox-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Fox stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bc379d7c-0d48-4adb-8bb2-97c68685d410/fox-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Fox stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bfbf620a-a3b2-444c-ac5a-33c60b6ce4e1/fox-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/04468c02-8bff-4861-9d64-e53ca409cd4a/fox-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bc379d7c-0d48-4adb-8bb2-97c68685d410/fox-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Fox stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Fox stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Fox stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -555,11 +456,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This owl pattern is a fun and easy beginner make with a woodland feel — simple shapes that come together into something quietly striking. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Bird lover', 'Woodland theme', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4466349773/owl-stained-glass-pattern-beginner-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/236ec5f9-07be-45b4-a0d8-3a60e75cb47c/owl-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Owl stained glass pattern — Animals & birds collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2af027b7-6393-4170-9f5b-a6bcf2f63df6/owl-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Owl stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c8cfd238-9c40-44bb-8dcd-2cd1d87429d2/owl-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Owl stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/236ec5f9-07be-45b4-a0d8-3a60e75cb47c/owl-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2af027b7-6393-4170-9f5b-a6bcf2f63df6/owl-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c8cfd238-9c40-44bb-8dcd-2cd1d87429d2/owl-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Owl stained glass pattern — Animals & birds collection by Hope Anthology', lifestyle: 'Owl stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology', inside: 'Owl stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -571,11 +469,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed with beginners in mind, this poppy pattern is one of those makes that feels meaningful from the moment you start cutting. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4467492999/poppy-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00e77935-2cfd-4a83-bf05-4372e8bbf9e2/poppy-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Poppy stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/06a288f1-f1fe-486c-9e2c-9c19ae4c9650/poppy-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Poppy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a2dd330c-ac99-49e7-9b65-a687f3d40d7c/poppy-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Poppy stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00e77935-2cfd-4a83-bf05-4372e8bbf9e2/poppy-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/06a288f1-f1fe-486c-9e2c-9c19ae4c9650/poppy-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a2dd330c-ac99-49e7-9b65-a687f3d40d7c/poppy-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Poppy stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Poppy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Poppy stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -587,11 +482,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold, cheerful, and easy to cut — this sunflower pattern is a satisfying beginner make that brings a burst of colour to any window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4497613327/sunflower-stained-glass-pattern-for',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bd55849a-008e-4a28-ae15-e542e81e90ae/sunflower-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Sunflower stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/44c108e5-43a8-4fda-8d80-b022f0e32c2d/sunflower-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Sunflower stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ac16eaf2-6c1f-4482-9fb2-253466bf7d37/sunflower-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Sunflower stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bd55849a-008e-4a28-ae15-e542e81e90ae/sunflower-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/44c108e5-43a8-4fda-8d80-b022f0e32c2d/sunflower-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ac16eaf2-6c1f-4482-9fb2-253466bf7d37/sunflower-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Sunflower stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Sunflower stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Sunflower stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -603,11 +495,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Simple and lovely, this daisy pattern is a perfect first glass project. Easy to cut, beautiful in the light. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'First glass project', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4473916588/daisy-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1402bfec-b4e5-4136-b76a-65b6da51a699/daisy-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Daisy stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f3ced54f-bc3c-4deb-9b68-00fd71ab15b2/daisy-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Daisy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0164fa62-3d7c-4dba-925f-812d243a89e7/daisy-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Daisy stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1402bfec-b4e5-4136-b76a-65b6da51a699/daisy-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f3ced54f-bc3c-4deb-9b68-00fd71ab15b2/daisy-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0164fa62-3d7c-4dba-925f-812d243a89e7/daisy-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Daisy stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Daisy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Daisy stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -619,11 +508,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This daffodil pattern is a meaningful beginner make — easy to cut, lovely in yellow glass, and the kind of piece that feels like a proper achievement. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Meaningful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4478191387/daffodil-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b344c3d-a201-4080-bc4a-cfafa3fac080/daffodil-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Daffodil stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/251f09e4-8793-4848-8253-dc7be46cf183/daffodil-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Daffodil stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0cf7a9cb-fef0-43af-9d35-1ba44bb0dd0c/daffodil-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Daffodil stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b344c3d-a201-4080-bc4a-cfafa3fac080/daffodil-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/251f09e4-8793-4848-8253-dc7be46cf183/daffodil-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0cf7a9cb-fef0-43af-9d35-1ba44bb0dd0c/daffodil-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Daffodil stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Daffodil stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Daffodil stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -635,11 +521,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Elegant and easy to cut, this orchid pattern is a fun beginner project with a result that looks far more complex than it is. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Colourful make', 'Gift for a crafter'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4472791041/orchid-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/818edea0-d744-4df0-bfd9-24d046dc3f7b/orchid-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Orchid stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/417dc6ef-94fd-429c-8608-3764f6b1b0bc/orchid-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Orchid stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6fad77e3-6501-431e-b713-bde8d033fda2/orchid-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Orchid stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/818edea0-d744-4df0-bfd9-24d046dc3f7b/orchid-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/417dc6ef-94fd-429c-8608-3764f6b1b0bc/orchid-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6fad77e3-6501-431e-b713-bde8d033fda2/orchid-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Orchid stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Orchid stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Orchid stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -651,11 +534,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed for beginners, this magnolia pattern has a quiet beauty that makes it one of those satisfying makes you\'ll come back to. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Nature lover', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4471793966/magnolia-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1d6b8b7f-d3f5-460b-bb3f-2daebbcc51fa/magnolia-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Magnolia stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d9e43c8f-9767-455d-b3c3-dae68fa52261/magnolia-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Magnolia stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7fe0435e-2bc0-4ed6-85ba-46c5223a87aa/magnolia-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Magnolia stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1d6b8b7f-d3f5-460b-bb3f-2daebbcc51fa/magnolia-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d9e43c8f-9767-455d-b3c3-dae68fa52261/magnolia-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7fe0435e-2bc0-4ed6-85ba-46c5223a87aa/magnolia-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Magnolia stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Magnolia stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Magnolia stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -667,11 +547,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This coastal sunrise is a fun, easy make — simple enough for beginners, beautiful enough to hang in any window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Coastal theme', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4521253911/sunrise-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ee8a429a-afbd-47ba-b2b9-36d8a886e6f9/sunrise-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Sunrise stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/61c6c70d-4bcc-45df-a552-027b7f65fd98/sunrise-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Sunrise stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b52b6324-c7be-4e17-b042-cfe3976672ba/sunrise-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Sunrise stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ee8a429a-afbd-47ba-b2b9-36d8a886e6f9/sunrise-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/61c6c70d-4bcc-45df-a552-027b7f65fd98/sunrise-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b52b6324-c7be-4e17-b042-cfe3976672ba/sunrise-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Sunrise stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Sunrise stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Sunrise stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -683,11 +560,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bright and bold, this midday sun pattern is an easy, satisfying beginner make with a coastal feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Coastal theme', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4522081684/midday-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76c321f2-2e52-48a7-a5d4-6b1c5efa4ca0/midday-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Midday stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/41eb56ed-0af9-403f-bc50-4af1b50e1850/midday-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Midday stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/63143ea7-67ab-4879-92c1-6ccf63f203e6/midday-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Midday stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76c321f2-2e52-48a7-a5d4-6b1c5efa4ca0/midday-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/41eb56ed-0af9-403f-bc50-4af1b50e1850/midday-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/63143ea7-67ab-4879-92c1-6ccf63f203e6/midday-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Midday stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Midday stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Midday stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -699,11 +573,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This coastal sunset pattern is a beautiful beginner make — warm colours, simple shapes, and a result that glows in the evening light. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Coastal theme', 'Meaningful make', 'Colourful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4521199041/sunset-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ad30b0a7-fe08-45a8-a4e4-bbc38fdff528/sunset-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Sunset stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76735fca-0cab-45d5-a0b4-299008ed7341/sunset-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Sunset stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bbb35c88-8198-4880-8513-6d876b5b12fd/sunset-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Sunset stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ad30b0a7-fe08-45a8-a4e4-bbc38fdff528/sunset-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76735fca-0cab-45d5-a0b4-299008ed7341/sunset-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bbb35c88-8198-4880-8513-6d876b5b12fd/sunset-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Sunset stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Sunset stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Sunset stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -715,11 +586,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Gentle and rhythmic, this rolling waves pattern is an easy beginner make with a deeply satisfying coastal feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Coastal theme', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4524658078/rolling-waves-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5efa7e16-865d-47b8-a49d-fc16df5debae/rolling-waves-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Rolling Waves stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/40750d8f-a565-4f89-8189-457e9a3df183/rolling-waves-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Rolling Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/580e8835-944a-4258-8f5e-bf5d5f138e12/rolling-waves-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Rolling Waves stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5efa7e16-865d-47b8-a49d-fc16df5debae/rolling-waves-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/40750d8f-a565-4f89-8189-457e9a3df183/rolling-waves-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/580e8835-944a-4258-8f5e-bf5d5f138e12/rolling-waves-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Rolling Waves stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Rolling Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Rolling Waves stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -731,11 +599,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This gathering waves pattern captures that moment before the break — a fun, easy beginner make with real movement in the glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Coastal theme', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4524582502/gathering-waves-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d3abab43-051a-4e19-98b3-f3d09250be29/gathering-waves-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Gathering Waves stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2fa5d7dc-a0b8-451d-8487-5f11966b42c6/gathering-waves-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Gathering Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56509774-4ee3-4826-bb55-99438a868163/gathering-waves-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Gathering Waves stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d3abab43-051a-4e19-98b3-f3d09250be29/gathering-waves-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2fa5d7dc-a0b8-451d-8487-5f11966b42c6/gathering-waves-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56509774-4ee3-4826-bb55-99438a868163/gathering-waves-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Gathering Waves stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Gathering Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Gathering Waves stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -747,11 +612,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold and energetic, this breaking wave pattern is a satisfying beginner make that looks stunning in blue and white glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Ocean lover', 'Colourful make', 'Coastal theme'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4523389184/breaking-wave-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/214ce3d4-e9c3-4aa3-a71e-c0a296096592/breaking-wave-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Breaking Wave stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/05cd4e94-823e-4796-a436-1125e27a3a4d/breaking-wave-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Breaking Wave stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffab5078-46df-4912-9269-4fa535e597d2/breaking-wave-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Breaking Wave stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/214ce3d4-e9c3-4aa3-a71e-c0a296096592/breaking-wave-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/05cd4e94-823e-4796-a436-1125e27a3a4d/breaking-wave-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffab5078-46df-4912-9269-4fa535e597d2/breaking-wave-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Breaking Wave stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Breaking Wave stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Breaking Wave stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -763,11 +625,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Clean, simple, and easy to cut — this tulip pattern is a lovely beginner make with a classic floral feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4529228344/tulip-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/df547d11-2823-409f-bbb7-3e6a39fc1939/tulip-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Tulip stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cd8d3f97-c5e5-464b-a583-9e6cd6535842/tulip-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Tulip stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c3980904-1e8e-41df-8d02-42848731c0bc/tulip-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Tulip stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/df547d11-2823-409f-bbb7-3e6a39fc1939/tulip-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cd8d3f97-c5e5-464b-a583-9e6cd6535842/tulip-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c3980904-1e8e-41df-8d02-42848731c0bc/tulip-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Tulip stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Tulip stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Tulip stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -779,11 +638,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This rose pattern is a meaningful beginner make — simple enough to cut confidently, beautiful enough to give as a gift. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4530336694/rose-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a8b678c8-56fa-44d7-83f9-bdfb6f5bed43/rose-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Rose stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c87f61d-2bde-496d-9d03-722188c71673/rose-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Rose stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4dca481b-a766-4d53-a0eb-41ac2d56b528/rose-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Rose stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a8b678c8-56fa-44d7-83f9-bdfb6f5bed43/rose-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c87f61d-2bde-496d-9d03-722188c71673/rose-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4dca481b-a766-4d53-a0eb-41ac2d56b528/rose-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Rose stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Rose stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Rose stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -795,11 +651,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Elegant and easy to cut, this lily pattern is a satisfying beginner project with a timeless, natural feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Flower lover', 'Nature lover', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4530590187/lily-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/efbd5fe0-2e55-4162-b324-9d3a41f0fa0c/lily-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Lily stained glass pattern — Nature & flowers collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/13390b8a-cd7e-4002-b158-6ef993ae35c0/lily-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Lily stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8632e10c-16fe-4f17-a4b1-9dac76a42b33/lily-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Lily stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/efbd5fe0-2e55-4162-b324-9d3a41f0fa0c/lily-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/13390b8a-cd7e-4002-b158-6ef993ae35c0/lily-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8632e10c-16fe-4f17-a4b1-9dac76a42b33/lily-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Lily stained glass pattern — Nature & flowers collection by Hope Anthology', lifestyle: 'Lily stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology', inside: 'Lily stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -811,11 +664,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This bee pattern is a fun, easy beginner make that looks beautiful in amber and gold glass. One of those satisfying projects you\'ll want to make in multiples. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Garden lover', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4479073042/bee-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/813e8faf-d40b-488c-9b8b-161698e509bd/bee-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Bee stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/23f3fe08-6347-4e90-a1db-08c80938a29e/bee-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Bee stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b605ece4-3484-4672-999d-19b549c1e3e4/bee-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Bee stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/813e8faf-d40b-488c-9b8b-161698e509bd/bee-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/23f3fe08-6347-4e90-a1db-08c80938a29e/bee-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b605ece4-3484-4672-999d-19b549c1e3e4/bee-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Bee stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Bee stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Bee stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -827,11 +677,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Colourful and easy to cut, this butterfly pattern is a perfect first glass project. Simple shapes, stunning in the light. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4477428600/butterfly-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f25524c3-2147-4fc2-9d1a-2480036e48f2/butterfly-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Butterfly stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/52531c18-b390-4330-87f9-ce8c674dd232/butterfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Butterfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/367a4b34-a6ba-4142-9d81-fc28d25c9321/butterfly-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Butterfly stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f25524c3-2147-4fc2-9d1a-2480036e48f2/butterfly-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/52531c18-b390-4330-87f9-ce8c674dd232/butterfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/367a4b34-a6ba-4142-9d81-fc28d25c9321/butterfly-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Butterfly stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Butterfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Butterfly stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -843,11 +690,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed with beginners in mind, this dragonfly pattern is one of those makes that feels special from the first cut. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4446863353/dragonfly-stained-glass-pattern-for',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c45384b-7b51-4443-a135-20355b2531b8/dragonfly-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Dragonfly stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1628cd63-4d94-4c1c-ae4b-2fae91f31262/dragonfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Dragonfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bc78f412-40c8-461c-968c-69cb25621698/dragonfly-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Dragonfly stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c45384b-7b51-4443-a135-20355b2531b8/dragonfly-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1628cd63-4d94-4c1c-ae4b-2fae91f31262/dragonfly-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bc78f412-40c8-461c-968c-69cb25621698/dragonfly-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Dragonfly stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Dragonfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Dragonfly stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -859,11 +703,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold, geometric, and fun to cut — this beetle pattern is a satisfying beginner make that looks striking in jewel-toned glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'Colourful make', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4496498128/beetle-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3500ee17-840d-4c12-b12e-c210c534432d/beetle-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Beetle stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fea8bd48-94e4-484b-a8c7-5653b38aebd9/beetle-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Beetle stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d6cd53b6-9192-4cfd-8627-259116f92c8e/beetle-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Beetle stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3500ee17-840d-4c12-b12e-c210c534432d/beetle-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fea8bd48-94e4-484b-a8c7-5653b38aebd9/beetle-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d6cd53b6-9192-4cfd-8627-259116f92c8e/beetle-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Beetle stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Beetle stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Beetle stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -875,11 +716,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This cicada pattern is a meaningful beginner make — graphic, easy to cut, and beautiful when the light comes through. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Nature lover', 'Meaningful make', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4484644714/cicada-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffea91ee-2ed9-4cd2-9a6a-5bb138d2f415/cicada-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Cicada stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2db53899-d81e-469b-956e-f304d926fbf1/cicada-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Cicada stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8fccc315-7781-4d2c-9291-39b667a424bb/cicada-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Cicada stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffea91ee-2ed9-4cd2-9a6a-5bb138d2f415/cicada-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2db53899-d81e-469b-956e-f304d926fbf1/cicada-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8fccc315-7781-4d2c-9291-39b667a424bb/cicada-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Cicada stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Cicada stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Cicada stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -891,11 +729,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Delicate and striking, this luna moth is a satisfying beginner pattern with just enough detail to feel like a proper achievement. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'Nature lover'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4481237314/luna-moth-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3c536590-ce33-4e66-b106-4d4248af5b28/luna-moth-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Luna Moth stained glass pattern — Insects & bugs collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1e1f9213-2300-4f9d-ac1f-1de08618f2ab/luna-moth-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Luna Moth stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a951ba6e-75ed-4533-9577-d0d7374f3256/luna-moth-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Luna Moth stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3c536590-ce33-4e66-b106-4d4248af5b28/luna-moth-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1e1f9213-2300-4f9d-ac1f-1de08618f2ab/luna-moth-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a951ba6e-75ed-4533-9577-d0d7374f3256/luna-moth-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Luna Moth stained glass pattern — Insects & bugs collection by Hope Anthology', lifestyle: 'Luna Moth stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology', inside: 'Luna Moth stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -907,11 +742,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Graceful and easy to cut, these angel wings are a meaningful beginner pattern — the kind of make that feels like a gift, to give or to keep. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Memorial gift', 'Celestial decor', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4517298290/angel-wing-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1165dc81-a8f4-4411-ba2b-cdeb011d6f1d/rise-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Rise Angel Wings stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d7361f24-924e-454a-81d0-6e3affde6b3c/rise-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Rise Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b669c985-9f87-4b5c-a911-70e5b302a19e/rise-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Rise Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1165dc81-a8f4-4411-ba2b-cdeb011d6f1d/rise-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d7361f24-924e-454a-81d0-6e3affde6b3c/rise-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b669c985-9f87-4b5c-a911-70e5b302a19e/rise-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Rise Angel Wings stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Rise Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Rise Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -923,11 +755,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'These flowing angel wings are a beautiful beginner pattern — modern in feel, meaningful in making. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Memorial gift', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4515735326/angel-wing-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b0c093d-f794-4d67-89a2-3d0a126f666b/flow-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Flow Angel Wings stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9a7c0d4a-b3db-4f53-98e9-b187dfc573bf/flow-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Flow Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0199983b-fa47-4494-9156-6490707bc786/flow-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Flow Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b0c093d-f794-4d67-89a2-3d0a126f666b/flow-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9a7c0d4a-b3db-4f53-98e9-b187dfc573bf/flow-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0199983b-fa47-4494-9156-6490707bc786/flow-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Flow Angel Wings stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Flow Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Flow Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -939,11 +768,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bold and uplifting, these angel wings are a satisfying beginner pattern that looks stunning in any colour glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Memorial gift', 'Celestial decor', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4519374765/angel-wing-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ce67ec4f-5cb9-45a2-baa0-ec4d30879dfd/soar-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Soar Angel Wings stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6c86f1f1-029a-41bc-8a6c-64b6c0eca50f/soar-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Soar Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e4982c66-e6dd-4a05-8c5d-7d8567e52a97/soar-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Soar Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ce67ec4f-5cb9-45a2-baa0-ec4d30879dfd/soar-angel-wings-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6c86f1f1-029a-41bc-8a6c-64b6c0eca50f/soar-angel-wings-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e4982c66-e6dd-4a05-8c5d-7d8567e52a97/soar-angel-wings-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Soar Angel Wings stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Soar Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Soar Angel Wings stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -955,11 +781,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Simple, satisfying, and easy to cut — this crescent moon is a perfect beginner pattern with a beautiful result. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4508429262/crescent-moon-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/49b92a0a-6002-4bc0-b33f-7b32f613a001/crescent-moon-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Crescent Moon stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d83bd11-703c-42a7-b090-e7c0fd80c50b/crescent-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Crescent Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8620dece-f0fe-4bc4-acf7-a01d621216db/crescent-moon-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Crescent Moon stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/49b92a0a-6002-4bc0-b33f-7b32f613a001/crescent-moon-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d83bd11-703c-42a7-b090-e7c0fd80c50b/crescent-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8620dece-f0fe-4bc4-acf7-a01d621216db/crescent-moon-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Crescent Moon stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Crescent Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Crescent Moon stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -971,11 +794,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bright and bold, this sun pattern is a fun, easy beginner make that glows in any colour glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4469637929/sun-stained-glass-pattern-beginner-glass',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/99a506d4-5866-4887-839b-4dff97b8a47b/sun-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Sun stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/af2fa504-705d-4c31-af5b-18f53a9522e9/sun-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Sun stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c2be4cae-66f0-478a-882c-a858b0079ed4/sun-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Sun stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/99a506d4-5866-4887-839b-4dff97b8a47b/sun-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/af2fa504-705d-4c31-af5b-18f53a9522e9/sun-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c2be4cae-66f0-478a-882c-a858b0079ed4/sun-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Sun stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Sun stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Sun stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -987,11 +807,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This five-point star is a classic beginner pattern — easy to cut, lovely in the light, and one of those makes that never gets old. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'First glass project', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4499566489/star-stained-glass-pattern-for-beginners',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2fc21be3-a552-4c40-bd4d-dee0e8a93a97/star-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Star stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a036081b-6c27-46ba-928b-60eeafbb6b29/star-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d721a80c-e21b-401e-b698-ddff8920dc4c/star-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Star stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2fc21be3-a552-4c40-bd4d-dee0e8a93a97/star-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a036081b-6c27-46ba-928b-60eeafbb6b29/star-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d721a80c-e21b-401e-b698-ddff8920dc4c/star-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Star stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Star stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1003,11 +820,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Clean and geometric, this four-point star is a satisfying beginner make that looks beautiful in bold, bright glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4500144271/star-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/58b2dc4b-9d2e-4d28-9c6d-4b7f4b1827a9/four-point-star-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Four-Point Star stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/903fbed1-2ee7-4eca-a7bc-13772791abce/four-point-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Four-Point Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c82f2d7d-4c48-48f2-976c-8f024caadbd4/four-point-star-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Four-Point Star stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/58b2dc4b-9d2e-4d28-9c6d-4b7f4b1827a9/four-point-star-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/903fbed1-2ee7-4eca-a7bc-13772791abce/four-point-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c82f2d7d-4c48-48f2-976c-8f024caadbd4/four-point-star-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Four-Point Star stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Four-Point Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Four-Point Star stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1019,11 +833,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Designed for beginners, this half moon pattern is a simple, meaningful make — easy to cut and quietly beautiful in the window. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4510011413/half-moon-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/93ac3595-9a36-49d7-afb5-3a67bceb3d12/half-moon-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Half Moon stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9619b587-02c0-4ed8-ad71-ad08adab4614/half-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Half Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35b63407-fb4b-49f4-bc50-7bda4665fb80/half-moon-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Half Moon stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/93ac3595-9a36-49d7-afb5-3a67bceb3d12/half-moon-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9619b587-02c0-4ed8-ad71-ad08adab4614/half-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35b63407-fb4b-49f4-bc50-7bda4665fb80/half-moon-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Half Moon stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Half Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Half Moon stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1035,11 +846,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This three-quarter moon is a satisfying beginner pattern — a little more substantial than a crescent, with the same simple, beautiful feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4509471238/three-quarter-moon-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6e7af765-f029-4570-892e-763d8d60efe5/three-quarter-moon-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Three Quarter Moon stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eaaa43c-acfb-4a99-b5fd-052b3e4d05cd/three-quarter-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Three Quarter Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eb36782-f223-41ed-9e57-434cb4fa705e/three-quarter-moon-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Three Quarter Moon stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6e7af765-f029-4570-892e-763d8d60efe5/three-quarter-moon-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eaaa43c-acfb-4a99-b5fd-052b3e4d05cd/three-quarter-moon-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8eb36782-f223-41ed-9e57-434cb4fa705e/three-quarter-moon-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Three Quarter Moon stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Three Quarter Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Three Quarter Moon stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1051,11 +859,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Light and elegant, this feather pattern is a meaningful beginner make — easy to cut and beautiful in any soft, translucent glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'Nature lover', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4471817019/feather-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ff8d7aef-20b3-43af-9a61-9f53a754d51c/feather-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Feather stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c6669249-d3cf-4893-8d0f-040b282f9f7d/feather-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Feather stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5f279483-f0fd-4eb2-a657-02275088f11d/feather-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Feather stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ff8d7aef-20b3-43af-9a61-9f53a754d51c/feather-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c6669249-d3cf-4893-8d0f-040b282f9f7d/feather-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5f279483-f0fd-4eb2-a657-02275088f11d/feather-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Feather stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Feather stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Feather stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1067,11 +872,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'This five-point star has an open, geometric feel that makes it easy and satisfying to cut as a beginner. Beautiful in bold or jewel-toned glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4525421469/open-star-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69dff88c-3f6e-481b-bc84-d34d9a59269f/open-star-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Open Star stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d8306777-6f61-4a46-bfc1-59dcbc46fe79/open-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Open Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b5aa5ba2-71e6-48b0-b487-cf636b83591a/open-star-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Open Star stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69dff88c-3f6e-481b-bc84-d34d9a59269f/open-star-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d8306777-6f61-4a46-bfc1-59dcbc46fe79/open-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b5aa5ba2-71e6-48b0-b487-cf636b83591a/open-star-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Open Star stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Open Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Open Star stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1083,11 +885,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Six points, clean geometry, and a beautifully even result — this star pattern is a satisfying beginner make that looks stunning in any colour. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Meaningful make', 'Colourful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4526127849/even-star-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffa3067f-e3f6-4ace-991a-35d754b82841/even-star-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Even Star stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/728b2b52-cab9-490a-8497-ad7358726615/even-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Even Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/42fe3e2d-01dc-4074-ab73-bf1692c23979/even-star-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Even Star stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffa3067f-e3f6-4ace-991a-35d754b82841/even-star-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/728b2b52-cab9-490a-8497-ad7358726615/even-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/42fe3e2d-01dc-4074-ab73-bf1692c23979/even-star-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Even Star stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Even Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Even Star stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1099,11 +898,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Eight points of equal light — this star pattern is a fun, easy beginner make that really shows what stained glass can do. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Celestial decor', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4526270553/bright-star-stained-glass-pattern',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/53f9d898-350c-46e9-8a38-801150c74443/bright-star-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Bright Star stained glass pattern — Celestial collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8edd4016-ccd6-4eb5-8278-1d0f15d75c35/bright-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Bright Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/75869836-1ed3-439a-a2f3-e59f41208a90/bright-star-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Bright Star stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/53f9d898-350c-46e9-8a38-801150c74443/bright-star-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8edd4016-ccd6-4eb5-8278-1d0f15d75c35/bright-star-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/75869836-1ed3-439a-a2f3-e59f41208a90/bright-star-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Bright Star stained glass pattern — Celestial collection by Hope Anthology', lifestyle: 'Bright Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology', inside: 'Bright Star stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1115,11 +911,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Warm, earthy, and easy to cut — this autumn wind pattern is a fun beginner make that captures the feeling of the season in glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Seasonal theme', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4505568734/beginner-stained-glass-pattern-autumn',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b7ecef21-eac5-4e6a-b41f-ff5c07019865/autumn-wind-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Autumn Wind stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4cbedac1-27d7-4153-bfa8-1b70c337308b/autumn-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Autumn Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35344d03-b2fa-4270-83e7-abcca3118d91/autumn-wind-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Autumn Wind stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b7ecef21-eac5-4e6a-b41f-ff5c07019865/autumn-wind-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4cbedac1-27d7-4153-bfa8-1b70c337308b/autumn-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/35344d03-b2fa-4270-83e7-abcca3118d91/autumn-wind-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Autumn Wind stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Autumn Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Autumn Wind stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1131,11 +924,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Bright and breezy, this summer wind pattern is a colourful, easy beginner make that looks beautiful in warm glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Seasonal theme', 'Colourful make', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4504180093/beginner-stained-glass-pattern-summer',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a9e73298-962c-46fa-8c5d-75557af9f9bb/summer-wind-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Summer Wind stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6db29532-c8f9-4df3-af64-873201a4f0c0/summer-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Summer Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4eba6ac6-152f-4077-8e85-90840e68dcb1/summer-wind-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Summer Wind stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a9e73298-962c-46fa-8c5d-75557af9f9bb/summer-wind-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6db29532-c8f9-4df3-af64-873201a4f0c0/summer-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4eba6ac6-152f-4077-8e85-90840e68dcb1/summer-wind-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Summer Wind stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Summer Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Summer Wind stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1147,11 +937,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Fresh and optimistic, this spring wind pattern is a fun, easy beginner make — the kind of piece that makes a window feel alive. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Seasonal theme', 'Colourful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4503134207/beginner-stained-glass-pattern-spring',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/62a70811-fd0b-43d9-b6f3-835ad4130a96/spring-wind-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Spring Wind stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d608b17-7172-4cd2-8543-255d9ed8deef/spring-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Spring Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/61a2f8ff-93c0-4198-b5fc-a075bf0700e7/spring-wind-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Spring Wind stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/62a70811-fd0b-43d9-b6f3-835ad4130a96/spring-wind-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d608b17-7172-4cd2-8543-255d9ed8deef/spring-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/61a2f8ff-93c0-4198-b5fc-a075bf0700e7/spring-wind-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Spring Wind stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Spring Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Spring Wind stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1163,11 +950,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Cool and graphic, this winter wind pattern is a satisfying beginner make with a quiet, meditative feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Seasonal theme', 'Meaningful make', 'Colourful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4502907560/beginner-stained-glass-pattern-winter',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/621311e8-0668-469e-a25d-fac31021fa72/winter-wind-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Winter Wind stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f1d1f5a7-d8c5-44da-9733-2e22efc26f31/winter-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Winter Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c4600038-f9e8-4136-b3b2-95ae18479ac1/winter-wind-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Winter Wind stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/621311e8-0668-469e-a25d-fac31021fa72/winter-wind-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f1d1f5a7-d8c5-44da-9733-2e22efc26f31/winter-wind-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c4600038-f9e8-4136-b3b2-95ae18479ac1/winter-wind-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Winter Wind stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Winter Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Winter Wind stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1179,11 +963,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Simple, meaningful, and easy to cut — this heart pattern is perfect for a first glass project or a handmade gift. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'Valentine gift', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4469058960/heart-stained-glass-pattern-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fa50de4d-5953-4592-ad7b-e00208b8ecae/heart-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Heart stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aad7b8ed-dca4-4eaf-9cd3-d4153645afbc/heart-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Heart stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fb31f757-ab1e-42fc-8fde-d4e8210b2c6e/heart-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Heart stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fa50de4d-5953-4592-ad7b-e00208b8ecae/heart-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aad7b8ed-dca4-4eaf-9cd3-d4153645afbc/heart-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fb31f757-ab1e-42fc-8fde-d4e8210b2c6e/heart-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Heart stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Heart stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Heart stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1195,11 +976,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'The first of our Form Studies — a circle design exploring grounded, rooted energy. Easy to cut and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'First glass project', 'Colourful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4492162070/beginner-circle-stained-glass-pattern-o',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7b7bde28-3076-4418-9078-acdb5acdc185/rooted-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Rooted stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a606e176-e432-4550-a3bf-c75448c2162a/rooted-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Rooted stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ac21629-93f6-4c93-b380-a415bf3d4202/rooted-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Rooted stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7b7bde28-3076-4418-9078-acdb5acdc185/rooted-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a606e176-e432-4550-a3bf-c75448c2162a/rooted-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ac21629-93f6-4c93-b380-a415bf3d4202/rooted-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Rooted stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Rooted stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Rooted stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1211,11 +989,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Part of our Form Studies collection — this circle design explores balance and symmetry. A fun, easy beginner make with a calm, considered feel. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'Colourful make', 'Gift for a crafter'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4492160028/round-stained-glass-pattern-o-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f2ab8e5c-2ad0-4df5-94d3-84fe6a89e316/balanced-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Balanced stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/77207f62-3809-4bed-a97b-7570c7f6136c/balanced-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Balanced stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c0c96ae7-3936-4c71-85cc-effda5526a21/balanced-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Balanced stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f2ab8e5c-2ad0-4df5-94d3-84fe6a89e316/balanced-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/77207f62-3809-4bed-a97b-7570c7f6136c/balanced-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c0c96ae7-3936-4c71-85cc-effda5526a21/balanced-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Balanced stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Balanced stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Balanced stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1227,11 +1002,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'From the Form Studies collection — this circle design explores alignment and clarity. Clean, easy to cut, and beautiful in bold glass. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Colourful make', 'First glass project', 'Meaningful make'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4486645789/modern-circle-o-beginner-suncatcher',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d4d0a0d5-c77f-4b0a-8f0b-e3810b6c98b1/aligned-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Aligned stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7bdb41f2-46d9-490a-9ea4-9603b8fb5f73/aligned-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Aligned stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/26b9a090-9ba8-4ac9-809f-8035e0aab44b/aligned-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Aligned stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d4d0a0d5-c77f-4b0a-8f0b-e3810b6c98b1/aligned-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7bdb41f2-46d9-490a-9ea4-9603b8fb5f73/aligned-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/26b9a090-9ba8-4ac9-809f-8035e0aab44b/aligned-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Aligned stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Aligned stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Aligned stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1243,11 +1015,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Part of our Form Studies collection — this circle design has an open, expansive quality that makes it a satisfying and easy beginner make. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Colourful make', 'Meaningful make', 'First glass project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4486389835/circle-suncatcher-pattern-o-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/de049bbd-5a6b-492a-99ff-b4c7c1c9d02c/open-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Open stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5f642923-95aa-42ab-ad81-58b5d1eabbe0/open-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Open stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d120309-a0d1-423b-94c3-5684221bb204/open-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Open stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/de049bbd-5a6b-492a-99ff-b4c7c1c9d02c/open-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5f642923-95aa-42ab-ad81-58b5d1eabbe0/open-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8d120309-a0d1-423b-94c3-5684221bb204/open-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Open stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Open stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Open stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1259,11 +1028,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'From the Form Studies collection — this circle design explores the feeling of being centred. A meaningful, easy beginner make with a beautiful result. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'Colourful make', 'Gift for a crafter'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4486824120/stained-glass-circle-pattern-o-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cd3fe265-4c45-4e27-b0fb-b9c694028853/centered-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Centered stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6d4db2bc-6611-4d7b-8ea3-f294aaedbdb6/centered-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Centered stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/be51173f-93f3-42d5-a176-4548eb40aed8/centered-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Centered stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cd3fe265-4c45-4e27-b0fb-b9c694028853/centered-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6d4db2bc-6611-4d7b-8ea3-f294aaedbdb6/centered-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/be51173f-93f3-42d5-a176-4548eb40aed8/centered-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Centered stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Centered stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Centered stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1275,11 +1041,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'Part of our Form Studies collection — this geometric circle design explores connection and relationship. Fun to cut, satisfying to finish. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Colourful make', 'Meaningful make', 'Weekend project'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4486835316/geometric-circle-stained-glass-pattern-o',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e9c17183-945d-4446-885c-c5edb51dbc4a/connected-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Connected stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7962fb9d-262f-4f46-975a-8f0364f33002/connected-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Connected stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4233a105-87b2-4c0f-9e94-2ecc27d9c532/connected-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Connected stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e9c17183-945d-4446-885c-c5edb51dbc4a/connected-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7962fb9d-262f-4f46-975a-8f0364f33002/connected-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4233a105-87b2-4c0f-9e94-2ecc27d9c532/connected-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Connected stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Connected stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Connected stained glass pattern download — what\'s included, Hope Anthology' },
     },
     {
       show:       true,
@@ -1291,11 +1054,8 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
       about:      'The most rooted of our Form Studies — a circle design with a solid, earthy feel that is easy to cut and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.',
       goodFor:    ['Meaningful make', 'First glass project', 'Gift for a maker'],
       etsy:       'https://thehopeanthology.etsy.com/uk/listing/4486809470/circle-stained-glass-pattern-o-beginner',
-      images: {
-        pattern:       { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/36dd52da-3b2b-4e6b-b78c-931f759e1dc2/grounded-stained-glass-pattern-hope-anthology-pattern.jpg', alt: 'Grounded stained glass pattern — Geometric & abstract collection by Hope Anthology' },
-        lifestyle:     { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/47b07236-0bb9-4f91-8c62-f98f08721817/grounded-stained-glass-pattern-hope-anthology-lifestyle.jpg', alt: 'Grounded stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology' },
-        whatsIncluded: { src: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/135ec883-6390-4d76-a2c0-55480572f197/grounded-stained-glass-pattern-hope-anthology-whats-included.jpg', alt: 'Grounded stained glass pattern download — what\'s included, Hope Anthology' },
-      },
+      images:    { workbench: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/36dd52da-3b2b-4e6b-b78c-931f759e1dc2/grounded-stained-glass-pattern-hope-anthology-pattern.jpg', lifestyle: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/47b07236-0bb9-4f91-8c62-f98f08721817/grounded-stained-glass-pattern-hope-anthology-lifestyle.jpg', inside: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/135ec883-6390-4d76-a2c0-55480572f197/grounded-stained-glass-pattern-hope-anthology-whats-included.jpg' },
+      imageAlts: { workbench: 'Grounded stained glass pattern — Geometric & abstract collection by Hope Anthology', lifestyle: 'Grounded stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology', inside: 'Grounded stained glass pattern download — what\'s included, Hope Anthology' },
     },
   ],
 
