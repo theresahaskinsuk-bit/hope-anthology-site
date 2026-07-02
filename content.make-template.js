@@ -2,7 +2,7 @@
 // Auto-generated 2026-07-02 from stained-glass-contact-sheet-v3.xlsx
 // DO NOT EDIT MANUALLY — regenerate from the contact sheet
 
-window.HA_MAKE_CONTENT = {
+window.HA_MAKE_TEMPLATE_CONTENT = {
 
   pageTitle: 'Stained Glass Patterns',
   pageSubtitle: 'Downloadable stained glass patterns for copper foil and lead came. Each pattern includes a printable outline, a visual reference, and a download preview.',
