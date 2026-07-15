@@ -2515,10 +2515,13 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-tk-price-filter:hover{color:#265b70;}
 #ha-to-keep-v1 .ha-tk-price-filter.is-active{color:#265b70;text-decoration:underline;font-weight:600;}
 
+/* Reset Squarespace heading styles inside To Keep */
+#ha-to-keep-v1 h1,#ha-to-keep-v1 h2,#ha-to-keep-v1 h3,#ha-to-keep-v1 h4{font-family:'Lora',Georgia,serif!important;font-weight:400!important;color:#364449!important;line-height:1.2!important;margin:0!important;}
+
 /* Artist card */
 #ha-to-keep-v1 .ha-tk-card{background:#fff;border:.5px solid rgba(54,68,73,.1);border-radius:8px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;display:flex;flex-direction:column;}
 #ha-to-keep-v1 .ha-tk-card:hover{border-color:#265b70;transform:translateY(-1px);}
-#ha-to-keep-v1 .ha-tk-card-img-wrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:#fafbf6;}
+#ha-to-keep-v1 .ha-tk-card-img-wrap{position:relative;aspect-ratio:4/3;overflow:hidden;background:#fafbf6;}
 #ha-to-keep-v1 .ha-tk-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
 /* Badges */
@@ -2575,7 +2578,7 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
   #ha-to-keep-v1 .ha-kc-header{padding:32px 24px 0;}
   #ha-to-keep-v1 .ha-kc-grid-section{padding:0 24px 32px;}
   #ha-to-keep-v1 .ha-kc-heading{font-size:32px;}
-  #ha-to-keep-v1 .ha-kc-grid{grid-template-columns:1fr;}
+  #ha-to-keep-v1 .ha-kc-grid,#ha-to-keep-v1 .ha-kc-card-grid{grid-template-columns:1fr;}
 }
 @media(max-width:860px){
   #ha-to-keep-v1 .ha-tk-filters{padding:20px 24px 0;}
