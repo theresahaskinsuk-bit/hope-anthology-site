@@ -1750,7 +1750,8 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-kc-grid-eyebrow{font-size:11px;letter-spacing:.13em;text-transform:uppercase;font-weight:700;color:#414c4f;margin:28px 0 16px;padding-bottom:10px;border-bottom:.5px solid rgba(54,68,73,.14);font-family:'DM Sans',sans-serif;}
 #ha-to-keep-v1 .ha-tk-grid-eyebrow{margin-top:24px;}
 
-/* Artist card grid */
+/* Artist card grid — renderer outputs .ha-kc-card-grid.ha-tk-grid */
+#ha-to-keep-v1 .ha-kc-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
 #ha-to-keep-v1 .ha-kc-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
 
 /* Filters */
@@ -1809,6 +1810,12 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 /* CTA button */
 #ha-to-keep-v1 .ha-kc-btn{display:block;width:100%;padding:10px;border-radius:4px;text-align:center;text-decoration:none;font-size:13px;font-weight:700;margin-top:auto;font-family:'DM Sans',sans-serif;border:0;cursor:pointer;}
 #ha-to-keep-v1 .ha-kc-btn-inactive{background:rgba(54,68,73,.07);color:#4f5a5d;border:.5px solid rgba(54,68,73,.14);cursor:default;}
+
+/* Collective band */
+#ha-to-keep-v1 .ha-kc-collective{background:#265b70;padding:56px 48px;display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center;}
+#ha-to-keep-v1 .ha-kc-collective h2{font-family:'Lora',Georgia,serif;font-size:28px;color:#F2F3EF;font-weight:400;margin:0 0 10px;line-height:1.2;}
+#ha-to-keep-v1 .ha-kc-collective p{font-size:15px;color:rgba(242,243,239,.85);font-weight:300;line-height:1.7;margin:0;max-width:560px;}
+#ha-to-keep-v1 .ha-kc-collective-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#F2F3EF;color:#265b70;text-decoration:none;border-radius:4px;padding:14px 22px;font-size:13px;font-weight:700;white-space:nowrap;font-family:'DM Sans',sans-serif;}
 
 /* Responsive */
 @media(max-width:900px){
