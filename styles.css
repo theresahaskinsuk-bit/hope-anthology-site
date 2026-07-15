@@ -2499,27 +2499,27 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 /* Main wrapper */
 #ha-to-keep-v1 .ha-tk-main{background:#F2F3EF;}
 
-/* Collection header band — reuses ha-kc-* classes from keep-collection renderer */
-#ha-to-keep-v1 .ha-kc-header{background:#F2F3EF;padding:56px 48px 64px;}
-#ha-to-keep-v1 .ha-kc-eyebrow{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;color:#265b70;margin:0 0 16px;font-family:'DM Sans',sans-serif;}
+/* Collection header band — dark teal style matching To Make hero */
+#ha-to-keep-v1 .ha-kc-header{background:#265b70;padding:52px 48px 56px;}
+#ha-to-keep-v1 .ha-kc-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:#FED22F;margin:0 0 12px;font-family:'DM Sans',sans-serif;}
 /* Heading — scoped rule must beat the global h2 reset below */
-#ha-to-keep-v1 .ha-kc-header h2{font-family:'Lora',Georgia,serif!important;font-size:52px!important;font-weight:400!important;color:#364449!important;line-height:1.08!important;margin:0 0 28px!important;letter-spacing:-.02em!important;}
-#ha-to-keep-v1 .ha-kc-header h2 em{font-style:italic!important;color:#8B6040!important;}
+#ha-to-keep-v1 .ha-kc-header h2{font-family:'Lora',Georgia,serif!important;font-size:48px!important;font-weight:400!important;color:#F2F3EF!important;line-height:1.12!important;margin:0 0 16px!important;letter-spacing:-.02em!important;}
+#ha-to-keep-v1 .ha-kc-header h2 em{font-style:italic!important;color:#FED22F!important;}
 /* Description — bare <p> inside ha-kc-header */
-#ha-to-keep-v1 .ha-kc-header>p:not(.ha-kc-eyebrow){font-size:17px!important;color:#364449!important;line-height:1.85!important;max-width:580px!important;margin:0 0 44px!important;font-weight:300!important;}
+#ha-to-keep-v1 .ha-kc-header>p:not(.ha-kc-eyebrow){font-size:16px!important;color:rgba(242,243,239,.82)!important;line-height:1.85!important;max-width:540px!important;margin:0 0 32px!important;font-weight:300!important;font-family:'DM Sans',sans-serif!important;}
 /* Fallback class selectors */
-#ha-to-keep-v1 .ha-kc-heading{font-family:'Lora',Georgia,serif;font-size:52px;font-weight:400;color:#364449;line-height:1.08;margin:0 0 28px;letter-spacing:-.02em;}
-#ha-to-keep-v1 .ha-kc-heading em{font-style:italic;color:#8B6040;}
-#ha-to-keep-v1 .ha-kc-description{font-size:17px;color:#364449;line-height:1.85;max-width:580px;margin:0 0 44px;font-weight:300;}
-/* Stats — stacked layout (number above label) matching mockup */
-#ha-to-keep-v1 .ha-kc-stats{display:flex;gap:48px;flex-wrap:wrap;margin:0;}
-#ha-to-keep-v1 .ha-kc-stats span{display:flex;flex-direction:column;gap:6px;}
-#ha-to-keep-v1 .ha-kc-stats strong{font-family:'Lora',Georgia,serif;font-size:36px;font-weight:400;color:#265b70;line-height:1;}
-#ha-to-keep-v1 .ha-kc-stats small{font-size:11px;font-weight:700;color:#414c4f;letter-spacing:.1em;text-transform:uppercase;}
+#ha-to-keep-v1 .ha-kc-heading{font-family:'Lora',Georgia,serif;font-size:48px;font-weight:400;color:#F2F3EF;line-height:1.12;margin:0 0 16px;letter-spacing:-.02em;}
+#ha-to-keep-v1 .ha-kc-heading em{font-style:italic;color:#FED22F;}
+#ha-to-keep-v1 .ha-kc-description{font-size:16px;color:rgba(242,243,239,.82);line-height:1.85;max-width:540px;margin:0 0 32px;font-weight:300;}
+/* Stats — stacked layout with cream/gold colours matching To Make */
+#ha-to-keep-v1 .ha-kc-stats{display:flex;gap:36px;flex-wrap:wrap;margin:0;}
+#ha-to-keep-v1 .ha-kc-stats span{display:flex;flex-direction:column;gap:4px;}
+#ha-to-keep-v1 .ha-kc-stats strong{font-family:'Lora',Georgia,serif;font-size:26px;font-weight:400;color:#FED22F;line-height:1;}
+#ha-to-keep-v1 .ha-kc-stats small{font-size:11px;font-weight:600;color:rgba(242,243,239,.68);letter-spacing:.08em;text-transform:uppercase;}
 /* Legacy ha-kc-stat class (fallback) */
-#ha-to-keep-v1 .ha-kc-stat{display:flex;flex-direction:column;gap:6px;}
-#ha-to-keep-v1 .ha-kc-stat strong{font-family:'Lora',Georgia,serif;font-size:36px;font-weight:400;color:#265b70;line-height:1;}
-#ha-to-keep-v1 .ha-kc-stat span{font-size:11px;font-weight:700;color:#414c4f;letter-spacing:.1em;text-transform:uppercase;}
+#ha-to-keep-v1 .ha-kc-stat{display:flex;flex-direction:column;gap:4px;}
+#ha-to-keep-v1 .ha-kc-stat strong{font-family:'Lora',Georgia,serif;font-size:26px;font-weight:400;color:#FED22F;line-height:1;}
+#ha-to-keep-v1 .ha-kc-stat span{font-size:11px;font-weight:600;color:rgba(242,243,239,.68);letter-spacing:.08em;text-transform:uppercase;}
 
 /* Grid section eyebrow */
 #ha-to-keep-v1 .ha-kc-grid-section{padding:0 48px 48px;}
@@ -2548,8 +2548,8 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 /* Reset Squarespace heading styles inside To Keep */
 #ha-to-keep-v1 h1,#ha-to-keep-v1 h2,#ha-to-keep-v1 h3,#ha-to-keep-v1 h4{font-family:'Lora',Georgia,serif!important;font-weight:400!important;color:#364449!important;line-height:1.2!important;margin:0!important;}
 /* Re-assert header h2 after the global reset — must come after */
-#ha-to-keep-v1 .ha-kc-header h2{font-size:52px!important;line-height:1.08!important;margin:0 0 28px!important;letter-spacing:-.02em!important;}
-#ha-to-keep-v1 .ha-kc-header h2 em{font-style:italic!important;color:#8B6040!important;}
+#ha-to-keep-v1 .ha-kc-header h2{font-size:48px!important;color:#F2F3EF!important;line-height:1.12!important;margin:0 0 16px!important;letter-spacing:-.02em!important;}
+#ha-to-keep-v1 .ha-kc-header h2 em{font-style:italic!important;color:#FED22F!important;}
 
 /* Artist card */
 #ha-to-keep-v1 .ha-tk-card{background:#fff;border:1px solid rgba(54,68,73,.1);border-radius:10px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;display:flex;flex-direction:column;}
@@ -2593,11 +2593,11 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-kc-btn{display:block;width:100%;padding:14px;border-radius:6px;text-align:center;text-decoration:none;font-size:15px;font-weight:600;margin-top:auto;font-family:'DM Sans',sans-serif;border:0;cursor:pointer;}
 #ha-to-keep-v1 .ha-kc-btn-inactive{background:#d8dcdb;color:#7a8a90;cursor:default;}
 
-/* Collective band */
-#ha-to-keep-v1 .ha-kc-collective{background:#265b70;padding:56px 48px;display:grid;grid-template-columns:1fr auto;gap:44px;align-items:center;}
-#ha-to-keep-v1 .ha-kc-collective h2{font-family:'Lora',Georgia,serif;font-size:28px;color:#F2F3EF;font-weight:400;margin:0 0 10px;line-height:1.2;}
-#ha-to-keep-v1 .ha-kc-collective p{font-size:15px;color:rgba(242,243,239,.85);font-weight:300;line-height:1.7;margin:0;max-width:560px;}
-#ha-to-keep-v1 .ha-kc-collective-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#F2F3EF;color:#265b70;text-decoration:none;border-radius:4px;padding:14px 22px;font-size:13px;font-weight:700;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+/* Collective band — cream strip matching To Make style */
+#ha-to-keep-v1 .ha-kc-collective{background:#F2F3EF;padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;border-top:.5px solid rgba(54,68,73,.08);}
+#ha-to-keep-v1 .ha-kc-collective h2{font-family:'Lora',Georgia,serif;font-size:22px;color:#265b70;font-weight:400;margin:0 0 6px;line-height:1.3;}
+#ha-to-keep-v1 .ha-kc-collective p{font-size:14px;color:#364449;font-weight:300;line-height:1.7;margin:0;max-width:600px;font-family:'DM Sans',sans-serif;}
+#ha-to-keep-v1 .ha-kc-collective-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:#265b70;color:#F2F3EF;text-decoration:none;border-radius:4px;padding:13px 18px;font-size:12px;font-weight:600;white-space:nowrap;font-family:'DM Sans',sans-serif;}
 
 /* Responsive */
 @media(max-width:900px){
@@ -2608,12 +2608,14 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
   #ha-to-keep-v1 .ha-tk-filters{padding:22px 24px 0;}
   #ha-to-keep-v1 .ha-tk-filter-row{flex-direction:column;align-items:flex-start;gap:10px;}
   #ha-to-keep-v1 .ha-tk-filter-label{min-width:unset;}
-  #ha-to-keep-v1 .ha-kc-header{padding:36px 24px 48px;}
+  #ha-to-keep-v1 .ha-kc-header{padding:36px 24px 44px;}
   #ha-to-keep-v1 .ha-kc-header h2{font-size:36px!important;}
   #ha-to-keep-v1 .ha-kc-grid-section{padding:0 24px 32px;}
   #ha-to-keep-v1 .ha-kc-heading{font-size:36px;}
   #ha-to-keep-v1 .ha-kc-grid,#ha-to-keep-v1 .ha-kc-card-grid{grid-template-columns:1fr;}
   #ha-to-keep-v1 .ha-tk-card-img-wrap{aspect-ratio:4/3;}
+  #ha-to-keep-v1 .ha-kc-collective{grid-template-columns:1fr;gap:22px;padding:34px 24px;}
+  #ha-to-keep-v1 .ha-kc-collective-btn{width:100%;justify-content:center;}
 }
 @media(max-width:860px){
   #ha-to-keep-v1 .ha-tk-filters{padding:20px 24px 0;}
