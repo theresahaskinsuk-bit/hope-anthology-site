@@ -250,6 +250,8 @@
 
   /* ── Mount ── */
   function mount(){
+    var path = location.pathname.replace(/\/$/, '') || '/';
+    if(path !== '/to-keep') return;
     var content = window.HA_TO_KEEP_CONTENT || {};
     if(document.getElementById('ha-to-keep-v1')) return;
     var anchor = document.querySelector('#sections') || document.querySelector('main') || document.body.firstElementChild;
