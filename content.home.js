@@ -16,8 +16,9 @@ window.HA_HOME_CONTENT = {
     glass: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d6c1011-8dfc-46d3-a7c8-14b636cafb68/home-card-stained-glass-patterns-collection.jpg?content-type=image%2Fjpeg'
   },
 
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }

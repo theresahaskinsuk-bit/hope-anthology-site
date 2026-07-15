@@ -6,8 +6,12 @@ window.HA_STORY_CONTENT = {
   },
   "nav": [
     {
-      "label": "The Collections",
-      "href": "/collections"
+      "label": "To Keep",
+      "href": "/to-keep"
+    },
+    {
+      "label": "To Make",
+      "href": "/collections/stained-glass-patterns"
     },
     {
       "label": "The Story",
@@ -140,8 +144,12 @@ window.HA_STORY_CONTENT = {
             "href": "/"
           },
           {
-            "label": "The Collections",
-            "href": "/collections"
+            "label": "To Keep",
+            "href": "/to-keep"
+          },
+          {
+            "label": "To Make",
+            "href": "/collections/stained-glass-patterns"
           },
           {
             "label": "The Story",

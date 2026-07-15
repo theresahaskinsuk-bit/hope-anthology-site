@@ -5,8 +5,9 @@ window.HA_COLLABORATE_CONTENT = {
     cggStudio: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc4182c0-cb7d-46ba-8ab1-e314ac33c320/02-creative-glass-guild-studio-students-working-on-stained-glass-projects.jpg?content-type=image%2Fjpeg',
     cggLogo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8c5b5ba1-5625-4a27-8681-1ab82945a3bc/03-creative-glass-guild-logo.webp?content-type=image%2Fwebp'
   },
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }

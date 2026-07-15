@@ -9,11 +9,12 @@ window.HA_COLLECTIVE_CONTENT = {
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0956e10d-38c6-4fd7-8e06-7f2579fb75d6/collections-footer-star-hope-anthology.png?content-type=image%2Fpng',
   },
 
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
-    { label: 'Collective', url: '/collective', active: true }
+    { label: 'Collective', url: '/collective' }
   ],
 
   hero: {

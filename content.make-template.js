@@ -17,16 +17,16 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng'
   },
 
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }
   ],
 
   breadcrumbs: [
-    { label: 'The Collections', url: '/collections' },
-    { label: 'To Make', url: '/collections/to-make' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'Stained Glass' }
   ],
 
@@ -34,7 +34,7 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     eyebrow: 'To Make',
     headingHtml: 'Stained <em>glass</em> patterns',
     description: 'Beginner-friendly stained glass downloads designed for the joy of making. Each pattern includes a visual reference, a lifestyle view, and a download preview so makers can choose with confidence.',
-    stats: [{ value: '80', label: 'live patterns' }, { value: 'PDF/JPG', label: 'digital downloads' }, { value: 'Beginner', label: 'friendly level' }, { value: '3 views', label: 'per pattern' }]
+    stats: [{ value: '80', label: 'live patterns' }, { value: 'PDF', label: 'digital downloads' }, { value: 'Beginner', label: 'friendly level' }, { value: '3 views', label: 'per pattern' }]
   },
 
   filters: ['All', 'Bundles', 'Animals & birds', 'Nature & flowers', 'Insects & bugs', 'Celestial', 'Geometric & abstract'],

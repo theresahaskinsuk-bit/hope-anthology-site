@@ -16,8 +16,9 @@ window.HA_INFO_TEMPLATE_CONTENT = {
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng',
   },
 
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }

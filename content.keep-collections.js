@@ -169,8 +169,12 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
   },
   "navigation": [
     {
-      "label": "The Collections",
-      "url": "/collections"
+      "label": "To Keep",
+      "url": "/to-keep"
+    },
+    {
+      "label": "To Make",
+      "url": "/collections/stained-glass-patterns"
     },
     {
       "label": "The Story",
@@ -208,14 +212,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "description": "Six creatures. Six characters. Each one a mirror for something in you. The fox turns challenge into grace. The owl trusts the silence between moments. The hare moves with the rhythm of life. Which one are you today?",
       "gridEyebrow": "Woodland Folk — 6 prints",
       "breadcrumbs": [
-        {
-          "label": "The Collections",
-          "url": "/collections"
-        },
-        {
-          "label": "To Keep",
-          "url": "/collections#to-keep"
-        },
+        { "label": "To Keep", "url": "/to-keep" },
         {
           "label": "Woodland Folk"
         }
@@ -368,14 +365,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "description": "A symbolic alphabet of gentle words, created as teal and sage art prints for reflection, encouragement, and everyday meaning.",
       "gridEyebrow": "Meaning Alphabet — 26 symbolic prints",
       "breadcrumbs": [
-        {
-          "label": "The Collections",
-          "url": "/collections"
-        },
-        {
-          "label": "To Keep",
-          "url": "/collections#to-keep"
-        },
+        { "label": "To Keep", "url": "/to-keep" },
         {
           "label": "Meaning Alphabet"
         }
@@ -1044,14 +1034,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "description": "A guided collection of symbolic angel number art prints for trust, alignment, protection, change, reflection, growth, abundance, and new beginnings.",
       "gridEyebrow": "Angel Numbers — 10 symbolic prints",
       "breadcrumbs": [
-        {
-          "label": "The Collections",
-          "url": "/collections"
-        },
-        {
-          "label": "To Keep",
-          "url": "/collections#to-keep"
-        },
+        { "label": "To Keep", "url": "/to-keep" },
         {
           "label": "Angel Numbers"
         }
@@ -1330,14 +1313,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "description": "A gentle collection of symbolic farm animal art prints for steadiness, self-reliance, care, contentment, community, and quiet determination.",
       "gridEyebrow": "Farm Folk — 6 symbolic prints",
       "breadcrumbs": [
-        {
-          "label": "The Collections",
-          "url": "/collections"
-        },
-        {
-          "label": "To Keep",
-          "url": "/collections#to-keep"
-        },
+        { "label": "To Keep", "url": "/to-keep" },
         {
           "label": "Farm Folk"
         }
@@ -1511,14 +1487,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "description": "A grounding collection of symbolic word-based art prints for calm, reflection, resilience, and everyday emotional check-ins.",
       "gridEyebrow": "Everyday Anchors — 6 symbolic prints",
       "breadcrumbs": [
-        {
-          "label": "The Collections",
-          "url": "/collections"
-        },
-        {
-          "label": "To Keep",
-          "url": "/collections#to-keep"
-        },
+        { "label": "To Keep", "url": "/to-keep" },
         {
           "label": "Everyday Anchors"
         }

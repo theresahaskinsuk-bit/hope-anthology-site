@@ -9,8 +9,9 @@ window.HA_WHY_CONTENT = {
     logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e789bc30-2f5c-4037-8190-a9355d3a8d20/home-logo-hope-anthology.jpg?content-type=image%2Fjpeg',
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1852dfa4-ea60-4e93-83b5-ac8ea2f0498d/home-footer-star-hope-anthology.png?content-type=image%2Fpng',
   },
-  navigation: [
-    { label: `The Collections`, url: `/collections` },
+    navigation: [
+    { label: `To Keep`, url: `/to-keep` },
+    { label: `To Make`, url: `/collections/stained-glass-patterns` },
     { label: `The Story`, url: `/story` },
     { label: `Collaborate`, url: `/collaborate` },
     { label: `Collective`, url: `/collective` }

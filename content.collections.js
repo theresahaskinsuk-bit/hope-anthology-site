@@ -12,15 +12,16 @@ window.HA_COLLECTIONS_CONTENT = {
     stainedGlass: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/83264dad-236d-4631-b67f-4a0809791808/collections-card-stained-glass.jpg?content-type=image%2Fjpeg'
   },
 
-  navigation: [
-    { label: 'The Collections', url: '/collections' },
+    navigation: [
+    { label: 'To Keep', url: '/to-keep' },
+    { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }
   ],
 
   page: {
-    eyebrow: 'The Collections',
+    eyebrow: 'The Anthology',
     headlineHtml: 'Two worlds. One <em>anthology.</em>',
     intro: 'Everything in the Hope Anthology belongs to one of two worlds. Things you keep — prints and finished pieces to live with. Things you make — patterns and designs to build with your hands.'
   },
