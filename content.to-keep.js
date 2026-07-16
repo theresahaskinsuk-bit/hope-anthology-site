@@ -49,7 +49,7 @@ window.HA_TO_KEEP_CONTENT = {
       priceFrom: '\u00a315',
       feeling: 'Symbols and anchors that carry everyday meaning.',
       traits: ['Symbolic art', 'Colour-led', 'Life meaning'],
-      cardUrl: '/to-keep/theresa-haskins'
+      cardUrl: '../to-keep/theresa-haskins'
     },
     {
       slug: 'theresa-german',
