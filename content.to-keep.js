@@ -48,8 +48,8 @@ window.HA_TO_KEEP_CONTENT = {
       collections: ['The Meaning Alphabet', 'Everyday Anchors', 'Angel Numbers'],
       priceFrom: '\u00a315',
       feeling: 'Symbols and anchors that carry everyday meaning.',
-      traits: ['Symbolic art', 'Colour-led', 'Quiet meaning'],
-      cardUrl: '/collections/meaning-alphabet'
+      traits: ['Symbolic art', 'Colour-led', 'Life meaning'],
+      cardUrl: '/to-keep/theresa-haskins'
     },
     {
       slug: 'theresa-german',
