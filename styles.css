@@ -2530,11 +2530,13 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-kc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;}
 
 /* Filter bar — two-row layout: medium on row 1, price on row 2 */
-#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:14px 48px;display:flex;align-items:center;position:sticky;top:72px;z-index:900;overflow-x:auto;}
+#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:7px 48px;display:flex;align-items:center;position:sticky;top:72px;z-index:900;overflow-x:auto;}
 /* Rows wrapper — stacks medium and price rows vertically */
 #ha-to-keep-v1 .ha-tk-filter-rows{display:flex;flex-direction:column;gap:5px;flex:1;}
 /* Each row is a horizontal flex line */
 #ha-to-keep-v1 .ha-tk-filter-row{display:flex;align-items:center;gap:8px;}
+/* Short inline label — fixed width so chips on both rows align vertically */
+#ha-to-keep-v1 .ha-tk-filter-label{display:inline-block;font-size:11px;font-weight:600;color:rgba(54,68,73,.5);white-space:nowrap;font-family:'DM Sans',sans-serif;width:52px;flex-shrink:0;text-align:right;letter-spacing:.04em;text-transform:uppercase;}
 
 #ha-to-keep-v1 .ha-tk-filter-btns{display:flex;gap:5px;flex-wrap:nowrap;}
 #ha-to-keep-v1 .ha-tk-filter-btn{appearance:none;font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.24);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:transparent;line-height:1.2;transition:background .15s,border-color .15s,color .15s;}
