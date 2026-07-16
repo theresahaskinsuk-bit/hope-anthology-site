@@ -5,10 +5,11 @@
       "star": "data:image/png;base64,..."
     },
     "navigation": [
-      { "label": "Home", "url": "/" },
-      { "label": "The Collections", "url": "/collections" },
+      { "label": "To Keep", "url": "/to-keep" },
+      { "label": "To Make", "url": "/collections/stained-glass-patterns" },
       { "label": "The Story", "url": "/story" },
-      { "label": "Collaborate", "url": "/collaborate" }
+      { "label": "Collaborate", "url": "/collaborate" },
+      { "label": "Collective", "url": "/collective" }
     ],
     "collective": {
       "heading": "Something worth being part of.",

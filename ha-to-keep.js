@@ -89,7 +89,9 @@
         '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(artist.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
         '<p class="ha-tk-feeling">' + esc(artist.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traitPills + '</div>' +
-        '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel('View their work') + '</button>' +
+        (artist.cardUrl
+        ? '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(artist.cardUrl) + '">' + ctaLabel('View their work') + '</a>'
+        : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel('View their work') + '</button>') +
       '</div>' +
     '</article>';
   }
