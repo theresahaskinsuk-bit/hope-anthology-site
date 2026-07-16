@@ -2543,23 +2543,16 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-kc-card-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;}
 #ha-to-keep-v1 .ha-kc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;}
 
-/* Filter bar — two-row layout: medium on row 1, price on row 2 */
-#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:14px 48px;display:flex;align-items:center;position:sticky;top:72px;z-index:900;overflow-x:auto;}
-/* Rows wrapper — stacks medium and price rows vertically */
-#ha-to-keep-v1 .ha-tk-filter-rows{display:flex;flex-direction:column;gap:5px;flex:1;}
-/* Each row is a horizontal flex line */
-#ha-to-keep-v1 .ha-tk-filter-row{display:flex;align-items:center;gap:8px;}
-
-#ha-to-keep-v1 .ha-tk-filter-btns{display:flex;gap:5px;flex-wrap:nowrap;}
-#ha-to-keep-v1 .ha-tk-filter-btn{appearance:none;font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.24);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:transparent;line-height:1.2;transition:background .15s,border-color .15s,color .15s;}
+/* Filter bar — single-row layout: medium chips | divider | price chips | count label */
+#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:0 48px;display:flex;align-items:center;gap:6px;position:sticky;top:72px;z-index:900;overflow-x:auto;min-height:52px;flex-wrap:wrap;}
+#ha-to-keep-v1 .ha-tk-filter-btn{appearance:none;font-size:12px;padding:5px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.2);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:none;line-height:1.4;transition:all .18s;}
 #ha-to-keep-v1 .ha-tk-filter-btn:hover{border-color:#236273;color:#236273;}
 #ha-to-keep-v1 .ha-tk-filter-btn.is-active{background:#236273;color:#F2F3EF;border-color:#236273;}
-/* Price filter — same pill-chip style */
-#ha-to-keep-v1 .ha-tk-price-filters{display:flex;gap:5px;flex-wrap:nowrap;}
-#ha-to-keep-v1 .ha-tk-price-filter{appearance:none;font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.24);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:transparent;line-height:1.2;transition:background .15s,border-color .15s,color .15s;}
+#ha-to-keep-v1 .ha-tk-filter-divider{display:inline-block;width:1px;height:18px;background:rgba(54,68,73,.18);flex-shrink:0;margin:0 4px;}
+#ha-to-keep-v1 .ha-tk-price-filter{appearance:none;font-size:12px;padding:5px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.2);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:none;line-height:1.4;transition:all .18s;}
 #ha-to-keep-v1 .ha-tk-price-filter:hover{border-color:#236273;color:#236273;}
 #ha-to-keep-v1 .ha-tk-price-filter.is-active{background:#236273;color:#F2F3EF;border-color:#236273;}
-/* Count label — sits at end of medium row */
+/* Count label — sits at end of filter bar */
 #ha-to-keep-v1 .ha-tk-grid-eyebrow{margin-left:auto;font-size:12px;color:#414c4f;white-space:nowrap;font-family:'DM Sans',sans-serif;letter-spacing:0;text-transform:none;font-weight:400;border:0;padding:0;margin-top:0;margin-bottom:0;}
 
 /* Reset Squarespace heading styles inside To Keep */
@@ -2609,6 +2602,7 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 /* CTA button */
 #ha-to-keep-v1 .ha-kc-btn{display:block;width:100%;padding:14px;border-radius:6px;text-align:center;text-decoration:none;font-size:15px;font-weight:600;margin-top:auto;font-family:'DM Sans',sans-serif;border:0;cursor:pointer;}
 #ha-to-keep-v1 .ha-kc-btn-inactive{background:#d8dcdb;color:#7a8a90;cursor:default;}
+#ha-to-keep-v1 .ha-kc-btn-teal{background:#236273;color:#F2F3EF;}
 
 /* Collective band — exact match to To Make computed styles */
 #ha-to-keep-v1 .ha-kc-collective{background:#F2F3EF;padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:60px;align-items:center;border-top:.5px solid rgba(54,68,73,.08);}
@@ -2622,7 +2616,7 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
   #ha-to-keep-v1 .ha-v3-nav .ha-v3-links{position:absolute;top:72px;left:0;right:0;display:flex!important;flex-direction:column;align-items:stretch;gap:0;background:#265b70;border-top:.5px solid rgba(242,243,239,.18);padding:8px 24px 18px;opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .18s ease,visibility .18s ease,transform .18s ease;}
   #ha-to-keep-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
   #ha-to-keep-v1 .ha-v3-nav .ha-v3-links a{display:block;padding:12px 0;border-bottom:.5px solid rgba(242,243,239,.12);}
-  #ha-to-keep-v1 .ha-tk-filters{padding:12px 24px;top:68px;}
+  #ha-to-keep-v1 .ha-tk-filters{padding:0 24px;top:68px;}
   #ha-to-keep-v1 .ha-kc-header{padding:36px 24px 44px;}
   #ha-to-keep-v1 .ha-kc-header h2{font-size:36px!important;}
   #ha-to-keep-v1 .ha-kc-grid-section{padding:20px 24px 32px;}

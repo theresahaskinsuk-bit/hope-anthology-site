@@ -101,6 +101,7 @@
     var filters = content.filters || {};
     var mediums = filters.medium || ['All'];
     var prices = filters.price || ['All'];
+    var artists = (content.artists || []).filter(function(a){ return a.active !== false; });
     var mediumBtns = mediums.map(function(m, i){
       return '<button type="button" class="ha-tk-filter-btn' + (i === 0 ? ' is-active' : '') + '" data-filter-medium="' + esc(m) + '">' + esc(m) + '</button>';
     }).join('');
@@ -108,16 +109,10 @@
       return '<button type="button" class="ha-tk-price-filter' + (i === 0 ? ' is-active' : '') + '" data-filter-price="' + esc(p) + '">' + esc(p) + '</button>';
     }).join('');
     return '<div class="ha-tk-filters">' +
-      '<div class="ha-tk-filter-rows">' +
-        '<div class="ha-tk-filter-row">' +
-          '<span class="ha-tk-filter-label">Medium</span>' +
-          '<div class="ha-tk-filter-btns">' + mediumBtns + '</div>' +
-        '</div>' +
-        '<div class="ha-tk-filter-row ha-tk-filter-row-price">' +
-          '<span class="ha-tk-filter-label">Price</span>' +
-          '<div class="ha-tk-price-filters">' + priceLinks + '</div>' +
-        '</div>' +
-      '</div>' +
+      mediumBtns +
+      '<span class="ha-tk-filter-divider" aria-hidden="true"></span>' +
+      priceLinks +
+      '<span class="ha-tk-grid-eyebrow" id="ha-tk-count-label">' + esc(content.gridEyebrow || ('The Anthology \u2014 ' + artists.length + ' Artists')) + '</span>' +
     '</div>';
   }
 
@@ -156,7 +151,6 @@
         /* Filter + grid */
         '<section class="ha-kc-grid-section">' +
           filterBar(content) +
-          '<p class="ha-kc-grid-eyebrow ha-tk-grid-eyebrow" id="ha-tk-count-label">' + esc(content.gridEyebrow || '') + '</p>' +
           '<div class="ha-kc-card-grid ha-tk-grid" id="ha-tk-grid">' + cardsHtml + '</div>' +
         '</section>' +
         /* Collective */

@@ -1,8 +1,8 @@
 (function(){
   window.HA_KEEP_COLLECTIONS_CONTENT = {
     "images": {
-      "logo": "data:image/jpeg;base64,...",
-      "star": "data:image/png;base64,..."
+      "logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+      "star": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng"
     },
     "navigation": [
       { "label": "To Keep", "url": "/to-keep" },
