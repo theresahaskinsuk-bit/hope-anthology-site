@@ -6,7 +6,7 @@
   var currentPath = null;
   var runTimer = null;
   var renderCount = 0;
-  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1'];
+  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
   var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-story-active','ha-collaborate-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
   window.HA_STABILITY_VERSION = version;
 
@@ -19,6 +19,7 @@
     if(p==='/collections/angel-numbers' || p==='/angel-numbers') return {key:'angel-numbers', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
     if(p==='/collections/farm-folk' || p==='/farm-folk') return {key:'farm-folk', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
     if(p==='/collections/everyday-anchors' || p==='/everyday-anchors') return {key:'everyday-anchors', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
+    if(p==='/to-keep/theresa-haskins' || p==='/theresa-haskins') return {key:'theresa-haskins', root:'ha-artist-page-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-artist-page.js'};
     if(p==='/collections/stained-glass-patterns' || p==='/collections/stained-glass' || p==='/stained-glass-patterns') return {key:'stained-glass', root:'ha-make-template-v1', contentId:'ha-make-template-content', content:'content.make-template.js', renderer:'ha-make-template.js'};
     if(p==='/story' || p==='/the-story') return {key:'story', root:'ha-story-root', contentId:'ha-story-content', content:'content.story.js', renderer:'ha-story.js'};
     if(p==='/collaborate' || p==='/collaborations') return {key:'collaborate', root:'ha-collaborate-v1', contentId:'ha-collaborate-content', content:'content.collaborate.js', renderer:'ha-collaborate.js'};

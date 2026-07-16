@@ -2530,13 +2530,11 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 #ha-to-keep-v1 .ha-kc-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;}
 
 /* Filter bar — two-row layout: medium on row 1, price on row 2 */
-#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:7px 48px;display:flex;align-items:center;position:sticky;top:72px;z-index:900;overflow-x:auto;}
+#ha-to-keep-v1 .ha-tk-filters{background:#F2F3EF;border-bottom:.5px solid rgba(54,68,73,.1);padding:14px 48px;display:flex;align-items:center;position:sticky;top:72px;z-index:900;overflow-x:auto;}
 /* Rows wrapper — stacks medium and price rows vertically */
 #ha-to-keep-v1 .ha-tk-filter-rows{display:flex;flex-direction:column;gap:5px;flex:1;}
 /* Each row is a horizontal flex line */
 #ha-to-keep-v1 .ha-tk-filter-row{display:flex;align-items:center;gap:8px;}
-/* Short inline label — fixed width so chips on both rows align vertically */
-#ha-to-keep-v1 .ha-tk-filter-label{display:inline-block;font-size:11px;font-weight:600;color:rgba(54,68,73,.5);white-space:nowrap;font-family:'DM Sans',sans-serif;width:52px;flex-shrink:0;text-align:right;letter-spacing:.04em;text-transform:uppercase;}
 
 #ha-to-keep-v1 .ha-tk-filter-btns{display:flex;gap:5px;flex-wrap:nowrap;}
 #ha-to-keep-v1 .ha-tk-filter-btn{appearance:none;font-size:12px;padding:6px 14px;border-radius:20px;border:.5px solid rgba(54,68,73,.24);color:#414c4f;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif;background:transparent;line-height:1.2;transition:background .15s,border-color .15s,color .15s;}
@@ -2627,3 +2625,37 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
   #ha-to-keep-v1 .ha-v3-nav .ha-v3-links a:hover,
   #ha-to-keep-v1 .ha-v3-nav .ha-v3-links a:focus-visible{color:#fff!important;text-decoration:underline!important;text-decoration-color:#fff!important;text-underline-offset:5px!important;}
 }
+
+
+/* Artist Page Hybrid Styles — /to-keep/theresa-haskins */
+.ha-artist-header { background: linear-gradient(180deg, var(--ha-cream) 0%, #fff 100%); padding: 56px 48px 72px; }
+.ha-artist-hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; max-width: 1400px; margin: 0 auto; }
+.ha-artist-h2 { font-family: 'Lora', serif; font-size: clamp(42px, 5vw, 64px); line-height: 1.1; color: var(--ha-teal); margin-bottom: 24px; }
+.ha-artist-h2 em { font-style: italic; color: var(--ha-twine); font-size: 0.75em; display: block; margin-top: 4px; }
+.ha-artist-bio { font-size: 18px; line-height: 1.8; color: var(--ha-dark); max-width: 610px; margin-bottom: 32px; }
+.ha-artist-montage { display: grid; grid-template-columns: 1.5fr 1fr; gap: 16px; }
+.ha-artist-montage img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); }
+.ha-artist-montage-stack { display: grid; grid-template-rows: 1fr 1fr; gap: 16px; }
+.ha-artist-montage-large { aspect-ratio: 4/5; }
+.ha-artist-montage-small { aspect-ratio: 1/1; }
+
+.ha-artist-filter-bar { position: sticky; top: 72px; z-index: 100; background: var(--ha-cream); border-bottom: 1px solid rgba(54,68,73,0.1); }
+.ha-artist-grid-section { background: var(--ha-cream); padding: 48px; }
+.ha-artist-card-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.ha-artist-card-img-wrap { aspect-ratio: 4/5 !important; }
+
+.ha-artist-dots { display: flex; justify-content: center; gap: 8px; padding: 12px 0; background: transparent; margin-top: -8px; position: relative; z-index: 10; }
+.ha-artist-dot { width: 8px; height: 8px; border-radius: 50%; border: 0; background: #d1d5db; cursor: pointer; padding: 0; transition: background 0.2s; }
+.ha-artist-dot.is-active { background: var(--ha-teal); }
+.ha-artist-price-line { font-family: 'Lora', serif; font-size: 15px; color: var(--ha-dark); margin-bottom: 12px; border-top: 0.5px solid rgba(54,68,73,0.1); padding-top: 12px; }
+.ha-artist-price-line small { font-style: italic; font-size: 12px; color: var(--ha-readable-muted); margin-left: 4px; }
+
+#ha-artist-page-v1 .ha-kc-breadcrumb { background: var(--ha-teal); min-height: 44px; padding: 10px 48px; display: flex; align-items: center; gap: 8px; flex-wrap: nowrap; font-size: 14px; line-height: 1.35; color: rgba(242,243,239,.7); font-family: 'DM Sans', sans-serif; position: relative; z-index: 1; }
+#ha-artist-page-v1 .ha-kc-breadcrumb a { color: rgba(242,243,239,.82); text-decoration: none; }
+#ha-artist-page-v1 .ha-kc-current { color: rgba(242,243,239,.94); }
+#ha-artist-page-v1 .ha-kc-sep { opacity: .55; }
+
+@media (max-width: 1200px) { .ha-artist-card-grid { grid-template-columns: repeat(4, 1fr); } }
+@media (max-width: 1000px) { .ha-artist-hero-grid { grid-template-columns: 1fr; gap: 40px; } .ha-artist-card-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px) { .ha-artist-grid-section { padding: 24px; } .ha-artist-card-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .ha-artist-card-grid { grid-template-columns: 1fr; } }
