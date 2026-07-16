@@ -106,14 +106,11 @@
       return '<button type="button" class="ha-tk-price-filter' + (i === 0 ? ' is-active' : '') + '" data-filter-price="' + esc(p) + '">' + esc(p) + '</button>';
     }).join('');
     return '<div class="ha-tk-filters">' +
-      '<span class="ha-tk-filter-header">Filter</span>' +
       '<div class="ha-tk-filter-rows">' +
         '<div class="ha-tk-filter-row">' +
-          '<span class="ha-tk-filter-label">Filter by medium</span>' +
           '<div class="ha-tk-filter-btns">' + mediumBtns + '</div>' +
         '</div>' +
         '<div class="ha-tk-filter-row ha-tk-filter-row-price">' +
-          '<span class="ha-tk-filter-label">Filter by price</span>' +
           '<div class="ha-tk-price-filters">' + priceLinks + '</div>' +
         '</div>' +
       '</div>' +
