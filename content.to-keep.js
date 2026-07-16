@@ -41,7 +41,7 @@ window.HA_TO_KEEP_CONTENT = {
     {
       slug: 'theresa-haskins',
       active: true,
-      name: 'Theresa Haskins',
+      name: 'Theresa L Haskins',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cae2ef8f-9cf1-42c2-9bf1-15ae42926c41/theresa-haskins-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
       heroAlt: 'Theresa Haskins \u2014 curated artist, The Hope Anthology',
       medium: 'Prints',
