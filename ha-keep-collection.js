@@ -192,7 +192,19 @@
       }
     });
   }
+  // Paths handled by dedicated artist-page renderers — keep-collection must not mount here.
+  var ARTIST_PAGE_PATHS = [
+    '/to-keep/theresa-haskins'
+  ];
+  function isArtistPage(){
+    var path = location.pathname.replace(/\/$/,'') || '/';
+    for(var i=0;i<ARTIST_PAGE_PATHS.length;i++){
+      if(path === ARTIST_PAGE_PATHS[i]) return true;
+    }
+    return false;
+  }
   function mount(){
+    if(isArtistPage()) return;
     var content = window.HA_KEEP_COLLECTIONS_CONTENT || {};
     var collection = findCollection(content);
     if(!collection) return;
