@@ -108,11 +108,9 @@
     return '<div class="ha-tk-filters">' +
       '<div class="ha-tk-filter-rows">' +
         '<div class="ha-tk-filter-row">' +
-          '<span class="ha-tk-filter-label">Medium</span>' +
           '<div class="ha-tk-filter-btns">' + mediumBtns + '</div>' +
         '</div>' +
         '<div class="ha-tk-filter-row ha-tk-filter-row-price">' +
-          '<span class="ha-tk-filter-label">Price</span>' +
           '<div class="ha-tk-price-filters">' + priceLinks + '</div>' +
         '</div>' +
       '</div>' +
