@@ -194,7 +194,8 @@
   }
   // Paths handled by dedicated artist-page renderers — keep-collection must not mount here.
   var ARTIST_PAGE_PATHS = [
-    '/to-keep/theresa-haskins'
+    '/to-keep/theresa-haskins',
+    '/to-keep/theresa-german'
   ];
   function isArtistPage(){
     var path = location.pathname.replace(/\/$/,'') || '/';
