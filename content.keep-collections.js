@@ -27,6 +27,16 @@
     "collections": {
       "theresa-haskins": {
             "slug": "theresa-haskins",
+            "path": "/to-keep/theresa-haskins",
+            "breadcrumbs": [
+                  {
+                        "label": "To Keep",
+                        "url": "/to-keep"
+                  },
+                  {
+                        "label": "Theresa Haskins"
+                  }
+            ],
             "name": "Theresa Haskins",
             "discipline": "Print Designer",
             "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
@@ -1071,6 +1081,16 @@
       },
       "theresa-german": {
             "slug": "theresa-german",
+            "path": "/to-keep/theresa-german",
+            "breadcrumbs": [
+                  {
+                        "label": "To Keep",
+                        "url": "/to-keep"
+                  },
+                  {
+                        "label": "Theresa German"
+                  }
+            ],
             "name": "Theresa German",
             "discipline": "Illustrator",
             "bio": "Theresa German creates characterful folk animals that hold a mirror to something in you. Her Woodland Folk and Farm Folk collections are drawn with warmth, wit, and a deep affection for the creatures we recognise in ourselves.",
