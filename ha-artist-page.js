@@ -286,14 +286,14 @@
   /* ── Mount — strict path guard, identical pattern to ha-to-keep.js ── */
   function mount(){
     var path = location.pathname.replace(/\/$/,'') || '/';
-    if(path !== '/to-keep/theresa-haskins') return;
+    if(!path.startsWith('/to-keep/') || path === '/to-keep') return;
     var content = window.HA_KEEP_COLLECTIONS_CONTENT || {};
     var collection = findCollection(content);
     if(!collection) return;
     if(document.getElementById('ha-artist-page-v1')) return;
     var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
     if(!anchor){ setTimeout(mount,150); return; }
-    document.title = collection.metaTitle || 'Theresa Haskins — Print Designer | The Hope Anthology';
+    document.title = collection.metaTitle || (collection.name ? collection.name + ' — Print Designer | The Hope Anthology' : 'The Hope Anthology');
     var metaDesc = document.querySelector('meta[name="description"]');
     if(metaDesc) metaDesc.setAttribute('content', collection.metaDescription || '');
     document.body.classList.add('ha-artist-page-v1-active');
