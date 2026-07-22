@@ -77,11 +77,15 @@
       return '<li>' + esc(c) + '</li>';
     }).join('');
     return '<article class="ha-tk-card" data-medium="' + esc(artist.medium || 'Prints') + '" data-price-from="' + esc(String(parsePriceFrom(artist.priceFrom))) + '">' +
+      (artist.cardUrl
+        ? '<a class="ha-tk-card-img-link" href="' + esc(artist.cardUrl) + '" aria-label="View ' + esc(artist.name) + '\'s work">'
+        : '<div>') +
       '<div class="ha-tk-card-img-wrap">' +
         '<img src="' + esc(artist.heroImage || '') + '" alt="' + esc(artist.heroAlt || artist.name) + '" loading="lazy" decoding="async">' +
         '<span class="ha-tk-pip">To Keep</span>' +
         '<span class="ha-tk-badge">Founding artist</span>' +
       '</div>' +
+      (artist.cardUrl ? '</a>' : '</div>') +
       '<div class="ha-tk-card-body">' +
         '<h3 class="ha-tk-artist-name">' + esc(artist.name) + '</h3>' +
         '<div class="ha-tk-chips"><span class="ha-tk-chip"><small>Medium</small>' + esc(artist.medium || 'Prints') + '</span></div>' +

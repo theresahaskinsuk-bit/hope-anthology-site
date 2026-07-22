@@ -2620,6 +2620,7 @@ body.ha-to-keep-v1-active{background:#F2F3EF;}
 /* Artist card */
 #ha-to-keep-v1 .ha-tk-card{background:#fff;border:1px solid rgba(54,68,73,.1);border-radius:10px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;display:flex;flex-direction:column;}
 #ha-to-keep-v1 .ha-tk-card:hover{border-color:#265b70;transform:translateY(-1px);}
+#ha-to-keep-v1 .ha-tk-card-img-link{display:block;cursor:pointer;text-decoration:none;}
 #ha-to-keep-v1 .ha-tk-card-img-wrap{position:relative;aspect-ratio:1/1.02;overflow:hidden;background:#fafbf6;}
 #ha-to-keep-v1 .ha-tk-card-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
 
