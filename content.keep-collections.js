@@ -81,7 +81,7 @@
                               "flat": "Awakening fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Awakening fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
                         },
-                        "price": 18,
+                        "price": "£18",
                         "meaning": "The comfort of hope with each new start. A print for new beginnings and the people who embrace them.",
                         "giftFor": [
                               "New beginnings",
@@ -106,7 +106,7 @@
                               "flat": "Breathe fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Breathe fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
                         },
-                        "price": 18,
+                        "price": "£18",
                         "meaning": "A subtle gift that brings calm and clarity. For anyone who needs a moment to just breathe.",
                         "giftFor": [
                               "Calm and clarity",
@@ -131,7 +131,7 @@
                               "flat": "Courage fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Courage fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
                         },
-                        "price": 18,
+                        "price": "£18",
                         "meaning": "For the brave moments — big and small. A print for anyone who keeps going even when it's hard.",
                         "giftFor": [
                               "Bravery",
@@ -156,7 +156,7 @@
                               "flat": "Dream fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Dream fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
                         },
-                        "price": 18,
+                        "price": "£18",
                         "meaning": "Permission to want more. A print for the dreamers who are still becoming.",
                         "giftFor": [
                               "Dreamers",
@@ -181,7 +181,7 @@
                               "flat": "Enough fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Enough fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
                         },
-                        "price": 18,
+                        "price": "£18",
                         "meaning": "The reminder that you already are. For anyone who needs to hear it — and believe it.",
                         "giftFor": [
                               "Self-worth",
@@ -674,7 +674,7 @@
                               "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
                         },
-                        "price": 22,
+                        "price": "£22",
                         "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
                         "giftFor": [
                               "Bold next steps",
@@ -700,7 +700,7 @@
                               "flat": "Angel Number 111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
                         },
-                        "price": 22,
+                        "price": "£22",
                         "meaning": "A new chapter is already beginning. A print for those who are ready — even before they feel ready.",
                         "giftFor": [
                               "Trusting your instincts",
@@ -780,7 +780,7 @@
                               "flat": "Angel Number 555 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 555 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
                         },
-                        "price": 22,
+                        "price": "£22",
                         "meaning": "Change is coming — and it's on your side. A print for those stepping bravely into the unknown.",
                         "giftFor": [
                               "Embracing change",
@@ -943,7 +943,7 @@
                               "flat": "Fox terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Fox folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "The fox turns challenge into grace. Quick-witted, adaptable, and always finding a way through.",
                         "giftFor": [
                               "Adaptability",
@@ -968,7 +968,7 @@
                               "flat": "Hare terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Hare folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "The hare moves with the rhythm of life. Intuitive, free, and always in tune with the moment.",
                         "giftFor": [
                               "Intuition",
@@ -993,7 +993,7 @@
                               "flat": "Badger terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Badger folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "Steadfast, determined, and quietly powerful. The badger knows its own strength.",
                         "giftFor": [
                               "Determination",
@@ -1018,7 +1018,7 @@
                               "flat": "Squirrel terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Squirrel folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "Resourceful, playful, and always prepared. The squirrel makes the most of every moment.",
                         "giftFor": [
                               "Resourcefulness",
@@ -1043,7 +1043,7 @@
                               "flat": "Owl terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Owl folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "The owl trusts the silence between moments. Patient, wise, and comfortable in the dark.",
                         "giftFor": [
                               "Wisdom",
@@ -1068,7 +1068,7 @@
                               "flat": "Otter terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Otter folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
                         },
-                        "price": 45,
+                        "price": "£45",
                         "meaning": "Joyful, sociable, and at home wherever there's flow. The otter makes everything look easy.",
                         "giftFor": [
                               "Joy",
