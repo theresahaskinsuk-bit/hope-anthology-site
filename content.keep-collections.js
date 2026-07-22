@@ -29,9 +29,11 @@
             "slug": "theresa-haskins",
             "path": "/to-keep/theresa-haskins",
             "world": "To Keep",
+            "artistName": "Theresa Haskinsini",
+            "artistTitle": "Woo Woo Print Designer",
             "discipline": "Woo Woo Print Designer",
-            "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
-            "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
+            "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you. LA LA LA",
+            "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology. LA LA LA",
             "montage": [
                   {
                         "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c39aa842-b49d-4874-a770-3dea2d6cda8c/Theresa+Haskins_2207.webp?content-type=image%2Fwebp",
@@ -891,6 +893,8 @@
             "slug": "theresa-german",
             "path": "/to-keep/theresa-german",
             "world": "To Keep",
+            "artistName": "Theresa German",
+            "artistTitle": "Illustrator",
             "discipline": "Illustrator",
             "bio": "Theresa German creates characterful folk animals that hold a mirror to something in you. Her Woodland Folk and Farm Folk collections are drawn with warmth, wit, and a deep affection for the creatures we recognise in ourselves.",
             "metaDescription": "Prints by Theresa German — folk animal characters in Woodland Folk and Farm Folk. An Anthology Artist at The Hope Anthology.",
