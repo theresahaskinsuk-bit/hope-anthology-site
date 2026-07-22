@@ -51,8 +51,8 @@
             ],
             "stats": {
                   "collections": 3,
-                  "prints": "34.0",
-                  "fromPrice": "£15"
+                  "prints": "34",
+                  "fromPrice": "From £15"
             },
             "breadcrumbs": [
                   {
@@ -60,7 +60,7 @@
                         "url": "/to-keep"
                   },
                   {
-                        "label": "Theresa Haskins"
+                        "label": "Theresa Haskinsini"
                   }
             ],
             "products": [
@@ -673,7 +673,15 @@
                               "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": 22,
+                        "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
+                        "giftFor": [
+                              "Bold next steps",
+                              "Resilient spirits",
+                              "Steady, Open, Aware, Resilient"
+                        ],
+                        "etsyUrl": "#"
                   },
                   {
                         "title": "Angel Number 111",
@@ -691,7 +699,15 @@
                               "lifestyle": "Angel Number 111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": 22,
+                        "meaning": "A new chapter is already beginning. A print for those who are ready — even before they feel ready.",
+                        "giftFor": [
+                              "Trusting your instincts",
+                              "Leaning into the new",
+                              "Those at a turning point"
+                        ],
+                        "etsyUrl": "#"
                   },
                   {
                         "title": "Angel Number 222",
@@ -763,7 +779,15 @@
                               "lifestyle": "Angel Number 555 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 555 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 555 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": 22,
+                        "meaning": "Change is coming — and it's on your side. A print for those stepping bravely into the unknown.",
+                        "giftFor": [
+                              "Embracing change",
+                              "Brave transitions",
+                              "New adventures"
+                        ],
+                        "etsyUrl": "#"
                   },
                   {
                         "title": "Angel Number 666",
@@ -889,8 +913,8 @@
             ],
             "stats": {
                   "collections": 2,
-                  "prints": "11.0",
-                  "fromPrice": "£45"
+                  "prints": "11",
+                  "fromPrice": "From £45"
             },
             "breadcrumbs": [
                   {
