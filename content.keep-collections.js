@@ -28,6 +28,32 @@
       "theresa-haskins": {
             "slug": "theresa-haskins",
             "path": "/to-keep/theresa-haskins",
+            "world": "To Keep",
+            "discipline": "Woo Woo Print Designer",
+            "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
+            "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
+            "montage": [
+                  {
+                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c39aa842-b49d-4874-a770-3dea2d6cda8c/Theresa+Haskins_2207.webp?content-type=image%2Fwebp",
+                        "alt": "Framed 555 angel number wall art with colourful illustrated wings and an uplifting message, displayed in a bright sunlit room beside a green houseplant. By Theresa Haskins",
+                        "rename": "theresa-haskins-anthology-artist-montage-1.jpg"
+                  },
+                  {
+                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57edc999-821a-484d-9aae-a0e8999305fc/collections-card-meaning-alphabet_2207.webp?content-type=image%2Fwebp",
+                        "alt": "Framed decorative letter F wall art with botanical details and the word Freedom, styled in a calm neutral living room with a wooden frame and pampas grass. By Theresa Haskins",
+                        "rename": "theresa-haskins-anthology-artist-montage-2.jpg"
+                  },
+                  {
+                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6c16a24-6723-4cdf-99b7-2476a20e3014/collections-card-everyday-anchors_2207.webp?content-type=image%2Fwebp",
+                        "alt": "Framed SOAR typography wall art with the words Steady, Open, Aware, Resilient, displayed in a dark green bathroom with natural wood and pampas grass. By Theresa Haskins",
+                        "rename": "theresa-haskins-anthology-artist-montage-3.jpg"
+                  }
+            ],
+            "stats": {
+                  "collections": 3,
+                  "prints": "34.0",
+                  "fromPrice": "£15"
+            },
             "breadcrumbs": [
                   {
                         "label": "To Keep",
@@ -37,31 +63,6 @@
                         "label": "Theresa Haskins"
                   }
             ],
-            "name": "Theresa Haskins",
-            "discipline": "Print Designer",
-            "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
-            "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
-            "heroImage": {},
-            "stats": {
-                  "collections": 3,
-                  "prints": "34",
-                  "fromPrice": "£15"
-            },
-            "montage": [
-                  {
-                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/30cbd531-7166-494c-8105-fe57cdb31876/collections-card-angel-numbers.jpg?content-type=image%2Fjpeg",
-                        "alt": "Collage of angel number art prints featuring ornate wings, golden stars and the numbers 1111, 222, 333, 444 and 555."
-                  },
-                  {
-                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4fe7153d-6134-43cf-b623-d4860800049e/collections-card-everyday-anchors.jpg?content-type=image%2Fjpeg",
-                        "alt": "Collage of minimalist black-and-white typography prints featuring the grounding words Rise, Soar, Calm, Halt, Root and Hope."
-                  },
-                  {
-                        "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7883eae0-bade-4e54-b426-92cdbee43770/collections-card-meaning-alphabet.jpg?content-type=image%2Fjpeg",
-                        "alt": "Collage of botanical alphabet prints with oversized blue decorative letters and meaningful words including Yours, Shine, Overcome, Awakening and Freedom."
-                  }
-            ],
-            "collections": [],
             "products": [
                   {
                         "title": "A — Awakening",
@@ -86,8 +87,7 @@
                               "New beginnings",
                               "Finding hope again",
                               "A fresh start"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "B — Breathe",
@@ -112,8 +112,7 @@
                               "Calm and clarity",
                               "Stress relief",
                               "Mindful moments"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "C — Courage",
@@ -138,8 +137,7 @@
                               "Bravery",
                               "Facing fears",
                               "Quiet strength"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "D — Dream",
@@ -164,8 +162,7 @@
                               "Dreamers",
                               "Ambition",
                               "Possibility"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "E — Enough",
@@ -190,8 +187,7 @@
                               "Self-worth",
                               "Self-compassion",
                               "Reassurance"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "F — Freedom",
@@ -209,9 +205,7 @@
                               "lifestyle": "Freedom fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Freedom fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Freedom fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "G — Grounded",
@@ -229,9 +223,7 @@
                               "lifestyle": "Grounded fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Grounded fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Grounded fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "H — Healing",
@@ -249,9 +241,7 @@
                               "lifestyle": "Healing fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Healing fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Healing fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "I — Intentional",
@@ -269,9 +259,7 @@
                               "lifestyle": "Intentional fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Intentional fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Intentional fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "J — Just",
@@ -289,9 +277,7 @@
                               "lifestyle": "Just fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Just fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Just fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "K — Kindness",
@@ -309,9 +295,7 @@
                               "lifestyle": "Kindness fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Kindness fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Kindness fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "L — Love",
@@ -329,9 +313,7 @@
                               "lifestyle": "Love fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Love fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Love fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "M — Magic",
@@ -349,9 +331,7 @@
                               "lifestyle": "Magic fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Magic fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Magic fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "N — Nurture",
@@ -369,9 +349,7 @@
                               "lifestyle": "Nurture fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Nurture fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Nurture fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "O — Overcome",
@@ -389,9 +367,7 @@
                               "lifestyle": "Overcome fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Overcome fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Overcome fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "P — Peace",
@@ -409,9 +385,7 @@
                               "lifestyle": "Peace fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Peace fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Peace fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "Q — Quiet",
@@ -429,9 +403,7 @@
                               "lifestyle": "Quiet fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Quiet fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Quiet fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "R — Rise",
@@ -449,9 +421,7 @@
                               "lifestyle": "Rise fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Rise fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Rise fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "S — Shine",
@@ -469,9 +439,7 @@
                               "lifestyle": "Shine fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Shine fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Shine fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "T — Together",
@@ -489,9 +457,7 @@
                               "lifestyle": "Together fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Together fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Together fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "U — Unfold",
@@ -509,9 +475,7 @@
                               "lifestyle": "Unfold fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Unfold fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Unfold fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "V — Value",
@@ -529,9 +493,7 @@
                               "lifestyle": "Value fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Value fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Value fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "W — Wonder",
@@ -549,9 +511,7 @@
                               "lifestyle": "Wonder fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Wonder fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Wonder fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "X — Xylem",
@@ -569,9 +529,7 @@
                               "lifestyle": "Xylem fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Xylem fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Xylem fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "Y — Yours",
@@ -589,9 +547,7 @@
                               "lifestyle": "Yours fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Yours fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Yours fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "Z — Zest",
@@ -609,27 +565,15 @@
                               "lifestyle": "Zest fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Zest fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Zest fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "comingLabel": "On its way",
-                        "show": true
+                        }
                   },
                   {
                         "title": "CALM",
-                        "collection": "Everyday Anchors",
                         "status": "coming",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Centered, Accepting, Loving, Mindful — A print for the moments when you need to slow down and come back to yourself.",
-                        "giftFor": [
-                              "Finding stillness",
-                              "Mindful living",
-                              "Centered, Accepting, Loving, Mindful"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "C",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69444f62-dd68-4981-9903-b140cb0b2419/everyday-anchors-calm-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/14c1fc78-10d7-4237-b987-475fe5c16caa/everyday-anchors-calm-flat.jpg?content-type=image%2Fjpeg",
@@ -639,26 +583,15 @@
                               "lifestyle": "CALM fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "CALM fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of CALM fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "HALT",
-                        "collection": "Everyday Anchors",
                         "status": "coming",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Hungry, Angry, Lonely, Tired — Check in before you react. A print that reminds you why that matters.",
-                        "giftFor": [
-                              "Self-awareness",
-                              "Checking in",
-                              "Hungry, Angry, Lonely, Tired"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "H",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e952c7b3-0489-4ed3-bff8-cc16b2857029/everyday-anchors-halt-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5af49f9b-d303-4ccb-b128-2e46f531bb47/everyday-anchors-halt-flat.jpg?content-type=image%2Fjpeg",
@@ -668,26 +601,15 @@
                               "lifestyle": "HALT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "HALT fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of HALT fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "HOPE",
-                        "collection": "Everyday Anchors",
                         "status": "coming",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Honest, Open, Patient, Evolving — For the ones who keep going. A print that means it.",
-                        "giftFor": [
-                              "Keeping the faith",
-                              "Quiet optimism",
-                              "Honest, Open, Patient, Evolving"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "H",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/80f67d92-451a-451a-bfe4-dd24b37b5052/everyday-anchors-hope-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b944f1be-c1b4-4fb5-94bc-889e76424d70/everyday-anchors-hope-flat.jpg?content-type=image%2Fjpeg",
@@ -697,26 +619,15 @@
                               "lifestyle": "HOPE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "HOPE fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of HOPE fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "RISE",
-                        "collection": "Everyday Anchors",
                         "status": "coming",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Rested, Intentional, Self-aware, Empowered — A print for anyone building something better, starting with themselves.",
-                        "giftFor": [
-                              "Personal growth",
-                              "Empowered living",
-                              "Rested, Intentional, Self-aware, Empowered"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "R",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5da953f-82e2-4c74-8a64-2eb039dd8d66/everyday-anchors-rise-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6994c19-7e81-44b4-9446-600c32d0ef0c/everyday-anchors-rise-flat.jpg?content-type=image%2Fjpeg",
@@ -726,26 +637,15 @@
                               "lifestyle": "RISE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "RISE fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of RISE fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "ROOT",
-                        "collection": "Everyday Anchors",
                         "status": "coming",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Reaching out, Owning choices, On track, Thankful — A print for staying grounded when life pulls in every direction.",
-                        "giftFor": [
-                              "Staying grounded",
-                              "Gratitude and connection",
-                              "Reaching out, Owning choices, On track, Thankful"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "R",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c28bfb3-fc6c-4964-adc6-ea2d09fca07f/everyday-anchors-root-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3e822dfb-da08-4146-904c-62d6399c5317/everyday-anchors-root-flat.jpg?content-type=image%2Fjpeg",
@@ -755,26 +655,15 @@
                               "lifestyle": "ROOT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "ROOT fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of ROOT fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "SOAR",
-                        "collection": "Everyday Anchors",
                         "status": "available",
+                        "collection": "Everyday Anchors",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
-                        "giftFor": [
-                              "Bold next steps",
-                              "Resilient spirits",
-                              "Steady, Open, Aware, Resilient"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "S",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e3c75ebe-b01f-4cfb-be7c-09a0491553d1/everyday-anchors-soar-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ece2c76a-d04d-4c3a-b6f4-da01328529e7/everyday-anchors-soar-flat.jpg?content-type=image%2Fjpeg",
@@ -784,26 +673,15 @@
                               "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 111",
-                        "collection": "Angel Numbers",
                         "status": "available",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "A new chapter is already beginning. A print for those who are ready — even before they feel ready.",
-                        "giftFor": [
-                              "Trusting your instincts",
-                              "Leaning into the new",
-                              "Those at a turning point"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "111",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1de2444-6151-4334-8837-2640828d7123/angel-number-111-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bfe736f4-84d7-4c87-b2f1-a7063b63fb93/angel-number-111-flat.jpg?content-type=image%2Fjpeg",
@@ -813,26 +691,15 @@
                               "lifestyle": "Angel Number 111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 222",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Trust that things are falling into place. A print for those learning to have faith in the process.",
-                        "giftFor": [
-                              "Patience and trust",
-                              "Finding balance",
-                              "Believing in the process"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "222",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa69efbd-ef49-461d-95b2-87ec24ce012b/angel-number-222-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d72afcd-34e0-45d1-8ffc-4ea028a9b388/angel-number-222-flat.jpg?content-type=image%2Fjpeg",
@@ -842,26 +709,15 @@
                               "lifestyle": "Angel Number 222 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 222 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 222 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 333",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "You are supported, guided, and not alone. A print for those who need a reminder that help is close.",
-                        "giftFor": [
-                              "Feeling supported",
-                              "Creative souls",
-                              "Those who seek guidance"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "333",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffae2865-a1fe-423d-997d-40696d59a341/angel-number-333-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b7163a2-491e-43ef-949e-0dbf25261272/angel-number-333-flat.jpg?content-type=image%2Fjpeg",
@@ -871,26 +727,15 @@
                               "lifestyle": "Angel Number 333 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 333 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 333 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 444",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Steady foundations and quiet protection. A print for those who find strength in stability and trust.",
-                        "giftFor": [
-                              "Quiet strength",
-                              "Building foundations",
-                              "Steadiness and calm"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "444",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19b34ba8-c1b7-4058-a1f6-585be8861543/angel-number-444-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48417730-4b1d-4b5c-8967-7d38f84d5cae/angel-number-444-flat.jpg?content-type=image%2Fjpeg",
@@ -900,26 +745,15 @@
                               "lifestyle": "Angel Number 444 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 444 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 444 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 555",
-                        "collection": "Angel Numbers",
                         "status": "available",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Change is coming — and it's on your side. A print for those stepping bravely into the unknown.",
-                        "giftFor": [
-                              "Embracing change",
-                              "Brave transitions",
-                              "New adventures"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "555",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6f6ef742-7c70-4479-81e5-619e07736874/angel-number-555-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79125d8a-0c95-40b7-9c58-69c32c8d5f33/angel-number-555-flat.jpg?content-type=image%2Fjpeg",
@@ -929,26 +763,15 @@
                               "lifestyle": "Angel Number 555 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 555 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 555 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 666",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Balance between the material and the meaningful. A print for those seeking harmony in everyday life.",
-                        "giftFor": [
-                              "Finding harmony",
-                              "Mindful living",
-                              "Rebalancing and reset"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "666",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6dad785b-83e0-403d-ad75-76fe29a9666b/angel-number-666-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8dfe22a0-7af0-4cca-a065-f7484dde9f4e/angel-number-666-flat.jpg?content-type=image%2Fjpeg",
@@ -958,26 +781,15 @@
                               "lifestyle": "Angel Number 666 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 666 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 666 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 777",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "You are exactly where you need to be. A print for those on a path of growth and quiet alignment.",
-                        "giftFor": [
-                              "Spiritual growth",
-                              "Trusting your path",
-                              "Inner alignment"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "777",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2a82ee02-11e6-427f-8a3c-ee1f7c162428/angel-number-777-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00864bd9-ddc7-4fb2-887f-e24e2e65ebc3/angel-number-777-flat.jpg?content-type=image%2Fjpeg",
@@ -987,26 +799,15 @@
                               "lifestyle": "Angel Number 777 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 777 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 777 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 888",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Abundance flows when you are open to it. A print for those ready to receive what they have worked for.",
-                        "giftFor": [
-                              "Abundance and gratitude",
-                              "Manifesting goals",
-                              "Celebrating success"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "888",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c785dcc-1306-40c2-8855-5d07b29b7517/angel-number-888-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/685aec22-ac92-454d-8a04-6abfb33e8e5c/angel-number-888-flat.jpg?content-type=image%2Fjpeg",
@@ -1016,26 +817,15 @@
                               "lifestyle": "Angel Number 888 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 888 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 888 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 999",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "One chapter closes so another can begin. A print for those releasing the old to welcome the new.",
-                        "giftFor": [
-                              "Letting go",
-                              "Closing chapters",
-                              "Transformation and release"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "999",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f315191d-3823-4217-9b0f-e45acd1d5964/angel-number-999-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76402dbc-414c-45f0-9b28-b96eefe41586/angel-number-999-flat.jpg?content-type=image%2Fjpeg",
@@ -1045,26 +835,15 @@
                               "lifestyle": "Angel Number 999 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 999 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 999 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Angel Number 1111",
-                        "collection": "Angel Numbers",
                         "status": "coming",
+                        "collection": "Angel Numbers",
+                        "collectionOrder": 3,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Your thoughts are powerful — choose them well. A print for those awakening to their own potential.",
-                        "giftFor": [
-                              "Awakening and awareness",
-                              "Setting powerful intentions",
-                              "Those stepping into their power"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "1111",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e35970c6-0dc6-4f96-bd55-234d05adfa86/angel-number-1111-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bef13fda-5e74-4430-9e01-b0a8e19a167a/angel-number-1111-flat.jpg?content-type=image%2Fjpeg",
@@ -1074,33 +853,23 @@
                               "lifestyle": "Angel Number 1111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 1111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 1111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   }
+            ],
+            "filterOptions": [
+                  "All",
+                  "The Meaning Alphabet",
+                  "Everyday Anchors",
+                  "Angel Numbers"
             ]
       },
       "theresa-german": {
             "slug": "theresa-german",
             "path": "/to-keep/theresa-german",
-            "breadcrumbs": [
-                  {
-                        "label": "To Keep",
-                        "url": "/to-keep"
-                  },
-                  {
-                        "label": "Theresa German"
-                  }
-            ],
-            "name": "Theresa German",
+            "world": "To Keep",
             "discipline": "Illustrator",
             "bio": "Theresa German creates characterful folk animals that hold a mirror to something in you. Her Woodland Folk and Farm Folk collections are drawn with warmth, wit, and a deep affection for the creatures we recognise in ourselves.",
             "metaDescription": "Prints by Theresa German — folk animal characters in Woodland Folk and Farm Folk. An Anthology Artist at The Hope Anthology.",
-            "heroImage": {},
-            "stats": {
-                  "collections": 2,
-                  "prints": "11",
-                  "fromPrice": "£45"
-            },
             "montage": [
                   {
                         "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/09174955-d38a-4b04-a6ff-3be8c04b543a/collections-card-woodland-folk.jpg?content-type=image%2Fjpeg",
@@ -1118,7 +887,20 @@
                         "rename": "theresa-german-anthology-artist-montage-3.jpg"
                   }
             ],
-            "collections": [],
+            "stats": {
+                  "collections": 2,
+                  "prints": "11.0",
+                  "fromPrice": "£45"
+            },
+            "breadcrumbs": [
+                  {
+                        "label": "To Keep",
+                        "url": "/to-keep"
+                  },
+                  {
+                        "label": "Theresa German"
+                  }
+            ],
             "products": [
                   {
                         "title": "The Fox",
@@ -1143,8 +925,7 @@
                               "Adaptability",
                               "Clever minds",
                               "Finding a way"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "The Hare",
@@ -1169,8 +950,7 @@
                               "Intuition",
                               "Freedom",
                               "Natural rhythm"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "The Badger",
@@ -1195,8 +975,7 @@
                               "Determination",
                               "Quiet strength",
                               "Steadfastness"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "The Squirrel",
@@ -1221,8 +1000,7 @@
                               "Resourcefulness",
                               "Playfulness",
                               "Preparation"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "The Owl",
@@ -1247,8 +1025,7 @@
                               "Wisdom",
                               "Patience",
                               "Quiet knowing"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "The Otter",
@@ -1273,26 +1050,15 @@
                               "Joy",
                               "Sociability",
                               "Going with the flow"
-                        ],
-                        "show": true
+                        ]
                   },
                   {
                         "title": "Cow",
-                        "collection": "Farm Folk",
                         "status": "available",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Watchful, calm, and firmly rooted. A print for those who find their strength in stillness and their comfort in steady, quiet things.",
-                        "giftFor": [
-                              "Gentle souls",
-                              "Finding comfort",
-                              "Slow and steady living"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "C",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d2a1b08a-5c92-4012-a92d-acda12743cf5/farm-folk-cow-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18eb5fc2-436e-4cac-9a68-11b0acebbd8c/farm-folk-cow-flat.jpg?content-type=image%2Fjpeg",
@@ -1302,26 +1068,15 @@
                               "lifestyle": "Cow folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Cow folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Cow folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Goat",
-                        "collection": "Farm Folk",
                         "status": "coming",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Determined and free-spirited, embodying self-reliance, courage, and inner purpose. A print for those who find their own way — and trust it.",
-                        "giftFor": [
-                              "Problem solvers",
-                              "Determined spirits",
-                              "Those who find their own path"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "G",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d5903897-d5bf-481c-847f-d76fb3e68135/farm-folk-goat-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6988de5f-7e77-450e-b94c-c3f9ce40b595/farm-folk-goat-flat.jpg?content-type=image%2Fjpeg",
@@ -1331,26 +1086,15 @@
                               "lifestyle": "Goat folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Goat folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Goat folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Chicken",
-                        "collection": "Farm Folk",
                         "status": "coming",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Watchful and nurturing, a symbol of protection, abundance, and new beginnings. A print for those who care deeply and create warmth wherever they go.",
-                        "giftFor": [
-                              "Hard workers",
-                              "Everyday purpose",
-                              "Those who show up"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "C",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1d385192-a6af-47de-81a8-847401ed4b58/farm-folk-chicken-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56993690-1bd6-4f65-b7a7-da3b043b0940/farm-folk-chicken-flat.jpg?content-type=image%2Fjpeg",
@@ -1360,26 +1104,15 @@
                               "lifestyle": "Chicken folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Chicken folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Chicken folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Pig",
-                        "collection": "Farm Folk",
                         "status": "coming",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Grounded and content, embodying self-care, gratitude, and balance in the everyday. A print for those who know that a good life is built in small, nourishing moments.",
-                        "giftFor": [
-                              "Quiet confidence",
-                              "Self-knowing spirits",
-                              "Those who live well"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "P",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c79c75a9-7e7a-4f1c-8826-09d2f537899a/farm-folk-pig-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c183973-6a5b-440b-ba14-1b3c398f41e1/farm-folk-pig-flat.jpg?content-type=image%2Fjpeg",
@@ -1389,26 +1122,15 @@
                               "lifestyle": "Pig folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Pig folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Pig folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Sheep",
-                        "collection": "Farm Folk",
                         "status": "coming",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Gentle and compassionate, embodying peace, care, and harmonious living. A print for those who bring calm to the spaces and people around them.",
-                        "giftFor": [
-                              "Community and belonging",
-                              "Gentle courage",
-                              "Those who are better together"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "S",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/55a62899-8f1d-41ce-8ae4-cb670a46c38d/farm-folk-sheep-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3c857f30-9207-457b-9b01-c32ee2cdaac0/farm-folk-sheep-flat.jpg?content-type=image%2Fjpeg",
@@ -1418,26 +1140,15 @@
                               "lifestyle": "Sheep folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Sheep folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Sheep folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   },
                   {
                         "title": "Donkey",
-                        "collection": "Farm Folk",
                         "status": "coming",
+                        "collection": "Farm Folk",
+                        "collectionOrder": 2,
                         "format": "Art print",
                         "sizes": "11\" × 14\" · 16\" × 20\"",
-                        "price": "",
-                        "meaning": "Gentle, grounded, and true to itself. A print for those who know that real strength comes from the heart, not the noise.",
-                        "giftFor": [
-                              "Patient perseverance",
-                              "Quiet determination",
-                              "Those who keep going"
-                        ],
-                        "etsyUrl": "#",
-                        "etsyLabel": "Get this print on Etsy",
-                        "comingLabel": "On its way",
-                        "placeholder": "D",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b2a7fc76-e6c7-46dd-bf94-d8b286bde1c3/farm-folk-donkey-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0b304337-6b4a-42a1-961e-412153e55dcb/farm-folk-donkey-flat.jpg?content-type=image%2Fjpeg",
@@ -1447,9 +1158,13 @@
                               "lifestyle": "Donkey folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Donkey folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Donkey folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "show": true
+                        }
                   }
+            ],
+            "filterOptions": [
+                  "All",
+                  "Woodland Folk",
+                  "Farm Folk"
             ]
       }
 }

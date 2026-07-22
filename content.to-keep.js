@@ -42,11 +42,12 @@ window.HA_TO_KEEP_CONTENT = {
       slug: 'theresa-haskins',
       active: true,
       name: 'Theresa L Haskins',
+      badge: 'Founding artist',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cae2ef8f-9cf1-42c2-9bf1-15ae42926c41/theresa-haskins-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
-      heroAlt: 'Theresa Haskins \u2014 curated artist, The Hope Anthology',
+      heroAlt: 'Theresa Haskins — curated artist, The Hope Anthology',
       medium: 'Prints',
       collections: ['The Meaning Alphabet', 'Everyday Anchors', 'Angel Numbers'],
-      priceFrom: '\u00a315',
+      priceFrom: '£15',
       feeling: 'Symbols and anchors that carry everyday meaning.',
       traits: ['Symbolic art', 'Colour-led', 'Life meaning'],
       cardUrl: '/to-keep/theresa-haskins'
@@ -55,14 +56,15 @@ window.HA_TO_KEEP_CONTENT = {
       slug: 'theresa-german',
       active: true,
       name: 'Theresa German',
+      badge: 'Founding artist',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/73e64fed-7768-4d71-9357-f633df015130/theresa-german-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
-      heroAlt: 'Theresa German \u2014 curated artist, The Hope Anthology',
+      heroAlt: 'Theresa German — curated artist, The Hope Anthology',
       medium: 'Prints',
       collections: ['Woodland Folk', 'Farm Folk'],
-      priceFrom: '\u00a345',
+      priceFrom: '£45',
       feeling: 'Animal characters that hold a mirror to something in you.',
       traits: ['Folk animals', 'Character-led', 'Nature-rooted'],
-      cardUrl: '/to-keep/theresa-german'
+      cardUrl: '/collections/woodland-folk'
     }
   ]
 };
