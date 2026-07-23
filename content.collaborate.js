@@ -5,7 +5,7 @@ window.HA_COLLABORATE_CONTENT = {
     cggStudio: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc4182c0-cb7d-46ba-8ab1-e314ac33c320/02-creative-glass-guild-studio-students-working-on-stained-glass-projects.jpg?content-type=image%2Fjpeg',
     cggLogo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8c5b5ba1-5625-4a27-8681-1ab82945a3bc/03-creative-glass-guild-logo.webp?content-type=image%2Fwebp'
   },
-    navigation: [
+  navigation: [
     { label: 'To Keep', url: '/to-keep' },
     { label: 'To Make', url: '/collections/stained-glass-patterns' },
     { label: 'The Story', url: '/story' },
@@ -67,7 +67,7 @@ window.HA_COLLABORATE_CONTENT = {
     body: "No fixed terms. No pricing structures. No promises about what it will or won't become. Just a conversation between people who make things that mean something.",
     closer: "If that sounds like you — let's talk.",
     heading: 'Start the conversation',
-    prompt: 'Tell me a little about what you make, what you're imagining, or where you think the Anthology might fit.',
+    prompt: "Tell me a little about what you make, what you're imagining, or where you think the Anthology might fit.",
     emailLabel: 'Email Theresa',
     emailAddress: 'hello@thehopeanthology.art',
     emailSubject: 'Collaboration enquiry',
@@ -89,7 +89,7 @@ window.HA_COLLABORATE_CONTENT = {
   },
   footer: {
     instagramUrl: 'https://www.instagram.com',
-    privacyUrl: '/privacy',
+    privacyUrl: '/privacy-policy',
     accessibilityUrl: '/accessibility',
     sellingUrl: '/why-we-sell-this-way',
     copyright: '© The Hope Anthology 2026'
