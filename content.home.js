@@ -28,16 +28,19 @@ window.HA_HOME_CONTENT = {
     eyebrow: 'Symbolic art · meaningful making',
     headlineHtml: 'An anthology of art to <em>keep</em> and things to <em>make.</em>',
     body: "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. It all begins with a feeling — and it's all made for you.",
-    primaryButtonLabel: 'Explore the Anthology →',
-    primaryButtonUrl: '/collections',
+    bodyTagline: 'Explore The Hope Anthology.',
+    cta1Label: 'To Keep →',
+    cta1Url: '/to-keep',
+    cta2Label: 'To Make →',
+    cta2Url: '/collections/stained-glass-patterns',
     secondaryButtonLabel: 'Read the story',
     secondaryButtonUrl: '/story'
   },
 
   intro: {
     backgroundImageKey: 'hero',
-    primaryButtonLabel: 'Explore the Anthology →',
-    primaryButtonUrl: '/collections',
+    primaryButtonLabel: 'To Keep →',
+    primaryButtonUrl: '/to-keep',
     secondaryButtonLabel: 'Read the story →',
     secondaryButtonUrl: '/story',
     bodyHtml: 'The Hope Anthology brings together material suppliers, designers, hobbyists, independent makers, artists — all rooted in the belief that when different crafts <em>come together</em>, something <em>greater is made.</em> A curated collection by many hands.<br>William Morris believed that too — and much like here, he held that the things we make and live with should <em>carry meaning</em>, and that the people who make them should <em>be valued.</em>',
@@ -48,8 +51,8 @@ window.HA_HOME_CONTENT = {
     kicker: 'Two worlds. One anthology.',
     heading: "What's here for you",
     panels: [
-      { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art you can own that shows up for you every day.', linkLabel: 'To Keep →', linkUrl: '/collections' },
-      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Make something. Just for you. Just because.', linkLabel: 'To Make →', linkUrl: '/collections' },
+      { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art you can own that shows up for you every day.', linkLabel: 'To Keep →', linkUrl: '/to-keep' },
+      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Make something. Just for you. Just because.', linkLabel: 'To Make →', linkUrl: '/collections/stained-glass-patterns' },
       { label: 'Behind it all', tone: 'why', imageKey: 'why', alt: 'Hope Anthology story and family making table', copy: "There's a reason all of this exists.", linkLabel: 'The Story →', linkUrl: '/story' }
     ]
   },
@@ -57,11 +60,11 @@ window.HA_HOME_CONTENT = {
   collections: {
     heading: 'Have a look around',
     linkLabel: 'The full Anthology →',
-    linkUrl: '/collections',
+    linkUrl: '/to-keep',
     cards: [
-      { kicker: 'To Keep', title: 'Woodland Folk', imageKey: 'woodland', alt: 'Woodland Folk collection', copy: 'Six creatures. Six characters. Each one a mirror for something in you.', linkLabel: 'View collection →', linkUrl: '/collections' },
-      { kicker: 'To Keep', title: 'Meaning Alphabet', imageKey: 'alphabet', alt: 'Meaning Alphabet collection', copy: 'A letter. A word. A reminder to carry with you.', linkLabel: 'View collection →', linkUrl: '/collections' },
-      { kicker: 'To Make', title: 'Stained glass', imageKey: 'glass', alt: 'Stained glass patterns collection', copy: 'Beginner-friendly patterns designed for the joy of making.', linkLabel: 'View collection →', linkUrl: '/collections' }
+      { kicker: 'To Keep', title: 'Woodland Folk', imageKey: 'woodland', alt: 'Woodland Folk collection', copy: 'Six creatures. Six characters. Each one a mirror for something in you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-german' },
+      { kicker: 'To Keep', title: 'Meaning Alphabet', imageKey: 'alphabet', alt: 'Meaning Alphabet collection', copy: 'A letter. A word. A reminder to carry with you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-haskins' },
+      { kicker: 'To Make', title: 'Stained glass', imageKey: 'glass', alt: 'Stained glass patterns collection', copy: 'Beginner-friendly patterns designed for the joy of making.', linkLabel: 'View collection →', linkUrl: '/collections/stained-glass-patterns' }
     ]
   },
 
