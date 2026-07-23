@@ -30,7 +30,7 @@ window.HA_COLLECTIVE_CONTENT = {
     'New designs when they arrive. The occasional thought that felt worth sharing. A behind-the-scenes moment from the making. And the honest truth about how this whole slightly terrifying, very exciting thing is going.',
     "Not on a schedule. Not every Tuesday at 9am. Just when there's something genuinely worth saying.",
     "(Which, given everything that's been going on behind that sentence — will probably be quite a lot.)",
-    "No spam. No hard sell. Unsubscribe whenever you like and we'll never mention it again.",
+    "No spam. No hard sell. Unsubscribe whenever you like and I'll never mention it again.",
     "If that sounds like your kind of thing — come in. Even if it's just a couple of you.",
     "That's always been more than enough."
   ],
@@ -43,7 +43,7 @@ window.HA_COLLECTIVE_CONTENT = {
     consentName: 'consent',
     consentLabel: 'I agree to The Hope Anthology storing my details to send occasional emails. I can unsubscribe at any time.',
     buttonLabel: 'Join the Collective',
-    note: 'No spam. Unsubscribe whenever. We mean that.',
+    note: 'No spam. Unsubscribe whenever. I mean that.',
     provider: 'squarespace-email-campaigns',
     formAction: '/collective',
     formMethod: 'get'

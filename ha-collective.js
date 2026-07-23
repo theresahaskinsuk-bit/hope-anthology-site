@@ -51,7 +51,7 @@
       '<a href="'+esc(footer.instagramUrl || 'https://www.instagram.com')+'" target="_blank" rel="noopener">Instagram</a>'+
       '<a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a>'+
       '<a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a>'+
-      '<a href="'+esc(footer.whySellUrl || '/why-we-sell-this-way')+'">Why we sell this way</a>';
+      '<a href="'+esc(footer.whySellUrl || '/why-we-sell-this-way')+'">Why I sell this way</a>';
   }
   function formHtml(form){
     form = form || {};

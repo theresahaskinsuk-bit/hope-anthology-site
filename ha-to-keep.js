@@ -90,7 +90,7 @@
         '<h3 class="ha-tk-artist-name">' + esc(artist.name) + '</h3>' +
         '<div class="ha-tk-chips"><span class="ha-tk-chip"><small>Medium</small>' + esc(artist.medium || 'Prints') + '</span></div>' +
         '<div class="ha-tk-collections"><p class="ha-tk-collections-label">Collections</p><ul>' + collectionsList + '</ul></div>' +
-        '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(artist.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
+        '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">£' + esc(artist.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
         '<p class="ha-tk-feeling">' + esc(artist.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traitPills + '</div>' +
         (artist.cardUrl
@@ -172,7 +172,7 @@
             '<a href="' + esc(footer.instagramUrl) + '" target="_blank" rel="noopener">Instagram</a>' +
             '<a href="' + esc(footer.privacyUrl) + '">Privacy policy</a>' +
             '<a href="' + esc(footer.accessibilityUrl) + '">Accessibility</a>' +
-            '<a href="' + esc(footer.sellingUrl) + '">Why we sell this way</a>' +
+            '<a href="' + esc(footer.sellingUrl) + '">Why I sell this way</a>' +
           '</div>' +
         '</div>' +
         '<div class="ha-v3-footer-bottom"><span>' + esc(footer.copyright) + '</span></div>' +

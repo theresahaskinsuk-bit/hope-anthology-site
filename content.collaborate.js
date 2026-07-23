@@ -21,7 +21,7 @@ window.HA_COLLABORATE_CONTENT = {
     {
       number: '01',
       title: 'Craft and materials companies',
-      body: "Who want to bring Hope Anthology patterns directly to their customers — encouraging them to do more, make more, and stay inspired within your world. The Creative Glass Guild are already doing exactly this, and it's a model we'd love to explore with the right partners across other mediums.",
+      body: "Who want to bring Hope Anthology patterns directly to their customers — encouraging them to do more, make more, and stay inspired within your world. The Creative Glass Guild are already doing exactly this, and it's a model I'd love to explore with the right partners across other mediums.",
       url: '#collaborate-enquiry'
     },
     {
@@ -34,7 +34,7 @@ window.HA_COLLABORATE_CONTENT = {
       number: '03',
       title: 'Fellow creatives',
       body: 'Artists, poets, makers, illustrators — who are working incredibly hard to get their work out into the world and think the Hope Anthology might be a good home for it.',
-      note: "We're genuinely open here. From horsehair jumpers to extraordinary graffiti — if it carries the right energy, let's talk.",
+      note: "I'm genuinely open here. From horsehair jumpers to extraordinary graffiti — if it carries the right energy, let's talk.",
       url: '#collaborate-enquiry'
     }
   ],
@@ -67,8 +67,8 @@ window.HA_COLLABORATE_CONTENT = {
     body: "No fixed terms. No pricing structures. No promises about what it will or won't become. Just a conversation between people who make things that mean something.",
     closer: "If that sounds like you — let's talk.",
     heading: 'Start the conversation',
-    prompt: 'Tell us a little about what you make, what you are imagining, or where you think the Anthology might fit.',
-    emailLabel: 'Email The Hope Anthology',
+    prompt: 'Tell me a little about what you make, what you're imagining, or where you think the Anthology might fit.',
+    emailLabel: 'Email Theresa',
     emailAddress: 'hello@thehopeanthology.art',
     emailSubject: 'Collaboration enquiry',
     emailBody: 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\nA little about what I make or do:\n\n',
@@ -82,7 +82,7 @@ window.HA_COLLABORATE_CONTENT = {
     emailPlaceholder: 'Email address',
     emailFieldName: 'email',
     buttonLabel: 'Join the Collective',
-    note: 'No spam. Unsubscribe whenever. We mean that.',
+    note: 'No spam. Unsubscribe whenever. I mean that.',
     provider: 'squarespace-email-campaigns',
     formAction: '/collective',
     formMethod: 'get'
