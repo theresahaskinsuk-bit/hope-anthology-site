@@ -64,7 +64,7 @@ window.HA_TO_KEEP_CONTENT = {
       priceFrom: '£45',
       feeling: 'Animal characters that hold a mirror to something in you.',
       traits: ['Folk animals', 'Character-led', 'Nature-rooted'],
-      cardUrl: '/collections/woodland-folk'
+      cardUrl: '/to-keep/theresa-german'
     }
   ]
 };
