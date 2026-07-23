@@ -198,7 +198,7 @@
         filterBar(collection)+
         /* Grid */
         '<section class="ha-kc-grid-section">'+
-          '<p class="ha-kc-grid-eyebrow">'+esc(collection.gridEyebrow || 'THERESA HASKINS — ALL WORK')+'</p>'+
+          '<p class="ha-kc-grid-eyebrow">'+esc(collection.gridEyebrow || ((collection.artistName || 'ARTIST').toUpperCase() + ' — ALL WORK'))+'</p>'+
           '<div class="ha-kc-card-grid ha-ap-card-grid">'+
             (collection.products||[]).filter(function(p){ return p.active !== false; }).map(function(item){ return productCard(content,item); }).join('')+
           '</div>'+
@@ -218,7 +218,7 @@
             '<a href="'+esc(footer.instagramUrl)+'" target="_blank" rel="noopener">Instagram</a>'+
             '<a href="'+esc(footer.privacyUrl)+'">Privacy policy</a>'+
             '<a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a>'+
-            '<a href="'+esc(footer.sellingUrl)+'">Why we sell this way</a>'+
+            '<a href="'+esc(footer.sellingUrl)+'">Why I sell this way</a>'+
           '</div>'+
         '</div>'+
         '<div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div>'+
