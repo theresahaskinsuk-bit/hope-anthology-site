@@ -53,7 +53,7 @@
             ],
             "stats": {
                   "collections": 3,
-                  "prints": "42.0",
+                  "prints": "42",
                   "fromPrice": "£5.95"
             },
             "breadcrumbs": [
@@ -71,7 +71,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 1,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -90,7 +90,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 2,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -109,7 +109,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 3,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -128,7 +128,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 4,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -147,7 +147,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 5,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -166,7 +166,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 6,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -185,7 +185,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 7,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -204,7 +204,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 8,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -223,7 +223,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 9,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -242,7 +242,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 10,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -261,7 +261,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 11,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -280,7 +280,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 12,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -299,7 +299,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 13,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -318,7 +318,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 14,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -337,7 +337,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 15,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -356,7 +356,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 16,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -375,7 +375,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 17,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -394,7 +394,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 18,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -413,7 +413,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 19,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -432,7 +432,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 20,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -451,7 +451,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 21,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -470,7 +470,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 22,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -489,7 +489,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 23,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -508,7 +508,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 24,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -527,7 +527,7 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 25,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -546,7 +546,7 @@
                         "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 26,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -558,14 +558,17 @@
                               "lifestyle": "Zest fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Zest fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Zest fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Zest — The joyful spark we find to keep going. A print for the days when you need a bit more.",
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537658198/letter-z-print-teal-botanical-alphabet"
                   },
                   {
                         "title": "CALM",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 1,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -583,8 +586,8 @@
                         "title": "HALT",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 2,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -602,8 +605,8 @@
                         "title": "HOPE",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 3,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -621,8 +624,8 @@
                         "title": "RISE",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 4,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -640,8 +643,8 @@
                         "title": "ROOT",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 5,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -659,8 +662,8 @@
                         "title": "SOAR",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 6,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -678,8 +681,8 @@
                         "title": "Angel Number 111",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 1,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -697,8 +700,8 @@
                         "title": "Angel Number 222",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 2,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -716,8 +719,8 @@
                         "title": "Angel Number 333",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 3,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -735,8 +738,8 @@
                         "title": "Angel Number 444",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 4,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -754,8 +757,8 @@
                         "title": "Angel Number 555",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 5,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -773,8 +776,8 @@
                         "title": "Angel Number 666",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 6,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -792,8 +795,8 @@
                         "title": "Angel Number 777",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 7,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -811,8 +814,8 @@
                         "title": "Angel Number 888",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 8,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -830,8 +833,8 @@
                         "title": "Angel Number 999",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 9,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -849,8 +852,8 @@
                         "title": "Angel Number 1111",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 3,
+                        "productOrder": 10,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -900,7 +903,7 @@
             ],
             "stats": {
                   "collections": 2,
-                  "prints": "11.0",
+                  "prints": "11",
                   "fromPrice": "£4.75"
             },
             "breadcrumbs": [
@@ -918,7 +921,7 @@
                         "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 1,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -937,7 +940,7 @@
                         "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 2,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -956,7 +959,7 @@
                         "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 3,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -975,7 +978,7 @@
                         "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 4,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -994,7 +997,7 @@
                         "status": "available",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 5,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1006,14 +1009,22 @@
                               "lifestyle": "Owl terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Owl terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Owl folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£4.75",
+                        "meaning": "The owl trusts the silence between moments. Patient, wise, and comfortable in the dark.",
+                        "giftFor": [
+                              "Wisdom",
+                              "Patience",
+                              "Quiet knowing"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537669207/owl-folk-art-print-earthy-neutral"
                   },
                   {
                         "title": "The Otter",
                         "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 99,
+                        "productOrder": 6,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1031,8 +1042,8 @@
                         "title": "Cow",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 1,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1050,8 +1061,8 @@
                         "title": "Goat",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 2,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1069,8 +1080,8 @@
                         "title": "Chicken",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 3,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1088,8 +1099,8 @@
                         "title": "Pig",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 4,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1107,8 +1118,8 @@
                         "title": "Sheep",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 5,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
@@ -1126,8 +1137,8 @@
                         "title": "Donkey",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 1,
-                        "productOrder": 99,
+                        "collectionOrder": 2,
+                        "productOrder": 6,
                         "format": "Digital Download",
                         "sizes": "Various",
                         "images": {
