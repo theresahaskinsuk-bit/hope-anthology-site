@@ -30,8 +30,8 @@
             "path": "/to-keep/theresa-haskins",
             "world": "To Keep",
             "artistName": "Theresa Haskins",
-            "artistTitle": "Print Designer - Relatable Woo",
-            "discipline": "Print Designer - Relatable Woo",
+            "artistTitle": "Prints",
+            "discipline": "Prints",
             "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
             "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
             "montage": [
@@ -53,8 +53,8 @@
             ],
             "stats": {
                   "collections": 3,
-                  "prints": "42",
-                  "fromPrice": "From £15"
+                  "prints": "42.0",
+                  "fromPrice": "£5.95"
             },
             "breadcrumbs": [
                   {
@@ -68,12 +68,12 @@
             "products": [
                   {
                         "title": "A — Awakening",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 1,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/03e3af7d-938c-4541-9c61-fd6851d5fbda/a-awakening-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a97592e4-7930-41d0-a38e-3a32af35802b/a-awakening-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -83,23 +83,16 @@
                               "lifestyle": "Awakening fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Awakening fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Awakening fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£18",
-                        "meaning": "The comfort of hope with each new start. A print for new beginnings and the people who embrace them.",
-                        "giftFor": [
-                              "New beginnings",
-                              "Finding hope again",
-                              "A fresh start"
-                        ]
+                        }
                   },
                   {
                         "title": "B — Breathe",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 2,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9de59add-ac1b-41ff-8863-4a8a845dd4db/b-breathe-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2d1d7a69-c796-4754-92d6-b332a40a317d/b-breathe-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -109,23 +102,16 @@
                               "lifestyle": "Breathe fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Breathe fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Breathe fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£18",
-                        "meaning": "A subtle gift that brings calm and clarity. For anyone who needs a moment to just breathe.",
-                        "giftFor": [
-                              "Calm and clarity",
-                              "Stress relief",
-                              "Mindful moments"
-                        ]
+                        }
                   },
                   {
                         "title": "C — Courage",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 3,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/86b7eeca-0290-4078-a09a-c5002308c391/c-connection-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cf29bb44-4e29-4ad5-8200-b65ee8487a3f/c-connection-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -135,23 +121,16 @@
                               "lifestyle": "Courage fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Courage fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Courage fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£18",
-                        "meaning": "For the brave moments — big and small. A print for anyone who keeps going even when it's hard.",
-                        "giftFor": [
-                              "Bravery",
-                              "Facing fears",
-                              "Quiet strength"
-                        ]
+                        }
                   },
                   {
                         "title": "D — Dream",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 4,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5993d36d-1f9f-457c-9fef-b1a273d0d44d/d-discovery-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d929b0d6-ba03-47eb-8b7b-577fc0f9739f/d-discovery-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -161,23 +140,16 @@
                               "lifestyle": "Dream fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Dream fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Dream fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£18",
-                        "meaning": "Permission to want more. A print for the dreamers who are still becoming.",
-                        "giftFor": [
-                              "Dreamers",
-                              "Ambition",
-                              "Possibility"
-                        ]
+                        }
                   },
                   {
                         "title": "E — Enough",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 5,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c1e6dfa-a6a5-428b-8484-86ffd60da233/e-enough-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5e00aa99-58c5-4ecf-b86d-1a8ecef8a249/e-enough-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -187,23 +159,16 @@
                               "lifestyle": "Enough fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Enough fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Enough fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£18",
-                        "meaning": "The reminder that you already are. For anyone who needs to hear it — and believe it.",
-                        "giftFor": [
-                              "Self-worth",
-                              "Self-compassion",
-                              "Reassurance"
-                        ]
+                        }
                   },
                   {
                         "title": "F — Freedom",
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 6,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/25d14662-ddbd-4be7-8c70-8f7c940f42ab/f-freedom-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/09809de6-b9eb-4827-a348-c1616d9e726f/f-freedom-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -220,9 +185,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 7,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56a72c07-9069-4c0e-b958-f2072ca3fefb/g-grounded-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/33adca4b-02bf-44ce-b4b2-dde3a889a1c5/g-grounded-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -239,9 +204,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 8,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6643001f-5acd-4d14-811e-0ba8af833dc0/h-healing-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e744e7e3-7950-44f9-9039-d0f99f3e7ee8/h-healing-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -258,9 +223,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 9,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/479dd204-d144-4140-8113-e02b724f0b47/i-intentional-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fd56cb2e-0809-4ce8-b087-2a0a47b1edc6/i-intentional-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -277,9 +242,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 10,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/fb34ece1-1dd7-4b18-93f5-84264c7b3c88/j-just-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9fda2050-30e2-4ef2-a3c1-f42692f47892/j-just-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -296,9 +261,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 11,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/71dccd2e-3e0e-4921-b60a-4986b6bca0bf/k-knowing-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4f49b1d0-f3ef-4709-804e-720afeb1ddb9/k-knowing-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -315,9 +280,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 12,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ed502caa-b195-451d-8a6a-be26d422889f/l-listen-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/81276e3f-5616-4841-b584-3a6195dbb03d/l-listen-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -334,9 +299,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 13,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69af27da-92c8-434f-9c85-39c0fdb8ea9d/m-moments-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa57a917-9ca7-40b1-9ee8-de75faee037c/m-moments-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -353,9 +318,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 14,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/203adcc0-e5cb-418c-a88d-2893e3c8e67e/n-nourish-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/52c71154-c9ec-4115-a190-94cc2ac091ab/n-nourish-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -372,9 +337,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 15,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21878620-9124-4072-ab09-6cc969405212/o-overcome-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7f9652d7-9973-43e0-b6df-997ff7b73048/o-overcome-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -391,9 +356,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 16,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f5cec4c9-9140-4c11-bd27-991320b21c2d/p-pause-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c7e42101-c021-4f96-95d4-5bdef6c63593/p-pause-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -410,9 +375,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 17,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/25a650bd-c810-4607-8f96-4ac5d5f852f9/q-quiet-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c49f5d7a-f3c1-4853-a6be-9bcef2736f03/q-quiet-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -429,9 +394,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 18,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/617d35ae-13ee-45f9-8d6d-d722629ffec8/r-release-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/be376933-5ba0-415a-b013-9840bbb25413/r-release-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -448,9 +413,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 19,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/09e1689e-c9be-4220-87f2-4af55a62774e/s-shine-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6ab2cd1a-7ec9-4ecd-9fe4-4e43e1792886/s-shine-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -467,9 +432,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 20,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0c1c7e5d-e845-4d62-a290-b6ff1864ec98/t-together-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/627ab779-8443-42cb-a4d8-0d9861b32bab/t-together-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -486,9 +451,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 21,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2cae6b04-f36c-4d36-8fa1-716e7d30baee/u-unfold-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/74d2749d-ddb9-45cf-ab3c-dc11615bddf7/u-unfold-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -505,9 +470,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 22,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3b89b58e-b40b-49b3-bdb9-abd43d23f9fb/v-value-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b0aed3ce-77fb-4c52-bcc3-1d7a18e92854/v-value-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -524,9 +489,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 23,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/82f26668-920c-4a2e-8043-96c607128336/w-wonder-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/db8471be-0aad-4964-a28a-595693281b81/w-wonder-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -543,9 +508,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 24,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/324f5954-a651-40a3-b0f6-2d60130e6fa9/x-xylem-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e9383fc0-059b-458e-a094-7c2330a593d4/x-xylem-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -562,9 +527,9 @@
                         "status": "coming",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 25,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/43457bc4-f00f-4f84-bdfd-a31fd4cba266/y-yours-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7eac8250-2e38-42ca-88c2-dae1d638f6e3/y-yours-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -578,12 +543,12 @@
                   },
                   {
                         "title": "Z — Zest",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
-                        "productOrder": 26,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6ae73f04-bf47-4baa-aa98-342d10283e86/z-zest-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8df7a85e-3e7d-4949-b320-de5cc3901d8c/z-zest-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -599,10 +564,10 @@
                         "title": "CALM",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 1,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69444f62-dd68-4981-9903-b140cb0b2419/everyday-anchors-calm-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/14c1fc78-10d7-4237-b987-475fe5c16caa/everyday-anchors-calm-flat.jpg?content-type=image%2Fjpeg",
@@ -618,10 +583,10 @@
                         "title": "HALT",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 2,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e952c7b3-0489-4ed3-bff8-cc16b2857029/everyday-anchors-halt-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5af49f9b-d303-4ccb-b128-2e46f531bb47/everyday-anchors-halt-flat.jpg?content-type=image%2Fjpeg",
@@ -637,10 +602,10 @@
                         "title": "HOPE",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 3,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/80f67d92-451a-451a-bfe4-dd24b37b5052/everyday-anchors-hope-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b944f1be-c1b4-4fb5-94bc-889e76424d70/everyday-anchors-hope-flat.jpg?content-type=image%2Fjpeg",
@@ -656,10 +621,10 @@
                         "title": "RISE",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 4,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5da953f-82e2-4c74-8a64-2eb039dd8d66/everyday-anchors-rise-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6994c19-7e81-44b4-9446-600c32d0ef0c/everyday-anchors-rise-flat.jpg?content-type=image%2Fjpeg",
@@ -675,10 +640,10 @@
                         "title": "ROOT",
                         "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 5,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c28bfb3-fc6c-4964-adc6-ea2d09fca07f/everyday-anchors-root-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3e822dfb-da08-4146-904c-62d6399c5317/everyday-anchors-root-flat.jpg?content-type=image%2Fjpeg",
@@ -692,12 +657,12 @@
                   },
                   {
                         "title": "SOAR",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Everyday Anchors",
-                        "collectionOrder": 2,
-                        "productOrder": 6,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e3c75ebe-b01f-4cfb-be7c-09a0491553d1/everyday-anchors-soar-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ece2c76a-d04d-4c3a-b6f4-da01328529e7/everyday-anchors-soar-flat.jpg?content-type=image%2Fjpeg",
@@ -707,24 +672,16 @@
                               "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£22",
-                        "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
-                        "giftFor": [
-                              "Bold next steps",
-                              "Resilient spirits",
-                              "Steady, Open, Aware, Resilient"
-                        ],
-                        "etsyUrl": "#"
+                        }
                   },
                   {
                         "title": "Angel Number 111",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 1,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1de2444-6151-4334-8837-2640828d7123/angel-number-111-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bfe736f4-84d7-4c87-b2f1-a7063b63fb93/angel-number-111-flat.jpg?content-type=image%2Fjpeg",
@@ -734,24 +691,16 @@
                               "lifestyle": "Angel Number 111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£22",
-                        "meaning": "A new chapter is already beginning. A print for those who are ready — even before they feel ready.",
-                        "giftFor": [
-                              "Trusting your instincts",
-                              "Leaning into the new",
-                              "Those at a turning point"
-                        ],
-                        "etsyUrl": "#"
+                        }
                   },
                   {
                         "title": "Angel Number 222",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 2,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa69efbd-ef49-461d-95b2-87ec24ce012b/angel-number-222-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d72afcd-34e0-45d1-8ffc-4ea028a9b388/angel-number-222-flat.jpg?content-type=image%2Fjpeg",
@@ -767,10 +716,10 @@
                         "title": "Angel Number 333",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 3,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffae2865-a1fe-423d-997d-40696d59a341/angel-number-333-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b7163a2-491e-43ef-949e-0dbf25261272/angel-number-333-flat.jpg?content-type=image%2Fjpeg",
@@ -786,10 +735,10 @@
                         "title": "Angel Number 444",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 4,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19b34ba8-c1b7-4058-a1f6-585be8861543/angel-number-444-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48417730-4b1d-4b5c-8967-7d38f84d5cae/angel-number-444-flat.jpg?content-type=image%2Fjpeg",
@@ -803,12 +752,12 @@
                   },
                   {
                         "title": "Angel Number 555",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 5,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6f6ef742-7c70-4479-81e5-619e07736874/angel-number-555-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79125d8a-0c95-40b7-9c58-69c32c8d5f33/angel-number-555-flat.jpg?content-type=image%2Fjpeg",
@@ -818,24 +767,16 @@
                               "lifestyle": "Angel Number 555 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "flat": "Angel Number 555 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Angel Number 555 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£22",
-                        "meaning": "Change is coming — and it's on your side. A print for those stepping bravely into the unknown.",
-                        "giftFor": [
-                              "Embracing change",
-                              "Brave transitions",
-                              "New adventures"
-                        ],
-                        "etsyUrl": "#"
+                        }
                   },
                   {
                         "title": "Angel Number 666",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 6,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6dad785b-83e0-403d-ad75-76fe29a9666b/angel-number-666-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8dfe22a0-7af0-4cca-a065-f7484dde9f4e/angel-number-666-flat.jpg?content-type=image%2Fjpeg",
@@ -851,10 +792,10 @@
                         "title": "Angel Number 777",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 7,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2a82ee02-11e6-427f-8a3c-ee1f7c162428/angel-number-777-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00864bd9-ddc7-4fb2-887f-e24e2e65ebc3/angel-number-777-flat.jpg?content-type=image%2Fjpeg",
@@ -870,10 +811,10 @@
                         "title": "Angel Number 888",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 8,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c785dcc-1306-40c2-8855-5d07b29b7517/angel-number-888-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/685aec22-ac92-454d-8a04-6abfb33e8e5c/angel-number-888-flat.jpg?content-type=image%2Fjpeg",
@@ -889,10 +830,10 @@
                         "title": "Angel Number 999",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 9,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f315191d-3823-4217-9b0f-e45acd1d5964/angel-number-999-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76402dbc-414c-45f0-9b28-b96eefe41586/angel-number-999-flat.jpg?content-type=image%2Fjpeg",
@@ -908,10 +849,10 @@
                         "title": "Angel Number 1111",
                         "status": "coming",
                         "collection": "Angel Numbers",
-                        "collectionOrder": 3,
-                        "productOrder": 10,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e35970c6-0dc6-4f96-bd55-234d05adfa86/angel-number-1111-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bef13fda-5e74-4430-9e01-b0a8e19a167a/angel-number-1111-flat.jpg?content-type=image%2Fjpeg",
@@ -936,8 +877,8 @@
             "path": "/to-keep/theresa-german",
             "world": "To Keep",
             "artistName": "Theresa German",
-            "artistTitle": "Illustrator",
-            "discipline": "Illustrator",
+            "artistTitle": "Prints",
+            "discipline": "Prints",
             "bio": "Theresa German creates characterful folk animals that hold a mirror to something in you. Her Woodland Folk and Farm Folk collections are drawn with warmth, wit, and a deep affection for the creatures we recognise in ourselves.",
             "metaDescription": "Prints by Theresa German — folk animal characters in Woodland Folk and Farm Folk. An Anthology Artist at The Hope Anthology.",
             "montage": [
@@ -959,8 +900,8 @@
             ],
             "stats": {
                   "collections": 2,
-                  "prints": "11",
-                  "fromPrice": "From £45"
+                  "prints": "11.0",
+                  "fromPrice": "£4.75"
             },
             "breadcrumbs": [
                   {
@@ -974,12 +915,12 @@
             "products": [
                   {
                         "title": "The Fox",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 1,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c0b364b-f2be-454c-9996-17e2a988f431/fox-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/961fff5e-722f-4ddc-9a02-2cd246d227d2/fox-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -989,23 +930,16 @@
                               "lifestyle": "Fox terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Fox terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Fox folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "The fox turns challenge into grace. Quick-witted, adaptable, and always finding a way through.",
-                        "giftFor": [
-                              "Adaptability",
-                              "Clever minds",
-                              "Finding a way"
-                        ]
+                        }
                   },
                   {
                         "title": "The Hare",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 2,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d0bf0bd8-393e-4a55-84b2-778029aafb29/hare-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0bb1b11e-0919-486e-bb41-2d02836aa967/hare-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -1015,23 +949,16 @@
                               "lifestyle": "Hare terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Hare terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Hare folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "The hare moves with the rhythm of life. Intuitive, free, and always in tune with the moment.",
-                        "giftFor": [
-                              "Intuition",
-                              "Freedom",
-                              "Natural rhythm"
-                        ]
+                        }
                   },
                   {
                         "title": "The Badger",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 3,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/20130ea5-c7bd-4812-9a72-f6d4bf957259/badger-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f4eeef0a-a27e-46ad-8dfd-ee881c85b4ac/badger-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -1041,23 +968,16 @@
                               "lifestyle": "Badger terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Badger terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Badger folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "Steadfast, determined, and quietly powerful. The badger knows its own strength.",
-                        "giftFor": [
-                              "Determination",
-                              "Quiet strength",
-                              "Steadfastness"
-                        ]
+                        }
                   },
                   {
                         "title": "The Squirrel",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 4,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/94864460-be28-42c7-9005-b9f9e982c890/squirrel-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/30168203-9087-499a-8487-9110860b5bda/squirrel-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -1067,23 +987,16 @@
                               "lifestyle": "Squirrel terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Squirrel terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Squirrel folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "Resourceful, playful, and always prepared. The squirrel makes the most of every moment.",
-                        "giftFor": [
-                              "Resourcefulness",
-                              "Playfulness",
-                              "Preparation"
-                        ]
+                        }
                   },
                   {
                         "title": "The Owl",
                         "status": "available",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 5,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0cfaa8e5-3e8f-43ae-af92-a2821a0bbd92/owl-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2850ab9e-f3e5-4d6e-9749-cfcabe4089c7/owl-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -1093,23 +1006,16 @@
                               "lifestyle": "Owl terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Owl terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Owl folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "The owl trusts the silence between moments. Patient, wise, and comfortable in the dark.",
-                        "giftFor": [
-                              "Wisdom",
-                              "Patience",
-                              "Quiet knowing"
-                        ]
+                        }
                   },
                   {
                         "title": "The Otter",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Woodland Folk",
                         "collectionOrder": 1,
-                        "productOrder": 6,
-                        "format": "Art print",
-                        "sizes": "A4 · A3",
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/865e621c-1fc1-4403-b231-71e400a76ade/otter-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1cc123bd-15ba-4c0f-83da-7bb0e6ee3197/otter-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
@@ -1119,23 +1025,16 @@
                               "lifestyle": "Otter terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Otter terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Otter folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£45",
-                        "meaning": "Joyful, sociable, and at home wherever there's flow. The otter makes everything look easy.",
-                        "giftFor": [
-                              "Joy",
-                              "Sociability",
-                              "Going with the flow"
-                        ]
+                        }
                   },
                   {
                         "title": "Cow",
-                        "status": "available",
+                        "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 1,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d2a1b08a-5c92-4012-a92d-acda12743cf5/farm-folk-cow-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18eb5fc2-436e-4cac-9a68-11b0acebbd8c/farm-folk-cow-flat.jpg?content-type=image%2Fjpeg",
@@ -1145,24 +1044,16 @@
                               "lifestyle": "Cow folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Cow folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Cow folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        },
-                        "price": "£55",
-                        "meaning": "Watchful, calm, and firmly rooted. A print for those who find their strength in stillness and their comfort in steady, quiet things.",
-                        "giftFor": [
-                              "Gentle souls",
-                              "Finding comfort",
-                              "Slow and steady living"
-                        ],
-                        "etsyUrl": "#"
+                        }
                   },
                   {
                         "title": "Goat",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 2,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d5903897-d5bf-481c-847f-d76fb3e68135/farm-folk-goat-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6988de5f-7e77-450e-b94c-c3f9ce40b595/farm-folk-goat-flat.jpg?content-type=image%2Fjpeg",
@@ -1178,10 +1069,10 @@
                         "title": "Chicken",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 3,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1d385192-a6af-47de-81a8-847401ed4b58/farm-folk-chicken-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/56993690-1bd6-4f65-b7a7-da3b043b0940/farm-folk-chicken-flat.jpg?content-type=image%2Fjpeg",
@@ -1197,10 +1088,10 @@
                         "title": "Pig",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 4,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c79c75a9-7e7a-4f1c-8826-09d2f537899a/farm-folk-pig-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c183973-6a5b-440b-ba14-1b3c398f41e1/farm-folk-pig-flat.jpg?content-type=image%2Fjpeg",
@@ -1216,10 +1107,10 @@
                         "title": "Sheep",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 5,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/55a62899-8f1d-41ce-8ae4-cb670a46c38d/farm-folk-sheep-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3c857f30-9207-457b-9b01-c32ee2cdaac0/farm-folk-sheep-flat.jpg?content-type=image%2Fjpeg",
@@ -1235,10 +1126,10 @@
                         "title": "Donkey",
                         "status": "coming",
                         "collection": "Farm Folk",
-                        "collectionOrder": 2,
-                        "productOrder": 6,
-                        "format": "Art print",
-                        "sizes": "11\" × 14\" · 16\" × 20\"",
+                        "collectionOrder": 1,
+                        "productOrder": 99,
+                        "format": "Digital Download",
+                        "sizes": "Various",
                         "images": {
                               "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b2a7fc76-e6c7-46dd-bf94-d8b286bde1c3/farm-folk-donkey-lifestyle.jpg?content-type=image%2Fjpeg",
                               "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0b304337-6b4a-42a1-961e-412153e55dcb/farm-folk-donkey-flat.jpg?content-type=image%2Fjpeg",

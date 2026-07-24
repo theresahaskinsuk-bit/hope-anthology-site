@@ -41,13 +41,13 @@ window.HA_TO_KEEP_CONTENT = {
     {
       slug: 'theresa-haskins',
       active: true,
-      name: 'Theresa L Haskins',
+      name: 'Theresa Haskins',
       badge: 'Founding artist',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cae2ef8f-9cf1-42c2-9bf1-15ae42926c41/theresa-haskins-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
       heroAlt: 'Theresa Haskins — curated artist, The Hope Anthology',
       medium: 'Prints',
       collections: ['The Meaning Alphabet', 'Everyday Anchors', 'Angel Numbers'],
-      priceFrom: '£15',
+      priceFrom: '£5.95',
       feeling: 'Symbols and anchors that carry everyday meaning.',
       traits: ['Symbolic art', 'Colour-led', 'Life meaning'],
       cardUrl: '/to-keep/theresa-haskins'
@@ -61,7 +61,7 @@ window.HA_TO_KEEP_CONTENT = {
       heroAlt: 'Theresa German — curated artist, The Hope Anthology',
       medium: 'Prints',
       collections: ['Woodland Folk', 'Farm Folk'],
-      priceFrom: '£45',
+      priceFrom: '£4.75',
       feeling: 'Animal characters that hold a mirror to something in you.',
       traits: ['Folk animals', 'Character-led', 'Nature-rooted'],
       cardUrl: '/to-keep/theresa-german'
