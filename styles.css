@@ -2847,6 +2847,8 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 }
 @media(min-width:901px){
   #ha-artist-page-v1 .ha-v3-menu-toggle{display:none!important;}
+  #ha-artist-page-v1 .ha-ap-dot{width:16px;height:16px;}
+  #ha-artist-page-v1 .ha-ap-dots{gap:14px;padding:14px 0 12px;}
   #ha-artist-page-v1 .ha-v3-nav .ha-v3-links{display:flex!important;position:static!important;inset:auto!important;width:auto!important;max-width:none!important;padding:0!important;background:transparent!important;border:0!important;box-shadow:none!important;flex-direction:row!important;align-items:center!important;justify-content:flex-end!important;gap:32px!important;opacity:1!important;visibility:visible!important;transform:none!important;pointer-events:auto!important;}
   #ha-artist-page-v1 .ha-v3-nav .ha-v3-links a{width:auto!important;padding:0!important;border:0!important;font-size:14px!important;color:#F2F3EF!important;}
   #ha-artist-page-v1 .ha-v3-nav .ha-v3-links a:hover,
