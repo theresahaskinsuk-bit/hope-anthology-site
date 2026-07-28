@@ -2801,6 +2801,7 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-ap-price-line{font-family:'Lora',Georgia,serif;font-size:14px;color:var(--dark);margin:0 0 10px;border-top:.5px solid rgba(54,68,73,.1);padding-top:10px;}
 #ha-artist-page-v1 .ha-ap-price-line strong{font-weight:400;}
 #ha-artist-page-v1 .ha-ap-price-line small{font-style:italic;font-size:11px;color:var(--muted-strong);margin-left:4px;}
+#ha-artist-page-v1 .ha-ap-price-from{font-style:italic;font-size:11px;color:var(--muted-strong);margin-right:4px;}
 
 /* Meaning and gift chips */
 #ha-artist-page-v1 .ha-kc-meaning{border-top:.5px solid rgba(54,68,73,.16);padding:11px 0 3px;margin:0 0 10px;}

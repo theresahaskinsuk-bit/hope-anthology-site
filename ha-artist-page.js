@@ -120,7 +120,7 @@
       : available
         ? '<button class="ha-kc-btn ha-kc-btn-keep" type="button">'+ctaLabel('Get this print on Etsy')+'</button>'
         : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>'+ctaLabel('On its way')+'</button><a class="ha-kc-btn ha-kc-btn-collective" href="/collective">'+ctaLabel('Join the Collective to hear first')+'</a>';
-    var priceHtml = available && item.price ? '<div class="ha-ap-price-line"><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
+    var priceHtml = available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
     return '<article class="'+cardClass+'" data-ha-collection="'+esc(item.collection || '')+'">'+
       '<div class="ha-kc-card-img-wrap">'+
         '<span class="ha-kc-pip">To Keep</span>'+
