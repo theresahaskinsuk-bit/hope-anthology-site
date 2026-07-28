@@ -29,9 +29,7 @@
             "slug": "theresa-haskins",
             "path": "/to-keep/theresa-haskins",
             "world": "To Keep",
-            "artistName": "Theresa Haskins",
-            "artistTitle": "Prints",
-            "discipline": "Prints",
+            "discipline": "Print Designer - Relatable Woo",
             "bio": "Theresa is a Bristol-based print designer whose work turns everyday symbols into quiet companions. From letters to angel numbers to the small anchors of daily life, her prints are made to be kept — and to keep you.",
             "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
             "montage": [
@@ -448,7 +446,7 @@
                   },
                   {
                         "title": "U — Unfold",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 21,
@@ -463,11 +461,19 @@
                               "lifestyle": "Unfold fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Unfold fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Unfold fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Piece by piece, gently becoming you. A print for those who are growing into themselves, quietly and in their own time.",
+                        "giftFor": [
+                              "Gentle becoming",
+                              "Unfolding at your own pace",
+                              "Trusting the journey"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537664193/letter-u-unfold-print-nordic-linocut"
                   },
                   {
                         "title": "V — Value",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 22,
@@ -482,11 +488,19 @@
                               "lifestyle": "Value fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Value fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Value fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Choosing meaning over more. For those who measure a good life in depth, not volume.",
+                        "giftFor": [
+                              "Intentional living",
+                              "What truly matters",
+                              "Meaning over noise"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537664529/letter-v-print-value-teal-blue-nordic"
                   },
                   {
                         "title": "W — Wonder",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 23,
@@ -501,11 +515,19 @@
                               "lifestyle": "Wonder fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Wonder fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Wonder fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Finding awe in both the great and the small. A print for those who never quite lost their sense of curiosity.",
+                        "giftFor": [
+                              "Curious souls",
+                              "Everyday magic",
+                              "Seeing the world afresh"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537679584/letter-w-print-scandinavian-linocut"
                   },
                   {
                         "title": "X — Xylem",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 24,
@@ -520,11 +542,19 @@
                               "lifestyle": "Xylem fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Xylem fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Xylem fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "The unseen currents that help us grow. For those who recognise the quiet forces — and people — that have carried them.",
+                        "giftFor": [
+                              "Hidden support",
+                              "Quiet nourishment",
+                              "Growing from within"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537643341/letter-x-print-blue-botanical-linocut"
                   },
                   {
                         "title": "Y — Yours",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 25,
@@ -539,7 +569,15 @@
                               "lifestyle": "Yours fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Yours fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Yours fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Simply knowing you are your own. A print for anyone coming home to themselves.",
+                        "giftFor": [
+                              "Self-belonging",
+                              "Owning your story",
+                              "Being enough as you are"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537642407/letter-y-print-teal-blue-and-sage-green"
                   },
                   {
                         "title": "Z — Zest",
@@ -879,9 +917,7 @@
             "slug": "theresa-german",
             "path": "/to-keep/theresa-german",
             "world": "To Keep",
-            "artistName": "Theresa German",
-            "artistTitle": "Prints",
-            "discipline": "Prints",
+            "discipline": "Illustrator",
             "bio": "Theresa German creates characterful folk animals that hold a mirror to something in you. Her Woodland Folk and Farm Folk collections are drawn with warmth, wit, and a deep affection for the creatures we recognise in ourselves.",
             "metaDescription": "Prints by Theresa German — folk animal characters in Woodland Folk and Farm Folk. An Anthology Artist at The Hope Anthology.",
             "montage": [

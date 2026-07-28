@@ -48,7 +48,7 @@ window.HA_TO_KEEP_CONTENT = {
       medium: 'Prints',
       collections: ['The Meaning Alphabet', 'Everyday Anchors', 'Angel Numbers'],
       priceFrom: '£5.95',
-      feeling: 'Symbols and anchors that carry everyday meaning.',
+      feeling: '',
       traits: ['Symbolic art', 'Colour-led', 'Life meaning'],
       cardUrl: '/to-keep/theresa-haskins'
     },
@@ -62,7 +62,7 @@ window.HA_TO_KEEP_CONTENT = {
       medium: 'Prints',
       collections: ['Woodland Folk', 'Farm Folk'],
       priceFrom: '£4.75',
-      feeling: 'Animal characters that hold a mirror to something in you.',
+      feeling: '',
       traits: ['Folk animals', 'Character-led', 'Nature-rooted'],
       cardUrl: '/to-keep/theresa-german'
     }
