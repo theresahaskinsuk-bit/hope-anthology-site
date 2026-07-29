@@ -51,7 +51,7 @@ window.HA_COLLABORATE_CONTENT = {
       logoKey: 'cggLogo',
       logoAlt: 'Creative Glass Guild logo',
       linkLabel: 'Visit Creative Glass Guild',
-      linkUrl: 'https://www.creativeglass.co.uk'
+      linkUrl: 'https://www.creativeglassguild.co.uk/'
     },
     openSlot: {
       title: 'Your collaboration here',
