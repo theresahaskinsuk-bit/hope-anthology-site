@@ -408,7 +408,7 @@
                   },
                   {
                         "title": "S — Shine",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 19,
@@ -423,11 +423,19 @@
                               "lifestyle": "Shine fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Shine fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Shine fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Inner light that grows when we share it. A print for those who brighten the spaces and people around them.",
+                        "giftFor": [
+                              "Sharing your gifts",
+                              "Inner confidence",
+                              "Lighting up others"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537643081/letter-s-print-teal-botanical-monogram"
                   },
                   {
                         "title": "T — Together",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "The Meaning Alphabet",
                         "collectionOrder": 1,
                         "productOrder": 20,
@@ -442,7 +450,15 @@
                               "lifestyle": "Together fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "flat": "Together fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Together fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£5.95",
+                        "meaning": "Where belonging helps us find our way. For the people who are better — and braver — side by side.",
+                        "giftFor": [
+                              "Shared journeys",
+                              "Community and belonging",
+                              "Finding your people"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537627945/letter-t-linocut-print-blue-teal"
                   },
                   {
                         "title": "U — Unfold",
@@ -1152,7 +1168,7 @@
                   },
                   {
                         "title": "Sheep",
-                        "status": "coming",
+                        "status": "available",
                         "collection": "Farm Folk",
                         "collectionOrder": 2,
                         "productOrder": 5,
@@ -1167,7 +1183,15 @@
                               "lifestyle": "Sheep folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "flat": "Sheep folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
                               "detail": "Detail of Sheep folk art print — Farm Folk collection, symbolic design by Hope Anthology"
-                        }
+                        },
+                        "price": "£4.75",
+                        "meaning": "Gentle and compassionate, embodying peace, care, and harmonious living. A print for those who bring calm to the spaces and people around them.",
+                        "giftFor": [
+                              "Community and belonging",
+                              "Gentle courage",
+                              "Those who are better together"
+                        ],
+                        "etsyUrl": "https://www.etsy.com/uk/listing/4537644338/olive-green-sheep-linocut-print-nordic"
                   },
                   {
                         "title": "Donkey",
