@@ -3,7 +3,7 @@
 #ha-home-v3{font-family:'DM Sans',sans-serif;background:var(--ha-cream);color:var(--ha-dark);line-height:1.4;-webkit-font-smoothing:antialiased;}
 #ha-home-v3 a{text-decoration:none;}
 #ha-home-v3 img{display:block;width:100%;height:auto;}
-body.ha-home-v3-active #sections,body.ha-home-v3-active #footer-sections{display:none!important;}
+body.ha-home-v3-active #sections,body.ha-home-v3-active #footer-sections,body.ha-home-v3-active #page,body.ha-home-v3-active main.container{display:none!important;}
 body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home-v3-active #header{display:none!important;}
 .ha-v3-sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important;}
 .ha-v3-nav{background:var(--ha-teal);height:72px;padding:0 48px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:90;}
