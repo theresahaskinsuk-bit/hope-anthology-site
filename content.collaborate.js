@@ -69,7 +69,7 @@ window.HA_COLLABORATE_CONTENT = {
     heading: 'Start the conversation',
     prompt: "Tell me a little about what you make, what you're imagining, or where you think the Anthology might fit.",
     emailLabel: 'Email Theresa',
-    emailAddress: 'hello@thehopeanthology.art',
+    emailAddress: 'theresa@thehopeanthology.art',
     emailSubject: 'Collaboration enquiry',
     emailBody: 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\nA little about what I make or do:\n\n',
     note: 'A simple email link for now — no forms, integrations, or extra setup needed.'

@@ -48,7 +48,7 @@
     return (items||[]).map(function(item){
       var href = item.url || '#';
       var active = (href.replace(/\/$/,'') || '/') === current;
-      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';
     }).join('');
   }
   function newsletterForm(collective){
@@ -100,7 +100,7 @@
           '<section class="ha-c-coming" aria-label="Coming soon To Make mediums">'+(make.coming||[]).map(function(card){return '<article class="ha-c-coming-card"><h3>'+esc(card.title)+'</h3><p>'+esc(card.body)+'</p>'+(card.linkUrl ? '<a class="ha-c-coming-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a>' : '<span>'+esc(card.tag)+'</span>')+'</article>';}).join('')+'</section>'+ 
           '<section class="ha-c-collective"><div><p class="ha-c-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.instagramUrl || 'https://www.instagram.com')+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a><a href="'+esc(footer.sellingUrl || footer.whySellUrl || '/why-we-sell-this-way')+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+ 
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
 

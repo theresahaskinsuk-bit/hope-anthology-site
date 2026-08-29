@@ -42,16 +42,16 @@
   function navLinks(items){
     return (items||[]).map(function(item){
       var cls = item.active ? ' class="is-active" aria-current="page"' : '';
-      return '<a href="'+esc(item.url)+'"'+cls+'>'+esc(item.label)+'</a>';
+      return '<a href="'+esc(item.url)+'"'+cls+'>'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';
     }).join('');
   }
   function footerLinks(C){
     var footer=C.footer || {};
     return ''+
-      '<a href="'+esc(footer.instagramUrl || 'https://www.instagram.com')+'" target="_blank" rel="noopener">Instagram</a>'+
+      ''+
       '<a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a>'+
       '<a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a>'+
-      '<a href="'+esc(footer.whySellUrl || '/why-we-sell-this-way')+'">Why I sell this way</a>';
+      '';
   }
   function formHtml(form){
     form = form || {};
@@ -88,7 +88,7 @@
           '<section class="ha-collective-hero" aria-labelledby="ha-collective-title"><div class="ha-collective-hero-left"><p class="ha-collective-eyebrow">'+esc(hero.eyebrow || 'Collective')+'</p><h1 id="ha-collective-title" class="ha-collective-h1">'+safeHtml(hero.headlineHtml || 'Something worth being <em>part of.</em>')+'</h1></div><div class="ha-collective-hero-rule" aria-hidden="true"></div></section>'+
           '<section class="ha-collective-copy-section"><div class="ha-collective-copy">'+bodyHtml(C.body)+'</div>'+formHtml(C.form)+'</section>'+
         '</main>'+
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div>'+footerLinks(C)+'</div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright || '© The Hope Anthology 2026')+'</span></div></footer>'+
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div>'+footerLinks(C)+'</div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright || '© The Hope Anthology 2026')+'</span></div></footer>'+
       '</div>';
   }
   function bindMobileNav(root){

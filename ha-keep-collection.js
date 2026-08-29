@@ -50,7 +50,7 @@
     return (items||[]).map(function(item){
       var href = item.url || '#';
       var active = (href.replace(/\/$/,'') || '/') === current;
-      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';
     }).join('');
   }
   function findCollection(content){
@@ -152,7 +152,7 @@
       '<section class="ha-kc-grid-section"><p class="ha-kc-grid-eyebrow">'+esc(collection.gridEyebrow || (collection.title+' — '+total+' prints'))+'</p><div class="ha-kc-card-grid">'+(collection.products||[]).map(function(item){return productCard(content,collection,item);}).join('')+'</div></section>'+ 
       '<section class="ha-kc-collective"><div><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div><a class="ha-kc-collective-btn" href="'+esc(collective.buttonUrl || '/collective')+'">'+ctaLabel(collective.buttonLabel || 'Join the Collective')+'</a></section>'+ 
       '</main>'+ 
-      '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(content,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(content.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.instagramUrl)+'" target="_blank" rel="noopener">Instagram</a><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a><a href="'+esc(footer.sellingUrl)+'">Why we sell this way</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+ 
+      '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(content,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(content.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
     '</div>';
   }
   function bindMobileNav(root){
