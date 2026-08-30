@@ -1560,15 +1560,15 @@ body.ha-collaborate-v1-active [data-ha-collaborate-hidden="true"]{display:none!i
 #ha-collaborate-v1 .ha-col-header{padding:94px clamp(24px,5vw,64px) 86px;background:linear-gradient(180deg,var(--ha-cream) 0%,#f8f4eb 100%);}
 #ha-collaborate-v1 .ha-col-header h2{max-width:820px;letter-spacing:-.015em;}
 #ha-collaborate-v1 .ha-col-header p:last-child{max-width:780px;}
-#ha-collaborate-v1 .ha-col-white-section{background:#fff;padding:clamp(42px,5vw,72px) clamp(20px,4.5vw,56px);}
+.ha-col-white-section{background:#fff;padding:clamp(42px,5vw,72px) clamp(20px,4.5vw,56px);}
 #ha-collaborate-v1 .ha-col-current-grid .ha-col-featured-card{grid-column:1/-1;}
 #ha-collaborate-v1 .ha-col-current-grid .ha-col-featured-card .collab-card-body-text{max-width:620px;}
 #ha-collaborate-v1 .ha-col-lanes{padding:clamp(42px,5vw,72px) clamp(20px,4.5vw,56px);gap:22px;background:#fff;border-top:.5px solid rgba(54,68,73,.1);border-bottom:.5px solid rgba(54,68,73,.1);}
 #ha-collaborate-v1 .ha-col-lane{border:.5px solid rgba(54,68,73,.12);border-radius:8px;min-height:330px;padding:40px 34px;background:#fff;box-shadow:0 18px 46px rgba(54,68,73,.045);}
 #ha-collaborate-v1 .ha-col-lane:last-child{border-right:.5px solid rgba(54,68,73,.12);}
 #ha-collaborate-v1 .ha-col-lane:hover,#ha-collaborate-v1 .ha-col-lane:focus-visible{background:#fbfaf5;border-color:rgba(38,91,112,.42);box-shadow:0 22px 54px rgba(54,68,73,.075);}
-#ha-collaborate-v1 .ha-col-current{background:var(--ha-linen);padding:88px clamp(20px,4.5vw,56px) 76px;}
-#ha-collaborate-v1 .ha-col-current-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:26px;max-width:1120px;}
+.ha-col-current{background:var(--ha-linen);padding:88px clamp(20px,4.5vw,56px) 76px;}
+.ha-col-current-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr));gap:26px;max-width:1120px;}
 #ha-collaborate-v1 .collab-card{border-radius:9px;border-color:rgba(54,68,73,.12);box-shadow:0 18px 46px rgba(54,68,73,.055);}
 #ha-collaborate-v1 .collab-card-img{height:clamp(218px,24vw,286px);background:#e9e2d6;}
 #ha-collaborate-v1 .collab-card-img img{object-position:center 46%;}
@@ -2541,6 +2541,161 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   #ha-artist-page-v1 .ha-v3-footer-bottom{
     padding:12px 24px!important;
   }
+}
+
+/* Shared v3 footer consistency declarations for future page roots. */
+.ha-v3-footer-top{
+  padding:40px 48px 32px!important;
+  display:grid!important;
+  grid-template-columns:80px 1fr 1fr!important;
+  gap:48px!important;
+  align-items:start!important;
+  justify-content:stretch!important;
+}
+.ha-v3-footer-star{
+  width:36px!important;
+  height:36px!important;
+  object-fit:contain!important;
+  opacity:.88!important;
+  margin-top:4px!important;
+  background:transparent!important;
+}
+.ha-v3-footer-col{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:8px!important;
+}
+.ha-v3-footer-title{
+  font-size:10px!important;
+  letter-spacing:.12em!important;
+  text-transform:uppercase!important;
+  color:rgba(242,243,239,.45)!important;
+  font-weight:500!important;
+  font-family:'DM Sans',sans-serif!important;
+  margin:0 0 6px!important;
+}
+.ha-v3-footer-col a{
+  font-size:13px!important;
+  color:rgba(242,243,239,.72)!important;
+  text-decoration:none!important;
+  font-family:'DM Sans',sans-serif!important;
+  line-height:1.4!important;
+  text-underline-offset:4px!important;
+}
+.ha-v3-footer-col a:hover,
+.ha-v3-footer-col a:focus-visible{
+  color:rgba(242,243,239,.98)!important;
+  text-decoration:underline!important;
+}
+.ha-v3-footer-bottom{
+  background:var(--ha-teal)!important;
+  border-top:.5px solid rgba(242,243,239,.1)!important;
+  padding:12px 48px!important;
+  display:flex!important;
+  justify-content:flex-start!important;
+}
+.ha-v3-footer-bottom span{
+  font-size:11px!important;
+  color:rgba(242,243,239,.35)!important;
+  font-family:'DM Sans',sans-serif!important;
+}
+@media(max-width:900px){
+  .ha-v3-footer-top{
+    grid-template-columns:1fr!important;
+    gap:28px!important;
+    padding:36px 24px!important;
+  }
+  .ha-v3-footer-bottom{
+    padding:12px 24px!important;
+  }
+}
+
+/* Shared mobile v3 menu copied from the Home page canonical declarations. */
+.ha-v3-menu-toggle{
+  display:none;
+  appearance:none;
+  background:transparent;
+  border:0;
+  width:44px;
+  height:44px;
+  padding:10px;
+  margin:0;
+  cursor:pointer;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+  color:var(--ha-cream);
+}
+.ha-v3-menu-toggle span{
+  display:block;
+  width:22px;
+  height:1px;
+  background:currentColor;
+  transition:transform .2s ease,opacity .2s ease;
+}
+.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
+.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+.ha-v3-menu-toggle:hover,
+.ha-v3-menu-toggle:focus-visible{
+  color:#fff;
+  outline:1px solid rgba(242,243,239,.45);
+  outline-offset:2px;
+}
+@media(max-width:900px){
+  .ha-v3-nav{
+    height:68px!important;
+    padding:0 18px!important;
+    align-items:center;
+  }
+  .ha-v3-brand{
+    height:68px!important;
+    max-width:210px!important;
+  }
+  .ha-v3-logo{
+    height:42px!important;
+    max-width:190px!important;
+  }
+  .ha-v3-menu-toggle{
+    display:inline-flex!important;
+    position:relative;
+    z-index:102;
+  }
+  .ha-v3-nav .ha-v3-links{
+    display:flex!important;
+    position:absolute;
+    left:0;
+    right:0;
+    top:68px;
+    background:var(--ha-teal);
+    border-top:1px solid rgba(242,243,239,.14);
+    box-shadow:0 18px 28px rgba(10,14,15,.22);
+    padding:18px 24px 24px;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:0!important;
+    opacity:0;
+    visibility:hidden;
+    transform:translateY(-8px);
+    pointer-events:none;
+    transition:opacity .2s ease,transform .2s ease,visibility .2s ease;
+  }
+  .ha-v3-menu-open .ha-v3-nav .ha-v3-links{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+  .ha-v3-nav .ha-v3-links a{
+    width:100%;
+    padding:13px 0;
+    border-bottom:1px solid rgba(242,243,239,.12);
+    font-size:16px!important;
+    color:var(--ha-cream)!important;
+    text-align:left!important;
+  }
+  .ha-v3-nav .ha-v3-links a:last-child{border-bottom:0;}
 }
 
 /* ============================================================

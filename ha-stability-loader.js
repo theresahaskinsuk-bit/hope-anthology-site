@@ -6,7 +6,7 @@
   var currentPath = null;
   var runTimer = null;
   var renderCount = 0;
-  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
+  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-for-organisations-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
   var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-story-active','ha-collaborate-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
   window.HA_STABILITY_VERSION = version;
 
@@ -23,6 +23,7 @@
     if(p==='/collections/stained-glass-patterns' || p==='/collections/stained-glass' || p==='/stained-glass-patterns') return {key:'stained-glass', root:'ha-make-template-v1', contentId:'ha-make-template-content', content:'content.make-template.js', renderer:'ha-make-template.js'};
     if(p==='/story' || p==='/the-story') return {key:'story', root:'ha-story-root', contentId:'ha-story-content', content:'content.story.js', renderer:'ha-story.js'};
     if(p==='/collaborate' || p==='/collaborations') return {key:'collaborate', root:'ha-collaborate-v1', contentId:'ha-collaborate-content', content:'content.collaborate.js', renderer:'ha-collaborate.js'};
+    if(p==='/for-organisations') return {key:'for-organisations', root:'ha-for-organisations-v1', contentId:'ha-for-organisations-content', content:'content.for-organisations.js', renderer:'ha-for-organisations.js'};
     if(p==='/collective' || p==='/the-collective') return {key:'collective', root:'ha-collective-v1', contentId:'ha-collective-content', content:'content.collective.js', renderer:'ha-collective.js'};
     if(p==='/why-we-sell-this-way' || p==='/why-we-sell-this-way-1') return {key:'why', root:'ha-why-v1', contentId:'ha-why-content', content:'content.why-we-sell-this-way.js', renderer:'ha-why-we-sell-this-way.js'};
     if(p==='/privacy' || p==='/privacy-policy' || p==='/accessibility' || p==='/accessibility-statement') return {key:'info', root:'ha-info-template-v1', contentId:'ha-info-template-content', content:'content.info-page-template.js', renderer:'ha-info-page-template.js'};
@@ -53,10 +54,12 @@
   function cleanupForRoute(keepRoot){
     rootIds.forEach(function(id){ if(id !== keepRoot){ var n=document.getElementById(id); if(n && n.parentNode) n.parentNode.removeChild(n); } });
     bodyClasses.forEach(function(cls){ document.body.classList.remove(cls); });
-    Array.prototype.forEach.call(document.querySelectorAll('[data-ha-collaborate-hidden],[data-ha-collective-hidden],[data-ha-why-hidden],[data-ha-info-hidden],[data-ha-story-hidden]'), function(node){
+    Array.prototype.forEach.call(document.querySelectorAll('[data-ha-collaborate-hidden],[data-ha-for-organisations-hidden],[data-ha-collective-hidden],[data-ha-why-hidden],[data-ha-info-hidden],[data-ha-story-hidden]'), function(node){
       node.style.removeProperty('display');
       node.style.removeProperty('visibility');
       node.removeAttribute('data-ha-collaborate-hidden');
+      node.hidden=false;
+      node.removeAttribute('data-ha-for-organisations-hidden');
       node.removeAttribute('data-ha-collective-hidden');
       node.removeAttribute('data-ha-why-hidden');
       node.removeAttribute('data-ha-info-hidden');
