@@ -1560,6 +1560,7 @@ body.ha-collaborate-v1-active [data-ha-collaborate-hidden="true"]{display:none!i
 #ha-collaborate-v1 .ha-col-header{padding:94px clamp(24px,5vw,64px) 86px;background:linear-gradient(180deg,var(--ha-cream) 0%,#f8f4eb 100%);}
 #ha-collaborate-v1 .ha-col-header h2{max-width:820px;letter-spacing:-.015em;}
 #ha-collaborate-v1 .ha-col-header p:last-child{max-width:780px;}
+#ha-collaborate-v1 .ha-col-white-section{background:#fff;padding:clamp(42px,5vw,72px) clamp(20px,4.5vw,56px);}
 #ha-collaborate-v1 .ha-col-lanes{padding:clamp(42px,5vw,72px) clamp(20px,4.5vw,56px);gap:22px;background:#fff;border-top:.5px solid rgba(54,68,73,.1);border-bottom:.5px solid rgba(54,68,73,.1);}
 #ha-collaborate-v1 .ha-col-lane{border:.5px solid rgba(54,68,73,.12);border-radius:8px;min-height:330px;padding:40px 34px;background:#fff;box-shadow:0 18px 46px rgba(54,68,73,.045);}
 #ha-collaborate-v1 .ha-col-lane:last-child{border-right:.5px solid rgba(54,68,73,.12);}

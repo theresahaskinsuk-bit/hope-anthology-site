@@ -106,11 +106,12 @@
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">Collaborate — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
-          '<section class="ha-v3-two" aria-label="How it works">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'<div class="ha-col-lanes">'+(steps.cards||[]).map(lane).join('')+'</div></section>'+
+          '<section class="ha-col-white-section" aria-label="How it works heading">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'</section>'+
+          '<section class="ha-col-lanes" aria-label="How it works steps">'+(steps.cards||[]).map(lane).join('')+'</section>'+
           commissionSection(commission)+
-          '<section class="ha-v3-two" aria-label="Being straight with you and who is welcome"><div class="ha-col-current-grid">'+honestyCards.map(card).join('')+'</div></section>'+
-          '<section class="ha-v3-two" aria-label="After the founding year">'+card(foundingYear)+'</section>'+
-          '<section class="ha-v3-two" aria-label="Artist conversation space">'+card(artistSpace)+'</section>'+
+          '<section class="ha-col-white-section" aria-label="Being straight with you and who is welcome"><div class="ha-col-current-grid">'+honestyCards.map(card).join('')+'</div></section>'+
+          '<section class="ha-col-white-section" aria-label="After the founding year"><div class="ha-col-current-grid">'+card(foundingYear)+'</div></section>'+
+          '<section class="ha-col-white-section" aria-label="Artist conversation space"><div class="ha-col-current-grid">'+card(artistSpace)+'</div></section>'+
           '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.statement)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
