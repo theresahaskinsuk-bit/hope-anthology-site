@@ -12,7 +12,7 @@ window.HA_FOR_ORGANISATIONS_CONTENT = {
   ],
   page: {
     eyebrow: 'FOR ORGANISATIONS',
-    headlineHtml: 'Somewhere you can <em>point people</em>.',
+    headlineHtml: 'Somewhere you can <em style="color:var(--ha-twine)">point people</em>.',
     intro: 'For link workers, recovery services, mental health charities, hospices, bereavement groups and craft therapy practitioners, to name a few. A curated collection you can share with someone without sending them into a shop.'
   },
   cards: [

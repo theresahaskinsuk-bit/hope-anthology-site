@@ -7,7 +7,7 @@
   var runTimer = null;
   var renderCount = 0;
   var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-for-organisations-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
-  var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-story-active','ha-collaborate-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
+  var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-story-active','ha-collaborate-v1-active','ha-for-organisations-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
   window.HA_STABILITY_VERSION = version;
 
   function path(){ return location.pathname.replace(/\/$/,'') || '/'; }
@@ -54,7 +54,9 @@
   function cleanupForRoute(keepRoot){
     rootIds.forEach(function(id){ if(id !== keepRoot){ var n=document.getElementById(id); if(n && n.parentNode) n.parentNode.removeChild(n); } });
     bodyClasses.forEach(function(cls){ document.body.classList.remove(cls); });
-    Array.prototype.forEach.call(document.querySelectorAll('[data-ha-collaborate-hidden],[data-ha-for-organisations-hidden],[data-ha-collective-hidden],[data-ha-why-hidden],[data-ha-info-hidden],[data-ha-story-hidden]'), function(node){
+    var fallbackSelector='[data-ha-collaborate-hidden],[data-ha-collective-hidden],[data-ha-why-hidden],[data-ha-info-hidden],[data-ha-story-hidden]';
+    if(keepRoot!=='ha-for-organisations-v1') fallbackSelector+=',[data-ha-for-organisations-hidden]';
+    Array.prototype.forEach.call(document.querySelectorAll(fallbackSelector), function(node){
       node.style.removeProperty('display');
       node.style.removeProperty('visibility');
       node.removeAttribute('data-ha-collaborate-hidden');

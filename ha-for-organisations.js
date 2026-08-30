@@ -57,7 +57,7 @@
   function contactSection(contact){
     var email = contact.emailAddress || 'theresa@thehopeanthology.art';
     var href = 'mailto:' + email;
-    return '<section class="ha-col-main" aria-label="Contact"><div class="ha-make-feature"><div class="ha-make-feature-copy"><h2>'+esc(contact.heading)+'</h2><p>'+esc((contact.paragraphs||[])[0])+'</p><p>'+esc((contact.paragraphs||[])[1])+'</p></div><div class="ha-make-feature-copy"><a class="ha-c-btn ha-c-btn-teal" href="'+esc(href)+'">'+ctaLabel(contact.emailLabel || 'Email Theresa')+'</a><p class="ha-v3-card-copy">Email: <a href="'+esc(href)+'">'+esc(email)+'</a></p></div></div></section>';
+    return '<section class="ha-col-white-section" aria-label="Contact"><div class="ha-col-enquiry-panel"><h2>'+esc(contact.heading)+'</h2><p class="ha-col-enquiry-prompt">'+esc((contact.paragraphs||[])[0])+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(href)+'">'+ctaLabel(contact.emailLabel || 'Email Theresa')+'</a><p class="ha-col-enquiry-email"><span>Email:</span> <a href="'+esc(href)+'">'+esc(email)+'</a></p><p class="ha-col-enquiry-note">'+esc((contact.paragraphs||[])[1])+'</p></div></section>';
   }
   function html(){
     var C=window.HA_FOR_ORGANISATIONS_CONTENT || {};
@@ -67,14 +67,14 @@
     var footer=C.footer || {};
     return ''+
       '<div id="ha-for-organisations-v1">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">Collaborate — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">For organisations — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headlineHtml)+'</h2><p>'+esc(page.intro)+'</p></header>'+
           '<section class="ha-col-white-section" aria-label="Three principles"><div class="ha-v3-cards">'+(C.cards||[]).map(card).join('')+'</div></section>'+
           whySection(why)+
           contactSection(contact)+
         '</main>'+
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
   function isForOrganisations(){ return (location.pathname.replace(/\/$/,'') || '/') === '/for-organisations'; }
@@ -98,29 +98,32 @@
     });
   }
   function suppressSquarespaceFallback(root){
-    if(!root) return;
+    if(!root || root.getAttribute('data-fallback-suppressed') === 'true') return;
     root.setAttribute('data-fallback-suppressed','true');
     Array.prototype.forEach.call(document.body.children,function(node){
       if(node === root) return;
       if(/^(SCRIPT|STYLE|LINK|NOSCRIPT)$/i.test(node.tagName)) return;
       node.setAttribute('data-ha-for-organisations-hidden','true');
-      node.hidden=true;
+      node.style.setProperty('display','none','important');
+      node.style.setProperty('visibility','hidden','important');
     });
   }
   function mount(){
     if(!isForOrganisations()) return;
     var existingRoot = document.getElementById('ha-for-organisations-v1');
     if(existingRoot){
+      document.body.classList.add('ha-for-organisations-v1-active');
       suppressSquarespaceFallback(existingRoot);
       bindMobileNav(existingRoot);
       return;
     }
     var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
     if(!anchor){ setTimeout(mount,150); return; }
+    document.body.classList.add('ha-for-organisations-v1-active');
     var wrap=document.createElement('div');
     wrap.innerHTML=html();
     var root=wrap.firstChild;
-    anchor.parentNode.insertBefore(root,anchor);
+    document.body.insertBefore(root, document.body.firstChild);
     suppressSquarespaceFallback(root);
     bindMobileNav(root);
   }
