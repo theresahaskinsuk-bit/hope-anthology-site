@@ -36,8 +36,6 @@
     return isAbsoluteUrl(value) ? value : base + value.replace(/^\.\//,'');
   }
   function image(content,key){ return esc(assetUrl((content.images && content.images[key]) || '')); }
-  function isExternal(value){ return /^https?:\/\//.test(String(value || '')); }
-  function linkAttrs(url){ return isExternal(url) ? ' target="_blank" rel="noopener"' : ''; }
   function ctaLabel(label){
     var clean = String(label == null ? '' : label).replace(/\s*[→›»]+\s*$/,'');
     return '<span class="ha-v3-cta-text">'+esc(clean)+'</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span>';
@@ -71,21 +69,35 @@
     return ''+
       '<div id="collaborate-enquiry" class="ha-col-enquiry-panel">'+
         '<h2>'+esc(conversation.heading || 'Start the conversation')+'</h2>'+ 
-        '<p class="ha-col-enquiry-prompt">'+esc(conversation.prompt || 'Tell me a little about what you make, what you\'re imagining, or where you think the Anthology might fit.')+'</p>'+ 
+        '<p class="ha-col-enquiry-prompt">'+esc(conversation.prompt || 'Tell me what you make, where you sell it, and whether you\'d want to be in To Keep, To Make, or both. No form to fill in — just an email.')+'</p>'+
         '<a class="ha-col-btn ha-col-btn-teal" href="'+esc(href)+'">'+ctaLabel(conversation.emailLabel || 'Email Theresa')+'</a>'+ 
         '<p class="ha-col-enquiry-email"><span>Email:</span> <a href="'+esc(href)+'">'+esc(email)+'</a></p>'+ 
         (conversation.note ? '<p class="ha-col-enquiry-note">'+esc(conversation.note)+'</p>' : '')+
       '</div>';
   }
+  function paragraphsHtml(paragraphs,className){
+    return (paragraphs||[]).map(function(paragraph){ return '<p'+(className ? ' class="'+className+'"' : '')+'>'+safeHtml(paragraph)+'</p>'; }).join('');
+  }
   function lane(card){
-    return '<a class="ha-col-lane" href="'+esc(card.url || '#collaborate-enquiry')+'"><span class="ha-col-lane-num">'+esc(card.number)+'</span><h2>'+esc(card.title)+'</h2><span class="ha-col-lane-arrow" aria-hidden="true">↓</span><p>'+esc(card.body)+'</p>'+(card.note ? '<p class="ha-col-lane-note">('+esc(card.note)+')</p>' : '')+'</a>';
+    return '<article class="ha-col-lane"><span class="ha-col-lane-num">'+esc(card.number)+'</span><h2>'+esc(card.title)+'</h2><span class="ha-col-lane-arrow" aria-hidden="true">↓</span>'+paragraphsHtml(card.paragraphs)+'</article>';
+  }
+  function sectionHead(eyebrow,heading,intro){
+    return '<div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(eyebrow)+'</p><h2>'+esc(heading)+'</h2><p>'+esc(intro)+'</p></div>';
+  }
+  function card(card){
+    return '<article class="collab-card"><div class="collab-card-body"><p class="collab-card-type ha-col-card-label">'+esc(card.eyebrow)+'</p><h3 class="collab-card-title">'+safeHtml(card.headingHtml || esc(card.heading))+'</h3>'+paragraphsHtml(card.paragraphs,'collab-card-body-text')+'</div></article>';
+  }
+  function commissionSection(commission){
+    return '<section class="ha-col-current" aria-label="Why there is no commission"><div class="ha-col-current-grid"><div class="ha-col-conversation-copy"><p class="ha-col-eyebrow">'+esc(commission.eyebrow)+'</p><p>'+safeHtml(commission.quoteHtml)+'</p><p><small><em>'+esc(commission.aside)+'</em></small></p></div><div>'+paragraphsHtml(commission.paragraphs,'collab-card-body-text')+'</div></div></section>';
   }
   function html(){
     var C=window.HA_COLLABORATE_CONTENT || {};
     var page=C.page || {};
-    var current=C.current || {};
-    var featured=current.featured || {};
-    var openSlot=current.openSlot || {};
+    var steps=C.steps || {};
+    var commission=C.commission || {};
+    var honestyCards=C.honestyCards || [];
+    var foundingYear=C.foundingYear || {};
+    var artistSpace=C.artistSpace || {};
     var conversation=C.conversation || {};
     var collective=C.collective || {};
     var footer=C.footer || {};
@@ -94,32 +106,12 @@
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">Collaborate — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
-          '<section class="ha-col-lanes" aria-label="Ways to collaborate">'+(C.lanes||[]).map(lane).join('')+'</section>'+ 
-          '<section class="ha-col-current">'+
-            '<div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(current.eyebrow)+'</p><h2>'+esc(current.heading)+'</h2><p>'+esc(current.intro)+'</p></div>'+ 
-            '<div class="ha-col-current-grid collab-cards">'+
-              '<article class="collab-card ha-col-featured-card">'+
-                '<div class="collab-card-img ha-col-featured-img"><img src="'+image(C,featured.imageKey)+'" alt="'+esc(featured.imageAlt)+'"></div>'+ 
-                '<div class="collab-card-body ha-col-featured-body">'+
-                  '<div class="collab-card-logo ha-col-featured-logo"><img src="'+image(C,featured.logoKey)+'" alt="'+esc(featured.logoAlt)+'"></div>'+ 
-                  '<p class="collab-card-type ha-col-card-label">'+esc(featured.label)+'</p>'+ 
-                  '<h3 class="collab-card-title">'+esc(featured.title)+'</h3>'+ 
-                  '<p class="collab-card-body-text">'+esc(featured.body)+'</p>'+ 
-                  '<a class="collab-card-link ha-col-inline-link" href="'+esc(featured.linkUrl)+'"'+linkAttrs(featured.linkUrl)+'>'+ctaLabel(featured.linkLabel)+'</a>'+ 
-                '</div>'+ 
-              '</article>'+ 
-              '<article class="collab-card collab-card-open ha-col-open-card">'+
-                '<div class="collab-card-body">'+
-                  '<p class="collab-card-type ha-col-card-label">Next partnership</p>'+ 
-                  '<h3 class="collab-card-title">'+esc(openSlot.title)+'</h3>'+ 
-                  '<p class="collab-card-body-text">'+esc(openSlot.body).replace(/\n/g,'<br>')+'</p>'+ 
-                  '<a class="ha-col-btn ha-col-btn-ghost-light" href="'+esc(openSlot.linkUrl || '#collaborate-enquiry')+'">'+ctaLabel(openSlot.linkLabel)+'</a>'+ 
-                '</div>'+ 
-              '</article>'+ 
-            '</div>'+ 
-            '<p class="ha-col-current-note">'+esc(current.note)+' <a href="'+esc(current.noteLinkUrl)+'">'+ctaLabel(current.noteLinkLabel)+'</a></p>'+ 
-          '</section>'+ 
-          '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.body)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+ 
+          '<section class="ha-v3-two" aria-label="How it works">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'<div class="ha-col-lanes">'+(steps.cards||[]).map(lane).join('')+'</div></section>'+
+          commissionSection(commission)+
+          '<section class="ha-v3-two" aria-label="Being straight with you and who is welcome"><div class="ha-col-current-grid">'+honestyCards.map(card).join('')+'</div></section>'+
+          '<section class="ha-v3-two" aria-label="After the founding year">'+card(foundingYear)+'</section>'+
+          '<section class="ha-v3-two" aria-label="Artist conversation space">'+card(artistSpace)+'</section>'+
+          '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.statement)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
