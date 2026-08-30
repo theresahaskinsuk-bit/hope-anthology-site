@@ -134,7 +134,7 @@
         '<section class="ha-kc-grid-section">' + (maker.groups || []).map(function(group){ return groupHtml(content, group); }).join('') + '</section>' +
         '<section class="ha-kc-collective"><div><h2>' + esc(collective.heading || '') + '</h2><p>' + esc(collective.body || '') + '</p></div><a class="ha-kc-collective-btn" href="' + esc(collective.buttonUrl || '/collective') + '">' + ctaLabel(collective.buttonLabel || 'Join the Collective') + '</a></section>' +
         '</main>' +
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="' + image(content, 'star') + '" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>' + navLinks(content.navigation) + '<a href="/for-organisations">For organisations</a></div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="' + esc(footer.privacyUrl || '/privacy-policy') + '">Privacy policy</a><a href="' + esc(footer.accessibilityUrl || '/accessibility') + '">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>' + esc(footer.copyright || '© The Hope Anthology 2026') + '</span></div></footer>' +
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="' + image(content, 'star') + '" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>' + navLinks(content.navigation) + '<a href="/for-organisations">For Organisations</a></div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="' + esc(footer.privacyUrl || '/privacy-policy') + '">Privacy policy</a><a href="' + esc(footer.accessibilityUrl || '/accessibility') + '">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>' + esc(footer.copyright || '© The Hope Anthology 2026') + '</span></div></footer>' +
       '</div>' +
     '</div>';
   }
@@ -174,9 +174,26 @@
       }
     });
   }
+  function suppressSquarespaceFallback(root){
+    if(!root || root.getAttribute('data-fallback-suppressed') === 'true') return;
+    root.setAttribute('data-fallback-suppressed','true');
+    Array.prototype.forEach.call(document.body.children,function(node){
+      if(node === root) return;
+      if(/^(SCRIPT|STYLE|LINK|NOSCRIPT)$/i.test(node.tagName)) return;
+      node.setAttribute('data-ha-to-make-hidden','true');
+      node.style.setProperty('display','none','important');
+      node.style.setProperty('visibility','hidden','important');
+    });
+  }
   function mount(){
     if(!makerSlug()) return;
-    if(document.getElementById('ha-to-make-maker-route')) return;
+    var existingRoot = document.getElementById('ha-to-make-maker-route');
+    if(existingRoot){
+      document.body.classList.add('ha-to-make-maker-active');
+      suppressSquarespaceFallback(existingRoot);
+      bindMobileNav(existingRoot);
+      return;
+    }
     var content = window.HA_TO_MAKE_MAKERS && window.HA_TO_MAKE_MAKERS[makerSlug()];
     if(!content || !content.maker) return;
     var anchor = document.querySelector('#sections') || document.querySelector('main') || document.body.firstElementChild;
@@ -185,7 +202,8 @@
     var wrap = document.createElement('div');
     wrap.innerHTML = html(content);
     var root = wrap.firstChild;
-    anchor.parentNode.insertBefore(root, anchor);
+    document.body.insertBefore(root, document.body.firstChild);
+    suppressSquarespaceFallback(root);
     bindMobileNav(root);
     bindDots(root);
   }

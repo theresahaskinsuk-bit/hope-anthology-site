@@ -71,8 +71,8 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
       "bio": "PLACEHOLDER — replace with the real maker bio.",
       "metaDescription": "PLACEHOLDER — replace with the real meta description.",
       "stats": {
-        "collections": "3.0",
-        "patterns": "33.0",
+        "collections": 3,
+        "patterns": 33,
         "fromPrice": "£3.50"
       },
       "montage": [

@@ -72,8 +72,8 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
       "bio": "PLACEHOLDER — replace with the real maker bio.",
       "metaDescription": "PLACEHOLDER — replace with the real meta description.",
       "stats": {
-        "collections": "4.0",
-        "patterns": "47.0",
+        "collections": 4,
+        "patterns": 47,
         "fromPrice": "£3.50"
       },
       "montage": [
