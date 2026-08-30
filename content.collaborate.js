@@ -12,7 +12,7 @@ window.HA_COLLABORATE_CONTENT = {
   ],
   page: {
     eyebrow: 'FOR ARTISTS',
-    headline: "There's room for fifty. You'd be one of the <em style=\"color:var(--ha-twine)\">first</em>.",
+    headline: "The <em style=\"color:var(--ha-twine)\">first</em> fifty artists. You'd be one of them.",
     intro: 'Your work, in a collection people are pointed towards — with no commission, no exclusivity, and nothing for you to build. If you make things people keep, or things people make, this is how it works.'
   },
   steps: {
