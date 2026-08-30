@@ -84,8 +84,8 @@
   function sectionHead(eyebrow,heading,intro){
     return '<div class="ha-col-section-head"><p class="ha-col-eyebrow">'+esc(eyebrow)+'</p><h2>'+esc(heading)+'</h2><p>'+esc(intro)+'</p></div>';
   }
-  function card(card){
-    return '<article class="collab-card"><div class="collab-card-body"><p class="collab-card-type ha-col-card-label">'+esc(card.eyebrow)+'</p><h3 class="collab-card-title">'+safeHtml(card.headingHtml || esc(card.heading))+'</h3>'+paragraphsHtml(card.paragraphs,'collab-card-body-text')+'</div></article>';
+  function card(card, extraClass){
+    return '<article class="collab-card'+(extraClass ? ' '+extraClass : '')+'"><div class="collab-card-body"><p class="collab-card-type ha-col-card-label">'+esc(card.eyebrow)+'</p><h3 class="collab-card-title">'+safeHtml(card.headingHtml || esc(card.heading))+'</h3>'+paragraphsHtml(card.paragraphs,'collab-card-body-text')+'</div></article>';
   }
   function commissionSection(commission){
     return '<section class="ha-col-current" aria-label="Why there is no commission"><div class="ha-col-current-grid"><div class="ha-col-conversation-copy"><p class="ha-col-eyebrow">'+esc(commission.eyebrow)+'</p><p>'+safeHtml(commission.quoteHtml)+'</p><p><small><em>'+esc(commission.aside)+'</em></small></p></div><div>'+paragraphsHtml(commission.paragraphs,'collab-card-body-text')+'</div></div></section>';
@@ -109,9 +109,7 @@
           '<section class="ha-col-white-section" aria-label="How it works heading">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'</section>'+
           '<section class="ha-col-lanes" aria-label="How it works steps">'+(steps.cards||[]).map(lane).join('')+'</section>'+
           commissionSection(commission)+
-          '<section class="ha-col-white-section" aria-label="Being straight with you and who is welcome"><div class="ha-col-current-grid">'+honestyCards.map(card).join('')+'</div></section>'+
-          '<section class="ha-col-white-section" aria-label="After the founding year"><div class="ha-col-current-grid">'+card(foundingYear)+'</div></section>'+
-          '<section class="ha-col-white-section" aria-label="Artist conversation space"><div class="ha-col-current-grid">'+card(artistSpace)+'</div></section>'+
+          '<section class="ha-col-white-section" aria-label="Artist information"><div class="ha-col-current-grid">'+honestyCards.map(function(item){ return card(item); }).join('')+card(foundingYear,'ha-col-featured-card')+card(artistSpace,'ha-col-featured-card')+'</div></section>'+
           '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.statement)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
