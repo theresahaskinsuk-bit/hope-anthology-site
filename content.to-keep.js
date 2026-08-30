@@ -23,6 +23,13 @@ window.HA_TO_KEEP_CONTENT = {
     medium: ['All', 'Prints'],
     price: ['All', 'Under \u00a320', '\u00a320\u2013\u00a350', '\u00a350+']
   },
+  recruitment: {
+    eyebrow: 'FOUNDING ARTISTS',
+    heading: 'Your work could be here.',
+    body: 'Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.',
+    linkLabel: 'See how it works for artists →',
+    linkUrl: '/collaborate'
+  },
   gridEyebrow: 'The Anthology \u2014 2 Artists',
   collective: {
     heading: 'Something worth being part of.',
@@ -41,7 +48,7 @@ window.HA_TO_KEEP_CONTENT = {
     {
       slug: 'theresa-haskins',
       active: true,
-      name: 'Theresa Haskins',
+      name: 'Theresa Haskins E1',
       badge: 'Founding artist',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cae2ef8f-9cf1-42c2-9bf1-15ae42926c41/theresa-haskins-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
       heroAlt: 'Theresa Haskins — curated artist, The Hope Anthology',
@@ -55,7 +62,7 @@ window.HA_TO_KEEP_CONTENT = {
     {
       slug: 'theresa-german',
       active: true,
-      name: 'Theresa German',
+      name: 'Theresa German E2',
       badge: 'Founding artist',
       heroImage: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/73e64fed-7768-4d71-9357-f633df015130/theresa-german-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg',
       heroAlt: 'Theresa German — curated artist, The Hope Anthology',
