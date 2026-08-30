@@ -116,7 +116,7 @@
       mediumBtns +
       '<span class="ha-tk-filter-divider" aria-hidden="true"></span>' +
       priceLinks +
-      '<span class="ha-tk-grid-eyebrow" id="ha-tk-count-label">' + esc(content.gridEyebrow || ('The Anthology \u2014 ' + artists.length + ' Artists')) + '</span>' +
+      '<span class="ha-tk-grid-eyebrow" id="ha-tk-count-label">' + esc('Curated artists \u2014 ' + artists.length) + '</span>' +
     '</div>';
   }
 
@@ -223,9 +223,7 @@
       var label = root.querySelector('#ha-tk-count-label');
       if(label){
         var total = (content.artists || []).filter(function(a){ return a.active !== false; }).length;
-        label.textContent = visible === total
-          ? (content.gridEyebrow || ('The Anthology \u2014 ' + total + ' Artists'))
-          : ('The Anthology \u2014 ' + visible + ' of ' + total + ' Artists');
+        label.textContent = 'Curated artists \u2014 ' + visible;
       }
     }
 

@@ -95,7 +95,7 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 .ha-v3-footer-bottom{background:var(--ha-teal);border-top:.5px solid rgba(242,243,239,.1);padding:12px 48px;display:flex;justify-content:flex-start;}
 .ha-v3-footer-bottom span{font-size:11px;color:rgba(242,243,239,.35);font-family:'DM Sans',sans-serif;}
 .ha-directory-stat-suffix{font-family:'DM Sans',sans-serif;font-size:11px;line-height:1;font-weight:600;color:rgba(242,243,239,.68);letter-spacing:0;text-transform:none;margin-left:8px;}
-.ha-directory-recruitment{background:var(--ha-cream);border:1px dashed var(--ha-twine);border-radius:10px;padding:18px 18px 20px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px;}
+.ha-directory-recruitment{background:var(--ha-cream);border:1px dashed var(--ha-twine);border-radius:10px;padding:56px 18px 20px;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;gap:12px;}
 .ha-directory-recruitment .ha-v3-kicker,.ha-directory-recruitment .ha-v3-card-title,.ha-directory-recruitment .ha-v3-card-copy{margin:0;}
 .ha-directory-recruitment .ha-c-btn{background:transparent;color:var(--ha-teal);border:1px solid var(--ha-teal);padding:14px 28px;text-decoration:none;}
 #ha-home-v3 .ha-home-artist-route{background:var(--ha-linen);padding:30px 48px;border-top:.5px solid rgba(54,68,73,.1);border-bottom:.5px solid rgba(54,68,73,.1);align-items:center;margin:0;}
