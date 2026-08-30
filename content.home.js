@@ -43,7 +43,7 @@ window.HA_HOME_CONTENT = {
     primaryButtonUrl: '/to-keep',
     secondaryButtonLabel: 'Read the story →',
     secondaryButtonUrl: '/story',
-    bodyHtml: 'The Hope Anthology brings together <em>independent artists and makers</em> — and the people who need what they make. A curated collection by <em>many hands</em>. William Morris held that the things we make and live with should carry meaning, and that the people who make them should be <em>valued</em>.',
+    bodyHtml: 'The Hope Anthology brings together <em>independent artists and makers</em> — and the people <em>who need</em> what they make. A curated collection by <em>many hands</em>. William Morris held that the things we make and live with should carry meaning, and that the people who make them should be <em>valued</em>.',
     kicker: 'Two worlds. One anthology.'
   },
 
@@ -59,7 +59,7 @@ window.HA_HOME_CONTENT = {
 
   artistRoute: {
     eyebrow: 'FOR ARTISTS',
-    heading: "Room for fifty. You'd be one of the first.",
+    heading: "The first fifty artists. You'd be one of them.",
     body: 'No commission, no exclusivity, and nothing for you to build. Free for the founding year.',
     linkLabel: 'How it works →',
     linkUrl: '/collaborate'
