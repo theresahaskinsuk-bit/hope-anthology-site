@@ -104,6 +104,7 @@
     var collections=C.collections || {cards:[]};
     var hero=C.hero || {};
     var intro=C.intro || {};
+    var artistRoute=C.artistRoute || {};
     var collective=C.collective || {};
     var footer=C.footer || {};
     return ''+
@@ -112,9 +113,10 @@
         '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Hope Anthology artwork, making materials and symbolic pieces"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><p class="ha-v3-hero-body">'+esc(hero.body)+(hero.bodyTagline ? '<br><em class="ha-v3-hero-tagline">'+esc(hero.bodyTagline)+'</em>' : '')+'</p><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.cta1Url || hero.primaryButtonUrl)+'">'+ctaLabel(hero.cta1Label || hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.cta2Url || '')+'">'+ctaLabel(hero.cta2Label || '')+'</a></div>'+( hero.secondaryButtonLabel ? '<div class="ha-v3-ctas ha-v3-ctas-secondary"><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div>' : '' )+'</div></section>'+
         renderIntro(C,intro)+
         '<section class="ha-v3-two"><div class="ha-v3-section-head">'+(intro.kicker ? '' : '<p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p>')+'<h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
+        '<section class="ha-col-conversation" aria-label="For Artists"><div><p class="ha-v3-kicker">'+esc(artistRoute.eyebrow)+'</p><h2 class="ha-v3-strip-title">'+esc(artistRoute.heading)+'</h2><p class="ha-v3-card-copy">'+esc(artistRoute.body)+'</p></div><a class="ha-col-btn ha-col-btn-teal" href="'+esc(artistRoute.linkUrl)+'">'+ctaLabel(artistRoute.linkLabel)+'</a></section>'+
         '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+ctaLabel(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){var img='<img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',card.linkUrl,img,card.title)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-collective"><div><p class="ha-v3-kicker">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
 
@@ -156,4 +158,3 @@
     setTimeout(mount,600);
   });
 })();
-
