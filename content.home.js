@@ -59,9 +59,9 @@ window.HA_HOME_CONTENT = {
 
   artistRoute: {
     eyebrow: 'FOR ARTISTS',
-    heading: "The first fifty artists. You'd be one of them.",
+    heading: "The first fifty founding artists. You could be one of them.",
     body: 'No commission, no exclusivity, and nothing for you to build. Free for the founding year.',
-    linkLabel: 'How it works →',
+    linkLabel: 'See how it works for artists →',
     linkUrl: '/collaborate'
   },
 
