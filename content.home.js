@@ -18,7 +18,7 @@ window.HA_HOME_CONTENT = {
 
     navigation: [
     { label: 'To Keep', url: '/to-keep' },
-    { label: 'To Make', url: '/collections/stained-glass-patterns' },
+    { label: 'To Make', url: '/to-make' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }
@@ -32,7 +32,7 @@ window.HA_HOME_CONTENT = {
     cta1Label: 'To Keep →',
     cta1Url: '/to-keep',
     cta2Label: 'To Make →',
-    cta2Url: '/collections/stained-glass-patterns',
+    cta2Url: '/to-make',
     secondaryButtonLabel: 'Read the story',
     secondaryButtonUrl: '/story'
   },
@@ -52,7 +52,7 @@ window.HA_HOME_CONTENT = {
     heading: "What's here for you",
     panels: [
       { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art you can own that shows up for you every day.', linkLabel: 'To Keep →', linkUrl: '/to-keep' },
-      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Make something. Just for you. Just because.', linkLabel: 'To Make →', linkUrl: '/collections/stained-glass-patterns' },
+      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Make something. Just for you. Just because.', linkLabel: 'To Make →', linkUrl: '/to-make' },
       { label: 'Behind it all', tone: 'why', imageKey: 'why', alt: 'Hope Anthology story and family making table', copy: "There's a reason all of this exists.", linkLabel: 'The Story →', linkUrl: '/story' }
     ]
   },
@@ -72,7 +72,7 @@ window.HA_HOME_CONTENT = {
     cards: [
       { kicker: 'TO KEEP · THERESA GERMAN E2', title: 'Woodland Folk', imageKey: 'woodland', alt: 'Woodland Folk collection', copy: 'Six creatures. Six characters. Each one a mirror for something in you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-german' },
       { kicker: 'TO KEEP · THERESA HASKINS E1', title: 'Meaning Alphabet', imageKey: 'alphabet', alt: 'Meaning Alphabet collection', copy: 'A letter. A word. A reminder to carry with you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-haskins' },
-      { kicker: 'TO MAKE · NELL HARDY E3', title: 'Stained glass', imageKey: 'glass', alt: 'Stained glass patterns collection', copy: 'Beginner-friendly patterns designed for the joy of making.', linkLabel: 'View collection →', linkUrl: '/collections/stained-glass-patterns' }
+      { kicker: 'TO MAKE · NELL HARDY E3', title: 'Stained glass', imageKey: 'glass', alt: 'Stained glass patterns collection', copy: 'Beginner-friendly patterns designed for the joy of making.', linkLabel: 'View collection →', linkUrl: '/to-make' }
     ]
   },
 

@@ -6,8 +6,8 @@
   var currentPath = null;
   var runTimer = null;
   var renderCount = 0;
-  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-story-root','ha-collaborate-v1','ha-for-organisations-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
-  var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-story-active','ha-collaborate-v1-active','ha-for-organisations-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
+  var rootIds = ['ha-home-v3','ha-collections-v1','ha-keep-collection-v1','ha-make-template-v1','ha-to-make-route','ha-to-make-maker-route','ha-story-root','ha-collaborate-v1','ha-for-organisations-v1','ha-collective-v1','ha-why-v1','ha-info-template-v1', 'ha-artist-page-v1'];
+  var bodyClasses = ['ha-home-v3-active','ha-collections-v1-active','ha-keep-collection-v1-active','ha-make-template-v1-active','ha-make-template-active','ha-to-make-active','ha-to-make-maker-active','ha-story-active','ha-collaborate-v1-active','ha-for-organisations-v1-active','ha-collective-v1-active','ha-why-v1-active','ha-info-template-v1-active'];
   window.HA_STABILITY_VERSION = version;
 
   function path(){ return location.pathname.replace(/\/$/,'') || '/'; }
@@ -21,6 +21,9 @@
     if(p==='/collections/everyday-anchors' || p==='/everyday-anchors') return {key:'everyday-anchors', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
     if(p==='/to-keep/theresa-haskins' || p==='/theresa-haskins') return {key:'theresa-haskins', root:'ha-artist-page-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-artist-page.js'};
     if(p==='/collections/stained-glass-patterns' || p==='/collections/stained-glass' || p==='/stained-glass-patterns') return {key:'stained-glass', root:'ha-make-template-v1', contentId:'ha-make-template-content', content:'content.make-template.js', renderer:'ha-make-template.js'};
+    if(p==='/to-make') return {key:'to-make', root:'ha-to-make-route', contentId:'ha-to-make-content', content:'content.to-make.js', renderer:'ha-to-make.js'};
+    if(p==='/to-make/nell-hardy-e3') return {key:'to-make-maker-nell-hardy-e3', root:'ha-to-make-maker-route', contentId:'ha-to-make-maker-content-nell-hardy-e3', content:'content.to-make.nell-hardy-e3.js', renderer:'ha-to-make-maker.js'};
+    if(p==='/to-make/ellien-bruce-e4') return {key:'to-make-maker-ellien-bruce-e4', root:'ha-to-make-maker-route', contentId:'ha-to-make-maker-content-ellien-bruce-e4', content:'content.to-make.ellien-bruce-e4.js', renderer:'ha-to-make-maker.js'};
     if(p==='/story' || p==='/the-story') return {key:'story', root:'ha-story-root', contentId:'ha-story-content', content:'content.story.js', renderer:'ha-story.js'};
     if(p==='/collaborate' || p==='/collaborations') return {key:'collaborate', root:'ha-collaborate-v1', contentId:'ha-collaborate-content', content:'content.collaborate.js', renderer:'ha-collaborate.js'};
     if(p==='/for-organisations') return {key:'for-organisations', root:'ha-for-organisations-v1', contentId:'ha-for-organisations-content', content:'content.for-organisations.js', renderer:'ha-for-organisations.js'};
@@ -52,7 +55,18 @@
     Array.prototype.forEach.call(document.querySelectorAll('script[data-ha-v12-renderer="true"]'), function(node){ node.parentNode && node.parentNode.removeChild(node); });
   }
   function cleanupForRoute(keepRoot){
-    rootIds.forEach(function(id){ if(id !== keepRoot){ var n=document.getElementById(id); if(n && n.parentNode) n.parentNode.removeChild(n); } });
+    rootIds.forEach(function(id){
+      if(id !== keepRoot){
+        var n=document.getElementById(id);
+        /* Some route wrappers intentionally nest a legacy root solely to inherit its page-scoped CSS. Preserve the nested style root while cleaning its outer route. */
+        var nestedStyleRoot=(
+          (keepRoot==='ha-make-template-v1' && id==='ha-keep-collection-v1' && n && n.parentNode && n.parentNode.id==='ha-make-template-v1') ||
+          (keepRoot==='ha-to-make-route' && id==='ha-to-keep-v1' && n && n.parentNode && n.parentNode.id==='ha-to-make-route') ||
+          (keepRoot==='ha-to-make-maker-route' && id==='ha-artist-page-v1' && n && n.parentNode && n.parentNode.id==='ha-to-make-maker-route')
+        );
+        if(n && n.parentNode && !nestedStyleRoot) n.parentNode.removeChild(n);
+      }
+    });
     bodyClasses.forEach(function(cls){ document.body.classList.remove(cls); });
     var fallbackSelector='[data-ha-collaborate-hidden],[data-ha-collective-hidden],[data-ha-why-hidden],[data-ha-info-hidden],[data-ha-story-hidden]';
     if(keepRoot!=='ha-for-organisations-v1') fallbackSelector+=',[data-ha-for-organisations-hidden]';

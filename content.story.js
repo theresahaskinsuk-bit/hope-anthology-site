@@ -11,7 +11,7 @@ window.HA_STORY_CONTENT = {
     },
     {
       "label": "To Make",
-      "href": "/collections/stained-glass-patterns"
+      "href": "/to-make"
     },
     {
       "label": "My Story",
@@ -157,7 +157,7 @@ window.HA_STORY_CONTENT = {
           },
           {
             "label": "To Make",
-            "href": "/collections/stained-glass-patterns"
+            "href": "/to-make"
           },
           {
             "label": "My Story",

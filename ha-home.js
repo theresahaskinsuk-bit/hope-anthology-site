@@ -10,7 +10,7 @@
     var p=normalPath();
     var blocked = [
       '/story','/the-story',
-      '/make','/to-make','/collections/to-make','/collections/stained-glass-patterns'
+      '/make','/collections/to-make','/collections/stained-glass-patterns'
     ];
     return blocked.indexOf(p) !== -1 ||
       document.getElementById('ha-story-root') ||

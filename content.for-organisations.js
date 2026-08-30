@@ -5,7 +5,7 @@ window.HA_FOR_ORGANISATIONS_CONTENT = {
   },
   navigation: [
     { label: 'To Keep', url: '/to-keep' },
-    { label: 'To Make', url: '/collections/stained-glass-patterns' },
+    { label: 'To Make', url: '/to-make' },
     { label: 'The Story', url: '/story' },
     { label: 'Collaborate', url: '/collaborate' },
     { label: 'Collective', url: '/collective' }

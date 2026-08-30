@@ -16,7 +16,7 @@
   }
   function shouldMount(){
     const path = normalPath();
-    const makePaths = ['/make','/to-make','/collections/to-make','/collections/stained-glass-patterns'];
+    const makePaths = ['/make','/collections/to-make','/collections/stained-glass-patterns'];
     if (makePaths.includes(path)) return false;
     if (document.getElementById('ha-make-template-v1')) return false;
     if (document.getElementById('ha-home-v3') || document.body.classList.contains('ha-home-v3-active')) return false;
