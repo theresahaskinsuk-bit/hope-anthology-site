@@ -14,12 +14,9 @@
   function specForPath(p){
     if(p==='/' || p==='') return {key:'home', root:'ha-home-v3', contentId:'ha-home-v3-content', content:'content.home.js', renderer:'ha-home.js'};
     if(p==='/collections') return {key:'collections', root:'ha-collections-v1', contentId:'ha-collections-content', content:'content.collections.js', renderer:'ha-collections.js'};
-    if(p==='/collections/woodland-folk' || p==='/woodland-folk') return {key:'woodland', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
-    if(p==='/collections/meaning-alphabet' || p==='/meaning-alphabet') return {key:'meaning-alphabet', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
-    if(p==='/collections/angel-numbers' || p==='/angel-numbers') return {key:'angel-numbers', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
-    if(p==='/collections/farm-folk' || p==='/farm-folk') return {key:'farm-folk', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
-    if(p==='/collections/everyday-anchors' || p==='/everyday-anchors') return {key:'everyday-anchors', root:'ha-keep-collection-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-keep-collection.js'};
+    if(p==='/to-keep') return {key:'to-keep', root:'ha-to-keep-v1', contentId:'ha-to-keep-content', content:'content.to-keep.js', renderer:'ha-to-keep.js'};
     if(p==='/to-keep/theresa-haskins' || p==='/theresa-haskins') return {key:'theresa-haskins', root:'ha-artist-page-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-artist-page.js'};
+    if(p==='/to-keep/theresa-german' || p==='/theresa-german') return {key:'theresa-german', root:'ha-artist-page-v1', contentId:'ha-keep-collections-content', content:'content.keep-collections.js', renderer:'ha-artist-page.js'};
     if(p==='/collections/stained-glass-patterns' || p==='/collections/stained-glass' || p==='/stained-glass-patterns') return {key:'stained-glass', root:'ha-make-template-v1', contentId:'ha-make-template-content', content:'content.make-template.js', renderer:'ha-make-template.js'};
     if(p==='/to-make') return {key:'to-make', root:'ha-to-make-route', contentId:'ha-to-make-content', content:'content.to-make.js', renderer:'ha-to-make.js'};
     if(p==='/to-make/nell-hardy-e3') return {key:'to-make-maker-nell-hardy-e3', root:'ha-to-make-maker-route', contentId:'ha-to-make-maker-content-nell-hardy-e3', content:'content.to-make.nell-hardy-e3.js', renderer:'ha-to-make-maker.js'};

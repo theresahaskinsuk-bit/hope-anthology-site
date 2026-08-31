@@ -114,7 +114,7 @@
   function visiblePatterns(maker){
     return (maker.groups || []).reduce(function(patterns, group){
       return patterns.concat(group.patterns || []);
-    }, []).filter(function(item){ return item.status === 'available'; });
+    }, []).filter(function(item){ return item.status === 'available' && hasUrl(item.etsyUrl); });
   }
   function collectionFilters(maker){
     var seen = {};

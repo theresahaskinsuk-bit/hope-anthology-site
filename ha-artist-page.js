@@ -138,7 +138,7 @@
     '</article>';
   }
   function visibleProducts(collection){
-    return (collection.products || []).filter(function(item){ return item.status === 'available'; });
+    return (collection.products || []).filter(function(item){ return item.status === 'available' && hasUrl(item.etsyUrl); });
   }
   function profileStats(collection, products){
     var collectionNames = {};
