@@ -35,7 +35,16 @@ window.HA_TO_KEEP_CONTENT = {
     "stats": [
       {
         "value": 2,
-        "label": "ARTISTS"
+        "label": "FOUNDING ARTISTS",
+        "suffix": "of the first 50"
+      },
+      {
+        "value": 10,
+        "label": "WORKS"
+      },
+      {
+        "value": 3,
+        "label": "COLLECTIONS"
       }
     ]
   },

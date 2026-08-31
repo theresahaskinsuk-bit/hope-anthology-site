@@ -133,8 +133,10 @@
     var artists = (content.artists || []).filter(function(a){ return a.active !== false; });
     var recruitment = content.recruitment || {};
     var srOnlyStyle = 'position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;clip-path:inset(50%)!important;white-space:nowrap!important;border:0!important;color:transparent!important;background:transparent!important;';
-    var statsHtml = (page.stats || []).map(function(s, index){
-      return '<span><strong>' + esc(index === 0 ? artists.length : s.value) + (index === 0 ? '<b class="ha-directory-stat-suffix">of the first 50</b>' : '') + '</strong><small>' + esc(index === 0 ? 'FOUNDING ARTISTS' : s.label) + '</small></span>';
+    var statsHtml = (page.stats || []).filter(function(s){
+      return Number(s && s.value) > 0;
+    }).map(function(s){
+      return '<span><strong>' + esc(s.value) + (s.suffix ? '<b class="ha-directory-stat-suffix">' + esc(s.suffix) + '</b>' : '') + '</strong><small>' + esc(s.label || '') + '</small></span>';
     }).join('');
     var cardsHtml = artists.map(function(a){ return artistCard(content, a); }).join('') +
       '<article class="ha-directory-recruitment"><p class="ha-v3-kicker">' + esc(recruitment.eyebrow) + '</p><div class="ha-v3-card-title" role="heading" aria-level="3">' + esc(recruitment.heading) + '</div><p class="ha-v3-card-copy">' + esc(recruitment.body) + '</p><a class="ha-c-btn" href="' + esc(recruitment.linkUrl) + '">' + ctaLabel(recruitment.linkLabel) + '</a></article>';

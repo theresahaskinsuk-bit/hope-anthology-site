@@ -744,6 +744,14 @@ def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
 
 def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[str, Any]:
     active = [maker for maker in makers if maker["active"]]
+    published_artists = [maker for maker in active if any(group["patterns"] for group in maker["groups"])]
+    published_works = [
+        product
+        for maker in published_artists
+        for group in maker["groups"]
+        for product in group["patterns"]
+    ]
+    published_collections = {product["collection"] for product in published_works if product["collection"]}
     return {
         "generatedFrom": source_name,
         "images": ASSETS,
@@ -752,7 +760,11 @@ def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
             "eyebrow": "To Keep",
             "headingHtml": "Curated <em>Artists</em>",
             "intro": "A growing anthology of artists whose work carries meaning — pieces to lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
-            "stats": [{"value": len(active), "label": "ARTISTS"}],
+            "stats": [
+                {"value": len(published_artists), "label": "FOUNDING ARTISTS", "suffix": "of the first 50"},
+                {"value": len(published_works), "label": "WORKS"},
+                {"value": len(published_collections), "label": "COLLECTIONS"},
+            ],
         },
         "filters": {"medium": ["All"] + sorted({maker["medium"] for maker in active if maker["medium"]}), "price": ["All", "Under £20", "£20–£50", "£50+"]},
         "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.", "linkLabel": "See how it works for artists →", "linkUrl": "/collaborate"},
