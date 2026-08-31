@@ -116,9 +116,9 @@
     var badge = available ? 'Available now' : 'Coming soon';
     var cardClass = available ? 'ha-kc-card' : 'ha-kc-card ha-kc-card-inactive';
     var action = available && hasUrl(item.etsyUrl)
-      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="'+esc(item.etsyUrl)+'" target="_blank" rel="noopener">'+ctaLabel('Get this print on Etsy')+'</a>'
+      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="'+esc(item.etsyUrl)+'" target="_blank" rel="noopener">'+ctaLabel('Get this from their shop')+'</a>'
       : available
-        ? '<button class="ha-kc-btn ha-kc-btn-keep" type="button">'+ctaLabel('Get this print on Etsy')+'</button>'
+        ? '<button class="ha-kc-btn ha-kc-btn-keep" type="button">'+ctaLabel('Get this from their shop')+'</button>'
         : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>'+ctaLabel('On its way')+'</button><a class="ha-kc-btn ha-kc-btn-collective" href="/collective">'+ctaLabel('Join the Collective to hear first')+'</a>';
     var priceHtml = available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
     return '<article class="'+cardClass+'" data-ha-collection="'+esc(item.collection || '')+'">'+
@@ -137,10 +137,35 @@
       '</div>'+
     '</article>';
   }
+  function visibleProducts(collection){
+    return (collection.products || []).filter(function(item){ return item.status === 'available'; });
+  }
+  function profileStats(collection, products){
+    var collectionNames = {};
+    products.forEach(function(item){ if(item.collection) collectionNames[item.collection] = true; });
+    return {
+      collections: Object.keys(collectionNames).length,
+      prints: products.length,
+      fromPrice: (collection.stats || {}).fromPrice || ''
+    };
+  }
+  function filtersForProducts(collection, products){
+    var present = {};
+    var filters = [];
+    products.forEach(function(item){ if(item.collection) present[item.collection] = true; });
+    (collection.filterOptions || ['All']).forEach(function(filter){
+      if(filter === 'All' || (present[filter] && filters.indexOf(filter) === -1)) filters.push(filter);
+    });
+    products.forEach(function(item){
+      if(item.collection && filters.indexOf(item.collection) === -1) filters.push(item.collection);
+    });
+    if(filters[0] !== 'All') filters.unshift('All');
+    return filters;
+  }
   /* ── Filter bar — single row of collection chips ── */
-  function filterBar(collection){
-    var filters = collection.filterOptions || ['All'];
-    var total = (collection.products || []).filter(function(p){ return p.active !== false; }).length;
+  function filterBar(collection, products){
+    var filters = filtersForProducts(collection, products);
+    var total = products.length;
     return '<div class="ha-ap-filter-bar">'+
       '<span class="ha-kc-breadcrumb-label">Filter</span>'+
       filters.map(function(filter,index){
@@ -151,7 +176,8 @@
   }
   /* ── Full page HTML — structure mirrors ha-keep-collection.js exactly ── */
   function html(content,collection){
-    var stats = collection.stats || {};
+    var products = visibleProducts(collection);
+    var stats = profileStats(collection, products);
     var collective = content.collective || {};
     var footer = content.footer || {};
     var montage = collection.montage || [];
@@ -195,12 +221,12 @@
           '</div>'+
         '</header>'+
         /* Filter bar */
-        filterBar(collection)+
+        filterBar(collection, products)+
         /* Grid */
         '<section class="ha-kc-grid-section">'+
           '<p class="ha-kc-grid-eyebrow">'+esc(collection.gridEyebrow || ((collection.artistName || 'ARTIST').toUpperCase() + ' — ALL WORK'))+'</p>'+
           '<div class="ha-kc-card-grid ha-ap-card-grid">'+
-            (collection.products||[]).filter(function(p){ return p.active !== false; }).map(function(item){ return productCard(content,item); }).join('')+
+            products.map(function(item){ return productCard(content,item); }).join('')+
           '</div>'+
         '</section>'+
         /* Collective band — identical to ha-keep-collection.js */
