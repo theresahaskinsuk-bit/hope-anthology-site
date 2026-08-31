@@ -59,6 +59,7 @@ TO_MAKE_ROSTER_HEADERS = {
     "slug": ("Slug",),
     "display_name": ("Display Name",),
     "button_name": ("Button Name",),
+    "artist_number": ("Artist Number",),
     "badge": ("Badge",),
     "medium": ("Medium",),
     "collections": ("Collections\n(comma-separated)", "Collections"),
@@ -151,12 +152,12 @@ TO_KEEP_PROFILE_FIELDS = {
 }
 
 REQUIRED_ROSTER_HEADERS = (
-    "active", "slug", "display_name", "button_name", "badge", "medium", "collections", "price_from",
+    "active", "slug", "display_name", "button_name", "artist_number", "badge", "medium", "collections", "price_from",
     "difficulty", "technique", "delivery", "feeling", "trait_1", "trait_2", "trait_3",
     "card_url", "hero_image_url", "hero_image_alt",
 )
 REQUIRED_TO_KEEP_ROSTER_HEADERS = (
-    "active", "slug", "display_name", "button_name", "badge", "medium", "collections", "price_from",
+    "active", "slug", "display_name", "button_name", "artist_number", "badge", "medium", "collections", "price_from",
     "feeling", "trait_1", "trait_2", "trait_3", "card_url", "hero_image_url", "hero_image_alt",
 )
 REQUIRED_TO_MAKE_ROSTER_FIELDS = (
@@ -196,6 +197,8 @@ class Audit:
         self.mode = mode
         self.issues: list[Issue] = []
         self.placeholders: list[Issue] = []
+        self.roster_records: list[dict[str, Any]] = []
+        self.blocked = False
 
     def add(self, severity: str, sheet: str, cell: str, field: str, message: str) -> None:
         self.issues.append(Issue(severity, sheet, cell, field, message))
@@ -206,6 +209,11 @@ class Audit:
     def warning(self, sheet: str, cell: str, field: str, message: str) -> None:
         """Record a non-blocking staging or editorial warning in either mode."""
         self.add("warning", sheet, cell, field, message)
+
+    def blocking_error(self, sheet: str, cell: str, field: str, message: str) -> None:
+        """Record an error that prevents every generated file from being replaced."""
+        self.add("error", sheet, cell, field, message)
+        self.blocked = True
 
     def placeholder(self, sheet: str, cell: str, field: str, message: str) -> None:
         issue = Issue("error" if self.mode == "strict" else "warning", sheet, cell, field, message)
@@ -593,7 +601,7 @@ def parse_contributor_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any]
     montage = [{"src": profile[f"montage_{index}_url"], "alt": profile[f"montage_{index}_alt"]} for index in range(1, 4)]
     profile_stats_key = "patterns" if is_make else "prints"
     return {
-        "slug": roster["slug"], "active": roster["active"], "name": roster["name"], "buttonName": roster["button_name"],
+        "slug": roster["slug"], "active": roster["active"], "name": roster["name"], "buttonName": roster["button_name"], "artistNumber": roster["artist_number"],
         "badge": roster["badge"], "heroImage": roster["hero_image_url"], "heroAlt": roster["hero_image_alt"],
         "medium": roster["medium"], "filterMedium": medium_facet(roster["medium"]), "collections": roster["collections"],
         "priceFrom": computed_from, "feeling": roster["feeling"], "traits": roster["traits"], "cardUrl": roster["card_url"],
@@ -641,7 +649,11 @@ def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[s
         for field in required_roster_fields:
             cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS[field])
             cells[field] = cell
-            if field in {"card_url"}:
+            if not active:
+                # Active NO is an ordinary staging state. Retain its supplied material,
+                # but never turn its incomplete fields into strict-run blockers.
+                values[field] = as_text(cell.value) if cell is not None else ""
+            elif field in {"card_url"}:
                 values[field] = check_required_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
             elif field == "hero_image_url":
                 values[field] = check_url_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
@@ -649,21 +661,47 @@ def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[s
                 values[field] = check_required_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
         button_name_cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS["button_name"])
         values["button_name"] = check_required_cell(audit, button_name_cell, "Button Name", required=False)
+        artist_number_cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS["artist_number"])
+        artist_number_value = as_text(artist_number_cell.value) if artist_number_cell else ""
+        artist_number = exact_int(artist_number_value)
+        if active and artist_number is None:
+            audit.blocking_error(
+                roster_sheet.title,
+                artist_number_cell.coordinate if artist_number_cell else str(row),
+                "Artist Number",
+                "Active contributor requires a unique positive whole Artist Number across both workbooks.",
+            )
+        elif not active and artist_number_value:
+            audit.warning(
+                roster_sheet.title,
+                artist_number_cell.coordinate if artist_number_cell else str(row),
+                "Artist Number",
+                "Inactive contributor has an Artist Number; clear it until the contributor is active.",
+            )
+        if active and not url_is_valid(values["hero_image_url"]):
+            audit.blocking_error(
+                roster_sheet.title,
+                cells["hero_image_url"].coordinate if cells["hero_image_url"] else str(row),
+                "Hero Image URL",
+                "Active contributor requires a usable absolute https:// Hero Image URL for directory and Home recent-artist cards.",
+            )
         slug = values["slug"]
         if slug != slugify(slug):
-            audit.required_problem(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", "Must be lower-case, URL-safe, and hyphen-separated.")
+            (audit.required_problem if active else audit.warning)(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", "Must be lower-case, URL-safe, and hyphen-separated.")
         if slug in seen_slugs:
-            audit.required_problem(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", f"Duplicates roster row {seen_slugs[slug]}.")
-        seen_slugs[slug] = str(row)
-        if not values["card_url"].startswith("/to-make/") and kind == "to-make":
+            (audit.required_problem if active else audit.warning)(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", f"Duplicates roster row {seen_slugs[slug]}.")
+        if slug:
+            seen_slugs[slug] = str(row)
+        if active and not values["card_url"].startswith("/to-make/") and kind == "to-make":
             audit.required_problem(roster_sheet.title, cells["card_url"].coordinate if cells["card_url"] else str(row), "Card URL", "To Make card URL must start with /to-make/.")
-        if not values["card_url"].startswith("/to-keep/") and kind == "to-keep":
+        if active and not values["card_url"].startswith("/to-keep/") and kind == "to-keep":
             audit.required_problem(roster_sheet.title, cells["card_url"].coordinate if cells["card_url"] else str(row), "Card URL", "To Keep card URL must start with /to-keep/.")
         rosters.append({
             "active": active,
             "slug": slug,
             "name": values["display_name"],
             "button_name": values["button_name"],
+            "artist_number": artist_number,
             "badge": values["badge"],
             "medium": values["medium"],
             "collections": clean_list(values["collections"]),
@@ -677,6 +715,17 @@ def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[s
             "card_url": values["card_url"],
             "hero_image_url": values["hero_image_url"],
             "hero_image_alt": values["hero_image_alt"],
+        })
+        audit.roster_records.append({
+            "kind": kind,
+            "sheet": roster_sheet.title,
+            "row": row,
+            "slug": slug,
+            "name": values["display_name"],
+            "active": active,
+            "artist_number": artist_number,
+            "artist_number_value": artist_number_value,
+            "artist_number_cell": artist_number_cell.coordinate if artist_number_cell else str(row),
         })
 
     makers: list[dict[str, Any]] = []
@@ -698,6 +747,56 @@ def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[s
                     audit.required_problem("Workbook", "—", "Pattern Title", f"Derived pattern slug {pattern['slug']!r} appears in both {duplicate} and {maker['slug']}.")
                 all_slugs[pattern["slug"]] = maker["slug"]
     return audit, makers
+
+
+def validate_artist_numbers(audit: Audit) -> None:
+    """Validate the shared Artist Number series after both workbooks are parsed."""
+    seen: dict[int, dict[str, Any]] = {}
+    active_numbers: list[int] = []
+    for record in audit.roster_records:
+        number = record["artist_number"]
+        raw = record["artist_number_value"]
+        if raw and number is None:
+            if record["active"]:
+                audit.blocking_error(record["sheet"], record["artist_number_cell"], "Artist Number", "Artist Number must be a positive whole integer.")
+            continue
+        if number is None:
+            continue
+        if number in seen:
+            first = seen[number]
+            audit.blocking_error(
+                record["sheet"],
+                record["artist_number_cell"],
+                "Artist Number",
+                f"Artist Number {number} duplicates {first['sheet']}!{first['artist_number_cell']} ({first['name']}).",
+            )
+        else:
+            seen[number] = record
+        if record["active"]:
+            active_numbers.append(number)
+    if active_numbers:
+        assigned = set(active_numbers)
+        gaps = [str(value) for value in range(min(assigned), max(assigned) + 1) if value not in assigned]
+        if gaps:
+            audit.warning("Workbook", "—", "Artist Number", "Active Artist Number sequence has gap(s): " + ", ".join(gaps) + ". Gaps are allowed, but confirm that no number was unintentionally skipped.")
+
+
+def recent_artists_payload(to_keep: list[dict[str, Any]], to_make: list[dict[str, Any]], source_names: str) -> dict[str, Any]:
+    contributors: list[dict[str, Any]] = []
+    for world, makers in (("TO KEEP", to_keep), ("TO MAKE", to_make)):
+        for maker in makers:
+            if maker["active"]:
+                contributors.append({
+                    "artistNumber": maker["artistNumber"],
+                    "world": world,
+                    "name": maker["name"],
+                    "heroImage": maker["heroImage"],
+                    "heroAlt": maker["heroAlt"],
+                    "feeling": maker["feeling"],
+                    "cardUrl": maker["cardUrl"],
+                })
+    contributors.sort(key=lambda item: item["artistNumber"], reverse=True)
+    return {"generatedFrom": source_names, "artists": contributors[:4]}
 
 
 def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[str, Any]:
@@ -735,7 +834,7 @@ def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
         "makers": [
             {
                 key: maker[key]
-                for key in ("slug", "active", "name", "buttonName", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "difficulty", "technique", "delivery", "feeling", "traits", "cardUrl", "patternCount")
+                for key in ("slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "difficulty", "technique", "delivery", "feeling", "traits", "cardUrl", "patternCount")
             }
             for maker in active
         ],
@@ -770,7 +869,7 @@ def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
         "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.", "linkLabel": "See how it works for artists →", "linkUrl": "/collaborate"},
         "collective": COLLECTIVE,
         "footer": FOOTER,
-        "artists": [{key: maker[key] for key in ("slug", "active", "name", "buttonName", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "feeling", "traits", "cardUrl")} for maker in active],
+        "artists": [{key: maker[key] for key in ("slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "feeling", "traits", "cardUrl")} for maker in active],
     }
 
 
@@ -876,29 +975,30 @@ def report_markdown(source: Path, mode: str, makers: list[dict[str, Any]], audit
     return "\n".join(lines)
 
 
-def build_directory(source: Path, kind: str, output_dir: Path, mode: str, report_path: Path) -> int:
-    audit, makers = parse_workbook(source, kind, mode)
+def output_pairs(kind: str, makers: list[dict[str, Any]], source_name: str, output_dir: Path) -> list[tuple[Path, str]]:
+    if kind == "to-make":
+        outputs: list[tuple[Path, str]] = [
+            (output_dir / "content.to-make.js", js_file("HA_TO_MAKE_CONTENT", make_index_payload(makers, source_name), source_name)),
+        ]
+        for maker in makers:
+            outputs.append((output_dir / f"content.to-make.{maker['slug']}.js", maker_js_file(maker["slug"], maker_payload(maker, source_name), source_name)))
+        return outputs
+    # The To Keep workbook drives both the parent directory and the profile registry
+    # consumed by ha-artist-page.js. No merge with old content occurs.
+    return [
+        (output_dir / "content.to-keep.js", js_file("HA_TO_KEEP_CONTENT", keep_index_payload(makers, source_name), source_name)),
+        (output_dir / "content.keep-collections.js", js_file("HA_KEEP_COLLECTIONS_CONTENT", keep_profiles_payload(makers, source_name), source_name)),
+    ]
+
+
+def finish_generation(source_name: str, mode: str, makers: list[dict[str, Any]], audit: Audit, outputs: list[tuple[Path, str]], report_path: Path) -> int:
     output_paths: list[Path] = []
-    may_generate = not audit.fatal and not (mode == "strict" and audit.errors)
+    may_generate = not audit.fatal and not audit.blocked and not (mode == "strict" and audit.errors)
     if may_generate:
-        if kind == "to-make":
-            index_path = output_dir / "content.to-make.js"
-            index_content = js_file("HA_TO_MAKE_CONTENT", make_index_payload(makers, source.name), source.name)
-            outputs: list[tuple[Path, str]] = [(index_path, index_content)]
-            for maker in makers:
-                maker_path = output_dir / f"content.to-make.{maker['slug']}.js"
-                outputs.append((maker_path, maker_js_file(maker["slug"], maker_payload(maker, source.name), source.name)))
-        else:
-            # The To Keep workbook drives both the parent directory and the profile
-            # registry consumed by ha-artist-page.js. No merge with old content occurs.
-            outputs = [
-                (output_dir / "content.to-keep.js", js_file("HA_TO_KEEP_CONTENT", keep_index_payload(makers, source.name), source.name)),
-                (output_dir / "content.keep-collections.js", js_file("HA_KEEP_COLLECTIONS_CONTENT", keep_profiles_payload(makers, source.name), source.name)),
-            ]
         for target, content in outputs:
             write_file(target, content)
             output_paths.append(target)
-    write_file(report_path, report_markdown(source, mode, makers, audit, output_paths))
+    write_file(report_path, report_markdown(Path(source_name), mode, makers, audit, output_paths))
     for issue in audit.issues:
         print(f"{issue.severity.upper()}: {issue.sheet}!{issue.cell} [{issue.field}] {issue.message}")
     print(f"REPORT: {report_path}")
@@ -906,15 +1006,41 @@ def build_directory(source: Path, kind: str, output_dir: Path, mode: str, report
         print(f"GENERATED: {target}")
     if audit.fatal:
         return 2
-    if mode == "strict" and audit.errors:
+    if audit.blocked or (mode == "strict" and audit.errors):
         return 1
     return 0
 
+
+def build_directory(source: Path, kind: str, output_dir: Path, mode: str, report_path: Path) -> int:
+    audit, makers = parse_workbook(source, kind, mode)
+    validate_artist_numbers(audit)
+    return finish_generation(source.name, mode, makers, audit, output_pairs(kind, makers, source.name, output_dir), report_path)
+
+
+def build_all_directories(to_keep_source: Path, to_make_source: Path, output_dir: Path, mode: str, report_path: Path) -> int:
+    """Generate both directory families and the Home feed as one validation-gated run."""
+    keep_audit, keep_makers = parse_workbook(to_keep_source, "to-keep", mode)
+    make_audit, make_makers = parse_workbook(to_make_source, "to-make", mode)
+    audit = Audit(mode)
+    audit.issues = keep_audit.issues + make_audit.issues
+    audit.placeholders = keep_audit.placeholders + make_audit.placeholders
+    audit.roster_records = keep_audit.roster_records + make_audit.roster_records
+    audit.blocked = keep_audit.blocked or make_audit.blocked
+    validate_artist_numbers(audit)
+    source_name = to_keep_source.name + " + " + to_make_source.name
+    outputs = output_pairs("to-keep", keep_makers, to_keep_source.name, output_dir)
+    outputs += output_pairs("to-make", make_makers, to_make_source.name, output_dir)
+    outputs.append((output_dir / "content.home-recent-artists.js", js_file("HA_HOME_RECENT_ARTISTS", recent_artists_payload(keep_makers, make_makers, source_name), source_name)))
+    return finish_generation(source_name, mode, keep_makers + make_makers, audit, outputs, report_path)
+
+
 def parse_arguments() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate Hope Anthology directory content from a workbook.")
-    parser.add_argument("workbook", type=Path, help="Path to the .xlsx workbook.")
-    parser.add_argument("--kind", choices=("to-make", "to-keep", "auto"), default="auto", help="Workbook sibling to parse. To Make writes a directory and maker files; To Keep writes the directory and shared artist-profile registry.")
-    parser.add_argument("--mode", choices=("permissive", "strict"), default="strict", help="Permissive reports placeholders; strict blocks generation for them.")
+    parser = argparse.ArgumentParser(description="Generate Hope Anthology directory content from one or both sibling workbooks.")
+    parser.add_argument("workbook", type=Path, nargs="?", help="Optional single .xlsx workbook for legacy one-directory generation.")
+    parser.add_argument("--kind", choices=("to-make", "to-keep", "auto"), default="auto", help="Kind for a legacy one-workbook run.")
+    parser.add_argument("--to-keep-workbook", type=Path, help="To Keep sibling workbook for the normal whole-Anthology generation run.")
+    parser.add_argument("--to-make-workbook", type=Path, help="To Make sibling workbook for the normal whole-Anthology generation run.")
+    parser.add_argument("--mode", choices=("permissive", "strict"), default="strict", help="Permissive reports normal staged material; strict blocks product publication contradictions.")
     parser.add_argument("--output-dir", type=Path, default=Path.cwd(), help="Directory for generated content files.")
     parser.add_argument("--report", type=Path, help="Path for the Markdown validation report.")
     return parser.parse_args()
@@ -922,8 +1048,19 @@ def parse_arguments() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_arguments()
-    if not args.workbook.is_file():
-        print(f"ERROR: workbook not found: {args.workbook}", file=sys.stderr)
+    output_dir = args.output_dir.resolve()
+    output_dir.mkdir(parents=True, exist_ok=True)
+    if args.to_keep_workbook or args.to_make_workbook:
+        if args.workbook or not args.to_keep_workbook or not args.to_make_workbook:
+            print("ERROR: the whole-Anthology run requires both --to-keep-workbook and --to-make-workbook, with no positional workbook.", file=sys.stderr)
+            return 2
+        if not args.to_keep_workbook.is_file() or not args.to_make_workbook.is_file():
+            print("ERROR: a specified workbook was not found.", file=sys.stderr)
+            return 2
+        report = (args.report or output_dir / "directory-generation-report.md").resolve()
+        return build_all_directories(args.to_keep_workbook.resolve(), args.to_make_workbook.resolve(), output_dir, args.mode, report)
+    if not args.workbook or not args.workbook.is_file():
+        print("ERROR: provide one workbook or both sibling workbook options.", file=sys.stderr)
         return 2
     kind = args.kind
     if kind == "auto":
@@ -932,8 +1069,6 @@ def main() -> int:
     if kind == "unknown":
         print("ERROR: workbook does not contain To Make Roster or To Keep Roster.", file=sys.stderr)
         return 2
-    output_dir = args.output_dir.resolve()
-    output_dir.mkdir(parents=True, exist_ok=True)
     report_name = "to-make-generation-report.md" if kind == "to-make" else "to-keep-generation-report.md"
     report = (args.report or output_dir / report_name).resolve()
     return build_directory(args.workbook.resolve(), kind, output_dir, args.mode, report)

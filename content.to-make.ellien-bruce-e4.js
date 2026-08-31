@@ -44,9 +44,11 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
     "slug": "ellien-bruce-e4",
     "active": true,
     "name": "Ellien Bruce E4",
+    "buttonName": "Ellien",
+    "artistNumber": 4,
     "badge": "Founding maker",
-    "heroImage": "",
-    "heroAlt": "",
+    "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1b720069-ca67-4110-934d-a9325a2073f1/Eillen-Bruce-artist-profile.jpg?content-type=image%2Fjpeg",
+    "heroAlt": "Stained glass butterfly that has been made from one of the patterns.",
     "medium": "Stained glass patterns",
     "filterMedium": "Stained glass",
     "collections": [
@@ -56,16 +58,16 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
       "Nature & flowers"
     ],
     "priceFrom": "£3.50",
-    "difficulty": "Beginner",
-    "technique": "Copper foil",
-    "delivery": "Instant download",
-    "feeling": "PLACEHOLDER — one line describing what this maker’s work is for.",
+    "feeling": "Birds, flowers and small creatures, made to be made.",
     "traits": [
       "Beginner-friendly",
       "Nature-led",
       "Printable PDF"
     ],
     "cardUrl": "/to-make/ellien-bruce-e4",
+    "difficulty": "Beginner",
+    "technique": "Copper foil",
+    "delivery": "Instant download",
     "patternCount": 47,
     "profile": {
       "discipline": "Stained glass pattern designer",
@@ -104,13 +106,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Bear",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4473394048/bear-stained-glass-pattern-beginner",
             "meaning": "This bear pattern is a satisfying beginner make — simple shapes, bold presence, and a result that looks great in any window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Woodland theme",
               "Nature lover",
@@ -125,8 +128,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Bear stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Bear stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Bear stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -137,13 +139,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Cardinal",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4478590307/cardinal-stained-glass-pattern-beginner",
             "meaning": "Striking in red, this cardinal pattern is a fun and easy beginner make. Bold shapes, clean lines, and a result that looks beautiful in any window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Nature lover",
@@ -158,8 +161,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Cardinal stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Cardinal stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Cardinal stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -170,13 +172,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Cat",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4471194272/cat-stained-glass-pattern-beginner-glass",
             "meaning": "Every cat lover's favourite beginner project — simple, characterful, and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Gift for cat lovers",
               "Pet lover gift",
@@ -191,8 +194,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Cat stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Cat stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Cat stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -203,13 +205,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Chicken",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4466580325/chicken-stained-glass-pattern-beginner",
             "meaning": "Fun, characterful, and easy to cut — this chicken pattern is a great beginner make with a countryside charm. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Countryside theme",
               "Nature lover",
@@ -224,8 +227,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Chicken stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Chicken stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Chicken stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -236,13 +238,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Duck",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4472240119/duck-stained-glass-pattern-beginner",
             "meaning": "Cheerful and easy to cut, this duck pattern is a perfect first glass project. Simple shapes, lovely results. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "First glass project",
@@ -257,8 +260,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Duck stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Duck stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Duck stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -269,13 +271,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Eagle",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4480116185/eagle-stained-glass-pattern-beginner",
             "meaning": "Bold and graphic, this eagle pattern is a satisfying beginner make with real presence in the window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Nature lover",
@@ -290,8 +293,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Eagle stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Eagle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Eagle stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -302,13 +304,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Fish",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4473594107/fish-stained-glass-pattern-beginner",
             "meaning": "Clean, simple, and easy to cut — this fish pattern is a perfect first glass project with a lovely result. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "First glass project",
@@ -323,8 +326,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Fish stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Fish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Fish stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -335,13 +337,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Fox",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4460856013/fox-stained-glass-pattern-beginner-glass",
             "meaning": "Designed with beginners in mind, this fox pattern has a warmth and character that makes it one of our most gifted designs. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Woodland theme",
               "Nature lover",
@@ -356,8 +359,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Fox stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Fox stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Fox stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -368,13 +370,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Frog",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4463889361/frog-stained-glass-pattern-beginner",
             "meaning": "Playful and easy to cut, this frog pattern is a fun weekend project for anyone just starting out with stained glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "First glass project",
@@ -389,8 +392,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Frog stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Frog stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Frog stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -401,13 +403,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Goose",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4476785764/goose-stained-glass-pattern-beginner",
             "meaning": "Simple and elegant, this goose pattern is a satisfying beginner project with clean lines and a lovely result. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Nature lover",
@@ -422,8 +425,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Goose stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Goose stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Goose stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -434,13 +436,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Little Bird 1",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4511006551/bird-stained-glass-pattern-beginner-bird",
             "meaning": "This folk art bird is easy to cut, full of character, and one of those satisfying makes that comes together quickly. A great first glass project. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Colourful make",
@@ -455,8 +458,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Little Bird 1 stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Little Bird 1 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Little Bird 1 stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -467,13 +469,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Little Bird 2",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4511426117/beginner-bird-stained-glass-pattern",
             "meaning": "A beginner-friendly folk bird with a modern feel — simple shapes, bold colour, and a result that looks great in any window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Colourful make",
@@ -488,8 +491,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Little Bird 2 stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Little Bird 2 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Little Bird 2 stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -500,13 +502,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Little Bird 3",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4511958639/bird-suncatcher-stained-glass-pattern",
             "meaning": "The third in our folk bird series — easy, fun, and full of personality. A satisfying beginner make that works beautifully as part of the set. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Colourful make",
@@ -521,8 +524,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Little Bird 3 stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Little Bird 3 stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Little Bird 3 stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -533,13 +535,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Octopus",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4474876243/octopus-stained-glass-pattern-beginner",
             "meaning": "This octopus pattern is a fun, satisfying beginner make — the flowing shapes are easier to cut than they look and the result is always a talking point. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Nature lover",
@@ -554,8 +557,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Octopus stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Octopus stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Octopus stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -566,13 +568,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Owl",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4466349773/owl-stained-glass-pattern-beginner-glass",
             "meaning": "This owl pattern is a fun and easy beginner make with a woodland feel — simple shapes that come together into something quietly striking. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Woodland theme",
@@ -587,8 +590,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Owl stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Owl stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Owl stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -599,13 +601,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Peacock",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4485122946/peacock-stained-glass-pattern-beginner",
             "meaning": "Colourful and striking, this peacock pattern is a fun beginner project that really shows off what stained glass can do. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Colourful make",
@@ -620,8 +623,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Peacock stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Peacock stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Peacock stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -632,13 +634,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Rabbit",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4477986991/rabbit-stained-glass-pattern-beginner",
             "meaning": "Simple, sweet, and easy to cut — this rabbit pattern is a lovely beginner make that works beautifully in soft, warm glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Woodland theme",
               "Nature lover",
@@ -653,8 +656,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Rabbit stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Rabbit stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Rabbit stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -665,13 +667,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Raven",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4477171538/raven-stained-glass-pattern-beginner",
             "meaning": "Bold and graphic, this raven pattern is a fun weekend project for anyone just starting out with stained glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Meaningful make",
@@ -686,8 +689,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Raven stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Raven stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Raven stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -698,13 +700,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Sea Turtle",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4483384694/sea-turtle-stained-glass-pattern",
             "meaning": "Designed for beginners, this sea turtle pattern has a calm, meaningful quality that makes it one of those pieces you'll want to make more than once. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Nature lover",
@@ -719,8 +722,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Sea Turtle stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Sea Turtle stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Sea Turtle stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -731,13 +733,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Snake",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4480764315/snake-stained-glass-pattern-beginner",
             "meaning": "Fluid and graphic, this snake pattern is a satisfying beginner project with just enough curve to keep things interesting. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Reptile lover",
@@ -752,8 +755,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Snake stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Snake stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Snake stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -764,13 +766,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Squirrel",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4483891468/squirrel-stained-glass-pattern-beginner",
             "meaning": "Characterful and easy to cut, this squirrel pattern is a fun beginner project with a woodland charm. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Woodland theme",
               "Nature lover",
@@ -785,8 +788,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Squirrel stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Squirrel stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Squirrel stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -797,13 +799,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Starfish",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4484417895/starfish-stained-glass-pattern-beginner",
             "meaning": "Bold and easy to cut, this starfish pattern is a fun beginner make with a coastal feel. Perfect for a sunny window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Coastal theme",
@@ -818,8 +821,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Starfish stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Starfish stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Starfish stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -830,13 +832,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Whale",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4476347099/whale-stained-glass-pattern-beginner",
             "meaning": "This whale is one of our most loved beginner patterns — simple, bold shapes that are easy to cut and deeply satisfying to see come together in glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Nature lover",
@@ -851,8 +854,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Whale stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Whale stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Whale stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       },
@@ -868,13 +870,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Bee Butterfly and Dragonfly",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4493990149/bee-butterfly-dragonfly-stained-glass",
             "meaning": "Three of our most loved insect patterns together in one download. Easy enough for a first glass project, satisfying enough to make all three. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Gift for a maker",
@@ -889,8 +892,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Bee Butterfly and Dragonfly stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Bee Butterfly and Dragonfly stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Bee Butterfly and Dragonfly stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -901,13 +903,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Classic Floral Collection",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4530925584/flower-stained-glass-pattern-bundle",
             "meaning": "Tulip, rose, and lily — three classic floral patterns in one download. Simple, satisfying beginner makes with a timeless feel. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Gift for a maker",
@@ -922,8 +925,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Classic Floral Collection stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Classic Floral Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Classic Floral Collection stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -934,13 +936,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Little Birds Collection",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4514780915/3-bird-stained-glass-patterns-beginner",
             "meaning": "Three folk bird patterns in one download — easy, colourful makes that are perfect for beginners wanting to build confidence fast. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Bird lover",
               "Gift for a maker",
@@ -955,8 +958,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Little Birds Collection stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Little Birds Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Little Birds Collection stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       },
@@ -972,13 +974,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Bee",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4479073042/bee-stained-glass-pattern-beginner",
             "meaning": "This bee pattern is a fun, easy beginner make that looks beautiful in amber and gold glass. One of those satisfying projects you'll want to make in multiples. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Garden lover",
               "Nature lover",
@@ -993,8 +996,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Bee stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Bee stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Bee stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1005,13 +1007,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Beetle",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4496498128/beetle-stained-glass-pattern-beginner",
             "meaning": "Bold, geometric, and fun to cut — this beetle pattern is a satisfying beginner make that looks striking in jewel-toned glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Colourful make",
@@ -1026,8 +1029,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Beetle stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Beetle stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Beetle stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1038,13 +1040,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Butterfly",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4477428600/butterfly-stained-glass-pattern-beginner",
             "meaning": "Colourful and easy to cut, this butterfly pattern is a perfect first glass project. Simple shapes, stunning in the light. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Colourful make",
@@ -1059,8 +1062,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Butterfly stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Butterfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Butterfly stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1071,13 +1073,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Cicada",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4484644714/cicada-stained-glass-pattern-beginner",
             "meaning": "This cicada pattern is a meaningful beginner make — graphic, easy to cut, and beautiful when the light comes through. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Meaningful make",
@@ -1092,8 +1095,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Cicada stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Cicada stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Cicada stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1104,13 +1106,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Dragonfly",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4446863353/dragonfly-stained-glass-pattern-for",
             "meaning": "Designed with beginners in mind, this dragonfly pattern is one of those makes that feels special from the first cut. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Nature lover",
               "Meaningful make",
@@ -1125,8 +1128,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Dragonfly stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Dragonfly stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Dragonfly stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1137,13 +1139,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Luna Moth",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4481237314/luna-moth-stained-glass-pattern-beginner",
             "meaning": "Delicate and striking, this luna moth is a satisfying beginner pattern with just enough detail to feel like a proper achievement. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -1158,8 +1161,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Luna Moth stained glass pattern — Insects & bugs collection by Hope Anthology",
               "lifestyle": "Luna Moth stained glass suncatcher pattern in a window — Insects & bugs collection by Hope Anthology",
               "inside": "Luna Moth stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       },
@@ -1175,13 +1177,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Breaking Wave",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4523389184/breaking-wave-stained-glass-pattern",
             "meaning": "Bold and energetic, this breaking wave pattern is a satisfying beginner make that looks stunning in blue and white glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Colourful make",
@@ -1196,8 +1199,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Breaking Wave stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Breaking Wave stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Breaking Wave stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1208,13 +1210,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Daffodil",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4478191387/daffodil-stained-glass-pattern-beginner",
             "meaning": "This daffodil pattern is a meaningful beginner make — easy to cut, lovely in yellow glass, and the kind of piece that feels like a proper achievement. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Meaningful make",
@@ -1229,8 +1232,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Daffodil stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Daffodil stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Daffodil stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1241,13 +1243,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Daisy",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4473916588/daisy-stained-glass-pattern-beginner",
             "meaning": "Simple and lovely, this daisy pattern is a perfect first glass project. Easy to cut, beautiful in the light. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "First glass project",
@@ -1262,8 +1265,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Daisy stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Daisy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Daisy stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1274,13 +1276,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Gathering Waves",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4524582502/gathering-waves-stained-glass-pattern",
             "meaning": "This gathering waves pattern captures that moment before the break — a fun, easy beginner make with real movement in the glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Coastal theme",
@@ -1295,8 +1298,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Gathering Waves stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Gathering Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Gathering Waves stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1307,13 +1309,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Lily",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4530590187/lily-stained-glass-pattern-beginner",
             "meaning": "Elegant and easy to cut, this lily pattern is a satisfying beginner project with a timeless, natural feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Nature lover",
@@ -1328,8 +1331,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Lily stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Lily stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Lily stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1340,13 +1342,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Magnolia",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4471793966/magnolia-stained-glass-pattern-beginner",
             "meaning": "Designed for beginners, this magnolia pattern has a quiet beauty that makes it one of those satisfying makes you'll come back to. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Nature lover",
@@ -1361,8 +1364,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Magnolia stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Magnolia stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Magnolia stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1373,13 +1375,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Midday",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4522081684/midday-stained-glass-pattern-beginner",
             "meaning": "Bright and bold, this midday sun pattern is an easy, satisfying beginner make with a coastal feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Coastal theme",
               "Colourful make",
@@ -1394,8 +1397,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Midday stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Midday stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Midday stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1406,13 +1408,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Orchid",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4472791041/orchid-stained-glass-pattern-beginner",
             "meaning": "Elegant and easy to cut, this orchid pattern is a fun beginner project with a result that looks far more complex than it is. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Colourful make",
@@ -1427,8 +1430,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Orchid stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Orchid stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Orchid stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1439,13 +1441,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Poppy",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4467492999/poppy-stained-glass-pattern-beginner",
             "meaning": "Designed with beginners in mind, this poppy pattern is one of those makes that feels meaningful from the moment you start cutting. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Meaningful make",
@@ -1460,8 +1463,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Poppy stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Poppy stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Poppy stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1472,13 +1474,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Rolling Waves",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4524658078/rolling-waves-stained-glass-pattern",
             "meaning": "Gentle and rhythmic, this rolling waves pattern is an easy beginner make with a deeply satisfying coastal feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Coastal theme",
@@ -1493,8 +1496,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Rolling Waves stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Rolling Waves stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Rolling Waves stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1505,13 +1507,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Rose",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4530336694/rose-stained-glass-pattern-beginner",
             "meaning": "This rose pattern is a meaningful beginner make — simple enough to cut confidently, beautiful enough to give as a gift. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Meaningful make",
@@ -1526,8 +1529,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Rose stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Rose stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Rose stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1538,13 +1540,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Sunflower",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4497613327/sunflower-stained-glass-pattern-for",
             "meaning": "Bold, cheerful, and easy to cut — this sunflower pattern is a satisfying beginner make that brings a burst of colour to any window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Colourful make",
@@ -1559,8 +1562,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Sunflower stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Sunflower stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Sunflower stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1571,13 +1573,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Sunrise",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4521253911/sunrise-stained-glass-pattern-beginner",
             "meaning": "This coastal sunrise is a fun, easy make — simple enough for beginners, beautiful enough to hang in any window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Coastal theme",
               "Meaningful make",
@@ -1592,8 +1595,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Sunrise stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Sunrise stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Sunrise stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1604,13 +1606,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Sunset",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4521199041/sunset-stained-glass-pattern-beginner",
             "meaning": "This coastal sunset pattern is a beautiful beginner make — warm colours, simple shapes, and a result that glows in the evening light. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Coastal theme",
               "Meaningful make",
@@ -1625,8 +1628,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Sunset stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Sunset stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Sunset stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1637,13 +1639,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
             "title": "Tulip",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4529228344/tulip-stained-glass-pattern-beginner",
             "meaning": "Clean, simple, and easy to cut — this tulip pattern is a lovely beginner make with a classic floral feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Flower lover",
               "Colourful make",
@@ -1658,8 +1661,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Tulip stained glass pattern — Nature & flowers collection by Hope Anthology",
               "lifestyle": "Tulip stained glass suncatcher pattern in a window — Nature & flowers collection by Hope Anthology",
               "inside": "Tulip stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       }

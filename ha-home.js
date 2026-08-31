@@ -66,7 +66,7 @@
     if(!intro.bodyHtml && !intro.kicker) return '';
     var bgKey = intro.backgroundImageKey || 'hero';
     var primaryLabel = intro.primaryButtonLabel || (C.hero && C.hero.primaryButtonLabel) || 'Explore the Anthology';
-    var primaryUrl = intro.primaryButtonUrl || (C.hero && C.hero.primaryButtonUrl) || '/collections';
+    var primaryUrl = intro.primaryButtonUrl || (C.hero && C.hero.primaryButtonUrl) || '';
     var secondaryLabel = intro.secondaryButtonLabel || (C.hero && C.hero.secondaryButtonLabel) || 'Read the story';
     var secondaryUrl = intro.secondaryButtonUrl || (C.hero && C.hero.secondaryButtonUrl) || '/story';
     return ''+
@@ -101,7 +101,7 @@
   function html(){
     var C=window.HA_HOME_CONTENT || {};
     var worlds=C.worlds || {panels:[]};
-    var collections=C.collections || {cards:[]};
+    var recentArtists=(window.HA_HOME_RECENT_ARTISTS || {}).artists || [];
     var hero=C.hero || {};
     var intro=C.intro || {};
     var artistRoute=C.artistRoute || {};
@@ -114,7 +114,7 @@
         renderIntro(C,intro)+
         '<section class="ha-v3-two"><div class="ha-v3-section-head">'+(intro.kicker ? '' : '<p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p>')+'<h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-strip-head ha-home-artist-route" aria-label="For Artists"><div><p class="ha-v3-kicker">'+esc(artistRoute.eyebrow)+'</p><h2 class="ha-v3-strip-title">'+esc(artistRoute.heading)+'</h2><p class="ha-v3-card-copy">'+esc(artistRoute.body)+'</p></div><a class="ha-c-btn ha-c-btn-teal" href="'+esc(artistRoute.linkUrl)+'">'+ctaLabel(artistRoute.linkLabel)+'</a></section>'+
-        '<section class="ha-v3-collections"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">'+esc(collections.heading)+'</h2><a class="ha-v3-strip-link" href="'+esc(collections.linkUrl)+'">'+ctaLabel(collections.linkLabel)+'</a></div><div class="ha-v3-cards">'+(collections.cards||[]).map(function(card){var img='<img src="'+image(C,card.imageKey)+'" alt="'+esc(card.alt)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',card.linkUrl,img,card.title)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(card.kicker)+'</p><h3 class="ha-v3-card-title">'+esc(card.title)+'</h3><p class="ha-v3-card-copy">'+esc(card.copy)+'</p><a class="ha-v3-card-link" href="'+esc(card.linkUrl)+'">'+ctaLabel(card.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
+        (recentArtists.length >= 2 ? '<section class="ha-v3-collections" aria-label="Newest in the Anthology"><div class="ha-v3-strip-head"><h2 class="ha-v3-strip-title">Newest in the Anthology</h2></div><div class="ha-v3-cards">'+recentArtists.map(function(artist){var img='<img src="'+esc(artist.heroImage)+'" alt="'+esc(artist.heroAlt || artist.name)+'">';return '<article class="ha-v3-card">'+linkedImage('ha-v3-card-img',artist.cardUrl,img,artist.name)+'<div class="ha-v3-card-body"><p class="ha-v3-card-kicker">'+esc(artist.world)+'</p><h3 class="ha-v3-card-title">'+esc(artist.name)+'</h3><p class="ha-v3-card-copy">'+esc(artist.feeling)+'</p><a class="ha-v3-card-link" href="'+esc(artist.cardUrl)+'">'+ctaLabel('See their work')+'</a></div></article>';}).join('')+'</div></section>' : '')+
         '<section class="ha-v3-collective"><div><p class="ha-v3-kicker">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect & legal</div><a href="'+esc(footer.privacyUrl || '/privacy')+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl || '/accessibility')+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';

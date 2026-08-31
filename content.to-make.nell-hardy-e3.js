@@ -44,9 +44,11 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
     "slug": "nell-hardy-e3",
     "active": true,
     "name": "Nell Hardy E3",
+    "buttonName": "Nell",
+    "artistNumber": 3,
     "badge": "Founding maker",
-    "heroImage": "",
-    "heroAlt": "",
+    "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e7e1635a-4c43-41e7-bb27-5df1b7eaba60/Nell-Hardy-artist-profile.jpg?content-type=image%2Fjpeg",
+    "heroAlt": "Pattern guide behind a moon stained glass pattern that has been made.",
     "medium": "Stained glass patterns",
     "filterMedium": "Stained glass",
     "collections": [
@@ -55,16 +57,16 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
       "Geometric & abstract"
     ],
     "priceFrom": "£3.50",
-    "difficulty": "Beginner",
-    "technique": "Copper foil",
-    "delivery": "Instant download",
-    "feeling": "PLACEHOLDER — one line describing what this maker’s work is for.",
+    "feeling": "Celestial and geometric patterns for a first cut into glass.",
     "traits": [
       "Beginner-friendly",
       "Celestial & geometric",
       "Printable PDF"
     ],
     "cardUrl": "/to-make/nell-hardy-e3",
+    "difficulty": "Beginner",
+    "technique": "Copper foil",
+    "delivery": "Instant download",
     "patternCount": 33,
     "profile": {
       "discipline": "Stained glass pattern designer",
@@ -103,13 +105,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Angel Wings",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4522337865/angel-wings-stained-glass-patterns",
             "meaning": "Three angel wing patterns in one download — perfect for exploring different styles before committing to glass. Each design is beginner-friendly and comes with a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Memorial gift",
               "Celestial decor",
@@ -124,8 +127,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Angel Wings stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Angel Wings stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Angel Wings stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -136,13 +138,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Between Light - Moons",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4512515823/moon-stained-glass-pattern-bundle",
             "meaning": "Three moon phases in one download — crescent, half, and three-quarter. Simple, satisfying beginner patterns with a celestial feel. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -157,8 +160,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Moons stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Moons stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Moons stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -169,13 +171,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Distant Light Collection",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4527202900/star-stained-glass-pattern-bundle",
             "meaning": "Three star patterns — five, six, and eight point — in one download. Geometric and satisfying to cut, easy enough for beginners, beautiful in any window. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Colourful make",
@@ -190,8 +193,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Distant Light Collection stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Distant Light Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Distant Light Collection stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -202,13 +204,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Form Studies Full Collection",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4492840201/circle-stained-glass-pattern-bundle-7",
             "meaning": "The complete set of seven circle designs — each one exploring a different quality of light and colour. A meaningful body of work for a beginner to work through at their own pace. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "Colourful make",
@@ -223,8 +226,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Form Studies Full Collection stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Form Studies Full Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Form Studies Full Collection stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -235,13 +237,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Form Studies Set of 3",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4501338821/beginner-stained-glass-pattern-bundle-3",
             "meaning": "Three circle designs exploring colour, balance, and shape — a satisfying set for beginners who want to develop their eye as well as their technique. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Colourful make",
               "Meaningful make",
@@ -256,8 +259,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Form Studies Set of 3 stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Form Studies Set of 3 stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Form Studies Set of 3 stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -268,13 +270,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Passing Light - Suns",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4522099181/sunrise-midday-sunset-stained-glass",
             "meaning": "Sunrise, midday, and sunset — three moments of coastal light in one download. Easy, fun beginner patterns that look beautiful together in a window. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Coastal theme",
               "Colourful make",
@@ -289,8 +292,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Suns (Sunrise, Midday & Sunset) stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Suns (Sunrise, Midday & Sunset) stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Suns (Sunrise, Midday & Sunset) stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -301,13 +303,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "The Colour of Wind",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4507090833/beginner-stained-glass-pattern-bundle-4",
             "meaning": "Four seasonal wind patterns in one download — a fun way to explore colour and shape as a beginner. Each design is easy to cut and beautiful in the window. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Colourful make",
               "Seasonal theme",
@@ -322,8 +325,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "The Colour of Wind stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "The Colour of Wind stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "The Colour of Wind stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -334,13 +336,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Wave Forms Collection",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4525405545/wave-forms-stained-glass-pattern-bundle",
             "meaning": "Rolling, gathering, and breaking — three wave designs that make a beautiful coastal set. Easy enough for a first glass project, satisfying enough to make all three. Includes printable outlines, visual references, and a download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Ocean lover",
               "Coastal theme",
@@ -355,8 +358,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Wave Forms Collection stained glass pattern — Bundles collection by Hope Anthology",
               "lifestyle": "Wave Forms Collection stained glass suncatcher pattern in a window — Bundles collection by Hope Anthology",
               "inside": "Wave Forms Collection stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       },
@@ -372,13 +374,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Bright Star",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4526270553/bright-star-stained-glass-pattern",
             "meaning": "Eight points of equal light — this star pattern is a fun, easy beginner make that really shows what stained glass can do. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Colourful make",
@@ -393,8 +396,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Bright Star stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Bright Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Bright Star stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -405,13 +407,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Crescent Moon",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4508429262/crescent-moon-stained-glass-pattern",
             "meaning": "Simple, satisfying, and easy to cut — this crescent moon is a perfect beginner pattern with a beautiful result. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -426,8 +429,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Crescent Moon stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Crescent Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Crescent Moon stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -438,13 +440,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Even Star",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4526127849/even-star-stained-glass-pattern-beginner",
             "meaning": "Six points, clean geometry, and a beautifully even result — this star pattern is a satisfying beginner make that looks stunning in any colour. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -459,8 +462,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Even Star stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Even Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Even Star stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -471,13 +473,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Feather",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4471817019/feather-stained-glass-pattern-beginner",
             "meaning": "Light and elegant, this feather pattern is a meaningful beginner make — easy to cut and beautiful in any soft, translucent glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "Nature lover",
@@ -492,8 +495,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Feather stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Feather stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Feather stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -504,13 +506,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Flow Angel Wings",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4515735326/angel-wing-stained-glass-pattern",
             "meaning": "These flowing angel wings are a beautiful beginner pattern — modern in feel, meaningful in making. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Memorial gift",
               "Meaningful make",
@@ -525,8 +528,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Flow Angel Wings stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Flow Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Flow Angel Wings stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -537,13 +539,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Four-Point Star",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4500144271/star-stained-glass-pattern-beginner",
             "meaning": "Clean and geometric, this four-point star is a satisfying beginner make that looks beautiful in bold, bright glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Colourful make",
@@ -558,8 +561,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Four-Point Star stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Four-Point Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Four-Point Star stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -570,13 +572,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Half Moon",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4510011413/half-moon-stained-glass-pattern-beginner",
             "meaning": "Designed for beginners, this half moon pattern is a simple, meaningful make — easy to cut and quietly beautiful in the window. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -591,8 +594,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Half Moon stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Half Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Half Moon stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -603,13 +605,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Open Star",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4525421469/open-star-stained-glass-pattern-beginner",
             "meaning": "This five-point star has an open, geometric feel that makes it easy and satisfying to cut as a beginner. Beautiful in bold or jewel-toned glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Colourful make",
@@ -624,8 +627,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Open Star stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Open Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Open Star stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -636,13 +638,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Rise Angel Wings",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4517298290/angel-wing-stained-glass-pattern",
             "meaning": "Graceful and easy to cut, these angel wings are a meaningful beginner pattern — the kind of make that feels like a gift, to give or to keep. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Memorial gift",
               "Celestial decor",
@@ -657,8 +660,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Rise Angel Wings stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Rise Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Rise Angel Wings stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -669,13 +671,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Soar Angel Wings",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4519374765/angel-wing-stained-glass-pattern",
             "meaning": "Bold and uplifting, these angel wings are a satisfying beginner pattern that looks stunning in any colour glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Memorial gift",
               "Celestial decor",
@@ -690,8 +693,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Soar Angel Wings stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Soar Angel Wings stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Soar Angel Wings stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -702,13 +704,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Star",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4499566489/star-stained-glass-pattern-for-beginners",
             "meaning": "This five-point star is a classic beginner pattern — easy to cut, lovely in the light, and one of those makes that never gets old. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "First glass project",
@@ -723,8 +726,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Star stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Star stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Star stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -735,13 +737,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Sun",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4469637929/sun-stained-glass-pattern-beginner-glass",
             "meaning": "Bright and bold, this sun pattern is a fun, easy beginner make that glows in any colour glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Colourful make",
@@ -756,8 +759,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Sun stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Sun stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Sun stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -768,13 +770,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Three Quarter Moon",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4509471238/three-quarter-moon-stained-glass-pattern",
             "meaning": "This three-quarter moon is a satisfying beginner pattern — a little more substantial than a crescent, with the same simple, beautiful feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Celestial decor",
               "Meaningful make",
@@ -789,8 +792,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Three Quarter Moon stained glass pattern — Celestial collection by Hope Anthology",
               "lifestyle": "Three Quarter Moon stained glass suncatcher pattern in a window — Celestial collection by Hope Anthology",
               "inside": "Three Quarter Moon stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       },
@@ -806,13 +808,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Aligned",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4486645789/modern-circle-o-beginner-suncatcher",
             "meaning": "From the Form Studies collection — this circle design explores alignment and clarity. Clean, easy to cut, and beautiful in bold glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Colourful make",
               "First glass project",
@@ -827,8 +830,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Aligned stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Aligned stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Aligned stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -839,13 +841,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Autumn Wind",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4505568734/beginner-stained-glass-pattern-autumn",
             "meaning": "Warm, earthy, and easy to cut — this autumn wind pattern is a fun beginner make that captures the feeling of the season in glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Seasonal theme",
               "Colourful make",
@@ -860,8 +863,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Autumn Wind stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Autumn Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Autumn Wind stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -872,13 +874,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Balanced",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4492160028/round-stained-glass-pattern-o-beginner",
             "meaning": "Part of our Form Studies collection — this circle design explores balance and symmetry. A fun, easy beginner make with a calm, considered feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "Colourful make",
@@ -893,8 +896,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Balanced stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Balanced stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Balanced stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -905,13 +907,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Centered",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4486824120/stained-glass-circle-pattern-o-beginner",
             "meaning": "From the Form Studies collection — this circle design explores the feeling of being centred. A meaningful, easy beginner make with a beautiful result. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "Colourful make",
@@ -926,8 +929,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Centered stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Centered stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Centered stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -938,13 +940,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Connected",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4486835316/geometric-circle-stained-glass-pattern-o",
             "meaning": "Part of our Form Studies collection — this geometric circle design explores connection and relationship. Fun to cut, satisfying to finish. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Colourful make",
               "Meaningful make",
@@ -959,8 +962,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Connected stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Connected stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Connected stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -971,13 +973,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Grounded",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4486809470/circle-stained-glass-pattern-o-beginner",
             "meaning": "The most rooted of our Form Studies — a circle design with a solid, earthy feel that is easy to cut and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "First glass project",
@@ -992,8 +995,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Grounded stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Grounded stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Grounded stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1004,13 +1006,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Heart",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4469058960/heart-stained-glass-pattern-beginner",
             "meaning": "Simple, meaningful, and easy to cut — this heart pattern is perfect for a first glass project or a handmade gift. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "Valentine gift",
@@ -1025,8 +1028,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Heart stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Heart stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Heart stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1037,13 +1039,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Open",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4486389835/circle-suncatcher-pattern-o-beginner",
             "meaning": "Part of our Form Studies collection — this circle design has an open, expansive quality that makes it a satisfying and easy beginner make. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Colourful make",
               "Meaningful make",
@@ -1058,8 +1061,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Open stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Open stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Open stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1070,13 +1072,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Rooted",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4492162070/beginner-circle-stained-glass-pattern-o",
             "meaning": "The first of our Form Studies — a circle design exploring grounded, rooted energy. Easy to cut and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Meaningful make",
               "First glass project",
@@ -1091,8 +1094,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Rooted stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Rooted stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Rooted stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1103,13 +1105,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Spring Wind",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4503134207/beginner-stained-glass-pattern-spring",
             "meaning": "Fresh and optimistic, this spring wind pattern is a fun, easy beginner make — the kind of piece that makes a window feel alive. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Seasonal theme",
               "Colourful make",
@@ -1124,8 +1127,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Spring Wind stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Spring Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Spring Wind stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1136,13 +1138,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Summer Wind",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4504180093/beginner-stained-glass-pattern-summer",
             "meaning": "Bright and breezy, this summer wind pattern is a colourful, easy beginner make that looks beautiful in warm glass. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Seasonal theme",
               "Colourful make",
@@ -1157,8 +1160,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Summer Wind stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Summer Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Summer Wind stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           },
           {
             "show": true,
@@ -1169,13 +1171,14 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
             "title": "Winter Wind",
             "status": "available",
             "format": "PDF Download",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
             "price": "£3.50",
             "priceNumber": 3.5,
             "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4502907560/beginner-stained-glass-pattern-winter",
             "meaning": "Cool and graphic, this winter wind pattern is a satisfying beginner make with a quiet, meditative feel. Includes a printable outline, visual reference, and download preview.",
+            "comingSoonLabel": "",
+            "difficulty": "Beginner",
+            "technique": "Copper foil",
+            "delivery": "Instant download",
             "goodFor": [
               "Seasonal theme",
               "Meaningful make",
@@ -1190,8 +1193,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
               "workbench": "Winter Wind stained glass pattern — Geometric & abstract collection by Hope Anthology",
               "lifestyle": "Winter Wind stained glass suncatcher pattern in a window — Geometric & abstract collection by Hope Anthology",
               "inside": "Winter Wind stained glass pattern download — what's included, Hope Anthology"
-            },
-            "comingSoonLabel": ""
+            }
           }
         ]
       }

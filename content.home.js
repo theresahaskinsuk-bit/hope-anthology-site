@@ -10,10 +10,7 @@ window.HA_HOME_CONTENT = {
     hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ac43f8a-1dbb-47cd-a379-492308c77625/home-hero-hope-anthology-art-and-making.jpg?content-type=image%2Fjpeg',
     keep: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18cea152-1a12-4535-8cef-3099aab45bd5/home-panel-to-keep-symbolic-art.jpg?content-type=image%2Fjpeg',
     make: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f8b5d4d6-304b-4edf-aa13-4c87597d4873/home-panel-to-make-stained-glass-patterns-luna.jpg?content-type=image%2Fjpeg',
-    why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5171904f-5f1a-405f-80af-ff1199448f4e/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg',
-    woodland: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cf4d1bc3-53df-4e5e-89db-b7f81fe4780c/home-card-woodland-folk-collection.jpg?content-type=image%2Fjpeg',
-    alphabet: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e2a2c195-ccee-4a99-a325-6c4637e5be17/home-card-meaning-alphabet-collection.jpg?content-type=image%2Fjpeg',
-    glass: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d6c1011-8dfc-46d3-a7c8-14b636cafb68/home-card-stained-glass-patterns-collection.jpg?content-type=image%2Fjpeg'
+    why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5171904f-5f1a-405f-80af-ff1199448f4e/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg'
   },
 
     navigation: [
@@ -63,17 +60,6 @@ window.HA_HOME_CONTENT = {
     body: 'No commission, no exclusivity, and nothing for you to build. Free for the founding year.',
     linkLabel: 'See how it works for artists →',
     linkUrl: '/collaborate'
-  },
-
-  collections: {
-    heading: 'Have a look around',
-    linkLabel: 'The full Anthology →',
-    linkUrl: '/to-keep',
-    cards: [
-      { kicker: 'TO KEEP · THERESA GERMAN E2', title: 'Woodland Folk', imageKey: 'woodland', alt: 'Woodland Folk collection', copy: 'Six creatures. Six characters. Each one a mirror for something in you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-german' },
-      { kicker: 'TO KEEP · THERESA HASKINS E1', title: 'Meaning Alphabet', imageKey: 'alphabet', alt: 'Meaning Alphabet collection', copy: 'A letter. A word. A reminder to carry with you.', linkLabel: 'View collection →', linkUrl: '/to-keep/theresa-haskins' },
-      { kicker: 'TO MAKE · NELL HARDY E3', title: 'Stained glass', imageKey: 'glass', alt: 'Stained glass patterns collection', copy: 'Beginner-friendly patterns designed for the joy of making.', linkLabel: 'View collection →', linkUrl: '/to-make' }
-    ]
   },
 
   collective: {
