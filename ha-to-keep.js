@@ -69,6 +69,11 @@
   }
 
   /* ── Artist card ── */
+  function directoryWorkLabel(artist){
+    var name = String(artist.buttonName || artist.name || '').trim();
+    if(!name) return 'See their work';
+    return 'See ' + name + (/[sS]$/.test(name) ? "'" : "'s") + ' work';
+  }
   function artistCard(content, artist){
     var traitPills = (artist.traits || []).map(function(t){
       return '<span class="ha-tk-trait">' + esc(t) + '</span>';
@@ -78,7 +83,7 @@
     }).join('');
     return '<article class="ha-tk-card" data-medium="' + esc(artist.medium || 'Prints') + '" data-price-from="' + esc(String(parsePriceFrom(artist.priceFrom))) + '">' +
       (artist.cardUrl
-        ? '<a class="ha-tk-card-img-link" href="' + esc(artist.cardUrl) + '" aria-label="View ' + esc(artist.name) + '\'s work" target="_blank" rel="noopener">'
+        ? '<a class="ha-tk-card-img-link" href="' + esc(artist.cardUrl) + '" aria-label="' + esc(directoryWorkLabel(artist)) + '" target="_blank" rel="noopener">'
         : '<div>') +
       '<div class="ha-tk-card-img-wrap">' +
         '<img src="' + esc(artist.heroImage || '') + '" alt="' + esc(artist.heroAlt || artist.name) + '" loading="lazy" decoding="async">' +
@@ -94,8 +99,8 @@
         '<p class="ha-tk-feeling">' + esc(artist.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traitPills + '</div>' +
         (artist.cardUrl
-        ? '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(artist.cardUrl) + '" target="_blank" rel="noopener">' + ctaLabel('View their work') + '</a>'
-        : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel('View their work') + '</button>') +
+        ? '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(artist.cardUrl) + '" target="_blank" rel="noopener">' + ctaLabel(directoryWorkLabel(artist)) + '</a>'
+        : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel(directoryWorkLabel(artist)) + '</button>') +
       '</div>' +
     '</article>';
   }

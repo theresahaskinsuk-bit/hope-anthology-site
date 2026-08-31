@@ -56,11 +56,16 @@
     }).join('');
   }
 
+  function directoryWorkLabel(maker){
+    var name = String(maker.buttonName || maker.name || '').trim();
+    if(!name) return 'See their work';
+    return 'See ' + name + (/[sS]$/.test(name) ? "'" : "'s") + ' work';
+  }
   function makerCard(maker){
     var traits = (maker.traits || []).map(function(trait){ return '<span class="ha-tk-trait">' + esc(trait) + '</span>'; }).join('');
     var collections = (maker.collections || []).map(function(collection){ return '<li>' + esc(collection) + '</li>'; }).join('');
     return '<article class="ha-tk-card" data-medium="' + esc(maker.filterMedium || maker.medium || '') + '" data-level="' + esc(maker.difficulty || '') + '" data-delivery="' + esc(maker.delivery || '') + '">' +
-      '<a class="ha-tk-card-img-link" href="' + esc(maker.cardUrl || '#') + '" aria-label="View ' + esc(maker.name) + ' designs">' +
+      '<a class="ha-tk-card-img-link" href="' + esc(maker.cardUrl || '#') + '" aria-label="' + esc(directoryWorkLabel(maker)) + '">' +
         '<div class="ha-tk-card-img-wrap">' +
           '<img src="' + esc(maker.heroImage || '') + '" alt="' + esc(maker.heroAlt || maker.name || '') + '" loading="lazy" decoding="async">' +
           '<span class="ha-tk-pip">To Make</span>' +
@@ -74,7 +79,7 @@
         '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(maker.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
         '<p class="ha-tk-feeling">' + esc(maker.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traits + '</div>' +
-        '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(maker.cardUrl || '#') + '" target="_blank" rel="noopener">' + ctaLabel('View their designs') + '</a>' +
+        '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(maker.cardUrl || '#') + '" target="_blank" rel="noopener">' + ctaLabel(directoryWorkLabel(maker)) + '</a>' +
       '</div>' +
     '</article>';
   }
