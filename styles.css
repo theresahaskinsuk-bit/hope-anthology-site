@@ -99,6 +99,12 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 .ha-directory-recruitment .ha-v3-kicker,.ha-directory-recruitment .ha-v3-card-title,.ha-directory-recruitment .ha-v3-card-copy{margin:0;}
 .ha-directory-recruitment .ha-c-btn{background:transparent;color:var(--ha-teal);border:1px solid var(--ha-teal);padding:14px 28px;text-decoration:none;}
 #ha-home-v3 .ha-home-artist-route{background:var(--ha-linen);padding:30px 48px;border-top:.5px solid rgba(54,68,73,.1);border-bottom:.5px solid rgba(54,68,73,.1);align-items:center;margin:0;}
+@media(min-width:1101px){
+  #ha-home-v3 .ha-v3-collections .ha-v3-cards{grid-template-columns:repeat(4,minmax(0,1fr));}
+}
+@media(min-width:901px) and (max-width:1100px){
+  #ha-home-v3 .ha-v3-collections .ha-v3-cards{grid-template-columns:repeat(2,minmax(0,1fr));}
+}
 @media(max-width:900px){.ha-v3-nav{padding:0 24px}.ha-v3-brand{max-width:220px}.ha-v3-logo{height:46px!important;max-width:210px}.ha-v3-links{display:none}.ha-v3-hero{min-height:620px;align-items:flex-end}.ha-v3-hero:after{background:linear-gradient(to top,rgba(12,9,6,.96) 0%,rgba(12,9,6,.82) 44%,rgba(12,9,6,.18) 100%)}.ha-v3-hero-content{padding:48px 24px}.ha-v3-h1{font-size:40px}.ha-v3-section-head{padding:20px 24px 0}.ha-v3-panels,.ha-v3-cards,.ha-v3-collective,.ha-v3-footer-top{grid-template-columns:1fr}.ha-v3-panel{border-right:0;border-bottom:.5px solid rgba(54,68,73,.08)}.ha-v3-collections,.ha-v3-collective{padding:64px 24px}.ha-v3-strip-head{display:block}.ha-v3-strip-link{display:inline-flex;margin-top:16px}.ha-v3-footer-top{gap:28px;padding:36px 24px}.ha-v3-footer-bottom{padding:12px 24px}.ha-v3-panel-img,.ha-v3-card-img{height:260px}}
 
 
