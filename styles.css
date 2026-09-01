@@ -1288,6 +1288,13 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
 .ha-story-root .ha-story-final h2 em{
   color:var(--ha-gold)!important;
 }
+.ha-story-root .ha-story-final .ha-story-more-prose p,
+.ha-story-root .ha-story-final .ha-story-more-prose em{
+  color:rgba(242,243,239,.82);
+}
+.ha-story-root .ha-story-final>aside{
+  justify-content:flex-start;
+}
 @media (max-width:520px){
   .ha-story-root .ha-story-brand-mark,
   .ha-story-root .ha-story-brand-mark img{
