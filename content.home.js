@@ -45,7 +45,7 @@ window.HA_HOME_CONTENT = {
   },
 
   worlds: {
-    kicker: 'MADE BY HUMANS. FOR HUMANS.',
+    kicker: 'CURATED BY HUMANS. FOR HUMANS.',
     heading: "What's here for you",
     panels: [
       { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art you can own that shows up for you every day.', linkLabel: 'To Keep →', linkUrl: '/to-keep' },
