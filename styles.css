@@ -45,6 +45,9 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 .ha-v3-section-head{padding:28px 48px 0;text-align:center;}
 .ha-v3-kicker{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ha-twine);font-weight:500;margin:0 0 12px;}
 .ha-v3-h2{font-family:'Lora',serif;font-size:36px;line-height:1.2;color:var(--ha-teal);font-weight:400;margin:0 0 48px;}
+#ha-home-v3 .ha-v3-two .ha-v3-section-head{padding-top:20px;}
+#ha-home-v3 .ha-v3-two .ha-v3-section-head .ha-v3-kicker{margin-bottom:8px;}
+#ha-home-v3 .ha-v3-two .ha-v3-h2{margin-bottom:32px;}
 .ha-v3-panels{display:grid;grid-template-columns:repeat(3,1fr);}
 .ha-v3-panel{display:flex;flex-direction:column;border-right:.5px solid rgba(54,68,73,.08);background:#fff;}
 .ha-v3-panel:last-child{border-right:0;}
