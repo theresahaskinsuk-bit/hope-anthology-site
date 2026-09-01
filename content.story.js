@@ -42,27 +42,27 @@ window.HA_STORY_CONTENT = {
   },
   "tabs": [
     {
-      "label": "So… Here We Are",
+      "label": "01 So… Here We Are",
       "target": "s1"
     },
     {
-      "label": "Humans, Basically.",
+      "label": "02 Humans, Basically.",
       "target": "s2"
     },
     {
-      "label": "Hello… Anybody Out There?",
+      "label": "03 Hello… Anybody Out There?",
       "target": "s3"
     },
     {
-      "label": "The Scenic Route",
+      "label": "04 The Scenic Route",
       "target": "s4"
     },
     {
-      "label": "The Prawn Sandwich of Destiny",
+      "label": "05 The Prawn Sandwich of Destiny",
       "target": "s5"
     },
     {
-      "label": "All of Our Versions",
+      "label": "06 All of Our Versions",
       "target": "s6"
     }
   ],
