@@ -14,7 +14,7 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 .ha-v3-links a{font-family:'Lora',serif;font-size:14px;color:var(--ha-cream);text-decoration:none;text-underline-offset:5px;text-decoration-thickness:1px;transition:color .18s ease,text-decoration-color .18s ease;}
 .ha-v3-links a:hover,.ha-v3-links a:focus-visible{color:#fff;text-decoration:underline;text-decoration-color:#fff;}
 .ha-v3-hero{position:relative;min-height:640px;overflow:hidden;display:flex;align-items:flex-end;justify-content:flex-end;background:#090705;}
-.ha-v3-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
+#ha-home-v3 .ha-v3-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;}
 .ha-v3-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(to left,rgba(12,9,6,.96) 0%,rgba(12,9,6,.88) 30%,rgba(12,9,6,.55) 55%,rgba(12,9,6,.15) 75%,transparent 100%);z-index:1;}
 .ha-v3-hero-content{position:relative;z-index:2;padding:56px 64px;max-width:540px;width:100%;}
 .ha-v3-eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ha-gold);font-weight:500;margin:0 0 22px;}

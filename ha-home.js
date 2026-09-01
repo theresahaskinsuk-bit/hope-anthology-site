@@ -80,7 +80,7 @@
           '</div>'+
         '</div>'+
         '<div class="ha-v3-intro-copy"><p>'+safeHtml(intro.bodyHtml)+'</p></div>'+
-        '<div class="ha-v3-intro-kicker"><p>'+esc(intro.kicker)+'</p></div>'+
+        (intro.kicker ? '<div class="ha-v3-intro-kicker"><p>'+esc(intro.kicker)+'</p></div>' : '')+
       '</section>';
   }
 
