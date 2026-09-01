@@ -99,6 +99,18 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 .ha-directory-recruitment .ha-v3-kicker,.ha-directory-recruitment .ha-v3-card-title,.ha-directory-recruitment .ha-v3-card-copy{margin:0;}
 .ha-directory-recruitment .ha-c-btn{background:transparent;color:var(--ha-teal);border:1px solid var(--ha-teal);padding:14px 28px;text-decoration:none;}
 #ha-home-v3 .ha-home-artist-route{background:var(--ha-linen);padding:30px 48px;border-top:.5px solid rgba(54,68,73,.1);border-bottom:.5px solid rgba(54,68,73,.1);align-items:center;margin:0;}
+@media (min-width:1101px){
+  #ha-home-v3 .ha-v3-hero{min-height:500px;}
+  #ha-home-v3 .ha-v3-hero-img{object-position:center;}
+  #ha-home-v3 .ha-v3-hero-content{padding:40px 64px;}
+  #ha-home-v3 .ha-v3-eyebrow{margin-bottom:12px;}
+  #ha-home-v3 .ha-v3-h1{margin-bottom:16px;}
+  #ha-home-v3 .ha-v3-hero-body{margin-bottom:20px;}
+  #ha-home-v3 .ha-v3-hero-actions{display:flex;gap:12px;align-items:center;flex-wrap:nowrap;}
+  #ha-home-v3 .ha-v3-hero-actions .ha-v3-ctas{gap:12px;flex-wrap:nowrap;}
+  #ha-home-v3 .ha-v3-hero-actions .ha-v3-ctas-secondary{margin-top:0;}
+  #ha-home-v3 .ha-v3-hero .ha-v3-btn{padding:14px 16px;}
+}
 @media(min-width:1101px){
   #ha-home-v3 .ha-v3-collections .ha-v3-cards{grid-template-columns:repeat(4,minmax(0,1fr));}
 }
