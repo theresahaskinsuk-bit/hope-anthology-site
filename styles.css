@@ -1231,6 +1231,9 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
 .ha-story-root .ha-story-more-dark .ha-story-more-prose em{
   color:var(--ha-gold);
 }
+@media (min-width:821px){
+  .ha-story-tab{font-size:16px;}
+}
 @media (max-width:820px){
   .ha-story-root .ha-story-panel-text .ha-story-more{
     margin-top:14px;
