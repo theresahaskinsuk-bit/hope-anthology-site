@@ -27,7 +27,7 @@
   function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function asset(path){ if(!path) return ''; return /^https?:|^data:|^\//.test(path) ? path : baseUrl()+path; }
   function safeStoryHtml(value){
-    return String(value ?? '').replace(/<(?!\/?(?:p|em|strong|br)\b)[^>]*>/gi, '');
+    return String(value ?? '').replace(/<(?!\/?(?:p|em|strong|br|blockquote)\b)[^>]*>/gi, '');
   }
   function bodyHtml(s){
     if (s.bodyHtml) return safeStoryHtml(s.bodyHtml);
