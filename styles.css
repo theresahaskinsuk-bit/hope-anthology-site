@@ -1240,6 +1240,16 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
   }
 }
 
+.ha-story-root .ha-story-hero-subtitle em{color:var(--ha-gold);}
+@media (min-width:821px){
+  .ha-story-root .ha-story-section{display:block;min-height:0;}
+  .ha-story-root .ha-story-panel-image{float:left;width:50%;height:clamp(500px,50vw,720px);min-height:0;}
+  .ha-story-root .ha-story-section.image-right .ha-story-panel-image{float:right;}
+  .ha-story-root .ha-story-panel-text{display:block;}
+  .ha-story-root .ha-story-more-prose{max-width:none;}
+  .ha-story-root .ha-story-section::after{content:"";display:table;clear:both;}
+}
+
 
 /* Story v5 polish — rectangular header logo and explicit white final-section heading phrase. */
 .ha-story-root .ha-story-brand{

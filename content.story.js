@@ -34,8 +34,8 @@ window.HA_STORY_CONTENT = {
   "hero": {
     "eyebrow": "The Story",
     "titleHtml": "Everyday <em>Hope.</em>",
-    "subtitle": "Thirty years in the making. Here at last, when I needed it — and still need it — the most.",
-    "whisper": "The Hope Anthology makes rather more sense looking backwards. So perhaps that's how I should tell you the story.",
+    "subtitleHtml": "<p>Sometimes life splits you open. Sometimes you've just had a shocking month — or a couple of them. <em>Both count.</em></p><p>Art really can help: something to look at, something to make, something to give when words don't work, and somewhere to be while you're <em>figuring it out.</em> Found by a human. Made by independent artists.</p>",
+    "whisper": "Thirty years in the making. Here at last, when I needed it — and still need it — the most.",
     "scrollCue": "↓ The story starts below",
     "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b770a840-5f4e-4bed-8f8b-45c8776c140b/story-hero-creative-desk.jpg?content-type=image%2Fjpeg",
     "alt": "Theresa, creator of The Hope Anthology, photographed from above at her creative desk surrounded by colour reference books, pencils and artwork in progress"
@@ -73,8 +73,8 @@ window.HA_STORY_CONTENT = {
       "theme": "light",
       "imageSide": "left",
       "open": true,
-      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/53b17b03-97e7-47c5-b5d9-2585d1827386/01-Lets-start-at-the-end.jpg?content-type=image%2Fjpeg",
-      "alt": "Four framed prints from the Anthology — a fox, the letter F for Freedom, a Soar typographic print, and a woodland folk print showing fox, badger, hare, otter, squirrel and owl.",
+      "image": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5311e66-fd6d-4f59-aea7-d0d5fd386cd2/01-Lets-start-at-the-end.jpg?content-type=image%2Fjpeg",
+      "alt": "Four framed prints from the Anthology — an angel number 444 print for protection and stability, the letter F for Freedom, a Soar typographic print, and a woodland folk print showing fox, badger, hare, otter, squirrel and owl.",
       "eyebrow": "So… Here We Are",
       "titleHtml": "Let's start at the <em>end.</em>",
       "intro": "I've spent an extraordinary amount of time trying to explain The Hope Anthology in complicated ways. It's actually quite simple.",
