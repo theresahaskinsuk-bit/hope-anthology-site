@@ -1249,6 +1249,11 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
   .ha-story-root .ha-story-more-prose{max-width:none;}
   .ha-story-root .ha-story-section::after{content:"";display:table;clear:both;}
 }
+@media (min-width:821px){
+  .ha-story-root .ha-story-section.image-left .ha-story-panel-image{margin:0 32px 32px 0;}
+  .ha-story-root .ha-story-section.image-right .ha-story-panel-image{margin:0 0 32px 32px;}
+  .ha-story-root .ha-story-section.image-left .ha-story-section-quote{margin-left:calc(50% + 32px);max-width:none;}
+}
 
 
 /* Story v5 polish — rectangular header logo and explicit white final-section heading phrase. */
