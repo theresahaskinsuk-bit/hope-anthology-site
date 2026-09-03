@@ -21,7 +21,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
     },
     {
       "label": "Collaborate",
-      "url": "/collaborate"
+      "url": "/for-artists"
     },
     {
       "label": "Collective",

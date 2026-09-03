@@ -21,7 +21,7 @@ window.HA_TO_KEEP_CONTENT = {
     },
     {
       "label": "Collaborate",
-      "url": "/collaborate"
+      "url": "/for-artists"
     },
     {
       "label": "Collective",
@@ -65,7 +65,7 @@ window.HA_TO_KEEP_CONTENT = {
     "heading": "Your work could be here.",
     "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.",
     "linkLabel": "See how it works for artists →",
-    "linkUrl": "/collaborate"
+    "linkUrl": "/for-artists"
   },
   "collective": {
     "heading": "Something worth being part of.",

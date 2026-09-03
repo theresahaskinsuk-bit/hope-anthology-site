@@ -103,7 +103,7 @@
     var footer=C.footer || {};
     return ''+
       '<div id="ha-collaborate-v1">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">Collaborate — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">For Artists — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
           '<section class="ha-col-white-section" aria-label="How it works heading">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'</section>'+
@@ -116,7 +116,7 @@
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
-  function isCollaborate(){ var p=location.pathname.replace(/\/$/,''); return p==='/collaborate' || p==='/collaborations'; }
+  function isCollaborate(){ var p=location.pathname.replace(/\/$/,''); return p==='/for-artists'; }
   function bindMobileNav(root){
     var toggle = root.querySelector('.ha-v3-menu-toggle');
     var menu = root.querySelector('#ha-col-mobile-menu');

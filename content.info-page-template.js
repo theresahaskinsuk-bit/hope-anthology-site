@@ -20,7 +20,7 @@ window.HA_INFO_TEMPLATE_CONTENT = {
     { label: 'To Keep', url: '/to-keep' },
     { label: 'To Make', url: '/to-make' },
     { label: 'The Story', url: '/story' },
-    { label: 'Collaborate', url: '/collaborate' },
+    { label: 'Collaborate', url: '/for-artists' },
     { label: 'Collective', url: '/collective' }
   ],
 
@@ -43,7 +43,7 @@ window.HA_INFO_TEMPLATE_CONTENT = {
       'Bristol, UK'
     ],
     links: [
-      { label: 'Use the Collaborate form', url: '/collaborate' },
+      { label: 'Use the Collaborate form', url: '/for-artists' },
       { label: 'Email The Hope Anthology', url: 'mailto:hello@thehopeanthology.com' }
     ]
   },
@@ -140,7 +140,7 @@ window.HA_INFO_TEMPLATE_CONTENT = {
         ],
         links: [
           { label: 'Email The Hope Anthology', url: 'mailto:hello@thehopeanthology.com' },
-          { label: 'Use the Collaborate form', url: '/collaborate' }
+          { label: 'Use the Collaborate form', url: '/for-artists' }
         ]
       }
     },
@@ -195,7 +195,7 @@ window.HA_INFO_TEMPLATE_CONTENT = {
         ],
         links: [
           { label: 'Email The Hope Anthology', url: 'mailto:hello@thehopeanthology.com' },
-          { label: 'Use the Collaborate form', url: '/collaborate' }
+          { label: 'Use the Collaborate form', url: '/for-artists' }
         ]
       }
     }

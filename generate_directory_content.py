@@ -37,7 +37,7 @@ NAVIGATION = [
     {"label": "To Keep", "url": "/to-keep"},
     {"label": "To Make", "url": "/to-make"},
     {"label": "The Story", "url": "/story"},
-    {"label": "Collaborate", "url": "/collaborate"},
+    {"label": "Collaborate", "url": "/for-artists"},
     {"label": "Collective", "url": "/collective"},
 ]
 
@@ -827,7 +827,7 @@ def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
             "heading": "Do you design things for other people to make?",
             "body": "Patterns, templates, guides — any medium. Free for the founding year, no commission ever. I just need some images, a bit of a description about you, and some links.",
             "linkLabel": "See how it works for artists →",
-            "linkUrl": "/collaborate",
+            "linkUrl": "/for-artists",
         },
         "collective": COLLECTIVE,
         "footer": FOOTER,
@@ -866,7 +866,7 @@ def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
             ],
         },
         "filters": {"medium": ["All"] + sorted({maker["medium"] for maker in active if maker["medium"]}), "price": ["All", "Under £20", "£20–£50", "£50+"]},
-        "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.", "linkLabel": "See how it works for artists →", "linkUrl": "/collaborate"},
+        "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.", "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},
         "collective": COLLECTIVE,
         "footer": FOOTER,
         "artists": [{key: maker[key] for key in ("slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "feeling", "traits", "cardUrl")} for maker in active],
@@ -882,7 +882,7 @@ TO_KEEP_SHARED_CHROME = {
     },
     "navigation": [
         {"label": "To Keep", "url": "/to-keep"}, {"label": "To Make", "url": "/to-make"},
-        {"label": "The Story", "url": "/story"}, {"label": "Collaborate", "url": "/collaborate"},
+        {"label": "The Story", "url": "/story"}, {"label": "Collaborate", "url": "/for-artists"},
         {"label": "Collective", "url": "/collective"},
     ],
     "collective": {"heading": "Something worth being part of.", "body": "Join the Collective for new print notes, quiet launches, and gentle studio updates.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"},

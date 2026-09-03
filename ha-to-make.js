@@ -114,7 +114,7 @@
       return '<span><strong>' + esc(index === 0 ? makers.length : stat.value) + (index === 0 ? '<b class="ha-directory-stat-suffix">of the first 50</b>' : '') + '</strong><small>' + esc(stat.label || '') + '</small></span>';
     }).join('');
     var cards = makers.map(makerCard).join('') +
-      '<article class="ha-directory-recruitment"><p class="ha-v3-kicker">' + esc(recruitment.eyebrow) + '</p><div class="ha-v3-card-title" role="heading" aria-level="3">' + esc(recruitment.heading) + '</div><p class="ha-v3-card-copy">' + esc(recruitment.body) + '</p><a class="ha-c-btn" href="' + esc(recruitment.linkUrl || '/collaborate') + '">' + ctaLabel(recruitment.linkLabel || 'See how it works for artists') + '</a></article>';
+      '<article class="ha-directory-recruitment"><p class="ha-v3-kicker">' + esc(recruitment.eyebrow) + '</p><div class="ha-v3-card-title" role="heading" aria-level="3">' + esc(recruitment.heading) + '</div><p class="ha-v3-card-copy">' + esc(recruitment.body) + '</p><a class="ha-c-btn" href="' + esc(recruitment.linkUrl || '/for-artists') + '">' + ctaLabel(recruitment.linkLabel || 'See how it works for artists') + '</a></article>';
 
     /* The outer route wrapper is unique for loader cleanup. The nested #ha-to-keep-v1 root is intentional: existing page-scoped CSS is the only no-stylesheet-change way to preserve the signed-off directory visual system. */
     return '<div id="ha-to-make-route">' +

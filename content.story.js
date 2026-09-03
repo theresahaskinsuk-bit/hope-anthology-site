@@ -20,7 +20,7 @@ window.HA_STORY_CONTENT = {
     },
     {
       "label": "Collaborate",
-      "href": "/collaborate"
+      "href": "/for-artists"
     },
     {
       "label": "Collective",
@@ -127,7 +127,7 @@ window.HA_STORY_CONTENT = {
       "links": [
         {
           "label": "For Artists",
-          "href": "/collaborate"
+          "href": "/for-artists"
         }
       ]
     },
@@ -198,7 +198,7 @@ window.HA_STORY_CONTENT = {
           },
           {
             "label": "Collaborate",
-            "href": "/collaborate"
+            "href": "/for-artists"
           },
           {
             "label": "Collective",

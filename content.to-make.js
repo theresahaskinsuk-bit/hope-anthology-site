@@ -21,7 +21,7 @@ window.HA_TO_MAKE_CONTENT = {
     },
     {
       "label": "Collaborate",
-      "url": "/collaborate"
+      "url": "/for-artists"
     },
     {
       "label": "Collective",
@@ -68,7 +68,7 @@ window.HA_TO_MAKE_CONTENT = {
     "heading": "Do you design things for other people to make?",
     "body": "Patterns, templates, guides — any medium. Free for the founding year, no commission ever. I just need some images, a bit of a description about you, and some links.",
     "linkLabel": "See how it works for artists →",
-    "linkUrl": "/collaborate"
+    "linkUrl": "/for-artists"
   },
   "collective": {
     "heading": "Something worth being part of.",

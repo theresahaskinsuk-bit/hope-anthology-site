@@ -22,7 +22,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
     },
     {
       "label": "Collaborate",
-      "url": "/collaborate"
+      "url": "/for-artists"
     },
     {
       "label": "Collective",

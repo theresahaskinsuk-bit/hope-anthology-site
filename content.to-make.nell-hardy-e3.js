@@ -22,7 +22,7 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
     },
     {
       "label": "Collaborate",
-      "url": "/collaborate"
+      "url": "/for-artists"
     },
     {
       "label": "Collective",

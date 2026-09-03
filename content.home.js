@@ -17,7 +17,7 @@ window.HA_HOME_CONTENT = {
     { label: 'To Keep', url: '/to-keep' },
     { label: 'To Make', url: '/to-make' },
     { label: 'The Story', url: '/story' },
-    { label: 'Collaborate', url: '/collaborate' },
+    { label: 'Collaborate', url: '/for-artists' },
     { label: 'Collective', url: '/collective' }
   ],
 
@@ -59,7 +59,7 @@ window.HA_HOME_CONTENT = {
     heading: "The first fifty founding artists. You could be one of them.",
     body: 'No commission, no exclusivity, and nothing for you to build. Free for the founding year.',
     linkLabel: 'See how it works for artists →',
-    linkUrl: '/collaborate'
+    linkUrl: '/for-artists'
   },
 
   collective: {
