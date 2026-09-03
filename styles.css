@@ -1312,6 +1312,7 @@ body.ha-make-template-v1-active h1:not(#ha-make-template-v1 h1){position:absolut
   justify-content:flex-start;
 }
 .ha-story-root .ha-story-section .ha-story-more-prose em{font-family:'Lora',Georgia,serif;font-size:16px;}
+.ha-story-root .ha-story-final .ha-story-more-prose em{font-family:'Lora',Georgia,serif;font-size:16px;}
 .ha-story-root .ha-story-section .ha-c-btn{font-family:'Lora',Georgia,serif;font-size:15px;font-style:italic;}
 .ha-story-root .ha-story-section .ha-v3-cta-arrow{display:inline-block;flex:0 0 auto;line-height:1;margin-left:.05em;transform:translateY(-.02em);transition:transform .18s ease;}
 .ha-story-root .ha-story-section[data-story-section="s5"] .ha-story-more-prose>h3{font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.4;font-style:normal;font-weight:400;color:var(--ha-teal);margin:32px 0 12px;}
