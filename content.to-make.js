@@ -38,7 +38,7 @@ window.HA_TO_MAKE_CONTENT = {
         "label": "FOUNDING MAKERS"
       },
       {
-        "value": 80,
+        "value": 78,
         "label": "PATTERNS"
       },
       {
@@ -139,7 +139,7 @@ window.HA_TO_MAKE_CONTENT = {
         "Printable PDF"
       ],
       "cardUrl": "/to-make/ellien-bruce-e4",
-      "patternCount": 47
+      "patternCount": 45
     }
   ]
 };

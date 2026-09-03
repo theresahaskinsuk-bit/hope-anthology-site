@@ -39,11 +39,11 @@ window.HA_TO_KEEP_CONTENT = {
         "suffix": "of the first 50"
       },
       {
-        "value": 10,
+        "value": 31,
         "label": "WORKS"
       },
       {
-        "value": 3,
+        "value": 5,
         "label": "COLLECTIONS"
       }
     ]

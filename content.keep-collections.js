@@ -68,8 +68,8 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
         }
       ],
       "stats": {
-        "collections": 1,
-        "prints": 8,
+        "collections": 3,
+        "prints": 23,
         "fromPrice": "£5.95"
       },
       "breadcrumbs": [
@@ -83,10 +83,229 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       ],
       "filterOptions": [
         "All",
-        "The Meaning Alphabet"
+        "The Meaning Alphabet",
+        "Everyday Anchors",
+        "Angel Numbers"
       ],
       "gridEyebrow": "THERESA HASKINS — ALL WORK",
       "products": [
+        {
+          "show": true,
+          "slug": "l-listen",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 12,
+          "title": "L — Listen",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537659260/letter-l-print-nordic-linocut-sage-teal",
+          "meaning": "Slowing down to hear the voice we most need. For those who find wisdom in stillness and their own instincts.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Tuning inward",
+            "Slowing down",
+            "Hearing your own voice"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ed502caa-b195-451d-8a6a-be26d422889f/l-listen-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/81276e3f-5616-4841-b584-3a6195dbb03d/l-listen-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5b8fea94-e94c-4140-ad92-b91bf34aed06/l-listen-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Love fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Love fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Love fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "m-moments",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 13,
+          "title": "M — Moments",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537658994/letter-m-linocut-print-teal-blue-sage",
+          "meaning": "Simple, everyday things that hold us. A print for those who find the most meaning in the small and ordinary.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Everyday joy",
+            "Noticing the small things",
+            "Grateful hearts"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69af27da-92c8-434f-9c85-39c0fdb8ea9d/m-moments-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa57a917-9ca7-40b1-9ee8-de75faee037c/m-moments-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/10d200c2-5e5c-405a-81d6-f1e01570b275/m-moments-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Magic fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Magic fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Magic fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "n-nourish",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 14,
+          "title": "N — Nourish",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537643736/letter-n-print-linocut-alphabet-poster",
+          "meaning": "Small acts of care to help us grow. For anyone learning to tend to themselves as gently as they tend to others.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Self-care rituals",
+            "Growing gently",
+            "Tending to yourself"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/203adcc0-e5cb-418c-a88d-2893e3c8e67e/n-nourish-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/52c71154-c9ec-4115-a190-94cc2ac091ab/n-nourish-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3cfe4784-08a3-424c-9715-0d3969f174de/n-nourish-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Nurture fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Nurture fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Nurture fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "o-overcome",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 15,
+          "title": "O — Overcome",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537628425/letter-o-linocut-wall-art-overcome",
+          "meaning": "Resilience found in moving through. A print for those who have faced something hard and kept going anyway.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Resilience and strength",
+            "Moving through difficulty",
+            "Coming out the other side"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21878620-9124-4072-ab09-6cc969405212/o-overcome-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7f9652d7-9973-43e0-b6df-997ff7b73048/o-overcome-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/827b82d5-45c4-4cda-bc45-29f8ad8d9b3b/o-overcome-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Overcome fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Overcome fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Overcome fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "p-pause",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 16,
+          "title": "P — Pause",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537663885/letter-p-print-teal-sage-green-linocut",
+          "meaning": "A needed moment that brings us back. For anyone who knows that stopping is sometimes the bravest thing.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Rest and reset",
+            "Permission to stop",
+            "Finding your way back"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f5cec4c9-9140-4c11-bd27-991320b21c2d/p-pause-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c7e42101-c021-4f96-95d4-5bdef6c63593/p-pause-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/97359b8f-6d88-4188-b744-e0406e93e92b/p-pause-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Peace fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Peace fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Peace fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "q-quiet",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 17,
+          "title": "Q — Quiet",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537679270/letter-q-print-blue-teal-linocut-quiet",
+          "meaning": "Moments where we begin to find ourselves again. A print for those who are most at home in stillness.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Peace and solitude",
+            "Time to reflect",
+            "Finding yourself again"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/25a650bd-c810-4607-8f96-4ac5d5f852f9/q-quiet-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c49f5d7a-f3c1-4853-a6be-9bcef2736f03/q-quiet-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7b1464d6-5dff-417a-947b-5021b75ad296/q-quiet-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Quiet fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Quiet fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Quiet fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "r-release",
+          "collection": "The Meaning Alphabet",
+          "collectionOrder": 1,
+          "productOrder": 18,
+          "title": "R — Release",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537658954/letter-r-print-teal-blue-release-wall",
+          "meaning": "The ease and freedom of letting go. For anyone ready to set something down and breathe a little lighter.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Letting go",
+            "Moving forward",
+            "Lightening the load"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/617d35ae-13ee-45f9-8d6d-d722629ffec8/r-release-meaning-alphabet-print-teal-sage-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/be376933-5ba0-415a-b013-9840bbb25413/r-release-meaning-alphabet-print-teal-sage-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/30c8a969-e24b-43e2-8e22-8cab1113f388/r-release-meaning-alphabet-print-teal-sage-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Rise fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "flat": "Rise fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Rise fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
         {
           "show": true,
           "slug": "s-shine",
@@ -98,7 +317,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537643081/letter-s-print-teal-botanical-monogram",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537627945/letter-t-linocut-print-blue-teal",
           "meaning": "Inner light that grows when we share it. A print for those who brighten the spaces and people around them.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -129,7 +348,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537627945/letter-t-linocut-print-blue-teal",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537627945/letter-t-linocut-print-blue-teal",
           "meaning": "Where belonging helps us find our way. For the people who are better — and braver — side by side.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -160,7 +379,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537664193/letter-u-unfold-print-nordic-linocut",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537664193/letter-u-unfold-print-nordic-linocut",
           "meaning": "Piece by piece, gently becoming you. A print for those who are growing into themselves, quietly and in their own time.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -191,7 +410,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537664529/letter-v-print-value-teal-blue-nordic",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537664529/letter-v-print-value-teal-blue-nordic",
           "meaning": "Choosing meaning over more. For those who measure a good life in depth, not volume.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -222,7 +441,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537679584/letter-w-print-scandinavian-linocut",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537679584/letter-w-print-scandinavian-linocut",
           "meaning": "Finding awe in both the great and the small. A print for those who never quite lost their sense of curiosity.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -253,7 +472,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537643341/letter-x-print-blue-botanical-linocut",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537643341/letter-x-print-blue-botanical-linocut",
           "meaning": "The unseen currents that help us grow. For those who recognise the quiet forces — and people — that have carried them.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -284,7 +503,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537642407/letter-y-print-teal-blue-and-sage-green",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537642407/letter-y-print-teal-blue-and-sage-green",
           "meaning": "Simply knowing you are your own. A print for anyone coming home to themselves.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -315,7 +534,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£5.95",
           "priceNumber": 5.95,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537658198/letter-z-print-teal-botanical-alphabet",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537658198/letter-z-print-teal-botanical-alphabet",
           "meaning": "Zest — The joyful spark we find to keep going. A print for the days when you need a bit more.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -329,6 +548,254 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
             "lifestyle": "Zest fine art print in a home setting — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
             "flat": "Zest fine art print — Meaning Alphabet collection, symbolic wall art by Hope Anthology",
             "detail": "Detail of Zest fine art print — Meaning Alphabet collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "calm",
+          "collection": "Everyday Anchors",
+          "collectionOrder": 2,
+          "productOrder": 1,
+          "title": "CALM",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537658025/calming-wall-art-for-emotional",
+          "meaning": "Centered, Accepting, Loving, Mindful — A print for the moments when you need to slow down and come back to yourself.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Finding stillness",
+            "Mindful living",
+            "Centered, Accepting, Loving, Mindful"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/69444f62-dd68-4981-9903-b140cb0b2419/everyday-anchors-calm-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/14c1fc78-10d7-4237-b987-475fe5c16caa/everyday-anchors-calm-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/27f28592-69d0-43f1-994f-cef1d1e7cf69/everyday-anchors-calm-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "CALM fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "flat": "CALM fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of CALM fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "rise",
+          "collection": "Everyday Anchors",
+          "collectionOrder": 2,
+          "productOrder": 4,
+          "title": "RISE",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537657374/motivational-poster-for-growth-forward",
+          "meaning": "Rested, Intentional, Self-aware, Empowered — A print for anyone building something better, starting with themselves.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Personal growth",
+            "Empowered living",
+            "Rested, Intentional, Self-aware, Empowered"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5da953f-82e2-4c74-8a64-2eb039dd8d66/everyday-anchors-rise-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6994c19-7e81-44b4-9446-600c32d0ef0c/everyday-anchors-rise-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/da286b3e-8abb-405f-bfb4-4c9bcf5a3323/everyday-anchors-rise-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "RISE fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "flat": "RISE fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of RISE fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "root",
+          "collection": "Everyday Anchors",
+          "collectionOrder": 2,
+          "productOrder": 5,
+          "title": "ROOT",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537669211/rooted-and-grounded-print-for-stability",
+          "meaning": "Reaching out, Owning choices, On track, Thankful — A print for staying grounded when life pulls in every direction.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Staying grounded",
+            "Gratitude and connection",
+            "Reaching out, Owning choices, On track, Thankful"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2c28bfb3-fc6c-4964-adc6-ea2d09fca07f/everyday-anchors-root-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3e822dfb-da08-4146-904c-62d6399c5317/everyday-anchors-root-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/70c25f18-476c-4950-86cc-a0adcca36060/everyday-anchors-root-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "ROOT fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "flat": "ROOT fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of ROOT fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "soar",
+          "collection": "Everyday Anchors",
+          "collectionOrder": 2,
+          "productOrder": 6,
+          "title": "SOAR",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537624493/empowering-poster-for-confidence",
+          "meaning": "Steady, Open, Aware, Resilient — You've done the work. A print for that.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Bold next steps",
+            "Resilient spirits",
+            "Steady, Open, Aware, Resilient"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e3c75ebe-b01f-4cfb-be7c-09a0491553d1/everyday-anchors-soar-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ece2c76a-d04d-4c3a-b6f4-da01328529e7/everyday-anchors-soar-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/287609f2-d7a0-4732-85f4-06ef294aeb85/everyday-anchors-soar-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "angel-number-666",
+          "collection": "Angel Numbers",
+          "collectionOrder": 3,
+          "productOrder": 6,
+          "title": "Angel Number 666",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537639666/angel-number-666-printable-artwork",
+          "meaning": "Balance between the material and the meaningful. A print for those seeking harmony in everyday life.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Finding harmony",
+            "Mindful living",
+            "Rebalancing and reset"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6dad785b-83e0-403d-ad75-76fe29a9666b/angel-number-666-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8dfe22a0-7af0-4cca-a065-f7484dde9f4e/angel-number-666-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5219297a-9d0c-4263-be0e-2f2201446008/angel-number-666-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Angel Number 666 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "flat": "Angel Number 666 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Angel Number 666 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "angel-number-777",
+          "collection": "Angel Numbers",
+          "collectionOrder": 3,
+          "productOrder": 7,
+          "title": "Angel Number 777",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537672222/angel-number-777-print-spiritual-wall",
+          "meaning": "You are exactly where you need to be. A print for those on a path of growth and quiet alignment.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Spiritual growth",
+            "Trusting your path",
+            "Inner alignment"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2a82ee02-11e6-427f-8a3c-ee1f7c162428/angel-number-777-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00864bd9-ddc7-4fb2-887f-e24e2e65ebc3/angel-number-777-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/653588f5-7eb2-4981-9c4c-557a397f056b/angel-number-777-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Angel Number 777 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "flat": "Angel Number 777 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Angel Number 777 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "angel-number-888",
+          "collection": "Angel Numbers",
+          "collectionOrder": 3,
+          "productOrder": 8,
+          "title": "Angel Number 888",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537640945/angel-number-888-wings-print-abundance",
+          "meaning": "Abundance flows when you are open to it. A print for those ready to receive what they have worked for.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Abundance and gratitude",
+            "Manifesting goals",
+            "Celebrating success"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c785dcc-1306-40c2-8855-5d07b29b7517/angel-number-888-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/685aec22-ac92-454d-8a04-6abfb33e8e5c/angel-number-888-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/594a9cda-76de-4133-ba0a-d625380964a7/angel-number-888-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Angel Number 888 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "flat": "Angel Number 888 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Angel Number 888 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "angel-number-999",
+          "collection": "Angel Numbers",
+          "collectionOrder": 3,
+          "productOrder": 9,
+          "title": "Angel Number 999",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£5.95",
+          "priceNumber": 5.95,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537659800/angel-number-999-wings-print-spiritual",
+          "meaning": "One chapter closes so another can begin. A print for those releasing the old to welcome the new.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Letting go",
+            "Closing chapters",
+            "Transformation and release"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f315191d-3823-4217-9b0f-e45acd1d5964/angel-number-999-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76402dbc-414c-45f0-9b28-b96eefe41586/angel-number-999-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3018b40d-e577-4b7a-8036-638d38aaf0dd/angel-number-999-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Angel Number 999 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "flat": "Angel Number 999 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Angel Number 999 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
           }
         }
       ]
@@ -360,7 +827,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       ],
       "stats": {
         "collections": 2,
-        "prints": 2,
+        "prints": 8,
         "fromPrice": "£4.75"
       },
       "breadcrumbs": [
@@ -381,6 +848,68 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "products": [
         {
           "show": true,
+          "slug": "the-badger",
+          "collection": "Woodland Folk",
+          "collectionOrder": 1,
+          "productOrder": 3,
+          "title": "The Badger",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537640720/badger-folk-art-woodland-animal-prints",
+          "meaning": "Steadfast, determined, and quietly powerful. The badger knows its own strength.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Determination",
+            "Quiet strength",
+            "Steadfastness"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/20130ea5-c7bd-4812-9a72-f6d4bf957259/badger-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f4eeef0a-a27e-46ad-8dfd-ee881c85b4ac/badger-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/81d3f856-d539-4495-9e53-6ce85d41b23c/badger-folk-art-print-terracotta-woodland-folk-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Badger terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Badger terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Badger folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "the-squirrel",
+          "collection": "Woodland Folk",
+          "collectionOrder": 1,
+          "productOrder": 4,
+          "title": "The Squirrel",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537627243/squirrel-folk-art-woodland-animal-prints",
+          "meaning": "Resourceful, playful, and always prepared. The squirrel makes the most of every moment.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Resourcefulness",
+            "Playfulness",
+            "Preparation"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/94864460-be28-42c7-9005-b9f9e982c890/squirrel-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/30168203-9087-499a-8487-9110860b5bda/squirrel-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/86e128ff-dd2b-406c-b0ec-5c494099b71e/squirrel-folk-art-print-terracotta-woodland-folk-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Squirrel terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Squirrel terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Squirrel folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
           "slug": "the-owl",
           "collection": "Woodland Folk",
           "collectionOrder": 1,
@@ -390,7 +919,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£4.75",
           "priceNumber": 4.75,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537669207/owl-folk-art-print-earthy-neutral",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537669207/owl-folk-art-print-earthy-neutral",
           "meaning": "The owl trusts the silence between moments. Patient, wise, and comfortable in the dark.",
           "comingSoonLabel": "",
           "sizes": "Various",
@@ -412,6 +941,130 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
         },
         {
           "show": true,
+          "slug": "the-otter",
+          "collection": "Woodland Folk",
+          "collectionOrder": 1,
+          "productOrder": 6,
+          "title": "The Otter",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537668013/otter-folk-art-print-boho-cottagecore",
+          "meaning": "Joyful, sociable, and at home wherever there's flow. The otter makes everything look easy.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Joy",
+            "Sociability",
+            "Going with the flow"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/865e621c-1fc1-4403-b231-71e400a76ade/otter-folk-art-print-terracotta-woodland-folk-hope-anthology-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1cc123bd-15ba-4c0f-83da-7bb0e6ee3197/otter-folk-art-print-terracotta-woodland-folk-hope-anthology-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8999e517-184a-47ed-a35b-a9ddc1f27e0c/otter-folk-art-print-terracotta-woodland-folk-hope-anthology-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Otter terracotta folk art print in a home setting — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Otter terracotta folk art print — Woodland Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Otter folk art print — Woodland Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "cow",
+          "collection": "Farm Folk",
+          "collectionOrder": 2,
+          "productOrder": 1,
+          "title": "Cow",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537627243/squirrel-folk-art-woodland-animal-prints",
+          "meaning": "Watchful, calm, and firmly rooted. A print for those who find their strength in stillness and their comfort in steady, quiet things.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Gentle souls",
+            "Finding comfort",
+            "Slow and steady living"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d2a1b08a-5c92-4012-a92d-acda12743cf5/farm-folk-cow-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18eb5fc2-436e-4cac-9a68-11b0acebbd8c/farm-folk-cow-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7644b748-8ef2-42e5-babf-0262e353c3d9/farm-folk-cow-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Cow folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Cow folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Cow folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "goat",
+          "collection": "Farm Folk",
+          "collectionOrder": 2,
+          "productOrder": 2,
+          "title": "Goat",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537668011/olive-green-goat-print-scandinavian",
+          "meaning": "Determined and free-spirited, embodying self-reliance, courage, and inner purpose. A print for those who find their own way — and trust it.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Problem solvers",
+            "Determined spirits",
+            "Those who find their own path"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d5903897-d5bf-481c-847f-d76fb3e68135/farm-folk-goat-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6988de5f-7e77-450e-b94c-c3f9ce40b595/farm-folk-goat-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e98997eb-449c-49f0-b54f-8dc01b2ef5bf/farm-folk-goat-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Goat folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Goat folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Goat folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
+          "slug": "pig",
+          "collection": "Farm Folk",
+          "collectionOrder": 2,
+          "productOrder": 4,
+          "title": "Pig",
+          "status": "available",
+          "format": "Digital Download",
+          "price": "£4.75",
+          "priceNumber": 4.75,
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537679878/linocut-pig-wall-art-scandinavian-olive",
+          "meaning": "Grounded and content, embodying self-care, gratitude, and balance in the everyday. A print for those who know that a good life is built in small, nourishing moments.",
+          "comingSoonLabel": "",
+          "sizes": "Various",
+          "giftFor": [
+            "Quiet confidence",
+            "Self-knowing spirits",
+            "Those who live well"
+          ],
+          "images": {
+            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c79c75a9-7e7a-4f1c-8826-09d2f537899a/farm-folk-pig-lifestyle.jpg?content-type=image%2Fjpeg",
+            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c183973-6a5b-440b-ba14-1b3c398f41e1/farm-folk-pig-flat.jpg?content-type=image%2Fjpeg",
+            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3ed9da0a-e968-4155-91b0-4a94f9dd6fe1/farm-folk-pig-detail.jpg?content-type=image%2Fjpeg"
+          },
+          "imageAlts": {
+            "lifestyle": "Pig folk art print in a home setting — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "flat": "Pig folk art print — Farm Folk collection, symbolic wall art by Hope Anthology",
+            "detail": "Detail of Pig folk art print — Farm Folk collection, symbolic design by Hope Anthology"
+          }
+        },
+        {
+          "show": true,
           "slug": "sheep",
           "collection": "Farm Folk",
           "collectionOrder": 2,
@@ -421,7 +1074,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
           "format": "Digital Download",
           "price": "£4.75",
           "priceNumber": 4.75,
-          "etsyUrl": "https://www.etsy.com/uk/listing/4537644338/olive-green-sheep-linocut-print-nordic",
+          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537644338/olive-green-sheep-linocut-print-nordic",
           "meaning": "Gentle and compassionate, embodying peace, care, and harmonious living. A print for those who bring calm to the spaces and people around them.",
           "comingSoonLabel": "",
           "sizes": "Various",

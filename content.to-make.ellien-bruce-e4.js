@@ -68,14 +68,14 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
     "difficulty": "Beginner",
     "technique": "Copper foil",
     "delivery": "Instant download",
-    "patternCount": 47,
+    "patternCount": 45,
     "profile": {
       "discipline": "Stained glass pattern designer",
       "bio": "PLACEHOLDER — replace with the real maker bio.",
       "metaDescription": "PLACEHOLDER — replace with the real meta description.",
       "stats": {
         "collections": 4,
-        "patterns": 47,
+        "patterns": 45,
         "fromPrice": "£3.50"
       },
       "montage": [
@@ -161,39 +161,6 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Cardinal stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Cardinal stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Cardinal stained glass pattern download — what's included, Hope Anthology"
-            }
-          },
-          {
-            "show": true,
-            "slug": "cat",
-            "collection": "Animals & birds",
-            "collectionOrder": 1,
-            "productOrder": 3,
-            "title": "Cat",
-            "status": "available",
-            "format": "PDF Download",
-            "price": "£3.50",
-            "priceNumber": 3.5,
-            "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4471194272/cat-stained-glass-pattern-beginner-glass",
-            "meaning": "Every cat lover's favourite beginner project — simple, characterful, and deeply satisfying to make. Includes a printable outline, visual reference, and download preview.",
-            "comingSoonLabel": "",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
-            "goodFor": [
-              "Gift for cat lovers",
-              "Pet lover gift",
-              "First glass project"
-            ],
-            "images": {
-              "workbench": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e5cf6bc2-89ab-4200-87e9-306c158a5c70/cat-stained-glass-pattern-hope-anthology-pattern.jpg",
-              "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/424ab554-4fa9-4649-a3ee-50f3be35868f/cat-stained-glass-pattern-hope-anthology-lifestyle.jpg",
-              "inside": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48b21431-16e8-4c34-baa7-c6fdb3941a7f/cat-stained-glass-pattern-hope-anthology-whats-included.jpg"
-            },
-            "imageAlts": {
-              "workbench": "Cat stained glass pattern — Animals & birds collection by Hope Anthology",
-              "lifestyle": "Cat stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
-              "inside": "Cat stained glass pattern download — what's included, Hope Anthology"
             }
           },
           {
@@ -557,39 +524,6 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
               "workbench": "Octopus stained glass pattern — Animals & birds collection by Hope Anthology",
               "lifestyle": "Octopus stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
               "inside": "Octopus stained glass pattern download — what's included, Hope Anthology"
-            }
-          },
-          {
-            "show": true,
-            "slug": "owl",
-            "collection": "Animals & birds",
-            "collectionOrder": 1,
-            "productOrder": 15,
-            "title": "Owl",
-            "status": "available",
-            "format": "PDF Download",
-            "price": "£3.50",
-            "priceNumber": 3.5,
-            "etsyUrl": "https://thehopeanthology.etsy.com/uk/listing/4466349773/owl-stained-glass-pattern-beginner-glass",
-            "meaning": "This owl pattern is a fun and easy beginner make with a woodland feel — simple shapes that come together into something quietly striking. Includes a printable outline, visual reference, and download preview.",
-            "comingSoonLabel": "",
-            "difficulty": "Beginner",
-            "technique": "Copper foil",
-            "delivery": "Instant download",
-            "goodFor": [
-              "Bird lover",
-              "Woodland theme",
-              "Meaningful make"
-            ],
-            "images": {
-              "workbench": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/236ec5f9-07be-45b4-a0d8-3a60e75cb47c/owl-stained-glass-pattern-hope-anthology-pattern.jpg",
-              "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2af027b7-6393-4170-9f5b-a6bcf2f63df6/owl-stained-glass-pattern-hope-anthology-lifestyle.jpg",
-              "inside": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c8cfd238-9c40-44bb-8dcd-2cd1d87429d2/owl-stained-glass-pattern-hope-anthology-whats-included.jpg"
-            },
-            "imageAlts": {
-              "workbench": "Owl stained glass pattern — Animals & birds collection by Hope Anthology",
-              "lifestyle": "Owl stained glass suncatcher pattern in a window — Animals & birds collection by Hope Anthology",
-              "inside": "Owl stained glass pattern download — what's included, Hope Anthology"
             }
           },
           {
