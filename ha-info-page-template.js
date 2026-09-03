@@ -49,8 +49,7 @@
     var footer=C.footer || {};
     return ''+
       legalLink(footer.privacyUrl || '/privacy','Privacy policy')+
-      legalLink(footer.accessibilityUrl || '/accessibility','Accessibility')+
-      legalLink(footer.infoTemplateUrl || '/info-page-template','Info page template');
+      legalLink(footer.accessibilityUrl || '/accessibility','Accessibility');
   }
   function paragraphsHtml(paragraphs){
     return (paragraphs||[]).map(function(text){ return '<p>'+esc(text)+'</p>'; }).join('');
