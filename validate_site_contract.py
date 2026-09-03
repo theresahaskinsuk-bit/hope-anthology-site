@@ -8,8 +8,9 @@ Run this gate before packaging every Hope Anthology change:
 
 The gate fetches the remote baseline, records its full commit SHA, verifies that
 that baseline is an ancestor of the current checkout, then validates the site
-navigation and footer contracts. It exits non-zero when a contract fails, so a
-package must not be produced until the report is clean.
+navigation and footer contracts. Findings listed in the version-controlled
+known-findings baseline are reported prominently as outstanding but do not
+block unrelated packaging. Any finding not in that baseline exits non-zero.
 
 The active-file manifest is deliberately explicit. Add a new custom page's
 content and renderer files to the lists below when it is made live. Retired
@@ -28,6 +29,7 @@ from pathlib import Path
 from typing import Any
 
 EXPECTED_NAVIGATION = ["To Keep", "To Make", "The Story", "For Artists", "Collective"]
+KNOWN_FINDINGS_FILE = "site-contract-known-findings.json"
 
 # Page-level content sources. These are the files that supply a visible page's
 # site navigation. Supplementary generated data, such as content.home-recent-
@@ -101,6 +103,53 @@ class Finding:
     area: str
     file: str
     message: str
+
+
+def finding_key(finding: Finding) -> tuple[str, str, str]:
+    """Stable identity for a contract finding recorded in the baseline."""
+    return (finding.area, finding.file, finding.message)
+
+
+def load_known_findings(root: Path) -> tuple[set[tuple[str, str, str]], list[Finding]]:
+    """Read the committed baseline; malformed or missing baseline blocks packaging."""
+    path = root / KNOWN_FINDINGS_FILE
+    if not path.is_file():
+        return set(), [Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, "Known-findings baseline file is missing.")]
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, json.JSONDecodeError) as exc:
+        return set(), [Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, f"Known-findings baseline cannot be read: {exc}.")]
+    if not isinstance(payload, dict) or payload.get("schema_version") != 1:
+        return set(), [Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, "Known-findings baseline must be a JSON object with schema_version 1.")]
+    items = payload.get("findings")
+    if not isinstance(items, list):
+        return set(), [Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, "Known-findings baseline must contain a findings array.")]
+    keys: set[tuple[str, str, str]] = set()
+    errors: list[Finding] = []
+    for index, item in enumerate(items, start=1):
+        if not isinstance(item, dict):
+            errors.append(Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, f"Baseline finding {index} is not an object."))
+            continue
+        key = (str(item.get("area", "")).strip(), str(item.get("file", "")).strip(), str(item.get("message", "")).strip())
+        if not all(key):
+            errors.append(Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, f"Baseline finding {index} must contain non-empty area, file, and message fields."))
+        elif key in keys:
+            errors.append(Finding("ERROR", "known-findings-baseline", KNOWN_FINDINGS_FILE, f"Baseline finding {index} duplicates an earlier finding."))
+        else:
+            keys.add(key)
+    return keys, errors
+
+
+def classify_findings(findings: list[Finding], known: set[tuple[str, str, str]]) -> tuple[list[Finding], list[Finding]]:
+    """Split findings into blocking regressions and documented outstanding debt."""
+    new: list[Finding] = []
+    pre_existing: list[Finding] = []
+    for finding in findings:
+        if finding.area != "known-findings-baseline" and finding_key(finding) in known:
+            pre_existing.append(finding)
+        else:
+            new.append(finding)
+    return new, pre_existing
 
 
 def git(root: Path, *args: str, check: bool = True) -> str:
@@ -287,7 +336,19 @@ def baseline_status(root: Path, baseline: str, fetch: bool) -> tuple[dict[str, s
         return {"baseline_ref": baseline, "remote_main_sha": "unavailable", "head_sha": "unavailable", "worktree_changes": "unknown"}, findings
 
 
-def markdown_report(status: dict[str, str], findings: list[Finding]) -> str:
+def finding_table(findings: list[Finding], empty_message: str) -> list[str]:
+    lines = [
+        "| Severity | Area | File | Finding |",
+        "| --- | --- | --- | --- |",
+    ]
+    if findings:
+        lines.extend(f"| {f.severity} | {f.area} | `{f.file}` | {f.message} |" for f in findings)
+    else:
+        lines.append(f"| PASS | all | — | {empty_message} |")
+    return lines
+
+
+def markdown_report(status: dict[str, str], new_findings: list[Finding], pre_existing: list[Finding], known_total: int) -> str:
     lines = [
         "# Hope Anthology pre-package site-contract gate",
         "",
@@ -299,7 +360,9 @@ def markdown_report(status: dict[str, str], findings: list[Finding]) -> str:
         "",
         "## Result",
         "",
-        "**PASS** — safe to package." if not findings else f"**FAIL** — {len(findings)} contract violation(s); do not package.",
+        "**PASS** — safe to package." if not new_findings else f"**FAIL** — {len(new_findings)} new contract violation(s); do not package.",
+        "",
+        f"**Outstanding known findings:** {len(pre_existing)} of {known_total} recorded baseline finding(s). They are reported below but do not block unrelated packaging.",
         "",
         "## Checks",
         "",
@@ -308,16 +371,23 @@ def markdown_report(status: dict[str, str], findings: list[Finding]) -> str:
         "3. Every active page's To Make navigation destination is `/to-make`.",
         "4. Every visible Footer Navigate column contains the exact label `For Organisations`.",
         "",
-        "## Findings",
+        "## New violations — blocking",
         "",
-        "| Severity | Area | File | Finding |",
-        "| --- | --- | --- | --- |",
-    ]
-    if findings:
-        lines.extend(f"| {f.severity} | {f.area} | `{f.file}` | {f.message} |" for f in findings)
-    else:
-        lines.append("| PASS | all | — | No contract violations. |")
-    lines += [
+        *finding_table(new_findings, "No new contract violations."),
+        "",
+        "## Pre-existing violations — outstanding, non-blocking",
+        "",
+        *finding_table(pre_existing, "No recorded known findings remain in the current checkout."),
+        "",
+        "## Baseline accounting",
+        "",
+        f"- Baseline file: `{KNOWN_FINDINGS_FILE}`",
+        f"- Recorded known findings: {known_total}",
+        f"- Still present: {len(pre_existing)}",
+        f"- Resolved since baseline: {known_total - len(pre_existing)}",
+        f"- New blocking findings: {len(new_findings)}",
+        "",
+        "> Remove resolved entries from the committed baseline as part of the naming clean-up. Once the baseline findings array is empty, every contract finding is automatically new and therefore blocking; no gate code change is required.",
         "",
         "## Active-file manifest",
         "",
@@ -348,22 +418,35 @@ def main() -> int:
         print(f"ERROR: {root} is not a Git checkout; start from a fresh GitHub main clone.", file=sys.stderr)
         return 2
 
+    known_findings, baseline_findings = load_known_findings(root)
     status, findings = baseline_status(root, args.baseline, not args.no_fetch)
+    findings.extend(baseline_findings)
     content_findings, records = validate_content(root)
     findings.extend(content_findings)
     findings.extend(validate_footers(root, records))
     findings.sort(key=lambda item: (item.area, item.file, item.message))
+    new_findings, pre_existing = classify_findings(findings, known_findings)
 
-    report = markdown_report(status, findings)
+    report = markdown_report(status, new_findings, pre_existing, len(known_findings))
     if args.report:
         report_path = args.report if args.report.is_absolute() else root / args.report
         report_path.parent.mkdir(parents=True, exist_ok=True)
         report_path.write_text(report, encoding="utf-8")
     if args.json:
-        print(json.dumps({"status": status, "findings": [asdict(finding) for finding in findings]}, indent=2))
+        print(json.dumps({
+            "status": status,
+            "result": {
+                "blocking_new_findings": len(new_findings),
+                "outstanding_known_findings": len(pre_existing),
+                "recorded_known_findings": len(known_findings),
+            },
+            "findings": [asdict(finding) for finding in findings],
+            "new_findings": [asdict(finding) for finding in new_findings],
+            "pre_existing_findings": [asdict(finding) for finding in pre_existing],
+        }, indent=2))
     else:
         print(report)
-    return 1 if findings else 0
+    return 1 if new_findings else 0
 
 
 if __name__ == "__main__":

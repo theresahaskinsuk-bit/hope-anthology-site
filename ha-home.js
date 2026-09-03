@@ -51,7 +51,7 @@
   }
   function safeHtml(value){ return String(value == null ? '' : value); }
   function image(content,key){ return esc((content.images && content.images[key]) || ''); }
-  function navLinks(items){ return (items||[]).map(function(item){return '<a href="'+esc(item.url)+'">'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';}).join(''); }
+  function navLinks(items){ return (items||[]).map(function(item){return '<a href="'+esc(item.url)+'">'+esc(item.label)+'</a>';}).join(''); }
   function hasUrl(value){ return typeof value === 'string' && value.trim() && value.trim() !== '#'; }
   function ctaLabel(label){
     var clean = String(label == null ? '' : label).replace(/\s*[→›»]+\s*$/,'');

@@ -20,7 +20,7 @@ window.HA_TO_KEEP_CONTENT = {
       "url": "/story"
     },
     {
-      "label": "Collaborate",
+      "label": "For Artists",
       "url": "/for-artists"
     },
     {

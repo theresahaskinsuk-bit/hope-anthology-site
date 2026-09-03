@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "source_remote_main_sha": "e5832430461daaa40ba3b5fb906b5064c6b5b91f",
+  "description": "No known Hope Anthology site-contract findings remain after naming clean-up Package 5. The findings array is intentionally empty: every future finding is new and blocks packaging.",
+  "findings": []
+}

@@ -14,12 +14,12 @@ window.HA_STORY_CONTENT = {
       "href": "/to-make"
     },
     {
-      "label": "My Story",
+      "label": "The Story",
       "href": "/story",
       "active": true
     },
     {
-      "label": "Collaborate",
+      "label": "For Artists",
       "href": "/for-artists"
     },
     {
@@ -193,16 +193,20 @@ window.HA_STORY_CONTENT = {
             "href": "/to-make"
           },
           {
-            "label": "My Story",
+            "label": "The Story",
             "href": "/story"
           },
           {
-            "label": "Collaborate",
+            "label": "For Artists",
             "href": "/for-artists"
           },
           {
             "label": "Collective",
             "href": "/collective"
+          },
+          {
+            "label": "For Organisations",
+            "href": "/for-organisations"
           }
         ]
       },

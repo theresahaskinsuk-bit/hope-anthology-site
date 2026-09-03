@@ -50,7 +50,7 @@
     return (items||[]).map(function(item){
       var href = item.url || '#';
       var active = (href.replace(/\/$/,'') || '/') === current;
-      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
     }).join('');
   }
   /* ── Find artist collection by path ── */
@@ -239,7 +239,7 @@
       '<footer class="ha-v3-footer">'+
         '<div class="ha-v3-footer-top">'+
           '<img class="ha-v3-footer-star" src="'+image(content,'star')+'" alt="">'+
-          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(content.navigation)+'<a href="/for-organisations">For organisations</a>'+'</div>'+
+          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(content.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div>'+
           '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div>'+
             ''+
             '<a href="'+esc(footer.privacyUrl)+'">Privacy policy</a>'+

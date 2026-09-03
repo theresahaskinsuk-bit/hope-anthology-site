@@ -45,7 +45,7 @@
     return (items||[]).map(function(item){
       var href = item.url || '#';
       var active = (href.replace(/\/$/,'') || '/') === current;
-      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label))+'</a>';
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
     }).join('');
   }
   function card(item){

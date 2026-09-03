@@ -13,7 +13,7 @@ window.HA_WHY_CONTENT = {
     { label: `To Keep`, url: `/to-keep` },
     { label: `To Make`, url: `/to-make` },
     { label: `The Story`, url: `/story` },
-    { label: `Collaborate`, url: `/for-artists` },
+    { label: `For Artists`, url: `/for-artists` },
     { label: `Collective`, url: `/collective` }
   ],
   page: {

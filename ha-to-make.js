@@ -51,7 +51,7 @@
     return (items || []).map(function(item){
       var href = item.url || '#';
       var active = (href.replace(/\/$/, '') || '/') === current;
-      var label = item.label === 'Collaborate' ? 'For Artists' : (item.label === 'My Story' ? 'The Story' : item.label);
+      var label = item.label;
       return '<a href="' + esc(href) + '"' + (active ? ' aria-current="page"' : '') + '>' + esc(label) + '</a>';
     }).join('');
   }

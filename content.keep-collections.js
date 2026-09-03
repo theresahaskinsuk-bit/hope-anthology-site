@@ -20,7 +20,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "url": "/story"
     },
     {
-      "label": "Collaborate",
+      "label": "For Artists",
       "url": "/for-artists"
     },
     {
