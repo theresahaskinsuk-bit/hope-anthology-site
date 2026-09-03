@@ -27,7 +27,7 @@
   function esc(s){ return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
   function asset(path){ if(!path) return ''; return /^https?:|^data:|^\//.test(path) ? path : baseUrl()+path; }
   function safeStoryHtml(value){
-    return String(value ?? '').replace(/<(?!\/?(?:p|em|strong|br|blockquote)\b)[^>]*>/gi, '');
+    return String(value ?? '').replace(/<(?!\/?(?:p|em|strong|br|blockquote|h3|img)\b)[^>]*>/gi, '');
   }
   function bodyHtml(s){
     if (s.bodyHtml) return safeStoryHtml(s.bodyHtml);
@@ -75,11 +75,11 @@
   }
   function sectionHtml(s){
     const dark=s.theme === 'dark';
-    const links = Array.isArray(s.links) && s.links.length ? `<div class="ha-v3-ctas ha-v3-ctas-secondary">${s.links.map(link=>`<a class="ha-c-btn ${dark?'ha-c-btn-gold':'ha-c-btn-teal'}" href="${esc(link.href)}">${esc(link.label)}</a>`).join('')}</div>` : '';
+    const links = Array.isArray(s.links) && s.links.length ? `<div class="ha-v3-ctas ha-v3-ctas-secondary">${s.links.map(link=>`<a class="ha-c-btn ${dark?'ha-c-btn-gold':'ha-c-btn-teal'}" href="${esc(link.href)}"><span class="ha-v3-cta-text">${esc(link.label)}</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span></a>`).join('')}</div>` : '';
     const text = `<div class="ha-story-panel-text"><div class="ha-story-num ${dark?'ha-story-num-light':''}">${esc(s.number)}</div><p class="ha-story-eyebrow ${dark?'gold':'twine'}">${esc(s.eyebrow)}</p><h2 class="ha-story-section-title">${s.titleHtml}</h2><p class="ha-story-intro">${esc(s.intro)}</p><blockquote class="ha-story-section-quote">${esc(s.quote)}</blockquote><div class="ha-story-more-prose">${bodyHtml(s)}</div>${links}</div>`;
     const image = `<div class="ha-story-panel-image"><img src="${asset(s.image)}" alt="${esc(s.alt)}" loading="lazy"></div>`;
     const top = image + text;
-    return `<div id="${esc(s.id)}" class="ha-story-anchor"></div><section class="ha-story-section ${dark?'ha-story-dark':'ha-story-light'} ${s.imageSide==='right'?'image-right':'image-left'}">${top}</section>`;
+    return `<div id="${esc(s.id)}" class="ha-story-anchor"></div><section class="ha-story-section ${dark?'ha-story-dark':'ha-story-light'} ${s.imageSide==='right'?'image-right':'image-left'}" data-story-section="${esc(s.id)}">${top}</section>`;
   }
   function render(c){
     document.title = c.meta?.title || document.title;
