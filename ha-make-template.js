@@ -250,7 +250,6 @@
     if(document.getElementById('ha-make-template-v1')) return;
     var content = window.HA_MAKE_TEMPLATE_CONTENT || {};
     if(!content.patterns || !content.patterns.length) return;
-    if(content.page && content.page.title) document.title = content.page.title;
     var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
     if(!anchor){ setTimeout(mount,150); return; }
     injectScopedTheme();

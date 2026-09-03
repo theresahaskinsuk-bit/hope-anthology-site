@@ -319,9 +319,6 @@
     if(document.getElementById('ha-artist-page-v1')) return;
     var anchor=document.querySelector('#sections')||document.querySelector('main')||document.body.firstElementChild;
     if(!anchor){ setTimeout(mount,150); return; }
-    document.title = collection.metaTitle || (collection.name ? collection.name + ' — Print Designer | The Hope Anthology' : 'The Hope Anthology');
-    var metaDesc = document.querySelector('meta[name="description"]');
-    if(metaDesc) metaDesc.setAttribute('content', collection.metaDescription || '');
     document.body.classList.add('ha-artist-page-v1-active');
     var wrap=document.createElement('div');
     wrap.innerHTML=html(content,collection);

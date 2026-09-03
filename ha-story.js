@@ -82,7 +82,6 @@
     return `<div id="${esc(s.id)}" class="ha-story-anchor"></div><section class="ha-story-section ${dark?'ha-story-dark':'ha-story-light'} ${s.imageSide==='right'?'image-right':'image-left'}" data-story-section="${esc(s.id)}">${top}</section>`;
   }
   function render(c){
-    document.title = c.meta?.title || document.title;
     const root = document.getElementById('ha-story-root') || document.createElement('div');
     root.id = 'ha-story-root';
     root.className = 'ha-story-root';
