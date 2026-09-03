@@ -40,9 +40,11 @@
     return '<span class="ha-v3-cta-text">'+esc(clean)+'</span><span class="ha-v3-cta-arrow" aria-hidden="true">→</span>';
   }
   function navLinks(items){
+    var current = location.pathname.replace(/\/$/,'') || '/';
     return (items||[]).map(function(item){
-      var cls = item.active ? ' class="is-active" aria-current="page"' : '';
-      return '<a href="'+esc(item.url)+'"'+cls+'>'+esc(item.label)+'</a>';
+      var href = item.url || '#';
+      var active = (href.replace(/\/$/,'') || '/') === current;
+      return '<a href="'+esc(href)+'"'+(active ? ' aria-current="page"' : '')+'>'+esc(item.label)+'</a>';
     }).join('');
   }
   function footerLinks(C){
