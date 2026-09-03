@@ -579,20 +579,20 @@ body.ha-home-v3-active .Header,body.ha-home-v3-active header.Header,body.ha-home
 
 
 /* Collections overview page — GitHub/Squarespace-ready build. */
-#ha-collections-v1,#ha-collections-v1 *{box-sizing:border-box;}
-#ha-collections-v1{font-family:'DM Sans',sans-serif;background:var(--ha-cream);color:var(--ha-dark);line-height:1.4;-webkit-font-smoothing:antialiased;}
-#ha-collections-v1 a{text-decoration:none;}
-#ha-collections-v1 img{display:block;width:100%;height:auto;}
+
+
+
+
 body.ha-collections-v1-active #sections,body.ha-collections-v1-active #footer-sections{display:none!important;}
 body.ha-collections-v1-active .Header,body.ha-collections-v1-active header.Header,body.ha-collections-v1-active #header{display:none!important;}
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]{color:#fff!important;text-decoration:underline!important;text-decoration-color:rgba(242,243,239,.65)!important;text-underline-offset:6px;}
-#ha-collections-v1 .ha-v3-menu-toggle{display:none;appearance:none;background:transparent;border:0;width:44px;height:44px;padding:10px;margin:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;color:var(--ha-cream);}
-#ha-collections-v1 .ha-v3-menu-toggle span{display:block;width:22px;height:1px;background:currentColor;transition:transform .2s ease,opacity .2s ease;}
-#ha-collections-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
-#ha-collections-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
-#ha-collections-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
-#ha-collections-v1 .ha-v3-menu-toggle:hover,#ha-collections-v1 .ha-v3-menu-toggle:focus-visible{color:#fff;outline:1px solid rgba(242,243,239,.45);outline-offset:2px;}
-#ha-collections-v1 .ha-v3-footer-top{grid-template-columns:56px minmax(150px,220px) minmax(150px,220px)!important;column-gap:36px!important;row-gap:28px;justify-content:start!important;}
+
+
+
+
+
+
+
+
 .ha-c-main{background:var(--ha-cream);}
 .ha-c-header{background:var(--ha-cream);padding:76px 48px 58px;}
 .ha-c-eyebrow{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--ha-twine);font-weight:500;margin:0 0 14px;}
@@ -663,14 +663,14 @@ body.ha-collections-v1-active .Header,body.ha-collections-v1-active header.Heade
 .ha-c-input:focus{border-color:var(--ha-teal);box-shadow:0 0 0 1px rgba(38,91,112,.24);}
 .ha-c-note{font-size:12px!important;color:rgba(54,68,73,.55)!important;font-style:italic;line-height:1.6!important;}
 @media(max-width:900px){
-  #ha-collections-v1 .ha-v3-nav{height:68px!important;padding:0 18px!important;align-items:center;}
-  #ha-collections-v1 .ha-v3-brand{height:68px!important;max-width:210px!important;}
-  #ha-collections-v1 .ha-v3-logo{height:42px!important;max-width:190px!important;}
-  #ha-collections-v1 .ha-v3-menu-toggle{display:inline-flex!important;position:relative;z-index:102;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links{display:flex!important;position:absolute;left:0;right:0;top:68px;background:var(--ha-teal);border-top:1px solid rgba(242,243,239,.14);box-shadow:0 18px 28px rgba(10,14,15,.22);padding:18px 24px 24px;flex-direction:column;align-items:flex-start;gap:0!important;opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;}
-  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links a{width:100%;padding:13px 0;border-bottom:1px solid rgba(242,243,239,.12);font-size:16px!important;color:var(--ha-cream)!important;text-align:left!important;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links a:last-child{border-bottom:0;}
+
+
+
+
+
+
+
+
   .ha-c-header{padding:54px 24px 42px;}
   .ha-c-header h2{font-size:38px;}
   .ha-c-header p:last-child{font-size:15px;line-height:1.75;}
@@ -687,271 +687,81 @@ body.ha-collections-v1-active .Header,body.ha-collections-v1-active header.Heade
   .ha-c-coming{padding:42px 24px 54px;}
   .ha-c-coming-card{padding:26px 24px;}
   .ha-c-collective{padding:54px 24px;gap:28px;}
-  #ha-collections-v1 .ha-v3-footer-top{grid-template-columns:1fr!important;justify-items:start!important;text-align:left!important;gap:24px!important;padding:36px 24px;}
-  #ha-collections-v1 .ha-v3-footer-col,#ha-collections-v1 .ha-v3-footer-col a,#ha-collections-v1 .ha-v3-footer-title{align-items:flex-start!important;text-align:left!important;}
-  #ha-collections-v1 .ha-v3-footer-bottom{padding:12px 24px;}
+
+
+
 }
 @media (min-width:901px) and (max-width:1100px){
-  #ha-collections-v1 .ha-v3-nav{height:70px!important;padding:0 28px!important;align-items:center!important;}
-  #ha-collections-v1 .ha-v3-brand{height:70px!important;max-width:230px!important;}
-  #ha-collections-v1 .ha-v3-logo{height:46px!important;max-width:210px!important;}
-  #ha-collections-v1 .ha-v3-menu-toggle{display:inline-flex!important;position:relative;z-index:102;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links{display:flex!important;position:absolute!important;left:0;right:0;top:70px;background:var(--ha-teal)!important;border-top:1px solid rgba(242,243,239,.14);box-shadow:0 18px 28px rgba(10,14,15,.22);padding:20px 32px 26px;flex-direction:column!important;align-items:flex-start!important;gap:0!important;opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .2s ease,transform .2s ease,visibility .2s ease;}
-  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links a{width:100%;padding:14px 0;border-bottom:1px solid rgba(242,243,239,.12);font-size:17px!important;color:var(--ha-cream)!important;text-align:left!important;}
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links a:last-child{border-bottom:0;}
+
+
+
+
+
+
+
+
   .ha-c-header{padding:66px 40px 50px;}
   .ha-c-header h2{font-size:44px;}
   .ha-c-door-content{padding:38px 34px;}
   .ha-c-row-content,.ha-c-make-content{padding:50px 40px;}
   .ha-c-world{padding-left:40px;padding-right:40px;}
   .ha-c-coming,.ha-c-collective{padding-left:40px;padding-right:40px;}
-  #ha-collections-v1 .ha-v3-footer-top{grid-template-columns:56px minmax(180px,260px) minmax(180px,260px)!important;justify-content:start!important;justify-items:start!important;column-gap:34px!important;row-gap:24px!important;text-align:left!important;}
+
 }
 
 
 /* Collections live Squarespace compatibility patch: desktop nav, logo hover, image links, and coming-card CTA. */
-#ha-collections-v1 .ha-v3-brand:hover .ha-v3-logo,
-#ha-collections-v1 .ha-v3-brand:focus-visible .ha-v3-logo{
-  filter:none!important;
-}
-#ha-collections-v1 a.ha-c-door,
-#ha-collections-v1 a.ha-c-row-img,
-#ha-collections-v1 a.ha-c-make-img,
-#ha-collections-v1 a.ha-v3-image-link{
-  position:relative!important;
-  z-index:2!important;
-  pointer-events:auto!important;
-  cursor:pointer!important;
-}
-#ha-collections-v1 a.ha-c-door img,
-#ha-collections-v1 a.ha-c-row-img img,
-#ha-collections-v1 a.ha-c-make-img img,
-#ha-collections-v1 a.ha-v3-image-link img{
-  pointer-events:none!important;
-}
-#ha-collections-v1 .ha-c-coming-link{
-  font-family:'DM Sans',sans-serif!important;
-  font-size:10px!important;
-  font-style:normal!important;
-  font-weight:500!important;
-  letter-spacing:.02em!important;
-  color:rgba(242,243,239,.82)!important;
-  background:rgba(242,243,239,.08)!important;
-  padding:5px 13px!important;
-  border-radius:20px!important;
-  display:inline-flex!important;
-  gap:.35em!important;
-  align-items:center!important;
-  border:.5px solid rgba(242,243,239,.24)!important;
-  text-transform:lowercase!important;
-  text-decoration:none!important;
-}
-#ha-collections-v1 .ha-c-coming-link:hover,
-#ha-collections-v1 .ha-c-coming-link:focus-visible{
-  color:#fff!important;
-  background:rgba(242,243,239,.14)!important;
-  border-color:rgba(242,243,239,.5)!important;
-}
-#ha-collections-v1 .ha-c-coming-link:hover .ha-v3-cta-text,
-#ha-collections-v1 .ha-c-coming-link:focus-visible .ha-v3-cta-text{
-  text-decoration:none!important;
-}
+
+
+
+
+
+
 @media (min-width:901px){
-  #ha-collections-v1 .ha-v3-menu-toggle{
-    display:none!important;
-  }
-  #ha-collections-v1 .ha-v3-nav{
-    height:72px!important;
-    padding:0 48px!important;
-    align-items:center!important;
-  }
-  #ha-collections-v1 .ha-v3-brand{
-    height:72px!important;
-    max-width:280px!important;
-  }
-  #ha-collections-v1 .ha-v3-logo{
-    height:52px!important;
-    max-width:240px!important;
-  }
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links{
-    display:flex!important;
-    position:static!important;
-    inset:auto!important;
-    top:auto!important;
-    left:auto!important;
-    right:auto!important;
-    width:auto!important;
-    max-width:none!important;
-    padding:0!important;
-    background:transparent!important;
-    border:0!important;
-    box-shadow:none!important;
-    flex-direction:row!important;
-    align-items:center!important;
-    justify-content:flex-end!important;
-    gap:32px!important;
-    opacity:1!important;
-    visibility:visible!important;
-    transform:none!important;
-    pointer-events:auto!important;
-  }
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links a{
-    width:auto!important;
-    padding:0!important;
-    border:0!important;
-    font-size:14px!important;
-    line-height:1.4!important;
-    color:var(--ha-cream)!important;
-    text-align:left!important;
-  }
+
+
+
+
+
+
 }
 @media (min-width:901px) and (max-width:1100px){
-  #ha-collections-v1 .ha-v3-nav{
-    padding:0 28px!important;
-  }
-  #ha-collections-v1 .ha-v3-nav .ha-v3-links{
-    gap:24px!important;
-  }
-  #ha-collections-v1 .ha-v3-brand{
-    max-width:230px!important;
-  }
-  #ha-collections-v1 .ha-v3-logo{
-    height:46px!important;
-    max-width:210px!important;
-  }
+
+
+
+
 }
 
 
 /* Collections live patch refinement: protect nav colours and fully hide closed mobile menu. */
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a,
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a:visited{
-  color:var(--ha-cream)!important;
-  text-decoration:none!important;
-}
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a:hover,
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a:focus-visible{
-  color:#fff!important;
-  text-decoration:underline!important;
-  text-decoration-color:#fff!important;
-}
+
+
 @media (max-width:900px){
-  #ha-collections-v1:not(.ha-v3-menu-open) .ha-v3-nav .ha-v3-links{
-    opacity:0!important;
-    visibility:hidden!important;
-    pointer-events:none!important;
-    transform:translateY(-8px)!important;
-  }
-  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
-    opacity:1!important;
-    visibility:visible!important;
-    pointer-events:auto!important;
-    transform:translateY(0)!important;
-  }
+
+
 }
 
 
 /* Collections follow-up patch: remove Etsy ghost CTA, improve coming-soon/link readability, and reset nested CTA pill styling. */
-#ha-collections-v1 .ha-c-make-actions .ha-c-btn-ghost{
-  display:none!important;
-}
-#ha-collections-v1 .ha-c-coming-card span:not(.ha-v3-cta-text):not(.ha-v3-cta-arrow){
-  font-size:13px!important;
-  line-height:1.25!important;
-  letter-spacing:.01em!important;
-  padding:8px 17px!important;
-  border-radius:999px!important;
-  color:rgba(242,243,239,.82)!important;
-  background:rgba(242,243,239,.09)!important;
-  border:.5px solid rgba(242,243,239,.28)!important;
-}
-#ha-collections-v1 .ha-c-coming-link{
-  font-size:14px!important;
-  line-height:1.2!important;
-  min-height:40px!important;
-  padding:9px 17px!important;
-  border-radius:999px!important;
-  gap:.45em!important;
-  background:rgba(242,243,239,.09)!important;
-  border:.5px solid rgba(242,243,239,.3)!important;
-  color:rgba(242,243,239,.9)!important;
-  font-family:'DM Sans',sans-serif!important;
-  font-style:normal!important;
-  font-weight:500!important;
-  text-transform:lowercase!important;
-}
-#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-text,
-#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-arrow{
-  display:inline!important;
-  background:transparent!important;
-  border:0!important;
-  border-radius:0!important;
-  box-shadow:none!important;
-  padding:0!important;
-  margin:0!important;
-  color:inherit!important;
-  font:inherit!important;
-  line-height:inherit!important;
-  min-width:0!important;
-  min-height:0!important;
-  width:auto!important;
-  height:auto!important;
-}
-#ha-collections-v1 .ha-c-coming-link .ha-v3-cta-arrow{
-  margin-left:.25em!important;
-  transform:none!important;
-}
-#ha-collections-v1 .ha-c-coming-link:hover,
-#ha-collections-v1 .ha-c-coming-link:focus-visible{
-  color:#fff!important;
-  background:rgba(242,243,239,.15)!important;
-  border-color:rgba(242,243,239,.55)!important;
-  text-decoration:none!important;
-}
-#ha-collections-v1 .ha-c-coming-link:hover .ha-v3-cta-arrow,
-#ha-collections-v1 .ha-c-coming-link:focus-visible .ha-v3-cta-arrow{
-  transform:translateX(.16em)!important;
-}
+
+
+
+
+
+
+
 
 
 /* Collections follow-up patch: prevent closed mobile menu from bleeding over the page intro. */
 @media (max-width:900px){
-  #ha-collections-v1:not(.ha-v3-menu-open) .ha-v3-nav .ha-v3-links{
-    display:none!important;
-    opacity:0!important;
-    visibility:hidden!important;
-    pointer-events:none!important;
-  }
-  #ha-collections-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{
-    display:flex!important;
-    opacity:1!important;
-    visibility:visible!important;
-    pointer-events:auto!important;
-  }
+
+
 }
 
 /* Collections follow-up: smooth full-card image gradient coverage */
-#ha-collections-v1 .ha-c-door{
-  isolation:isolate;
-}
-#ha-collections-v1 .ha-c-door-gradient{
-  inset:0 !important;
-  height:auto !important;
-  width:100% !important;
-  display:block !important;
-  background:linear-gradient(
-    to top,
-    rgba(8,12,12,.88) 0%,
-    rgba(8,12,12,.58) 42%,
-    rgba(8,12,12,.18) 72%,
-    rgba(8,12,12,0) 100%
-  ) !important;
-  pointer-events:none;
-}
-#ha-collections-v1 .ha-c-door-content{
-  position:relative;
-  z-index:2;
-}
+
+
+
 
 
 /* Hope Anthology — Individual Keep Collection pages v1 */
@@ -1425,7 +1235,6 @@ body.ha-collaborate-v1-active .Header,body.ha-collaborate-v1-active header.Heade
 
 /* Collaborate follow-up patch: use the gold active-page nav state globally and keep the first collaboration as one full-width module. */
 #ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"],
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
 #ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
 #ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
 #ha-make-template-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"],
@@ -1438,8 +1247,6 @@ body.ha-collaborate-v1-active .Header,body.ha-collaborate-v1-active header.Heade
 
 #ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
 #ha-home-v3 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
-#ha-collections-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
 #ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
 #ha-story-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:focus-visible,
 #ha-keep-collection-v1 .ha-v3-nav .ha-v3-links a[aria-current="page"]:hover,
@@ -2435,7 +2242,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 }
 /* Hope Anthology footer consistency pass — Collective footer source of truth. */
 #ha-home-v3 .ha-v3-footer-top,
-#ha-collections-v1 .ha-v3-footer-top,
 #ha-collective-v1 .ha-v3-footer-top,
 #ha-story-v1 .ha-v3-footer-top,
 #ha-keep-collection-v1 .ha-v3-footer-top,
@@ -2453,7 +2259,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   justify-content:stretch!important;
 }
 #ha-home-v3 .ha-v3-footer-star,
-#ha-collections-v1 .ha-v3-footer-star,
 #ha-collective-v1 .ha-v3-footer-star,
 #ha-story-v1 .ha-v3-footer-star,
 #ha-keep-collection-v1 .ha-v3-footer-star,
@@ -2471,7 +2276,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   background:transparent!important;
 }
 #ha-home-v3 .ha-v3-footer-col,
-#ha-collections-v1 .ha-v3-footer-col,
 #ha-collective-v1 .ha-v3-footer-col,
 #ha-story-v1 .ha-v3-footer-col,
 #ha-keep-collection-v1 .ha-v3-footer-col,
@@ -2486,7 +2290,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   gap:8px!important;
 }
 #ha-home-v3 .ha-v3-footer-title,
-#ha-collections-v1 .ha-v3-footer-title,
 #ha-collective-v1 .ha-v3-footer-title,
 #ha-story-v1 .ha-v3-footer-title,
 #ha-keep-collection-v1 .ha-v3-footer-title,
@@ -2505,7 +2308,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   margin:0 0 6px!important;
 }
 #ha-home-v3 .ha-v3-footer-col a,
-#ha-collections-v1 .ha-v3-footer-col a,
 #ha-collective-v1 .ha-v3-footer-col a,
 #ha-story-v1 .ha-v3-footer-col a,
 #ha-keep-collection-v1 .ha-v3-footer-col a,
@@ -2524,8 +2326,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 }
 #ha-home-v3 .ha-v3-footer-col a:hover,
 #ha-home-v3 .ha-v3-footer-col a:focus-visible,
-#ha-collections-v1 .ha-v3-footer-col a:hover,
-#ha-collections-v1 .ha-v3-footer-col a:focus-visible,
 #ha-collective-v1 .ha-v3-footer-col a:hover,
 #ha-collective-v1 .ha-v3-footer-col a:focus-visible,
 #ha-story-v1 .ha-v3-footer-col a:hover,
@@ -2548,7 +2348,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   text-decoration:underline!important;
 }
 #ha-home-v3 .ha-v3-footer-bottom,
-#ha-collections-v1 .ha-v3-footer-bottom,
 #ha-collective-v1 .ha-v3-footer-bottom,
 #ha-story-v1 .ha-v3-footer-bottom,
 #ha-keep-collection-v1 .ha-v3-footer-bottom,
@@ -2565,7 +2364,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   justify-content:flex-start!important;
 }
 #ha-home-v3 .ha-v3-footer-bottom span,
-#ha-collections-v1 .ha-v3-footer-bottom span,
 #ha-collective-v1 .ha-v3-footer-bottom span,
 #ha-story-v1 .ha-v3-footer-bottom span,
 #ha-keep-collection-v1 .ha-v3-footer-bottom span,
@@ -2581,7 +2379,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 }
 @media(max-width:900px){
   #ha-home-v3 .ha-v3-footer-top,
-  #ha-collections-v1 .ha-v3-footer-top,
   #ha-collective-v1 .ha-v3-footer-top,
   #ha-story-v1 .ha-v3-footer-top,
   #ha-keep-collection-v1 .ha-v3-footer-top,
@@ -2596,7 +2393,6 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
     padding:36px 24px!important;
   }
   #ha-home-v3 .ha-v3-footer-bottom,
-  #ha-collections-v1 .ha-v3-footer-bottom,
   #ha-collective-v1 .ha-v3-footer-bottom,
   #ha-story-v1 .ha-v3-footer-bottom,
   #ha-keep-collection-v1 .ha-v3-footer-bottom,
