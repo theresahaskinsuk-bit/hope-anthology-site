@@ -790,6 +790,7 @@ def recent_artists_payload(to_keep: list[dict[str, Any]], to_make: list[dict[str
                     "artistNumber": maker["artistNumber"],
                     "world": world,
                     "name": maker["name"],
+                    "buttonName": maker["buttonName"],
                     "heroImage": maker["heroImage"],
                     "heroAlt": maker["heroAlt"],
                     "feeling": maker["feeling"],
