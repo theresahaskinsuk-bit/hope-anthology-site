@@ -1,4 +1,20 @@
 (function(){
+  let isTopLevel = false;
+
+  try {
+    isTopLevel = window.self === window.top;
+  } catch (error) {
+    isTopLevel = false;
+  }
+
+  if (
+    !isTopLevel ||
+    (window.location.hostname !== 'thehopeanthology.art' &&
+      window.location.hostname !== 'www.thehopeanthology.art')
+  ) {
+    return;
+  }
+
   var script = document.currentScript || (function(){var s=document.getElementsByTagName('script');return s[s.length-1];})();
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';

@@ -1,5 +1,21 @@
 (function(){
   'use strict';
+  let isTopLevel = false;
+
+  try {
+    isTopLevel = window.self === window.top;
+  } catch (error) {
+    isTopLevel = false;
+  }
+
+  if (
+    !isTopLevel ||
+    (window.location.hostname !== 'thehopeanthology.art' &&
+      window.location.hostname !== 'www.thehopeanthology.art')
+  ) {
+    return;
+  }
+
   const CONTENT_URL = 'content.story.js';
   const STYLE_URL = 'styles.css';
   const allowedPaths = ['/story','/the-story'];
