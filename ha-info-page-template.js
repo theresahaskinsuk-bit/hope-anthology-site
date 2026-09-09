@@ -67,16 +67,38 @@
       legalLink(footer.privacyUrl || '/privacy','Privacy policy')+
       legalLink(footer.accessibilityUrl || '/accessibility','Accessibility');
   }
+  function inlinePartsHtml(parts){
+    return (parts||[]).map(function(part){
+      var text=esc(part && part.text);
+      if(part && part.bold) return '<strong>'+text+'</strong>';
+      if(part && part.italic) return '<em>'+text+'</em>';
+      return text;
+    }).join('');
+  }
+  function paragraphHtml(value){
+    if(value && typeof value==='object'){
+      if(Array.isArray(value.parts)) return '<p>'+inlinePartsHtml(value.parts)+'</p>';
+      if(Array.isArray(value.lines)) return '<p>'+value.lines.map(function(line){ return line && typeof line==='object' && Array.isArray(line.parts) ? inlinePartsHtml(line.parts) : esc(line); }).join('<br>')+'</p>';
+    }
+    return '<p>'+esc(value)+'</p>';
+  }
   function paragraphsHtml(paragraphs){
-    return (paragraphs||[]).map(function(text){ return '<p>'+esc(text)+'</p>'; }).join('');
+    return (paragraphs||[]).map(paragraphHtml).join('');
+  }
+  function listItemHtml(value){
+    if(value && typeof value==='object' && Array.isArray(value.parts)) return '<li>'+inlinePartsHtml(value.parts)+'</li>';
+    return '<li>'+esc(value)+'</li>';
   }
   function listHtml(items){
     if(!items || !items.length) return '';
-    return '<ul>'+items.map(function(text){ return '<li>'+esc(text)+'</li>'; }).join('')+'</ul>';
+    return '<ul>'+items.map(listItemHtml).join('')+'</ul>';
   }
   function sectionsHtml(sections){
     return (sections||[]).map(function(section){
-      return '<section class="ha-info-template-section"><h2>'+esc(section.heading || '')+'</h2>'+paragraphsHtml(section.paragraphs)+listHtml(section.listItems)+'</section>';
+      var heading=section.heading ? '<h2>'+esc(section.heading)+'</h2>' : '';
+      var divider=section.dividerBefore ? '<hr class="ha-info-template-rule" style="margin:0 0 42px;">' : '';
+      var tag=section.heading ? 'section' : 'div';
+      return divider+'<'+tag+' class="ha-info-template-section">'+heading+paragraphsHtml(section.paragraphs)+listHtml(section.listItems)+paragraphsHtml(section.trailingParagraphs)+'</'+tag+'>';
     }).join('');
   }
   function contactLinksHtml(links){
@@ -90,8 +112,13 @@
     return details.map(function(text){ return '<p><strong>'+esc(text)+'</strong></p>'; }).join('');
   }
   function contactHtml(contact){
+    if(contact === false) return '';
     contact = contact || {};
     return '<aside class="ha-info-template-contact" aria-label="Contact The Hope Anthology"><h2>'+esc(contact.heading || 'Contact')+'</h2>'+contactDetailsHtml(contact.details)+paragraphsHtml(contact.paragraphs)+contactLinksHtml(contact.links)+'</aside>';
+  }
+  function introHtml(intro){
+    if(!intro || !intro.length) return '';
+    return '<div class="ha-info-template-section">'+paragraphsHtml(intro)+'</div>';
   }
   function currentContent(){
     var C=window.HA_INFO_TEMPLATE_CONTENT || {};
@@ -104,8 +131,9 @@
       base: C,
       pagePack: pagePack || {},
       page: (pagePack && pagePack.page) || C.page || {},
+      intro: (pagePack && pagePack.intro) || C.intro || [],
       sections: (pagePack && pagePack.sections) || C.sections || [],
-      contact: (pagePack && pagePack.contact) || C.defaultContact || C.contact || {}
+      contact: pagePack && Object.prototype.hasOwnProperty.call(pagePack,'contact') ? pagePack.contact : (C.defaultContact || C.contact || {})
     };
   }
   function html(){
@@ -116,7 +144,7 @@
     return ''+
       '<div id="ha-info-template-v1">'+
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><span class="ha-v3-sr-only">The Hope Anthology</span></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-info-template-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-info-template-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
-        '<main class="ha-info-template-page" aria-labelledby="ha-info-template-title"><article class="ha-info-template-article"><header class="ha-info-template-header"><p class="ha-info-template-eyebrow">'+esc(page.eyebrow || 'Information page')+'</p><h1 id="ha-info-template-title">'+esc(page.title || 'Info page')+'</h1><p class="ha-info-template-date">'+esc(page.lastUpdated || 'Last updated: June 2026')+'</p><hr class="ha-info-template-rule"></header><div class="ha-info-template-body">'+sectionsHtml(data.sections)+contactHtml(data.contact)+'</div></article></main>'+ 
+        '<main class="ha-info-template-page" aria-labelledby="ha-info-template-title"><article class="ha-info-template-article"><header class="ha-info-template-header"><p class="ha-info-template-eyebrow">'+esc(page.eyebrow || 'Information page')+'</p><h1 id="ha-info-template-title">'+esc(page.title || 'Info page')+'</h1><p class="ha-info-template-date">'+esc(page.lastUpdated || 'Last updated: June 2026')+'</p><hr class="ha-info-template-rule"></header><div class="ha-info-template-body">'+introHtml(data.intro)+sectionsHtml(data.sections)+contactHtml(data.contact)+'</div></article></main>'+
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div>'+footerLinks(C)+'</div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright || '© The Hope Anthology 2026')+'</span></div></footer>'+
       '</div>';
   }

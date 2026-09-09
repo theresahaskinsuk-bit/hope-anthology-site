@@ -45,7 +45,9 @@ window.HA_FOR_ORGANISATIONS_CONTENT = {
       'And yes, I\'ll probably come back to you as this grows. That\'s rather the point.'
     ],
     emailLabel: 'Email Theresa',
-    emailAddress: 'theresa@thehopeanthology.art'
+    emailAddress: 'theresa@thehopeanthology.art',
+    emailSubject: 'Enquiry from an organisation',
+    emailBody: 'Hello,\n\nI work with people who might find The Hope Anthology useful.\n\nWho we are and who we work with:\n\nWhat would actually help the people we support:\n\n'
   },
   footer: {
     instagramUrl: 'https://www.instagram.com',

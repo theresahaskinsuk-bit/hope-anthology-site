@@ -72,7 +72,9 @@
   }
   function contactSection(contact){
     var email = contact.emailAddress || 'theresa@thehopeanthology.art';
-    var href = 'mailto:' + email;
+    var subject = encodeURIComponent(contact.emailSubject || 'Enquiry from an organisation');
+    var body = encodeURIComponent(contact.emailBody || 'Hello,\n\nI work with people who might find The Hope Anthology useful.\n\nWho we are and who we work with:\n\nWhat would actually help the people we support:\n\n');
+    var href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
     return '<section class="ha-col-white-section" aria-label="Contact"><div class="ha-col-enquiry-panel"><h2>'+esc(contact.heading)+'</h2><p class="ha-col-enquiry-prompt">'+esc((contact.paragraphs||[])[0])+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(href)+'">'+ctaLabel(contact.emailLabel || 'Email Theresa')+'</a><p class="ha-col-enquiry-email"><span>Email:</span> <a href="'+esc(href)+'">'+esc(email)+'</a></p><p class="ha-col-enquiry-note">'+esc((contact.paragraphs||[])[1])+'</p></div></section>';
   }
   function html(){
