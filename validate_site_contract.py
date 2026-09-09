@@ -47,7 +47,6 @@ ACTIVE_CONTENT_FILES = [
     "content.to-make.js",
     "content.to-make.nell-hardy-e3.js",
     "content.to-make.ellien-bruce-e4.js",
-    "content.why-we-sell-this-way.js",
 ]
 
 # Live page renderers whose visible Footer Navigate column is part of the
@@ -65,7 +64,6 @@ ACTIVE_RENDERER_FILES = [
     "ha-to-keep.js",
     "ha-to-make.js",
     "ha-to-make-maker.js",
-    "ha-why-we-sell-this-way.js",
 ]
 
 # Only the Story renderer constructs its footer Navigate links directly from

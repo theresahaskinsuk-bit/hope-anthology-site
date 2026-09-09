@@ -123,7 +123,6 @@ window.HA_COLLABORATE_CONTENT = {
     instagramUrl: 'https://www.instagram.com',
     privacyUrl: '/privacy-policy',
     accessibilityUrl: '/accessibility',
-    sellingUrl: '/why-we-sell-this-way',
     copyright: '© The Hope Anthology 2026'
   }
 };

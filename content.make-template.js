@@ -1262,7 +1262,6 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     instagramUrl: 'https://www.instagram.com/thehopeanthology/',
     privacyUrl: '/privacy-policy',
     accessibilityUrl: '/accessibility',
-    sellingUrl: '/why-we-sell-this-way',
     copyright: '© The Hope Anthology 2026'
   }
 

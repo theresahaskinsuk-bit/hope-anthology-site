@@ -29,7 +29,6 @@ window.HA_INFO_TEMPLATE_CONTENT = {
     instagramUrl: 'https://www.instagram.com',
     privacyUrl: '/privacy',
     accessibilityUrl: '/accessibility',
-    whySellUrl: '/why-we-sell-this-way',
     infoTemplateUrl: '/info-page-template'
   },
 

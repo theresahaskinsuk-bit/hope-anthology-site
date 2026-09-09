@@ -224,10 +224,6 @@ window.HA_STORY_CONTENT = {
           {
             "label": "Accessibility",
             "href": "/accessibility"
-          },
-          {
-            "label": "Why I sell this way",
-            "href": "/why-we-sell-this-way"
           }
         ]
       }

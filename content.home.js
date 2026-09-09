@@ -84,6 +84,5 @@ window.HA_HOME_CONTENT = {
     instagramUrl: 'https://www.instagram.com',
     privacyUrl: '/privacy',
     accessibilityUrl: '/accessibility',
-    sellingUrl: '/why-we-sell-this-way'
   }
 };

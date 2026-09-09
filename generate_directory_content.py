@@ -887,7 +887,7 @@ TO_KEEP_SHARED_CHROME = {
         {"label": "Collective", "url": "/collective"},
     ],
     "collective": {"heading": "Something worth being part of.", "body": "Join the Collective for new print notes, quiet launches, and gentle studio updates.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"},
-    "footer": {"instagramUrl": "https://www.instagram.com/thehopeanthology", "privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "sellingUrl": "/why-we-sell-this-way", "copyright": "© The Hope Anthology 2026"},
+    "footer": {"instagramUrl": "https://www.instagram.com/thehopeanthology", "privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"},
 }
 
 
