@@ -2,13 +2,18 @@ window.HA_COLLABORATE_CONTENT = {
   images: {
     logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg',
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng',
-    // PLACEHOLDER URL CONSTANTS — replace each empty string with Theresa's Squarespace CDN URL.
-    // All supplied files are 2x assets: portrait 1800 x 2700px, landscape 1800 x 900px, square 1800 x 1800px.
-    argument01Portrait: '',
-    argument01Landscape: '',
-    argument03Square: '',
-    argument04Portrait: '',
-    argument04Landscape: ''
+    argument01Portrait: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b4cf3d2-4c04-45ef-8306-cd64f3decf8d/01-eventual-working-look-goals.jpg?content-type=image%2Fjpeg',
+    argument01Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e9609f90-97dc-495c-a23f-21718a25bf07/01-eventual-working-look-goals-ls.jpg?content-type=image%2Fjpeg',
+    argument03Square: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6d3ac1cf-1d64-44aa-b089-e18846f07aec/03-industrial-revolution-old-man-and-text.jpg?content-type=image%2Fjpeg',
+    argument04Portrait: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bf6356e3-0729-4d07-a80e-5ab2bfbcb7a1/04-vincent-loop-light-and-camera.jpg?content-type=image%2Fjpeg',
+    argument04Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21c1dbb9-b9e3-4718-8cf4-dcc7140c0d82/04-vincent-loop-light-and-camera-land-ls.jpg?content-type=image%2Fjpeg'
+  },
+  imageAlt: {
+    argument01Portrait: 'Vintage paper collage of a woman with dark hair and glasses seated behind a laptop, with handwritten "Eventual working look goals" text and arrow.',
+    argument01Landscape: 'Vintage collage-style image of a woman with dark hair and glasses working on a laptop, with handwritten text reading "Eventual working look goals" and an arrow.',
+    argument03Square: 'William Morris. Victorian-style black and white portrait of a bearded man with handwritten text reading "A bit of a tool, but definitely onto something."',
+    argument04Portrait: 'Vintage-style collage showing a painted red-haired artist framed by a large ring light with a smartphone mounted in front, on a dark blue textured background.',
+    argument04Landscape: 'Collage of a painted red-haired artist seated behind a modern ring light and smartphone, against a dark blue textured painted background.'
   },
   navigation: [
     { label: 'To Keep', url: '/to-keep' },
