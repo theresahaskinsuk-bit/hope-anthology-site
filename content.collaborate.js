@@ -23,6 +23,7 @@ window.HA_COLLABORATE_CONTENT = {
     intro: 'Your work, in a collection people are pointed towards — with no commission, no exclusivity, and nothing for you to build. If you make things people keep, or things people make, this is how it works.'
   },
   topHalf: {
+    eyebrow: 'FOR ARTISTS',
     argument01: {
       number: '01',
       heading: "I think we've made this all a bit bloody complicated.",
@@ -106,7 +107,7 @@ window.HA_COLLABORATE_CONTENT = {
       panel: 'You already have almost everything I need: images, a little about you and your links. You don\'t need to learn another system or create another catalogue.',
       panelHeading: 'I build the profile with you.'
     },
-    seam: 'The detail, if you want it'
+    seam: 'So, how does it work for you?'
   },
   steps: {
     eyebrow: 'HOW IT WORKS',
