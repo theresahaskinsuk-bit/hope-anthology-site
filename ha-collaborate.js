@@ -91,6 +91,12 @@
         (conversation.note ? '<p class="ha-col-enquiry-note">'+esc(conversation.note)+'</p>' : '')+
       '</div>';
   }
+  function conversationMailto(conversation){
+    var email = conversation.emailAddress || 'theresa@thehopeanthology.art';
+    var subject = encodeURIComponent(conversation.emailSubject || 'Collaboration enquiry');
+    var body = encodeURIComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
+    return 'mailto:' + email + '?subject=' + subject + '&body=' + body;
+  }
   function paragraphsHtml(paragraphs,className){
     return (paragraphs||[]).map(function(paragraph){ return '<p'+(className ? ' class="'+className+'"' : '')+'>'+safeHtml(paragraph)+'</p>'; }).join('');
   }
@@ -106,9 +112,58 @@
   function commissionSection(commission){
     return '<section class="ha-col-current" aria-label="Why there is no commission"><div class="ha-col-current-grid"><div class="ha-col-conversation-copy"><p class="ha-col-eyebrow">'+esc(commission.eyebrow)+'</p><p>'+safeHtml(commission.quoteHtml)+'</p><p><small><em>'+esc(commission.aside)+'</em></small></p></div><div>'+paragraphsHtml(commission.paragraphs,'collab-card-body-text')+'</div></div></section>';
   }
+  function pictureMedia(content,portraitKey,landscapeKey,alt,extraClass){
+    var portrait = image(content,portraitKey);
+    var landscape = image(content,landscapeKey);
+    var classes = 'ha-col-argument-media '+(extraClass || '');
+    if(!portrait && !landscape) return '<div class="'+classes+' ha-col-argument-media--placeholder" aria-hidden="true"></div>';
+    if(portrait && landscape) return '<picture class="'+classes+'"><source media="(max-width: 900px)" srcset="'+landscape+'"><img src="'+portrait+'" alt="'+esc(alt)+'"></picture>';
+    return '<div class="'+classes+'"><img src="'+(portrait || landscape)+'" alt="'+esc(alt)+'"></div>';
+  }
+  function squareMedia(content,key,alt){
+    var src = image(content,key);
+    if(!src) return '<div class="ha-col-argument-media ha-col-argument-media--square ha-col-argument-media--placeholder" aria-hidden="true"></div>';
+    return '<div class="ha-col-argument-media ha-col-argument-media--square"><img src="'+src+'" alt="'+esc(alt)+'"></div>';
+  }
+  function argumentSection(item,modifier,copyHtml,mediaHtml){
+    return '<section class="ha-col-argument '+(modifier || '')+'"><div class="ha-col-argument-inner"><div class="ha-col-argument-copy"><span class="ha-col-lane-num">'+esc(item.number)+'</span><h2>'+esc(item.heading)+'</h2>'+copyHtml+'</div>'+mediaHtml+'</div></section>';
+  }
+  function pullQuote(item){
+    return '<section class="ha-col-pullquote"><div><p class="ha-col-pullquote-quote">'+esc(item.quote)+'</p><p class="ha-col-pullquote-aside">'+safeHtml(item.aside)+'</p></div></section>';
+  }
+  function topHalfSections(content,topHalf,conversation){
+    var argument01 = topHalf.argument01 || {};
+    var argument02 = topHalf.argument02 || {};
+    var argument03 = topHalf.argument03 || {};
+    var purpose = topHalf.purpose || {};
+    var anthology = topHalf.anthology || {};
+    var invitation = topHalf.invitation || {};
+    var firstCopy = paragraphsHtml(argument01.paragraphs,'ha-col-argument-body')+'<p class="ha-col-argument-aside">'+esc(argument01.aside)+'</p>';
+    var secondCopy = '<div class="ha-col-argument-columns">'+(argument02.columns||[]).map(function(column){ return '<div>'+paragraphsHtml(column,'ha-col-argument-body')+'</div>'; }).join('')+'</div>';
+    var thirdCopy = paragraphsHtml(argument03.paragraphs,'ha-col-argument-body');
+    var purposeCopy = paragraphsHtml(purpose.paragraphs,'ha-col-argument-body');
+    var purposeMedia = pictureMedia(content,'argument04Portrait','argument04Landscape','','ha-col-argument-media--portrait');
+    // Section 04 artwork and its final alt text are pending; the deliberate placeholder is rendered until both artwork URL constants are supplied.
+    var purposeSection = argumentSection(purpose,'ha-col-argument--image-right ha-col-white-section',purposeCopy,purposeMedia)+
+      '<div class="ha-col-purpose-question ha-col-white-section"><div><p>'+esc(purpose.questionLabel)+'</p><h3>'+esc(purpose.question)+'</h3></div></div>'+
+      '<div class="ha-col-purpose-grid ha-col-white-section"><p>'+esc(purpose.connection)+'</p><aside class="ha-col-purpose-panel"><h3>'+esc(purpose.panelHeading)+'</h3><p>'+esc(purpose.panelAside)+'</p></aside></div>';
+    var anthologyCards = (anthology.cards||[]).map(function(item){ return '<article class="ha-col-anthology-card"><h3>'+esc(item.heading)+'</h3><p>'+esc(item.aside)+'</p></article>'; }).join('');
+    var anthologySection = '<section class="ha-col-anthology"><div class="ha-col-anthology-inner"><span class="ha-col-lane-num">'+esc(anthology.number)+'</span><h2>'+esc(anthology.heading)+'</h2><p class="ha-col-anthology-intro">'+esc(anthology.intro)+'</p><div class="ha-col-anthology-cards">'+anthologyCards+'</div><div class="ha-col-anthology-rules"><div><h3>'+esc(anthology.rulesLabel)+'</h3><p>'+safeHtml(anthology.rules)+'</p></div><div><p>'+esc(anthology.curator)+'</p><p class="ha-col-anthology-aside">'+esc(anthology.curatorAside)+'</p></div></div></div></section>';
+    var invitationSection = '<section class="ha-col-invitation ha-col-white-section"><div class="ha-col-invitation-inner"><div class="ha-col-invitation-copy"><span class="ha-col-lane-num">'+esc(invitation.number)+'</span><h2>'+esc(invitation.heading)+'</h2><p>'+esc(invitation.opening)+'</p><p class="ha-col-invitation-callout">'+esc(invitation.callout)+'</p>'+paragraphsHtml(invitation.paragraphs,'ha-col-argument-body')+'<p class="ha-col-argument-aside">'+esc(invitation.aside)+'</p></div><aside class="ha-col-invitation-panel"><p>'+esc(invitation.panel)+'</p><h3>'+esc(invitation.panelHeading)+'</h3><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(conversation.emailLabel || 'Email Theresa')+'</a></aside></div></section>';
+    return argumentSection(argument01,'ha-col-argument--image-right ha-col-white-section',firstCopy,pictureMedia(content,'argument01Portrait','argument01Landscape','Eventual working look goals','ha-col-argument-media--portrait'))+
+      pullQuote(topHalf.pullQuote01 || {})+
+      argumentSection(argument02,'ha-col-argument--text-only ha-col-white-section',secondCopy,'')+
+      argumentSection(argument03,'ha-col-argument--image-left',thirdCopy,squareMedia(content,'argument03Square','William Morris. A bit of a tool, but definitely onto something.'))+
+      pullQuote(topHalf.pullQuote02 || {})+
+      purposeSection+
+      anthologySection+
+      invitationSection+
+      '<section class="ha-col-seam" aria-label="Additional detail"><p>'+esc(topHalf.seam)+'</p></section>';
+  }
   function html(){
     var C=window.HA_COLLABORATE_CONTENT || {};
     var page=C.page || {};
+    var topHalf=C.topHalf || {};
     var steps=C.steps || {};
     var commission=C.commission || {};
     var honestyCards=C.honestyCards || [];
@@ -122,6 +177,7 @@
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">For Artists — The Hope Anthology</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-col-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-col-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
         '<main class="ha-col-main">'+
           '<header class="ha-col-header"><p class="ha-col-eyebrow">'+esc(page.eyebrow)+'</p><h2>'+safeHtml(page.headline)+'</h2><p>'+esc(page.intro)+'</p></header>'+ 
+          topHalfSections(C,topHalf,conversation)+
           '<section class="ha-col-white-section" aria-label="How it works heading">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'</section>'+
           '<section class="ha-col-lanes" aria-label="How it works steps">'+(steps.cards||[]).map(lane).join('')+'</section>'+
           commissionSection(commission)+

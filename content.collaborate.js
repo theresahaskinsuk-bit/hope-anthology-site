@@ -1,7 +1,14 @@
 window.HA_COLLABORATE_CONTENT = {
   images: {
     logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg',
-    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng'
+    star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng',
+    // PLACEHOLDER URL CONSTANTS — replace each empty string with Theresa's Squarespace CDN URL.
+    // All supplied files are 2x assets: portrait 1800 x 2700px, landscape 1800 x 900px, square 1800 x 1800px.
+    argument01Portrait: '',
+    argument01Landscape: '',
+    argument03Square: '',
+    argument04Portrait: '',
+    argument04Landscape: ''
   },
   navigation: [
     { label: 'To Keep', url: '/to-keep' },
@@ -14,6 +21,92 @@ window.HA_COLLABORATE_CONTENT = {
     eyebrow: 'FOR ARTISTS',
     headline: "The <em style=\"color:var(--ha-twine)\">first</em> fifty artists. You'd be one of them.",
     intro: 'Your work, in a collection people are pointed towards — with no commission, no exclusivity, and nothing for you to build. If you make things people keep, or things people make, this is how it works.'
+  },
+  topHalf: {
+    argument01: {
+      number: '01',
+      heading: "I think we've made this all a bit bloody complicated.",
+      paragraphs: [
+        'You create beautiful art. Then apparently you also need to photograph it like David Bailey, film it like Wes Anderson, list it, keyword it, optimise it, feed various online marketplaces/social media platforms and persuade an algorithm you obviously can\'t speak to that it deserves to be seen…',
+        'Meanwhile, the person who might absolutely love it has to know exactly what to search for. Pet food? Easy. Next-day size 5 school shoes? Done.'
+      ],
+      aside: "Art doesn't really work like that…."
+    },
+    pullQuote01: {
+      quote: "Artists aren't product listings. People aren't search terms.",
+      aside: "We've become extraordinarily good at search.<br>I'm not sure we've become better at discovery."
+    },
+    argument02: {
+      number: '02',
+      heading: 'I know quite a lot about how we got here.',
+      columns: [
+        [
+          'I\'ve spent most of my working life between creativity and technology. I need to feed my love of Gustav Klimt as much as I need to feed my geek. A degree in IT &amp; Art. Master\'s in Librarianship. Then the biggest chunk of my career delivering major digital projects for Dyson, B&amp;Q, Vodafone and Sky (to name a few…). Do you know how many specialists it took to launch something like an iPhone twenty years ago? Hundreds!!!'
+        ],
+        [
+          'Now we routinely expect one artist to do nearly all of it. Digital has made extraordinary things possible from a kitchen table, I love that! BUT <em>Somewhere along the way, possibility became expectation.</em>',
+          'I bloody adore tech, let\'s get that clear. <strong>I just want it to stay a tool for the humans on either side of it — not keep being the overlord.</strong>'
+        ]
+      ]
+    },
+    argument03: {
+      number: '03',
+      heading: "Let's not lose a foot.",
+      paragraphs: [
+        "The Industrial Revolution transformed making. That's right, fellow history nerds. People built systems around it that rewarded scale, speed, repetition and profit. And they still do.",
+        'Back then: industrial production. Could ours be digital discovery? Different century. Lower chance of losing a foot under a loom. Same feeling sometimes: <strong>Keep running. Keep feeding it. Keep up.</strong>'
+      ]
+    },
+    pullQuote02: {
+      quote: 'Your art matters before it performs.',
+      aside: 'The Anthology shows the work. It does not measure it.'
+    },
+    purpose: {
+      number: '04',
+      heading: 'So why The Hope Anthology?',
+      paragraphs: [
+        'It was never built around the question:<br><em>"How do we get independent artists more exposure?"</em>',
+        'Because there is another human on the other side of all this. The humans that want and need your art. Sometimes life splits you open. Sometimes you\'re rebuilding it. Sometimes you\'ve just had a bloody awful month. And sometimes absolutely nothing is wrong.',
+        'Art can mark something enormous, say something we couldn\'t quite say, give us something beautiful to have around us — or simply stop us because we love it. Sometimes the joy is in making something ourselves.'
+      ],
+      questionLabel: 'So the question became:',
+      question: 'How do I help somebody find the art they never knew to look for?',
+      connection: 'The charities, organisations, communities and support networks already helping people through life. I want to use my years in digital and communication — alongside my own experience of some of those worlds — to build real human connections between them and the artists on Hope.',
+      panelHeading: 'By taking Hope to the places those people already are.',
+      panelAside: 'That bit is my job, not yours.'
+    },
+    anthology: {
+      number: '05',
+      heading: 'So what actually is it? The Hope Anthology.',
+      intro: 'A human-curated anthology of independent artists, created by a digital geek who is also an artist and a librarian. Get your head around that one.',
+      cards: [
+        {
+          heading: 'To Keep',
+          aside: 'Finished work: art and objects people want to have.'
+        },
+        {
+          heading: 'To Make',
+          aside: 'Patterns and guides: for anyone to get creative with.'
+        }
+      ],
+      rulesLabel: 'And two simple rules:',
+      rules: "<strong>I don't ask visitors for their details.<br>I don't take their money.</strong>",
+      curator: 'I curate the work. Every artist and every piece reaches Hope through a human connection. If somebody finds something they want, Hope gets out of the way.',
+      curatorAside: 'Your shop. Your customer. Your relationship.'
+    },
+    invitation: {
+      number: '06',
+      heading: 'Anyway. Now I need your help.',
+      opening: "I've been building, testing and pulling Hope apart for well over a year.",
+      callout: 'Now I\'m looking for the first fifty founding artists.',
+      paragraphs: [
+        'I\'m not promising you sales or "exposure" right now, so I\'m not asking you for any money. That would feel wrong. I want to get Hope out into the world in as many useful ways as I can, try different routes, learn what seems to work and keep building from there.'
+      ],
+      aside: 'No grand guarantees. No commission. No exclusivity.',
+      panel: 'You already have almost everything I need: images, a little about you and your links. You don\'t need to learn another system or create another catalogue.',
+      panelHeading: 'I build the profile with you.'
+    },
+    seam: 'The detail, if you want it'
   },
   steps: {
     eyebrow: 'HOW IT WORKS',
