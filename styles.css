@@ -2754,3 +2754,7 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
   #ha-collaborate-v1 .ha-col-purpose-question h3{font-size:38px;}
   #ha-collaborate-v1 .ha-col-seam p{font-size:22px;letter-spacing:-.025em;white-space:nowrap;}
 }
+body.ha-to-keep-v1-active > #siteWrapper > main#page,
+body.ha-artist-page-v1-active > #siteWrapper > main#page{
+  display:none!important;
+}
