@@ -201,8 +201,8 @@ window.HA_COLLABORATE_CONTENT = {
     prompt: "Tell me what you make, where you sell it, and whether you'd want to be in To Keep, To Make, or both. No form to fill in — just an email.",
     emailLabel: 'Email Theresa',
     emailAddress: 'theresa@thehopeanthology.art',
-    emailSubject: 'Collaboration enquiry',
-    emailBody: 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\nA little about what I make or do:\n\n',
+    emailSubject: "I'd like to get involved with The Hope Anthology",
+    emailBody: "Hi Theresa,\n\nMy name is...\n\nI make...\n\nYou can see my work here...\n\nAnything else you'd like me to know...",
     note: 'Founding membership is free for the first year, on a simple one-year agreement. It ends there unless you decide otherwise.'
   },
   collective: {

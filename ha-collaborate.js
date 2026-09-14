@@ -77,10 +77,13 @@
         '<p class="ha-col-note">'+esc(collective.note || '')+'</p>'+ 
       '</form>';
   }
+  function encodeMailtoComponent(value){
+    return encodeURIComponent(value).replace(/'/g,'%27');
+  }
   function conversationCta(conversation){
     var email = conversation.emailAddress || 'theresa@thehopeanthology.art';
-    var subject = encodeURIComponent(conversation.emailSubject || 'Collaboration enquiry');
-    var body = encodeURIComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
+    var subject = encodeMailtoComponent(conversation.emailSubject || 'Collaboration enquiry');
+    var body = encodeMailtoComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
     var href = 'mailto:' + email + '?subject=' + subject + '&body=' + body;
     return ''+
       '<div id="collaborate-enquiry" class="ha-col-enquiry-panel">'+
@@ -93,8 +96,8 @@
   }
   function conversationMailto(conversation){
     var email = conversation.emailAddress || 'theresa@thehopeanthology.art';
-    var subject = encodeURIComponent(conversation.emailSubject || 'Collaboration enquiry');
-    var body = encodeURIComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
+    var subject = encodeMailtoComponent(conversation.emailSubject || 'Collaboration enquiry');
+    var body = encodeMailtoComponent(conversation.emailBody || 'Hello The Hope Anthology,\n\nI would like to talk about a possible collaboration.\n\n');
     return 'mailto:' + email + '?subject=' + subject + '&body=' + body;
   }
   function paragraphsHtml(paragraphs,className){
@@ -183,7 +186,7 @@
           '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.statement)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
-        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="'+esc(footer.privacyUrl)+'">Privacy policy</a><a href="'+esc(footer.accessibilityUrl)+'">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
+        '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt="The Hope Anthology botanical star"><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="/contact">Contact</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a><a href="/privacy">Privacy policy</a><a href="/accessibility">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright)+'</span></div></footer>'+
       '</div>';
   }
   function isCollaborate(){ var p=location.pathname.replace(/\/$/,''); return p==='/for-artists'; }

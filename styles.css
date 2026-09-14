@@ -2758,3 +2758,134 @@ body.ha-to-keep-v1-active > #siteWrapper > main#page,
 body.ha-artist-page-v1-active > #siteWrapper > main#page{
   display:none!important;
 }
+
+
+/* ============================================================
+   ha-contact-v1 — Contact page
+   ============================================================ */
+#ha-contact-v1{
+  background:var(--ha-cream);
+}
+#ha-contact-v1 .ha-contact-page{
+  background:var(--ha-cream);
+  padding:72px 32px 96px;
+}
+#ha-contact-v1 .ha-contact-article{
+  width:100%;
+  max-width:760px;
+  margin:0 auto;
+}
+#ha-contact-v1 .ha-contact-header{
+  margin:0 0 48px;
+  padding-bottom:48px;
+  border-bottom:.5px solid rgba(54,68,73,.14);
+}
+#ha-contact-v1 .ha-contact-header h1{
+  font-family:'Lora',serif;
+  font-size:44px;
+  line-height:1.1;
+  color:var(--ha-teal);
+  font-weight:400;
+  margin:0 0 18px;
+}
+#ha-contact-v1 .ha-contact-intro{
+  font-family:'DM Sans',sans-serif;
+  font-size:16px;
+  line-height:1.8;
+  color:var(--ha-dark);
+  font-weight:300;
+  margin:0;
+}
+#ha-contact-v1 .ha-contact-body{
+  font-family:'DM Sans',sans-serif;
+  font-size:15px;
+  line-height:1.9;
+  color:var(--ha-dark);
+  font-weight:300;
+}
+#ha-contact-v1 .ha-contact-section{
+  margin:0 0 42px;
+}
+#ha-contact-v1 .ha-contact-section:last-child{
+  margin-bottom:0;
+}
+#ha-contact-v1 .ha-contact-section h2{
+  font-family:'Lora',serif;
+  font-size:24px;
+  line-height:1.22;
+  color:var(--ha-teal);
+  font-weight:400;
+  margin:0 0 14px;
+}
+#ha-contact-v1 .ha-contact-section p{
+  margin:0 0 18px;
+}
+#ha-contact-v1 .ha-contact-section p:last-child{
+  margin-bottom:0;
+}
+#ha-contact-v1 .ha-contact-email,
+#ha-contact-v1 .ha-contact-link{
+  color:var(--ha-teal)!important;
+  font-weight:500;
+  text-decoration:underline!important;
+  text-decoration-thickness:1px;
+  text-underline-offset:5px;
+}
+#ha-contact-v1 .ha-contact-email:hover,
+#ha-contact-v1 .ha-contact-email:focus-visible,
+#ha-contact-v1 .ha-contact-link:hover,
+#ha-contact-v1 .ha-contact-link:focus-visible{
+  color:var(--ha-twine)!important;
+}
+#ha-contact-v1 .ha-contact-cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--ha-teal);
+  color:var(--ha-cream)!important;
+  font-family:'DM Sans',sans-serif;
+  font-size:14px;
+  font-weight:500;
+  line-height:1.35;
+  text-decoration:none!important;
+  border:1px solid var(--ha-teal);
+  border-radius:4px;
+  padding:12px 16px;
+  transition:background-color .18s ease,color .18s ease,border-color .18s ease;
+}
+#ha-contact-v1 .ha-contact-cta:hover,
+#ha-contact-v1 .ha-contact-cta:focus-visible{
+  background:var(--ha-dark);
+  border-color:var(--ha-dark);
+  color:var(--ha-cream)!important;
+}
+@media(max-width:900px){
+  #ha-contact-v1 .ha-contact-page{
+    padding:66px 24px 76px;
+  }
+  #ha-contact-v1 .ha-contact-header{
+    margin-bottom:40px;
+    padding-bottom:40px;
+  }
+  #ha-contact-v1 .ha-contact-header h1{
+    font-size:38px;
+  }
+}
+@media(max-width:560px){
+  #ha-contact-v1 .ha-contact-page{
+    padding:56px 22px 66px;
+  }
+  #ha-contact-v1 .ha-contact-header h1{
+    font-size:34px;
+  }
+  #ha-contact-v1 .ha-contact-section h2{
+    font-size:22px;
+  }
+  #ha-contact-v1 .ha-contact-body{
+    font-size:15px;
+    line-height:1.85;
+  }
+  #ha-contact-v1 .ha-contact-cta{
+    width:100%;
+  }
+}

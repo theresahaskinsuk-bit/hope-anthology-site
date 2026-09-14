@@ -21,27 +21,27 @@
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
 
   function normalPath(){ return location.pathname.replace(/\/$/,'') || '/'; }
-  function shouldRunWhy(){ return normalPath()==='/why-we-sell-this-way'; }
-  if(!shouldRunWhy()) return;
+  function shouldRunContact(){ return normalPath()==='/contact'; }
+  if(!shouldRunContact()) return;
 
   function loadCss(){
-    if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || document.getElementById('ha-why-css')) return;
+    if(document.getElementById('ha-stability-v12-1-css') || document.getElementById('ha-stability-v12-css') || document.getElementById('ha-contact-css')) return;
     var link=document.createElement('link');
-    link.id='ha-why-css';
+    link.id='ha-contact-css';
     link.rel='stylesheet';
     link.href=base+'styles.css?v='+encodeURIComponent(version);
     document.head.appendChild(link);
   }
 
   function loadContent(done){
-    if(window.HA_WHY_CONTENT){ done(); return; }
-    var existing=document.getElementById('ha-why-content');
+    if(window.HA_CONTACT_CONTENT){ done(); return; }
+    var existing=document.getElementById('ha-contact-content');
     if(existing){ existing.addEventListener('load', done); return; }
     var s=document.createElement('script');
-    s.id='ha-why-content';
-    s.src=base+'content.why-we-sell-this-way.js?v='+encodeURIComponent(version);
+    s.id='ha-contact-content';
+    s.src=base+'content.contact.js?v='+encodeURIComponent(version);
     s.onload=done;
-    s.onerror=function(){ console.warn('Hope Anthology Why we sell this way content file could not be loaded.'); done(); };
+    s.onerror=function(){ console.warn('Hope Anthology Contact content file could not be loaded.'); done(); };
     document.head.appendChild(s);
   }
 
@@ -65,30 +65,31 @@
   function paragraphsHtml(paragraphs){
     return (paragraphs||[]).map(function(text){ return '<p>'+esc(text)+'</p>'; }).join('');
   }
-  function sectionsHtml(sections){
-    return (sections||[]).map(function(section){
-      return '<section class="ha-why-section"><h2>'+esc(section.heading || '')+'</h2>'+paragraphsHtml(section.paragraphs)+'</section>';
-    }).join('');
+  function sectionHtml(section){
+    section = section || {};
+    var email = section.email ? '<p><a class="ha-contact-email" href="'+esc(section.email.url)+'">'+esc(section.email.label)+'</a></p>' : '';
+    var cta = section.cta ? '<p><a class="ha-contact-cta" href="'+esc(section.cta.url)+'">'+esc(section.cta.label)+'</a></p>' : '';
+    var link = section.link ? '<p><a class="ha-contact-link" href="'+esc(section.link.url)+'"'+(section.link.target ? ' target="'+esc(section.link.target)+'"' : '')+(section.link.rel ? ' rel="'+esc(section.link.rel)+'"' : '')+(section.link.ariaLabel ? ' aria-label="'+esc(section.link.ariaLabel)+'"' : '')+'>'+esc(section.link.label)+'</a></p>' : '';
+    var privacy = section.privacy ? '<p>'+esc(section.privacy.before)+'<a class="ha-contact-link" href="'+esc(section.privacy.url)+'">'+esc(section.privacy.label)+'</a>'+esc(section.privacy.after)+'</p>' : '';
+    return '<section class="ha-contact-section"><h2>'+esc(section.heading || '')+'</h2>'+paragraphsHtml(section.paragraphs)+email+cta+link+privacy+'</section>';
   }
-  function contactHtml(contact){
-    contact = contact || {};
-    var link = contact.emailUrl ? '<p><a class="ha-why-contact-link" href="'+esc(contact.emailUrl)+'">'+esc(contact.emailLabel || 'Get in touch')+'</a></p>' : '';
-    return '<aside class="ha-why-contact" aria-label="Contact The Hope Anthology"><h2>'+esc(contact.heading || 'Need to ask something first?')+'</h2>'+paragraphsHtml(contact.paragraphs)+link+'</aside>';
+  function sectionsHtml(sections){
+    return (sections||[]).map(sectionHtml).join('');
   }
   function html(){
-    var C=window.HA_WHY_CONTENT || {};
+    var C=window.HA_CONTACT_CONTENT || {};
     var page=C.page || {};
     var footer=C.footer || {};
     return ''+
-      '<div id="ha-why-v1">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><span class="ha-v3-sr-only">The Hope Anthology</span></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-why-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-why-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
-        '<main class="ha-why-page" aria-labelledby="ha-why-title"><article class="ha-why-article"><header class="ha-why-header"><p class="ha-why-eyebrow">'+esc(page.eyebrow || 'How orders work')+'</p><h1 id="ha-why-title">'+esc(page.title || 'Why we sell this way')+'</h1><p class="ha-why-date">'+esc(page.lastUpdated || 'Last updated: June 2026')+'</p></header><div class="ha-why-body">'+sectionsHtml(C.sections)+contactHtml(C.contact)+'</div></article></main>'+ 
+      '<div id="ha-contact-v1">'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><span class="ha-v3-sr-only">The Hope Anthology</span></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-contact-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-contact-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+ 
+        '<main class="ha-contact-page" aria-labelledby="ha-contact-title"><article class="ha-contact-article"><header class="ha-contact-header"><h1 id="ha-contact-title">'+esc(page.title || 'How to get in touch')+'</h1><p class="ha-contact-intro">'+esc(page.intro || '')+'</p></header><div class="ha-contact-body">'+sectionsHtml(C.sections)+'</div></article></main>'+ 
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="'+image(C,'star')+'" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>'+navLinks(C.navigation)+'<a href="/for-organisations">For Organisations</a>'+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div>'+footerLinks()+'</div></div><div class="ha-v3-footer-bottom"><span>'+esc(footer.copyright || '© The Hope Anthology 2026')+'</span></div></footer>'+
       '</div>';
   }
   function bindMobileNav(root){
     var toggle = root.querySelector('.ha-v3-menu-toggle');
-    var menu = root.querySelector('#ha-why-mobile-menu');
+    var menu = root.querySelector('#ha-contact-mobile-menu');
     if(!toggle || !menu || toggle.getAttribute('data-bound') === 'true') return;
     toggle.setAttribute('data-bound','true');
     toggle.addEventListener('click',function(){
@@ -106,18 +107,18 @@
     });
   }
   function suppressSquarespaceFallback(root){
-    document.body.classList.add('ha-why-mounted');
+    document.body.classList.add('ha-contact-mounted');
     var keep = root;
     Array.prototype.forEach.call(document.body.children,function(child){
       if(child === keep || child.contains(keep)) return;
       if(child.tagName === 'SCRIPT' || child.tagName === 'STYLE' || child.tagName === 'LINK' || child.tagName === 'NOSCRIPT') return;
-      child.setAttribute('data-ha-why-hidden','true');
+      child.setAttribute('data-ha-contact-hidden','true');
       child.style.display='none';
     });
   }
   function mount(){
-    if(!shouldRunWhy()) return;
-    var existing=document.getElementById('ha-why-v1');
+    if(!shouldRunContact()) return;
+    var existing=document.getElementById('ha-contact-v1');
     if(existing){ suppressSquarespaceFallback(existing); return; }
     if(!document.body){ setTimeout(mount,150); return; }
     var wrap=document.createElement('div');
