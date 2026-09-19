@@ -57,7 +57,7 @@ window.HA_HOME_CONTENT = {
   artistRoute: {
     eyebrow: 'FOR ARTISTS',
     heading: "I'm looking for founding artists who believe in what Hope is trying to do",
-    body: 'No commission, no exclusivity, and nothing for you to build. Free for the founding year.',
+    body: 'No commission, no exclusivity, and nothing for you to build.',
     linkLabel: 'See how it works for artists →',
     linkUrl: '/for-artists'
   },
