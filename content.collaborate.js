@@ -7,10 +7,9 @@ window.HA_COLLABORATE_CONTENT = {
     argument03Square: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6d3ac1cf-1d64-44aa-b089-e18846f07aec/03-industrial-revolution-old-man-and-text.jpg?content-type=image%2Fjpeg',
     argument04Portrait: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bf6356e3-0729-4d07-a80e-5ab2bfbcb7a1/04-vincent-loop-light-and-camera.jpg?content-type=image%2Fjpeg',
     argument04Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21c1dbb9-b9e3-4718-8cf4-dcc7140c0d82/04-vincent-loop-light-and-camera-land-ls.jpg?content-type=image%2Fjpeg',
-    // Pending artwork: adding real artwork requires both this URL and its matching imageAlt value below.
-    heroSquare: '',
-    whatIsSquare: '',
-    argument04Square: ''
+    heroSquare: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5864cea0-897d-40b5-b339-8a6261b941f4/hope_anthology_founding_artists_work_examples.jpg?content-type=image%2Fjpeg',
+    whatIsSquare: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b7095db7-b59f-4bf6-a813-85162794213c/hope_anthology_founding_artists_why.jpg?content-type=image%2Fjpeg',
+    argument04Square: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7004f7d9-b408-4908-a2ae-c2847011efac/theresa_haskins_artist_doodle.jpg?content-type=image%2Fjpeg'
   },
   imageAlt: {
     argument01Portrait: 'Vintage paper collage of a woman with dark hair and glasses seated behind a laptop, with handwritten "Eventual working look goals" text and arrow.',
@@ -18,10 +17,9 @@ window.HA_COLLABORATE_CONTENT = {
     argument03Square: 'William Morris. Victorian-style black and white portrait of a bearded man with handwritten text reading "A bit of a tool, but definitely onto something."',
     argument04Portrait: 'Vintage-style collage showing a painted red-haired artist framed by a large ring light with a smartphone mounted in front, on a dark blue textured background.',
     argument04Landscape: 'Collage of a painted red-haired artist seated behind a modern ring light and smartphone, against a dark blue textured painted background.',
-    // Pending final alt text: add descriptive text here when the matching artwork URL is supplied above.
-    heroSquare: '',
-    whatIsSquare: '',
-    argument04Square: ''
+    heroSquare: 'Collage of Hope Anthology artwork including typography prints, stained glass designs, symbolic cards and a handwritten notebook page.',
+    whatIsSquare: 'Handwritten note in a spiral notebook reading "Breathe — a subtle gift that brings calm and clarity," on a paint-covered worktable.',
+    argument04Square: 'Hand-drawn sketch in a lined notebook showing a seated figure beside a large curved shape, annotated "My doodle July 2022."'
   },
   navigation: [
     { label: 'To Keep', url: '/to-keep' },
