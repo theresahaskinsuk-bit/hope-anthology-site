@@ -6,14 +6,22 @@ window.HA_COLLABORATE_CONTENT = {
     argument01Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e9609f90-97dc-495c-a23f-21718a25bf07/01-eventual-working-look-goals-ls.jpg?content-type=image%2Fjpeg',
     argument03Square: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6d3ac1cf-1d64-44aa-b089-e18846f07aec/03-industrial-revolution-old-man-and-text.jpg?content-type=image%2Fjpeg',
     argument04Portrait: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bf6356e3-0729-4d07-a80e-5ab2bfbcb7a1/04-vincent-loop-light-and-camera.jpg?content-type=image%2Fjpeg',
-    argument04Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21c1dbb9-b9e3-4718-8cf4-dcc7140c0d82/04-vincent-loop-light-and-camera-land-ls.jpg?content-type=image%2Fjpeg'
+    argument04Landscape: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/21c1dbb9-b9e3-4718-8cf4-dcc7140c0d82/04-vincent-loop-light-and-camera-land-ls.jpg?content-type=image%2Fjpeg',
+    // Pending artwork: adding real artwork requires both this URL and its matching imageAlt value below.
+    heroSquare: '',
+    whatIsSquare: '',
+    argument04Square: ''
   },
   imageAlt: {
     argument01Portrait: 'Vintage paper collage of a woman with dark hair and glasses seated behind a laptop, with handwritten "Eventual working look goals" text and arrow.',
     argument01Landscape: 'Vintage collage-style image of a woman with dark hair and glasses working on a laptop, with handwritten text reading "Eventual working look goals" and an arrow.',
     argument03Square: 'William Morris. Victorian-style black and white portrait of a bearded man with handwritten text reading "A bit of a tool, but definitely onto something."',
     argument04Portrait: 'Vintage-style collage showing a painted red-haired artist framed by a large ring light with a smartphone mounted in front, on a dark blue textured background.',
-    argument04Landscape: 'Collage of a painted red-haired artist seated behind a modern ring light and smartphone, against a dark blue textured painted background.'
+    argument04Landscape: 'Collage of a painted red-haired artist seated behind a modern ring light and smartphone, against a dark blue textured painted background.',
+    // Pending final alt text: add descriptive text here when the matching artwork URL is supplied above.
+    heroSquare: '',
+    whatIsSquare: '',
+    argument04Square: ''
   },
   navigation: [
     { label: 'To Keep', url: '/to-keep' },
@@ -28,91 +36,135 @@ window.HA_COLLABORATE_CONTENT = {
     intro: 'Your work, in a collection people are pointed towards — with no commission, no exclusivity, and nothing for you to build. If you make things people keep, or things people make, this is how it works.'
   },
   topHalf: {
-    eyebrow: 'FOR ARTISTS',
+    hero: {
+      eyebrow: 'FOR ARTISTS',
+      heading: 'Curated art for all the beautiful, complicated parts of being human.',
+      lede: 'All from independent artists — finished pieces to keep and creative projects to make.',
+      aside: "My mission is to bring artists' work closer to the people who connect with it, while every sale stays directly with the artist.",
+      offerHeading: 'What does that mean for you as an artist?',
+      offerBody: "I'm looking for founding artists who believe in what Hope is trying to do and want to be part of it. Hope takes no commission, and while it's still at this stage with the founding artists, there are no fees.",
+      ctaLabel: 'Tell me about your work →'
+    },
+    pullQuoteOffer: {
+      quote: "Artists aren't product listings. People aren't search terms.",
+      aside: 'Hope shows the work. It does not measure it.'
+    },
+    whatIs: {
+      heading: 'So, what is The Hope Anthology?',
+      paragraphs: [
+        "The Hope Anthology is a human-curated collection of independent artists' work, built around the role art can play through difficult times, times of change, and moments that deserve to be marked.",
+        "At its core, Hope is about bringing an artist's work closer to the person who might connect with it at a particular point in their life — whether they find it themselves, someone else sees it and thinks of them, or they simply love it.",
+        'Hope curates the work, gives it context and helps close the distance between the people on either side.',
+        'It brings together finished pieces to keep, and creative projects for people to make themselves, giving them something else to focus on for a while.'
+      ],
+      aside: "Hope doesn't sell the work: when people find work they want, they go straight to the artist to buy it."
+    },
+    roadmap: {
+      heading: 'Where does Hope go from here?',
+      lede: "Six stages. I'm at the first one.",
+      cards: [
+        {
+          number: '01',
+          heading: 'Build the founding collection',
+          body: 'Bring together the first carefully chosen artists and create a collection that feels genuinely worth exploring.'
+        },
+        {
+          number: '02',
+          heading: 'Learn how people discover through Hope',
+          body: 'See how people explore the work, what helps them find something they connect with, and build better ways into the collection from what we learn.'
+        },
+        {
+          number: '03',
+          heading: 'Take Hope out to the wider public',
+          body: 'Build awareness beyond the artists themselves, using PR, media and public-facing outreach — and seek funding to help Hope reach people.'
+        },
+        {
+          number: '04',
+          heading: 'Test Hope with organisations',
+          body: 'Work with a small number of practitioners and organisations to see whether Hope becomes somewhere they want to genuinely point people towards.'
+        },
+        {
+          number: '05',
+          heading: 'Build a sustainable model around it',
+          body: 'Grow funding, partnerships and other appropriate income around the work without taking commission from artists\' sales.'
+        },
+        {
+          number: '06',
+          heading: 'Grow into a trusted national resource',
+          body: 'Increase Hope\'s reach, reputation and value without turning it into a giant marketplace or losing the human curation at its centre.'
+        }
+      ]
+    },
+    reassurance: {
+      heading: 'You already have everything I need.',
+      paragraphs: [
+        'Nothing about the way you currently sell your work needs to change. You keep selling and showing your work wherever you choose.',
+        'Having people involved who genuinely want to be part of Hope matters more right now.'
+      ],
+      standout: 'Still your shop. Your customer. Your relationships.',
+      ctaLabel: 'Tell me about your work →'
+    },
+    seam: 'The thinking behind all of this',
     argument01: {
       number: '01',
-      heading: "I think we've made this all a bit bloody complicated.",
+      heading: "Getting art seen isn't new. What's expected of artists is.",
       paragraphs: [
-        'You create beautiful art. Then apparently you also need to photograph it like David Bailey, film it like Wes Anderson, list it, keyword it, optimise it, feed various online marketplaces/social media platforms and persuade an algorithm you obviously can\'t speak to that it deserves to be seen…',
+        "You create beautiful art. Then apparently you also need to photograph it like David Bailey, film it like Wes Anderson, list it, keyword it, optimise it, feed various online marketplaces and social media platforms and persuade an algorithm you obviously can't speak to that it deserves to be seen...",
         'Meanwhile, the person who might absolutely love it has to know exactly what to search for. Pet food? Easy. Next-day size 5 school shoes? Done.'
       ],
-      aside: "Art doesn't really work like that…."
+      aside: "Art doesn't really work like that...."
     },
-    pullQuote01: {
-      quote: "Artists aren't product listings. People aren't search terms.",
-      aside: "We've become extraordinarily good at search.<br>I'm not sure we've become better at discovery."
+    pullQuoteSearch: {
+      quote: "We've become extraordinarily good at search.",
+      aside: "I'm not sure we've become better at discovery."
     },
     argument02: {
       number: '02',
-      heading: 'I know quite a lot about how we got here.',
-      columns: [
-        [
-          'I\'ve spent most of my working life between creativity and technology. I need to feed my love of Gustav Klimt as much as I need to feed my geek. A degree in IT &amp; Art. Master\'s in Librarianship. Then the biggest chunk of my career delivering major digital projects for Dyson, B&amp;Q, Vodafone and Sky (to name a few…). Do you know how many specialists it took to launch something like an iPhone twenty years ago? Hundreds!!!'
-        ],
-        [
-          'Now we routinely expect one artist to do nearly all of it. Digital has made extraordinary things possible from a kitchen table, I love that! BUT <em>Somewhere along the way, possibility became expectation.</em>',
-          'I bloody adore tech, let\'s get that clear. <strong>I just want it to stay a tool for the humans on either side of it — not keep being the overlord.</strong>'
-        ]
+      heading: 'I know quite a lot about how we got here',
+      paragraphs: [
+        "I've spent most of my working life between creativity and technology. I need to feed my love of Gustav Klimt as much as I need to feed my geek. A degree in IT &amp; Art. Master's in Librarianship. Then the biggest chunk of my career delivering major digital projects for Dyson, B&amp;Q, Vodafone and Sky (to name a few...).",
+        'Do you know how many digital specialists it took to launch something like an iPhone twenty years ago?',
+        'Now we routinely expect one artist to do nearly all of it. Digital has made extraordinary things possible from a kitchen table, I love that! BUT somewhere along the way, possibility became expectation.',
+        "I bloody adore tech, let's get that clear. I just want it to stay a tool for the humans on either side of it — not keep being the overlord."
       ]
     },
     argument03: {
       number: '03',
-      heading: "Let's not lose a foot.",
+      heading: "Keep the machine. Don't lose the human.",
       paragraphs: [
-        "The Industrial Revolution transformed making. That's right, fellow history nerds. People built systems around it that rewarded scale, speed, repetition and profit. And they still do.",
+        "The Industrial Revolution transformed making. That's right, fellow history nerds. People built systems around it that rewarded scale, speed, repetition and profit. And they still do....",
         'Back then: industrial production. Could ours be digital discovery? Different century. Lower chance of losing a foot under a loom. Same feeling sometimes: <strong>Keep running. Keep feeding it. Keep up.</strong>'
       ]
     },
-    pullQuote02: {
+    pullQuotePerformance: {
       quote: 'Your art matters before it performs.',
       aside: 'The Anthology shows the work. It does not measure it.'
     },
     purpose: {
       number: '04',
-      heading: 'So why The Hope Anthology?',
+      heading: 'It was never only about exposure.',
       paragraphs: [
-        'It was never built around the question:<br><em>"How do we get independent artists more exposure?"</em>',
-        'Because there is another human on the other side of all this. The humans that want and need your art. Sometimes life splits you open. Sometimes you\'re rebuilding it. Sometimes you\'ve just had a bloody awful month. And sometimes absolutely nothing is wrong.',
-        'Art can mark something enormous, say something we couldn\'t quite say, give us something beautiful to have around us — or simply stop us because we love it. Sometimes the joy is in making something ourselves.'
+        'It was never built just around the question: <em>"How do we get independent artists more exposure?"</em>',
+        'Because there is another human on the other side of all this. The humans that want and need your art.',
+        "Sometimes life splits you open. Sometimes you're rebuilding it. Sometimes you've just had a bloody awful month (or two..). And sometimes absolutely nothing is wrong. It's just life, isn't it?",
+        "Art can mark something enormous, say something we couldn't quite say, give us something beautiful to have around us — or simply stop us because we love it. And sometimes, when you're the one trying to be there for somebody else, art can say something that words can't."
       ],
       questionLabel: 'So the question became:',
       question: 'How do I help somebody find the art they never knew to look for?',
-      connection: 'The charities, organisations, communities and support networks already helping people through life. I want to use my years in digital and communication — alongside my own experience of some of those worlds — to build real human connections between them and the artists on Hope.',
-      panelHeading: 'By taking Hope to the places those people already are.',
-      panelAside: 'That bit is my job, not yours.'
+      aside: "I don't think art can do everything on its own. But for some, it will and can matter so deeply."
     },
     anthology: {
       number: '05',
-      heading: 'So what actually is it? The Hope Anthology.',
-      intro: 'A human-curated anthology of independent artists, created by a digital geek who is also an artist and a librarian. Get your head around that one.',
-      cards: [
-        {
-          heading: 'To Keep',
-          aside: 'Finished work: art and objects people want to have.'
-        },
-        {
-          heading: 'To Make',
-          aside: 'Patterns and guides: for anyone to get creative with.'
-        }
-      ],
+      heading: 'What actually is it? The Hope Anthology',
+      lede: "Technically, it's a digital platform. Really, it's a human-curated anthology of independent artists and makers — built by an artist and programmer with decades of experience in digital and a postgrad in librarianship, which probably explains my obsession with how people find things....",
+      aside: 'But NOT a marketplace. NOT a directory.',
       rulesLabel: 'And two simple rules:',
-      rules: "<strong>I don't ask visitors for their details.<br>I don't take their money.</strong>",
-      curator: 'I curate the work. Every artist and every piece reaches Hope through a human connection. If somebody finds something they want, Hope gets out of the way.',
-      curatorAside: 'Your shop. Your customer. Your relationship.'
-    },
-    invitation: {
-      number: '06',
-      heading: 'Anyway. Now I need your help.',
-      opening: "I've been building, testing and pulling Hope apart for well over a year.",
-      callout: 'Now I\'m looking for the first fifty founding artists.',
+      rules: "<strong>I don't ask visitors for their details. I don't take their money.</strong>",
       paragraphs: [
-        'I\'m not promising you sales or "exposure" right now, so I\'m not asking you for any money. That would feel wrong. I want to get Hope out into the world in as many useful ways as I can, try different routes, learn what seems to work and keep building from there.'
+        'I curate the work. Every artist and every piece reaches Hope through a human connection. If somebody finds something they want, Hope gets out of the way.'
       ],
-      aside: 'No grand guarantees. No commission. No exclusivity.',
-      panel: 'You already have almost everything I need: images, a little about you and your links. You don\'t need to learn another system or create another catalogue.',
-      panelHeading: 'I build the profile with you.'
-    },
-    seam: 'So, how does it work for you?'
+      standout: 'Your shop. Your customer. Your relationship.'
+    }
   },
   steps: {
     eyebrow: 'HOW IT WORKS',

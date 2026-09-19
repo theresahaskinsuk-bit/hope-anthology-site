@@ -135,33 +135,46 @@
     return '<section class="ha-col-pullquote"><div><p class="ha-col-pullquote-quote">'+esc(item.quote)+'</p><p class="ha-col-pullquote-aside">'+safeHtml(item.aside)+'</p></div></section>';
   }
   function topHalfSections(content,topHalf,conversation){
+    var hero = topHalf.hero || {};
+    var whatIs = topHalf.whatIs || {};
+    var roadmap = topHalf.roadmap || {};
+    var reassurance = topHalf.reassurance || {};
     var argument01 = topHalf.argument01 || {};
     var argument02 = topHalf.argument02 || {};
     var argument03 = topHalf.argument03 || {};
     var purpose = topHalf.purpose || {};
     var anthology = topHalf.anthology || {};
-    var invitation = topHalf.invitation || {};
     var imageAlt = content.imageAlt || {};
+    var heroIntro = '<div class="ha-col-argument-copy"><p class="ha-col-eyebrow">'+esc(hero.eyebrow)+'</p><h2>'+esc(hero.heading)+'</h2><p class="ha-col-argument-body">'+esc(hero.lede)+'</p><p class="ha-col-argument-aside">'+esc(hero.aside)+'</p></div>';
+    var heroOffer = '<div class="ha-col-argument-copy"><h2>'+esc(hero.offerHeading)+'</h2><p class="ha-col-argument-body">'+esc(hero.offerBody)+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(hero.ctaLabel)+'</a></div>';
+    // Pending artwork and final descriptive alt text: set heroSquare and imageAlt.heroSquare together.
+    var heroSection = '<section class="ha-col-argument ha-col-argument--hero"><div class="ha-col-tier-hero-intro">'+heroIntro+'</div><div class="ha-col-argument-inner ha-col-tier-hero-offer">'+heroOffer+squareMedia(content,'heroSquare',imageAlt.heroSquare || '')+'</div></section>';
+    var whatIsCopy = paragraphsHtml(whatIs.paragraphs,'ha-col-argument-body');
+    // Pending artwork and final descriptive alt text: set whatIsSquare and imageAlt.whatIsSquare together.
+    var whatIsSection = '<section class="ha-col-argument"><div class="ha-col-argument-inner"><div class="ha-col-argument-copy"><h2>'+esc(whatIs.heading)+'</h2>'+whatIsCopy+'</div>'+squareMedia(content,'whatIsSquare',imageAlt.whatIsSquare || '')+'</div><div class="ha-col-tier-note"><p class="ha-col-argument-aside">'+esc(whatIs.aside)+'</p></div></section>';
+    var roadmapCards = (roadmap.cards||[]).map(function(item){ return '<article class="ha-col-anthology-card"><span class="ha-col-roadmap-number">'+esc(item.number)+'</span><h3>'+esc(item.heading)+'</h3><p>'+esc(item.body)+'</p></article>'; }).join('');
+    var roadmapSection = '<section class="ha-col-white-section"><div class="ha-col-section-head"><h2>'+esc(roadmap.heading)+'</h2><p>'+esc(roadmap.lede)+'</p></div><div class="ha-col-anthology-cards ha-col-roadmap">'+roadmapCards+'</div></section>';
+    var reassuranceSection = '<section class="ha-col-argument ha-col-argument--hero ha-col-argument--text-only"><div class="ha-col-argument-inner"><div class="ha-col-argument-copy"><h2>'+esc(reassurance.heading)+'</h2>'+paragraphsHtml(reassurance.paragraphs,'ha-col-argument-body')+'<p class="ha-col-invitation-callout">'+esc(reassurance.standout)+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(reassurance.ctaLabel)+'</a></div></div></section>';
     var firstCopy = paragraphsHtml(argument01.paragraphs,'ha-col-argument-body')+'<p class="ha-col-argument-aside">'+esc(argument01.aside)+'</p>';
-    var secondCopy = '<div class="ha-col-argument-columns">'+(argument02.columns||[]).map(function(column){ return '<div>'+paragraphsHtml(column,'ha-col-argument-body')+'</div>'; }).join('')+'</div>';
+    var secondCopy = paragraphsHtml(argument02.paragraphs,'ha-col-argument-body');
     var thirdCopy = paragraphsHtml(argument03.paragraphs,'ha-col-argument-body');
     var purposeCopy = paragraphsHtml(purpose.paragraphs,'ha-col-argument-body');
-    var purposeMedia = pictureMedia(content,'argument04Portrait','argument04Landscape',imageAlt.argument04Portrait || '',imageAlt.argument04Landscape || '','ha-col-argument-media--portrait');
-    var purposeSection = argumentSection(purpose,'ha-col-argument--image-right ha-col-white-section',purposeCopy,purposeMedia)+
-      '<div class="ha-col-purpose-question ha-col-white-section"><div><p>'+esc(purpose.questionLabel)+'</p><h3>'+esc(purpose.question)+'</h3></div></div>'+
-      '<div class="ha-col-purpose-grid ha-col-white-section"><p>'+esc(purpose.connection)+'</p><aside class="ha-col-purpose-panel"><h3>'+esc(purpose.panelHeading)+'</h3><p>'+esc(purpose.panelAside)+'</p></aside></div>';
-    var anthologyCards = (anthology.cards||[]).map(function(item){ return '<article class="ha-col-anthology-card"><h3>'+esc(item.heading)+'</h3><p>'+esc(item.aside)+'</p></article>'; }).join('');
-    var anthologySection = '<section class="ha-col-anthology"><div class="ha-col-anthology-inner"><span class="ha-col-lane-num">'+esc(anthology.number)+'</span><h2>'+esc(anthology.heading)+'</h2><p class="ha-col-anthology-intro">'+esc(anthology.intro)+'</p><div class="ha-col-anthology-cards">'+anthologyCards+'</div><div class="ha-col-anthology-rules"><div><h3>'+esc(anthology.rulesLabel)+'</h3><p>'+safeHtml(anthology.rules)+'</p></div><div><p>'+esc(anthology.curator)+'</p><p class="ha-col-anthology-aside">'+esc(anthology.curatorAside)+'</p></div></div></div></section>';
-    var invitationSection = '<section class="ha-col-invitation ha-col-white-section"><div class="ha-col-invitation-inner"><div class="ha-col-invitation-copy"><span class="ha-col-lane-num">'+esc(invitation.number)+'</span><h2>'+esc(invitation.heading)+'</h2><p>'+esc(invitation.opening)+'</p><p class="ha-col-invitation-callout">'+esc(invitation.callout)+'</p>'+paragraphsHtml(invitation.paragraphs,'ha-col-argument-body')+'<p class="ha-col-argument-aside">'+esc(invitation.aside)+'</p></div><aside class="ha-col-invitation-panel"><p>'+esc(invitation.panel)+'</p><h3>'+esc(invitation.panelHeading)+'</h3><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(conversation.emailLabel || 'Email Theresa')+'</a></aside></div></section>';
-    return argumentSection(argument01,'ha-col-argument--hero',firstCopy,pictureMedia(content,'argument01Portrait','argument01Landscape',imageAlt.argument01Portrait || '',imageAlt.argument01Landscape || '','ha-col-argument-media--portrait'),topHalf.eyebrow)+
-      pullQuote(topHalf.pullQuote01 || {})+
-      argumentSection(argument02,'ha-col-argument--text-only ha-col-white-section',secondCopy,'')+
+    // Pending artwork and final descriptive alt text: set argument04Square and imageAlt.argument04Square together.
+    var purposeSection = '<section class="ha-col-argument ha-col-argument--image-right"><div class="ha-col-argument-inner"><div class="ha-col-argument-copy"><span class="ha-col-lane-num">'+esc(purpose.number)+'</span><h2>'+esc(purpose.heading)+'</h2>'+purposeCopy+'</div>'+squareMedia(content,'argument04Square',imageAlt.argument04Square || '')+'</div><div class="ha-col-purpose-question"><div><p>'+esc(purpose.questionLabel)+'</p><h3>'+esc(purpose.question)+'</h3><p class="ha-col-argument-aside">'+esc(purpose.aside)+'</p></div></div></section>';
+    var anthologyCopy = '<p class="ha-col-argument-body">'+safeHtml(anthology.lede)+'</p><p class="ha-col-argument-aside">'+esc(anthology.aside)+'</p><h3>'+esc(anthology.rulesLabel)+'</h3><p class="ha-col-argument-body">'+safeHtml(anthology.rules)+'</p>'+paragraphsHtml(anthology.paragraphs,'ha-col-argument-body')+'<p class="ha-col-invitation-callout">'+esc(anthology.standout)+'</p>';
+    return heroSection+
+      pullQuote(topHalf.pullQuoteOffer || {})+
+      whatIsSection+
+      roadmapSection+
+      reassuranceSection+
+      '<section class="ha-col-seam ha-col-seam--teal" aria-label="Additional detail"><p>'+esc(topHalf.seam)+'</p></section>'+
+      argumentSection(argument01,'ha-col-argument--image-right ha-col-white-section',firstCopy,pictureMedia(content,'argument04Portrait','argument04Landscape',imageAlt.argument04Portrait || '',imageAlt.argument04Landscape || '','ha-col-argument-media--portrait'))+
+      pullQuote(topHalf.pullQuoteSearch || {})+
+      argumentSection(argument02,'ha-col-argument--image-right',secondCopy,pictureMedia(content,'argument01Portrait','argument01Landscape',imageAlt.argument01Portrait || '',imageAlt.argument01Landscape || '','ha-col-argument-media--portrait'))+
       argumentSection(argument03,'ha-col-argument--image-left',thirdCopy,squareMedia(content,'argument03Square',imageAlt.argument03Square || ''))+
-      pullQuote(topHalf.pullQuote02 || {})+
+      pullQuote(topHalf.pullQuotePerformance || {})+
       purposeSection+
-      anthologySection+
-      invitationSection+
-      '<section class="ha-col-seam" aria-label="Additional detail"><p>'+esc(topHalf.seam)+'</p></section>';
+      argumentSection(anthology,'ha-col-argument--text-only ha-col-white-section',anthologyCopy,'');
   }
   function html(){
     var C=window.HA_COLLABORATE_CONTENT || {};
