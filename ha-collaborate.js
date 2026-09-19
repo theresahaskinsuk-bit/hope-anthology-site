@@ -112,9 +112,6 @@
   function card(card, extraClass){
     return '<article class="collab-card'+(extraClass ? ' '+extraClass : '')+'"><div class="collab-card-body"><p class="collab-card-type ha-col-card-label">'+esc(card.eyebrow)+'</p><h3 class="collab-card-title">'+safeHtml(card.headingHtml || esc(card.heading))+'</h3>'+paragraphsHtml(card.paragraphs,'collab-card-body-text')+'</div></article>';
   }
-  function commissionSection(commission){
-    return '<section class="ha-col-current" aria-label="Why there is no commission"><div class="ha-col-current-grid"><div class="ha-col-conversation-copy"><p class="ha-col-eyebrow">'+esc(commission.eyebrow)+'</p><p>'+safeHtml(commission.quoteHtml)+'</p><p><small><em>'+esc(commission.aside)+'</em></small></p></div><div>'+paragraphsHtml(commission.paragraphs,'collab-card-body-text')+'</div></div></section>';
-  }
   function pictureMedia(content,portraitKey,landscapeKey,portraitAlt,landscapeAlt,extraClass){
     var portrait = image(content,portraitKey);
     var landscape = image(content,landscapeKey);
@@ -145,10 +142,9 @@
     var purpose = topHalf.purpose || {};
     var anthology = topHalf.anthology || {};
     var imageAlt = content.imageAlt || {};
-    var heroIntro = '<div class="ha-col-argument-copy"><p class="ha-col-eyebrow">'+esc(hero.eyebrow)+'</p><h2>'+esc(hero.heading)+'</h2><p class="ha-col-argument-body">'+esc(hero.lede)+'</p><p class="ha-col-argument-aside">'+esc(hero.aside)+'</p></div>';
-    var heroOffer = '<div class="ha-col-argument-copy"><h2>'+esc(hero.offerHeading)+'</h2><p class="ha-col-argument-body">'+esc(hero.offerBody)+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(hero.ctaLabel)+'</a></div>';
     // Pending artwork and final descriptive alt text: set heroSquare and imageAlt.heroSquare together.
-    var heroSection = '<section class="ha-col-argument ha-col-argument--hero"><div class="ha-col-tier-hero-intro">'+heroIntro+'</div><div class="ha-col-argument-inner ha-col-tier-hero-offer">'+heroOffer+squareMedia(content,'heroSquare',imageAlt.heroSquare || '')+'</div></section>';
+    var heroCopy = '<div class="ha-col-argument-copy"><p class="ha-col-eyebrow">'+esc(hero.eyebrow)+'</p><h2>'+esc(hero.heading)+'</h2><p class="ha-col-argument-body">'+esc(hero.lede)+'</p><p class="ha-col-argument-aside">'+esc(hero.aside)+'</p><h3 class="ha-col-tier-hero-subheading">'+esc(hero.offerHeading)+'</h3><p class="ha-col-argument-body">'+esc(hero.offerBody)+'</p><a class="ha-col-btn ha-col-btn-teal" href="'+esc(conversationMailto(conversation))+'">'+ctaLabel(hero.ctaLabel)+'</a></div>';
+    var heroSection = '<section class="ha-col-argument ha-col-argument--hero"><div class="ha-col-argument-inner">'+heroCopy+squareMedia(content,'heroSquare',imageAlt.heroSquare || '')+'</div></section>';
     var whatIsCopy = paragraphsHtml(whatIs.paragraphs,'ha-col-argument-body');
     // Pending artwork and final descriptive alt text: set whatIsSquare and imageAlt.whatIsSquare together.
     var whatIsSection = '<section class="ha-col-argument"><div class="ha-col-argument-inner"><div class="ha-col-argument-copy"><h2>'+esc(whatIs.heading)+'</h2>'+whatIsCopy+'</div>'+squareMedia(content,'whatIsSquare',imageAlt.whatIsSquare || '')+'</div><div class="ha-col-tier-note"><p class="ha-col-argument-aside">'+esc(whatIs.aside)+'</p></div></section>';
@@ -180,10 +176,7 @@
     var C=window.HA_COLLABORATE_CONTENT || {};
     var topHalf=C.topHalf || {};
     var steps=C.steps || {};
-    var commission=C.commission || {};
-    var honestyCards=C.honestyCards || [];
     var foundingYear=C.foundingYear || {};
-    var artistSpace=C.artistSpace || {};
     var conversation=C.conversation || {};
     var collective=C.collective || {};
     var footer=C.footer || {};
@@ -194,8 +187,7 @@
           topHalfSections(C,topHalf,conversation)+
           '<section class="ha-col-white-section" aria-label="How it works heading">'+sectionHead(steps.eyebrow,steps.heading,steps.intro)+'</section>'+
           '<section class="ha-col-lanes" aria-label="How it works steps">'+(steps.cards||[]).map(lane).join('')+'</section>'+
-          commissionSection(commission)+
-          '<section class="ha-col-white-section" aria-label="Artist information"><div class="ha-col-current-grid">'+honestyCards.map(function(item){ return card(item); }).join('')+card(foundingYear,'ha-col-featured-card')+card(artistSpace,'ha-col-featured-card')+'</div></section>'+
+          '<section class="ha-col-current" aria-label="Founding year"><div class="ha-col-current-grid">'+card(foundingYear,'ha-col-featured-card')+'</div></section>'+
           '<section class="ha-col-conversation"><div class="ha-col-conversation-copy"><p>'+esc(conversation.statement)+'</p><p>'+esc(conversation.closer)+'</p></div>'+conversationCta(conversation)+'</section>'+
           '<section class="ha-col-collective"><div><p class="ha-col-eyebrow">'+esc(collective.kicker)+'</p><h2>'+esc(collective.heading)+'</h2><p>'+esc(collective.body)+'</p></div>'+newsletterForm(collective)+'</section>'+ 
         '</main>'+ 
