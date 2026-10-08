@@ -15,6 +15,8 @@
     return;
   }
 
+  var SHOW_PRICES = false;
+
   var script = document.currentScript || (function(){ var s = document.getElementsByTagName('script'); return s[s.length - 1]; })();
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
@@ -97,7 +99,9 @@
     var collectionsList = (artist.collections || []).map(function(c){
       return '<li>' + esc(c) + '</li>';
     }).join('');
-    return '<article class="ha-tk-card" data-medium="' + esc(artist.medium || 'Prints') + '" data-price-from="' + esc(String(parsePriceFrom(artist.priceFrom))) + '">' +
+    var priceAttribute = SHOW_PRICES ? ' data-price-from="' + esc(String(parsePriceFrom(artist.priceFrom))) + '"' : '';
+    var priceHtml = SHOW_PRICES ? '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(artist.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' : '';
+    return '<article class="ha-tk-card" data-medium="' + esc(artist.medium || 'Prints') + '"' + priceAttribute + '>' +
       (artist.cardUrl
         ? '<a class="ha-tk-card-img-link" href="' + esc(artist.cardUrl) + '" aria-label="' + esc(directoryWorkLabel(artist)) + '" target="_blank" rel="noopener">'
         : '<div>') +
@@ -111,7 +115,7 @@
         '<h3 class="ha-tk-artist-name">' + esc(artist.name) + '</h3>' +
         '<div class="ha-tk-chips"><span class="ha-tk-chip"><small>Medium</small>' + esc(artist.medium || 'Prints') + '</span></div>' +
         '<div class="ha-tk-collections"><p class="ha-tk-collections-label">Collections</p><ul>' + collectionsList + '</ul></div>' +
-        '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(artist.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
+        priceHtml +
         '<p class="ha-tk-feeling">' + esc(artist.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traitPills + '</div>' +
         (artist.cardUrl
@@ -125,18 +129,21 @@
   function filterBar(content){
     var filters = content.filters || {};
     var mediums = filters.medium || ['All'];
-    var prices = filters.price || ['All'];
     var artists = (content.artists || []).filter(function(a){ return a.active !== false; });
     var mediumBtns = mediums.map(function(m, i){
       return '<button type="button" class="ha-tk-filter-btn' + (i === 0 ? ' is-active' : '') + '" data-filter-medium="' + esc(m) + '">' + esc(m) + '</button>';
     }).join('');
-    var priceLinks = prices.map(function(p, i){
-      return '<button type="button" class="ha-tk-price-filter' + (i === 0 ? ' is-active' : '') + '" data-filter-price="' + esc(p) + '">' + esc(p) + '</button>';
-    }).join('');
+    var priceFiltersHtml = '';
+    if(SHOW_PRICES){
+      var prices = filters.price || ['All'];
+      var priceLinks = prices.map(function(p, i){
+        return '<button type="button" class="ha-tk-price-filter' + (i === 0 ? ' is-active' : '') + '" data-filter-price="' + esc(p) + '">' + esc(p) + '</button>';
+      }).join('');
+      priceFiltersHtml = '<span class="ha-tk-filter-divider" aria-hidden="true"></span>' + priceLinks;
+    }
     return '<div class="ha-tk-filters">' +
       mediumBtns +
-      '<span class="ha-tk-filter-divider" aria-hidden="true"></span>' +
-      priceLinks +
+      priceFiltersHtml +
       '<span class="ha-tk-grid-eyebrow" id="ha-tk-count-label">' + esc('Curated artists \u2014 ' + artists.length) + '</span>' +
     '</div>';
   }
@@ -236,9 +243,12 @@
       var visible = 0;
       Array.prototype.forEach.call(cards, function(card){
         var medium = card.getAttribute('data-medium') || 'Prints';
-        var priceFrom = parseFloat(card.getAttribute('data-price-from') || '0');
         var mediumOk = activeMedium === 'All' || medium === activeMedium;
-        var priceOk = priceMatchesBand(priceFrom, activePrice);
+        var priceOk = true;
+        if(SHOW_PRICES){
+          var priceFrom = parseFloat(card.getAttribute('data-price-from') || '0');
+          priceOk = priceMatchesBand(priceFrom, activePrice);
+        }
         var show = mediumOk && priceOk;
         card.style.display = show ? '' : 'none';
         if(show) visible++;
@@ -261,16 +271,18 @@
       });
     });
 
-    /* Price filter buttons */
-    var priceBtns = root.querySelectorAll('.ha-tk-price-filter');
-    Array.prototype.forEach.call(priceBtns, function(btn){
-      btn.addEventListener('click', function(){
-        Array.prototype.forEach.call(priceBtns, function(b){ b.classList.remove('is-active'); });
-        btn.classList.add('is-active');
-        activePrice = btn.getAttribute('data-filter-price') || 'All';
-        applyFilters();
+    if(SHOW_PRICES){
+      /* Price filter buttons */
+      var priceBtns = root.querySelectorAll('.ha-tk-price-filter');
+      Array.prototype.forEach.call(priceBtns, function(btn){
+        btn.addEventListener('click', function(){
+          Array.prototype.forEach.call(priceBtns, function(b){ b.classList.remove('is-active'); });
+          btn.classList.add('is-active');
+          activePrice = btn.getAttribute('data-filter-price') || 'All';
+          applyFilters();
+        });
       });
-    });
+    }
   }
 
   /* ── Mount ── */

@@ -15,6 +15,8 @@
     return;
   }
 
+  var SHOW_PRICES = false;
+
   var script = document.currentScript || (function(){var s=document.getElementsByTagName('script');return s[s.length-1];})();
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
@@ -136,7 +138,7 @@
       : available
         ? '<button class="ha-kc-btn ha-kc-btn-keep" type="button">'+ctaLabel('Get this from their shop')+'</button>'
         : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>'+ctaLabel('On its way')+'</button><a class="ha-kc-btn ha-kc-btn-collective" href="/collective">'+ctaLabel('Join the Collective to hear first')+'</a>';
-    var priceHtml = available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
+    var priceHtml = SHOW_PRICES && available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
     return '<article class="'+cardClass+'" data-ha-collection="'+esc(item.collection || '')+'">'+
       '<div class="ha-kc-card-img-wrap">'+
         '<span class="ha-kc-pip">To Keep</span>'+
@@ -162,7 +164,7 @@
     return {
       collections: Object.keys(collectionNames).length,
       prints: products.length,
-      fromPrice: (collection.stats || {}).fromPrice || ''
+      fromPrice: SHOW_PRICES ? (collection.stats || {}).fromPrice || '' : ''
     };
   }
   function filtersForProducts(collection, products){
@@ -194,6 +196,7 @@
   function html(content,collection){
     var products = visibleProducts(collection);
     var stats = profileStats(collection, products);
+    var fromPriceStat = SHOW_PRICES ? '<span><strong>'+esc(stats.fromPrice || '')+'</strong><small>From</small></span>' : '';
     var collective = content.collective || {};
     var footer = content.footer || {};
     var montage = collection.montage || [];
@@ -230,7 +233,7 @@
               '<div class="ha-kc-stats">'+
                 '<span><strong>'+esc(stats.collections || '')+'</strong><small>Collections</small></span>'+
                 '<span><strong>'+esc(stats.prints || '')+'</strong><small>Prints</small></span>'+
-                '<span><strong>'+esc(stats.fromPrice || '')+'</strong><small>From</small></span>'+
+                fromPriceStat+
               '</div>'+
             '</div>'+
             montageHtml+

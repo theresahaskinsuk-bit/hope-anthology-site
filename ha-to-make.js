@@ -15,6 +15,8 @@
     return;
   }
 
+  var SHOW_PRICES = false;
+
   var script = document.currentScript || (function(){ var scripts = document.getElementsByTagName('script'); return scripts[scripts.length - 1]; })();
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
@@ -80,6 +82,7 @@
   function makerCard(maker){
     var traits = (maker.traits || []).map(function(trait){ return '<span class="ha-tk-trait">' + esc(trait) + '</span>'; }).join('');
     var collections = (maker.collections || []).map(function(collection){ return '<li>' + esc(collection) + '</li>'; }).join('');
+    var priceHtml = SHOW_PRICES ? '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(maker.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' : '';
     return '<article class="ha-tk-card" data-medium="' + esc(maker.filterMedium || maker.medium || '') + '" data-level="' + esc(maker.difficulty || '') + '" data-delivery="' + esc(maker.delivery || '') + '">' +
       '<a class="ha-tk-card-img-link" href="' + esc(maker.cardUrl || '#') + '" aria-label="' + esc(directoryWorkLabel(maker)) + '">' +
         '<div class="ha-tk-card-img-wrap">' +
@@ -92,7 +95,7 @@
         '<h3 class="ha-tk-artist-name">' + esc(maker.name) + '</h3>' +
         '<div class="ha-tk-chips"><span class="ha-tk-chip"><small>Medium</small>' + esc(maker.medium || '') + '</span></div>' +
         '<div class="ha-tk-collections"><p class="ha-tk-collections-label">Collections</p><ul>' + collections + '</ul></div>' +
-        '<div class="ha-tk-price-block"><span class="ha-tk-price-from-label">From</span><span class="ha-tk-price">' + esc(maker.priceFrom || '') + '</span><span class="ha-tk-price-note">excludes shipping</span></div>' +
+        priceHtml +
         '<p class="ha-tk-feeling">' + esc(maker.feeling || '') + '</p>' +
         '<div class="ha-tk-traits">' + traits + '</div>' +
         '<a class="ha-kc-btn ha-kc-btn-teal" href="' + esc(maker.cardUrl || '#') + '" target="_blank" rel="noopener">' + ctaLabel(directoryWorkLabel(maker)) + '</a>' +

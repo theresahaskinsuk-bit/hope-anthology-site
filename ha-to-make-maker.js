@@ -15,6 +15,8 @@
     return;
   }
 
+  var SHOW_PRICES = false;
+
   var script = document.currentScript || (function(){ var scripts = document.getElementsByTagName('script'); return scripts[scripts.length - 1]; })();
   var scriptUrl = script && script.src ? new URL(script.src) : null;
   var base = scriptUrl ? scriptUrl.href.replace(/[^/]+(?:\?.*)?$/, '') : '';
@@ -120,7 +122,7 @@
     var action = available && hasUrl(item.etsyUrl)
       ? '<a class="ha-kc-btn ha-kc-btn-keep" href="' + esc(item.etsyUrl) + '" target="_blank" rel="noopener">' + ctaLabel('Get this from their shop') + '</a>'
       : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel(item.comingSoonLabel || 'On its way') + '</button>';
-    var price = available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>' + esc(item.price) + '</strong><small>excludes shipping</small></div>' : '';
+    var price = SHOW_PRICES && available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>' + esc(item.price) + '</strong><small>excludes shipping</small></div>' : '';
     return '<article class="' + cardClass + '" data-ha-collection="' + esc(item.collection || '') + '">' +
       '<div class="ha-kc-card-img-wrap"><span class="ha-kc-pip">To Make</span><span class="ha-kc-badge ' + (available ? 'ha-kc-badge-available' : 'ha-kc-badge-coming') + '">' + esc(status) + '</span>' + cardImage(content, item) + '</div>' +
       imageDots(content, item) +
@@ -145,12 +147,12 @@
     var prices = [];
     patterns.forEach(function(item){
       if(item.collection) collections[item.collection] = true;
-      if(typeof item.priceNumber === 'number' && isFinite(item.priceNumber)) prices.push(item.priceNumber);
+      if(SHOW_PRICES && typeof item.priceNumber === 'number' && isFinite(item.priceNumber)) prices.push(item.priceNumber);
     });
     return {
       collections: Object.keys(collections).length,
       patterns: patterns.length,
-      fromPrice: prices.length ? '£' + Math.min.apply(Math, prices).toFixed(2) : ''
+      fromPrice: SHOW_PRICES && prices.length ? '£' + Math.min.apply(Math, prices).toFixed(2) : ''
     };
   }
   function filterBar(maker, patterns){
@@ -165,6 +167,7 @@
     var profile = maker.profile || {};
     var patterns = visiblePatterns(maker);
     var stats = profileStats(maker, patterns);
+    var fromPriceStat = SHOW_PRICES ? '<span><strong>' + esc(stats.fromPrice) + '</strong><small>From</small></span>' : '';
     var montage = profile.montage || [];
     var collective = content.collective || {};
     var footer = content.footer || {};
@@ -176,7 +179,7 @@
       '<div id="ha-artist-page-v1">' +
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="' + image(content, 'logo') + '" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — ' + esc(maker.name || 'Maker') + '</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-to-make-maker-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-to-make-maker-mobile-menu" class="ha-v3-links">' + navLinks(content.navigation) + '</div></nav>' +
         breadcrumbHtml(maker) +
-        '<main class="ha-kc-main"><header class="ha-kc-header ha-ap-header"><div class="ha-ap-hero-grid"><div class="ha-ap-hero-copy"><p class="ha-kc-eyebrow">TO MAKE · FOUNDING MAKER</p><h2 class="ha-ap-heading">' + esc(maker.name || '') + '<br><em>' + esc(profile.discipline || '') + '</em></h2><p class="ha-ap-bio">' + esc(profile.bio || '') + '</p><div class="ha-kc-stats"><span><strong>' + esc(stats.collections) + '</strong><small>Collections</small></span><span><strong>' + esc(stats.patterns) + '</strong><small>Patterns</small></span><span><strong>' + esc(stats.fromPrice) + '</strong><small>From</small></span></div></div>' + montageHtml + '</div></header>' +
+        '<main class="ha-kc-main"><header class="ha-kc-header ha-ap-header"><div class="ha-ap-hero-grid"><div class="ha-ap-hero-copy"><p class="ha-kc-eyebrow">TO MAKE · FOUNDING MAKER</p><h2 class="ha-ap-heading">' + esc(maker.name || '') + '<br><em>' + esc(profile.discipline || '') + '</em></h2><p class="ha-ap-bio">' + esc(profile.bio || '') + '</p><div class="ha-kc-stats"><span><strong>' + esc(stats.collections) + '</strong><small>Collections</small></span><span><strong>' + esc(stats.patterns) + '</strong><small>Patterns</small></span>' + fromPriceStat + '</div></div>' + montageHtml + '</div></header>' +
         filterBar(maker, patterns) +
         '<section class="ha-kc-grid-section"><div class="ha-kc-card-grid ha-ap-card-grid">' + patterns.map(function(item){ return productCard(content, item); }).join('') + '</div></section>' +
         '<section class="ha-kc-collective"><div><h2>' + esc(collective.heading || '') + '</h2><p>' + esc(collective.body || '') + '</p></div><a class="ha-kc-collective-btn" href="' + esc(collective.buttonUrl || '/collective') + '">' + ctaLabel(collective.buttonLabel || 'Join the Collective') + '</a></section>' +
