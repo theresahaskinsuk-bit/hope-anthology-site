@@ -115,16 +115,24 @@
     var chips = item.goodFor || [];
     return chips.length ? '<div class="ha-kc-gf-chips">' + chips.map(function(chip){ return '<span>' + esc(chip) + '</span>'; }).join('') + '</div>' : '';
   }
-  function productCard(content, item){
+  function productCard(content, item, artistName){
     var available = item.status === 'available';
     var status = available ? 'Available now' : 'Coming soon';
     var cardClass = available ? 'ha-kc-card' : 'ha-kc-card ha-kc-card-inactive';
+    var makingMoreLabel = String(item.comingSoonLabel || '').trim();
+    var isMakingMore = available && !!makingMoreLabel;
+    var shopArtistName = String(artistName || 'the artist').trim() || 'the artist';
+    var shopLabel = 'See it in the artist’s shop';
+    var shopAriaLabel = 'See ' + String(item.title || '') + ' in ' + shopArtistName + '’s shop' + (isMakingMore ? '. Making more, not available to buy right now' : '') + ' (opens their shop)';
     var action = available && hasUrl(item.etsyUrl)
-      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="' + esc(item.etsyUrl) + '" target="_blank" rel="noopener">' + ctaLabel('Get this from their shop') + '</a>'
+      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="' + esc(item.etsyUrl) + '" target="_blank" rel="noopener" aria-label="' + esc(shopAriaLabel) + '">' + ctaLabel(shopLabel) + '</a>'
       : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>' + ctaLabel(item.comingSoonLabel || 'On its way') + '</button>';
+    var badgeHtml = available
+      ? (isMakingMore ? '<span class="ha-kc-badge ha-kc-badge-making-more">' + esc(makingMoreLabel) + '</span>' : '')
+      : '<span class="ha-kc-badge ha-kc-badge-coming">' + esc(status) + '</span>';
     var price = SHOW_PRICES && available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>' + esc(item.price) + '</strong><small>excludes shipping</small></div>' : '';
     return '<article class="' + cardClass + '" data-ha-collection="' + esc(item.collection || '') + '">' +
-      '<div class="ha-kc-card-img-wrap"><span class="ha-kc-pip">To Make</span><span class="ha-kc-badge ' + (available ? 'ha-kc-badge-available' : 'ha-kc-badge-coming') + '">' + esc(status) + '</span>' + cardImage(content, item) + '</div>' +
+      '<div class="ha-kc-card-img-wrap"><span class="ha-kc-pip ha-kc-pip-make">To Make</span>' + badgeHtml + cardImage(content, item) + '</div>' +
       imageDots(content, item) +
       '<div class="ha-kc-card-body"><h3>' + esc(item.title) + '</h3><div class="ha-kc-chips"><span><small>Format</small>' + esc(item.format || '') + '</span><span><small>Technique</small>' + esc(item.technique || '') + '</span><span><small>Delivery</small>' + esc(item.delivery || '') + '</span></div>' + price + '<div class="ha-kc-meaning"><p>' + esc(item.meaning || '') + '</p>' + goodForChips(item) + '</div>' + action + '</div>' +
     '</article>';
@@ -181,7 +189,7 @@
         breadcrumbHtml(maker) +
         '<main class="ha-kc-main"><header class="ha-kc-header ha-ap-header"><div class="ha-ap-hero-grid"><div class="ha-ap-hero-copy"><p class="ha-kc-eyebrow">TO MAKE · FOUNDING MAKER</p><h2 class="ha-ap-heading">' + esc(maker.name || '') + '<br><em>' + esc(profile.discipline || '') + '</em></h2><p class="ha-ap-bio">' + esc(profile.bio || '') + '</p><div class="ha-kc-stats"><span><strong>' + esc(stats.collections) + '</strong><small>Collections</small></span><span><strong>' + esc(stats.patterns) + '</strong><small>Patterns</small></span>' + fromPriceStat + '</div></div>' + montageHtml + '</div></header>' +
         filterBar(maker, patterns) +
-        '<section class="ha-kc-grid-section"><div class="ha-kc-card-grid ha-ap-card-grid">' + patterns.map(function(item){ return productCard(content, item); }).join('') + '</div></section>' +
+        '<section class="ha-kc-grid-section"><div class="ha-kc-card-grid ha-ap-card-grid">' + patterns.map(function(item){ return productCard(content, item, maker.name); }).join('') + '</div></section>' +
         '<section class="ha-kc-collective"><div><h2>' + esc(collective.heading || '') + '</h2><p>' + esc(collective.body || '') + '</p></div><a class="ha-kc-collective-btn" href="' + esc(collective.buttonUrl || '/collective') + '">' + ctaLabel(collective.buttonLabel || 'Join the Collective') + '</a></section>' +
         '</main>' +
         '<footer class="ha-v3-footer"><div class="ha-v3-footer-top"><img class="ha-v3-footer-star" src="' + image(content, 'star') + '" alt=""><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>' + navLinks(content.navigation) + '<a href="/for-organisations">For Organisations</a></div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="/contact">Contact</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a><a href="/privacy">Privacy policy</a><a href="/accessibility">Accessibility</a></div></div><div class="ha-v3-footer-bottom"><span>' + esc(footer.copyright || '© The Hope Anthology 2026') + '</span></div></footer>' +

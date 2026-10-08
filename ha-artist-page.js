@@ -129,20 +129,28 @@
     return '<div class="ha-kc-gf-chips">'+chips.map(function(chip){ return '<span>'+esc(chip)+'</span>'; }).join('')+'</div>';
   }
   /* ── Product card — reuses ha-kc-* classes, removes Collection chip, adds price, uses dots ── */
-  function productCard(content,item){
+  function productCard(content,item,artistName){
     var available = item.status === 'available';
     var badge = available ? 'Available now' : 'Coming soon';
     var cardClass = available ? 'ha-kc-card' : 'ha-kc-card ha-kc-card-inactive';
+    var makingMoreLabel = String(item.comingSoonLabel || '').trim();
+    var isMakingMore = available && !!makingMoreLabel;
+    var shopArtistName = String(artistName || 'the artist').trim() || 'the artist';
+    var shopLabel = 'See it in the artist’s shop';
+    var shopAriaLabel = 'See ' + String(item.title || '') + ' in ' + shopArtistName + '’s shop' + (isMakingMore ? '. Making more, not available to buy right now' : '') + ' (opens their shop)';
     var action = available && hasUrl(item.etsyUrl)
-      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="'+esc(item.etsyUrl)+'" target="_blank" rel="noopener">'+ctaLabel('Get this from their shop')+'</a>'
+      ? '<a class="ha-kc-btn ha-kc-btn-keep" href="'+esc(item.etsyUrl)+'" target="_blank" rel="noopener" aria-label="'+esc(shopAriaLabel)+'">'+ctaLabel(shopLabel)+'</a>'
       : available
         ? '<button class="ha-kc-btn ha-kc-btn-keep" type="button">'+ctaLabel('Get this from their shop')+'</button>'
         : '<button class="ha-kc-btn ha-kc-btn-inactive" type="button" disabled>'+ctaLabel('On its way')+'</button><a class="ha-kc-btn ha-kc-btn-collective" href="/collective">'+ctaLabel('Join the Collective to hear first')+'</a>';
+    var badgeHtml = available
+      ? (isMakingMore ? '<span class="ha-kc-badge ha-kc-badge-making-more">'+esc(makingMoreLabel)+'</span>' : '')
+      : '<span class="ha-kc-badge ha-kc-badge-coming">'+esc(badge)+'</span>';
     var priceHtml = SHOW_PRICES && available && item.price ? '<div class="ha-ap-price-line"><span class="ha-ap-price-from">From</span><strong>'+esc(item.price)+'</strong><small>excludes shipping</small></div>' : '';
     return '<article class="'+cardClass+'" data-ha-collection="'+esc(item.collection || '')+'">'+
       '<div class="ha-kc-card-img-wrap">'+
         '<span class="ha-kc-pip">To Keep</span>'+
-        '<span class="ha-kc-badge '+(available ? 'ha-kc-badge-available' : 'ha-kc-badge-coming')+'">'+esc(badge)+'</span>'+
+        badgeHtml+
         cardImage(content,item)+
       '</div>'+
       imageDots(content,item)+
@@ -245,7 +253,7 @@
         '<section class="ha-kc-grid-section">'+
           '<p class="ha-kc-grid-eyebrow">'+esc(collection.gridEyebrow || ((collection.artistName || 'ARTIST').toUpperCase() + ' — ALL WORK'))+'</p>'+
           '<div class="ha-kc-card-grid ha-ap-card-grid">'+
-            products.map(function(item){ return productCard(content,item); }).join('')+
+            products.map(function(item){ return productCard(content,item,collection.artistName); }).join('')+
           '</div>'+
         '</section>'+
         /* Collective band — identical to ha-keep-collection.js */

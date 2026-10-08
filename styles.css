@@ -2586,6 +2586,8 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-kc-badge{right:8px;}
 #ha-artist-page-v1 .ha-kc-badge-available{background:rgba(38,91,112,.12);color:var(--teal);backdrop-filter:blur(5px);}
 #ha-artist-page-v1 .ha-kc-badge-coming{background:rgba(139,96,64,.14);color:var(--twine);backdrop-filter:blur(5px);}
+#ha-artist-page-v1 .ha-kc-badge.ha-kc-badge-making-more,#ha-edition-v1 .ha-kc-badge.ha-kc-badge-making-more{background:rgba(54,68,73,.12);color:#364449;backdrop-filter:blur(5px);}
+#ha-artist-page-v1 .ha-kc-pip.ha-kc-pip-make,#ha-edition-v1 .ha-kc-pip.ha-kc-pip-make{background:#8B6040;color:var(--cream);}
 
 /* Dots navigation */
 #ha-artist-page-v1 .ha-ap-dots{display:flex;justify-content:center;gap:8px;padding:10px 0 8px;background:#fff;}
