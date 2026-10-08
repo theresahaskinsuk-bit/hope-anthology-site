@@ -23,10 +23,13 @@ except ImportError as exc:  # pragma: no cover - clear operational failure
     raise SystemExit("openpyxl is required. Install it with: python3 -m pip install openpyxl") from exc
 
 
-SCRIPT_PATH = "tools/generate_directory_content.py"
+SCRIPT_PATH = "generate_directory_content.py"
 PLACEHOLDER_TEXT = "placeholder"
 PALE_YELLOW = "FFF2CC"
 URL_RE = re.compile(r"^https://[^\s]+$", re.IGNORECASE)
+PUBLISH_PRICES_LABEL = "Publish prices to the website (YES/NO)"
+RECRUITMENT_BODY_LABEL = "Directory recruitment body"
+PRICE_OUTPUT_FIELDS = frozenset({"price", "priceNumber", "priceFrom", "fromPrice"})
 
 ASSETS = {
     "logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg",
@@ -190,6 +193,17 @@ class Issue:
     cell: str
     field: str
     message: str
+
+
+@dataclass(frozen=True)
+class PublicationSettings:
+    """Visible README settings that govern a whole-Anthology publication run."""
+
+    workbook_name: str
+    publish_prices: bool
+    recruitment_body: str
+    publish_prices_cell: str
+    recruitment_body_cell: str
 
 
 class Audit:
@@ -408,6 +422,78 @@ def profile_cell(entries: dict[str, Any], aliases: Iterable[str]) -> Any | None:
     return None
 
 
+def read_publication_settings(workbook: Any, audit: Audit, workbook_name: str) -> PublicationSettings:
+    """Read the required, visible README publication controls for one workbook."""
+
+    default = PublicationSettings(
+        workbook_name=workbook_name,
+        publish_prices=False,
+        recruitment_body="",
+        publish_prices_cell="README!B?",
+        recruitment_body_cell="README!B?",
+    )
+    if "README" not in workbook.sheetnames:
+        audit.blocking_error("Workbook", "—", "README publication settings", "Expected a README tab with required publication settings.")
+        return default
+
+    worksheet = workbook["README"]
+    wanted = {
+        normalise_header(PUBLISH_PRICES_LABEL): PUBLISH_PRICES_LABEL,
+        normalise_header(RECRUITMENT_BODY_LABEL): RECRUITMENT_BODY_LABEL,
+    }
+    found: dict[str, Any] = {}
+    for row in range(1, worksheet.max_row + 1):
+        label = normalise_header(worksheet.cell(row=row, column=1).value)
+        if label not in wanted:
+            continue
+        if label in found:
+            audit.blocking_error("README", f"A{row}", wanted[label], "Publication setting label appears more than once.")
+            continue
+        found[label] = worksheet.cell(row=row, column=2)
+
+    publish_key = normalise_header(PUBLISH_PRICES_LABEL)
+    recruitment_key = normalise_header(RECRUITMENT_BODY_LABEL)
+    publish_cell = found.get(publish_key)
+    recruitment_cell = found.get(recruitment_key)
+    if publish_cell is None:
+        audit.blocking_error("README", f"A1:A{worksheet.max_row}", PUBLISH_PRICES_LABEL, "Required publication setting label is missing.")
+    if recruitment_cell is None:
+        audit.blocking_error("README", f"A1:A{worksheet.max_row}", RECRUITMENT_BODY_LABEL, "Required publication setting label is missing.")
+
+    publish_value = as_text(publish_cell.value) if publish_cell is not None else ""
+    if publish_value.upper() not in {"YES", "NO"}:
+        audit.blocking_error(
+            "README",
+            publish_cell.coordinate if publish_cell is not None else "B?",
+            PUBLISH_PRICES_LABEL,
+            "Value must be exactly YES or NO.",
+        )
+
+    recruitment_body = as_text(recruitment_cell.value) if recruitment_cell is not None else ""
+    if not recruitment_body:
+        audit.blocking_error(
+            "README",
+            recruitment_cell.coordinate if recruitment_cell is not None else "B?",
+            RECRUITMENT_BODY_LABEL,
+            "Required publication copy is blank.",
+        )
+    elif contains_placeholder(recruitment_body) or (recruitment_cell is not None and is_pale_yellow(recruitment_cell)):
+        audit.blocking_error(
+            "README",
+            recruitment_cell.coordinate if recruitment_cell is not None else "B?",
+            RECRUITMENT_BODY_LABEL,
+            "Publication copy contains an unresolved placeholder marker.",
+        )
+
+    return PublicationSettings(
+        workbook_name=workbook_name,
+        publish_prices=publish_value.upper() == "YES",
+        recruitment_body=recruitment_body,
+        publish_prices_cell="README!" + (publish_cell.coordinate if publish_cell is not None else "B?"),
+        recruitment_body_cell="README!" + (recruitment_cell.coordinate if recruitment_cell is not None else "B?"),
+    )
+
+
 def locate_pattern_header_row(worksheet: Any) -> int | None:
     for row in range(1, min(worksheet.max_row, 100) + 1):
         labels = {normalise_header(cell.value) for cell in worksheet[row] if cell.value is not None}
@@ -431,6 +517,22 @@ def collection_groups(patterns: list[dict[str, Any]]) -> list[dict[str, Any]]:
         products = sorted(grouped[collection], key=lambda item: (item["productOrder"], item["title"].casefold()))
         groups.append({"collection": collection, "patterns": products})
     return groups
+
+
+def serialise_public_value(value: Any, publish_prices: bool) -> Any:
+    """Return a payload copy without any price data when publication is disabled."""
+
+    if publish_prices:
+        return value
+    if isinstance(value, dict):
+        return {
+            key: serialise_public_value(item, publish_prices)
+            for key, item in value.items()
+            if key not in PRICE_OUTPUT_FIELDS
+        }
+    if isinstance(value, list):
+        return [serialise_public_value(item, publish_prices) for item in value]
+    return value
 
 
 def parse_contributor_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any], kind: str) -> dict[str, Any]:
@@ -619,15 +721,16 @@ def parse_to_make_maker_sheet(audit: Audit, worksheet: Any, roster: dict[str, An
 def parse_to_keep_maker_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any]) -> dict[str, Any]:
     return parse_contributor_sheet(audit, worksheet, roster, "to-keep")
 
-def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[str, Any]]]:
+def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[str, Any]], PublicationSettings]:
     audit = Audit(mode)
     workbook = load_workbook(path, data_only=False)
+    publication_settings = read_publication_settings(workbook, audit, path.name)
     if kind == "auto":
         kind = "to-make" if "To Make Roster" in workbook.sheetnames else "to-keep" if "To Keep Roster" in workbook.sheetnames else "unknown"
     roster_name = "To Make Roster" if kind == "to-make" else "To Keep Roster"
     if kind == "unknown" or roster_name not in workbook.sheetnames:
         audit.add("fatal", "Workbook", "—", "Roster sheet", "Expected a sheet named To Make Roster or To Keep Roster.")
-        return audit, []
+        return audit, [], publication_settings
     roster_sheet = workbook[roster_name]
     required_roster_fields = REQUIRED_TO_MAKE_ROSTER_FIELDS if kind == "to-make" else REQUIRED_TO_KEEP_ROSTER_FIELDS
     required_roster_headers = REQUIRED_ROSTER_HEADERS if kind == "to-make" else REQUIRED_TO_KEEP_ROSTER_HEADERS
@@ -746,7 +849,7 @@ def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[s
                 if duplicate:
                     audit.required_problem("Workbook", "—", "Pattern Title", f"Derived pattern slug {pattern['slug']!r} appears in both {duplicate} and {maker['slug']}.")
                 all_slugs[pattern["slug"]] = maker["slug"]
-    return audit, makers
+    return audit, makers, publication_settings
 
 
 def validate_artist_numbers(audit: Audit) -> None:
@@ -800,10 +903,14 @@ def recent_artists_payload(to_keep: list[dict[str, Any]], to_make: list[dict[str
     return {"generatedFrom": source_names, "artists": contributors[:4]}
 
 
-def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[str, Any]:
+def make_index_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
     active = [maker for maker in makers if maker["active"]]
     pattern_count = sum(len(group["patterns"]) for maker in active for group in maker["groups"])
     medium_count = len({maker["medium"] for maker in active if maker["medium"]})
+    maker_keys = ["slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections"]
+    if publication.publish_prices:
+        maker_keys.append("priceFrom")
+    maker_keys += ["difficulty", "technique", "delivery", "feeling", "traits", "cardUrl", "patternCount"]
     return {
         "generatedFrom": source_name,
         "images": ASSETS,
@@ -826,7 +933,7 @@ def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
         "recruitment": {
             "eyebrow": "FOUNDING MAKERS",
             "heading": "Do you design things for other people to make?",
-            "body": "Patterns, templates, guides — any medium. Free for the founding year, no commission ever. I just need some images, a bit of a description about you, and some links.",
+            "body": publication.recruitment_body,
             "linkLabel": "See how it works for artists →",
             "linkUrl": "/for-artists",
         },
@@ -835,14 +942,14 @@ def make_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
         "makers": [
             {
                 key: maker[key]
-                for key in ("slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "difficulty", "technique", "delivery", "feeling", "traits", "cardUrl", "patternCount")
+                for key in maker_keys
             }
             for maker in active
         ],
     }
 
 
-def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[str, Any]:
+def keep_index_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
     active = [maker for maker in makers if maker["active"]]
     published_artists = [maker for maker in active if any(group["patterns"] for group in maker["groups"])]
     published_works = [
@@ -852,6 +959,13 @@ def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
         for product in group["patterns"]
     ]
     published_collections = {product["collection"] for product in published_works if product["collection"]}
+    filters = {"medium": ["All"] + sorted({maker["medium"] for maker in active if maker["medium"]})}
+    if publication.publish_prices:
+        filters["price"] = ["All", "Under £20", "£20–£50", "£50+"]
+    artist_keys = ["slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections"]
+    if publication.publish_prices:
+        artist_keys.append("priceFrom")
+    artist_keys += ["feeling", "traits", "cardUrl"]
     return {
         "generatedFrom": source_name,
         "images": ASSETS,
@@ -866,11 +980,11 @@ def keep_index_payload(makers: list[dict[str, Any]], source_name: str) -> dict[s
                 {"value": len(published_collections), "label": "COLLECTIONS"},
             ],
         },
-        "filters": {"medium": ["All"] + sorted({maker["medium"] for maker in active if maker["medium"]}), "price": ["All", "Under £20", "£20–£50", "£50+"]},
-        "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": "Free for the founding year. No commission ever. I just need some images, a bit of a description about you, and some links.", "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},
+        "filters": filters,
+        "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": publication.recruitment_body, "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},
         "collective": COLLECTIVE,
         "footer": FOOTER,
-        "artists": [{key: maker[key] for key in ("slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "priceFrom", "feeling", "traits", "cardUrl")} for maker in active],
+        "artists": [{key: maker[key] for key in artist_keys} for maker in active],
     }
 
 
@@ -891,9 +1005,9 @@ TO_KEEP_SHARED_CHROME = {
 }
 
 
-def keep_profile_record(maker: dict[str, Any]) -> dict[str, Any]:
-    profile = maker["profile"]
-    products = [product for group in maker["groups"] for product in group["patterns"]]
+def keep_profile_record(maker: dict[str, Any], publication: PublicationSettings) -> dict[str, Any]:
+    profile = serialise_public_value(maker["profile"], publication.publish_prices)
+    products = [serialise_public_value(product, publication.publish_prices) for group in maker["groups"] for product in group["patterns"]]
     collections = [group["collection"] for group in maker["groups"]]
     return {
         "slug": maker["slug"],
@@ -915,12 +1029,12 @@ def keep_profile_record(maker: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def keep_profiles_payload(makers: list[dict[str, Any]], source_name: str) -> dict[str, Any]:
-    return {"generatedFrom": source_name, **TO_KEEP_SHARED_CHROME, "collections": {maker["slug"]: keep_profile_record(maker) for maker in makers if maker["active"]}}
+def keep_profiles_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
+    return {"generatedFrom": source_name, **TO_KEEP_SHARED_CHROME, "collections": {maker["slug"]: keep_profile_record(maker, publication) for maker in makers if maker["active"]}}
 
 
-def maker_payload(maker: dict[str, Any], source_name: str) -> dict[str, Any]:
-    return {"generatedFrom": source_name, "images": ASSETS, "navigation": NAVIGATION, "collective": COLLECTIVE, "footer": FOOTER, "maker": maker}
+def maker_payload(maker: dict[str, Any], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
+    return {"generatedFrom": source_name, "images": ASSETS, "navigation": NAVIGATION, "collective": COLLECTIVE, "footer": FOOTER, "maker": serialise_public_value(maker, publication.publish_prices)}
 
 def report_markdown(source: Path, mode: str, makers: list[dict[str, Any]], audit: Audit, output_paths: list[Path]) -> str:
     active_patterns = sum(len(group["patterns"]) for maker in makers for group in maker["groups"])
@@ -976,19 +1090,19 @@ def report_markdown(source: Path, mode: str, makers: list[dict[str, Any]], audit
     return "\n".join(lines)
 
 
-def output_pairs(kind: str, makers: list[dict[str, Any]], source_name: str, output_dir: Path) -> list[tuple[Path, str]]:
+def output_pairs(kind: str, makers: list[dict[str, Any]], source_name: str, output_dir: Path, publication: PublicationSettings) -> list[tuple[Path, str]]:
     if kind == "to-make":
         outputs: list[tuple[Path, str]] = [
-            (output_dir / "content.to-make.js", js_file("HA_TO_MAKE_CONTENT", make_index_payload(makers, source_name), source_name)),
+            (output_dir / "content.to-make.js", js_file("HA_TO_MAKE_CONTENT", make_index_payload(makers, source_name, publication), source_name)),
         ]
         for maker in makers:
-            outputs.append((output_dir / f"content.to-make.{maker['slug']}.js", maker_js_file(maker["slug"], maker_payload(maker, source_name), source_name)))
+            outputs.append((output_dir / f"content.to-make.{maker['slug']}.js", maker_js_file(maker["slug"], maker_payload(maker, source_name, publication), source_name)))
         return outputs
     # The To Keep workbook drives both the parent directory and the profile registry
     # consumed by ha-artist-page.js. No merge with old content occurs.
     return [
-        (output_dir / "content.to-keep.js", js_file("HA_TO_KEEP_CONTENT", keep_index_payload(makers, source_name), source_name)),
-        (output_dir / "content.keep-collections.js", js_file("HA_KEEP_COLLECTIONS_CONTENT", keep_profiles_payload(makers, source_name), source_name)),
+        (output_dir / "content.to-keep.js", js_file("HA_TO_KEEP_CONTENT", keep_index_payload(makers, source_name, publication), source_name)),
+        (output_dir / "content.keep-collections.js", js_file("HA_KEEP_COLLECTIONS_CONTENT", keep_profiles_payload(makers, source_name, publication), source_name)),
     ]
 
 
@@ -1012,33 +1126,34 @@ def finish_generation(source_name: str, mode: str, makers: list[dict[str, Any]],
     return 0
 
 
-def build_directory(source: Path, kind: str, output_dir: Path, mode: str, report_path: Path) -> int:
-    audit, makers = parse_workbook(source, kind, mode)
-    validate_artist_numbers(audit)
-    return finish_generation(source.name, mode, makers, audit, output_pairs(kind, makers, source.name, output_dir), report_path)
-
-
 def build_all_directories(to_keep_source: Path, to_make_source: Path, output_dir: Path, mode: str, report_path: Path) -> int:
     """Generate both directory families and the Home feed as one validation-gated run."""
-    keep_audit, keep_makers = parse_workbook(to_keep_source, "to-keep", mode)
-    make_audit, make_makers = parse_workbook(to_make_source, "to-make", mode)
+    keep_audit, keep_makers, keep_publication = parse_workbook(to_keep_source, "to-keep", mode)
+    make_audit, make_makers, make_publication = parse_workbook(to_make_source, "to-make", mode)
     audit = Audit(mode)
     audit.issues = keep_audit.issues + make_audit.issues
     audit.placeholders = keep_audit.placeholders + make_audit.placeholders
     audit.roster_records = keep_audit.roster_records + make_audit.roster_records
     audit.blocked = keep_audit.blocked or make_audit.blocked
+    if keep_publication.publish_prices != make_publication.publish_prices:
+        audit.blocking_error(
+            "Publication settings",
+            f"{keep_publication.workbook_name} {keep_publication.publish_prices_cell}; {make_publication.workbook_name} {make_publication.publish_prices_cell}",
+            PUBLISH_PRICES_LABEL,
+            "Both workbooks must use the same YES or NO value before whole-Anthology generation.",
+        )
     validate_artist_numbers(audit)
     source_name = to_keep_source.name + " + " + to_make_source.name
-    outputs = output_pairs("to-keep", keep_makers, to_keep_source.name, output_dir)
-    outputs += output_pairs("to-make", make_makers, to_make_source.name, output_dir)
+    outputs = output_pairs("to-keep", keep_makers, to_keep_source.name, output_dir, keep_publication)
+    outputs += output_pairs("to-make", make_makers, to_make_source.name, output_dir, make_publication)
     outputs.append((output_dir / "content.home-recent-artists.js", js_file("HA_HOME_RECENT_ARTISTS", recent_artists_payload(keep_makers, make_makers, source_name), source_name)))
     return finish_generation(source_name, mode, keep_makers + make_makers, audit, outputs, report_path)
 
 
 def parse_arguments() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate Hope Anthology directory content from one or both sibling workbooks.")
-    parser.add_argument("workbook", type=Path, nargs="?", help="Optional single .xlsx workbook for legacy one-directory generation.")
-    parser.add_argument("--kind", choices=("to-make", "to-keep", "auto"), default="auto", help="Kind for a legacy one-workbook run.")
+    parser = argparse.ArgumentParser(description="Generate Hope Anthology directory content from both sibling workbooks.")
+    parser.add_argument("workbook", type=Path, nargs="?", help=argparse.SUPPRESS)
+    parser.add_argument("--kind", choices=("to-make", "to-keep", "auto"), default="auto", help=argparse.SUPPRESS)
     parser.add_argument("--to-keep-workbook", type=Path, help="To Keep sibling workbook for the normal whole-Anthology generation run.")
     parser.add_argument("--to-make-workbook", type=Path, help="To Make sibling workbook for the normal whole-Anthology generation run.")
     parser.add_argument("--mode", choices=("permissive", "strict"), default="strict", help="Permissive reports normal staged material; strict blocks product publication contradictions.")
@@ -1051,28 +1166,14 @@ def main() -> int:
     args = parse_arguments()
     output_dir = args.output_dir.resolve()
     output_dir.mkdir(parents=True, exist_ok=True)
-    if args.to_keep_workbook or args.to_make_workbook:
-        if args.workbook or not args.to_keep_workbook or not args.to_make_workbook:
-            print("ERROR: the whole-Anthology run requires both --to-keep-workbook and --to-make-workbook, with no positional workbook.", file=sys.stderr)
-            return 2
-        if not args.to_keep_workbook.is_file() or not args.to_make_workbook.is_file():
-            print("ERROR: a specified workbook was not found.", file=sys.stderr)
-            return 2
-        report = (args.report or output_dir / "directory-generation-report.md").resolve()
-        return build_all_directories(args.to_keep_workbook.resolve(), args.to_make_workbook.resolve(), output_dir, args.mode, report)
-    if not args.workbook or not args.workbook.is_file():
-        print("ERROR: provide one workbook or both sibling workbook options.", file=sys.stderr)
+    if args.workbook or not args.to_keep_workbook or not args.to_make_workbook:
+        print("ERROR: whole-Anthology generation requires both --to-keep-workbook and --to-make-workbook; legacy single-workbook mode is retired so publication settings can be cross-checked.", file=sys.stderr)
         return 2
-    kind = args.kind
-    if kind == "auto":
-        probe = load_workbook(args.workbook, read_only=True, data_only=False)
-        kind = "to-make" if "To Make Roster" in probe.sheetnames else "to-keep" if "To Keep Roster" in probe.sheetnames else "unknown"
-    if kind == "unknown":
-        print("ERROR: workbook does not contain To Make Roster or To Keep Roster.", file=sys.stderr)
+    if not args.to_keep_workbook.is_file() or not args.to_make_workbook.is_file():
+        print("ERROR: a specified workbook was not found.", file=sys.stderr)
         return 2
-    report_name = "to-make-generation-report.md" if kind == "to-make" else "to-keep-generation-report.md"
-    report = (args.report or output_dir / report_name).resolve()
-    return build_directory(args.workbook.resolve(), kind, output_dir, args.mode, report)
+    report = (args.report or output_dir / "directory-generation-report.md").resolve()
+    return build_all_directories(args.to_keep_workbook.resolve(), args.to_make_workbook.resolve(), output_dir, args.mode, report)
 
 
 if __name__ == "__main__":
