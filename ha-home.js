@@ -21,7 +21,7 @@
   var version = scriptUrl ? (scriptUrl.searchParams.get('v') || Date.now()) : Date.now();
 
   function normalPath(){ return location.pathname.replace(/\/$/,'') || '/'; }
-  function isHome(){ var p=normalPath(); return p==='/' || p===''; }
+  function isHome(){ var p=normalPath(); return p==='/' || p==='' || p==='/home'; }
   function isBlockedCustomPage(){
     var p=normalPath();
     var blocked = [
