@@ -2033,7 +2033,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-top,
 #ha-info-template-v1 .ha-v3-footer-top,
 #ha-to-keep-v1 .ha-v3-footer-top,
-#ha-artist-page-v1 .ha-v3-footer-top{
+#ha-artist-page-v1 .ha-v3-footer-top,#ha-edition-v1 .ha-v3-footer-top{
   padding:40px 48px 32px!important;
   display:grid!important;
   grid-template-columns:80px 1fr 1fr!important;
@@ -2050,7 +2050,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-star,
 #ha-info-template-v1 .ha-v3-footer-star,
 #ha-to-keep-v1 .ha-v3-footer-star,
-#ha-artist-page-v1 .ha-v3-footer-star{
+#ha-artist-page-v1 .ha-v3-footer-star,#ha-edition-v1 .ha-v3-footer-star{
   width:36px!important;
   height:36px!important;
   object-fit:contain!important;
@@ -2067,7 +2067,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-col,
 #ha-info-template-v1 .ha-v3-footer-col,
 #ha-to-keep-v1 .ha-v3-footer-col,
-#ha-artist-page-v1 .ha-v3-footer-col{
+#ha-artist-page-v1 .ha-v3-footer-col,#ha-edition-v1 .ha-v3-footer-col{
   display:flex!important;
   flex-direction:column!important;
   gap:8px!important;
@@ -2081,7 +2081,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-title,
 #ha-info-template-v1 .ha-v3-footer-title,
 #ha-to-keep-v1 .ha-v3-footer-title,
-#ha-artist-page-v1 .ha-v3-footer-title{
+#ha-artist-page-v1 .ha-v3-footer-title,#ha-edition-v1 .ha-v3-footer-title{
   font-size:10px!important;
   letter-spacing:.12em!important;
   text-transform:uppercase!important;
@@ -2099,7 +2099,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-col a,
 #ha-info-template-v1 .ha-v3-footer-col a,
 #ha-to-keep-v1 .ha-v3-footer-col a,
-#ha-artist-page-v1 .ha-v3-footer-col a{
+#ha-artist-page-v1 .ha-v3-footer-col a,#ha-edition-v1 .ha-v3-footer-col a{
   font-size:13px!important;
   color:rgba(242,243,239,.75)!important;
   text-decoration:none!important;
@@ -2126,7 +2126,9 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-to-keep-v1 .ha-v3-footer-col a:hover,
 #ha-to-keep-v1 .ha-v3-footer-col a:focus-visible,
 #ha-artist-page-v1 .ha-v3-footer-col a:hover,
-#ha-artist-page-v1 .ha-v3-footer-col a:focus-visible{
+#ha-artist-page-v1 .ha-v3-footer-col a:focus-visible,
+#ha-edition-v1 .ha-v3-footer-col a:hover,
+#ha-edition-v1 .ha-v3-footer-col a:focus-visible{
   color:rgba(242,243,239,.98)!important;
   text-decoration:underline!important;
 }
@@ -2139,7 +2141,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-bottom,
 #ha-info-template-v1 .ha-v3-footer-bottom,
 #ha-to-keep-v1 .ha-v3-footer-bottom,
-#ha-artist-page-v1 .ha-v3-footer-bottom{
+#ha-artist-page-v1 .ha-v3-footer-bottom,#ha-edition-v1 .ha-v3-footer-bottom{
   background:var(--ha-teal)!important;
   border-top:.5px solid rgba(242,243,239,.1)!important;
   padding:12px 48px!important;
@@ -2155,7 +2157,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
 #ha-why-v1 .ha-v3-footer-bottom span,
 #ha-info-template-v1 .ha-v3-footer-bottom span,
 #ha-to-keep-v1 .ha-v3-footer-bottom span,
-#ha-artist-page-v1 .ha-v3-footer-bottom span{
+#ha-artist-page-v1 .ha-v3-footer-bottom span,#ha-edition-v1 .ha-v3-footer-bottom span{
   font-size:11px!important;
   color:rgba(242,243,239,.75)!important;
   font-family:'DM Sans',sans-serif!important;
@@ -2170,7 +2172,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   #ha-why-v1 .ha-v3-footer-top,
   #ha-info-template-v1 .ha-v3-footer-top,
   #ha-to-keep-v1 .ha-v3-footer-top,
-  #ha-artist-page-v1 .ha-v3-footer-top{
+  #ha-artist-page-v1 .ha-v3-footer-top,#ha-edition-v1 .ha-v3-footer-top{
     grid-template-columns:1fr!important;
     gap:28px!important;
     padding:36px 24px!important;
@@ -2184,7 +2186,7 @@ body.ha-info-template-mounted [data-ha-info-template-hidden="true"]{
   #ha-why-v1 .ha-v3-footer-bottom,
   #ha-info-template-v1 .ha-v3-footer-bottom,
   #ha-to-keep-v1 .ha-v3-footer-bottom,
-  #ha-artist-page-v1 .ha-v3-footer-bottom{
+  #ha-artist-page-v1 .ha-v3-footer-bottom,#ha-edition-v1 .ha-v3-footer-bottom{
     padding:12px 24px!important;
   }
 }
@@ -2570,8 +2572,8 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-ap-card-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:16px;}
 
 /* Card — reuses ha-kc-card classes */
-#ha-artist-page-v1 .ha-kc-card{background:#fff;border:.5px solid rgba(54,68,73,.1);border-radius:8px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;}
-#ha-artist-page-v1 .ha-kc-card:hover{border-color:var(--teal);transform:translateY(-1px);}
+#ha-artist-page-v1 .ha-kc-card,#ha-edition-v1 .ha-kc-card{background:#fff;border:.5px solid rgba(54,68,73,.1);border-radius:8px;overflow:hidden;transition:border-color .2s ease,transform .2s ease;}
+#ha-artist-page-v1 .ha-kc-card:hover,#ha-edition-v1 .ha-kc-card:hover{border-color:var(--teal);transform:translateY(-1px);}
 #ha-artist-page-v1 .ha-kc-card-inactive{opacity:.72;}
 
 /* Card image — taller 4/5 ratio */
@@ -2581,9 +2583,9 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-kc-card-placeholder span{font-family:'Lora',Georgia,serif;font-size:28px;color:rgba(38,91,112,.25);}
 
 /* Pip and badge */
-#ha-artist-page-v1 .ha-kc-pip,#ha-artist-page-v1 .ha-kc-badge{position:absolute;top:8px;z-index:2;font-size:9px;font-weight:600;padding:3px 8px;border-radius:3px;line-height:1.25;}
-#ha-artist-page-v1 .ha-kc-pip{left:8px;background:var(--teal);color:var(--cream);}
-#ha-artist-page-v1 .ha-kc-badge{right:8px;}
+#ha-artist-page-v1 .ha-kc-pip,#ha-artist-page-v1 .ha-kc-badge,#ha-edition-v1 .ha-kc-pip,#ha-edition-v1 .ha-kc-badge{position:absolute;top:8px;z-index:2;font-size:9px;font-weight:600;padding:3px 8px;border-radius:3px;line-height:1.25;}
+#ha-artist-page-v1 .ha-kc-pip,#ha-edition-v1 .ha-kc-pip{left:8px;background:var(--teal);color:var(--cream);}
+#ha-artist-page-v1 .ha-kc-badge,#ha-edition-v1 .ha-kc-badge{right:8px;}
 #ha-artist-page-v1 .ha-kc-badge-available{background:rgba(38,91,112,.12);color:var(--teal);backdrop-filter:blur(5px);}
 #ha-artist-page-v1 .ha-kc-badge-coming{background:rgba(139,96,64,.14);color:var(--twine);backdrop-filter:blur(5px);}
 #ha-artist-page-v1 .ha-kc-badge.ha-kc-badge-making-more,#ha-edition-v1 .ha-kc-badge.ha-kc-badge-making-more{background:rgba(54,68,73,.12);color:#364449;backdrop-filter:blur(5px);}
@@ -2595,13 +2597,13 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-ap-dot.is-active{background:var(--teal);}
 
 /* Card body */
-#ha-artist-page-v1 .ha-kc-card-body{padding:14px 16px 16px;}
-#ha-artist-page-v1 .ha-kc-card h3{font-size:16px;font-weight:700;color:var(--dark);margin:0 0 10px;line-height:1.2;font-family:'DM Sans',sans-serif;}
+#ha-artist-page-v1 .ha-kc-card-body,#ha-edition-v1 .ha-kc-card-body{padding:14px 16px 16px;}
+#ha-artist-page-v1 .ha-kc-card h3,#ha-edition-v1 .ha-kc-card h3{font-size:16px;font-weight:700;color:var(--dark);margin:0 0 10px;line-height:1.2;font-family:'DM Sans',sans-serif;}
 
 /* Chips — FORMAT and SIZES only */
-#ha-artist-page-v1 .ha-kc-chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px;}
-#ha-artist-page-v1 .ha-kc-chips span{display:flex;flex-direction:column;gap:2px;background:rgba(54,68,73,.06);border:.5px solid rgba(54,68,73,.14);border-radius:5px;padding:7px 10px;font-size:12px;font-weight:700;color:var(--dark);white-space:nowrap;}
-#ha-artist-page-v1 .ha-kc-chips small{font-size:9px;font-weight:700;color:var(--teal);opacity:1;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;}
+#ha-artist-page-v1 .ha-kc-chips,#ha-edition-v1 .ha-kc-chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px;}
+#ha-artist-page-v1 .ha-kc-chips span,#ha-edition-v1 .ha-kc-chips span{display:flex;flex-direction:column;gap:2px;background:rgba(54,68,73,.06);border:.5px solid rgba(54,68,73,.14);border-radius:5px;padding:7px 10px;font-size:12px;font-weight:700;color:var(--dark);white-space:nowrap;}
+#ha-artist-page-v1 .ha-kc-chips small,#ha-edition-v1 .ha-kc-chips small{font-size:9px;font-weight:700;color:var(--teal);opacity:1;letter-spacing:.06em;text-transform:uppercase;line-height:1.2;}
 
 /* Price line */
 #ha-artist-page-v1 .ha-ap-price-line{font-family:'Lora',Georgia,serif;font-size:14px;color:var(--dark);margin:0 0 10px;border-top:.5px solid rgba(54,68,73,.1);padding-top:10px;}
@@ -2610,10 +2612,10 @@ body.ha-artist-page-v1-active .collection-title{display:none!important;}
 #ha-artist-page-v1 .ha-ap-price-from{font-style:italic;font-size:11px;color:var(--muted-strong);margin-right:4px;}
 
 /* Meaning and gift chips */
-#ha-artist-page-v1 .ha-kc-meaning{border-top:.5px solid rgba(54,68,73,.16);padding:11px 0 3px;margin:0 0 10px;}
-#ha-artist-page-v1 .ha-kc-meaning p{font-size:13px!important;color:var(--muted-strong);line-height:1.6;margin:0 0 8px;font-weight:400;}
-#ha-artist-page-v1 .ha-kc-gf-chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px;}
-#ha-artist-page-v1 .ha-kc-gf-chips span{font-size:11px;color:var(--muted-strong);background:rgba(54,68,73,.09);padding:5px 9px;border-radius:4px;line-height:1.2;white-space:nowrap;}
+#ha-artist-page-v1 .ha-kc-meaning,#ha-edition-v1 .ha-kc-meaning{border-top:.5px solid rgba(54,68,73,.16);padding:11px 0 3px;margin:0 0 10px;}
+#ha-artist-page-v1 .ha-kc-meaning p,#ha-edition-v1 .ha-kc-meaning p{font-size:13px!important;color:var(--muted-strong);line-height:1.6;margin:0 0 8px;font-weight:400;}
+#ha-artist-page-v1 .ha-kc-gf-chips,#ha-edition-v1 .ha-kc-gf-chips{display:flex;gap:7px;flex-wrap:wrap;margin:0 0 10px;}
+#ha-artist-page-v1 .ha-kc-gf-chips span,#ha-edition-v1 .ha-kc-gf-chips span{font-size:11px;color:var(--muted-strong);background:rgba(54,68,73,.09);padding:5px 9px;border-radius:4px;line-height:1.2;white-space:nowrap;}
 
 /* Buttons */
 #ha-artist-page-v1 .ha-kc-btn{display:block;width:100%;padding:10px;border-radius:4px;text-align:center;text-decoration:none;font-size:13px;font-weight:700;margin-top:8px;font-family:'DM Sans',sans-serif;border:0;cursor:pointer;}
@@ -2947,4 +2949,113 @@ body.ha-artist-page-v1-active > #siteWrapper > main#page{
 @media(max-width:640px){
   #ha-collaborate-v1 .ha-col-tier-hero-subheading{font-size:22px;}
   #ha-collaborate-v1 .ha-col-tier-hero-subheading~.ha-col-btn-teal{width:100%;}
+}
+
+
+/* Hope Editions v11 — standalone Edition renderer, additive and route-scoped. */
+body.ha-edition-v1-active #sections,
+body.ha-edition-v1-active #footer-sections,
+body.ha-edition-v1-active #page,
+body.ha-edition-v1-active #siteWrapper > main#page,
+body.ha-edition-v1-active main.container,
+body.ha-edition-v1-active .Header,
+body.ha-edition-v1-active header.Header,
+body.ha-edition-v1-active #header,
+body.ha-edition-v1-active .page-title,
+body.ha-edition-v1-active .entry-title,
+body.ha-edition-v1-active .collection-title{display:none!important;}
+
+#ha-edition-v1,#ha-edition-v1 *{box-sizing:border-box;}
+#ha-edition-v1{--teal:#265b70;--cream:#F2F3EF;--linen:#ECEEF0;--twine:#8B6040;--gold:#FED22F;--dark:#364449;--muted-strong:#4f5a5d;font-family:'DM Sans',Arial,sans-serif;color:var(--dark);background:var(--cream);line-height:1.4;-webkit-font-smoothing:antialiased;}
+#ha-edition-v1 a{text-decoration:none;}
+#ha-edition-v1 img{display:block;max-width:100%;}
+
+#ha-edition-v1 .ha-ed-hero{background:var(--teal);padding:56px 48px 52px;}
+#ha-edition-v1 .ha-ed-hero-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1fr) 460px;grid-template-areas:"copy art";column-gap:80px;align-items:start;}
+#ha-edition-v1 .ha-ed-hero-copy{grid-area:copy;min-width:0;}
+#ha-edition-v1 .ha-ed-eyebrow{font-size:11px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--gold);margin:0 0 14px;}
+#ha-edition-v1 .ha-ed-hero h1{font-family:'Lora',Georgia,serif;font-size:clamp(36px,4vw,56px);line-height:1.08;font-weight:400;letter-spacing:-.02em;color:var(--cream);margin:0 0 22px;}
+#ha-edition-v1 .ha-ed-hero h1 em{display:block;font-size:.6em;line-height:1.25;font-style:italic;letter-spacing:-.01em;color:var(--gold);margin-top:10px;}
+#ha-edition-v1 .ha-ed-hero-body,#ha-edition-v1 .ha-ed-hero-reach{max-width:560px;font-size:16px;line-height:1.85;font-weight:300;color:rgba(242,243,239,.86);margin:0 0 18px;}
+#ha-edition-v1 .ha-ed-hero-reach{margin-top:22px;}
+#ha-edition-v1 .ha-ed-pullout{font-family:'Lora',Georgia,serif;font-size:1.06em;line-height:1.45;font-style:italic;color:var(--gold);font-weight:400;}
+#ha-edition-v1 .ha-ed-hero-signoff{max-width:560px;border-top:.5px solid rgba(242,243,239,.28);padding-top:18px;font-family:'Lora',Georgia,serif;font-size:19px;line-height:1.5;color:var(--cream);margin:22px 0 28px;}
+#ha-edition-v1 .ha-ed-stats{display:flex;gap:40px;flex-wrap:wrap;}
+#ha-edition-v1 .ha-ed-stats span{display:flex;flex-direction:column;gap:5px;}
+#ha-edition-v1 .ha-ed-stats strong{font-family:'Lora',Georgia,serif;font-size:26px;line-height:1;font-weight:400;color:var(--gold);}
+#ha-edition-v1 .ha-ed-stats small{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:rgba(242,243,239,.72);}
+#ha-edition-v1 .ha-ed-hero-art{grid-area:art;padding-top:27px;min-width:0;}
+#ha-edition-v1 .ha-ed-frame{margin:0;background:var(--cream);padding:14px 14px 0;box-shadow:0 18px 40px rgba(10,30,40,.28);}
+#ha-edition-v1 .ha-ed-frame>img{display:block;width:100%;height:auto;max-width:none;object-fit:contain;}
+#ha-edition-v1 .ha-ed-painting-label{padding:14px 4px 14px;}
+#ha-edition-v1 .ha-ed-art-credit{margin:0 0 3px;font-family:'Lora',Georgia,serif;font-size:15px;line-height:1.35;color:var(--dark);}
+#ha-edition-v1 .ha-ed-provenance{margin:0;font-size:11.5px;line-height:1.45;color:#4f5a5d;}
+#ha-edition-v1 .ha-ed-painting-line{margin:12px 0 0;padding-top:10px;border-top:.5px dotted rgba(54,68,73,.22);font-family:'Lora',Georgia,serif;font-size:13px;line-height:1.5;font-style:italic;color:#4f5a5d;}
+#ha-edition-v1 .ha-ed-partner{margin-top:12px;padding-top:12px;border-top:.5px solid rgba(54,68,73,.18);display:flex;align-items:center;justify-content:space-between;gap:12px;}
+#ha-edition-v1 .ha-ed-partner small{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#414c4f;}
+#ha-edition-v1 .ha-ed-partner img{width:120px;height:38px;object-fit:contain;object-position:right center;}
+#ha-edition-v1 .ha-ed-things{margin:30px 0 0;font-family:'Lora',Georgia,serif;font-size:16.5px;line-height:1.65;font-style:italic;color:var(--cream);}
+
+#ha-edition-v1 .ha-ed-main{background:var(--cream);padding:44px 48px 72px;}
+#ha-edition-v1 .ha-ed-artist-stream{position:relative;max-width:1344px;margin:0 auto;}
+#ha-edition-v1 .ha-ed-artist{margin:0 0 52px;min-width:0;}
+#ha-edition-v1 .ha-ed-artist-name{font-family:'Lora',Georgia,serif;font-size:24px;line-height:1.2;font-weight:400;color:var(--teal);margin:0;}
+#ha-edition-v1 .ha-ed-artist-why{max-width:34em;font-family:'Lora',Georgia,serif;font-size:17px;line-height:1.4;font-style:italic;color:var(--twine);margin:4px 0 14px;}
+#ha-edition-v1 .ha-ed-piece-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;align-items:start;}
+#ha-edition-v1 .ha-ed-layout-two-on-two{grid-template-columns:repeat(2,minmax(0,1fr));max-width:calc((100% - 16px) * .666667);}
+#ha-edition-v1 .ha-ed-layout-feature-and-one-beside .ha-ed-card-feature,
+#ha-edition-v1 .ha-ed-layout-feature-and-two-beside .ha-ed-card-feature{grid-column:1 / span 2;grid-row:1 / span 2;}
+#ha-edition-v1 .ha-ed-layout-three-above-feature-below .ha-ed-card-feature,
+#ha-edition-v1 .ha-ed-layout-three-above-feature-and-one-below .ha-ed-card-feature{grid-column:1 / span 2;grid-row:2;}
+#ha-edition-v1 .ha-ed-card{display:block;color:var(--dark);text-decoration:none;}
+#ha-edition-v1 .ha-ed-card:focus-visible{outline:2px solid var(--teal);outline-offset:3px;}
+#ha-edition-v1 .ha-ed-card-img-wrap{aspect-ratio:1 / 1;height:auto;position:relative;overflow:hidden;background:#fafbf6;display:flex;align-items:center;justify-content:center;}
+#ha-edition-v1 .ha-ed-card-img-wrap img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:center;}
+#ha-edition-v1 .ha-ed-card .ha-kc-card-body{padding:12px 14px 14px;}
+#ha-edition-v1 .ha-ed-card h3{font-size:14px;line-height:1.25;margin:0 0 6px;}
+#ha-edition-v1 .ha-ed-card-feature h3{font-size:18px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-chips{margin:0 0 8px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-chips span{padding:5px 8px;font-size:11px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-chips small{font-size:9px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-meaning{padding-top:10px;margin:0 0 8px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-gf-chips{margin:0 0 8px;}
+#ha-edition-v1 .ha-ed-card .ha-kc-gf-chips span{padding:4px 8px;font-size:11px;}
+#ha-edition-v1 .ha-ed-card-shop{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.01em;color:var(--teal);}
+#ha-edition-v1 .ha-ed-card:hover .ha-ed-card-shop,#ha-edition-v1 .ha-ed-card:focus-visible .ha-ed-card-shop{text-decoration:underline;text-underline-offset:4px;}
+#ha-edition-v1 .ha-ed-price{font-family:'Lora',Georgia,serif;font-size:13px;color:var(--dark);margin:0 0 10px;}
+
+#ha-edition-v1 .ha-ed-pre-footer{background:var(--linen);padding:96px 48px 104px;border-top:.5px solid rgba(54,68,73,.1);}
+#ha-edition-v1 .ha-ed-pre-grid{max-width:1280px;margin:0 auto;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));column-gap:32px;align-items:start;}
+#ha-edition-v1 .ha-ed-pre-copy{grid-column:1 / span 4;max-width:620px;}
+#ha-edition-v1 .ha-ed-pre-copy h2{font-family:'Lora',Georgia,serif;font-size:clamp(28px,2.6vw,36px);line-height:1.15;font-weight:400;letter-spacing:-.01em;color:var(--teal);margin:0 0 22px;}
+#ha-edition-v1 .ha-ed-pre-copy>p{font-size:16px;line-height:1.85;font-weight:300;color:var(--dark);margin:0 0 18px;}
+#ha-edition-v1 .ha-ed-pre-figure{grid-column:5 / span 2;justify-self:end;width:100%;max-width:320px;margin:0;padding-top:6px;}
+#ha-edition-v1 .ha-ed-pre-figure img{display:block;width:100%;aspect-ratio:1 / 1;object-fit:cover;border-radius:6px;}
+#ha-edition-v1 .ha-ed-pre-person{margin:16px 0 0;}
+#ha-edition-v1 .ha-ed-pre-person-name{font-family:'Lora',Georgia,serif;font-size:20px;line-height:1.3;font-style:italic;font-weight:400;color:var(--twine);margin:0 0 4px;}
+#ha-edition-v1 .ha-ed-pre-person-role{font-size:11px;line-height:1.4;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#414c4f;margin:0;}
+#ha-edition-v1 .ha-ed-pre-person-only{grid-column:1 / span 4;margin-top:10px;}
+#ha-edition-v1 .ha-ed-pre-person-only .ha-ed-pre-person{margin-top:0;}
+
+
+@media(max-width:1100px){
+  #ha-edition-v1 .ha-ed-main{padding:28px 22px 48px;}
+  #ha-edition-v1 .ha-ed-artist-stream{height:auto!important;}
+  #ha-edition-v1 .ha-ed-artist{position:static!important;left:auto!important;top:auto!important;width:auto!important;margin:0 0 52px!important;}
+  #ha-edition-v1 .ha-ed-layout-two-on-two{max-width:none;}
+  #ha-edition-v1 .ha-ed-pre-footer{padding:56px 22px 64px;}
+  #ha-edition-v1 .ha-ed-pre-grid{grid-template-columns:1fr;row-gap:28px;}
+  #ha-edition-v1 .ha-ed-pre-copy,#ha-edition-v1 .ha-ed-pre-figure,#ha-edition-v1 .ha-ed-pre-person-only{grid-column:1;}
+  #ha-edition-v1 .ha-ed-pre-figure{justify-self:start;max-width:240px;padding-top:0;}
+}
+@media(max-width:900px){
+  #ha-edition-v1 .ha-ed-hero{padding:40px 22px 44px;}
+  #ha-edition-v1 .ha-ed-hero-grid{grid-template-columns:1fr;grid-template-areas:"copy" "art";gap:0;}
+  #ha-edition-v1 .ha-ed-hero-art{padding-top:24px;}
+  #ha-edition-v1 .ha-ed-things{margin-top:30px;}
+}
+@media(max-width:600px){
+  #ha-edition-v1 .ha-ed-piece-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;}
+  #ha-edition-v1 .ha-ed-layout-two-on-two{max-width:none;}
+  #ha-edition-v1 .ha-ed-piece-grid .ha-ed-card-feature{grid-column:1 / -1!important;grid-row:auto!important;}
 }

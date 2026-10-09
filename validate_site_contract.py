@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from dataclasses import asdict, dataclass
@@ -71,6 +72,12 @@ ACTIVE_RENDERER_FILES = [
 # anchor in renderer markup.
 DATA_DRIVEN_FOOTERS = {"ha-story.js": "content.story.js"}
 
+# Editions are intentionally standalone: they do not have the standard site
+# navigation or full Footer Navigate column. Keep them out of the ordinary
+# manifests and validate their deliberately smaller public contract separately.
+STANDALONE_EDITION_CONTENT_FILE = "content.editions.js"
+STANDALONE_EDITION_RENDERER_FILE = "ha-edition.js"
+
 NODE_CONTENT_READER = r"""
 const fs = require('fs');
 const vm = require('vm');
@@ -92,6 +99,17 @@ function visit(value, trail) {
 }
 Object.entries(sandbox.window).forEach(([key, value]) => visit(value, `window.${key}`));
 process.stdout.write(JSON.stringify(found));
+"""
+
+NODE_EDITIONS_READER = r"""
+const fs = require('fs');
+const vm = require('vm');
+const filename = process.argv[1];
+const source = fs.readFileSync(filename, 'utf8');
+const sandbox = {window: {}};
+vm.createContext(sandbox);
+vm.runInContext(source, sandbox, {filename, timeout: 1000});
+process.stdout.write(JSON.stringify(sandbox.window.HA_EDITIONS_CONTENT || null));
 """
 
 
@@ -171,6 +189,23 @@ def load_navigation_records(path: Path) -> list[dict[str, Any]]:
         detail = (result.stderr or result.stdout).strip()
         raise RuntimeError(f"Node could not evaluate {path.name}: {detail}")
     return json.loads(result.stdout)
+
+
+def load_editions_payload(path: Path) -> dict[str, Any]:
+    """Evaluate the generated standalone Editions registry in a small VM."""
+    result = subprocess.run(
+        ["node", "-e", NODE_EDITIONS_READER, str(path)],
+        text=True,
+        capture_output=True,
+        check=False,
+    )
+    if result.returncode:
+        detail = (result.stderr or result.stdout).strip()
+        raise RuntimeError(f"Node could not evaluate {path.name}: {detail}")
+    payload = json.loads(result.stdout)
+    if not isinstance(payload, dict):
+        raise RuntimeError(f"{path.name} did not define window.HA_EDITIONS_CONTENT.")
+    return payload
 
 
 def value_for_link(link: Any, key: str) -> str:
@@ -308,6 +343,101 @@ def validate_footers(root: Path, content_records: dict[str, list[dict[str, Any]]
     return findings
 
 
+def validate_standalone_edition(root: Path) -> list[Finding]:
+    """Validate the intentionally smaller, navigation-free Edition contract."""
+    findings: list[Finding] = []
+    content_path = root / STANDALONE_EDITION_CONTENT_FILE
+    renderer_path = root / STANDALONE_EDITION_RENDERER_FILE
+    if not content_path.is_file():
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, "Standalone Edition content file is missing."))
+        return findings
+    if not renderer_path.is_file():
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_RENDERER_FILE, "Standalone Edition renderer file is missing."))
+        return findings
+    try:
+        payload = load_editions_payload(content_path)
+    except (RuntimeError, json.JSONDecodeError) as exc:
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, str(exc)))
+        return findings
+
+    publish_prices = payload.get("publishPrices")
+    if not isinstance(publish_prices, bool):
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, "publishPrices must be a boolean."))
+    editions = payload.get("editions")
+    if not isinstance(editions, dict) or not editions:
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, "editions must be a non-empty object."))
+        editions = {}
+
+    source = content_path.read_text(encoding="utf-8")
+    if publish_prices is False:
+        if "£" in source:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, "Price publication is NO but generated content contains £."))
+        if re.search(r'"(?:price|priceNumber|priceFrom|fromPrice)"\s*:', source):
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, "Price publication is NO but generated content contains a forbidden public price key."))
+
+    seen_numbers: set[str] = set()
+    seen_paths: set[str] = set()
+    for slug, edition in editions.items():
+        if not isinstance(edition, dict):
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} is not an object."))
+            continue
+        path = str(edition.get("pageUrl", ""))
+        if path != f"/editions/{slug}":
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} pageUrl must be /editions/{slug}; found {path or 'blank'}."))
+        if path in seen_paths:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Duplicate Edition pageUrl: {path}."))
+        seen_paths.add(path)
+        number = str(edition.get("editionNumber", ""))
+        if not number:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} has no editionNumber."))
+        elif number in seen_numbers:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Duplicate Edition number: {number}."))
+        seen_numbers.add(number)
+        artists = edition.get("artists")
+        if not isinstance(artists, list) or not artists:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} has no artists."))
+            continue
+        artist_orders = [artist.get("order") for artist in artists if isinstance(artist, dict)]
+        if artist_orders != sorted(artist_orders) or len(set(artist_orders)) != len(artist_orders):
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} artists must be uniquely sorted by Artist Order."))
+        pieces = [piece for artist in artists if isinstance(artist, dict) for piece in artist.get("pieces", []) if isinstance(piece, dict)]
+        for piece in pieces:
+            if piece.get("world") not in {"To Keep", "To Make"}:
+                findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} contains a piece with an invalid World."))
+            if publish_prices is False and any(key in piece for key in ("price", "priceNumber", "priceFrom", "fromPrice")):
+                findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} contains a public price field while publishPrices is false."))
+        stats = edition.get("stats", {})
+        expected_stats = {
+            "artists": len(artists),
+            "toKeep": sum(1 for piece in pieces if piece.get("world") == "To Keep"),
+            "toMake": sum(1 for piece in pieces if piece.get("world") == "To Make"),
+        }
+        if stats != expected_stats:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} generated stats must equal emitted artist and World counts."))
+
+    renderer = renderer_path.read_text(encoding="utf-8")
+    required_renderer_tokens = (
+        'id="ha-edition-v1"',
+        'href="/">Home</a>',
+        'href="/contact">Contact</a>',
+        'href="/privacy">Privacy policy</a>',
+        'href="/accessibility">Accessibility</a>',
+    )
+    for token in required_renderer_tokens:
+        if token not in renderer:
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_RENDERER_FILE, f"Standalone Edition renderer is missing required token: {token}."))
+    footer_start = renderer.find('<footer class="ha-v3-footer">')
+    footer_end = renderer.find('</footer>', footer_start)
+    if footer_start < 0 or footer_end < 0:
+        findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_RENDERER_FILE, "Standalone Edition shared-style footer could not be located."))
+    else:
+        footer = renderer[footer_start:footer_end]
+        expected_links = ('href="/">Home</a>', 'href="/contact">Contact</a>', 'href="/privacy">Privacy policy</a>', 'href="/accessibility">Accessibility</a>')
+        if footer.count('href=') != 4 or any(token not in footer for token in expected_links) or 'instagram' in footer.lower():
+            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_RENDERER_FILE, "Standalone Edition footer must contain only Home, Contact, Privacy policy, and Accessibility links; Instagram is not allowed."))
+    return findings
+
+
 def baseline_status(root: Path, baseline: str, fetch: bool) -> tuple[dict[str, str], list[Finding]]:
     findings: list[Finding] = []
     try:
@@ -368,6 +498,8 @@ def markdown_report(status: dict[str, str], new_findings: list[Finding], pre_exi
         "2. Every active page content file has the exact navigation labels: To Keep, To Make, The Story, For Artists, Collective.",
         "3. Every active page's To Make navigation destination is `/to-make`.",
         "4. Every visible Footer Navigate column contains the exact label `For Organisations`.",
+        "5. The standalone Editions registry has valid `/editions/<slug>` routes, generated counts, and no public price output while publication prices are NO.",
+        "6. The standalone Edition renderer has its root and the approved shared-style minimal footer (Home, Contact, Privacy policy, Accessibility; no Instagram).",
         "",
         "## New violations — blocking",
         "",
@@ -399,6 +531,13 @@ def markdown_report(status: dict[str, str], new_findings: list[Finding], pre_exi
         "",
         "> Retired historical collection files and non-page supplementary data are intentionally excluded. Add a new page's content and renderer to the manifest when that page becomes live.",
         "",
+        "### Standalone Edition pair",
+        "",
+        f"- `{STANDALONE_EDITION_CONTENT_FILE}`",
+        f"- `{STANDALONE_EDITION_RENDERER_FILE}`",
+        "",
+        "> This pair intentionally uses the approved minimal Edition footer and is validated separately from the standard navigation/full-footer page contract.",
+        "",
     ]
     return "\n".join(lines)
 
@@ -422,6 +561,7 @@ def main() -> int:
     content_findings, records = validate_content(root)
     findings.extend(content_findings)
     findings.extend(validate_footers(root, records))
+    findings.extend(validate_standalone_edition(root))
     findings.sort(key=lambda item: (item.area, item.file, item.message))
     new_findings, pre_existing = classify_findings(findings, known_findings)
 
