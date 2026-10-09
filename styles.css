@@ -2993,7 +2993,7 @@ body.ha-edition-v1-active .collection-title{display:none!important;}
 #ha-edition-v1 .ha-ed-painting-line{margin:12px 0 0;padding-top:10px;border-top:.5px dotted rgba(54,68,73,.22);font-family:'Lora',Georgia,serif;font-size:13px;line-height:1.5;font-style:italic;color:#4f5a5d;}
 #ha-edition-v1 .ha-ed-partner{margin-top:12px;padding-top:12px;border-top:.5px solid rgba(54,68,73,.18);display:flex;align-items:center;justify-content:space-between;gap:12px;}
 #ha-edition-v1 .ha-ed-partner small{font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:#414c4f;}
-#ha-edition-v1 .ha-ed-partner img{width:120px;height:38px;object-fit:contain;object-position:right center;}
+#ha-edition-v1 .ha-ed-partner img{width:132px;height:42px;object-fit:contain;object-position:right center;}
 #ha-edition-v1 .ha-ed-things{margin:30px 0 0;font-family:'Lora',Georgia,serif;font-size:16.5px;line-height:1.65;font-style:italic;color:var(--cream);}
 
 #ha-edition-v1 .ha-ed-main{background:var(--cream);padding:44px 48px 72px;}
