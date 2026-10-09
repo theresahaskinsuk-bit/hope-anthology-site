@@ -54,7 +54,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 1,
           "displayName": "Artist A",
           "layout": "Three above feature and one below",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -132,7 +132,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 2,
           "displayName": "Artist C",
           "layout": "Feature and two beside",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -184,7 +184,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 3,
           "displayName": "Artist B",
           "layout": "Three all small",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -232,7 +232,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 4,
           "displayName": "Artist D",
           "layout": "Feature and two beside",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -284,7 +284,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 5,
           "displayName": "Artist E",
           "layout": "Three above feature below",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -349,7 +349,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 6,
           "displayName": "Artist G",
           "layout": "Five all small",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -423,7 +423,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 7,
           "displayName": "Artist F",
           "layout": "Two on two",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -484,7 +484,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 8,
           "displayName": "Artist H",
           "layout": "Three above feature and one below",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -562,7 +562,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 9,
           "displayName": "Artist I",
           "layout": "Two on two",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -623,7 +623,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 10,
           "displayName": "Artist K",
           "layout": "Three then one",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -684,7 +684,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 11,
           "displayName": "Artist J",
           "layout": "Three above feature below",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -749,7 +749,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 12,
           "displayName": "Artist L",
           "layout": "Feature and one beside",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
@@ -788,7 +788,7 @@ window.HA_EDITIONS_CONTENT = {
           "order": 13,
           "displayName": "Artist M",
           "layout": "Two side by side",
-          "whyLine": "Why they make what they make, in one line.",
+          "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
