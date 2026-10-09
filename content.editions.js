@@ -128,17 +128,17 @@ window.HA_EDITIONS_CONTENT = {
           ]
         },
         {
-          "slug": "artist-c",
+          "slug": "artist-d",
           "order": 2,
-          "displayName": "Artist C",
+          "displayName": "Artist D",
           "layout": "Feature and two beside",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
-              "title": "Artist C — Piece 1",
-              "world": "To Keep",
-              "medium": "Enamel jewellery",
+              "title": "Artist D — Piece 1",
+              "world": "To Make",
+              "medium": "Craft kit",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": true,
               "meaning": "A short line from the artist about what this piece is for.",
@@ -148,33 +148,33 @@ window.HA_EDITIONS_CONTENT = {
                 "Early days"
               ],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist C — Piece 1",
+              "imageAlt": "Placeholder image for Artist D — Piece 1",
               "comingSoonLabel": ""
             },
             {
               "order": 2,
-              "title": "Artist C — Piece 2",
-              "world": "To Keep",
-              "medium": "Enamel jewellery",
+              "title": "Artist D — Piece 2",
+              "world": "To Make",
+              "medium": "Craft kit",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist C — Piece 2",
-              "comingSoonLabel": ""
+              "imageAlt": "Placeholder image for Artist D — Piece 2",
+              "comingSoonLabel": "Making more"
             },
             {
               "order": 3,
-              "title": "Artist C — Piece 3",
-              "world": "To Keep",
-              "medium": "Enamel jewellery",
+              "title": "Artist D — Piece 3",
+              "world": "To Make",
+              "medium": "Craft kit",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist C — Piece 3",
+              "imageAlt": "Placeholder image for Artist D — Piece 3",
               "comingSoonLabel": ""
             }
           ]
@@ -228,17 +228,17 @@ window.HA_EDITIONS_CONTENT = {
           ]
         },
         {
-          "slug": "artist-d",
+          "slug": "artist-c",
           "order": 4,
-          "displayName": "Artist D",
+          "displayName": "Artist C",
           "layout": "Feature and two beside",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
-              "title": "Artist D — Piece 1",
-              "world": "To Make",
-              "medium": "Craft kit",
+              "title": "Artist C — Piece 1",
+              "world": "To Keep",
+              "medium": "Enamel jewellery",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": true,
               "meaning": "A short line from the artist about what this piece is for.",
@@ -248,240 +248,40 @@ window.HA_EDITIONS_CONTENT = {
                 "Early days"
               ],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist D — Piece 1",
+              "imageAlt": "Placeholder image for Artist C — Piece 1",
               "comingSoonLabel": ""
             },
             {
               "order": 2,
-              "title": "Artist D — Piece 2",
-              "world": "To Make",
-              "medium": "Craft kit",
+              "title": "Artist C — Piece 2",
+              "world": "To Keep",
+              "medium": "Enamel jewellery",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist D — Piece 2",
-              "comingSoonLabel": "Making more"
-            },
-            {
-              "order": 3,
-              "title": "Artist D — Piece 3",
-              "world": "To Make",
-              "medium": "Craft kit",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist D — Piece 3",
-              "comingSoonLabel": ""
-            }
-          ]
-        },
-        {
-          "slug": "artist-e",
-          "order": 5,
-          "displayName": "Artist E",
-          "layout": "Three above feature below",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "order": 1,
-              "title": "Artist E — Piece 1",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist E — Piece 1",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 2,
-              "title": "Artist E — Piece 2",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist E — Piece 2",
+              "imageAlt": "Placeholder image for Artist C — Piece 2",
               "comingSoonLabel": ""
             },
             {
               "order": 3,
-              "title": "Artist E — Piece 3",
+              "title": "Artist C — Piece 3",
               "world": "To Keep",
-              "medium": "Giclée print",
+              "medium": "Enamel jewellery",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist E — Piece 3",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 4,
-              "title": "Artist E — Piece 4",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": true,
-              "meaning": "A short line from the artist about what this piece is for.",
-              "goodFor": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist E — Piece 4",
-              "comingSoonLabel": ""
-            }
-          ]
-        },
-        {
-          "slug": "artist-g",
-          "order": 6,
-          "displayName": "Artist G",
-          "layout": "Five all small",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "order": 1,
-              "title": "Artist G — Piece 1",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist G — Piece 1",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 2,
-              "title": "Artist G — Piece 2",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist G — Piece 2",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 3,
-              "title": "Artist G — Piece 3",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist G — Piece 3",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 4,
-              "title": "Artist G — Piece 4",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist G — Piece 4",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 5,
-              "title": "Artist G — Piece 5",
-              "world": "To Keep",
-              "medium": "Giclée print",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist G — Piece 5",
-              "comingSoonLabel": ""
-            }
-          ]
-        },
-        {
-          "slug": "artist-f",
-          "order": 7,
-          "displayName": "Artist F",
-          "layout": "Two on two",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "order": 1,
-              "title": "Artist F — Piece 1",
-              "world": "To Make",
-              "medium": "Craft kit",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist F — Piece 1",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 2,
-              "title": "Artist F — Piece 2",
-              "world": "To Make",
-              "medium": "Craft kit",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist F — Piece 2",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 3,
-              "title": "Artist F — Piece 3",
-              "world": "To Make",
-              "medium": "Craft kit",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist F — Piece 3",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 4,
-              "title": "Artist F — Piece 4",
-              "world": "To Make",
-              "medium": "Craft kit",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist F — Piece 4",
+              "imageAlt": "Placeholder image for Artist C — Piece 3",
               "comingSoonLabel": ""
             }
           ]
         },
         {
           "slug": "artist-h",
-          "order": 8,
+          "order": 5,
           "displayName": "Artist H",
           "layout": "Three above feature and one below",
           "whyLine": "A few words from the artist about their work.",
@@ -559,7 +359,7 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "slug": "artist-i",
-          "order": 9,
+          "order": 6,
           "displayName": "Artist I",
           "layout": "Two on two",
           "whyLine": "A few words from the artist about their work.",
@@ -619,69 +419,208 @@ window.HA_EDITIONS_CONTENT = {
           ]
         },
         {
-          "slug": "artist-k",
-          "order": 10,
-          "displayName": "Artist K",
-          "layout": "Three then one",
+          "slug": "artist-e",
+          "order": 7,
+          "displayName": "Artist E",
+          "layout": "Three above feature below",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "order": 1,
-              "title": "Artist K — Piece 1",
+              "title": "Artist E — Piece 1",
               "world": "To Keep",
-              "medium": "Ceramic",
-              "listingUrl": "https://thehopeanthology.art/",
-              "featured": false,
-              "meaning": "",
-              "goodFor": [],
-              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist K — Piece 1",
-              "comingSoonLabel": ""
-            },
-            {
-              "order": 2,
-              "title": "Artist K — Piece 2",
-              "world": "To Keep",
-              "medium": "Ceramic",
+              "medium": "Giclée print",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist K — Piece 2",
+              "imageAlt": "Placeholder image for Artist E — Piece 1",
               "comingSoonLabel": ""
             },
             {
-              "order": 3,
-              "title": "Artist K — Piece 3",
+              "order": 2,
+              "title": "Artist E — Piece 2",
               "world": "To Keep",
-              "medium": "Ceramic",
+              "medium": "Giclée print",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist K — Piece 3",
+              "imageAlt": "Placeholder image for Artist E — Piece 2",
               "comingSoonLabel": ""
             },
             {
-              "order": 4,
-              "title": "Artist K — Piece 4",
+              "order": 3,
+              "title": "Artist E — Piece 3",
               "world": "To Keep",
-              "medium": "Ceramic",
+              "medium": "Giclée print",
               "listingUrl": "https://thehopeanthology.art/",
               "featured": false,
               "meaning": "",
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-              "imageAlt": "Placeholder image for Artist K — Piece 4",
+              "imageAlt": "Placeholder image for Artist E — Piece 3",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 4,
+              "title": "Artist E — Piece 4",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": true,
+              "meaning": "A short line from the artist about what this piece is for.",
+              "goodFor": [
+                "A reminder",
+                "Quietly hopeful",
+                "Early days"
+              ],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist E — Piece 4",
+              "comingSoonLabel": ""
+            }
+          ]
+        },
+        {
+          "slug": "artist-f",
+          "order": 8,
+          "displayName": "Artist F",
+          "layout": "Two on two",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "order": 1,
+              "title": "Artist F — Piece 1",
+              "world": "To Make",
+              "medium": "Craft kit",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist F — Piece 1",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 2,
+              "title": "Artist F — Piece 2",
+              "world": "To Make",
+              "medium": "Craft kit",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist F — Piece 2",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 3,
+              "title": "Artist F — Piece 3",
+              "world": "To Make",
+              "medium": "Craft kit",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist F — Piece 3",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 4,
+              "title": "Artist F — Piece 4",
+              "world": "To Make",
+              "medium": "Craft kit",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist F — Piece 4",
+              "comingSoonLabel": ""
+            }
+          ]
+        },
+        {
+          "slug": "artist-g",
+          "order": 9,
+          "displayName": "Artist G",
+          "layout": "Five all small",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "order": 1,
+              "title": "Artist G — Piece 1",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist G — Piece 1",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 2,
+              "title": "Artist G — Piece 2",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist G — Piece 2",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 3,
+              "title": "Artist G — Piece 3",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist G — Piece 3",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 4,
+              "title": "Artist G — Piece 4",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist G — Piece 4",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 5,
+              "title": "Artist G — Piece 5",
+              "world": "To Keep",
+              "medium": "Giclée print",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist G — Piece 5",
               "comingSoonLabel": ""
             }
           ]
         },
         {
           "slug": "artist-j",
-          "order": 11,
+          "order": 10,
           "displayName": "Artist J",
           "layout": "Three above feature below",
           "whyLine": "A few words from the artist about their work.",
@@ -746,7 +685,7 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "slug": "artist-l",
-          "order": 12,
+          "order": 11,
           "displayName": "Artist L",
           "layout": "Feature and one beside",
           "whyLine": "A few words from the artist about their work.",
@@ -779,6 +718,67 @@ window.HA_EDITIONS_CONTENT = {
               "goodFor": [],
               "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
               "imageAlt": "Placeholder image for Artist L — Piece 2",
+              "comingSoonLabel": ""
+            }
+          ]
+        },
+        {
+          "slug": "artist-k",
+          "order": 12,
+          "displayName": "Artist K",
+          "layout": "Three then one",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "order": 1,
+              "title": "Artist K — Piece 1",
+              "world": "To Keep",
+              "medium": "Ceramic",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist K — Piece 1",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 2,
+              "title": "Artist K — Piece 2",
+              "world": "To Keep",
+              "medium": "Ceramic",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist K — Piece 2",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 3,
+              "title": "Artist K — Piece 3",
+              "world": "To Keep",
+              "medium": "Ceramic",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist K — Piece 3",
+              "comingSoonLabel": ""
+            },
+            {
+              "order": 4,
+              "title": "Artist K — Piece 4",
+              "world": "To Keep",
+              "medium": "Ceramic",
+              "listingUrl": "https://thehopeanthology.art/",
+              "featured": false,
+              "meaning": "",
+              "goodFor": [],
+              "imageUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+              "imageAlt": "Placeholder image for Artist K — Piece 4",
               "comingSoonLabel": ""
             }
           ]

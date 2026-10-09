@@ -249,9 +249,10 @@ def parse_artists(validation: Validation, ws, header_row: int, pieces_header_row
             if not value:
                 validation.error(ws.title, coordinate, field, "Required active artist value is blank.")
         try:
-            order = int(order_value)
-            if str(order) != order_value and not order_value.endswith(".0"):
+            number = float(order_value)
+            if not number.is_integer():
                 raise ValueError
+            order = int(number)
             if order <= 0:
                 raise ValueError
         except ValueError:
@@ -305,9 +306,10 @@ def parse_pieces(validation: Validation, ws, header_row: int, active_artists: di
             elif is_pale_yellow(ws[coordinate]):
                 validation.error(ws.title, coordinate, field, "Required active available piece value still has the pale-yellow unresolved-placeholder fill.")
         try:
-            order = int(order_value)
-            if str(order) != order_value and not order_value.endswith(".0"):
+            number = float(order_value)
+            if not number.is_integer():
                 raise ValueError
+            order = int(number)
             if order <= 0:
                 raise ValueError
         except ValueError:
