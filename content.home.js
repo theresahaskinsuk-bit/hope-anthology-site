@@ -7,7 +7,7 @@ window.HA_HOME_CONTENT = {
   images: {
     logo: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e789bc30-2f5c-4037-8190-a9355d3a8d20/home-logo-hope-anthology.jpg?content-type=image%2Fjpeg',
     star: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1852dfa4-ea60-4e93-83b5-ac8ea2f0498d/home-footer-star-hope-anthology.png?content-type=image%2Fpng',
-    hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/53684cf9-e518-49de-afa4-7b323633f8dd/the-hope-anthology-art-for-everyday-human.jpg?content-type=image%2Fjpeg',
+    hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4a154e4b-4dd8-438b-9c68-07d7037c4637/the-hope-anthology-art-for-everyday-human-home.jpg?content-type=image%2Fjpeg',
     keep: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18cea152-1a12-4535-8cef-3099aab45bd5/home-panel-to-keep-symbolic-art.jpg?content-type=image%2Fjpeg',
     make: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f8b5d4d6-304b-4edf-aa13-4c87597d4873/home-panel-to-make-stained-glass-patterns-luna.jpg?content-type=image%2Fjpeg',
     why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5171904f-5f1a-405f-80af-ff1199448f4e/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg'
