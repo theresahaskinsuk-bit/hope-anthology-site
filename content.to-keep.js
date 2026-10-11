@@ -39,11 +39,11 @@ window.HA_TO_KEEP_CONTENT = {
         "suffix": "of the first 50"
       },
       {
-        "value": 54,
+        "value": 44,
         "label": "WORKS"
       },
       {
-        "value": 5,
+        "value": 4,
         "label": "COLLECTIONS"
       }
     ]
@@ -80,14 +80,13 @@ window.HA_TO_KEEP_CONTENT = {
       "buttonName": "Theresa",
       "artistNumber": 1,
       "badge": "Founding artist",
-      "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/cae2ef8f-9cf1-42c2-9bf1-15ae42926c41/theresa-haskins-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg",
+      "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/93013afd-77b2-4562-8edd-dbcc196c1a6c/theresa-haskins-curated-artist-hope-anthology-hero-v2.jpg?content-type=image%2Fjpeg",
       "heroAlt": "Theresa Haskins — curated artist, The Hope Anthology",
       "medium": "Prints",
       "filterMedium": "Prints",
       "collections": [
         "The Meaning Alphabet",
-        "Everyday Anchors",
-        "Angel Numbers"
+        "Everyday Anchors"
       ],
       "feeling": "Symbols and anchors that carry everyday meaning.",
       "traits": [
@@ -104,7 +103,7 @@ window.HA_TO_KEEP_CONTENT = {
       "buttonName": "Daisy",
       "artistNumber": 2,
       "badge": "Founding artist",
-      "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/73e64fed-7768-4d71-9357-f633df015130/theresa-german-curated-artist-hope-anthology-hero.jpg?content-type=image%2Fjpeg",
+      "heroImage": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/040fbeb0-e5e0-4a92-9fa5-1b6c9efd8d35/theresa-german-curated-artist-hope-anthology-hero-V2.jpg?content-type=image%2Fjpeg",
       "heroAlt": "Folk Prints by Daisy German — curated artist, The Hope Anthology",
       "medium": "Prints",
       "filterMedium": "Prints",

@@ -51,11 +51,11 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "discipline": "Print Designer - Relatable Woo",
       "bio": "I make prints about the strange little things we attach meaning to — letters, numbers, words, symbols and those tiny reminders that seem to find us at exactly the right time. Some of it is meaningful, some of it is slightly woo, and I’m very happy living somewhere in between. I design from Bristol, making art that feels personal without taking itself too seriously.",
       "metaTitle": "Theresa Haskins — Print Designer - Relatable Woo | The Hope Anthology",
-      "metaDescription": "Prints by Theresa Haskins — symbols, anchors and angel numbers that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
+      "metaDescription": "Prints by Theresa Haskins — symbols and anchors that carry everyday meaning. An Anthology Artist at The Hope Anthology.",
       "montage": [
         {
-          "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c39aa842-b49d-4874-a770-3dea2d6cda8c/Theresa+Haskins_2207.webp?content-type=image%2Fwebp",
-          "alt": "Framed 555 angel number wall art with colourful illustrated wings and an uplifting message, displayed in a bright sunlit room beside a green houseplant. By Theresa Haskins"
+          "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f65cf1f-ff7e-4ac7-8d8f-7ba977b55ad3/theresa-haskins-knowing-print.jpg?content-type=image%2Fjpeg",
+          "alt": "Framed typographic art print featuring a large navy blue letter K decorated with delicate gold botanical leaves and stars. Beneath the letter are the words “Knowing” and “Rooted in belief that it will be ok.” Presented in a natural wooden frame with a white mount, photographed against a wooden background."
         },
         {
           "src": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/57edc999-821a-484d-9aae-a0e8999305fc/collections-card-meaning-alphabet_2207.webp?content-type=image%2Fwebp",
@@ -67,8 +67,8 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
         }
       ],
       "stats": {
-        "collections": 3,
-        "prints": 42
+        "collections": 2,
+        "prints": 32
       },
       "breadcrumbs": [
         {
@@ -82,8 +82,7 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
       "filterOptions": [
         "All",
         "The Meaning Alphabet",
-        "Everyday Anchors",
-        "Angel Numbers"
+        "Everyday Anchors"
       ],
       "gridEyebrow": "THERESA HASKINS — ALL WORK",
       "products": [
@@ -1009,296 +1008,6 @@ window.HA_KEEP_COLLECTIONS_CONTENT = {
             "lifestyle": "SOAR fine art print in a home setting — Everyday Anchors collection, symbolic wall art by Hope Anthology",
             "flat": "SOAR fine art print — Everyday Anchors collection, symbolic wall art by Hope Anthology",
             "detail": "Detail of SOAR fine art print — Everyday Anchors collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-111",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 1,
-          "title": "Angel Number 111",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537657441/angel-numbers-print-111-intuition-new",
-          "meaning": "A new chapter is already beginning. A print for those who are ready — even before they feel ready.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Trusting your instincts",
-            "Leaning into the new",
-            "Those at a turning point"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1de2444-6151-4334-8837-2640828d7123/angel-number-111-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bfe736f4-84d7-4c87-b2f1-a7063b63fb93/angel-number-111-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7377d0ae-06c9-43b6-aea5-1de5e3a091e4/angel-number-111-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-222",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 2,
-          "title": "Angel Number 222",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537645512/angel-number-222-poster-trust-alignment",
-          "meaning": "Trust that things are falling into place. A print for those learning to have faith in the process.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Patience and trust",
-            "Finding balance",
-            "Believing in the process"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/aa69efbd-ef49-461d-95b2-87ec24ce012b/angel-number-222-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4d72afcd-34e0-45d1-8ffc-4ea028a9b388/angel-number-222-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/92096ffb-0a68-4cba-9d8c-ec548854df26/angel-number-222-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 222 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 222 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 222 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-333",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 3,
-          "title": "Angel Number 333",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537644998/angel-numbers-333-print-support-growth",
-          "meaning": "You are supported, guided, and not alone. A print for those who need a reminder that help is close.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Feeling supported",
-            "Creative souls",
-            "Those who seek guidance"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ffae2865-a1fe-423d-997d-40696d59a341/angel-number-333-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8b7163a2-491e-43ef-949e-0dbf25261272/angel-number-333-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a5ee58ba-580c-4c50-8cc7-0953a50cef2d/angel-number-333-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 333 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 333 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 333 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-444",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 4,
-          "title": "Angel Number 444",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537644952/angel-number-444-poster-protection",
-          "meaning": "Steady foundations and quiet protection. A print for those who find strength in stability and trust.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Quiet strength",
-            "Building foundations",
-            "Steadiness and calm"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19b34ba8-c1b7-4058-a1f6-585be8861543/angel-number-444-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/48417730-4b1d-4b5c-8967-7d38f84d5cae/angel-number-444-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f405b1f4-4c6d-41f0-bad9-2869c3096ea8/angel-number-444-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 444 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 444 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 444 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-555",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 5,
-          "title": "Angel Number 555",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537640128/angel-number-555-wall-art-change",
-          "meaning": "Change is coming — and it's on your side. A print for those stepping bravely into the unknown.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Embracing change",
-            "Brave transitions",
-            "New adventures"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6f6ef742-7c70-4479-81e5-619e07736874/angel-number-555-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79125d8a-0c95-40b7-9c58-69c32c8d5f33/angel-number-555-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/124882d8-0e43-4c13-b9b1-dd41293b8012/angel-number-555-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 555 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 555 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 555 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-666",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 6,
-          "title": "Angel Number 666",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537639666/angel-number-666-printable-artwork",
-          "meaning": "Balance between the material and the meaningful. A print for those seeking harmony in everyday life.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Finding harmony",
-            "Mindful living",
-            "Rebalancing and reset"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6dad785b-83e0-403d-ad75-76fe29a9666b/angel-number-666-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8dfe22a0-7af0-4cca-a065-f7484dde9f4e/angel-number-666-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5219297a-9d0c-4263-be0e-2f2201446008/angel-number-666-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 666 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 666 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 666 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-777",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 7,
-          "title": "Angel Number 777",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537672222/angel-number-777-print-spiritual-wall",
-          "meaning": "You are exactly where you need to be. A print for those on a path of growth and quiet alignment.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Spiritual growth",
-            "Trusting your path",
-            "Inner alignment"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2a82ee02-11e6-427f-8a3c-ee1f7c162428/angel-number-777-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/00864bd9-ddc7-4fb2-887f-e24e2e65ebc3/angel-number-777-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/653588f5-7eb2-4981-9c4c-557a397f056b/angel-number-777-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 777 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 777 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 777 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-888",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 8,
-          "title": "Angel Number 888",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537640945/angel-number-888-wings-print-abundance",
-          "meaning": "Abundance flows when you are open to it. A print for those ready to receive what they have worked for.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Abundance and gratitude",
-            "Manifesting goals",
-            "Celebrating success"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1c785dcc-1306-40c2-8855-5d07b29b7517/angel-number-888-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/685aec22-ac92-454d-8a04-6abfb33e8e5c/angel-number-888-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/594a9cda-76de-4133-ba0a-d625380964a7/angel-number-888-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 888 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 888 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 888 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-999",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 9,
-          "title": "Angel Number 999",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537659800/angel-number-999-wings-print-spiritual",
-          "meaning": "One chapter closes so another can begin. A print for those releasing the old to welcome the new.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Letting go",
-            "Closing chapters",
-            "Transformation and release"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f315191d-3823-4217-9b0f-e45acd1d5964/angel-number-999-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/76402dbc-414c-45f0-9b28-b96eefe41586/angel-number-999-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/3018b40d-e577-4b7a-8036-638d38aaf0dd/angel-number-999-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 999 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 999 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 999 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
-          }
-        },
-        {
-          "show": true,
-          "slug": "angel-number-1111",
-          "collection": "Angel Numbers",
-          "collectionOrder": 3,
-          "productOrder": 10,
-          "title": "Angel Number 1111",
-          "status": "available",
-          "format": "Digital Download",
-          "etsyUrl": "https://hopeanthologyprints.etsy.com/uk/listing/4537644313/angel-numbers-1111-poster-alignment",
-          "meaning": "Your thoughts are powerful — choose them well. A print for those awakening to their own potential.",
-          "comingSoonLabel": "",
-          "sizes": "Various",
-          "giftFor": [
-            "Awakening and awareness",
-            "Setting powerful intentions",
-            "Those stepping into their power"
-          ],
-          "images": {
-            "lifestyle": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/e35970c6-0dc6-4f96-bd55-234d05adfa86/angel-number-1111-lifestyle.jpg?content-type=image%2Fjpeg",
-            "flat": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bef13fda-5e74-4430-9e01-b0a8e19a167a/angel-number-1111-flat.jpg?content-type=image%2Fjpeg",
-            "detail": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d1578588-73e1-4880-97aa-15f0fea1414c/angel-number-1111-detail.jpg?content-type=image%2Fjpeg"
-          },
-          "imageAlts": {
-            "lifestyle": "Angel Number 1111 fine art print in a home setting — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "flat": "Angel Number 1111 fine art print — Angel Numbers collection, symbolic wall art by Hope Anthology",
-            "detail": "Detail of Angel Number 1111 fine art print — Angel Numbers collection, symbolic design by Hope Anthology"
           }
         }
       ]
