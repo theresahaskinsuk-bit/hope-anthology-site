@@ -54,7 +54,7 @@ ACTIVE_CONTENT_FILES = [
 # contract. Retired collection renderers and the unused stability loader are
 # intentionally excluded.
 ACTIVE_RENDERER_FILES = [
-    "ha-artist-page.js",
+    "ha-artist-page-template.js",
     "ha-collaborate.js",
     "ha-collective.js",
     "ha-for-organisations.js",
@@ -64,8 +64,11 @@ ACTIVE_RENDERER_FILES = [
     "ha-story.js",
     "ha-to-keep.js",
     "ha-to-make.js",
-    "ha-to-make-maker.js",
 ]
+
+# These route-specific files bootstrap the shared template. Their runtime guard
+# remains independently checked even though the footer lives in the core file.
+ARTIST_BOOTSTRAP_FILES = ["ha-artist-page.js", "ha-to-make-maker.js"]
 
 # Only the Story renderer constructs its footer Navigate links directly from
 # content data. All other active renderers carry the final For Organisations
@@ -340,6 +343,12 @@ def validate_footers(root: Path, content_records: dict[str, list[dict[str, Any]]
         elif required_anchor not in source:
             findings.append(
                 Finding("ERROR", "footer", relative, "Footer Navigate column is missing exact anchor label 'For Organisations'."))
+    for relative in ARTIST_BOOTSTRAP_FILES:
+        source = (root / relative).read_text(encoding="utf-8") if (root / relative).is_file() else ""
+        if not source:
+            findings.append(Finding("ERROR", "artist-bootstrap", relative, "Artist route bootstrap is missing."))
+        elif "isTopLevel" not in source or "SHOW_PRICES = false" not in source or "ha-artist-page-template.js" not in source:
+            findings.append(Finding("ERROR", "artist-bootstrap", relative, "Bootstrap must retain the authoring guard, price switch, and shared template loader."))
     return findings
 
 
@@ -397,7 +406,7 @@ def validate_standalone_edition(root: Path) -> list[Finding]:
         if not isinstance(artists, list) or not artists:
             findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} has no artists."))
             continue
-        artist_orders = [artist.get("order") for artist in artists if isinstance(artist, dict)]
+        artist_orders = [artist.get("artistOrder") for artist in artists if isinstance(artist, dict)]
         if artist_orders != sorted(artist_orders) or len(set(artist_orders)) != len(artist_orders):
             findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} artists must be uniquely sorted by Artist Order."))
         pieces = [piece for artist in artists if isinstance(artist, dict) for piece in artist.get("pieces", []) if isinstance(piece, dict)]
@@ -406,14 +415,14 @@ def validate_standalone_edition(root: Path) -> list[Finding]:
                 findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} contains a piece with an invalid World."))
             if publish_prices is False and any(key in piece for key in ("price", "priceNumber", "priceFrom", "fromPrice")):
                 findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} contains a public price field while publishPrices is false."))
-        stats = edition.get("stats", {})
-        expected_stats = {
-            "artists": len(artists),
-            "toKeep": sum(1 for piece in pieces if piece.get("world") == "To Keep"),
-            "toMake": sum(1 for piece in pieces if piece.get("world") == "To Make"),
-        }
-        if stats != expected_stats:
-            findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} generated stats must equal emitted artist and World counts."))
+        for piece in pieces:
+            if piece.get("status") not in {"available", "paused"}:
+                findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} contains hidden or invalid public status."))
+            images = piece.get("images")
+            if not isinstance(images, list) or not 1 <= len(images) <= 3:
+                findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} piece has invalid public image array."))
+            if not isinstance(piece.get("chips"), list) or len(piece.get("chips")) > 5:
+                findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} piece has invalid public chip list."))
 
     renderer = renderer_path.read_text(encoding="utf-8")
     required_renderer_tokens = (

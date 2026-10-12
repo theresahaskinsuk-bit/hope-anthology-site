@@ -1,10 +1,5 @@
 #!/usr/bin/env python3
-"""Generate standalone Hope Editions content from the Editions workbook.
-
-This generator is intentionally independent of generate_directory_content.py.
-It reads one Editions workbook and writes content.editions.js only after the
-workbook passes the selected validation mode.
-"""
+"""Generate standalone Hope Editions content from a downloaded Editions workbook."""
 from __future__ import annotations
 
 import argparse
@@ -12,92 +7,26 @@ import hashlib
 import json
 import os
 import re
-import sys
 import tempfile
 from dataclasses import dataclass
 from datetime import datetime, timezone
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, Iterable
-from urllib.parse import urlparse
 
 from openpyxl import load_workbook
-from openpyxl.cell.cell import Cell
 
-
-ALLOWED_LAYOUTS: dict[str, tuple[int, int]] = {
-    "Two side by side": (2, 0),
-    "Feature and one beside": (2, 1),
-    "Three all small": (3, 0),
-    "Feature and two beside": (3, 1),
-    "Two on two": (4, 0),
-    "Three then one": (4, 0),
-    "Three above feature below": (4, 1),
-    "Five all small": (5, 0),
-    "Three above feature and one below": (5, 1),
-}
-GENERATED_FROM = "HA_Editions.xlsx"
-
-REQUIRED_EDITION_FIELDS = (
-    "Slug",
-    "Edition Number",
-    "Title",
-    "Strapline",
-    "Hero Paragraph 1",
-    "Hero Paragraph 2",
-    "Hero Paragraph 3",
-    "Hero Sign-off",
-    "Things Paragraph",
-    "Painting URL",
-    "Painting Alt",
-    "Painting Artist",
-    "Painting Title",
-    "Painting Year",
-    "Painting Medium",
-    "Painting Collection",
-    "Painting Rights",
-    "Painting Line",
-    "Pre-footer Heading",
-    "Pre-footer Paragraph 1",
-    "Pre-footer Paragraph 2",
-    "Person Name",
-    "Person Role",
-)
-
-
-def text(value: Any) -> str:
-    return "" if value is None else str(value).strip()
-
-
-def normalise_label(value: Any) -> str:
-    value = text(value).splitlines()[0] if text(value) else ""
-    value = re.sub(r"\s*\([^)]*\)", "", value)
-    value = re.sub(r"\s+", " ", value).strip().lower()
-    return {"coming soon": "coming soon label"}.get(value, value)
-
-
-def yes(value: Any) -> bool:
-    return text(value).upper() == "YES"
-
-
-def absolute_https(value: Any) -> bool:
-    parsed = urlparse(text(value))
-    return parsed.scheme == "https" and bool(parsed.netloc)
-
-
-def normal_path(value: Any) -> str:
-    path = text(value)
-    if not path:
-        return ""
-    if not path.startswith("/"):
-        return ""
-    return path.rstrip("/") or "/"
-
-
-def is_pale_yellow(cell: Cell) -> bool:
-    """Return true only for the workbook's pale-yellow unresolved placeholder fill."""
-    colour = cell.fill.fgColor
-    rgb = text(colour.rgb).upper()
-    return rgb.endswith("FFF2CC")
+SCRIPT_PATH = "generate_editions_content.py"
+PALE_YELLOW = "FFF2CC"
+URL_RE = re.compile(r"^https://[^\s]+$", re.I)
+STATUSES = {"available", "paused", "hidden"}
+PRICE_KEYS = {"price", "priceNumber", "priceFrom", "fromPrice"}
+PUBLISH_LABEL = "Publish prices to the website (YES/NO)"
+ASSETS = {"logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg", "star": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng"}
+NAV = [{"label": "To Keep", "url": "/to-keep"}, {"label": "To Make", "url": "/to-make"}, {"label": "The Story", "url": "/story"}, {"label": "For Artists", "url": "/for-artists"}, {"label": "Collective", "url": "/collective"}]
+FOOTER = {"privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"}
+LAYOUTS = {"Two side by side": (2, 0), "Feature and one beside": (2, 1), "Three all small": (3, 0), "Feature and two beside": (3, 1), "Two on two": (4, 0), "Three then one": (4, 0), "Three above feature below": (4, 1), "Five all small": (5, 0), "Three above feature and one below": (5, 1)}
+REQUIRED_META = ("Slug", "Edition Number", "Title", "Strapline", "Hero Paragraph 1", "Hero Paragraph 2", "Hero Paragraph 3", "Hero Sign-off", "Things Paragraph", "Painting URL", "Painting Alt", "Painting Artist", "Painting Title", "Painting Year", "Painting Medium", "Painting Collection", "Painting Rights", "Painting Line", "Pre-footer Heading", "Pre-footer Paragraph 1", "Pre-footer Paragraph 2", "Person Name", "Person Role")
 
 
 @dataclass(frozen=True)
@@ -109,506 +38,312 @@ class Issue:
     message: str
 
 
-class Validation:
-    def __init__(self) -> None:
+class Audit:
+    def __init__(self, mode: str) -> None:
+        self.mode = mode
         self.issues: list[Issue] = []
+        self.placeholders: list[Issue] = []
+        self.force_block = False
 
-    def error(self, sheet: str, cell: str, field: str, message: str) -> None:
-        self.issues.append(Issue("ERROR", sheet, cell, field, message))
+    def add(self, severity: str, sheet: str, cell: str, field: str, message: str) -> None:
+        self.issues.append(Issue(severity, sheet, cell, field, message))
 
-    def warning(self, sheet: str, cell: str, field: str, message: str) -> None:
-        self.issues.append(Issue("WARNING", sheet, cell, field, message))
+    def fatal(self, sheet: str, cell: str, field: str, message: str) -> None: self.add("FATAL", sheet, cell, field, message)
+    def error(self, sheet: str, cell: str, field: str, message: str) -> None: self.add("ERROR", sheet, cell, field, message)
+    def warn(self, sheet: str, cell: str, field: str, message: str) -> None: self.add("WARNING", sheet, cell, field, message)
+    def required(self, sheet: str, cell: str, field: str, message: str) -> None: self.add("ERROR" if self.mode == "strict" else "WARNING", sheet, cell, field, message)
+
+    def placeholder(self, sheet: str, cell: str, field: str, message: str) -> None:
+        issue = Issue("ERROR" if self.mode == "strict" else "WARNING", sheet, cell, field, message)
+        self.issues.append(issue); self.placeholders.append(issue)
+
+    def blocking(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.error(sheet, cell, field, message); self.force_block = True
 
     @property
-    def errors(self) -> list[Issue]:
-        return [issue for issue in self.issues if issue.severity == "ERROR"]
+    def errors(self) -> list[Issue]: return [issue for issue in self.issues if issue.severity == "ERROR"]
+    @property
+    def fatals(self) -> list[Issue]: return [issue for issue in self.issues if issue.severity == "FATAL"]
 
 
-def headings(ws, required: Iterable[str]) -> tuple[int, dict[str, int]]:
-    expected = {normalise_label(value) for value in required}
-    for row in range(1, ws.max_row + 1):
-        found: dict[str, int] = {}
-        for column in range(1, ws.max_column + 1):
-            label = normalise_label(ws.cell(row, column).value)
-            if label:
-                found[label] = column
-        if expected.issubset(found):
-            return row, found
-    raise ValueError(f"Could not find a header row containing: {', '.join(required)}")
+def text(value: Any) -> str: return "" if value is None else str(value).strip()
+def norm(value: Any) -> str: return re.sub(r"[^a-z0-9]+", "", re.sub(r"\([^)]*\)", "", text(value).replace("\n", " ").lower()))
+def https(value: Any) -> bool: return bool(URL_RE.match(text(value)))
+def yesno(value: Any) -> bool | None:
+    value = text(value).upper(); return True if value == "YES" else False if value == "NO" else None
+def posint(value: Any) -> int | None:
+    try: number = Decimal(text(value))
+    except InvalidOperation: return None
+    return int(number) if number > 0 and number == number.to_integral_value() else None
+def parse_price(value: Any) -> Decimal | None:
+    try: number = Decimal(re.sub(r"[^0-9.,]", "", text(value)).replace(",", ""))
+    except InvalidOperation: return None
+    return number if number > 0 else None
+def pale_yellow(cell: Any) -> bool:
+    fill = cell.fill
+    raw = text(fill.fgColor.rgb).upper() if fill and fill.fill_type == "solid" and fill.fgColor.type == "rgb" else ""
+    return raw.endswith(PALE_YELLOW)
+def hmap(ws: Any, row: int) -> dict[str, tuple[int, Any]]: return {norm(cell.value): (cell.column, cell) for cell in ws[row] if norm(cell.value)}
+def source_cell(ws: Any, row: int, mapping: dict[str, tuple[int, Any]], key: str) -> Any | None: return ws.cell(row=row, column=mapping[key][0]) if key in mapping else None
+def value(ws: Any, row: int, mapping: dict[str, tuple[int, Any]], key: str) -> str:
+    cell = source_cell(ws, row, mapping, key); return text(cell.value) if cell else ""
+def row_data(ws: Any, row: int, mapping: dict[str, tuple[int, Any]]) -> bool: return any(text(ws.cell(row, column).value) for column, _ in mapping.values())
 
 
-def cell_value(ws, row: int, mapping: dict[str, int], name: str) -> tuple[str, str]:
-    column = mapping[normalise_label(name)]
-    cell = ws.cell(row, column)
-    return text(cell.value), cell.coordinate
+def scan_placeholders(audit: Audit, wb: Any) -> None:
+    for ws in wb.worksheets:
+        for row in ws.iter_rows():
+            for cell in row:
+                if pale_yellow(cell): audit.placeholder(ws.title, cell.coordinate, "Unresolved placeholder", "Cell has the pale-yellow unresolved-placeholder fill.")
 
 
-def required_value(validation: Validation, ws, field_cells: dict[str, Cell], label: str) -> str:
-    cell = field_cells.get(label)
-    if cell is None:
-        validation.error(ws.title, "—", label, "Required field label is missing from the EDITION section.")
-        return ""
-    value = text(cell.value)
-    if not value:
-        validation.error(ws.title, cell.coordinate, label, "Required value is blank.")
-    elif is_pale_yellow(cell):
-        validation.error(ws.title, cell.coordinate, label, "Required value still has the pale-yellow unresolved-placeholder fill.")
-    return value
+def find_headers(ws: Any, required: Iterable[str], limit: int = 200) -> tuple[int | None, dict[str, tuple[int, Any]]]:
+    wanted = set(required)
+    for row in range(1, min(limit, ws.max_row) + 1):
+        headers = hmap(ws, row)
+        if wanted.issubset(headers): return row, headers
+    return None, {}
 
 
-def parse_publication_switch(validation: Validation, ws) -> bool:
-    expected = normalise_label("Publish prices to the website (YES/NO)")
-    matches: list[Cell] = []
-    for row in ws.iter_rows():
-        for cell in row:
-            if normalise_label(cell.value) == expected:
-                matches.append(cell)
-    if len(matches) != 1:
-        validation.error(ws.title, "—", "Publish prices to the website (YES/NO)", "Expected exactly one publication-price setting label.")
-        return False
-    label_cell = matches[0]
-    value_cell = ws.cell(label_cell.row, label_cell.column + 1)
-    value = text(value_cell.value).upper()
-    if value not in {"YES", "NO"}:
-        validation.error(ws.title, value_cell.coordinate, "Publish prices to the website (YES/NO)", "Value must be exactly YES or NO.")
-        return False
-    return value == "YES"
+def label_cells(ws: Any, label: str) -> list[Any]: return [cell for row in ws.iter_rows() for cell in row if norm(cell.value) == norm(label)]
 
 
-def parse_roster(validation: Validation, ws) -> list[dict[str, Any]]:
-    required = ("Active", "Slug", "Edition Number", "Title", "Page URL", "In site menu")
-    try:
-        header_row, mapping = headings(ws, required)
-    except ValueError as exc:
-        validation.error(ws.title, "—", "Editions Roster", str(exc))
-        return []
-
-    active: list[dict[str, Any]] = []
-    seen_slugs: set[str] = set()
-    seen_numbers: set[str] = set()
-    seen_paths: set[str] = set()
-    for row in range(header_row + 1, ws.max_row + 1):
-        slug, slug_cell = cell_value(ws, row, mapping, "Slug")
-        active_flag, active_cell = cell_value(ws, row, mapping, "Active")
-        if not slug and not active_flag:
-            continue
-        if not yes(active_flag):
-            continue
-        number, number_cell = cell_value(ws, row, mapping, "Edition Number")
-        title, title_cell = cell_value(ws, row, mapping, "Title")
-        page_url, url_cell = cell_value(ws, row, mapping, "Page URL")
-        in_menu, _ = cell_value(ws, row, mapping, "In site menu")
-        for field, value, coordinate in (("Slug", slug, slug_cell), ("Edition Number", number, number_cell), ("Title", title, title_cell), ("Page URL", page_url, url_cell)):
-            if not value:
-                validation.error(ws.title, coordinate, field, "Required active roster value is blank.")
-        path = normal_path(page_url)
-        expected_path = "/editions/" + slug
-        if path != expected_path:
-            validation.error(ws.title, url_cell, "Page URL", f"Active Edition route must be exactly {expected_path}; found {page_url or 'blank'}.")
-        for key, value, label, coordinate in (
-            (seen_slugs, slug, "Slug", slug_cell),
-            (seen_numbers, number, "Edition Number", number_cell),
-            (seen_paths, path, "Page URL", url_cell),
-        ):
-            if value in key:
-                validation.error(ws.title, coordinate, label, f"Duplicate active Edition {label.lower()}: {value}.")
-            key.add(value)
-        active.append({"slug": slug, "number": number, "title": title, "pageUrl": path, "inSiteMenu": yes(in_menu), "row": row})
-    if not active:
-        validation.error(ws.title, "—", "Editions Roster", "At least one active Edition is required.")
-    return active
+def settings(audit: Audit, wb: Any) -> dict[str, Any]:
+    out = {"publish": False, "cell": "—"}
+    if "README" not in wb.sheetnames:
+        audit.blocking("Workbook", "—", "README", "README sheet is missing."); return out
+    ws = wb["README"]; found = label_cells(ws, PUBLISH_LABEL)
+    if len(found) != 1:
+        audit.blocking(ws.title, "—", PUBLISH_LABEL, "Expected exactly one visible publication-price setting label."); return out
+    cell = ws.cell(found[0].row, found[0].column + 1); out["cell"] = cell.coordinate; entry = text(cell.value).upper()
+    if entry not in {"YES", "NO"}: audit.blocking(ws.title, cell.coordinate, PUBLISH_LABEL, "Value must be exactly YES or NO.")
+    out["publish"] = entry == "YES"; return out
 
 
-def edition_fields(ws, artists_header_row: int) -> dict[str, Cell]:
-    fields: dict[str, Cell] = {}
-    for row in range(1, artists_header_row):
-        label = text(ws.cell(row, 1).value)
-        if label:
-            fields[re.sub(r"\s+", " ", label).strip()] = ws.cell(row, 2)
-    return fields
+def parse_roster(audit: Audit, wb: Any) -> list[dict[str, Any]]:
+    if "Editions Roster" not in wb.sheetnames:
+        audit.fatal("Workbook", "—", "Editions Roster", "Editions Roster sheet is missing."); return []
+    ws = wb["Editions Roster"]; keys = {"active", "slug", "editionnumber", "title", "pageurl", "insitemenu"}; header, all_headers = find_headers(ws, keys)
+    if not header:
+        audit.fatal(ws.title, "1:200", "Editions Roster", "Required roster headers are missing or renamed."); return []
+    mapping = {"active": all_headers["active"], "slug": all_headers["slug"], "number": all_headers["editionnumber"], "title": all_headers["title"], "pageUrl": all_headers["pageurl"], "inMenu": all_headers["insitemenu"]}
+    seen_slug: set[str] = set(); seen_number: set[str] = set(); seen_path: set[str] = set(); out: list[dict[str, Any]] = []
+    for row in range(header + 1, ws.max_row + 1):
+        if not row_data(ws, row, mapping): continue
+        entry = {key: value(ws, row, mapping, key) for key in mapping}
+        if not entry["slug"] and not entry["active"]: continue
+        active = yesno(entry["active"])
+        active_cell = source_cell(ws, row, mapping, "active")
+        if active is None:
+            audit.required(ws.title, active_cell.coordinate if active_cell else str(row), "Active (YES/NO)", "Value must be YES or NO."); continue
+        if not active: continue
+        cells = {key: source_cell(ws, row, mapping, key) for key in mapping}
+        for key, label in (("slug", "Slug"), ("number", "Edition Number"), ("title", "Title"), ("pageUrl", "Page URL")):
+            if not entry[key]: audit.required(ws.title, cells[key].coordinate if cells[key] else str(row), label, "Required active roster value is blank.")
+        expected = "/editions/" + entry["slug"]
+        if entry["pageUrl"].rstrip("/") != expected:
+            audit.required(ws.title, cells["pageUrl"].coordinate if cells["pageUrl"] else str(row), "Page URL", f"Active Edition route must be exactly {expected}; found {entry['pageUrl'] or 'blank'}.")
+        for seen, key, label in ((seen_slug, "slug", "Slug"), (seen_number, "number", "Edition Number"), (seen_path, "pageUrl", "Page URL")):
+            if entry[key] in seen: audit.required(ws.title, cells[key].coordinate if cells[key] else str(row), label, f"Duplicate active Edition {label.lower()}: {entry[key]}.")
+            seen.add(entry[key])
+        out.append({"slug": entry["slug"], "editionNumber": entry["number"], "title": entry["title"], "pageUrl": entry["pageUrl"].rstrip("/"), "inSiteMenu": yesno(entry["inMenu"]) is True, "row": row})
+    if not out: audit.required(ws.title, "—", "Editions Roster", "At least one active Edition is required.")
+    return out
 
 
-def parse_artists(validation: Validation, ws, header_row: int, pieces_header_row: int) -> list[dict[str, Any]]:
-    required = ("Active", "Artist Slug", "Artist Order", "Display Name", "Layout", "Why line")
-    mapping = {normalise_label(ws.cell(header_row, col).value): col for col in range(1, ws.max_column + 1)}
-    artists: list[dict[str, Any]] = []
-    seen_orders: set[int] = set()
-    seen_slugs: set[str] = set()
-    for row in range(header_row + 1, pieces_header_row):
-        slug, slug_cell = cell_value(ws, row, mapping, "Artist Slug")
-        active_flag, active_cell = cell_value(ws, row, mapping, "Active")
-        if not slug and not active_flag:
-            continue
-        if not yes(active_flag):
-            continue
-        order_value, order_cell = cell_value(ws, row, mapping, "Artist Order")
-        display_name, name_cell = cell_value(ws, row, mapping, "Display Name")
-        layout, layout_cell = cell_value(ws, row, mapping, "Layout")
-        why_line, why_cell = cell_value(ws, row, mapping, "Why line")
-        for field, value, coordinate in (("Artist Slug", slug, slug_cell), ("Artist Order", order_value, order_cell), ("Display Name", display_name, name_cell), ("Layout", layout, layout_cell), ("Why line", why_line, why_cell)):
-            if not value:
-                validation.error(ws.title, coordinate, field, "Required active artist value is blank.")
-        try:
-            number = float(order_value)
-            if not number.is_integer():
-                raise ValueError
-            order = int(number)
-            if order <= 0:
-                raise ValueError
-        except ValueError:
-            validation.error(ws.title, order_cell, "Artist Order", "Artist Order must be a positive whole number.")
-            order = 0
-        if order in seen_orders:
-            validation.error(ws.title, order_cell, "Artist Order", f"Duplicate active Artist Order: {order}.")
-        seen_orders.add(order)
-        if slug in seen_slugs:
-            validation.error(ws.title, slug_cell, "Artist Slug", f"Duplicate active Artist Slug: {slug}.")
-        seen_slugs.add(slug)
-        if layout not in ALLOWED_LAYOUTS:
-            validation.error(ws.title, layout_cell, "Layout", f"Layout must be one of: {', '.join(ALLOWED_LAYOUTS)}.")
-        artists.append({"slug": slug, "order": order, "displayName": display_name, "layout": layout, "whyLine": why_line, "row": row})
-    return sorted(artists, key=lambda item: (item["order"], item["slug"]))
+def metadata_cells(ws: Any, artist_header: int) -> dict[str, Any]: return {re.sub(r"\s+", " ", text(ws.cell(row, 1).value)): ws.cell(row, 2) for row in range(1, artist_header) if text(ws.cell(row, 1).value)}
+
+def required_metadata(audit: Audit, ws: Any, fields: dict[str, Any], label: str) -> str:
+    cell = fields.get(label); entry = text(cell.value) if cell else ""
+    if cell is None: audit.fatal(ws.title, "A:B", label, "Required EDITION field label is missing or renamed.")
+    elif not entry: audit.required(ws.title, cell.coordinate, label, "Required value is blank.")
+    return entry
 
 
-def parse_pieces(validation: Validation, ws, header_row: int, active_artists: dict[str, dict[str, Any]], publish_prices: bool) -> dict[str, list[dict[str, Any]]]:
-    required = ("Active", "Artist Slug", "PieceOrder", "Piece Title", "World", "Status", "Medium", "Price", "Listing URL", "Featured", "Meaning", "Good For 1", "Good For 2", "Good For 3", "Image URL", "Image Alt", "Coming Soon Label")
-    mapping = {normalise_label(ws.cell(header_row, col).value): col for col in range(1, ws.max_column + 1)}
-    if not all(normalise_label(label) in mapping for label in required):
-        validation.error(ws.title, "—", "PIECES", "PIECES headers are incomplete or renamed.")
-        return {artist_slug: [] for artist_slug in active_artists}
-
-    by_artist: dict[str, list[dict[str, Any]]] = {artist_slug: [] for artist_slug in active_artists}
-    seen_orders: dict[str, set[int]] = {artist_slug: set() for artist_slug in active_artists}
-    for row in range(header_row + 1, ws.max_row + 1):
-        artist_slug, artist_cell = cell_value(ws, row, mapping, "Artist Slug")
-        active_flag, active_cell = cell_value(ws, row, mapping, "Active")
-        status, status_cell = cell_value(ws, row, mapping, "Status")
-        if not artist_slug and not active_flag and not status:
-            continue
-        if artist_slug not in active_artists or not yes(active_flag) or status.lower() != "available":
-            continue
-        order_value, order_cell = cell_value(ws, row, mapping, "PieceOrder")
-        title, title_cell = cell_value(ws, row, mapping, "Piece Title")
-        world, world_cell = cell_value(ws, row, mapping, "World")
-        medium, _ = cell_value(ws, row, mapping, "Medium")
-        price, price_cell = cell_value(ws, row, mapping, "Price")
-        listing_url, listing_cell = cell_value(ws, row, mapping, "Listing URL")
-        featured_value, _ = cell_value(ws, row, mapping, "Featured")
-        meaning, _ = cell_value(ws, row, mapping, "Meaning")
-        image_url, image_url_cell = cell_value(ws, row, mapping, "Image URL")
-        image_alt, image_alt_cell = cell_value(ws, row, mapping, "Image Alt")
-        coming_label, label_cell = cell_value(ws, row, mapping, "Coming Soon Label")
-        good_for = [cell_value(ws, row, mapping, label)[0] for label in ("Good For 1", "Good For 2", "Good For 3")]
-
-        for field, value, coordinate in (("PieceOrder", order_value, order_cell), ("Piece Title", title, title_cell), ("World", world, world_cell), ("Listing URL", listing_url, listing_cell), ("Image URL", image_url, image_url_cell), ("Image Alt", image_alt, image_alt_cell)):
-            if not value:
-                validation.error(ws.title, coordinate, field, "Required active available piece value is blank.")
-            elif is_pale_yellow(ws[coordinate]):
-                validation.error(ws.title, coordinate, field, "Required active available piece value still has the pale-yellow unresolved-placeholder fill.")
-        try:
-            number = float(order_value)
-            if not number.is_integer():
-                raise ValueError
-            order = int(number)
-            if order <= 0:
-                raise ValueError
-        except ValueError:
-            validation.error(ws.title, order_cell, "PieceOrder", "PieceOrder must be a positive whole number.")
-            order = 0
-        if order in seen_orders[artist_slug]:
-            validation.error(ws.title, order_cell, "PieceOrder", f"Duplicate active available PieceOrder for {artist_slug}: {order}.")
-        seen_orders[artist_slug].add(order)
-        if world not in {"To Keep", "To Make"}:
-            validation.error(ws.title, world_cell, "World", "World must be exactly To Keep or To Make.")
-        if listing_url and not absolute_https(listing_url):
-            validation.error(ws.title, listing_cell, "Listing URL", "Listing URL must be an absolute https:// URL.")
-        if image_url and not absolute_https(image_url):
-            validation.error(ws.title, image_url_cell, "Image URL", "Image URL must be an absolute https:// URL.")
-        if coming_label and coming_label != "Making more":
-            validation.error(ws.title, label_cell, "Coming Soon Label", "Published cards may use only the controlled label Making more.")
-        if publish_prices:
-            try:
-                numeric_price = float(price)
-                if numeric_price <= 0:
-                    raise ValueError
-            except ValueError:
-                validation.error(ws.title, price_cell, "Price (£) number only", "A positive numeric price is required when publication prices are YES.")
-                numeric_price = 0.0
-        else:
-            numeric_price = None
-        piece: dict[str, Any] = {
-            "order": order,
-            "title": title,
-            "world": world,
-            "medium": medium,
-            "listingUrl": listing_url,
-            "featured": yes(featured_value),
-            "meaning": meaning,
-            "goodFor": [item for item in good_for if item],
-            "imageUrl": image_url,
-            "imageAlt": image_alt,
-            "comingSoonLabel": coming_label,
-        }
-        if publish_prices:
-            piece["price"] = int(numeric_price) if numeric_price.is_integer() else numeric_price
-        by_artist[artist_slug].append(piece)
-
-    for artist_slug, pieces in by_artist.items():
-        pieces.sort(key=lambda item: (item["order"], item["title"]))
-        artist = active_artists[artist_slug]
-        layout = artist["layout"]
-        expected = ALLOWED_LAYOUTS.get(layout)
-        if expected:
-            expected_count, expected_featured = expected
-            if len(pieces) != expected_count:
-                validation.error(ws.title, "—", f"Pieces for {artist_slug}", f"Layout {layout!r} needs {expected_count} active available pieces; found {len(pieces)}.")
-            actual_featured = sum(1 for piece in pieces if piece["featured"])
-            if actual_featured != expected_featured:
-                validation.error(ws.title, "—", f"Featured pieces for {artist_slug}", f"Layout {layout!r} needs {expected_featured} featured piece(s); found {actual_featured}.")
-    return by_artist
-
-
-def validate_pullouts(validation: Validation, ws, field_cells: dict[str, Cell]) -> None:
+def validate_pullouts(audit: Audit, ws: Any, fields: dict[str, Any]) -> None:
     count = 0
     for label in ("Hero Paragraph 1", "Hero Paragraph 2"):
-        cell = field_cells.get(label)
-        value = text(cell.value) if cell else ""
-        if value.count("*") % 2:
-            validation.error(ws.title, cell.coordinate if cell else "—", label, "Asterisk pull-out markers are unmatched.")
-            continue
-        matches = re.findall(r"\*([^*]+)\*", value)
-        if any(not phrase.strip() for phrase in matches):
-            validation.error(ws.title, cell.coordinate if cell else "—", label, "Asterisk pull-out phrases must not be empty.")
+        cell = fields.get(label); entry = text(cell.value) if cell else ""
+        if entry.count("*") % 2: audit.required(ws.title, cell.coordinate if cell else "—", label, "Asterisk pull-out markers are unmatched."); continue
+        matches = re.findall(r"\*([^*]+)\*", entry)
+        if any(not match.strip() for match in matches): audit.required(ws.title, cell.coordinate if cell else "—", label, "Asterisk pull-out phrases must not be empty.")
         count += len(matches)
-    if count > 2:
-        validation.error(ws.title, "—", "Hero Paragraphs 1–2", f"At most two pull-out phrases are allowed; found {count}.")
+    if count > 2: audit.required(ws.title, "—", "Hero Paragraphs 1–2", f"At most two pull-out phrases are allowed; found {count}.")
 
 
-def parse_edition(validation: Validation, workbook, roster: dict[str, Any], publish_prices: bool) -> dict[str, Any] | None:
-    slug = roster["slug"]
-    if slug not in workbook.sheetnames:
-        validation.error("Editions Roster", "—", "Slug", f"Active Edition tab {slug!r} is missing.")
-        return None
-    ws = workbook[slug]
-    try:
-        artists_header_row, _ = headings(ws, ("Active", "Artist Slug", "Artist Order", "Display Name", "Layout", "Why line"))
-        pieces_header_row, _ = headings(ws, ("Active", "Artist Slug", "PieceOrder", "Piece Title", "World", "Status", "Listing URL", "Image URL", "Image Alt"))
-    except ValueError as exc:
-        validation.error(ws.title, "—", "Edition section", str(exc))
-        return None
-    fields = edition_fields(ws, artists_header_row)
-    values = {field: required_value(validation, ws, fields, field) for field in REQUIRED_EDITION_FIELDS}
+def parse_artists(audit: Audit, ws: Any, header: int, pieces_header: int) -> list[dict[str, Any]]:
+    wanted = {"active", "artistslug", "artistorder", "displayname", "layout", "whyline"}; mapping = hmap(ws, header)
+    if not wanted.issubset(mapping):
+        audit.fatal(ws.title, str(header), "Artists table", "Required Artists headers are missing or renamed."); return []
+    keys = {"active": mapping["active"], "slug": mapping["artistslug"], "artistOrder": mapping["artistorder"], "name": mapping["displayname"], "layout": mapping["layout"], "whyLine": mapping["whyline"]}
+    seen_order: set[int] = set(); seen_slug: set[str] = set(); out: list[dict[str, Any]] = []
+    for row in range(header + 1, pieces_header):
+        if not row_data(ws, row, keys): continue
+        values = {key: value(ws, row, keys, key) for key in keys}
+        if values.get("active", "").upper().startswith("PIECES"): continue
+        if not values["slug"] and not values["active"]: continue
+        active = yesno(values["active"]); active_cell = source_cell(ws, row, keys, "active")
+        if active is None:
+            audit.required(ws.title, active_cell.coordinate if active_cell else str(row), "Active (YES/NO)", "Value must be YES or NO."); continue
+        if not active: continue
+        cells = {key: source_cell(ws, row, keys, key) for key in keys}
+        for key, label in (("slug", "Artist Slug"), ("artistOrder", "Artist Order"), ("name", "Display Name"), ("layout", "Layout"), ("whyLine", "Why line")):
+            if not values[key]: audit.required(ws.title, cells[key].coordinate if cells[key] else str(row), label, "Required active artist value is blank.")
+        number = posint(values["artistOrder"])
+        if number is None: audit.required(ws.title, cells["artistOrder"].coordinate if cells["artistOrder"] else str(row), "Artist Order", "Must be a positive whole number."); number = 0
+        if number in seen_order: audit.required(ws.title, cells["artistOrder"].coordinate if cells["artistOrder"] else str(row), "Artist Order", f"Duplicate active Artist Order: {number}.")
+        seen_order.add(number)
+        if values["slug"] in seen_slug: audit.required(ws.title, cells["slug"].coordinate if cells["slug"] else str(row), "Artist Slug", f"Duplicate active Artist Slug: {values['slug']}.")
+        seen_slug.add(values["slug"])
+        if values["layout"] not in LAYOUTS: audit.required(ws.title, cells["layout"].coordinate if cells["layout"] else str(row), "Layout", "Unsupported Edition layout.")
+        out.append({"active": True, "slug": values["slug"], "artistOrder": number, "name": values["name"], "layout": values["layout"], "whyLine": values["whyLine"], "pieces": []})
+    return sorted(out, key=lambda artist: (artist["artistOrder"], artist["slug"]))
 
-    meta_cell = fields.get("Meta Description")
-    meta_description = text(meta_cell.value) if meta_cell else ""
-    if not meta_description:
-        validation.warning(ws.title, meta_cell.coordinate if meta_cell else "—", "Meta Description", "Meta Description is blank. It is optional and is not rendered; add it in Squarespace SEO settings when ready.")
 
-    photo_url_cell = fields.get("Photo URL")
-    photo_alt_cell = fields.get("Photo Alt")
-    photo_url = text(photo_url_cell.value) if photo_url_cell else ""
-    photo_alt = text(photo_alt_cell.value) if photo_alt_cell else ""
-    if bool(photo_url) != bool(photo_alt):
-        missing_cell = photo_alt_cell if photo_url else photo_url_cell
-        validation.error(ws.title, missing_cell.coordinate if missing_cell else "—", "Pre-footer photo", "Photo URL and Photo Alt are an optional pair: fill both or leave both blank.")
-    elif photo_url and not absolute_https(photo_url):
-        validation.error(ws.title, photo_url_cell.coordinate, "Photo URL", "Photo URL must be an absolute https:// URL.")
-    elif not photo_url:
-        validation.warning(ws.title, photo_url_cell.coordinate if photo_url_cell else "—", "Pre-footer photo", "Photo URL and Photo Alt are both blank; the pre-footer will render without an image.")
+def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any]], publish: bool) -> None:
+    fields = {"active": ["active"], "artist": ["artistslug"], "pieceOrder": ["pieceorder"], "title": ["piecetitle"], "world": ["world"], "status": ["status"], "medium": ["medium"], "price": ["pricenumberonly", "price"], "listingUrl": ["listingurl"], "featured": ["featured"], "meaning": ["meaning"], "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"], "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"], "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"]}
+    headers = hmap(ws, header); mapping: dict[str, tuple[int, Any]] = {}
+    for key, aliases in fields.items():
+        found = next((headers[name] for name in aliases if name in headers), None)
+        if found: mapping[key] = found
+        else: audit.fatal(ws.title, str(header), key, "Required Pieces header is missing or renamed.")
+    if any(re.fullmatch(r"chip[6-9]\d*", name) for name in headers): audit.required(ws.title, str(header), "Chips", "More than 5 Chip columns are not allowed.")
+    by_artist = {artist["slug"]: artist for artist in artists}; seen: dict[str, set[int]] = {slug: set() for slug in by_artist}
+    for row in range(header + 1, ws.max_row + 1):
+        if not row_data(ws, row, mapping): continue
+        values = {key: value(ws, row, mapping, key) for key in mapping}
+        if not values.get("title") and not values.get("artist") and not values.get("status"): continue
+        cells = {key: source_cell(ws, row, mapping, key) for key in mapping}
+        active = yesno(values.get("active"))
+        if active is None:
+            audit.required(ws.title, cells["active"].coordinate if cells.get("active") else str(row), "Active (YES/NO)", "Value must be YES or NO; it is retained but does not decide publication."); active = False
+        status = values.get("status", "").casefold(); visible = status in {"available", "paused"}
+        if status not in STATUSES: audit.required(ws.title, cells["status"].coordinate if cells.get("status") else str(row), "Status", "Must be exactly available, paused, or hidden.")
+        if visible:
+            for key, label in (("artist", "Artist Slug"), ("pieceOrder", "PieceOrder"), ("title", "Piece Title"), ("world", "World"), ("listingUrl", "Listing URL")):
+                if not values.get(key): audit.required(ws.title, cells[key].coordinate if cells.get(key) else str(row), label, "Required visible piece value is blank.")
+            if posint(values.get("pieceOrder")) is None: audit.required(ws.title, cells["pieceOrder"].coordinate if cells.get("pieceOrder") else str(row), "PieceOrder", "Must be a positive whole number.")
+            if values.get("world") not in {"To Keep", "To Make"}: audit.required(ws.title, cells["world"].coordinate if cells.get("world") else str(row), "World", "Must be exactly To Keep or To Make.")
+            if not https(values.get("listingUrl")): audit.required(ws.title, cells["listingUrl"].coordinate if cells.get("listingUrl") else str(row), "Listing URL", "Must be an absolute https:// URL.")
+        images: list[dict[str, str]] = []
+        for n in range(1, 4):
+            u, al = values.get(f"image{n}Url", ""), values.get(f"image{n}Alt", "")
+            uc, ac = cells.get(f"image{n}Url"), cells.get(f"image{n}Alt")
+            if bool(u) != bool(al): audit.required(ws.title, (ac if u else uc).coordinate if (ac if u else uc) else str(row), f"Image {n}", "URL and Alt must be filled together.")
+            if u and not https(u): audit.required(ws.title, uc.coordinate if uc else str(row), f"Image {n} URL", "Must be an absolute https:// URL.")
+            if visible and n == 1 and (not u or not al): audit.required(ws.title, (uc if not u else ac).coordinate if (uc if not u else ac) else str(row), "Image 1", "Visible piece requires URL and Alt.")
+            if u and al: images.append({"url": u, "alt": al})
+        chips: list[str] = []
+        for n in range(1, 6):
+            chip = values.get(f"chip{n}", ""); cc = cells.get(f"chip{n}")
+            if chip and https(chip): audit.required(ws.title, cc.coordinate if cc else str(row), f"Chip {n}", "Informational chips must be text, not an absolute https:// URL.")
+            if chip: chips.append(chip)
+        cost = parse_price(values.get("price"))
+        if visible and cost is None:
+            (audit.required if publish else audit.warn)(ws.title, cells["price"].coordinate if cells.get("price") else str(row), "Price (£) number only", "Visible piece price is missing or invalid." + (" It is required when Publish prices is YES." if publish else " No public price is emitted while publication is NO."))
+        if status == "hidden": continue
+        if values.get("artist") not in by_artist:
+            audit.required(ws.title, cells["artist"].coordinate if cells.get("artist") else str(row), "Artist Slug", "Visible piece references an inactive or missing artist.")
+            continue
+        order = posint(values.get("pieceOrder")) or 0
+        if order in seen[values["artist"]]: audit.required(ws.title, cells["pieceOrder"].coordinate if cells.get("pieceOrder") else str(row), "PieceOrder", f"Duplicate visible PieceOrder for {values['artist']}.")
+        seen[values["artist"]].add(order)
+        piece = {"active": active, "pieceOrder": order, "title": values.get("title", ""), "world": values.get("world", ""), "status": status, "medium": values.get("medium", ""), "listingUrl": values.get("listingUrl", ""), "meaning": values.get("meaning", ""), "featured": values.get("featured", "").upper() == "YES", "chips": chips, "images": images, "notes": values.get("notes", "")}
+        if publish and cost is not None: piece.update({"price": "£" + format(cost.quantize(Decimal("0.01")), ".2f"), "priceNumber": float(cost)})
+        by_artist[values["artist"]]["pieces"].append(piece)
+    for artist in artists:
+        artist["pieces"].sort(key=lambda piece: (piece["pieceOrder"], piece["title"].casefold()))
+        expected, feature_count = LAYOUTS.get(artist["layout"], (None, None))
+        if expected is not None and len(artist["pieces"]) != expected: audit.required(ws.title, artist["slug"], "Layout", f"{artist['layout']!r} needs {expected} visible pieces; found {len(artist['pieces'])}.")
+        actual = sum(1 for piece in artist["pieces"] if piece["featured"])
+        if feature_count is not None and actual != feature_count: audit.required(ws.title, artist["slug"], "Featured", f"{artist['layout']!r} needs {feature_count} Featured=YES piece(s); found {actual}.")
 
+
+def parse_edition(audit: Audit, wb: Any, roster: dict[str, Any], publish: bool) -> dict[str, Any] | None:
+    if roster["slug"] not in wb.sheetnames:
+        audit.required("Editions Roster", str(roster["row"]), "Slug", f"Active Edition tab {roster['slug']!r} is missing."); return None
+    ws = wb[roster["slug"]]
+    artists_header, _ = find_headers(ws, {"active", "artistslug", "artistorder", "displayname", "layout", "whyline"})
+    pieces_header, _ = find_headers(ws, {"active", "artistslug", "pieceorder", "piecetitle", "world", "status", "listingurl", "image1url", "image1alt"})
+    if not artists_header or not pieces_header:
+        audit.fatal(ws.title, "1:200", "Edition sections", "Could not locate complete Artists and Pieces tables."); return None
+    fields = metadata_cells(ws, artists_header)
+    values = {label: required_metadata(audit, ws, fields, label) for label in REQUIRED_META}
+    meta_cell = fields.get("Meta Description"); meta_description = text(meta_cell.value) if meta_cell else ""
+    if not meta_description: audit.warn(ws.title, meta_cell.coordinate if meta_cell else "—", "Meta Description", "Meta Description is blank. It is optional and is not rendered; add it in Squarespace SEO settings when ready.")
+    photo_url_cell, photo_alt_cell = fields.get("Photo URL"), fields.get("Photo Alt")
+    photo_url, photo_alt = text(photo_url_cell.value) if photo_url_cell else "", text(photo_alt_cell.value) if photo_alt_cell else ""
+    if bool(photo_url) != bool(photo_alt): audit.required(ws.title, (photo_alt_cell if photo_url else photo_url_cell).coordinate if (photo_alt_cell if photo_url else photo_url_cell) else "—", "Pre-footer photo", "Photo URL and Photo Alt must be an optional pair.")
+    elif photo_url and not https(photo_url): audit.required(ws.title, photo_url_cell.coordinate, "Photo URL", "Photo URL must be an absolute https:// URL.")
+    elif not photo_url: audit.warn(ws.title, photo_url_cell.coordinate if photo_url_cell else "—", "Pre-footer photo", "Photo URL and Photo Alt are both blank; the pre-footer will render without an image.")
     partner_cells = {label: fields.get(label) for label in ("Partner Name", "Partner Logo URL", "Partner Logo Alt")}
     partner_values = {label: text(cell.value) if cell else "" for label, cell in partner_cells.items()}
-    partner_filled = [label for label, value in partner_values.items() if value]
-    if partner_filled and len(partner_filled) != 3:
-        first = partner_cells[partner_filled[0]]
-        validation.error(ws.title, first.coordinate if first else "—", "Partner", "Partner Name, Partner Logo URL, and Partner Logo Alt must be all filled or all blank.")
-    if partner_values["Partner Logo URL"] and not absolute_https(partner_values["Partner Logo URL"]):
-        cell = partner_cells["Partner Logo URL"]
-        validation.error(ws.title, cell.coordinate if cell else "—", "Partner Logo URL", "Partner Logo URL must be an absolute https:// URL.")
-
-    if values["Slug"] != slug:
-        cell = fields.get("Slug")
-        validation.error(ws.title, cell.coordinate if cell else "—", "Slug", f"Edition tab Slug must match roster slug {slug!r}.")
-    if values["Edition Number"] != roster["number"]:
-        cell = fields.get("Edition Number")
-        validation.error(ws.title, cell.coordinate if cell else "—", "Edition Number", "Edition tab number must match its roster row.")
-    if values["Title"] != roster["title"]:
-        cell = fields.get("Title")
-        validation.error(ws.title, cell.coordinate if cell else "—", "Title", "Edition tab title must match its roster row.")
-    validate_pullouts(validation, ws, fields)
-
-    artists = parse_artists(validation, ws, artists_header_row, pieces_header_row)
-    active_artists = {artist["slug"]: artist for artist in artists}
-    pieces_by_artist = parse_pieces(validation, ws, pieces_header_row, active_artists, publish_prices)
-    rendered_artists: list[dict[str, Any]] = []
-    all_pieces: list[dict[str, Any]] = []
-    for artist in artists:
-        row_pieces = pieces_by_artist.get(artist["slug"], [])
-        rendered = {key: value for key, value in artist.items() if key != "row"}
-        rendered["pieces"] = row_pieces
-        rendered_artists.append(rendered)
-        all_pieces.extend(row_pieces)
-
-    stats = {
-        "artists": len(rendered_artists),
-        "toKeep": sum(1 for piece in all_pieces if piece["world"] == "To Keep"),
-        "toMake": sum(1 for piece in all_pieces if piece["world"] == "To Make"),
-    }
-    partner = None
-    if len(partner_filled) == 3:
-        partner = {"name": partner_values["Partner Name"], "logoUrl": partner_values["Partner Logo URL"], "logoAlt": partner_values["Partner Logo Alt"]}
+    filled = [label for label, entry in partner_values.items() if entry]
+    if filled and len(filled) != 3: audit.required(ws.title, partner_cells[filled[0]].coordinate if partner_cells[filled[0]] else "—", "Partner", "Partner Name, Partner Logo URL, and Partner Logo Alt must be all filled or all blank.")
+    if partner_values["Partner Logo URL"] and not https(partner_values["Partner Logo URL"]): audit.required(ws.title, partner_cells["Partner Logo URL"].coordinate if partner_cells["Partner Logo URL"] else "—", "Partner Logo URL", "Must be an absolute https:// URL.")
+    if values["Painting URL"] and not https(values["Painting URL"]): audit.required(ws.title, fields["Painting URL"].coordinate if fields.get("Painting URL") else "—", "Painting URL", "Must be an absolute https:// URL.")
+    if values["Slug"] != roster["slug"]: audit.required(ws.title, fields["Slug"].coordinate if fields.get("Slug") else "—", "Slug", f"Edition tab Slug must match roster slug {roster['slug']!r}.")
+    if values["Edition Number"] != roster["editionNumber"]: audit.required(ws.title, fields["Edition Number"].coordinate if fields.get("Edition Number") else "—", "Edition Number", "Edition tab number must match its roster row.")
+    if values["Title"] != roster["title"]: audit.required(ws.title, fields["Title"].coordinate if fields.get("Title") else "—", "Title", "Edition tab title must match its roster row.")
+    validate_pullouts(audit, ws, fields)
+    artists = parse_artists(audit, ws, artists_header, pieces_header); parse_pieces(audit, ws, pieces_header, artists, publish)
+    partner = {"name": partner_values["Partner Name"], "logoUrl": partner_values["Partner Logo URL"], "logoAlt": partner_values["Partner Logo Alt"]} if len(filled) == 3 else None
     photo = {"url": photo_url, "alt": photo_alt} if photo_url and photo_alt else None
-    return {
-        "slug": slug,
-        "editionNumber": values["Edition Number"],
-        "title": values["Title"],
-        "pageUrl": roster["pageUrl"],
-        "inSiteMenu": roster["inSiteMenu"],
-        "metaDescription": meta_description,
-        "hero": {
-            "strapline": values["Strapline"],
-            "paragraph1": values["Hero Paragraph 1"],
-            "paragraph2": values["Hero Paragraph 2"],
-            "paragraph3": values["Hero Paragraph 3"],
-            "signoff": values["Hero Sign-off"],
-            "thingsParagraph": values["Things Paragraph"],
-        },
-        "painting": {
-            "url": values["Painting URL"],
-            "alt": values["Painting Alt"],
-            "artist": values["Painting Artist"],
-            "title": values["Painting Title"],
-            "year": values["Painting Year"],
-            "medium": values["Painting Medium"],
-            "collection": values["Painting Collection"],
-            "rights": values["Painting Rights"],
-            "line": values["Painting Line"],
-        },
-        "partner": partner,
-        "preFooter": {
-            "heading": values["Pre-footer Heading"],
-            "paragraph1": values["Pre-footer Paragraph 1"],
-            "paragraph2": values["Pre-footer Paragraph 2"],
-            "photo": photo,
-            "personName": values["Person Name"],
-            "personRole": values["Person Role"],
-        },
-        "stats": stats,
-        "artists": rendered_artists,
-    }
+    return {"slug": roster["slug"], "pageUrl": roster["pageUrl"], "editionNumber": values["Edition Number"], "title": values["Title"], "inSiteMenu": roster["inSiteMenu"], "strapline": values["Strapline"], "metaDescription": meta_description, "heroParagraph1": values["Hero Paragraph 1"], "heroParagraph2": values["Hero Paragraph 2"], "heroParagraph3": values["Hero Paragraph 3"], "heroSignoff": values["Hero Sign-off"], "thingsParagraph": values["Things Paragraph"], "painting": {"url": values["Painting URL"], "alt": values["Painting Alt"], "artist": values["Painting Artist"], "title": values["Painting Title"], "year": values["Painting Year"], "medium": values["Painting Medium"], "collection": values["Painting Collection"], "rights": values["Painting Rights"], "line": values["Painting Line"]}, "photo": photo, "partner": partner, "preFooterHeading": values["Pre-footer Heading"], "preFooterParagraph1": values["Pre-footer Paragraph 1"], "preFooterParagraph2": values["Pre-footer Paragraph 2"], "personName": values["Person Name"], "personRole": values["Person Role"], "artists": artists}
 
 
-def build_payload(workbook_path: Path, validation: Validation) -> dict[str, Any]:
-    workbook = load_workbook(workbook_path, data_only=True)
-    if "README" not in workbook.sheetnames:
-        validation.error("Workbook", "—", "README", "README sheet is missing.")
-        return {"generatedFrom": GENERATED_FROM, "publishPrices": False, "editions": {}}
-    if "Editions Roster" not in workbook.sheetnames:
-        validation.error("Workbook", "—", "Editions Roster", "Editions Roster sheet is missing.")
-        return {"generatedFrom": GENERATED_FROM, "publishPrices": False, "editions": {}}
-    publish_prices = parse_publication_switch(validation, workbook["README"])
-    roster = parse_roster(validation, workbook["Editions Roster"])
-    editions: dict[str, Any] = {}
-    for entry in roster:
-        edition = parse_edition(validation, workbook, entry, publish_prices)
-        if edition:
-            editions[entry["slug"]] = edition
-    return {"generatedFrom": GENERATED_FROM, "publishPrices": publish_prices, "editions": editions}
+def prune(value: Any, publish: bool) -> Any:
+    if publish: return value
+    if isinstance(value, dict): return {key: prune(entry, publish) for key, entry in value.items() if key not in PRICE_KEYS}
+    if isinstance(value, list): return [prune(entry, publish) for entry in value]
+    return value
 
-
-def js_source(payload: dict[str, Any]) -> str:
-    body = json.dumps(payload, ensure_ascii=False, indent=2, separators=(",", ": "))
-    return (
-        "// Auto-generated by generate_editions_content.py from HA_Editions.xlsx.\n"
-        "// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\n"
-        "window.HA_EDITIONS_CONTENT = " + body + ";\n"
-    )
-
-
-def report_markdown(workbook_path: Path, payload: dict[str, Any], validation: Validation, mode: str) -> str:
-    errors = validation.errors
-    warnings = [issue for issue in validation.issues if issue.severity == "WARNING"]
-    digest = hashlib.sha256(workbook_path.read_bytes()).hexdigest()
-    lines = [
-        "# Hope Editions generation report",
-        "",
-        f"**Generated at:** {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}",
-        f"**Workbook:** `{workbook_path.name}`",
-        f"**Workbook SHA-256:** `{digest}`",
-        f"**Mode:** `{mode}`",
-        f"**Result:** {'PASS' if not errors else 'FAIL'}",
-        "",
-        "## Publication settings",
-        "",
-        f"- Publish prices to the website: `{'YES' if payload.get('publishPrices') else 'NO'}`",
-        "- Public price fields emitted: " + ("yes" if payload.get("publishPrices") else "no"),
-        "",
-        "## Generated Edition summary",
-        "",
-        "| Slug | Route | Artists | To Keep pieces | To Make pieces | Pre-footer photo |",
-        "| --- | --- | ---: | ---: | ---: | --- |",
-    ]
-    for edition in payload.get("editions", {}).values():
-        stats = edition["stats"]
-        photo = "present" if edition["preFooter"]["photo"] else "omitted (blank optional pair)"
-        lines.append(f"| `{edition['slug']}` | `{edition['pageUrl']}` | {stats['artists']} | {stats['toKeep']} | {stats['toMake']} | {photo} |")
-    if not payload.get("editions"):
-        lines.append("| — | — | 0 | 0 | 0 | — |")
-    for heading, issues, empty in (
-        ("Errors", errors, "No errors."),
-        ("Warnings", warnings, "No warnings."),
-    ):
-        lines.extend(["", f"## {heading}", "", "| Sheet | Cell | Field | Message |", "| --- | --- | --- | --- |"])
-        if issues:
-            lines.extend(f"| `{issue.sheet}` | `{issue.cell}` | {issue.field} | {issue.message} |" for issue in issues)
-        else:
-            lines.append(f"| — | — | — | {empty} |")
-    lines.extend([
-        "",
-        "## Output rule",
-        "",
-        "Strict generation writes `content.editions.js` only when there are no errors. Blank Meta Description is a warning only. Blank Photo URL plus blank Photo Alt is an allowed pair and renders no photo box; exactly one populated photo field is a strict error.",
-        "",
-    ])
-    return "\n".join(lines)
-
-
-def atomic_write(path: Path, content: str) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    fd, temporary = tempfile.mkstemp(prefix=f".{path.name}.", suffix=".tmp", dir=path.parent)
+def js(payload: dict[str, Any], source: str) -> str: return f"// Auto-generated by {SCRIPT_PATH} from {source}.\n// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\nwindow.HA_EDITIONS_CONTENT = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n"
+def write(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True); fd, temporary = tempfile.mkstemp(prefix="." + path.name + ".", suffix=".tmp", dir=path.parent)
     try:
-        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle:
-            handle.write(content)
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle: handle.write(content)
         os.replace(temporary, path)
     except Exception:
-        try:
-            os.unlink(temporary)
-        except OSError:
-            pass
+        try: os.unlink(temporary)
+        except OSError: pass
         raise
+
+
+def report_markdown(workbook: Path, mode: str, setting: dict[str, Any], editions: list[dict[str, Any]], audit: Audit, output: Path | None) -> str:
+    lines = ["# Hope Editions generation report", "", f"**Generator:** `{SCRIPT_PATH}`  ", f"**Workbook:** `{workbook.name}`  ", f"**Workbook SHA-256:** `{hashlib.sha256(workbook.read_bytes()).hexdigest()}`  ", f"**Generated at:** {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}  ", f"**Mode:** `{mode}`  ", f"**Outcome:** `{'generated' if output else 'not generated'}`", "", "## Publication settings", "", f"- Publish prices to the website: `{'YES' if setting['publish'] else 'NO'}` (`README!{setting['cell']}`)", f"- Public price fields emitted: `{'yes' if setting['publish'] else 'no'}`", "", "## Generated Edition summary", "", "| Slug | Route | Artists | Pieces |", "| --- | --- | ---: | ---: |"]
+    lines += [f"| `{edition['slug']}` | `{edition['pageUrl']}` | {len(edition['artists'])} | {sum(len(artist['pieces']) for artist in edition['artists'])} |" for edition in editions] or ["| — | — | 0 | 0 |"]
+    lines += ["", "## Unresolved placeholder report", "", "| Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- |"]
+    lines += [f"| `{issue.sheet}` | `{issue.cell}` | {issue.field} | {issue.message} |" for issue in audit.placeholders] or ["| — | — | — | No unresolved placeholder markers were found. |"]
+    rest = [issue for issue in audit.issues if issue not in audit.placeholders]
+    lines += ["", "## Validation findings", "", "| Severity | Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- | --- |"]
+    lines += [f"| {issue.severity} | `{issue.sheet}` | `{issue.cell}` | {issue.field} | {issue.message} |" for issue in rest] or ["| PASS | — | — | — | No non-placeholder validation findings. |"]
+    lines += ["", "## Restored baseline validation inventory", "", "- **Workbook markers:** scans every sheet for the pale-yellow `#FFF2CC` unresolved-placeholder fill. The c8ebb6b Editions generator had no equivalent text-placeholder rule, so ordinary text and image URLs are not scanned for that word.", "- **README and roster:** exact publication control; active roster values; exact `/editions/<slug>` route; unique active slug, number and route; Edition-tab existence.", "- **Edition metadata:** required hero, painting, partner and pre-footer fields; painting and optional asset URL/pair checks; roster metadata matching; optional-meta/photo warnings; and pull-out marker checks.", "- **Artists and pieces:** full table/header checks, Active YES/NO retained but only contributor Artist Active gates publication, status-only public inclusion, numeric order/duplicate checks, world and URL checks, image pairs, 1–5 chips, price handling, and layout/featured count checks.", "- **Modes:** strict turns normal data/placeholder problems into output-blocking errors; permissive reports them as warnings while fatal structures and blocking README settings still withhold output.", ""]
+    return "\n".join(lines) + "\n"
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workbook", type=Path, required=True, help="Path to HA_Editions.xlsx.")
-    parser.add_argument("--output", type=Path, required=True, help="Output content.editions.js path.")
-    parser.add_argument("--report", type=Path, required=True, help="Markdown generation report path.")
-    parser.add_argument("--mode", choices=("strict", "permissive"), default="strict")
+    parser.add_argument("--workbook", type=Path, required=True); parser.add_argument("--output", type=Path, required=True); parser.add_argument("--report", type=Path, required=True); parser.add_argument("--mode", choices=("strict", "permissive"), default="strict")
     args = parser.parse_args()
-    if not args.workbook.is_file():
-        print(f"Workbook does not exist: {args.workbook}", file=sys.stderr)
-        return 2
-    validation = Validation()
-    payload = build_payload(args.workbook, validation)
-    report = report_markdown(args.workbook, payload, validation, args.mode)
-    atomic_write(args.report, report)
-    if validation.errors and args.mode == "strict":
-        return 1
-    if validation.errors:
-        return 1
-    atomic_write(args.output, js_source(payload))
+    if not args.workbook.is_file(): print("ERROR: workbook does not exist", file=sys.stderr); return 2
+    audit = Audit(args.mode); wb = load_workbook(args.workbook, data_only=False); scan_placeholders(audit, wb); setting = settings(audit, wb); roster = parse_roster(audit, wb)
+    editions: list[dict[str, Any]] = []
+    for row in roster:
+        parsed = parse_edition(audit, wb, row, setting["publish"])
+        if parsed: editions.append(parsed)
+    editions.sort(key=lambda edition: edition["editionNumber"])
+    payload = prune({"generatedFrom": args.workbook.name, "publishPrices": setting["publish"], "images": ASSETS, "navigation": NAV, "footer": FOOTER, "editions": {edition["slug"]: edition for edition in editions}}, setting["publish"])
+    may_write = not audit.fatals and not audit.force_block and not (args.mode == "strict" and audit.errors)
+    output = args.output if may_write else None
+    if output: write(output, js(payload, args.workbook.name))
+    write(args.report, report_markdown(args.workbook, args.mode, setting, editions, audit, output))
+    for issue in audit.issues: print(f"{issue.severity}: {issue.sheet}!{issue.cell} [{issue.field}] {issue.message}")
+    print("REPORT:", args.report)
+    if output: print("GENERATED:", output)
+    if audit.fatals: return 2
+    if audit.force_block or (args.mode == "strict" and audit.errors): return 1
     return 0
 
 
-if __name__ == "__main__":
-    raise SystemExit(main())
+if __name__ == "__main__": raise SystemExit(main())

@@ -108,7 +108,6 @@
       '<div class="ha-tk-card-img-wrap">' +
         '<img src="' + esc(artist.heroImage || '') + '" alt="' + esc(artist.heroAlt || artist.name) + '" loading="lazy" decoding="async">' +
         '<span class="ha-tk-pip">To Keep</span>' +
-        '<span class="ha-tk-badge">Founding artist</span>' +
       '</div>' +
       (artist.cardUrl ? '</a>' : '</div>') +
       '<div class="ha-tk-card-body">' +
@@ -159,7 +158,7 @@
     var statsHtml = (page.stats || []).filter(function(s){
       return Number(s && s.value) > 0;
     }).map(function(s){
-      return '<span><strong>' + esc(s.value) + (s.suffix ? '<b class="ha-directory-stat-suffix">' + esc(s.suffix) + '</b>' : '') + '</strong><small>' + esc(s.label || '') + '</small></span>';
+      return '<span><strong>' + esc(s.value) + '</strong><small>' + esc(s.label || '') + '</small></span>';
     }).join('');
     var cardsHtml = artists.map(function(a){ return artistCard(content, a); }).join('') +
       '<article class="ha-directory-recruitment"><p class="ha-v3-kicker">' + esc(recruitment.eyebrow) + '</p><div class="ha-v3-card-title" role="heading" aria-level="3">' + esc(recruitment.heading) + '</div><p class="ha-v3-card-copy">' + esc(recruitment.body) + '</p><a class="ha-c-btn" href="' + esc(recruitment.linkUrl) + '">' + ctaLabel(recruitment.linkLabel) + '</a></article>';

@@ -1,189 +1,73 @@
 #!/usr/bin/env python3
-"""Generate Hope Anthology directory content from a sibling To Make or To Keep workbook.
+"""Generate Hope Anthology directory and artist-page content from both live-sheet exports.
 
-The source workbook is the content authority.  Generated JavaScript files must never be
-edited by hand; amend the workbook and rerun this script instead.
+The two input files are downloaded workbook snapshots.  The generator never edits a
+workbook and writes public content only after the selected validation mode permits it.
 """
 from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
+import tempfile
 import unicodedata
-from collections import Counter, defaultdict
 from dataclasses import dataclass
-from decimal import Decimal, InvalidOperation, ROUND_HALF_UP
+from decimal import Decimal, InvalidOperation
 from pathlib import Path
 from typing import Any, Iterable
 
-try:
-    from openpyxl import load_workbook
-except ImportError as exc:  # pragma: no cover - clear operational failure
-    raise SystemExit("openpyxl is required. Install it with: python3 -m pip install openpyxl") from exc
-
+from openpyxl import load_workbook
 
 SCRIPT_PATH = "generate_directory_content.py"
 PLACEHOLDER_TEXT = "placeholder"
 PALE_YELLOW = "FFF2CC"
-URL_RE = re.compile(r"^https://[^\s]+$", re.IGNORECASE)
-PUBLISH_PRICES_LABEL = "Publish prices to the website (YES/NO)"
-RECRUITMENT_BODY_LABEL = "Directory recruitment body"
-PRICE_OUTPUT_FIELDS = frozenset({"price", "priceNumber", "priceFrom", "fromPrice"})
+URL_RE = re.compile(r"^https://[^\s]+$", re.I)
+STATUSES = {"available", "paused", "hidden"}
+SIZES = {"", "60", "50", "40", "40 under"}
+LAYOUTS = {"", "Even", "Pairs", "Stacks", "Mixed", "Custom"}
+PRICE_KEYS = {"price", "priceNumber", "priceFrom", "fromPrice", "computedFrom"}
+PUBLISH_LABEL = "Publish prices to the website (YES/NO)"
+RECRUIT_LABEL = "Directory recruitment body"
 
 ASSETS = {
     "logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg",
     "star": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/470da432-cdf9-45be-b3ba-2e9599ce5f4f/04-the-hope-anthology-botanical-star.png?content-type=image%2Fpng",
 }
-
-NAVIGATION = [
+NAV = [
     {"label": "To Keep", "url": "/to-keep"},
     {"label": "To Make", "url": "/to-make"},
     {"label": "The Story", "url": "/story"},
     {"label": "For Artists", "url": "/for-artists"},
     {"label": "Collective", "url": "/collective"},
 ]
+FOOTER = {"privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"}
+COLLECTIVE = {"heading": "Something worth being part of.", "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"}
 
-FOOTER = {
-    "privacyUrl": "/privacy-policy",
-    "accessibilityUrl": "/accessibility",
-    "copyright": "© The Hope Anthology 2026",
+ROSTER = {
+    "active": ["active"], "slug": ["slug"], "name": ["displayname"], "buttonName": ["buttonname"],
+    "artistNumber": ["artistnumber"], "badge": ["badge"], "medium": ["medium"], "collections": ["collections"],
+    "priceFrom": ["pricefrom"], "difficulty": ["difficulty"], "technique": ["technique"], "delivery": ["delivery"],
+    "feeling": ["feeling"], "trait1": ["trait1"], "trait2": ["trait2"], "trait3": ["trait3"],
+    "cardUrl": ["cardurl"], "heroImage": ["heroimageurl"], "heroAlt": ["heroimagealt"],
 }
-
-COLLECTIVE = {
-    "heading": "Something worth being part of.",
-    "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
-    "buttonLabel": "Join the Collective",
-    "buttonUrl": "/collective",
+PROFILE = {
+    "slug": ["slug"], "name": ["displayname"], "discipline": ["discipline"], "bio": ["bio"],
+    "metaDescription": ["metadescription"], "statsCollections": ["statscollections"],
+    "statsWorks": ["statsprints", "statspatterns"], "statsFromPrice": ["statsfromprice"],
+    "galleryLayout": ["gallerylayout"], "artistImageUrl": ["artistimageurl"], "artistImageAlt": ["artistimagealt"],
 }
-
-TO_MAKE_ROSTER_HEADERS = {
-    "active": ("Active\n(YES/NO)", "Active"),
-    "slug": ("Slug",),
-    "display_name": ("Display Name",),
-    "button_name": ("Button Name",),
-    "artist_number": ("Artist Number",),
-    "badge": ("Badge",),
-    "medium": ("Medium",),
-    "collections": ("Collections\n(comma-separated)", "Collections"),
-    "price_from": ("Price From\n(e.g. £3.50)", "Price From\n(e.g. £15)", "Price From"),
-    "difficulty": ("Difficulty",),
-    "technique": ("Technique",),
-    "delivery": ("Delivery",),
-    "feeling": ("Feeling\n(card tagline)", "Feeling"),
-    "trait_1": ("Trait 1",),
-    "trait_2": ("Trait 2",),
-    "trait_3": ("Trait 3",),
-    "card_url": ("Card URL",),
-    "hero_image_url": ("Hero Image URL",),
-    "hero_image_alt": ("Hero Image Alt",),
-    "notes": ("Notes",),
+PRODUCT = {
+    "active": ["active"], "collection": ["collection"], "collectionOrder": ["collectionorder"], "productOrder": ["productorder"],
+    "title": ["producttitle", "patterntitle"], "status": ["status"], "size": ["size"], "medium": ["medium"],
+    "sizes": ["sizes"], "difficulty": ["difficulty"], "technique": ["technique"], "delivery": ["delivery"],
+    "price": ["pricenumberonly", "price"], "listingUrl": ["etsyurl", "listingurl"], "meaning": ["meaningdescription", "meaning"],
+    "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"],
+    "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"],
+    "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"],
 }
-
-TO_MAKE_PATTERN_HEADERS = {
-    "active": ("Active\n(YES/NO)", "Active"),
-    "collection": ("Collection",),
-    "collection_order": ("CollectionOrder", "Collection Order"),
-    "product_order": ("ProductOrder", "Product Order"),
-    "title": ("Pattern Title", "Product Title", "Title"),
-    "status": ("Status\n(available/coming)", "Status"),
-    "format": ("Format",),
-    "difficulty": ("Difficulty",),
-    "technique": ("Technique", "Medium"),
-    "delivery": ("Delivery", "Download"),
-    "price": ("Price (£)\nnumber only", "Price (£)", "Price"),
-    "etsy_url": ("Etsy URL", "Primary URL", "Product URL"),
-    "description": ("Meaning /Description", "Meaning / Description", "Description"),
-    "good_for_1": ("Good For 1",),
-    "good_for_2": ("Good For 2",),
-    "good_for_3": ("Good For 3",),
-    "workbench_url": ("Image — Workbench URL",),
-    "workbench_alt": ("Image — Workbench Alt",),
-    "lifestyle_url": ("Image — Lifestyle URL",),
-    "lifestyle_alt": ("Image — Lifestyle Alt",),
-    "inside_url": ("Image — Inside URL",),
-    "inside_alt": ("Image — Inside Alt",),
-    "coming_soon_label": ("Coming Soon\nLabel", "Coming Soon Label"),
-    "notes": ("Notes",),
-}
-
-TO_KEEP_PATTERN_HEADERS = {
-    "active": ("Active\n(YES/NO)", "Active(YES/NO)", "Active"),
-    "collection": ("Collection",),
-    "collection_order": ("CollectionOrder", "Collection Order"),
-    "product_order": ("ProductOrder", "Product Order"),
-    "title": ("Product Title", "Pattern Title", "Title"),
-    "status": ("Status\n(available/coming)", "Status(available/coming)", "Status"),
-    "format": ("Format",),
-    "sizes": ("Sizes",),
-    "price": ("Price (£)\nnumber only", "Price (£)number only", "Price (£)", "Price"),
-    "etsy_url": ("Etsy URL", "Primary URL", "Product URL"),
-    "description": ("Meaning /Description", "Meaning / Description", "Description"),
-    "gift_for_1": ("Gift For 1",),
-    "gift_for_2": ("Gift For 2",),
-    "gift_for_3": ("Gift For 3",),
-    "lifestyle_url": ("Image — Lifestyle URL",),
-    "lifestyle_alt": ("Image — Lifestyle Alt",),
-    "flat_url": ("Image — Flat URL",),
-    "flat_alt": ("Image — Flat Alt",),
-    "detail_url": ("Image — Detail URL",),
-    "detail_alt": ("Image — Detail Alt",),
-    "coming_soon_label": ("Coming Soon\nLabel", "Coming SoonLabel", "Coming Soon Label"),
-    "notes": ("Notes",),
-}
-
-PROFILE_FIELDS = {
-    "slug": ("Slug",),
-    "display_name": ("Display Name",),
-    "discipline": ("Discipline",),
-    "bio": ("Bio",),
-    "meta_description": ("Meta Description",),
-    "stats_collections": ("Stats — Collections", "Stats - Collections"),
-    "stats_patterns": ("Stats — Patterns", "Stats - Patterns"),
-    "stats_from_price": ("Stats — From Price", "Stats - From Price"),
-    "montage_1_url": ("Montage Image 1 URL",),
-    "montage_1_alt": ("Montage Image 1 Alt",),
-    "montage_2_url": ("Montage Image 2 URL",),
-    "montage_2_alt": ("Montage Image 2 Alt",),
-    "montage_3_url": ("Montage Image 3 URL",),
-    "montage_3_alt": ("Montage Image 3 Alt",),
-}
-
-TO_KEEP_PROFILE_FIELDS = {
-    **PROFILE_FIELDS,
-    "stats_patterns": ("Stats — Prints", "Stats - Prints", "Stats — Patterns", "Stats - Patterns"),
-}
-
-REQUIRED_ROSTER_HEADERS = (
-    "active", "slug", "display_name", "button_name", "artist_number", "badge", "medium", "collections", "price_from",
-    "difficulty", "technique", "delivery", "feeling", "trait_1", "trait_2", "trait_3",
-    "card_url", "hero_image_url", "hero_image_alt",
-)
-REQUIRED_TO_KEEP_ROSTER_HEADERS = (
-    "active", "slug", "display_name", "button_name", "artist_number", "badge", "medium", "collections", "price_from",
-    "feeling", "trait_1", "trait_2", "trait_3", "card_url", "hero_image_url", "hero_image_alt",
-)
-REQUIRED_TO_MAKE_ROSTER_FIELDS = (
-    "active", "slug", "display_name", "badge", "medium", "collections", "price_from",
-    "difficulty", "technique", "delivery", "feeling", "trait_1", "trait_2", "trait_3",
-    "card_url", "hero_image_url", "hero_image_alt",
-)
-REQUIRED_TO_KEEP_ROSTER_FIELDS = (
-    "active", "slug", "display_name", "badge", "medium", "collections", "price_from",
-    "feeling", "trait_1", "trait_2", "trait_3", "card_url", "hero_image_url", "hero_image_alt",
-)
-REQUIRED_TO_MAKE_PROFILE_FIELDS = tuple(PROFILE_FIELDS)
-REQUIRED_TO_KEEP_PROFILE_FIELDS = tuple(TO_KEEP_PROFILE_FIELDS)
-REQUIRED_TO_MAKE_PATTERN_FIELDS = (
-    "active", "collection", "collection_order", "product_order", "title", "status", "format",
-    "difficulty", "technique", "delivery", "price", "etsy_url", "description", "workbench_url",
-    "workbench_alt", "lifestyle_url", "lifestyle_alt", "inside_url", "inside_alt",
-)
-REQUIRED_TO_KEEP_PATTERN_FIELDS = (
-    "active", "collection", "collection_order", "product_order", "title", "status", "format", "sizes",
-    "price", "etsy_url", "description", "lifestyle_url", "lifestyle_alt", "flat_url", "flat_alt",
-    "detail_url", "detail_alt",
-)
+GROUP = {"name": ["groupname"], "oneLine": ["oneline"], "order": ["grouporder"], "layout": ["layout"]}
 
 
 @dataclass(frozen=True)
@@ -195,117 +79,75 @@ class Issue:
     message: str
 
 
-@dataclass(frozen=True)
-class PublicationSettings:
-    """Visible README settings that govern a whole-Anthology publication run."""
-
-    workbook_name: str
-    publish_prices: bool
-    recruitment_body: str
-    publish_prices_cell: str
-    recruitment_body_cell: str
-
-
 class Audit:
+    """Carries legacy strict/permissive semantics and a separate placeholder report."""
     def __init__(self, mode: str) -> None:
         self.mode = mode
         self.issues: list[Issue] = []
         self.placeholders: list[Issue] = []
-        self.roster_records: list[dict[str, Any]] = []
-        self.blocked = False
+        self.roster: list[dict[str, Any]] = []
+        self.force_block = False
 
     def add(self, severity: str, sheet: str, cell: str, field: str, message: str) -> None:
         self.issues.append(Issue(severity, sheet, cell, field, message))
 
-    def required_problem(self, sheet: str, cell: str, field: str, message: str) -> None:
-        self.add("error" if self.mode == "strict" else "warning", sheet, cell, field, message)
+    def fatal(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.add("FATAL", sheet, cell, field, message)
 
-    def warning(self, sheet: str, cell: str, field: str, message: str) -> None:
-        """Record a non-blocking staging or editorial warning in either mode."""
-        self.add("warning", sheet, cell, field, message)
+    def error(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.add("ERROR", sheet, cell, field, message)
 
-    def blocking_error(self, sheet: str, cell: str, field: str, message: str) -> None:
-        """Record an error that prevents every generated file from being replaced."""
-        self.add("error", sheet, cell, field, message)
-        self.blocked = True
+    def warn(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.add("WARNING", sheet, cell, field, message)
+
+    def required(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.add("ERROR" if self.mode == "strict" else "WARNING", sheet, cell, field, message)
 
     def placeholder(self, sheet: str, cell: str, field: str, message: str) -> None:
-        issue = Issue("error" if self.mode == "strict" else "warning", sheet, cell, field, message)
-        self.placeholders.append(issue)
+        issue = Issue("ERROR" if self.mode == "strict" else "WARNING", sheet, cell, field, message)
         self.issues.append(issue)
+        self.placeholders.append(issue)
 
-    @property
-    def fatal(self) -> list[Issue]:
-        return [issue for issue in self.issues if issue.severity == "fatal"]
+    def blocking(self, sheet: str, cell: str, field: str, message: str) -> None:
+        self.error(sheet, cell, field, message)
+        self.force_block = True
 
     @property
     def errors(self) -> list[Issue]:
-        return [issue for issue in self.issues if issue.severity == "error"]
+        return [i for i in self.issues if i.severity == "ERROR"]
+
+    @property
+    def fatals(self) -> list[Issue]:
+        return [i for i in self.issues if i.severity == "FATAL"]
 
 
-def as_text(value: Any) -> str:
-    return value.strip() if isinstance(value, str) else ("" if value is None else str(value).strip())
+def text(value: Any) -> str:
+    return "" if value is None else str(value).strip()
 
 
-def normalise_header(value: Any) -> str:
-    value = unicodedata.normalize("NFKC", as_text(value)).casefold()
-    return re.sub(r"\s+", " ", value)
+def norm(value: Any) -> str:
+    cleaned = unicodedata.normalize("NFKC", text(value)).replace("\n", " ")
+    cleaned = re.sub(r"\([^)]*\)", "", cleaned)
+    return re.sub(r"[^a-z0-9]+", "", cleaned.casefold())
 
 
-def slugify(value: str) -> str:
-    ascii_value = unicodedata.normalize("NFKD", value).encode("ascii", "ignore").decode("ascii").lower()
-    return re.sub(r"[^a-z0-9]+", "-", ascii_value).strip("-")
+def https(value: Any) -> bool:
+    return bool(URL_RE.match(text(value)))
 
 
-def is_blank(value: Any) -> bool:
-    return not as_text(value)
+def slugify(value: Any) -> str:
+    raw = unicodedata.normalize("NFKD", text(value)).encode("ascii", "ignore").decode().lower()
+    return re.sub(r"-+", "-", re.sub(r"[^a-z0-9]+", "-", raw)).strip("-")
 
 
-def contains_placeholder(value: Any) -> bool:
-    return PLACEHOLDER_TEXT in as_text(value).casefold()
+def yesno(value: Any) -> bool | None:
+    value = text(value).upper()
+    return True if value == "YES" else False if value == "NO" else None
 
 
-def is_pale_yellow(cell: Any) -> bool:
-    fill = cell.fill
-    if not fill or fill.fill_type != "solid":
-        return False
-    colour = fill.fgColor
-    raw = colour.rgb if colour.type == "rgb" else ""
-    return bool(raw and raw.upper().endswith(PALE_YELLOW))
-
-
-def parse_price(value: Any) -> Decimal | None:
-    cleaned = re.sub(r"[^0-9.,]", "", as_text(value)).replace(",", "")
-    if not cleaned:
-        return None
+def posint(value: Any) -> int | None:
     try:
-        price = Decimal(cleaned)
-    except InvalidOperation:
-        return None
-    return price if price >= 0 else None
-
-
-def format_price(value: Decimal) -> str:
-    return "£" + format(value.quantize(Decimal("0.01"), rounding=ROUND_HALF_UP), ".2f")
-
-
-def is_publishable_product(status: str, outbound_url: str) -> bool:
-    """The only publication gate for either directory product type."""
-    return status.casefold() == "available" and url_is_valid(outbound_url)
-
-
-def boolean_active(value: Any) -> bool | None:
-    normalised = as_text(value).upper()
-    if normalised == "YES":
-        return True
-    if normalised == "NO":
-        return False
-    return None
-
-
-def exact_int(value: Any) -> int | None:
-    try:
-        number = Decimal(as_text(value))
+        number = Decimal(text(value))
     except InvalidOperation:
         return None
     if number <= 0 or number != number.to_integral_value():
@@ -313,867 +155,600 @@ def exact_int(value: Any) -> int | None:
     return int(number)
 
 
-def url_is_valid(value: Any) -> bool:
-    return bool(URL_RE.match(as_text(value)))
+def parse_price(value: Any) -> Decimal | None:
+    cleaned = re.sub(r"[^0-9.,]", "", text(value)).replace(",", "")
+    try:
+        number = Decimal(cleaned)
+    except InvalidOperation:
+        return None
+    return number if number > 0 else None
 
 
-def clean_list(value: Any) -> list[str]:
-    return [item.strip() for item in as_text(value).split(",") if item.strip()]
+def price_string(value: Decimal) -> str:
+    return "£" + format(value.quantize(Decimal("0.01")), ".2f")
 
 
-def medium_facet(value: str) -> str:
-    """Keep card copy intact while deriving a concise directory-filter label."""
-    return re.sub(r"\s+patterns$", "", value, flags=re.IGNORECASE).strip() or value
+def contains_placeholder(value: Any) -> bool:
+    """Match c8ebb6b markers only when validating required or published fields."""
+    return PLACEHOLDER_TEXT in text(value).casefold()
+def pale_yellow(cell: Any) -> bool:
+    fill = cell.fill
+    if not fill or fill.fill_type != "solid":
+        return False
+    color = fill.fgColor
+    raw = text(color.rgb).upper() if color and color.type == "rgb" else ""
+    return raw.endswith(PALE_YELLOW)
 
 
-def js_file(global_name: str, payload: dict[str, Any], source_name: str) -> str:
-    generated = json.dumps(payload, ensure_ascii=False, indent=2)
-    return (
-        f"// Auto-generated by {SCRIPT_PATH} from {source_name}.\n"
-        "// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\n"
-        f"window.{global_name} = {generated};\n"
-    )
+def hmap(ws: Any, row: int) -> dict[str, tuple[int, Any]]:
+    return {norm(cell.value): (cell.column, cell) for cell in ws[row] if norm(cell.value)}
 
 
-def maker_js_file(slug: str, payload: dict[str, Any], source_name: str) -> str:
-    generated = json.dumps(payload, ensure_ascii=False, indent=2)
-    return (
-        f"// Auto-generated by {SCRIPT_PATH} from {source_name}.\n"
-        "// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\n"
-        "window.HA_TO_MAKE_MAKERS = window.HA_TO_MAKE_MAKERS || {};\n"
-        f"window.HA_TO_MAKE_MAKERS[{json.dumps(slug, ensure_ascii=False)}] = {generated};\n"
-    )
+def match(headers: dict[str, tuple[int, Any]], aliases: Iterable[str]) -> tuple[int, Any] | None:
+    return next((headers[name] for name in aliases if name in headers), None)
 
 
-def write_file(path: Path, content: str) -> None:
-    temporary = path.with_suffix(path.suffix + ".tmp")
-    temporary.write_text(content, encoding="utf-8")
-    temporary.replace(path)
-
-
-def display_header(options: Iterable[str]) -> str:
-    return next(iter(options)).replace("\n", " ")
-
-
-def header_map(worksheet: Any, row: int) -> dict[str, tuple[int, Any]]:
-    result: dict[str, tuple[int, Any]] = {}
-    for cell in worksheet[row]:
-        key = normalise_header(cell.value)
-        if key:
-            result[key] = (cell.column, cell)
-    return result
-
-
-def locate_column(headers: dict[str, tuple[int, Any]], aliases: Iterable[str]) -> tuple[int, Any] | None:
-    for alias in aliases:
-        found = headers.get(normalise_header(alias))
+def map_headers(audit: Audit, ws: Any, row: int, fields: dict[str, list[str]], required: Iterable[str], label: str) -> dict[str, tuple[int, Any]]:
+    headers = hmap(ws, row)
+    out: dict[str, tuple[int, Any]] = {}
+    for key, aliases in fields.items():
+        found = match(headers, aliases)
         if found:
-            return found
-    return None
+            out[key] = found
+    for key in required:
+        if key not in out:
+            audit.fatal(ws.title, f"{row}:{row}", key, f"Required {label} header is missing or renamed.")
+    return out
 
 
-def field_cell(worksheet: Any, row: int, headers: dict[str, tuple[int, Any]], aliases: Iterable[str]) -> Any | None:
-    located = locate_column(headers, aliases)
-    return worksheet.cell(row=row, column=located[0]) if located else None
+def cell(ws: Any, row: int, mapping: dict[str, tuple[int, Any]], key: str) -> Any | None:
+    return ws.cell(row=row, column=mapping[key][0]) if key in mapping else None
 
 
-def validate_headers(audit: Audit, worksheet: Any, header_row: int, fields: dict[str, tuple[str, ...]], required: Iterable[str], label: str) -> dict[str, tuple[int, Any]]:
-    headers = header_map(worksheet, header_row)
-    for field in required:
-        if not locate_column(headers, fields[field]):
-            audit.add("fatal", worksheet.title, f"{header_row}:{header_row}", display_header(fields[field]), f"Required {label} header is missing or renamed.")
-    return headers
+def get(ws: Any, row: int, mapping: dict[str, tuple[int, Any]], key: str) -> str:
+    found = cell(ws, row, mapping, key)
+    return text(found.value) if found else ""
 
 
-def check_required_cell(audit: Audit, cell: Any | None, field: str, required: bool = True) -> str:
-    if cell is None:
-        return ""
-    value = as_text(cell.value)
-    if required and not value:
-        audit.required_problem(cell.parent.title, cell.coordinate, field, "Required field is blank.")
-    if required and contains_placeholder(value):
-        audit.placeholder(cell.parent.title, cell.coordinate, field, "Contains unresolved PLACEHOLDER text.")
-    if required and is_pale_yellow(cell):
-        audit.placeholder(cell.parent.title, cell.coordinate, field, "Cell remains pale-yellow, the workbook’s unresolved-placeholder marker.")
-    return value
+def row_has_values(ws: Any, row: int, mapping: dict[str, tuple[int, Any]]) -> bool:
+    return any(text(ws.cell(row, column).value) for column, _ in mapping.values())
 
 
-def check_url_cell(audit: Audit, cell: Any | None, field: str, required: bool = True) -> str:
-    value = check_required_cell(audit, cell, field, required)
-    if value and not url_is_valid(value):
-        audit.required_problem(cell.parent.title, cell.coordinate, field, "URL must be an absolute https:// URL.")
-    return value
-
-
-def profile_map(worksheet: Any) -> dict[str, Any]:
-    entries: dict[str, Any] = {}
-    for row in range(2, 16):
-        label = normalise_header(worksheet.cell(row=row, column=1).value)
-        if label:
-            entries[label] = worksheet.cell(row=row, column=2)
-    return entries
-
-
-def profile_cell(entries: dict[str, Any], aliases: Iterable[str]) -> Any | None:
-    for alias in aliases:
-        cell = entries.get(normalise_header(alias))
-        if cell:
-            return cell
-    return None
-
-
-def read_publication_settings(workbook: Any, audit: Audit, workbook_name: str) -> PublicationSettings:
-    """Read the required, visible README publication controls for one workbook."""
-
-    default = PublicationSettings(
-        workbook_name=workbook_name,
-        publish_prices=False,
-        recruitment_body="",
-        publish_prices_cell="README!B?",
-        recruitment_body_cell="README!B?",
-    )
-    if "README" not in workbook.sheetnames:
-        audit.blocking_error("Workbook", "—", "README publication settings", "Expected a README tab with required publication settings.")
-        return default
-
-    worksheet = workbook["README"]
-    wanted = {
-        normalise_header(PUBLISH_PRICES_LABEL): PUBLISH_PRICES_LABEL,
-        normalise_header(RECRUITMENT_BODY_LABEL): RECRUITMENT_BODY_LABEL,
-    }
-    found: dict[str, Any] = {}
-    for row in range(1, worksheet.max_row + 1):
-        label = normalise_header(worksheet.cell(row=row, column=1).value)
-        if label not in wanted:
-            continue
-        if label in found:
-            audit.blocking_error("README", f"A{row}", wanted[label], "Publication setting label appears more than once.")
-            continue
-        found[label] = worksheet.cell(row=row, column=2)
-
-    publish_key = normalise_header(PUBLISH_PRICES_LABEL)
-    recruitment_key = normalise_header(RECRUITMENT_BODY_LABEL)
-    publish_cell = found.get(publish_key)
-    recruitment_cell = found.get(recruitment_key)
-    if publish_cell is None:
-        audit.blocking_error("README", f"A1:A{worksheet.max_row}", PUBLISH_PRICES_LABEL, "Required publication setting label is missing.")
-    if recruitment_cell is None:
-        audit.blocking_error("README", f"A1:A{worksheet.max_row}", RECRUITMENT_BODY_LABEL, "Required publication setting label is missing.")
-
-    publish_value = as_text(publish_cell.value) if publish_cell is not None else ""
-    if publish_value.upper() not in {"YES", "NO"}:
-        audit.blocking_error(
-            "README",
-            publish_cell.coordinate if publish_cell is not None else "B?",
-            PUBLISH_PRICES_LABEL,
-            "Value must be exactly YES or NO.",
-        )
-
-    recruitment_body = as_text(recruitment_cell.value) if recruitment_cell is not None else ""
-    if not recruitment_body:
-        audit.blocking_error(
-            "README",
-            recruitment_cell.coordinate if recruitment_cell is not None else "B?",
-            RECRUITMENT_BODY_LABEL,
-            "Required publication copy is blank.",
-        )
-    elif contains_placeholder(recruitment_body) or (recruitment_cell is not None and is_pale_yellow(recruitment_cell)):
-        audit.blocking_error(
-            "README",
-            recruitment_cell.coordinate if recruitment_cell is not None else "B?",
-            RECRUITMENT_BODY_LABEL,
-            "Publication copy contains an unresolved placeholder marker.",
-        )
-
-    return PublicationSettings(
-        workbook_name=workbook_name,
-        publish_prices=publish_value.upper() == "YES",
-        recruitment_body=recruitment_body,
-        publish_prices_cell="README!" + (publish_cell.coordinate if publish_cell is not None else "B?"),
-        recruitment_body_cell="README!" + (recruitment_cell.coordinate if recruitment_cell is not None else "B?"),
-    )
-
-
-def locate_pattern_header_row(worksheet: Any) -> int | None:
-    for row in range(1, min(worksheet.max_row, 100) + 1):
-        labels = {normalise_header(cell.value) for cell in worksheet[row] if cell.value is not None}
-        if "collection" in labels and any(label in labels for label in ("pattern title", "product title", "title")):
+def locate_product_header(ws: Any, kind: str) -> int | None:
+    wanted = "patterntitle" if kind == "to-make" else "producttitle"
+    for row in range(1, min(100, ws.max_row) + 1):
+        labels = set(hmap(ws, row))
+        if wanted in labels and "collection" in labels:
             return row
     return None
 
 
-def row_has_values(worksheet: Any, row: int, columns: Iterable[int]) -> bool:
-    return any(not is_blank(worksheet.cell(row=row, column=column).value) for column in columns)
+def profile_cells(ws: Any, product_header: int) -> dict[str, Any]:
+    return {norm(ws.cell(row, 1).value): ws.cell(row, 2) for row in range(1, product_header) if norm(ws.cell(row, 1).value)}
 
 
-def collection_groups(patterns: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
-    ordering: dict[str, int] = {}
-    for pattern in patterns:
-        grouped[pattern["collection"]].append(pattern)
-        ordering.setdefault(pattern["collection"], pattern["collectionOrder"])
-    groups: list[dict[str, Any]] = []
-    for collection in sorted(grouped, key=lambda item: (ordering[item], item.casefold())):
-        products = sorted(grouped[collection], key=lambda item: (item["productOrder"], item["title"].casefold()))
-        groups.append({"collection": collection, "patterns": products})
-    return groups
+def profile_value(audit: Audit, ws: Any, entries: dict[str, Any], key: str, required: bool = True) -> tuple[str, Any | None]:
+    source = next((entries[name] for name in PROFILE[key] if name in entries), None)
+    if source is None:
+        if required:
+            audit.fatal(ws.title, "A:B", key, "Required profile label is missing or renamed.")
+        return "", None
+    value = text(source.value)
+    if required and not value:
+        audit.required(ws.title, source.coordinate, key, "Required profile value is blank.")
+    elif required and contains_placeholder(value):
+        audit.placeholder(ws.title, source.coordinate, key, "Contains unresolved PLACEHOLDER text marker.")
+    return value, source
 
 
-def serialise_public_value(value: Any, publish_prices: bool) -> Any:
-    """Return a payload copy without any price data when publication is disabled."""
-
-    if publish_prices:
-        return value
-    if isinstance(value, dict):
-        return {
-            key: serialise_public_value(item, publish_prices)
-            for key, item in value.items()
-            if key not in PRICE_OUTPUT_FIELDS
-        }
-    if isinstance(value, list):
-        return [serialise_public_value(item, publish_prices) for item in value]
-    return value
+def scan_placeholders(audit: Audit, wb: Any, label: str) -> None:
+    """Scan every workbook cell for the pale-yellow unresolved-marker fill only."""
+    for ws in wb.worksheets:
+        for row in ws.iter_rows():
+            for source in row:
+                if pale_yellow(source):
+                    audit.placeholder(ws.title, source.coordinate, label, "Cell has the pale-yellow unresolved-placeholder fill.")
 
 
-def parse_contributor_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any], kind: str) -> dict[str, Any]:
-    """Parse one contributor tab while keeping staged product rows off the site.
+def label_cells(ws: Any, label: str) -> list[Any]:
+    target = norm(label)
+    return [source for row in ws.iter_rows() for source in row if norm(source.value) == target]
 
-    Product completeness is deliberately advisory. The publication contradiction is the
-    only product-row condition that blocks a strict run: status=available without a
-    usable outbound shop URL.
-    """
-    is_make = kind == "to-make"
-    profile_fields = PROFILE_FIELDS if is_make else TO_KEEP_PROFILE_FIELDS
-    required_profile_fields = REQUIRED_TO_MAKE_PROFILE_FIELDS if is_make else REQUIRED_TO_KEEP_PROFILE_FIELDS
-    header_fields = TO_MAKE_PATTERN_HEADERS if is_make else TO_KEEP_PATTERN_HEADERS
-    required_fields = REQUIRED_TO_MAKE_PATTERN_FIELDS if is_make else REQUIRED_TO_KEEP_PATTERN_FIELDS
-    table_label = "Pattern" if is_make else "Product"
-    image_url_fields = ("workbench_url", "lifestyle_url", "inside_url") if is_make else ("lifestyle_url", "flat_url", "detail_url")
-    optional_fields = ("good_for_1", "good_for_2", "good_for_3", "coming_soon_label", "notes") if is_make else ("gift_for_1", "gift_for_2", "gift_for_3", "coming_soon_label", "notes")
 
-    entries = profile_map(worksheet)
-    profile: dict[str, str] = {}
-    for field in required_profile_fields:
-        cell = profile_cell(entries, profile_fields[field])
-        if cell is None:
-            audit.add("fatal", worksheet.title, "A2:B15", display_header(profile_fields[field]), "Required contributor-profile field is missing or renamed.")
-            profile[field] = ""
-        elif field.startswith("montage_") and field.endswith("_url"):
-            profile[field] = check_url_cell(audit, cell, display_header(profile_fields[field]))
+def settings(audit: Audit, wb: Any, name: str) -> dict[str, Any]:
+    setting = {"workbook": name, "publishPrices": False, "publishCell": "—", "recruitment": "", "recruitmentCell": "—"}
+    if "README" not in wb.sheetnames:
+        audit.blocking("Workbook", "—", "README", "README sheet is missing.")
+        return setting
+    ws = wb["README"]
+    for label, key in ((PUBLISH_LABEL, "publish"), (RECRUIT_LABEL, "recruitment")):
+        found = label_cells(ws, label)
+        if len(found) != 1:
+            audit.blocking(ws.title, "—", label, "Expected exactly one visible README setting label.")
+            continue
+        source = ws.cell(found[0].row, found[0].column + 1)
+        value = text(source.value)
+        setting["publishCell" if key == "publish" else "recruitmentCell"] = source.coordinate
+        if key == "publish":
+            if value.upper() not in {"YES", "NO"}:
+                audit.blocking(ws.title, source.coordinate, label, "Value must be exactly YES or NO.")
+            setting["publishPrices"] = value.upper() == "YES"
         else:
-            profile[field] = check_required_cell(audit, cell, display_header(profile_fields[field]))
+            if not value:
+                audit.blocking(ws.title, source.coordinate, label, "Required publication copy is blank.")
+            setting["recruitment"] = value
+    return setting
 
-    header_row = locate_pattern_header_row(worksheet)
-    if header_row is None:
-        audit.add("fatal", worksheet.title, "1:100", f"{table_label} header row", f"Could not locate the {table_label.casefold()}-table header row.")
-        return {"profile": profile, "patterns": [], "groups": []}
-    headers = validate_headers(audit, worksheet, header_row, header_fields, required_fields, table_label.casefold())
+
+def roster_rows(audit: Audit, wb: Any, kind: str) -> list[dict[str, Any]]:
+    sheet_name = "To Make Roster" if kind == "to-make" else "To Keep Roster"
+    if sheet_name not in wb.sheetnames:
+        audit.fatal("Workbook", "—", "Roster", f"Expected {sheet_name} sheet.")
+        return []
+    ws = wb[sheet_name]
+    required = ["active", "slug", "name", "artistNumber", "medium", "collections", "priceFrom", "feeling", "trait1", "trait2", "trait3", "cardUrl", "heroImage", "heroAlt"]
+    if kind == "to-make":
+        required += ["difficulty", "technique", "delivery"]
+    mapping = map_headers(audit, ws, 1, ROSTER, required, "roster")
+    seen: dict[str, int] = {}
     records: list[dict[str, Any]] = []
-    seen_titles: dict[str, str] = {}
-    header_columns = [column for column, _ in headers.values()]
-
-    for row in range(header_row + 1, worksheet.max_row + 1):
-        if not row_has_values(worksheet, row, header_columns):
+    for row in range(2, ws.max_row + 1):
+        if not row_has_values(ws, row, mapping):
             continue
-        cells = {field: field_cell(worksheet, row, headers, header_fields[field]) for field in set(required_fields).union(optional_fields)}
-        values = {field: as_text(cell.value) if cell is not None else "" for field, cell in cells.items()}
-        status = values["status"].casefold()
-        url_value = values["etsy_url"]
-        publishable = is_publishable_product(status, url_value)
-        title = values["title"]
-        title_cell = cells["title"]
-        status_cell = cells["status"]
-        url_cell = cells["etsy_url"]
-
-        if status not in {"available", "coming"}:
-            audit.warning(worksheet.title, status_cell.coordinate if status_cell else str(row), "Status", "Not published: enter available only when this product has a usable outbound shop URL; otherwise use coming while staged.")
-        elif status == "available" and not url_is_valid(url_value):
-            audit.required_problem(worksheet.title, url_cell.coordinate if url_cell else str(row), "Outbound shop URL", "Available product has no usable absolute https:// shop URL and is withheld from publication.")
-        elif not publishable:
-            audit.warning(worksheet.title, status_cell.coordinate if status_cell else str(row), "Publication state", "Staged product is withheld from the site because status is not available.")
-
-        # A publishable item can still be editorially incomplete. Surface it, but do not
-        # convert normal in-progress sheet work into a strict-mode blocker.
-        if publishable:
-            for field in required_fields:
-                if field in {"active", "etsy_url"}:
-                    continue
-                cell = cells[field]
-                value = values[field]
-                if not value:
-                    audit.warning(worksheet.title, cell.coordinate if cell else str(row), display_header(header_fields[field]), "Published product is incomplete; the blank value is emitted as blank.")
-                elif contains_placeholder(value) or (cell is not None and is_pale_yellow(cell)):
-                    audit.warning(worksheet.title, cell.coordinate if cell else str(row), display_header(header_fields[field]), "Published product still contains an unresolved placeholder marker.")
-            for field in image_url_fields:
-                value = values[field]
-                cell = cells[field]
-                if value and not url_is_valid(value):
-                    audit.warning(worksheet.title, cell.coordinate if cell else str(row), display_header(header_fields[field]), "Published product image URL should be an absolute https:// URL.")
-
-        price_value = parse_price(values["price"])
-        if price_value is None:
-            if publishable:
-                price_cell = cells["price"]
-                audit.warning(worksheet.title, price_cell.coordinate if price_cell else str(row), display_header(header_fields["price"]), "Published product price is missing or invalid; no price is rendered.")
-            price_display = ""
-            price_number: float | None = None
-        else:
-            price_display = format_price(price_value)
-            price_number = float(price_value)
-
-        collection_order = exact_int(values["collection_order"])
-        product_order = exact_int(values["product_order"])
-        if publishable:
-            for label, order, source_field in (("CollectionOrder", collection_order, "collection_order"), ("ProductOrder", product_order, "product_order")):
-                if order is None:
-                    cell = cells[source_field]
-                    audit.warning(worksheet.title, cell.coordinate if cell else str(row), label, "Published product order should be a positive whole number; it will sort before ordered records.")
-
-        title_slug = slugify(title)
-        if publishable and not title_slug:
-            audit.warning(worksheet.title, title_cell.coordinate if title_cell else str(row), table_label + " Title", "Published product has no title from which to derive a URL-safe slug.")
-        if publishable and title_slug:
-            existing = seen_titles.get(title_slug)
-            if existing:
-                audit.warning(worksheet.title, title_cell.coordinate if title_cell else str(row), table_label + " Title", f"Derived slug {title_slug!r} duplicates row {existing}.")
-            seen_titles[title_slug] = str(row)
-
-        record: dict[str, Any] = {
-            "show": publishable,
-            "slug": title_slug,
-            "collection": values["collection"],
-            "collectionOrder": collection_order or 0,
-            "productOrder": product_order or 0,
-            "title": title,
-            "status": status,
-            "format": values["format"],
-            "price": price_display,
-            "priceNumber": price_number,
-            "etsyUrl": url_value,
-            "meaning": values["description"],
-            "comingSoonLabel": values["coming_soon_label"],
-        }
-        if is_make:
-            record.update({
-                "difficulty": values["difficulty"],
-                "technique": values["technique"],
-                "delivery": values["delivery"],
-                "goodFor": [values[name] for name in ("good_for_1", "good_for_2", "good_for_3") if values[name]],
-                "images": {"workbench": values["workbench_url"], "lifestyle": values["lifestyle_url"], "inside": values["inside_url"]},
-                "imageAlts": {"workbench": values["workbench_alt"], "lifestyle": values["lifestyle_alt"], "inside": values["inside_alt"]},
-            })
-        else:
-            record.update({
-                "sizes": values["sizes"],
-                "giftFor": [values[name] for name in ("gift_for_1", "gift_for_2", "gift_for_3") if values[name]],
-                "images": {"lifestyle": values["lifestyle_url"], "flat": values["flat_url"], "detail": values["detail_url"]},
-                "imageAlts": {"lifestyle": values["lifestyle_alt"], "flat": values["flat_alt"], "detail": values["detail_alt"]},
-            })
-        records.append(record)
-
-    if profile["slug"] != roster["slug"]:
-        audit.warning(worksheet.title, "B2", "Slug", f"Contributor-profile slug {profile['slug']!r} does not match roster slug {roster['slug']!r}.")
-    if profile["display_name"] != roster["name"]:
-        audit.warning(worksheet.title, "B3", "Display Name", "Contributor-profile display name does not match the roster.")
-    if worksheet.title != roster["name"]:
-        audit.warning(worksheet.title, "A1", "Contributor tab", "Contributor-tab title does not match the roster Display Name.")
-
-    public_records = [record for record in records if record["show"]]
-    groups = collection_groups(public_records)
-    categories = [group["collection"] for group in groups]
-    collection_count = len(categories)
-    product_count = len(public_records)
-    profile_count_label = "Stats — Patterns" if is_make else "Stats — Prints"
-    if exact_int(profile["stats_collections"]) != collection_count:
-        audit.warning(worksheet.title, "B7", "Stats — Collections", f"States {profile['stats_collections']!r}; the published site set contains {collection_count} collection(s). Generated statistics use the published set.")
-    if exact_int(profile["stats_patterns"]) != product_count:
-        audit.warning(worksheet.title, "B8", profile_count_label, f"States {profile['stats_patterns']!r}; the published site set contains {product_count} product(s). Generated statistics use the published set.")
-    if set(roster["collections"]) != set(categories):
-        audit.warning(worksheet.title, "B7", "Collections", "Roster collections do not match the published product collections; staged collections are intentionally not rendered.")
-
-    prices = [Decimal(str(record["priceNumber"])) for record in public_records if record["priceNumber"] is not None]
-    computed_from = format_price(min(prices)) if prices else ""
-    if public_records and not prices:
-        audit.warning(worksheet.title, "B9", "Stats — From Price", "Published products have no valid prices; no From price is rendered.")
-    if computed_from:
-        for source_name, source_value, source_cell in (("Roster Price From", roster["price_from"], roster["price_from_cell"]), ("Stats — From Price", profile["stats_from_price"], "B9")):
-            if parse_price(source_value) != parse_price(computed_from):
-                audit.warning(worksheet.title, source_cell if isinstance(source_cell, str) else source_cell.coordinate, source_name, f"States {source_value!r}; published product prices produce {computed_from}. Generated data uses the published minimum.")
-
-    montage = [{"src": profile[f"montage_{index}_url"], "alt": profile[f"montage_{index}_alt"]} for index in range(1, 4)]
-    profile_stats_key = "patterns" if is_make else "prints"
-    return {
-        "slug": roster["slug"], "active": roster["active"], "name": roster["name"], "buttonName": roster["button_name"], "artistNumber": roster["artist_number"],
-        "badge": roster["badge"], "heroImage": roster["hero_image_url"], "heroAlt": roster["hero_image_alt"],
-        "medium": roster["medium"], "filterMedium": medium_facet(roster["medium"]), "collections": roster["collections"],
-        "priceFrom": computed_from, "feeling": roster["feeling"], "traits": roster["traits"], "cardUrl": roster["card_url"],
-        "difficulty": roster.get("difficulty", ""), "technique": roster.get("technique", ""), "delivery": roster.get("delivery", ""),
-        "patternCount": product_count,
-        "profile": {"discipline": profile["discipline"], "bio": profile["bio"], "metaDescription": profile["meta_description"], "stats": {"collections": collection_count, profile_stats_key: product_count, "fromPrice": computed_from}, "montage": montage},
-        "groups": groups,
-    }
-
-
-def parse_to_make_maker_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any]) -> dict[str, Any]:
-    return parse_contributor_sheet(audit, worksheet, roster, "to-make")
-
-
-def parse_to_keep_maker_sheet(audit: Audit, worksheet: Any, roster: dict[str, Any]) -> dict[str, Any]:
-    return parse_contributor_sheet(audit, worksheet, roster, "to-keep")
-
-def parse_workbook(path: Path, kind: str, mode: str) -> tuple[Audit, list[dict[str, Any]], PublicationSettings]:
-    audit = Audit(mode)
-    workbook = load_workbook(path, data_only=False)
-    publication_settings = read_publication_settings(workbook, audit, path.name)
-    if kind == "auto":
-        kind = "to-make" if "To Make Roster" in workbook.sheetnames else "to-keep" if "To Keep Roster" in workbook.sheetnames else "unknown"
-    roster_name = "To Make Roster" if kind == "to-make" else "To Keep Roster"
-    if kind == "unknown" or roster_name not in workbook.sheetnames:
-        audit.add("fatal", "Workbook", "—", "Roster sheet", "Expected a sheet named To Make Roster or To Keep Roster.")
-        return audit, [], publication_settings
-    roster_sheet = workbook[roster_name]
-    required_roster_fields = REQUIRED_TO_MAKE_ROSTER_FIELDS if kind == "to-make" else REQUIRED_TO_KEEP_ROSTER_FIELDS
-    required_roster_headers = REQUIRED_ROSTER_HEADERS if kind == "to-make" else REQUIRED_TO_KEEP_ROSTER_HEADERS
-    roster_headers = validate_headers(audit, roster_sheet, 1, TO_MAKE_ROSTER_HEADERS, required_roster_headers, "roster")
-    rosters: list[dict[str, Any]] = []
-    seen_slugs: dict[str, str] = {}
-    header_columns = [column for column, _ in roster_headers.values()]
-    for row in range(2, roster_sheet.max_row + 1):
-        if not row_has_values(roster_sheet, row, header_columns):
+        values = {key: get(ws, row, mapping, key) for key in mapping}
+        if not values.get("slug"):
             continue
-        active_cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS["active"])
-        active = boolean_active(active_cell.value if active_cell else None)
+        sources = {key: cell(ws, row, mapping, key) for key in mapping}
+        active = yesno(values.get("active"))
         if active is None:
-            if any(field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS[name]) and not is_blank(field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS[name]).value) for name in ("slug", "display_name")):
-                audit.required_problem(roster_sheet.title, active_cell.coordinate if active_cell else str(row), "Active (YES/NO)", "Record has data but Active is not YES or NO.")
+            audit.required(ws.title, sources["active"].coordinate if sources.get("active") else str(row), "Active (YES/NO)", "Record has data but Active is not YES or NO.")
             continue
-        values: dict[str, str] = {}
-        cells: dict[str, Any] = {}
-        for field in required_roster_fields:
-            cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS[field])
-            cells[field] = cell
-            if not active:
-                # Active NO is an ordinary staging state. Retain its supplied material,
-                # but never turn its incomplete fields into strict-run blockers.
-                values[field] = as_text(cell.value) if cell is not None else ""
-            elif field in {"card_url"}:
-                values[field] = check_required_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
-            elif field == "hero_image_url":
-                values[field] = check_url_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
-            else:
-                values[field] = check_required_cell(audit, cell, display_header(TO_MAKE_ROSTER_HEADERS[field]))
-        button_name_cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS["button_name"])
-        values["button_name"] = check_required_cell(audit, button_name_cell, "Button Name", required=False)
-        artist_number_cell = field_cell(roster_sheet, row, roster_headers, TO_MAKE_ROSTER_HEADERS["artist_number"])
-        artist_number_value = as_text(artist_number_cell.value) if artist_number_cell else ""
-        artist_number = exact_int(artist_number_value)
-        if active and artist_number is None:
-            audit.blocking_error(
-                roster_sheet.title,
-                artist_number_cell.coordinate if artist_number_cell else str(row),
-                "Artist Number",
-                "Active contributor requires a unique positive whole Artist Number across both workbooks.",
-            )
-        elif not active and artist_number_value:
-            audit.warning(
-                roster_sheet.title,
-                artist_number_cell.coordinate if artist_number_cell else str(row),
-                "Artist Number",
-                "Inactive contributor has an Artist Number; clear it until the contributor is active.",
-            )
-        if active and not url_is_valid(values["hero_image_url"]):
-            audit.blocking_error(
-                roster_sheet.title,
-                cells["hero_image_url"].coordinate if cells["hero_image_url"] else str(row),
-                "Hero Image URL",
-                "Active contributor requires a usable absolute https:// Hero Image URL for directory and Home recent-artist cards.",
-            )
-        slug = values["slug"]
-        if slug != slugify(slug):
-            (audit.required_problem if active else audit.warning)(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", "Must be lower-case, URL-safe, and hyphen-separated.")
-        if slug in seen_slugs:
-            (audit.required_problem if active else audit.warning)(roster_sheet.title, cells["slug"].coordinate if cells["slug"] else str(row), "Slug", f"Duplicates roster row {seen_slugs[slug]}.")
-        if slug:
-            seen_slugs[slug] = str(row)
-        if active and not values["card_url"].startswith("/to-make/") and kind == "to-make":
-            audit.required_problem(roster_sheet.title, cells["card_url"].coordinate if cells["card_url"] else str(row), "Card URL", "To Make card URL must start with /to-make/.")
-        if active and not values["card_url"].startswith("/to-keep/") and kind == "to-keep":
-            audit.required_problem(roster_sheet.title, cells["card_url"].coordinate if cells["card_url"] else str(row), "Card URL", "To Keep card URL must start with /to-keep/.")
-        rosters.append({
-            "active": active,
-            "slug": slug,
-            "name": values["display_name"],
-            "button_name": values["button_name"],
-            "artist_number": artist_number,
-            "badge": values["badge"],
-            "medium": values["medium"],
-            "collections": clean_list(values["collections"]),
-            "price_from": values["price_from"],
-            "price_from_cell": cells["price_from"],
-            "difficulty": values.get("difficulty", ""),
-            "technique": values.get("technique", ""),
-            "delivery": values.get("delivery", ""),
-            "feeling": values["feeling"],
-            "traits": [values[name] for name in ("trait_1", "trait_2", "trait_3") if values[name]],
-            "card_url": values["card_url"],
-            "hero_image_url": values["hero_image_url"],
-            "hero_image_alt": values["hero_image_alt"],
-        })
-        audit.roster_records.append({
-            "kind": kind,
-            "sheet": roster_sheet.title,
-            "row": row,
-            "slug": slug,
-            "name": values["display_name"],
-            "active": active,
-            "artist_number": artist_number,
-            "artist_number_value": artist_number_value,
-            "artist_number_cell": artist_number_cell.coordinate if artist_number_cell else str(row),
-        })
+        if values["slug"] in seen:
+            audit.required(ws.title, sources["slug"].coordinate, "Slug", f"Duplicates roster row {seen[values['slug']]}.")
+        seen[values["slug"]] = row
+        if active:
+            for key in required:
+                if not values.get(key):
+                    audit.required(ws.title, sources[key].coordinate if sources.get(key) else str(row), key, "Required active contributor value is blank.")
+                elif contains_placeholder(values[key]):
+                    audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), key, "Contains unresolved PLACEHOLDER text marker.")
+            if values["slug"] != slugify(values["slug"]):
+                audit.required(ws.title, sources["slug"].coordinate, "Slug", "Must be lower-case, URL-safe, and hyphen-separated.")
+            if posint(values["artistNumber"]) is None:
+                audit.blocking(ws.title, sources["artistNumber"].coordinate, "Artist Number", "Active contributor requires a unique positive whole Artist Number across both workbooks.")
+            if not https(values["heroImage"]):
+                audit.blocking(ws.title, sources["heroImage"].coordinate, "Hero Image URL", "Active contributor requires an absolute https:// Hero Image URL.")
+            prefix = "/to-make/" if kind == "to-make" else "/to-keep/"
+            if not values["cardUrl"].startswith(prefix):
+                audit.required(ws.title, sources["cardUrl"].coordinate, "Card URL", f"Must start with {prefix}.")
+        elif values.get("artistNumber"):
+            audit.warn(ws.title, sources["artistNumber"].coordinate, "Artist Number", "Inactive contributor has an Artist Number; clear it until active.")
+        record = {
+            "active": active, "slug": values["slug"], "name": values["name"], "buttonName": values.get("buttonName", ""),
+            "artistNumber": posint(values.get("artistNumber")) or 0, "badge": values.get("badge", ""), "medium": values["medium"],
+            "filterMedium": re.sub(r"\s+patterns$", "", values["medium"], flags=re.I).strip() or values["medium"],
+            "collections": [item.strip() for item in values["collections"].split(",") if item.strip()], "priceFrom": values["priceFrom"],
+            "difficulty": values.get("difficulty", ""), "technique": values.get("technique", ""), "delivery": values.get("delivery", ""),
+            "feeling": values["feeling"], "traits": [values.get(key, "") for key in ("trait1", "trait2", "trait3") if values.get(key, "")],
+            "cardUrl": values["cardUrl"], "heroImage": values["heroImage"], "heroAlt": values["heroAlt"], "sourceRow": row,
+            "priceFromCell": sources.get("priceFrom"),
+        }
+        records.append(record)
+        audit.roster.append({"sheet": ws.title, "row": row, "active": active, "artistNumber": record["artistNumber"], "rawArtistNumber": values.get("artistNumber", ""), "name": record["name"]})
+    return records
 
-    makers: list[dict[str, Any]] = []
-    for roster in rosters:
-        if not roster["active"]:
+
+def groups_table(ws: Any, product_header: int) -> tuple[int | None, int | None]:
+    title = None
+    for row in range(product_header + 1, ws.max_row + 1):
+        if text(ws.cell(row, 1).value).upper().startswith("GROUPS"):
+            title = row
+        if {'groupname', 'oneline', 'grouporder', 'layout'}.issubset(set(hmap(ws, row))):
+            return title or row - 1, row
+    return title, None
+
+
+def parse_groups(audit: Audit, ws: Any, title_row: int | None, header_row: int | None) -> list[dict[str, Any]]:
+    if not header_row:
+        return []
+    mapping = map_headers(audit, ws, header_row, GROUP, GROUP, "Groups table")
+    records: list[dict[str, Any]] = []
+    seen: set[str] = set()
+    for row in range(header_row + 1, ws.max_row + 1):
+        if not row_has_values(ws, row, mapping):
             continue
-        if roster["name"] not in workbook.sheetnames:
-            audit.add("fatal", roster_sheet.title, roster["price_from_cell"].coordinate, "Maker tab", f"No sheet named {roster['name']!r} exists for active roster record {roster['slug']!r}.")
+        values = {key: get(ws, row, mapping, key) for key in mapping}
+        sources = {key: cell(ws, row, mapping, key) for key in mapping}
+        if values.get("name", "").startswith("Group name must match"):
             continue
-        parser = parse_to_make_maker_sheet if kind == "to-make" else parse_to_keep_maker_sheet
-        makers.append(parser(audit, workbook[roster["name"]], roster))
+        name = values.get("name", "")
+        if not name:
+            audit.required(ws.title, sources["name"].coordinate if sources.get("name") else str(row), "Group name", "Groups rows need a name.")
+            continue
+        if name in seen:
+            audit.required(ws.title, sources["name"].coordinate, "Group name", "Duplicate group name.")
+        seen.add(name)
+        for key, label in (("name", "Group name"), ("oneLine", "One line"), ("layout", "Group Layout")):
+            if values.get(key) and contains_placeholder(values[key]):
+                audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), label, "Contains unresolved PLACEHOLDER text marker.")
+        layout = values.get("layout", "")
+        if layout not in LAYOUTS:
+            audit.required(ws.title, sources["layout"].coordinate, "Group Layout", "Must be blank, Even, Pairs, Stacks, Mixed, or Custom.")
+        order = posint(values.get("order"))
+        if order is None:
+            audit.required(ws.title, sources["order"].coordinate, "Group order", "Must be a positive whole number.")
+            order = 0
+        records.append({"name": name, "oneLine": values.get("oneLine", ""), "order": order, "layout": layout, "products": []})
+    return records
+
+
+def validate_images(audit: Audit, ws: Any, sources: dict[str, Any], values: dict[str, str], visible: bool) -> list[dict[str, str]]:
+    result: list[dict[str, str]] = []
+    for number in range(1, 4):
+        url_key, alt_key = f"image{number}Url", f"image{number}Alt"
+        url, alt = values.get(url_key, ""), values.get(alt_key, "")
+        url_cell, alt_cell = sources.get(url_key), sources.get(alt_key)
+        if bool(url) != bool(alt):
+            audit.required(ws.title, (alt_cell if url else url_cell).coordinate if (alt_cell if url else url_cell) else "—", f"Image {number}", "URL and Alt must be filled together.")
+        if url and not https(url):
+            audit.required(ws.title, url_cell.coordinate if url_cell else "—", f"Image {number} URL", "Must be an absolute https:// URL.")
+        if visible and number == 1 and (not url or not alt):
+            audit.required(ws.title, (url_cell if not url else alt_cell).coordinate if (url_cell if not url else alt_cell) else "—", "Image 1", "Visible product requires URL and Alt.")
+        if url and alt:
+            result.append({"url": url, "alt": alt})
+    return result
+
+
+def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, publish_prices: bool) -> dict[str, Any] | None:
+    if roster["name"] not in wb.sheetnames:
+        audit.fatal("Roster", str(roster["sourceRow"]), "Contributor tab", f"No sheet named {roster['name']!r} exists for active roster record {roster['slug']!r}.")
+        return None
+    ws = wb[roster["name"]]
+    header = locate_product_header(ws, kind)
+    if not header:
+        audit.fatal(ws.title, "1:100", "Products table", "Could not locate the restructured product header row.")
+        return None
+    profile_entries = profile_cells(ws, header)
+    base: dict[str, str] = {}
+    profile_sources: dict[str, Any | None] = {}
+    required_profile = {"slug", "name", "discipline", "bio", "metaDescription", "statsCollections", "statsWorks", "statsFromPrice"}
+    for key in PROFILE:
+        base[key], profile_sources[key] = profile_value(audit, ws, profile_entries, key, key in required_profile)
+    if base["galleryLayout"] not in LAYOUTS:
+        audit.required(ws.title, profile_sources["galleryLayout"].coordinate if profile_sources["galleryLayout"] else "A:B", "Gallery Layout", "Must be blank, Even, Pairs, Stacks, Mixed, or Custom.")
+    if bool(base["artistImageUrl"]) != bool(base["artistImageAlt"]):
+        source = profile_sources["artistImageAlt"] if base["artistImageUrl"] else profile_sources["artistImageUrl"]
+        audit.required(ws.title, source.coordinate if source else "A:B", "Artist Image", "URL and Alt must be an optional pair.")
+    elif base["artistImageUrl"] and not https(base["artistImageUrl"]):
+        audit.required(ws.title, profile_sources["artistImageUrl"].coordinate if profile_sources["artistImageUrl"] else "A:B", "Artist Image URL", "Must be an absolute https:// URL.")
+
+    fields = dict(PRODUCT)
+    if kind == "to-keep":
+        required_product = ["active", "collection", "collectionOrder", "productOrder", "title", "status", "size", "medium", "sizes", "price", "listingUrl", "meaning", "chip1", "chip2", "chip3", "chip4", "chip5", "image1Url", "image1Alt", "image2Url", "image2Alt", "image3Url", "image3Alt", "notes"]
+    else:
+        required_product = ["active", "collection", "collectionOrder", "productOrder", "title", "status", "size", "medium", "difficulty", "technique", "delivery", "price", "listingUrl", "meaning", "chip1", "chip2", "chip3", "chip4", "chip5", "image1Url", "image1Alt", "image2Url", "image2Alt", "image3Url", "image3Alt", "notes"]
+    mapping = map_headers(audit, ws, header, fields, required_product, "product")
+    header_names = set(hmap(ws, header))
+    if any(re.fullmatch(r"chip[6-9]\d*", name) for name in header_names):
+        audit.required(ws.title, str(header), "Chips", "More than 5 Chip columns are not allowed.")
+
+    group_title, group_header = groups_table(ws, header)
+    groups = parse_groups(audit, ws, group_title, group_header)
+    by_group = {group["name"]: group for group in groups}
+    product_end = (group_title - 1) if group_title else ws.max_row
+    products: list[dict[str, Any]] = []
+    derived_slugs: dict[str, str] = {}
+    for row in range(header + 1, product_end + 1):
+        if not row_has_values(ws, row, mapping):
+            continue
+        values = {key: get(ws, row, mapping, key) for key in mapping}
+        if not values.get("title"):
+            continue
+        sources = {key: cell(ws, row, mapping, key) for key in mapping}
+        active = yesno(values.get("active"))
+        if active is None:
+            audit.required(ws.title, sources["active"].coordinate if sources.get("active") else str(row), "Active (YES/NO)", "Value must be YES or NO; it is retained but does not decide publication.")
+            active = False
+        status = values.get("status", "").casefold()
+        visible = status in {"available", "paused"}
+        if status not in STATUSES:
+            audit.required(ws.title, sources["status"].coordinate if sources.get("status") else str(row), "Status", "Must be exactly available, paused, or hidden.")
+        size_lookup = {"": "", "60": "60", "50": "50", "40": "40", "40 under": "40 under"}
+        size = size_lookup.get(values.get("size", "").casefold())
+        if size is None:
+            audit.required(ws.title, sources["size"].coordinate if sources.get("size") else str(row), "Size", "Must be blank, 60, 50, 40, or 40 under.")
+            size = ""
+        if visible:
+            for key in ("collection", "collectionOrder", "productOrder", "title", "medium", "listingUrl", "meaning"):
+                if not values.get(key):
+                    audit.required(ws.title, sources[key].coordinate if sources.get(key) else str(row), key, "Visible product value is blank.")
+                elif contains_placeholder(values[key]):
+                    audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), key, "Contains unresolved PLACEHOLDER text marker.")
+            for key in ("size", "sizes", "difficulty", "technique", "delivery", "price", "chip1", "chip2", "chip3", "chip4", "chip5", "image1Url", "image1Alt", "image2Url", "image2Alt", "image3Url", "image3Alt"):
+                if values.get(key) and contains_placeholder(values[key]):
+                    audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), key, "Contains unresolved PLACEHOLDER text marker.")
+            for key, label in (("collectionOrder", "CollectionOrder"), ("productOrder", "ProductOrder")):
+                if posint(values.get(key)) is None:
+                    audit.required(ws.title, sources[key].coordinate if sources.get(key) else str(row), label, "Must be a positive whole number.")
+            if not https(values.get("listingUrl")):
+                audit.required(ws.title, sources["listingUrl"].coordinate if sources.get("listingUrl") else str(row), "Listing URL", "Visible product requires an absolute https:// URL.")
+        images = validate_images(audit, ws, sources, values, visible)
+        chips: list[str] = []
+        for number in range(1, 6):
+            chip = values.get(f"chip{number}", "")
+            chip_cell = sources.get(f"chip{number}")
+            if chip and https(chip):
+                audit.required(ws.title, chip_cell.coordinate if chip_cell else str(row), f"Chip {number}", "Informational chips must be text, not an absolute https:// URL.")
+            if chip:
+                chips.append(chip)
+        numeric_price = parse_price(values.get("price"))
+        if visible and numeric_price is None:
+            source = sources.get("price")
+            (audit.required if publish_prices else audit.warn)(ws.title, source.coordinate if source else str(row), "Price (£) number only", "Visible product price is missing or invalid." + (" It is required when Publish prices is YES." if publish_prices else " No public price is emitted while publication is NO."))
+        product_slug = slugify(values.get("title"))
+        if visible and not product_slug:
+            audit.required(ws.title, sources["title"].coordinate if sources.get("title") else str(row), "Product Title", "Visible product has no URL-safe derived slug.")
+        if visible and product_slug:
+            if product_slug in derived_slugs:
+                audit.required(ws.title, sources["title"].coordinate if sources.get("title") else str(row), "Product Title", f"Derived slug {product_slug!r} duplicates row {derived_slugs[product_slug]}.")
+            derived_slugs[product_slug] = str(row)
+        record: dict[str, Any] = {
+            "active": active, "slug": product_slug, "collection": values.get("collection", ""), "collectionOrder": posint(values.get("collectionOrder")) or 0,
+            "productOrder": posint(values.get("productOrder")) or 0, "title": values.get("title", ""), "status": status, "size": size,
+            "medium": values.get("medium", ""), "listingUrl": values.get("listingUrl", ""), "etsyUrl": values.get("listingUrl", ""),
+            "meaning": values.get("meaning", ""), "chips": chips, "images": images, "notes": values.get("notes", ""),
+        }
+        if kind == "to-keep":
+            record["sizes"] = values.get("sizes", "")
+        else:
+            record.update({"difficulty": values.get("difficulty", ""), "technique": values.get("technique", ""), "delivery": values.get("delivery", "")})
+        if publish_prices and numeric_price is not None:
+            record.update({"price": price_string(numeric_price), "priceNumber": float(numeric_price)})
+        if status != "hidden":
+            products.append(record)
+
+    if groups:
+        visible_collections = {product["collection"] for product in products}
+        for group in groups:
+            if group["name"] not in visible_collections:
+                audit.required(ws.title, str(group_header), "Group name", f"Group {group['name']!r} has no matching visible products.")
+        for product in products:
+            if product["collection"] not in by_group:
+                audit.required(ws.title, product["title"], "Collection", f"Collection {product['collection']!r} has no Groups row.")
+            else:
+                by_group[product["collection"]]["products"].append(product)
+        groups.sort(key=lambda group: (group["order"], group["name"].casefold()))
+    else:
+        groups = [{"name": "", "oneLine": "", "order": 1, "layout": "", "products": products}]
 
     all_slugs: dict[str, str] = {}
-    for maker in makers:
-        for group in maker["groups"]:
-            for pattern in group["patterns"]:
-                duplicate = all_slugs.get(pattern["slug"])
-                if duplicate:
-                    audit.required_problem("Workbook", "—", "Pattern Title", f"Derived pattern slug {pattern['slug']!r} appears in both {duplicate} and {maker['slug']}.")
-                all_slugs[pattern["slug"]] = maker["slug"]
-    return audit, makers, publication_settings
+    for group in groups:
+        group["products"].sort(key=lambda product: (product["productOrder"], product["title"].casefold()))
+        effective = group["layout"] or base["galleryLayout"] or "Pairs"
+        group["effectiveLayout"] = effective
+        if effective == "Custom" and any(not product["size"] for product in group["products"]):
+            audit.required(ws.title, group["name"] or "—", "Custom Layout", "A Custom group cannot contain a blank Size.")
+        for index, product in enumerate(group["products"]):
+            if product["size"] == "40 under" and (index == 0 or group["products"][index - 1]["size"] != "40"):
+                audit.required(ws.title, product["title"], "40 under", "Must directly follow a 40 in the same group.")
+            if product["slug"] in all_slugs:
+                audit.required(ws.title, product["title"], "Product Title", f"Derived product slug {product['slug']!r} appears in both {all_slugs[product['slug']]} and {roster['slug']}.")
+            all_slugs[product["slug"]] = roster["slug"]
+
+    if base["slug"] != roster["slug"]:
+        audit.warn(ws.title, profile_sources["slug"].coordinate if profile_sources["slug"] else "B2", "Slug", "Contributor-profile slug does not match roster slug.")
+    if base["name"] != roster["name"]:
+        audit.warn(ws.title, profile_sources["name"].coordinate if profile_sources["name"] else "B3", "Display Name", "Contributor-profile display name does not match roster.")
+    if ws.title != roster["name"]:
+        audit.warn(ws.title, "A1", "Contributor tab", "Contributor-tab title does not match roster Display Name.")
+    named_groups = [group for group in groups if group["name"]]
+    if posint(base["statsCollections"]) != len(named_groups):
+        audit.warn(ws.title, profile_sources["statsCollections"].coordinate if profile_sources["statsCollections"] else "B7", "Stats — Collections", f"States {base['statsCollections']!r}; generated value is {len(named_groups)}.")
+    work_label = "Stats — Patterns" if kind == "to-make" else "Stats — Prints"
+    if posint(base["statsWorks"]) != len(products):
+        audit.warn(ws.title, profile_sources["statsWorks"].coordinate if profile_sources["statsWorks"] else "B8", work_label, f"States {base['statsWorks']!r}; generated value is {len(products)}.")
+    if set(roster["collections"]) != {product["collection"] for product in products}:
+        audit.warn(ws.title, "B7", "Collections", "Roster collections do not match the emitted product collections.")
+    source_prices = [parse_price(get(ws, row, mapping, "price")) for row in range(header + 1, product_end + 1) if row_has_values(ws, row, mapping)]
+    source_prices = [value for value in source_prices if value is not None]
+    computed_from = price_string(min(source_prices)) if source_prices else ""
+    if products and not computed_from:
+        audit.warn(ws.title, profile_sources["statsFromPrice"].coordinate if profile_sources["statsFromPrice"] else "B9", "Stats — From Price", "Emitted products have no valid numeric price in the workbook.")
+    elif computed_from:
+        for label, supplied, source in (("Roster Price From", roster["priceFrom"], roster.get("priceFromCell")), ("Stats — From Price", base["statsFromPrice"], profile_sources["statsFromPrice"])):
+            if parse_price(supplied) != parse_price(computed_from):
+                audit.warn(ws.title, source.coordinate if source else "—", label, f"States {supplied!r}; source products calculate {computed_from}.")
+    stats_key = "patterns" if kind == "to-make" else "prints"
+    profile = {
+        "discipline": base["discipline"], "bio": base["bio"], "metaDescription": base["metaDescription"], "galleryLayout": base["galleryLayout"] or "Pairs",
+        "artistImage": {"url": base["artistImageUrl"], "alt": base["artistImageAlt"]} if base["artistImageUrl"] and base["artistImageAlt"] else None,
+        "stats": {"collections": len(named_groups), stats_key: len(products), "fromPrice": computed_from},
+    }
+    return {**roster, "profile": profile, "groups": groups, "productCount": len(products), "computedFrom": computed_from}
+
+
+def parse_book(audit: Audit, path: Path, kind: str) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+    wb = load_workbook(path, data_only=False)
+    scan_placeholders(audit, wb, "Unresolved placeholder")
+    publication = settings(audit, wb, path.name)
+    roster = roster_rows(audit, wb, kind)
+    contributors: list[dict[str, Any]] = []
+    for item in roster:
+        if item["active"]:
+            parsed = parse_contributor(audit, wb, item, kind, publication["publishPrices"])
+            if parsed:
+                contributors.append(parsed)
+    return contributors, publication
+
+
+def validate_product_slugs(audit: Audit, contributors: list[dict[str, Any]]) -> None:
+    """Restore the baseline duplicate derived-product-slug check across contributor tabs."""
+    seen: dict[str, str] = {}
+    for contributor in contributors:
+        for group in contributor["groups"]:
+            for product in group["products"]:
+                product_slug = product.get("slug", "")
+                if not product_slug:
+                    continue
+                previous = seen.get(product_slug)
+                if previous and previous != contributor["slug"]:
+                    audit.required("Workbook", product.get("title", "—"), "Product Title", f"Derived product slug {product_slug!r} appears in both {previous} and {contributor['slug']}.")
+                else:
+                    seen[product_slug] = contributor["slug"]
 
 
 def validate_artist_numbers(audit: Audit) -> None:
-    """Validate the shared Artist Number series after both workbooks are parsed."""
     seen: dict[int, dict[str, Any]] = {}
     active_numbers: list[int] = []
-    for record in audit.roster_records:
-        number = record["artist_number"]
-        raw = record["artist_number_value"]
-        if raw and number is None:
-            if record["active"]:
-                audit.blocking_error(record["sheet"], record["artist_number_cell"], "Artist Number", "Artist Number must be a positive whole integer.")
-            continue
-        if number is None:
+    for item in audit.roster:
+        raw, number = item["rawArtistNumber"], item["artistNumber"]
+        if raw and not number and item["active"]:
+            audit.blocking(item["sheet"], str(item["row"]), "Artist Number", "Artist Number must be a positive whole integer.")
+        if not number:
             continue
         if number in seen:
-            first = seen[number]
-            audit.blocking_error(
-                record["sheet"],
-                record["artist_number_cell"],
-                "Artist Number",
-                f"Artist Number {number} duplicates {first['sheet']}!{first['artist_number_cell']} ({first['name']}).",
-            )
+            old = seen[number]
+            audit.blocking(item["sheet"], str(item["row"]), "Artist Number", f"Artist Number {number} duplicates {old['sheet']} row {old['row']} ({old['name']}).")
         else:
-            seen[number] = record
-        if record["active"]:
+            seen[number] = item
+        if item["active"]:
             active_numbers.append(number)
     if active_numbers:
         assigned = set(active_numbers)
         gaps = [str(value) for value in range(min(assigned), max(assigned) + 1) if value not in assigned]
         if gaps:
-            audit.warning("Workbook", "—", "Artist Number", "Active Artist Number sequence has gap(s): " + ", ".join(gaps) + ". Gaps are allowed, but confirm that no number was unintentionally skipped.")
+            audit.warn("Workbook", "—", "Artist Number", "Active Artist Number sequence has gap(s): " + ", ".join(gaps) + ".")
 
 
-def recent_artists_payload(to_keep: list[dict[str, Any]], to_make: list[dict[str, Any]], source_names: str) -> dict[str, Any]:
-    contributors: list[dict[str, Any]] = []
-    for world, makers in (("TO KEEP", to_keep), ("TO MAKE", to_make)):
-        for maker in makers:
-            if maker["active"]:
-                contributors.append({
-                    "artistNumber": maker["artistNumber"],
-                    "world": world,
-                    "name": maker["name"],
-                    "buttonName": maker["buttonName"],
-                    "heroImage": maker["heroImage"],
-                    "heroAlt": maker["heroAlt"],
-                    "feeling": maker["feeling"],
-                    "cardUrl": maker["cardUrl"],
-                })
-    contributors.sort(key=lambda item: item["artistNumber"], reverse=True)
-    return {"generatedFrom": source_names, "artists": contributors[:4]}
+def prune_prices(value: Any, publish: bool) -> Any:
+    if publish:
+        return value
+    if isinstance(value, dict):
+        return {key: prune_prices(item, publish) for key, item in value.items() if key not in PRICE_KEYS}
+    if isinstance(value, list):
+        return [prune_prices(item, publish) for item in value]
+    return value
 
 
-def make_index_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
-    active = [maker for maker in makers if maker["active"]]
-    pattern_count = sum(len(group["patterns"]) for maker in active for group in maker["groups"])
-    medium_count = len({maker["medium"] for maker in active if maker["medium"]})
-    maker_keys = ["slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections"]
-    if publication.publish_prices:
-        maker_keys.append("priceFrom")
-    maker_keys += ["difficulty", "technique", "delivery", "feeling", "traits", "cardUrl", "patternCount"]
+def js(global_name: str, payload: dict[str, Any], source: str) -> str:
+    return f"// Auto-generated by {SCRIPT_PATH} from {source}.\n// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\nwindow.{global_name} = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n"
+
+
+def maker_js(slug: str, payload: dict[str, Any], source: str) -> str:
+    return f"// Auto-generated by {SCRIPT_PATH} from {source}.\n// DO NOT EDIT MANUALLY — amend the workbook and regenerate.\nwindow.HA_TO_MAKE_MAKERS = window.HA_TO_MAKE_MAKERS || {{}};\nwindow.HA_TO_MAKE_MAKERS[{json.dumps(slug)}] = " + json.dumps(payload, ensure_ascii=False, indent=2) + ";\n"
+
+
+def keep_profile(item: dict[str, Any], publish: bool) -> dict[str, Any]:
+    profile = item["profile"]
+    products = [product for group in item["groups"] for product in group["products"]]
+    return prune_prices({
+        "slug": item["slug"], "path": "/to-keep/" + item["slug"], "world": "To Keep", "eyebrow": "TO KEEP · ANTHOLOGY ARTIST",
+        "artistName": item["name"], "artistTitle": profile["discipline"], "bio": profile["bio"],
+        "metaTitle": item["name"] + " — " + profile["discipline"] + " | The Hope Anthology", "metaDescription": profile["metaDescription"],
+        "profile": profile, "stats": profile["stats"], "breadcrumbs": [{"label": "To Keep", "url": "/to-keep"}, {"label": item["name"]}],
+        "groups": item["groups"], "products": products,
+    }, publish)
+
+
+def index_entry(item: dict[str, Any], make: bool, publish: bool) -> dict[str, Any]:
+    keys = ["slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections", "feeling", "traits", "cardUrl"]
+    if make:
+        keys += ["difficulty", "technique", "delivery"]
+    if publish:
+        keys.append("priceFrom")
+    return {key: item[key] for key in keys}
+
+
+def index_payload(items: list[dict[str, Any]], make: bool, source: str, publication: dict[str, Any]) -> dict[str, Any]:
+    works = [product for item in items for group in item["groups"] for product in group["products"]]
     return {
-        "generatedFrom": source_name,
-        "images": ASSETS,
-        "navigation": NAVIGATION,
-        "page": {
-            "eyebrow": "To Make",
-            "headingHtml": "Curated <em>Makers</em>",
-            "intro": "A growing anthology of people who design things for other people to make. Patterns, templates and guides — chosen because making is one of the oldest ways there is of getting through something.",
-            "stats": [
-                {"value": len(active), "label": "FOUNDING MAKERS"},
-                {"value": pattern_count, "label": "PATTERNS"},
-                {"value": medium_count, "label": "MEDIUM SO FAR" if medium_count == 1 else "MEDIUMS SO FAR"},
-            ],
-        },
-        "filters": {
-            "medium": ["All mediums"] + sorted({maker["filterMedium"] for maker in active if maker["filterMedium"]}),
-            "level": ["All levels", "Beginner", "Improver"],
-            "delivery": ["All delivery", "Instant download", "Posted to you"],
-        },
-        "recruitment": {
-            "eyebrow": "FOUNDING MAKERS",
-            "heading": "Do you design things for other people to make?",
-            "body": publication.recruitment_body,
-            "linkLabel": "See how it works for artists →",
-            "linkUrl": "/for-artists",
-        },
-        "collective": COLLECTIVE,
-        "footer": FOOTER,
-        "makers": [
-            {
-                key: maker[key]
-                for key in maker_keys
-            }
-            for maker in active
-        ],
+        "generatedFrom": source, "images": ASSETS, "navigation": NAV,
+        "page": {"eyebrow": "To Make" if make else "To Keep", "headingHtml": "Curated <em>Makers</em>" if make else "Curated <em>Artists</em>",
+                 "intro": "A growing anthology of people who design things for other people to make. Patterns, templates and guides — chosen because making is one of the oldest ways there is of getting through something." if make else "A growing anthology of artists whose work carries meaning — pieces to lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
+                 "stats": [{"value": len(items), "label": "MAKERS" if make else "ARTISTS"}, {"value": len(works), "label": "PATTERNS" if make else "WORKS"}, {"value": len({p["collection"] for p in works if p["collection"]}), "label": "COLLECTIONS"}]},
+        "filters": {"medium": (["All mediums"] if make else ["All"]) + sorted({item["filterMedium"] if make else item["medium"] for item in items if item["medium"]}), **({"level": ["All levels", "Beginner", "Improver"], "delivery": ["All delivery", "Instant download", "Posted to you"]} if make else {})},
+        "recruitment": {"eyebrow": "FOR MAKERS" if make else "FOR ARTISTS", "heading": "Do you design things for other people to make?" if make else "Your work could be here.", "body": publication["recruitment"], "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},
+        "collective": COLLECTIVE, "footer": FOOTER, "makers" if make else "artists": [index_entry(item, make, publication["publishPrices"]) for item in items],
     }
 
 
-def keep_index_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
-    active = [maker for maker in makers if maker["active"]]
-    published_artists = [maker for maker in active if any(group["patterns"] for group in maker["groups"])]
-    published_works = [
-        product
-        for maker in published_artists
-        for group in maker["groups"]
-        for product in group["patterns"]
-    ]
-    published_collections = {product["collection"] for product in published_works if product["collection"]}
-    filters = {"medium": ["All"] + sorted({maker["medium"] for maker in active if maker["medium"]})}
-    if publication.publish_prices:
-        filters["price"] = ["All", "Under £20", "£20–£50", "£50+"]
-    artist_keys = ["slug", "active", "name", "buttonName", "artistNumber", "badge", "heroImage", "heroAlt", "medium", "filterMedium", "collections"]
-    if publication.publish_prices:
-        artist_keys.append("priceFrom")
-    artist_keys += ["feeling", "traits", "cardUrl"]
-    return {
-        "generatedFrom": source_name,
-        "images": ASSETS,
-        "navigation": NAVIGATION,
-        "page": {
-            "eyebrow": "To Keep",
-            "headingHtml": "Curated <em>Artists</em>",
-            "intro": "A growing anthology of artists whose work carries meaning — pieces to lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
-            "stats": [
-                {"value": len(published_artists), "label": "FOUNDING ARTISTS", "suffix": "of the first 50"},
-                {"value": len(published_works), "label": "WORKS"},
-                {"value": len(published_collections), "label": "COLLECTIONS"},
-            ],
-        },
-        "filters": filters,
-        "recruitment": {"eyebrow": "FOUNDING ARTISTS", "heading": "Your work could be here.", "body": publication.recruitment_body, "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},
-        "collective": COLLECTIVE,
-        "footer": FOOTER,
-        "artists": [{key: maker[key] for key in artist_keys} for maker in active],
-    }
+def write_atomic(path: Path, content: str) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix="." + path.name + ".", suffix=".tmp", dir=path.parent)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle:
+            handle.write(content)
+        os.replace(temporary, path)
+    except Exception:
+        try: os.unlink(temporary)
+        except OSError: pass
+        raise
 
 
-TO_KEEP_SHARED_CHROME = {
-    # These constants deliberately preserve the current To Keep profile chrome without
-    # depending on a previous generated file.
-    "images": {
-        "logo": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1f3bfb43-558e-4262-b2e2-d4e3b56bd77e/01-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-        "star": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0956e10d-38c6-4fd7-8e06-7f2579fb75d6/collections-footer-star-hope-anthology.png?content-type=image%2Fpng",
-    },
-    "navigation": [
-        {"label": "To Keep", "url": "/to-keep"}, {"label": "To Make", "url": "/to-make"},
-        {"label": "The Story", "url": "/story"}, {"label": "For Artists", "url": "/for-artists"},
-        {"label": "Collective", "url": "/collective"},
-    ],
-    "collective": {"heading": "Something worth being part of.", "body": "Join the Collective for new print notes, quiet launches, and gentle studio updates.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"},
-    "footer": {"instagramUrl": "https://www.instagram.com/thehopeanthology", "privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"},
-}
-
-
-def keep_profile_record(maker: dict[str, Any], publication: PublicationSettings) -> dict[str, Any]:
-    profile = serialise_public_value(maker["profile"], publication.publish_prices)
-    products = [serialise_public_value(product, publication.publish_prices) for group in maker["groups"] for product in group["patterns"]]
-    collections = [group["collection"] for group in maker["groups"]]
-    return {
-        "slug": maker["slug"],
-        "path": "/to-keep/" + maker["slug"],
-        "world": "To Keep",
-        "eyebrow": "TO KEEP · ANTHOLOGY ARTIST",
-        "artistName": maker["name"],
-        "artistTitle": profile["discipline"],
-        "discipline": profile["discipline"],
-        "bio": profile["bio"],
-        "metaTitle": maker["name"] + " — " + profile["discipline"] + " | The Hope Anthology",
-        "metaDescription": profile["metaDescription"],
-        "montage": profile["montage"],
-        "stats": profile["stats"],
-        "breadcrumbs": [{"label": "To Keep", "url": "/to-keep"}, {"label": maker["name"]}],
-        "filterOptions": ["All"] + collections,
-        "gridEyebrow": maker["name"].upper() + " — ALL WORK",
-        "products": products,
-    }
-
-
-def keep_profiles_payload(makers: list[dict[str, Any]], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
-    return {"generatedFrom": source_name, **TO_KEEP_SHARED_CHROME, "collections": {maker["slug"]: keep_profile_record(maker, publication) for maker in makers if maker["active"]}}
-
-
-def maker_payload(maker: dict[str, Any], source_name: str, publication: PublicationSettings) -> dict[str, Any]:
-    return {"generatedFrom": source_name, "images": ASSETS, "navigation": NAVIGATION, "collective": COLLECTIVE, "footer": FOOTER, "maker": serialise_public_value(maker, publication.publish_prices)}
-
-def report_markdown(source: Path, mode: str, makers: list[dict[str, Any]], audit: Audit, output_paths: list[Path]) -> str:
-    active_patterns = sum(len(group["patterns"]) for maker in makers for group in maker["groups"])
-    strict_blockers = len(audit.errors) + (len(audit.placeholders) if mode == "permissive" else 0)
-    lines = [
-        "# Hope Anthology Directory Workbook Generation Report",
-        "",
-        f"**Source workbook:** `{source.name}`  ",
-        f"**Generator:** `{SCRIPT_PATH}`  ",
-        f"**Mode:** `{mode}`  ",
-        f"**Outcome:** `{'not generated' if audit.fatal or (mode == 'strict' and audit.errors) else 'generated'}`",
-        "",
-        "## Summary",
-        "",
-        "| Metric | Value |",
-        "| --- | ---: |",
-        f"| Active makers | {len(makers)} |",
-        f"| Published products/patterns | {active_patterns} |",
-        f"| Generated content files | {len(output_paths)} |",
-        f"| Fatal structural issues | {len(audit.fatal)} |",
-        f"| Strict-mode blockers | {strict_blockers} |",
-        f"| Unresolved placeholders | {len(audit.placeholders)} |",
-        "",
-        "## Generated files",
-        "",
-    ]
-    if output_paths:
-        lines += [f"- `{path.name}`" for path in output_paths]
-    else:
-        lines.append("- None — structural validation stopped output.")
-    lines += ["", "## Unresolved placeholder report", ""]
-    if audit.placeholders:
-        lines += ["| Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- |"]
-        for issue in audit.placeholders:
-            lines.append(f"| {issue.sheet} | {issue.cell} | {issue.field} | {issue.message} |")
-    else:
-        lines.append("No unresolved placeholder markers were found.")
-    lines += ["", "## Validation findings", ""]
-    non_placeholder = [issue for issue in audit.issues if issue not in audit.placeholders]
-    if non_placeholder:
-        lines += ["| Severity | Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- | --- |"]
-        for issue in non_placeholder:
-            lines.append(f"| {issue.severity.upper()} | {issue.sheet} | {issue.cell} | {issue.field} | {issue.message} |")
-    else:
-        lines.append("No non-placeholder validation findings.")
-    lines += [
-        "",
-        "## Mode behaviour",
-        "",
-        "Product rows are staged by default. A product is emitted only when Status is available and its outbound shop URL is a usable absolute https:// URL. In strict mode, the only product-row error is an available product without that URL; incomplete or coming rows are reported as warnings and withheld. Missing required sheets, headers, contributor tabs, or product-table headers remain fatal.",
-        "",
-    ]
-    return "\n".join(lines)
-
-
-def output_pairs(kind: str, makers: list[dict[str, Any]], source_name: str, output_dir: Path, publication: PublicationSettings) -> list[tuple[Path, str]]:
-    if kind == "to-make":
-        outputs: list[tuple[Path, str]] = [
-            (output_dir / "content.to-make.js", js_file("HA_TO_MAKE_CONTENT", make_index_payload(makers, source_name, publication), source_name)),
-        ]
-        for maker in makers:
-            outputs.append((output_dir / f"content.to-make.{maker['slug']}.js", maker_js_file(maker["slug"], maker_payload(maker, source_name, publication), source_name)))
-        return outputs
-    # The To Keep workbook drives both the parent directory and the profile registry
-    # consumed by ha-artist-page.js. No merge with old content occurs.
-    return [
-        (output_dir / "content.to-keep.js", js_file("HA_TO_KEEP_CONTENT", keep_index_payload(makers, source_name, publication), source_name)),
-        (output_dir / "content.keep-collections.js", js_file("HA_KEEP_COLLECTIONS_CONTENT", keep_profiles_payload(makers, source_name, publication), source_name)),
-    ]
-
-
-def finish_generation(source_name: str, mode: str, makers: list[dict[str, Any]], audit: Audit, outputs: list[tuple[Path, str]], report_path: Path) -> int:
-    output_paths: list[Path] = []
-    may_generate = not audit.fatal and not audit.blocked and not (mode == "strict" and audit.errors)
-    if may_generate:
-        for target, content in outputs:
-            write_file(target, content)
-            output_paths.append(target)
-    write_file(report_path, report_markdown(Path(source_name), mode, makers, audit, output_paths))
-    for issue in audit.issues:
-        print(f"{issue.severity.upper()}: {issue.sheet}!{issue.cell} [{issue.field}] {issue.message}")
-    print(f"REPORT: {report_path}")
-    for target in output_paths:
-        print(f"GENERATED: {target}")
-    if audit.fatal:
-        return 2
-    if audit.blocked or (mode == "strict" and audit.errors):
-        return 1
-    return 0
-
-
-def build_all_directories(to_keep_source: Path, to_make_source: Path, output_dir: Path, mode: str, report_path: Path) -> int:
-    """Generate both directory families and the Home feed as one validation-gated run."""
-    keep_audit, keep_makers, keep_publication = parse_workbook(to_keep_source, "to-keep", mode)
-    make_audit, make_makers, make_publication = parse_workbook(to_make_source, "to-make", mode)
-    audit = Audit(mode)
-    audit.issues = keep_audit.issues + make_audit.issues
-    audit.placeholders = keep_audit.placeholders + make_audit.placeholders
-    audit.roster_records = keep_audit.roster_records + make_audit.roster_records
-    audit.blocked = keep_audit.blocked or make_audit.blocked
-    if keep_publication.publish_prices != make_publication.publish_prices:
-        audit.blocking_error(
-            "Publication settings",
-            f"{keep_publication.workbook_name} {keep_publication.publish_prices_cell}; {make_publication.workbook_name} {make_publication.publish_prices_cell}",
-            PUBLISH_PRICES_LABEL,
-            "Both workbooks must use the same YES or NO value before whole-Anthology generation.",
-        )
-    validate_artist_numbers(audit)
-    source_name = to_keep_source.name + " + " + to_make_source.name
-    outputs = output_pairs("to-keep", keep_makers, to_keep_source.name, output_dir, keep_publication)
-    outputs += output_pairs("to-make", make_makers, to_make_source.name, output_dir, make_publication)
-    outputs.append((output_dir / "content.home-recent-artists.js", js_file("HA_HOME_RECENT_ARTISTS", recent_artists_payload(keep_makers, make_makers, source_name), source_name)))
-    return finish_generation(source_name, mode, keep_makers + make_makers, audit, outputs, report_path)
-
-
-def parse_arguments() -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Generate Hope Anthology directory content from both sibling workbooks.")
-    parser.add_argument("workbook", type=Path, nargs="?", help=argparse.SUPPRESS)
-    parser.add_argument("--kind", choices=("to-make", "to-keep", "auto"), default="auto", help=argparse.SUPPRESS)
-    parser.add_argument("--to-keep-workbook", type=Path, help="To Keep sibling workbook for the normal whole-Anthology generation run.")
-    parser.add_argument("--to-make-workbook", type=Path, help="To Make sibling workbook for the normal whole-Anthology generation run.")
-    parser.add_argument("--mode", choices=("permissive", "strict"), default="strict", help="Permissive reports normal staged material; strict blocks product publication contradictions.")
-    parser.add_argument("--output-dir", type=Path, default=Path.cwd(), help="Directory for generated content files.")
-    parser.add_argument("--report", type=Path, help="Path for the Markdown validation report.")
-    return parser.parse_args()
+def report_markdown(audit: Audit, mode: str, keep: list[dict[str, Any]], make: list[dict[str, Any]], settings_keep: dict[str, Any], settings_make: dict[str, Any], outputs: list[Path], source: str) -> str:
+    lines = ["# Hope Anthology Directory Workbook Generation Report", "", f"**Generator:** `{SCRIPT_PATH}`  ", f"**Sources:** `{source}`  ", f"**Mode:** `{mode}`  ", f"**Outcome:** `{'generated' if outputs else 'not generated'}`", "", "## Publication settings", "", f"- To Keep Publish prices: `{'YES' if settings_keep['publishPrices'] else 'NO'}` (`README!{settings_keep['publishCell']}`)", f"- To Make Publish prices: `{'YES' if settings_make['publishPrices'] else 'NO'}` (`README!{settings_make['publishCell']}`)", "", "## Summary", "", "| Metric | Value |", "| --- | ---: |", f"| Active contributors | {len(keep) + len(make)} |", f"| Emitted products/patterns | {sum(item['productCount'] for item in keep + make)} |", f"| Generated content files | {len(outputs)} |", f"| Fatal structural issues | {len(audit.fatals)} |", f"| Errors | {len(audit.errors)} |", f"| Unresolved placeholders | {len(audit.placeholders)} |", "", "## Generated files", ""]
+    lines += [f"- `{path.name}`" for path in outputs] or ["- None — validation stopped output."]
+    lines += ["", "## Unresolved placeholder report", "", "| Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- |"]
+    lines += [f"| `{item.sheet}` | `{item.cell}` | {item.field} | {item.message} |" for item in audit.placeholders] or ["| — | — | — | No unresolved placeholder markers were found. |"]
+    others = [item for item in audit.issues if item not in audit.placeholders]
+    lines += ["", "## Validation findings", "", "| Severity | Sheet | Cell | Field | Finding |", "| --- | --- | --- | --- | --- |"]
+    lines += [f"| {item.severity} | `{item.sheet}` | `{item.cell}` | {item.field} | {item.message} |" for item in others] or ["| PASS | — | — | — | No non-placeholder validation findings. |"]
+    lines += ["", "## Restored baseline validation inventory", "", "- **Workbook markers:** scans every sheet for the pale-yellow `#FFF2CC` fill; checks only required or published fields for the unresolved `placeholder` text substring, so README copy and Notes are not falsely blocked.", "- **README:** exactly-one visible publication switch and recruitment-copy labels, YES/NO value, and cross-workbook price-switch agreement.", "- **Roster:** sheet/header presence, Active YES/NO, required active values, URL-safe unique slug, unique positive Artist Number, Hero URL, Card URL route, inactive-number warning, and global Artist Number gap warning.", "- **Profile:** required profile fields, profile/roster slug and display-name warnings, contributor-tab name warning, emitted collection/work count and computed-price consistency warnings.", "- **Products:** table/header presence, valid status, retained product Active field, required visible values, listing/image URLs and URL/alt pairs, title slug duplication, numeric ordering, prices, and global generated-price omission when publishing is NO.", "- **Modes:** strict records normal data and placeholder issues as errors and withholds all output; permissive records them as warnings but still refuses fatal structures and explicitly blocking cross-workbook settings.", ""]
+    return "\n".join(lines) + "\n"
 
 
 def main() -> int:
-    args = parse_arguments()
-    output_dir = args.output_dir.resolve()
-    output_dir.mkdir(parents=True, exist_ok=True)
-    if args.workbook or not args.to_keep_workbook or not args.to_make_workbook:
-        print("ERROR: whole-Anthology generation requires both --to-keep-workbook and --to-make-workbook; legacy single-workbook mode is retired so publication settings can be cross-checked.", file=sys.stderr)
-        return 2
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--to-keep-workbook", type=Path, required=True)
+    parser.add_argument("--to-make-workbook", type=Path, required=True)
+    parser.add_argument("--output-dir", type=Path, required=True)
+    parser.add_argument("--report", type=Path, required=True)
+    parser.add_argument("--mode", choices=("strict", "permissive"), default="strict")
+    args = parser.parse_args()
     if not args.to_keep_workbook.is_file() or not args.to_make_workbook.is_file():
         print("ERROR: a specified workbook was not found.", file=sys.stderr)
         return 2
-    report = (args.report or output_dir / "directory-generation-report.md").resolve()
-    return build_all_directories(args.to_keep_workbook.resolve(), args.to_make_workbook.resolve(), output_dir, args.mode, report)
+    audit = Audit(args.mode)
+    keep, settings_keep = parse_book(audit, args.to_keep_workbook, "to-keep")
+    make, settings_make = parse_book(audit, args.to_make_workbook, "to-make")
+    if settings_keep["publishPrices"] != settings_make["publishPrices"]:
+        audit.blocking("Publication settings", f"{args.to_keep_workbook.name} README!{settings_keep['publishCell']}; {args.to_make_workbook.name} README!{settings_make['publishCell']}", PUBLISH_LABEL, "Both workbooks must use the same YES or NO value before whole-Anthology generation.")
+    validate_product_slugs(audit, keep)
+    validate_product_slugs(audit, make)
+    validate_artist_numbers(audit)
+    outputs: list[Path] = []
+    may_write = not audit.fatals and not audit.force_block and not (args.mode == "strict" and audit.errors)
+    source = args.to_keep_workbook.name + " + " + args.to_make_workbook.name
+    if may_write:
+        out = args.output_dir
+        chrome = {"images": {"logo": ASSETS["logo"], "star": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0956e10d-38c6-4fd7-8e06-7f2579fb75d6/collections-footer-star-hope-anthology.png?content-type=image%2Fpng"}, "navigation": NAV, "collective": COLLECTIVE, "footer": {"instagramUrl": "https://www.instagram.com/thehopeanthology", **FOOTER}}
+        payloads: list[tuple[Path, str]] = [
+            (out / "content.to-keep.js", js("HA_TO_KEEP_CONTENT", index_payload(keep, False, args.to_keep_workbook.name, settings_keep), args.to_keep_workbook.name)),
+            (out / "content.keep-collections.js", js("HA_KEEP_COLLECTIONS_CONTENT", {"generatedFrom": args.to_keep_workbook.name, **chrome, "collections": {item["slug"]: keep_profile(item, settings_keep["publishPrices"]) for item in keep}}, args.to_keep_workbook.name)),
+            (out / "content.to-make.js", js("HA_TO_MAKE_CONTENT", index_payload(make, True, args.to_make_workbook.name, settings_make), args.to_make_workbook.name)),
+        ]
+        recent = []
+        for world, items in (("TO KEEP", keep), ("TO MAKE", make)):
+            recent += [{"artistNumber": item["artistNumber"], "world": world, "name": item["name"], "buttonName": item["buttonName"], "heroImage": item["heroImage"], "heroAlt": item["heroAlt"], "feeling": item["feeling"], "cardUrl": item["cardUrl"]} for item in items]
+        recent.sort(key=lambda item: item["artistNumber"], reverse=True)
+        payloads.append((out / "content.home-recent-artists.js", js("HA_HOME_RECENT_ARTISTS", {"generatedFrom": source, "artists": recent[:4]}, source)))
+        for item in make:
+            maker = prune_prices({"generatedFrom": args.to_make_workbook.name, "images": ASSETS, "navigation": NAV, "collective": COLLECTIVE, "footer": FOOTER, "maker": {key: value for key, value in item.items() if key not in {"sourceRow", "priceFromCell"}}}, settings_make["publishPrices"])
+            payloads.append((out / f"content.to-make.{item['slug']}.js", maker_js(item["slug"], maker, args.to_make_workbook.name)))
+        for path, content in payloads:
+            write_atomic(path, content)
+            outputs.append(path)
+    write_atomic(args.report, report_markdown(audit, args.mode, keep, make, settings_keep, settings_make, outputs, source))
+    for issue in audit.issues:
+        print(f"{issue.severity}: {issue.sheet}!{issue.cell} [{issue.field}] {issue.message}")
+    print("REPORT:", args.report)
+    for path in outputs:
+        print("GENERATED:", path)
+    if audit.fatals:
+        return 2
+    if audit.force_block or (args.mode == "strict" and audit.errors):
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

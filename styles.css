@@ -3059,3 +3059,176 @@ body.ha-edition-v1-active .collection-title{display:none!important;}
   #ha-edition-v1 .ha-ed-layout-two-on-two{max-width:none;}
   #ha-edition-v1 .ha-ed-piece-grid .ha-ed-card-feature{grid-column:1 / -1!important;grid-row:auto!important;}
 }
+
+/* Artist pages and Editions cards v2 — additive only. */
+body.ha-artist-page-v2-active #sections,
+body.ha-artist-page-v2-active #footer-sections,
+body.ha-artist-page-v2-active .Header,
+body.ha-artist-page-v2-active header.Header,
+body.ha-artist-page-v2-active #header,
+body.ha-artist-page-v2-active .page-title,
+body.ha-artist-page-v2-active .entry-title,
+body.ha-artist-page-v2-active .collection-title,
+body.ha-artist-page-v2-active > #siteWrapper > main#page{display:none!important;}
+#ha-artist-page-v2,#ha-artist-page-v2 *{box-sizing:border-box;}
+#ha-artist-page-v2{--teal:#265b70;--dark:#364449;--cream:#F2F3EF;--linen:#ECEEF0;--twine:#8B6040;--muted:#4f5a5d;background:var(--cream);color:var(--dark);font-family:'DM Sans',system-ui,sans-serif;min-height:100vh;}
+#ha-artist-page-v2 main{background:var(--cream);}
+#ha-artist-page-v2 .ha-v3-nav{background:var(--teal);}
+#ha-artist-page-v2 .ha-ap-crumb{background:var(--teal);color:rgba(242,243,239,.8);font-size:12px;padding:13px max(24px,calc((100vw - 1280px)/2));}
+#ha-artist-page-v2 .ha-ap-crumb a{color:var(--cream);text-decoration:none;}
+#ha-artist-page-v2 .ha-ap-header{display:grid;grid-template-columns:minmax(0,1fr) minmax(210px,300px);gap:54px;max-width:1280px;margin:0 auto;padding:52px 48px 42px;background:var(--linen);border-bottom:.5px solid rgba(54,68,73,.13);}
+#ha-artist-page-v2 .ha-ap-header.no-image{grid-template-columns:minmax(0,1fr);}
+#ha-artist-page-v2 .ha-ap-heading>div{display:flex;flex-wrap:wrap;gap:12px 18px;align-items:baseline;}
+#ha-artist-page-v2 h1{font-family:'Lora',Georgia,serif;font-weight:400;font-size:clamp(34px,4.2vw,58px);letter-spacing:-.045em;line-height:1.02;margin:0;color:var(--dark);}
+#ha-artist-page-v2 .ha-ap-heading em{font-family:'Lora',Georgia,serif;font-size:clamp(18px,2vw,26px);font-weight:400;color:var(--twine);}
+#ha-artist-page-v2 .ha-ap-bio{max-width:800px;margin:23px 0 18px;font-family:'Lora',Georgia,serif;font-size:18px;line-height:1.54;color:var(--dark);}
+#ha-artist-page-v2 .ha-ap-stats{display:flex;gap:18px;font-size:11px;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding-top:14px;border-top:.5px solid rgba(54,68,73,.18);}
+#ha-artist-page-v2 .ha-ap-artist-image{background:#fff;border:.5px solid rgba(54,68,73,.12);border-radius:8px;padding:10px;align-self:start;}
+#ha-artist-page-v2 .ha-ap-artist-image img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:4px;}
+#ha-artist-page-v2 .ha-ap-content{max-width:1280px;margin:0 auto;padding:36px 48px 88px;}
+#ha-artist-page-v2 .ha-ap-group-links{font-size:14px;line-height:1.5;margin:0 0 40px;color:var(--muted);}
+#ha-artist-page-v2 .ha-ap-group-links strong{font-weight:600;color:var(--dark);margin-right:6px;}
+#ha-artist-page-v2 .ha-ap-group-links a{color:var(--teal);text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(38,91,112,.4);}
+#ha-artist-page-v2 .ha-ap-group{scroll-margin-top:88px;margin:0 0 62px;}
+#ha-artist-page-v2 .ha-ap-group:last-child{margin-bottom:0;}
+#ha-artist-page-v2 .ha-ap-group header{margin:0 0 20px;}
+#ha-artist-page-v2 .ha-ap-group h2{margin:0;font-family:'Lora',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-.025em;}
+#ha-artist-page-v2 .ha-ap-group header p{margin:7px 0 0;font-family:'Lora',Georgia,serif;color:var(--muted);font-size:16px;}
+#ha-artist-page-v2 .ha-ap-gallery{display:flex;flex-direction:column;gap:18px;}
+#ha-artist-page-v2 .ha-ap-gallery-row{display:flex;align-items:flex-start;gap:18px;width:100%;}
+#ha-artist-page-v2 .ha-ap-gallery-item{min-width:0;}
+#ha-artist-page-v2 .ha-ap-gallery-item.is-60{flex:0 0 calc(60% - 9px);}
+#ha-artist-page-v2 .ha-ap-gallery-item.is-50{flex:0 0 calc(50% - 9px);}
+#ha-artist-page-v2 .ha-ap-gallery-item.is-40{flex:0 0 calc(40% - 9px);}
+#ha-artist-page-v2 .ha-ap-stack{display:flex;flex-direction:column;gap:18px;}
+#ha-artist-page-v2 .ha-ap-card{background:#fff;border:.5px solid rgba(54,68,73,.12);border-radius:8px;padding:14px;min-width:0;}
+#ha-artist-page-v2 .ha-ap-art{position:relative;isolation:isolate;display:block;width:100%;aspect-ratio:1;border:0;padding:0;background:#fff;cursor:pointer;border-radius:4px;overflow:hidden;touch-action:pan-y;}
+#ha-artist-page-v2 .ha-ap-art-front,#ha-artist-page-v2 .ha-ap-pile-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:4px;}
+#ha-artist-page-v2 .ha-ap-pile-layer{transform:translate(var(--pile-x),var(--pile-y)) rotate(var(--pile-r)) scale(.92);box-shadow:0 5px 13px rgba(54,68,73,.18);z-index:0;transition:transform .2s ease,box-shadow .2s ease;}
+#ha-artist-page-v2 .ha-ap-art-front{z-index:2;}
+#ha-artist-page-v2 .ha-ap-art.has-pile:hover .ha-ap-pile-layer{transform:translate(var(--pile-x),calc(var(--pile-y) - 4px)) rotate(var(--pile-r)) scale(.92);box-shadow:0 9px 16px rgba(54,68,73,.16);}
+#ha-artist-page-v2 .ha-ap-art:focus-visible,#ha-edition-v1 .ha-ed-art:focus-visible{outline:3px solid var(--teal);outline-offset:3px;}
+#ha-artist-page-v2 .ha-ap-count{height:18px;margin:7px 0 6px;text-align:right;font-size:11px;line-height:18px;letter-spacing:.08em;color:var(--muted);}
+#ha-artist-page-v2 .ha-ap-medium-row,#ha-edition-v1 .ha-ed-medium-row{display:flex;justify-content:space-between;gap:10px;align-items:center;min-height:20px;color:var(--muted);font-size:10px;line-height:1.2;letter-spacing:.12em;text-transform:uppercase;}
+#ha-artist-page-v2 .ha-ap-status,#ha-edition-v1 .ha-ed-status{display:inline-flex;align-items:center;background:rgba(54,68,73,.14);border-radius:3px;padding:4px 7px;color:var(--dark);font-size:9px;letter-spacing:.08em;white-space:nowrap;}
+#ha-artist-page-v2 .ha-ap-card h3,#ha-edition-v1 .ha-ed-card-new h3{font-family:'Lora',Georgia,serif;font-size:21px;font-weight:400;line-height:1.18;letter-spacing:-.02em;margin:10px 0 7px;color:var(--dark);}
+#ha-artist-page-v2 .ha-ap-meaning,#ha-edition-v1 .ha-ed-meaning{margin:0 0 12px;font-family:'Lora',Georgia,serif;font-size:14px;line-height:1.45;color:var(--muted);}
+#ha-artist-page-v2 .ha-ap-chips,#ha-edition-v1 .ha-ed-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 13px;}
+#ha-artist-page-v2 .ha-ap-chips span,#ha-edition-v1 .ha-ed-chips span{border:.5px solid rgba(54,68,73,.28);border-radius:3px;padding:4px 6px;font-size:10px;line-height:1.2;color:var(--dark);}
+#ha-artist-page-v2 .ha-ap-shop,#ha-edition-v1 .ha-ed-card-shop{display:inline-block;font-family:'Lora',Georgia,serif;font-style:italic;font-size:14px;color:var(--teal);text-decoration:underline;text-decoration-color:rgba(38,91,112,.42);text-underline-offset:4px;text-decoration-thickness:.5px;}
+#ha-artist-page-v2 .ha-ap-shop:hover,#ha-artist-page-v2 .ha-ap-shop:focus-visible,#ha-edition-v1 .ha-ed-card-shop:hover,#ha-edition-v1 .ha-ed-card-shop:focus-visible{text-decoration-color:var(--teal);text-decoration-thickness:1px;}
+
+/* New Edition card system; keeps legacy Edition grid/layout selectors untouched. */
+#ha-edition-v1 .ha-ed-card-new{min-width:0;background:#fff;border:.5px solid rgba(54,68,73,.12);border-radius:8px;padding:12px;color:var(--dark);}
+#ha-edition-v1 .ha-ed-card-mount{background:#fff;position:relative;padding-top:25px;}
+#ha-edition-v1 .ha-ed-world-pill{position:absolute;top:0;left:0;z-index:5;display:inline-flex;border-radius:3px;padding:4px 7px;color:#fff;font-size:9px;line-height:1;letter-spacing:.1em;text-transform:uppercase;}
+#ha-edition-v1 .ha-ed-world-pill.is-keep{background:var(--teal);}
+#ha-edition-v1 .ha-ed-world-pill.is-make{background:#8B6040;}
+#ha-edition-v1 .ha-ed-art{position:relative;isolation:isolate;display:block;width:100%;aspect-ratio:1;border:0;padding:0;background:#fff;cursor:pointer;border-radius:4px;overflow:hidden;touch-action:pan-y;}
+#ha-edition-v1 .ha-ed-art-front,#ha-edition-v1 .ha-ed-pile-layer{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:#fff;border-radius:4px;}
+#ha-edition-v1 .ha-ed-pile-layer{z-index:0;transform:translate(var(--pile-x),var(--pile-y)) rotate(var(--pile-r)) scale(.92);box-shadow:0 5px 13px rgba(54,68,73,.18);transition:transform .2s ease,box-shadow .2s ease;}
+#ha-edition-v1 .ha-ed-art-front{z-index:2;}
+#ha-edition-v1 .ha-ed-art.has-pile:hover .ha-ed-pile-layer{transform:translate(var(--pile-x),calc(var(--pile-y) - 4px)) rotate(var(--pile-r)) scale(.92);box-shadow:0 9px 16px rgba(54,68,73,.16);}
+#ha-edition-v1 .ha-ed-count{height:18px;margin:7px 0 6px;text-align:right;font-size:11px;line-height:18px;letter-spacing:.08em;color:var(--muted-strong);}
+#ha-edition-v1 .ha-ed-card-new h3{font-size:18px;margin-top:9px;}
+#ha-edition-v1 .ha-ed-card-new.is-small{padding:10px;}
+#ha-edition-v1 .ha-ed-card-new.is-small h3{font-size:15px;margin-top:8px;}
+#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-meaning{font-size:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-chips span{font-size:9px;}
+#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-card-shop{font-size:12px;}
+@media (prefers-reduced-motion:reduce){#ha-artist-page-v2 .ha-ap-pile-layer,#ha-edition-v1 .ha-ed-pile-layer{transition:none!important;}}
+@media(max-width:900px){
+  #ha-artist-page-v2 .ha-ap-header{grid-template-columns:1fr;gap:24px;padding:34px 24px 28px;}
+  #ha-artist-page-v2 .ha-ap-artist-image{max-width:320px;order:0;}
+  #ha-artist-page-v2 .ha-ap-heading{display:contents;}
+  #ha-artist-page-v2 .ha-ap-heading>div{order:-1;}
+  #ha-artist-page-v2 .ha-ap-bio{font-size:17px;}
+  #ha-artist-page-v2 .ha-ap-content{padding:28px 24px 60px;}
+  #ha-artist-page-v2 .ha-ap-gallery-row{flex-direction:column;}
+  #ha-artist-page-v2 .ha-ap-gallery-item.is-60,#ha-artist-page-v2 .ha-ap-gallery-item.is-50,#ha-artist-page-v2 .ha-ap-gallery-item.is-40{flex-basis:100%;width:100%;}
+  #ha-artist-page-v2 .ha-ap-stack{width:100%;}
+  #ha-artist-page-v2 .ha-ap-art.has-pile{overflow:visible;margin-right:14%;width:86%;}
+  #ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer{transform:translate(13%,0) rotate(0deg) scale(.92);}
+  #ha-edition-v1 .ha-ed-piece-grid{grid-template-columns:1fr!important;max-width:none!important;gap:14px;}
+  #ha-edition-v1 .ha-ed-piece-grid .ha-ed-card-feature{grid-column:auto!important;grid-row:auto!important;}
+  #ha-edition-v1 .ha-ed-art.has-pile{overflow:visible;margin-right:14%;width:86%;}
+  #ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{transform:translate(13%,0) rotate(0deg) scale(.92);}
+}
+
+
+/* 2026-10-12 card correction: a clipped desktop print pile within each white mount. */
+#ha-artist-page-v2 .ha-ap-eyebrow{
+  margin:0 0 7px;
+  color:var(--teal);
+  font-size:10px;
+  line-height:1.2;
+  font-weight:600;
+  letter-spacing:.13em;
+  text-transform:uppercase;
+}
+#ha-artist-page-v2 .ha-ap-gallery-row.is-reversed{justify-content:flex-end;}
+#ha-artist-page-v2 .ha-ap-art.has-pile,
+#ha-edition-v1 .ha-ed-art.has-pile{
+  overflow:visible;
+  clip-path:inset(0 round 4px);
+  transition:transform .2s ease;
+}
+#ha-artist-page-v2 .ha-ap-art.is-single,
+#ha-edition-v1 .ha-ed-art.is-single{cursor:default;}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-art-front,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-art-front{
+  inset:8%;
+  width:auto;
+  height:auto;
+  box-shadow:0 4px 11px rgba(54,68,73,.14);
+}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{
+  inset:5%;
+  width:auto;
+  height:auto;
+  transform:translate(var(--pile-x),var(--pile-y)) rotate(var(--pile-r)) scale(.98);
+}
+@media (hover:hover) and (pointer:fine){
+  #ha-artist-page-v2 .ha-ap-art.has-pile:hover,
+  #ha-edition-v1 .ha-ed-art.has-pile:hover{transform:translateY(-4px);}
+}
+@media (prefers-reduced-motion:reduce){
+  #ha-artist-page-v2 .ha-ap-art.has-pile,
+  #ha-edition-v1 .ha-ed-art.has-pile{transition:none!important;}
+}
+@media(max-width:900px){
+  #ha-artist-page-v2 .ha-ap-art.has-pile,
+  #ha-edition-v1 .ha-ed-art.has-pile{clip-path:none;}
+}
+
+#ha-artist-page-v2 .ha-ap-art.has-pile + .ha-ap-count{margin-top:12px;}
+#ha-edition-v1 .ha-ed-card-mount + .ha-ed-count{margin-top:12px;}
+
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-art-front,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-art-front{
+  top:8%;
+  right:auto;
+  bottom:auto;
+  left:8%;
+  width:84%;
+  height:84%;
+}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{
+  top:5%;
+  right:auto;
+  bottom:auto;
+  left:5%;
+  width:90%;
+  height:90%;
+}
+
+/* Claude sign-off fix 12 Oct 2026: artist-page eyebrow sits on its own line above the name */
+#ha-artist-page-v2 .ha-ap-eyebrow{flex-basis:100%;margin:0 0 -6px;font-family:'DM Sans',sans-serif;font-size:11px;line-height:1.2;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--twine);}
+@media(max-width:900px){
+  /* Claude sign-off fix: phone order is name, discipline, artist image, bio, stats */
+  #ha-artist-page-v2 .ha-ap-artist-image{order:1;}
+  #ha-artist-page-v2 .ha-ap-bio{order:2;margin:0;}
+  #ha-artist-page-v2 .ha-ap-heading>.ha-ap-stats{order:3;}
+}
