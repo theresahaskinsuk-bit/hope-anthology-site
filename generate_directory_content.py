@@ -25,8 +25,8 @@ PLACEHOLDER_TEXT = "placeholder"
 PALE_YELLOW = "FFF2CC"
 URL_RE = re.compile(r"^https://[^\s]+$", re.I)
 STATUSES = {"available", "paused", "hidden"}
-SIZES = {"", "60", "50", "40", "40 under"}
-LAYOUTS = {"", "Even", "Pairs", "Stacks", "Mixed", "Custom"}
+SIZES = {"", "60", "50", "40", "33", "40 under"}
+LAYOUTS = {"", "Even", "Pairs", "Stacks", "Mixed", "Trios", "Custom"}
 PRICE_KEYS = {"price", "priceNumber", "priceFrom", "fromPrice", "computedFrom"}
 PUBLISH_LABEL = "Publish prices to the website (YES/NO)"
 RECRUIT_LABEL = "Directory recruitment body"
@@ -373,7 +373,7 @@ def parse_groups(audit: Audit, ws: Any, title_row: int | None, header_row: int |
                 audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), label, "Contains unresolved PLACEHOLDER text marker.")
         layout = values.get("layout", "")
         if layout not in LAYOUTS:
-            audit.required(ws.title, sources["layout"].coordinate, "Group Layout", "Must be blank, Even, Pairs, Stacks, Mixed, or Custom.")
+            audit.required(ws.title, sources["layout"].coordinate, "Group Layout", "Must be blank, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
         order = posint(values.get("order"))
         if order is None:
             audit.required(ws.title, sources["order"].coordinate, "Group order", "Must be a positive whole number.")
@@ -415,7 +415,7 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
     for key in PROFILE:
         base[key], profile_sources[key] = profile_value(audit, ws, profile_entries, key, key in required_profile)
     if base["galleryLayout"] not in LAYOUTS:
-        audit.required(ws.title, profile_sources["galleryLayout"].coordinate if profile_sources["galleryLayout"] else "A:B", "Gallery Layout", "Must be blank, Even, Pairs, Stacks, Mixed, or Custom.")
+        audit.required(ws.title, profile_sources["galleryLayout"].coordinate if profile_sources["galleryLayout"] else "A:B", "Gallery Layout", "Must be blank, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
     if bool(base["artistImageUrl"]) != bool(base["artistImageAlt"]):
         source = profile_sources["artistImageAlt"] if base["artistImageUrl"] else profile_sources["artistImageUrl"]
         audit.required(ws.title, source.coordinate if source else "A:B", "Artist Image", "URL and Alt must be an optional pair.")
@@ -453,10 +453,10 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
         visible = status in {"available", "paused"}
         if status not in STATUSES:
             audit.required(ws.title, sources["status"].coordinate if sources.get("status") else str(row), "Status", "Must be exactly available, paused, or hidden.")
-        size_lookup = {"": "", "60": "60", "50": "50", "40": "40", "40 under": "40 under"}
+        size_lookup = {"": "", "60": "60", "50": "50", "40": "40", "33": "33", "40 under": "40 under"}
         size = size_lookup.get(values.get("size", "").casefold())
         if size is None:
-            audit.required(ws.title, sources["size"].coordinate if sources.get("size") else str(row), "Size", "Must be blank, 60, 50, 40, or 40 under.")
+            audit.required(ws.title, sources["size"].coordinate if sources.get("size") else str(row), "Size", "Must be blank, 60, 50, 40, 33, or 40 under.")
             size = ""
         if visible:
             for key in ("collection", "collectionOrder", "productOrder", "title", "medium", "listingUrl", "meaning"):
