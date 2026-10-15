@@ -3288,3 +3288,29 @@ body.ha-artist-page-v2-active > #siteWrapper{display:none!important;}
 @media(max-width:900px){
   #ha-artist-page-v2 .ha-ap-gallery-item.is-33{flex-basis:100%;width:100%;}
 }
+
+/* Editions: remove the empty Squarespace wrapper that left white space below the footer (14 Oct 2026) */
+body.ha-edition-v1-active > #siteWrapper{display:none!important;}
+
+/* ============================================================
+   Artist pages and Editions cards — 15 Oct 2026 (Claude)
+   1. Gallery lines up with the hero: full width with the same 48px side margins.
+   2. Tighter print pile: artwork fills more of the card, half the tilt.
+   ============================================================ */
+@media(min-width:901px){
+  #ha-artist-page-v2 .ha-ap-content{max-width:none!important;}
+}
+#ha-artist-page-v2 .ha-ap-card{padding:12px;}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-art-front,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-art-front{top:4%;left:4%;width:92%;height:92%;}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{
+  top:2.5%;left:2.5%;width:95%;height:95%;
+  transform:translate(calc(var(--pile-x) * .5),calc(var(--pile-y) * .5)) rotate(calc(var(--pile-r) * .5)) scale(.98);
+}
+@media (hover:hover) and (pointer:fine){
+  #ha-artist-page-v2 .ha-ap-art.has-pile:hover .ha-ap-pile-layer,
+  #ha-edition-v1 .ha-ed-art.has-pile:hover .ha-ed-pile-layer{
+    transform:translate(calc(var(--pile-x) * .5),calc(var(--pile-y) * .5 - 4px)) rotate(calc(var(--pile-r) * .5)) scale(.98);
+  }
+}

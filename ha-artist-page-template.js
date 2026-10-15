@@ -13,7 +13,7 @@
   function profileData(){if(world==='keep')return (window.HA_KEEP_COLLECTIONS_CONTENT||{}).collections&&(window.HA_KEEP_COLLECTIONS_CONTENT||{}).collections[slug];var payload=(window.HA_TO_MAKE_MAKERS||{})[slug]||{};return payload.maker||null;}
   function hash(value){var h=2166136261;for(var i=0;i<value.length;i++){h^=value.charCodeAt(i);h=Math.imul(h,16777619);}return h>>>0;}
   function scatter(key,index){var h=hash(key+'-'+index);return {r:((h%9)-4)+'deg',x:((h>>>4)%7-3)+'%',y:((h>>>8)%6-2)+'%'};}
-  function sizeFor(layout,index,typed){if(typed)return typed;var patterns={Even:['50'],Pairs:['50','40','40','50'],Mixed:['50','40','50','50','40','50'],Stacks:['50','40','40','40','40','50'],Trios:['33']};var selected=patterns[layout]||patterns.Pairs;return selected[index%selected.length];}
+  function sizeFor(layout,index,typed){if(typed)return typed;var patterns={Even:['50'],Pairs:['50','40','40','50'],Mixed:['50','40','50','50','40','50'],Stacks:['50','40','40','40','40','50'],Trios:['33'],Default:['33','33','33','50','40']};var selected=patterns[layout]||patterns.Default;return selected[index%selected.length];}
 
   function artButton(piece){
     var imgs=piece.images||[],first=imgs[0]||{},layers='';
@@ -53,8 +53,20 @@
     }
     return rows;
   }
+  /* Default layout (15 Oct 2026): 33/33/33 then 50/40, repeating. No card is ever left alone on the last row:
+     a lone leftover turns a final 50/40 into a trio, or a final trio into two 50/40 rows. One print = one 50. */
+  function defaultRows(items,artist){
+    if(items.some(function(piece){return piece.size;}))return genericRows(items,'Default',artist);
+    if(items.length===1)return [{items:[wrapItem(items[0],'50',artist)],reverse:false}];
+    var counts=[],want=3,left=items.length,k;
+    while(left>0){k=Math.min(want,left);counts.push(k);left-=k;want=want===3?2:3;}
+    if(counts[counts.length-1]===1){counts.pop();if(counts[counts.length-1]===2)counts[counts.length-1]=3;else{counts[counts.length-1]=2;counts.push(2);}}
+    var rows=[],i=0;
+    counts.forEach(function(n){var slice=items.slice(i,i+n);i+=n;rows.push({items:slice.map(function(piece,j){return wrapItem(piece,n===3?'33':(j===0?'50':'40'),artist);}),reverse:false});});
+    return rows;
+  }
   function gallery(group,artist){
-    var pieces=group.products||[],layout=group.effectiveLayout||artist.profile&&artist.profile.galleryLayout||'Pairs',rows=layout==='Stacks'?stackRows(pieces,artist):genericRows(pieces,layout,artist);
+    var pieces=group.products||[],layout=group.effectiveLayout||artist.profile&&artist.profile.galleryLayout||'Default',rows=layout==='Stacks'?stackRows(pieces,artist):(layout==='Default'||!{Even:1,Pairs:1,Mixed:1,Trios:1,Custom:1}[layout])?defaultRows(pieces,artist):genericRows(pieces,layout,artist);
     return '<div class="ha-ap-gallery ha-ap-layout-'+esc(layout.toLowerCase().replace(/\s+/g,'-'))+'">'+rows.map(function(row){return '<div class="ha-ap-gallery-row'+(row.reverse?' is-reversed':'')+'">'+row.items.map(function(item){return '<div class="ha-ap-gallery-item is-'+item.width+'">'+item.html+'</div>';}).join('')+'</div>';}).join('')+'</div>';
   }
   function nav(items){var here=path;return (items||[]).map(function(item){return '<a href="'+esc(item.url)+'"'+(item.url===here?' aria-current="page"':'')+'>'+esc(item.label)+'</a>';}).join('');}

@@ -26,7 +26,7 @@ PALE_YELLOW = "FFF2CC"
 URL_RE = re.compile(r"^https://[^\s]+$", re.I)
 STATUSES = {"available", "paused", "hidden"}
 SIZES = {"", "60", "50", "40", "33", "40 under"}
-LAYOUTS = {"", "Even", "Pairs", "Stacks", "Mixed", "Trios", "Custom"}
+LAYOUTS = {"", "Default", "Even", "Pairs", "Stacks", "Mixed", "Trios", "Custom"}
 PRICE_KEYS = {"price", "priceNumber", "priceFrom", "fromPrice", "computedFrom"}
 PUBLISH_LABEL = "Publish prices to the website (YES/NO)"
 RECRUIT_LABEL = "Directory recruitment body"
@@ -373,7 +373,7 @@ def parse_groups(audit: Audit, ws: Any, title_row: int | None, header_row: int |
                 audit.placeholder(ws.title, sources[key].coordinate if sources.get(key) else str(row), label, "Contains unresolved PLACEHOLDER text marker.")
         layout = values.get("layout", "")
         if layout not in LAYOUTS:
-            audit.required(ws.title, sources["layout"].coordinate, "Group Layout", "Must be blank, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
+            audit.required(ws.title, sources["layout"].coordinate, "Group Layout", "Must be blank (Default), Default, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
         order = posint(values.get("order"))
         if order is None:
             audit.required(ws.title, sources["order"].coordinate, "Group order", "Must be a positive whole number.")
@@ -415,7 +415,7 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
     for key in PROFILE:
         base[key], profile_sources[key] = profile_value(audit, ws, profile_entries, key, key in required_profile)
     if base["galleryLayout"] not in LAYOUTS:
-        audit.required(ws.title, profile_sources["galleryLayout"].coordinate if profile_sources["galleryLayout"] else "A:B", "Gallery Layout", "Must be blank, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
+        audit.required(ws.title, profile_sources["galleryLayout"].coordinate if profile_sources["galleryLayout"] else "A:B", "Gallery Layout", "Must be blank (Default), Default, Even, Pairs, Stacks, Mixed, Trios, or Custom.")
     if bool(base["artistImageUrl"]) != bool(base["artistImageAlt"]):
         source = profile_sources["artistImageAlt"] if base["artistImageUrl"] else profile_sources["artistImageUrl"]
         audit.required(ws.title, source.coordinate if source else "A:B", "Artist Image", "URL and Alt must be an optional pair.")
@@ -447,10 +447,11 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
         sources = {key: cell(ws, row, mapping, key) for key in mapping}
         active = yesno(values.get("active"))
         if active is None:
-            audit.required(ws.title, sources["active"].coordinate if sources.get("active") else str(row), "Active (YES/NO)", "Value must be YES or NO; it is retained but does not decide publication.")
+            audit.required(ws.title, sources["active"].coordinate if sources.get("active") else str(row), "Active (YES/NO)", "Value must be YES or NO. Active NO always hides the product.")
             active = False
         status = values.get("status", "").casefold()
-        visible = status in {"available", "paused"}
+        # Active NO always hides the product, whatever Status says (15 Oct 2026). Status applies only to Active YES rows.
+        visible = bool(active) and status in {"available", "paused"}
         if status not in STATUSES:
             audit.required(ws.title, sources["status"].coordinate if sources.get("status") else str(row), "Status", "Must be exactly available, paused, or hidden.")
         size_lookup = {"": "", "60": "60", "50": "50", "40": "40", "33": "33", "40 under": "40 under"}
@@ -504,19 +505,20 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
             record.update({"difficulty": values.get("difficulty", ""), "technique": values.get("technique", ""), "delivery": values.get("delivery", "")})
         if publish_prices and numeric_price is not None:
             record.update({"price": price_string(numeric_price), "priceNumber": float(numeric_price)})
-        if status != "hidden":
+        if visible:
             products.append(record)
 
     if groups:
         visible_collections = {product["collection"] for product in products}
         for group in groups:
             if group["name"] not in visible_collections:
-                audit.required(ws.title, str(group_header), "Group name", f"Group {group['name']!r} has no matching visible products.")
+                audit.warn(ws.title, str(group_header), "Group name", f"Group {group['name']!r} has no visible products, so it is left off the page.")
         for product in products:
             if product["collection"] not in by_group:
                 audit.required(ws.title, product["title"], "Collection", f"Collection {product['collection']!r} has no Groups row.")
             else:
                 by_group[product["collection"]]["products"].append(product)
+        groups = [group for group in groups if group["products"]]
         groups.sort(key=lambda group: (group["order"], group["name"].casefold()))
     else:
         groups = [{"name": "", "oneLine": "", "order": 1, "layout": "", "products": products}]
@@ -524,7 +526,7 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
     all_slugs: dict[str, str] = {}
     for group in groups:
         group["products"].sort(key=lambda product: (product["productOrder"], product["title"].casefold()))
-        effective = group["layout"] or base["galleryLayout"] or "Pairs"
+        effective = group["layout"] or base["galleryLayout"] or "Default"
         group["effectiveLayout"] = effective
         if effective == "Custom" and any(not product["size"] for product in group["products"]):
             audit.required(ws.title, group["name"] or "—", "Custom Layout", "A Custom group cannot contain a blank Size.")
@@ -560,8 +562,10 @@ def parse_contributor(audit: Audit, wb: Any, roster: dict[str, Any], kind: str, 
                 audit.warn(ws.title, source.coordinate if source else "—", label, f"States {supplied!r}; source products calculate {computed_from}.")
     stats_key = "patterns" if kind == "to-make" else "prints"
     profile = {
-        "discipline": base["discipline"], "bio": base["bio"], "metaDescription": base["metaDescription"], "galleryLayout": base["galleryLayout"] or "Pairs",
-        "artistImage": {"url": base["artistImageUrl"], "alt": base["artistImageAlt"]} if base["artistImageUrl"] and base["artistImageAlt"] else None,
+        "discipline": base["discipline"], "bio": base["bio"], "metaDescription": base["metaDescription"], "galleryLayout": base["galleryLayout"] or "Default",
+        # Artist Image falls back to the roster card image (Hero Image URL/Alt) when the profile cells are blank.
+        "artistImage": ({"url": base["artistImageUrl"], "alt": base["artistImageAlt"]} if base["artistImageUrl"] and base["artistImageAlt"]
+                        else {"url": roster["heroImage"], "alt": roster["heroAlt"]} if https(roster.get("heroImage")) and roster.get("heroAlt") else None),
         "stats": {"collections": len(named_groups), stats_key: len(products), "fromPrice": computed_from},
     }
     return {**roster, "profile": profile, "groups": groups, "productCount": len(products), "computedFrom": computed_from}
