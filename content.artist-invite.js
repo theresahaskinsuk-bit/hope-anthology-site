@@ -195,7 +195,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
       "url": "/editions/for-reasons-of-your-own"
     },
     "image": {
-      "url": "",
+      "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8ea73c6b-7a45-4fd7-8c40-027a8305a495/reasons-of-your-own-hope-anthology.jpg?content-type=image%2Fjpeg",
       "alt": "A screenshot of the For Reasons of Your Own Edition page",
       "caption": ""
     }
