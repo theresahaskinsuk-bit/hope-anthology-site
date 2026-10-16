@@ -27,8 +27,8 @@
     if(e.show!==false&&e.title){
       var im=e.image||{};
       edition='<section class="ha-ai-section ha-ai-edition" aria-labelledby="ha-ai-edition-h"><div class="ha-ai-inner"><div class="ha-ai-edition-grid'+(im.url?'':' no-image')+'"><div>'+head(e,'ha-ai-edition-h')+'<div class="ha-ai-copy">'+paras(e.paragraphs)+'</div>'+
-        (e.button&&e.button.url?'<a class="ha-ai-button" href="'+esc(e.button.url)+'">'+esc(e.button.label)+' <span aria-hidden="true">→</span></a>':'')+'</div>'+
-        (im.url?'<figure class="ha-ai-shot"><img src="'+esc(im.url)+'" alt="'+esc(im.alt)+'" loading="lazy">'+(im.caption?'<figcaption>'+fmt(im.caption)+'</figcaption>':'')+'</figure>':'')+'</div></div></section>';
+        (e.button&&e.button.url?'<a class="ha-ai-button" href="'+esc(e.button.url)+'" target="_blank" rel="noopener">'+esc(e.button.label)+' <span aria-hidden="true">→</span><span class="ha-v3-sr-only"> (opens in a new tab)</span></a>':'')+'</div>'+
+        (im.url?'<figure class="ha-ai-shot">'+(e.button&&e.button.url?'<a class="ha-ai-shot-link" href="'+esc(e.button.url)+'" target="_blank" rel="noopener" aria-label="'+esc(e.button.label)+' (opens in a new tab)">':'')+'<img src="'+esc(im.url)+'" alt="'+esc(im.alt)+'" loading="lazy">'+(e.button&&e.button.url?'</a>':'')+(im.caption?'<figcaption>'+fmt(im.caption)+'</figcaption>':'')+'</figure>':'')+'</div></div></section>';
     }
     return '<div id="ha-artist-invite-v1">'+
       '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+esc(img.logo)+'" alt=""><span class="ha-v3-sr-only">The Hope Anthology</span></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-ai-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-ai-menu" class="ha-v3-links">'+nav(C.navigation)+'</div></nav>'+

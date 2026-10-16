@@ -3451,3 +3451,12 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
   /* 20% smaller than the column, and never taller than about 70% of the browser window, so it sits with the text on short screens */
   #ha-artist-invite-v1 .ha-ai-shot{width:100%;max-width:min(80%,calc(70vh * 25 / 28));justify-self:center;}
 }
+
+/* Artist invitation page: the Edition screenshot is a link too (opens in a new tab) (16 Oct 2026) */
+#ha-artist-invite-v1 .ha-ai-shot{transition:transform .2s ease,box-shadow .2s ease;}
+#ha-artist-invite-v1 .ha-ai-shot-link{display:block;cursor:pointer;}
+#ha-artist-invite-v1 .ha-ai-shot-link:focus-visible{outline:2px solid var(--teal);outline-offset:4px;}
+@media (hover:hover) and (pointer:fine){
+  #ha-artist-invite-v1 .ha-ai-shot:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,76,94,.14);}
+}
+@media (prefers-reduced-motion:reduce){#ha-artist-invite-v1 .ha-ai-shot{transition:none;}}
