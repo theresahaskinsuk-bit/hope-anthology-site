@@ -3314,3 +3314,129 @@ body.ha-edition-v1-active > #siteWrapper{display:none!important;}
     transform:translate(calc(var(--pile-x) * .5),calc(var(--pile-y) * .5 - 4px)) rotate(calc(var(--pile-r) * .5)) scale(.98);
   }
 }
+
+/* ============================================================
+   Artist invitation page (hidden onboarding page) — 15 Oct 2026 (Claude)
+   Renderer: ha-artist-invite.js · Words: content.artist-invite.js
+   Everything is scoped to #ha-artist-invite-v1; the shared ha-v3 nav and footer styles apply as on every page.
+   ============================================================ */
+body.ha-artist-invite-active [data-ha-artist-invite-hidden="true"],
+body.ha-artist-invite-active > #siteWrapper{display:none!important;}
+#ha-artist-invite-v1,#ha-artist-invite-v1 *{box-sizing:border-box;}
+#ha-artist-invite-v1{--teal:#265b70;--dark:#364449;--cream:#F2F3EF;--linen:#ECEEF0;--twine:#8B6040;--gold:#FED22F;--muted:#4f5a5d;--rule:rgba(54,68,73,.14);
+  font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--dark);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+#ha-artist-invite-v1 img{display:block;max-width:100%;height:auto;}
+#ha-artist-invite-v1 p,#ha-artist-invite-v1 h1,#ha-artist-invite-v1 h2,#ha-artist-invite-v1 h3,#ha-artist-invite-v1 ul,#ha-artist-invite-v1 ol,#ha-artist-invite-v1 figure{margin:0;}
+#ha-artist-invite-v1 .ha-v3-nav .ha-v3-links a{color:var(--cream)!important;text-decoration:none;}
+#ha-artist-invite-v1 .ha-ai-inner{padding:0 48px;}
+#ha-artist-invite-v1 .ha-ai-section{padding:80px 0;background:var(--cream);}
+#ha-artist-invite-v1 .ha-ai-white{background:#fff;}
+#ha-artist-invite-v1 .ha-ai-linen{background:var(--linen);}
+#ha-artist-invite-v1 .ha-ai-eyebrow{font:600 11px/1.35 'DM Sans',sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--twine);margin:0 0 14px;}
+#ha-artist-invite-v1 h1,#ha-artist-invite-v1 h2{font-family:'Lora',Georgia,serif;font-weight:400;letter-spacing:-.02em;}
+#ha-artist-invite-v1 h2{font-size:clamp(30px,3vw,42px);line-height:1.15;color:var(--teal);margin-bottom:28px;max-width:900px;}
+#ha-artist-invite-v1 h3{font-family:'Lora',Georgia,serif;font-weight:400;font-size:21px;line-height:1.25;color:var(--teal);margin-bottom:8px;}
+#ha-artist-invite-v1 .ha-ai-copy{max-width:780px;}
+#ha-artist-invite-v1 .ha-ai-copy p+p{margin-top:16px;}
+#ha-artist-invite-v1 strong{font-weight:600;color:var(--teal);}
+#ha-artist-invite-v1 .ha-ai-icon{display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--linen);color:var(--teal);flex:0 0 44px;}
+#ha-artist-invite-v1 .ha-ai-icon svg{width:22px;height:22px;}
+
+/* Hero */
+#ha-artist-invite-v1 .ha-ai-hero{background:var(--teal);color:var(--cream);padding:72px 0 88px;}
+#ha-artist-invite-v1 .ha-ai-hero-grid{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(300px,.7fr);gap:clamp(40px,6vw,96px);align-items:center;}
+#ha-artist-invite-v1 .ha-ai-hero .ha-ai-eyebrow{color:var(--gold);}
+#ha-artist-invite-v1 h1{font-size:clamp(40px,4.4vw,62px);line-height:1.08;color:var(--cream);margin-bottom:24px;max-width:720px;}
+#ha-artist-invite-v1 .ha-ai-hero-body{font-size:17px;line-height:1.85;font-weight:300;color:rgba(242,243,239,.9);max-width:660px;}
+#ha-artist-invite-v1 .ha-ai-nutshell{background:#fff;color:var(--dark);border-radius:8px;padding:26px 28px 22px;box-shadow:0 14px 40px rgba(6,41,57,.18);}
+#ha-artist-invite-v1 .ha-ai-nutshell ol{list-style:none;padding:0;position:relative;}
+#ha-artist-invite-v1 .ha-ai-nutshell ol:before{content:"";position:absolute;left:45px;top:40px;bottom:40px;border-left:1px solid var(--rule);}
+#ha-artist-invite-v1 .ha-ai-nutshell li{position:relative;display:grid;grid-template-columns:90px minmax(0,1fr);gap:16px;align-items:center;padding:8px 0;}
+#ha-artist-invite-v1 .ha-ai-nutshell li+li{border-top:1px solid var(--linen);}
+#ha-artist-invite-v1 .ha-ai-sketch{position:relative;z-index:1;display:grid;place-items:center;width:90px;height:80px;border-radius:50%;background:var(--linen);color:var(--teal);}
+#ha-artist-invite-v1 .ha-ai-sketch svg{width:66px;height:58px;}
+#ha-artist-invite-v1 .ha-ai-step-label{font:400 21px/1.24 'Lora',Georgia,serif;color:var(--teal);}
+#ha-artist-invite-v1 .ha-ai-step-label em{color:var(--twine);}
+#ha-artist-invite-v1 .ha-ai-nutshell-note{margin-top:14px;padding-top:14px;border-top:1px solid var(--gold);text-align:center;font:italic 400 19px/1.4 'Lora',Georgia,serif;color:var(--teal);}
+
+/* Cards */
+#ha-artist-invite-v1 .ha-ai-cards{display:grid;gap:16px;}
+#ha-artist-invite-v1 .ha-ai-cards.three{grid-template-columns:repeat(3,minmax(0,1fr));}
+#ha-artist-invite-v1 .ha-ai-cards.five{grid-template-columns:repeat(5,minmax(0,1fr));}
+#ha-artist-invite-v1 .ha-ai-card{background:#fff;border:.5px solid var(--rule);border-radius:8px;padding:24px 22px 26px;}
+#ha-artist-invite-v1 .ha-ai-section:not(.ha-ai-white) .ha-ai-card{background:#fff;}
+#ha-artist-invite-v1 .ha-ai-white .ha-ai-card{background:var(--cream);border-color:transparent;}
+#ha-artist-invite-v1 .ha-ai-card .ha-ai-icon{margin-bottom:18px;}
+#ha-artist-invite-v1 .ha-ai-card p{font-size:15px;line-height:1.65;color:var(--muted);}
+#ha-artist-invite-v1 .ha-ai-card.small h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:16px;line-height:1.35;color:var(--dark);}
+#ha-artist-invite-v1 .ha-ai-card.small p{font-size:14px;}
+#ha-artist-invite-v1 .ha-ai-aside{margin-top:16px;background:var(--linen);border-left:3px solid var(--teal);padding:16px 20px;font-size:15px;color:var(--dark);}
+#ha-artist-invite-v1 .ha-ai-pull{margin-top:16px;background:var(--linen);border-radius:8px;padding:26px 24px;text-align:center;font:400 clamp(20px,2vw,25px)/1.4 'Lora',Georgia,serif;color:var(--teal);}
+
+/* Practical */
+#ha-artist-invite-v1 .ha-ai-roles{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+#ha-artist-invite-v1 .ha-ai-role{background:#fff;border:.5px solid var(--rule);border-radius:8px;overflow:hidden;}
+#ha-artist-invite-v1 .ha-ai-role-head{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--linen);border-bottom:.5px solid var(--rule);}
+#ha-artist-invite-v1 .ha-ai-role.is-me .ha-ai-role-head{background:#f3ece4;}
+#ha-artist-invite-v1 .ha-ai-role-head h3{margin:0;font-size:24px;}
+#ha-artist-invite-v1 .ha-ai-mark{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--teal);color:var(--teal);font:600 10px 'DM Sans',sans-serif;letter-spacing:.08em;}
+#ha-artist-invite-v1 .ha-ai-role ul{list-style:none;padding:6px 22px 10px;}
+#ha-artist-invite-v1 .ha-ai-role li{display:flex;gap:12px;align-items:flex-start;padding:11px 0;font-size:15px;line-height:1.5;}
+#ha-artist-invite-v1 .ha-ai-role li+li{border-top:.5px solid var(--rule);}
+#ha-artist-invite-v1 .ha-ai-tick{display:inline-grid;place-items:center;flex:0 0 20px;width:20px;height:20px;border-radius:50%;background:var(--teal);color:#fff;font:700 11px/1 'DM Sans',sans-serif;margin-top:1px;}
+#ha-artist-invite-v1 .ha-ai-note{background:#fff;border:.5px solid var(--rule);border-radius:8px;padding:22px 24px;margin-bottom:12px;}
+#ha-artist-invite-v1 .ha-ai-note h3{display:flex;align-items:center;gap:14px;margin-bottom:12px;}
+#ha-artist-invite-v1 .ha-ai-note p{font-size:15px;line-height:1.65;}
+#ha-artist-invite-v1 .ha-ai-note p+p{margin-top:8px;}
+#ha-artist-invite-v1 .ha-ai-baseline{margin-top:20px;padding-top:20px;border-top:.5px solid var(--rule);font-weight:600;color:var(--dark);}
+
+/* Money */
+#ha-artist-invite-v1 .ha-ai-costs{list-style:none;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-bottom:28px;}
+#ha-artist-invite-v1 .ha-ai-costs li{display:flex;justify-content:center;align-items:center;gap:12px;background:var(--teal);color:var(--cream);border-radius:8px;padding:18px 12px;font-size:17px;font-weight:600;}
+#ha-artist-invite-v1 .ha-ai-costs .ha-ai-tick{background:var(--gold);color:var(--teal);width:24px;height:24px;flex-basis:24px;font-size:13px;margin:0;}
+#ha-artist-invite-v1 .ha-ai-closer{margin-top:20px!important;font:400 28px/1.3 'Lora',Georgia,serif;color:var(--teal);}
+
+/* Edition */
+#ha-artist-invite-v1 .ha-ai-edition-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);gap:clamp(32px,5vw,72px);align-items:start;}
+#ha-artist-invite-v1 .ha-ai-edition-grid.no-image{grid-template-columns:minmax(0,1fr);}
+#ha-artist-invite-v1 .ha-ai-button{display:inline-flex;align-items:center;gap:.45em;margin-top:24px;padding:14px 22px;background:var(--teal);color:var(--cream)!important;border-radius:2px;font:500 15px 'DM Sans',sans-serif;text-decoration:none;}
+#ha-artist-invite-v1 .ha-ai-button:hover,#ha-artist-invite-v1 .ha-ai-button:focus-visible{background:#1f4c5e;text-decoration:underline;text-underline-offset:4px;}
+#ha-artist-invite-v1 .ha-ai-shot{background:#fff;border:.5px solid var(--rule);border-radius:8px;padding:10px;box-shadow:0 6px 20px rgba(31,76,94,.08);}
+#ha-artist-invite-v1 .ha-ai-shot figcaption{margin-top:8px;text-align:center;font-size:12px;color:var(--muted);}
+
+/* Lines */
+#ha-artist-invite-v1 .ha-ai-line{font:400 clamp(22px,2.4vw,30px)/1.3 'Lora',Georgia,serif;color:var(--teal);}
+#ha-artist-invite-v1 .ha-ai-line.is-gold{margin-top:32px!important;border-left:3px solid var(--gold);padding:12px 0 12px 22px;}
+#ha-artist-invite-v1 .ha-ai-line.is-ruled{margin:28px 0!important;padding:20px 0;border-top:.5px solid var(--rule);border-bottom:.5px solid var(--rule);}
+#ha-artist-invite-v1 .ha-ai-line.is-ruled+p{margin-top:0;}
+
+/* Closing */
+#ha-artist-invite-v1 .ha-ai-closing{background:var(--teal);color:var(--cream);text-align:center;padding:72px 0;border-bottom:.5px solid rgba(242,243,239,.1);}
+#ha-artist-invite-v1 .ha-ai-closing .ha-ai-eyebrow{color:var(--gold);}
+#ha-artist-invite-v1 .ha-ai-closing h2{color:var(--cream);margin:0 auto 14px;}
+#ha-artist-invite-v1 .ha-ai-closing p:last-child{font-size:17px;font-weight:300;color:rgba(242,243,239,.9);}
+
+#ha-artist-invite-v1 a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+
+@media(max-width:1100px){
+  #ha-artist-invite-v1 .ha-ai-cards.five{grid-template-columns:repeat(3,minmax(0,1fr));}
+}
+@media(max-width:900px){
+  #ha-artist-invite-v1 .ha-ai-inner{padding:0 24px;}
+  #ha-artist-invite-v1 .ha-ai-section{padding:56px 0;}
+  #ha-artist-invite-v1 .ha-ai-hero{padding:48px 0 56px;}
+  #ha-artist-invite-v1 .ha-ai-hero-grid,#ha-artist-invite-v1 .ha-ai-edition-grid,#ha-artist-invite-v1 .ha-ai-roles{grid-template-columns:1fr;}
+  #ha-artist-invite-v1 .ha-ai-nutshell{max-width:460px;}
+  #ha-artist-invite-v1 .ha-ai-cards.three,#ha-artist-invite-v1 .ha-ai-cards.five,#ha-artist-invite-v1 .ha-ai-costs{grid-template-columns:1fr;}
+  #ha-artist-invite-v1 .ha-ai-card{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:16px;padding:20px;}
+  #ha-artist-invite-v1 .ha-ai-card .ha-ai-icon{grid-row:span 2;margin:0;}
+  #ha-artist-invite-v1 .ha-ai-shot{max-width:420px;}
+  #ha-artist-invite-v1 .ha-ai-closing{padding:56px 0;}
+}
+@media(max-width:480px){
+  #ha-artist-invite-v1 .ha-ai-nutshell{padding:20px 18px;}
+  #ha-artist-invite-v1 .ha-ai-nutshell li{grid-template-columns:76px minmax(0,1fr);}
+  #ha-artist-invite-v1 .ha-ai-sketch{width:76px;height:68px;}
+  #ha-artist-invite-v1 .ha-ai-nutshell ol:before{left:38px;}
+  #ha-artist-invite-v1 .ha-ai-step-label{font-size:19px;}
+}
