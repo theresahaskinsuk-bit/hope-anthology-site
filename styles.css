@@ -3460,3 +3460,93 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
   #ha-artist-invite-v1 .ha-ai-shot:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(31,76,94,.14);}
 }
 @media (prefers-reduced-motion:reduce){#ha-artist-invite-v1 .ha-ai-shot{transition:none;}}
+
+/* ============================================================
+   Partner Edition pages — 17 Oct 2026 (Claude)
+   A partner-branded version of an Edition: same artwork, partner header, hero, colours and footer.
+   Colours come from the Partner Pages tab as --pt-dark, --pt-light, --pt-accent and --pt-button.
+   ============================================================ */
+#ha-edition-v1.ha-ed-partner-page{--teal:var(--pt-accent);background:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-banner{background:#fff3c4;color:#7a4b1e;font-size:13px;font-weight:600;text-align:center;padding:9px 16px;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 48px;background:#fff;border-bottom:1px solid #e6eeee;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-brand{display:block;line-height:0;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-logo{display:block;height:64px;width:auto;max-width:240px;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-logo-ph{display:inline-flex;flex-direction:column;justify-content:center;min-height:56px;padding:6px 14px;border:2px dashed var(--pt-accent);border-radius:4px;color:var(--pt-accent);font:600 15px/1.2 'DM Sans',sans-serif;letter-spacing:.06em;text-transform:uppercase;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-logo-ph small{font-size:10px;font-weight:400;letter-spacing:.08em;opacity:.8;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-back{border:1.5px solid var(--pt-button);color:var(--pt-accent);border-radius:999px;padding:10px 20px;font:600 14px 'DM Sans',sans-serif;text-decoration:none;white-space:nowrap;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-back:hover,#ha-edition-v1.ha-ed-partner-page .ha-pt-back:focus-visible{background:var(--pt-accent);border-color:var(--pt-accent);color:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-hero{background:radial-gradient(circle at 72% 38%,var(--pt-light) 0%,color-mix(in srgb,var(--pt-light) 45%,var(--pt-dark)) 55%,var(--pt-dark) 100%);background-color:var(--pt-dark);}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero-grid{grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);column-gap:64px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-eyebrow{color:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero h1{font-family:'DM Sans',sans-serif;color:#fff;}
+#ha-edition-v1.ha-ed-partner-page.has-title-font .ha-ed-hero h1{font-family:'Amatic SC','DM Sans',sans-serif;font-weight:700;font-size:clamp(52px,6vw,84px);line-height:.95;letter-spacing:.01em;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero h1 em{font-family:'DM Sans',sans-serif;font-size:21px;line-height:1.4;font-style:italic;font-weight:400;letter-spacing:0;color:#e6fbfc;margin-top:12px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero-body,#ha-edition-v1.ha-ed-partner-page .ha-ed-hero-reach{color:#f2fbfb;max-width:600px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero-reach{font-size:14.5px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-pullout{font-family:'DM Sans',sans-serif;font-size:1em;font-style:normal;font-weight:600;color:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-hero-signoff{font-family:'DM Sans',sans-serif;font-size:18px;color:#fff;border-top-color:rgba(255,255,255,.35);max-width:600px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-stats strong{font-family:'DM Sans',sans-serif;font-size:30px;color:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-stats small{color:rgba(255,255,255,.85);}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-side{grid-area:art;min-width:0;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-figure{margin:0;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-photo{display:block;width:100%;height:330px;object-fit:cover;object-position:center 0%;border-radius:6px;box-shadow:0 20px 50px rgba(0,0,0,.18);}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-photo-ph{display:grid;place-items:center;background:rgba(255,255,255,.14);border:2px dashed rgba(255,255,255,.6);box-shadow:none;color:#fff;font:600 14px 'DM Sans',sans-serif;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;margin-top:18px;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote-logo{width:64px;height:64px;object-fit:contain;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote blockquote{grid-column:2;margin:0;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote:not(:has(.ha-pt-quote-logo)) blockquote{grid-column:1/-1;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote-text{margin:0;border-left:3px solid #b9ecef;padding:4px 0 4px 14px;font:italic 400 16px/1.6 'DM Sans',sans-serif;color:#eafafb;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote-text.is-ph{border:1px dashed rgba(255,255,255,.6);border-radius:4px;padding:10px 12px;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-quote footer{margin-top:8px;padding-left:17px;font:600 13px 'DM Sans',sans-serif;color:#fff;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-things{font-family:'DM Sans',sans-serif;font-size:15.5px;color:#eafafb;margin-top:22px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-main{background:#f5f8f8;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-artist-name{font-family:'DM Sans',sans-serif;font-weight:600;font-size:22px;color:#222;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-artist-why{font-family:'DM Sans',sans-serif;font-size:15px;color:var(--pt-accent);}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-world-pill,#ha-edition-v1.ha-ed-partner-page .ha-ed-world-pill.is-keep,#ha-edition-v1.ha-ed-partner-page .ha-ed-world-pill.is-make{background:var(--pt-accent);color:#fff;font-weight:600;letter-spacing:.14em;padding:4px 10px;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-card-new h3{font-family:'DM Sans',sans-serif;font-weight:600;}
+#ha-edition-v1.ha-ed-partner-page .ha-ed-card-shop{font-family:'DM Sans',sans-serif;font-style:normal;font-weight:400;color:var(--pt-accent);}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-footer{background:#222;color:#ddd;padding:28px 48px;font:400 13px/1.7 'DM Sans',sans-serif;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-footer p{margin:0;}
+#ha-edition-v1.ha-ed-partner-page .ha-pt-footer a{color:#5cc6d2;}
+@media(max-width:900px){
+  #ha-edition-v1.ha-ed-partner-page .ha-pt-bar{padding:12px 22px;}
+  #ha-edition-v1.ha-ed-partner-page .ha-pt-logo{height:48px;}
+  #ha-edition-v1.ha-ed-partner-page .ha-pt-back{padding:8px 14px;font-size:13px;}
+  #ha-edition-v1.ha-ed-partner-page .ha-ed-hero-grid{grid-template-columns:1fr;row-gap:32px;}
+  #ha-edition-v1.ha-ed-partner-page .ha-pt-photo{height:280px;}
+  #ha-edition-v1.ha-ed-partner-page .ha-pt-footer{padding:24px 22px;}
+}
+
+/* ============================================================
+   Card mount — 19 Oct 2026 (Claude)
+   Every product image sits in a linen-grey mount that grows with the card.
+   Artwork (default) is shown whole on a white mat. Photo? YES in the Sheet adds .is-photo,
+   and the photo fills out to the grey (centred, edges trimmed).
+   Applies to To Keep and To Make artist pages and every Edition (partner pages included).
+   ============================================================ */
+#ha-artist-page-v2 .ha-ap-art,
+#ha-edition-v1 .ha-ed-art{background:#ECEEF0;border-radius:3px;}
+#ha-artist-page-v2 .ha-ap-art .ha-ap-art-front,
+#ha-artist-page-v2 .ha-ap-art .ha-ap-pile-layer,
+#ha-edition-v1 .ha-ed-art .ha-ed-art-front,
+#ha-edition-v1 .ha-ed-art .ha-ed-pile-layer{box-sizing:border-box;background:#fff;object-fit:contain;object-position:center;padding:5.5%;border-radius:0;}
+#ha-artist-page-v2 .ha-ap-art .is-photo,
+#ha-edition-v1 .ha-ed-art .is-photo{padding:0;object-fit:cover;}
+/* One image: the mat sits 4% in from every edge. */
+#ha-artist-page-v2 .ha-ap-art.is-single .ha-ap-art-front,
+#ha-edition-v1 .ha-ed-art.is-single .ha-ed-art-front{inset:auto;top:4%;left:4%;width:92%;height:92%;}
+/* Several images: a small loose pile, kept inside the mount. */
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-art-front,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-art-front{top:6%;left:6%;width:88%;height:88%;}
+#ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer,
+#ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{top:5.5%;left:5.5%;width:89%;height:89%;}
+@media(max-width:900px){
+  #ha-artist-page-v2 .ha-ap-art.has-pile,
+  #ha-edition-v1 .ha-ed-art.has-pile{width:100%;margin-right:0;overflow:hidden;clip-path:inset(0 round 3px);}
+  #ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-art-front,
+  #ha-edition-v1 .ha-ed-art.has-pile .ha-ed-art-front{top:4%;left:4%;width:80%;height:92%;}
+  #ha-artist-page-v2 .ha-ap-art.has-pile .ha-ap-pile-layer,
+  #ha-edition-v1 .ha-ed-art.has-pile .ha-ed-pile-layer{top:4%;left:4%;width:80%;height:92%;transform:translate(15%,0) scale(.94);}
+  #ha-artist-page-v2 .ha-ap-art.has-pile:hover .ha-ap-pile-layer,
+  #ha-edition-v1 .ha-ed-art.has-pile:hover .ha-ed-pile-layer{transform:translate(15%,0) scale(.94);}
+}

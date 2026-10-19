@@ -201,12 +201,12 @@ def parse_artists(audit: Audit, ws: Any, header: int, pieces_header: int) -> lis
 
 
 def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any]], publish: bool) -> None:
-    fields = {"active": ["active"], "artist": ["artistslug"], "pieceOrder": ["pieceorder"], "title": ["piecetitle"], "world": ["world"], "status": ["status"], "medium": ["medium"], "price": ["pricenumberonly", "price"], "listingUrl": ["listingurl"], "featured": ["featured"], "meaning": ["meaning"], "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"], "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"], "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"]}
+    fields = {"active": ["active"], "artist": ["artistslug"], "pieceOrder": ["pieceorder"], "title": ["piecetitle"], "world": ["world"], "status": ["status"], "medium": ["medium"], "price": ["pricenumberonly", "price"], "listingUrl": ["listingurl"], "featured": ["featured"], "meaning": ["meaning"], "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"], "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"], "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"], "image1Photo": ["image1photo"], "image2Photo": ["image2photo"], "image3Photo": ["image3photo"]}
     headers = hmap(ws, header); mapping: dict[str, tuple[int, Any]] = {}
     for key, aliases in fields.items():
         found = next((headers[name] for name in aliases if name in headers), None)
         if found: mapping[key] = found
-        else: audit.fatal(ws.title, str(header), key, "Required Pieces header is missing or renamed.")
+        elif not key.endswith("Photo"): audit.fatal(ws.title, str(header), key, "Required Pieces header is missing or renamed.")
     if any(re.fullmatch(r"chip[6-9]\d*", name) for name in headers): audit.required(ws.title, str(header), "Chips", "More than 5 Chip columns are not allowed.")
     by_artist = {artist["slug"]: artist for artist in artists}; seen: dict[str, set[int]] = {slug: set() for slug in by_artist}
     for row in range(header + 1, ws.max_row + 1):
@@ -232,7 +232,9 @@ def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any
             if bool(u) != bool(al): audit.required(ws.title, (ac if u else uc).coordinate if (ac if u else uc) else str(row), f"Image {n}", "URL and Alt must be filled together.")
             if u and not https(u): audit.required(ws.title, uc.coordinate if uc else str(row), f"Image {n} URL", "Must be an absolute https:// URL.")
             if visible and n == 1 and (not u or not al): audit.required(ws.title, (uc if not u else ac).coordinate if (uc if not u else ac) else str(row), "Image 1", "Visible piece requires URL and Alt.")
-            if u and al: images.append({"url": u, "alt": al})
+            ph = values.get(f"image{n}Photo", "").strip().upper(); pc = cells.get(f"image{n}Photo")
+            if ph not in ("", "YES", "NO"): audit.required(ws.title, pc.coordinate if pc else str(row), f"Image {n} Photo?", "Must be YES or blank.")
+            if u and al: images.append({"url": u, "alt": al, "photo": True} if ph == "YES" else {"url": u, "alt": al})
         chips: list[str] = []
         for n in range(1, 6):
             chip = values.get(f"chip{n}", ""); cc = cells.get(f"chip{n}")
@@ -292,6 +294,90 @@ def parse_edition(audit: Audit, wb: Any, roster: dict[str, Any], publish: bool) 
     return {"slug": roster["slug"], "pageUrl": roster["pageUrl"], "editionNumber": values["Edition Number"], "title": values["Title"], "inSiteMenu": roster["inSiteMenu"], "strapline": values["Strapline"], "metaDescription": meta_description, "heroParagraph1": values["Hero Paragraph 1"], "heroParagraph2": values["Hero Paragraph 2"], "heroParagraph3": values["Hero Paragraph 3"], "heroSignoff": values["Hero Sign-off"], "thingsParagraph": values["Things Paragraph"], "painting": {"url": values["Painting URL"], "alt": values["Painting Alt"], "artist": values["Painting Artist"], "title": values["Painting Title"], "year": values["Painting Year"], "medium": values["Painting Medium"], "collection": values["Painting Collection"], "rights": values["Painting Rights"], "line": values["Painting Line"]}, "photo": photo, "partner": partner, "preFooterHeading": values["Pre-footer Heading"], "preFooterParagraph1": values["Pre-footer Paragraph 1"], "preFooterParagraph2": values["Pre-footer Paragraph 2"], "personName": values["Person Name"], "personRole": values["Person Role"], "artists": artists}
 
 
+# ---------------------------------------------------------------------------
+# Partner pages (17 Oct 2026). Optional "Partner Pages" tab: field labels in
+# column A, one partner page per column from column B. Each partner page reuses
+# an existing Edition's artists and pieces, and overrides the hero, colours,
+# header and footer so the page reads as the partner's own.
+# ---------------------------------------------------------------------------
+PARTNER_TAB = "Partner Pages"
+PARTNER_FIELDS = {
+    "Active (YES/NO)": "active", "Page Slug": "slug", "Base Edition": "baseEdition", "Partner Name": "name",
+    "Partner Logo URL": "logoUrl", "Partner Logo Alt": "logoAlt", "Partner Link URL": "linkUrl", "Back Link Label": "backLabel",
+    "Eyebrow": "eyebrow", "Strapline": "strapline", "Body Paragraph 1": "body1", "Body Paragraph 2": "body2",
+    "Body Paragraph 3": "body3", "Body Paragraph 4": "body4", "Reach Line": "reach", "Sign-off": "signoff",
+    "Photo URL": "photoUrl", "Photo Alt": "photoAlt", "Quote": "quote", "Quote Name": "quoteName", "Quote Role": "quoteRole",
+    "Things Paragraph": "things", "Colour Hero Dark": "heroDark", "Colour Hero Light": "heroLight", "Colour Accent": "accent",
+    "Colour Button": "button", "Title Font": "titleFont", "Footer Line 1": "footer1", "Footer Line 2": "footer2",
+    "Footer Link Label": "footerLinkLabel", "Footer Link URL": "footerLinkUrl", "Concept Banner": "banner",
+}
+HEX_RE = re.compile(r"^#[0-9A-Fa-f]{6}$")
+TITLE_FONTS = {"", "Amatic SC"}
+
+
+def parse_partner_pages(audit: Audit, wb: Any, editions: dict[str, Any]) -> dict[str, Any]:
+    if PARTNER_TAB not in wb.sheetnames:
+        return {}
+    ws = wb[PARTNER_TAB]
+    rows: dict[str, int] = {}
+    for row in range(1, ws.max_row + 1):
+        label = text(ws.cell(row, 1).value)
+        if label in PARTNER_FIELDS:
+            rows[PARTNER_FIELDS[label]] = row
+    missing = [label for label, key in PARTNER_FIELDS.items() if key not in rows]
+    if missing:
+        audit.fatal(ws.title, "A:A", "Partner Pages", "Missing field labels: " + ", ".join(missing)); return {}
+    header_row = next((row for row in range(1, ws.max_row + 1) if norm(ws.cell(row, 1).value) == "field"), None)
+    out: dict[str, Any] = {}
+    for column in range(2, ws.max_column + 1):
+        if header_row and norm(ws.cell(header_row, column).value) == "help":
+            continue
+        values = {key: text(ws.cell(rows[key], column).value) for key in rows}
+        if not any(values.values()):
+            continue
+        where = lambda key: ws.cell(rows[key], column).coordinate
+        active = yesno(values["active"])
+        if active is None:
+            audit.required(ws.title, where("active"), "Active (YES/NO)", "Value must be YES or NO."); continue
+        if not active:
+            continue
+        for key in ("slug", "baseEdition", "name", "linkUrl", "backLabel", "eyebrow", "heroDark", "heroLight", "accent", "button"):
+            if not values[key]:
+                audit.required(ws.title, where(key), key, "Required value is blank.")
+        if values["slug"] and not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", values["slug"]):
+            audit.required(ws.title, where("slug"), "Page Slug", "Use lower-case letters, numbers and hyphens only.")
+        if values["slug"] in editions:
+            audit.required(ws.title, where("slug"), "Page Slug", "Must not match an existing Edition slug.")
+        if values["slug"] in out:
+            audit.required(ws.title, where("slug"), "Page Slug", "Duplicate partner page slug.")
+        if values["baseEdition"] and values["baseEdition"] not in editions:
+            audit.required(ws.title, where("baseEdition"), "Base Edition", "Must be the slug of an active Edition.")
+        for key in ("heroDark", "heroLight", "accent", "button"):
+            if values[key] and not HEX_RE.match(values[key]):
+                audit.required(ws.title, where(key), key, "Colour must be a six-digit hex code like #277F86.")
+        if values["titleFont"] not in TITLE_FONTS:
+            audit.required(ws.title, where("titleFont"), "Title Font", "Leave blank for the Hope font, or use Amatic SC.")
+        for url_key, alt_key, label in (("logoUrl", "logoAlt", "Partner logo"), ("photoUrl", "photoAlt", "Photo")):
+            if bool(values[url_key]) != bool(values[alt_key]):
+                audit.required(ws.title, where(alt_key if values[url_key] else url_key), label, "URL and Alt must be filled together.")
+            if values[url_key] and not https(values[url_key]):
+                audit.required(ws.title, where(url_key), label + " URL", "Must be an absolute https:// URL.")
+        for key in ("linkUrl", "footerLinkUrl"):
+            if values[key] and not https(values[key]):
+                audit.required(ws.title, where(key), key, "Must be an absolute https:// URL.")
+        if not values["photoUrl"]:
+            audit.warn(ws.title, where("photoUrl"), "Photo", "No photo yet; a labelled placeholder shows instead.")
+        if not values["quote"]:
+            audit.warn(ws.title, where("quote"), "Quote", "No quote yet; a labelled placeholder shows instead.")
+        record = {key: entry for key, entry in values.items() if key != "active"}
+        record["pageUrl"] = "/editions/" + values["slug"]
+        record["body"] = [values[k] for k in ("body1", "body2", "body3", "body4") if values[k]]
+        for k in ("body1", "body2", "body3", "body4"):
+            record.pop(k, None)
+        out[values["slug"]] = record
+    return out
+
+
 def prune(value: Any, publish: bool) -> Any:
     if publish: return value
     if isinstance(value, dict): return {key: prune(entry, publish) for key, entry in value.items() if key not in PRICE_KEYS}
@@ -333,7 +419,9 @@ def main() -> int:
         parsed = parse_edition(audit, wb, row, setting["publish"])
         if parsed: editions.append(parsed)
     editions.sort(key=lambda edition: edition["editionNumber"])
-    payload = prune({"generatedFrom": args.workbook.name, "publishPrices": setting["publish"], "images": ASSETS, "navigation": NAV, "footer": FOOTER, "editions": {edition["slug"]: edition for edition in editions}}, setting["publish"])
+    edition_map = {edition["slug"]: edition for edition in editions}
+    partner_pages = parse_partner_pages(audit, wb, edition_map)
+    payload = prune({"generatedFrom": args.workbook.name, "publishPrices": setting["publish"], "images": ASSETS, "navigation": NAV, "footer": FOOTER, "editions": edition_map, "partnerPages": partner_pages}, setting["publish"])
     may_write = not audit.fatals and not audit.force_block and not (args.mode == "strict" and audit.errors)
     output = args.output if may_write else None
     if output: write(output, js(payload, args.workbook.name))

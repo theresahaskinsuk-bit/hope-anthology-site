@@ -66,6 +66,8 @@ PRODUCT = {
     "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"],
     "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"],
     "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"],
+    # Optional (19 Oct 2026): Photo? YES marks a photo, which fills the mount to the grey. Blank = flat artwork on a white mat.
+    "image1Photo": ["image1photo"], "image2Photo": ["image2photo"], "image3Photo": ["image3photo"],
 }
 GROUP = {"name": ["groupname"], "oneLine": ["oneline"], "order": ["grouporder"], "layout": ["layout"]}
 
@@ -394,8 +396,15 @@ def validate_images(audit: Audit, ws: Any, sources: dict[str, Any], values: dict
             audit.required(ws.title, url_cell.coordinate if url_cell else "—", f"Image {number} URL", "Must be an absolute https:// URL.")
         if visible and number == 1 and (not url or not alt):
             audit.required(ws.title, (url_cell if not url else alt_cell).coordinate if (url_cell if not url else alt_cell) else "—", "Image 1", "Visible product requires URL and Alt.")
+        photo_raw = values.get(f"image{number}Photo", "").strip().upper()
+        photo_cell = sources.get(f"image{number}Photo")
+        if photo_raw not in ("", "YES", "NO"):
+            audit.required(ws.title, photo_cell.coordinate if photo_cell else "—", f"Image {number} Photo?", "Must be YES or blank.")
         if url and alt:
-            result.append({"url": url, "alt": alt})
+            image = {"url": url, "alt": alt}
+            if photo_raw == "YES":
+                image["photo"] = True
+            result.append(image)
     return result
 
 
