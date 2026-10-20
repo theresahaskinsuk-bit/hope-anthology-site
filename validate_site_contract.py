@@ -36,7 +36,9 @@ KNOWN_FINDINGS_FILE = "site-contract-known-findings.json"
 # site navigation. Supplementary generated data, such as content.home-recent-
 # artists.js, does not contain navigation and is correctly outside this list.
 ACTIVE_CONTENT_FILES = [
-    "content.collaborate.js",
+    # 21 Oct 2026: /for-artists is now drawn by the artist invitation page (public wording).
+    # The old Collaborate page files stay in the repo as a backup but are no longer loaded.
+    "content.artist-invite.js",
     "content.collective.js",
     "content.for-organisations.js",
     "content.home.js",
@@ -54,8 +56,8 @@ ACTIVE_CONTENT_FILES = [
 # contract. Retired collection renderers and the unused stability loader are
 # intentionally excluded.
 ACTIVE_RENDERER_FILES = [
+    "ha-artist-invite.js",
     "ha-artist-page-template.js",
-    "ha-collaborate.js",
     "ha-collective.js",
     "ha-for-organisations.js",
     "ha-home.js",

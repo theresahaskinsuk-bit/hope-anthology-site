@@ -1,4 +1,6 @@
 /* Hope Anthology artist invitation page (hidden onboarding page), 15 Oct 2026.
+   Since 21 Oct 2026 the same page also draws the public For Artists page (/for-artists),
+   using the public wording in content.artist-invite.js under "publicPage".
    Words live in content.artist-invite.js. Styles live in styles.css under #ha-artist-invite-v1. */
 (function(){
   var top=false;try{top=window.self===window.top;}catch(e){top=false;}
@@ -8,7 +10,8 @@
   var base=url?url.href.replace(/[^/]+(?:\?.*)?$/,''):'';
   var version=url?(url.searchParams.get('v')||Date.now()):Date.now();
   /* The Squarespace page URL(s) this page appears on. */
-  var PATHS=['/artist-invitation'];
+  var PATHS=['/artist-invitation','/for-artists'];
+  var PUBLIC_PATHS=['/for-artists'];
   function normalPath(){return location.pathname.replace(/\/$/,'')||'/';}
   function onPage(){return PATHS.indexOf(normalPath())!==-1;}
   if(!onPage())return;
@@ -51,12 +54,16 @@
   }
   function loadCss(){if(document.querySelector('link[href*="styles.css"]'))return;var l=document.createElement('link');l.rel='stylesheet';l.href=base+'styles.css?v='+encodeURIComponent(version);document.head.appendChild(l);}
   function loadContent(done){if(window.HA_ARTIST_INVITE_CONTENT){done();return;}var s=document.createElement('script');s.src=base+'content.artist-invite.js?v='+encodeURIComponent(version);s.onload=done;s.onerror=function(){console.warn('Hope Anthology artist invitation content could not be loaded.');};document.head.appendChild(s);}
-  function meta(C){var m=C.meta||{};if(m.title)document.title=m.title;if(m.noindex!==false&&!document.querySelector('meta[name="robots"][content*="noindex"]')){var r=document.createElement('meta');r.name='robots';r.content='noindex, nofollow';document.head.appendChild(r);}}
+  function meta(C){var m=C.meta||{};if(m.title)document.title=m.title;if(m.description){var d=document.querySelector('meta[name="description"]');if(!d){d=document.createElement('meta');d.name='description';document.head.appendChild(d);}d.setAttribute('content',m.description);}if(m.noindex!==false&&!document.querySelector('meta[name="robots"][content*="noindex"]')){var r=document.createElement('meta');r.name='robots';r.content='noindex, nofollow';document.head.appendChild(r);}}
   function hideRest(root){document.body.classList.add('ha-artist-invite-active');Array.prototype.forEach.call(document.body.children,function(ch){if(ch===root||ch.contains(root))return;if(/^(SCRIPT|STYLE|LINK|NOSCRIPT)$/.test(ch.tagName))return;ch.setAttribute('data-ha-artist-invite-hidden','true');ch.style.display='none';});}
   function bindNav(root){var t=root.querySelector('.ha-v3-menu-toggle'),menu=root.querySelector('#ha-ai-menu');if(!t||!menu||t.getAttribute('data-bound')==='true')return;t.setAttribute('data-bound','true');
     t.addEventListener('click',function(){var open=t.getAttribute('aria-expanded')==='true';t.setAttribute('aria-expanded',String(!open));t.setAttribute('aria-label',open?'Open menu':'Close menu');root.classList.toggle('ha-v3-menu-open',!open);});
     menu.addEventListener('click',function(ev){if(ev.target&&ev.target.tagName==='A'){t.setAttribute('aria-expanded','false');t.setAttribute('aria-label','Open menu');root.classList.remove('ha-v3-menu-open');}});}
-  function mount(){if(!onPage())return;var C=window.HA_ARTIST_INVITE_CONTENT||{};var ex=document.getElementById('ha-artist-invite-v1');if(ex){hideRest(ex);return;}if(!document.body){setTimeout(mount,150);return;}
+  /* Public For Artists page: lay the publicPage wording over the invitation wording.
+     Objects merge key by key; an object with number keys updates those items of a list; anything else replaces. */
+  function overlay(target,src){if(Array.isArray(src)||src===null||typeof src!=='object')return src;var out=Array.isArray(target)?target.slice():Object.assign({},target||{});Object.keys(src).forEach(function(k){out[k]=overlay(out[k],src[k]);});return out;}
+  function variant(C){return PUBLIC_PATHS.indexOf(normalPath())!==-1&&C.publicPage?overlay(C,C.publicPage):C;}
+  function mount(){if(!onPage())return;var C=variant(window.HA_ARTIST_INVITE_CONTENT||{});var ex=document.getElementById('ha-artist-invite-v1');if(ex){hideRest(ex);return;}if(!document.body){setTimeout(mount,150);return;}
     var box=document.createElement('div');box.innerHTML=html(C);var root=box.firstChild;document.body.insertBefore(root,document.body.firstChild);meta(C);bindNav(root);hideRest(root);}
   loadCss();
   loadContent(function(){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();setTimeout(mount,600);setTimeout(mount,1400);});

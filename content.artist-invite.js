@@ -9,6 +9,9 @@
   - reply: the email link used by the header button, the hero line and the closing button. Blank a label to hide that link.
   - who.photo: Theresa's photo in Who's behind it. Leave url empty for no photo.
   - closing.text: one paragraph per line.
+  - publicPage: the wording for the public For Artists page (/for-artists). Anything listed here replaces the
+    invitation wording on that page only; everything else is shared with /artist-invitation.
+    how.steps "0" means the first step.
 */
 window.HA_ARTIST_INVITE_CONTENT = {
   "meta": {
@@ -240,5 +243,38 @@ window.HA_ARTIST_INVITE_CONTENT = {
     "heroText": "Already curious?",
     "heroLink": "Just reply to my email",
     "buttonLabel": "Reply to Theresa"
+  },
+  "publicPage": {
+    "meta": {
+      "title": "For Artists | The Hope Anthology",
+      "description": "Independent artists can approach The Hope Anthology about work sold through their existing online shop. No charge during R&D, no commission or exclusivity.",
+      "noindex": false
+    },
+    "hero": {
+      "eyebrow": "An open invitation to artists"
+    },
+    "how": {
+      "steps": {
+        "0": {
+          "title": "I look for artists, and artists can get in touch too",
+          "text": "I'm interested in work you already sell through your existing online shop."
+        }
+      }
+    },
+    "closing": {
+      "text": [
+        "I'd genuinely love to know what you think.",
+        "If you think your work might be a good fit for The Hope Anthology, I'd love to hear from you. I spend a lot of time finding and approaching artists myself, but you're very welcome to get in touch with me too.",
+        "There's no commitment at this stage, and you don't need to prepare anything or fill in a big questionnaire. It's simply the start of a conversation, and I'll be choosing which work is included as The Hope Anthology develops.",
+        "Even a quick ‘this sounds interesting, tell me more’ would be brilliant.",
+        "We can take it from there!"
+      ]
+    },
+    "reply": {
+      "navLabel": "Email Theresa",
+      "heroText": "Already curious?",
+      "heroLink": "Just send me an email",
+      "buttonLabel": "Email Theresa"
+    }
   }
 };

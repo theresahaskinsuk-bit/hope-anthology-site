@@ -3603,3 +3603,5 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
   #ha-artist-page-v2.ha-ap-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
   #ha-artist-page-v2 .ha-v3-nav .ha-v3-links a{display:block;padding:12px 0;border-bottom:.5px solid rgba(242,243,239,.12);color:#F2F3EF!important;text-decoration:none!important;}
 }
+/* Artist invitation + For Artists: keep the closing paragraphs to a comfortable reading width — 21 Oct 2026 */
+#ha-artist-invite-v1 .ha-ai-closing p{max-width:680px;margin-left:auto;margin-right:auto;}
