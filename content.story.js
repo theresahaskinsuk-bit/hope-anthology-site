@@ -17,14 +17,6 @@ window.HA_STORY_CONTENT = {
       "label": "The Story",
       "href": "/story",
       "active": true
-    },
-    {
-      "label": "For Artists",
-      "href": "/for-artists"
-    },
-    {
-      "label": "Collective",
-      "href": "/collective"
     }
   ],
   "assets": {
@@ -178,7 +170,7 @@ window.HA_STORY_CONTENT = {
   "footer": {
     "columns": [
       {
-        "title": "Navigate",
+        "title": "Explore",
         "links": [
           {
             "label": "Home",
@@ -195,14 +187,15 @@ window.HA_STORY_CONTENT = {
           {
             "label": "The Story",
             "href": "/story"
-          },
+          }
+        ]
+      },
+      {
+        "title": "Collaborate",
+        "links": [
           {
             "label": "For Artists",
             "href": "/for-artists"
-          },
-          {
-            "label": "Collective",
-            "href": "/collective"
           },
           {
             "label": "For Organisations",
@@ -211,11 +204,19 @@ window.HA_STORY_CONTENT = {
         ]
       },
       {
-        "title": "Connect & legal",
+        "title": "Connect",
         "links": [
           {
+            "label": "Contact",
+            "href": "/contact"
+          },
+          {
+            "label": "Collective",
+            "href": "/collective"
+          },
+          {
             "label": "Instagram",
-            "href": "https://www.instagram.com"
+            "href": "https://www.instagram.com/hopeanthology/"
           },
           {
             "label": "Privacy policy",

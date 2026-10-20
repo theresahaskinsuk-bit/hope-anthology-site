@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-EXPECTED_NAVIGATION = ["To Keep", "To Make", "The Story", "For Artists", "Collective"]
+EXPECTED_NAVIGATION = ["To Keep", "To Make", "The Story"]
 KNOWN_FINDINGS_FILE = "site-contract-known-findings.json"
 
 # Page-level content sources. These are the files that supply a visible page's
@@ -225,7 +225,7 @@ def footer_has_for_organisations(value: Any) -> bool:
     if not isinstance(columns, list):
         return False
     for column in columns:
-        if not isinstance(column, dict) or str(column.get("title", "")).strip() != "Navigate":
+        if not isinstance(column, dict) or str(column.get("title", "")).strip() != "Collaborate":
             continue
         links = column.get("links", [])
         if isinstance(links, list) and any(
@@ -238,7 +238,7 @@ def footer_has_for_organisations(value: Any) -> bool:
 
 def has_data_defined_navigate_column(value: Any) -> bool:
     return isinstance(value, dict) and isinstance(value.get("columns"), list) and any(
-        isinstance(column, dict) and str(column.get("title", "")).strip() == "Navigate"
+        isinstance(column, dict) and str(column.get("title", "")).strip() == "Collaborate"
         for column in value.get("columns", [])
     )
 
@@ -320,6 +320,9 @@ def validate_content(root: Path) -> tuple[list[Finding], dict[str, list[dict[str
 def validate_footers(root: Path, content_records: dict[str, list[dict[str, Any]]]) -> list[Finding]:
     findings: list[Finding] = []
     required_anchor = 'href="/for-organisations">For Organisations</a>'
+    # 20 Oct 2026: three-column footer. For Artists and For Organisations sit under Collaborate;
+    # Collective sits under Connect.
+    required_extras = ['>Collaborate</div>', 'href="/for-artists">For Artists</a>', 'href="/collective">Collective</a>']
     for relative in ACTIVE_RENDERER_FILES:
         path = root / relative
         if not path.is_file():
@@ -336,13 +339,17 @@ def validate_footers(root: Path, content_records: dict[str, list[dict[str, Any]]
             footer = records[0].get("footer")
             if not has_data_defined_navigate_column(footer):
                 findings.append(
-                    Finding("ERROR", "footer", relative, f"{content_file} has no data-defined Navigate column to validate."))
+                    Finding("ERROR", "footer", relative, f"{content_file} has no data-defined Collaborate column to validate."))
             elif not footer_has_for_organisations(footer):
                 findings.append(
-                    Finding("ERROR", "footer", relative, f"{content_file} Footer Navigate column is missing exact label 'For Organisations'."))
+                    Finding("ERROR", "footer", relative, f"{content_file} Footer Collaborate column is missing exact label 'For Organisations'."))
         elif required_anchor not in source:
             findings.append(
-                Finding("ERROR", "footer", relative, "Footer Navigate column is missing exact anchor label 'For Organisations'."))
+                Finding("ERROR", "footer", relative, "Footer Collaborate column is missing exact anchor label 'For Organisations'."))
+        if relative not in DATA_DRIVEN_FOOTERS:
+            for token in required_extras:
+                if token not in source:
+                    findings.append(Finding("ERROR", "footer", relative, f"Three-column footer is missing {token!r}."))
     for relative in ARTIST_BOOTSTRAP_FILES:
         source = (root / relative).read_text(encoding="utf-8") if (root / relative).is_file() else ""
         if not source:
@@ -504,9 +511,9 @@ def markdown_report(status: dict[str, str], new_findings: list[Finding], pre_exi
         "## Checks",
         "",
         "1. Fresh remote baseline is fetched and is an ancestor of the current checkout.",
-        "2. Every active page content file has the exact navigation labels: To Keep, To Make, The Story, For Artists, Collective.",
+        "2. Every active page content file has the exact navigation labels: To Keep, To Make, The Story.",
         "3. Every active page's To Make navigation destination is `/to-make`.",
-        "4. Every visible Footer Navigate column contains the exact label `For Organisations`.",
+        "4. Every standard footer has a Collaborate column (For Artists, For Organisations) and a Collective link.",
         "5. The standalone Editions registry has valid `/editions/<slug>` routes, generated counts, and no public price output while publication prices are NO.",
         "6. The standalone Edition renderer has its root and the approved shared-style minimal footer (Home, Contact, Privacy policy, Accessibility; no Instagram).",
         "",

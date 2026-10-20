@@ -39,8 +39,6 @@ NAV = [
     {"label": "To Keep", "url": "/to-keep"},
     {"label": "To Make", "url": "/to-make"},
     {"label": "The Story", "url": "/story"},
-    {"label": "For Artists", "url": "/for-artists"},
-    {"label": "Collective", "url": "/collective"},
 ]
 FOOTER = {"privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"}
 COLLECTIVE = {"heading": "Something worth being part of.", "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"}

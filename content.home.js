@@ -16,9 +16,7 @@ window.HA_HOME_CONTENT = {
     navigation: [
     { label: 'To Keep', url: '/to-keep' },
     { label: 'To Make', url: '/to-make' },
-    { label: 'The Story', url: '/story' },
-    { label: 'For Artists', url: '/for-artists' },
-    { label: 'Collective', url: '/collective' }
+    { label: 'The Story', url: '/story' }
   ],
 
   hero: {

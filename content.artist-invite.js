@@ -31,14 +31,6 @@ window.HA_ARTIST_INVITE_CONTENT = {
     {
       "label": "The Story",
       "url": "/story"
-    },
-    {
-      "label": "For Artists",
-      "url": "/for-artists"
-    },
-    {
-      "label": "Collective",
-      "url": "/collective"
     }
   ],
   "footer": {

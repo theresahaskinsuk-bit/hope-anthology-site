@@ -198,8 +198,8 @@
       '<footer class="ha-v3-footer">' +
         '<div class="ha-v3-footer-top">' +
           '<img class="ha-v3-footer-star" src="' + image(content, 'star') + '" alt="">' +
-          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Navigate</div><a href="/">Home</a>' + navLinks(content.navigation)+'<a href="/for-organisations">For Organisations</a>' + '</div>' +
-          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="/contact">Contact</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a>' +
+          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Explore</div><a href="/">Home</a>' + navLinks(content.navigation)+'</div><div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Collaborate</div><a href="/for-artists">For Artists</a><a href="/for-organisations">For Organisations</a>' + '</div>' +
+          '<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect</div><a href="/contact">Contact</a><a href="/collective">Collective</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a>' +
             '' +
             '<a href="/privacy">Privacy policy</a>' +
             '<a href="/accessibility">Accessibility</a>' +

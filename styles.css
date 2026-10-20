@@ -3585,3 +3585,21 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 #ha-artist-invite-v1 .ha-ai-closing p+p{margin-top:8px;}
 #ha-artist-invite-v1 .ha-ai-copy .ha-ai-who-inline{font:italic 400 clamp(20px,1.8vw,23px)/1.4 'Lora',Georgia,serif;color:var(--teal);margin:24px 0!important;}
 #ha-artist-invite-v1 .ha-ai-why-line{margin-bottom:24px!important;}
+
+/* ============================================================
+   Footer: three columns (Explore · Collaborate · Connect) — 20 Oct 2026 (Claude)
+   Header navigation is now To Keep · To Make · The Story on every page.
+   ============================================================ */
+@media(min-width:901px){
+  :is(#ha-home-v3,#ha-collective-v1,#ha-story-v1,#ha-keep-collection-v1,#ha-make-template-v1,#ha-collaborate-v1,#ha-why-v1,#ha-info-template-v1,#ha-to-keep-v1,#ha-to-make-route,#ha-artist-page-v1,#ha-artist-page-v2,#ha-for-organisations-v1,#ha-contact-v1,#ha-artist-invite-v1) .ha-v3-footer-top{grid-template-columns:36px repeat(3,max-content)!important;column-gap:96px!important;justify-content:start!important;}
+}
+/* Artist pages (v2) mobile menu: the open state was only styled for the old v1 root, so the burger did nothing — 20 Oct 2026 */
+#ha-artist-page-v2.ha-ap-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+#ha-artist-page-v2.ha-ap-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
+#ha-artist-page-v2.ha-ap-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+@media(max-width:900px){
+  #ha-artist-page-v2 .ha-v3-nav{position:relative;}
+  #ha-artist-page-v2 .ha-v3-nav .ha-v3-links{position:absolute;top:100%;left:0;right:0;display:flex!important;flex-direction:column;align-items:stretch;gap:0;background:#265b70;border-top:.5px solid rgba(242,243,239,.18);padding:8px 24px 18px;opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .18s ease,visibility .18s ease,transform .18s ease;z-index:20;}
+  #ha-artist-page-v2.ha-ap-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+  #ha-artist-page-v2 .ha-v3-nav .ha-v3-links a{display:block;padding:12px 0;border-bottom:.5px solid rgba(242,243,239,.12);color:#F2F3EF!important;text-decoration:none!important;}
+}

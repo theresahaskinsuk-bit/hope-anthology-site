@@ -106,8 +106,8 @@
     const sections = (c.sections||[]).map(sectionHtml).join('');
     const nutshell = nutshellHtml(c.nutshell);
     const footerCols = (c.footer?.columns||[]).map(col=>{
-      if (col.title === 'Connect & legal') {
-        return `<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect &amp; legal</div><a href="/contact">Contact</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a><a href="/privacy">Privacy policy</a><a href="/accessibility">Accessibility</a></div>`;
+      if (col.title === 'Connect & legal' || col.title === 'Connect') {
+        return `<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">Connect</div><a href="/contact">Contact</a><a href="/collective">Collective</a><a href="https://www.instagram.com/hopeanthology/" target="_blank" rel="noopener" aria-label="Instagram (opens in a new tab)">Instagram</a><a href="/privacy">Privacy policy</a><a href="/accessibility">Accessibility</a></div>`;
       }
       return `<div class="ha-v3-footer-col"><div class="ha-v3-footer-title">${esc(col.title)}</div>${(col.links||[]).map(l=>`<a href="${esc(l.href)}">${esc(l.label)}</a>`).join('')}</div>`;
     }).join('');
