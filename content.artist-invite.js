@@ -6,6 +6,9 @@
   - Text marks: **bold**, _italic_. A line break inside a short label is \n.
   - Edition block: set "show" to false to hide it, or change the words, link and image for a new Edition.
     Leave image "url" empty for no screenshot.
+  - reply: the email link used by the header button, the hero line and the closing button. Blank a label to hide that link.
+  - who.photo: Theresa's photo in Who's behind it. Leave url empty for no photo.
+  - closing.text: one paragraph per line.
 */
 window.HA_ARTIST_INVITE_CONTENT = {
   "meta": {
@@ -188,6 +191,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
       "This is the first of what I hope will be many Editions, each exploring a different part of human experience.",
       "_For Reasons of Your Own_ is about change, identity and becoming yourself again after leaving alcohol behind.",
       "The artwork doesn't need to mention sobriety at all. I'm interested in work that might mean something to someone who's left alcohol behind, whether they're finding their feet or feeling proud of how far they've come.",
+      "The reasons I choose something are mine as a curator. The meaning someone finds in it is entirely their own.",
       "I've built a working version, which is probably the easiest way to show you what I mean!"
     ],
     "button": {
@@ -221,11 +225,28 @@ window.HA_ARTIST_INVITE_CONTENT = {
     "line": "Trying to get your art seen isn't new. What's expected of artists is.",
     "after": [
       "I want The Hope Anthology to have good roots before it grows. I'm not pretending I know exactly what it should become. I'd rather learn from the artists involved and let that help shape how it develops — without giving you another job to do!"
-    ]
+    ],
+    "photo": {
+      "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1317f08c-50f4-4c42-82d7-ea72a72f1972/theresa-haskins-founder-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+      "alt": "Theresa Haskins, founder of The Hope Anthology"
+    }
   },
   "closing": {
     "eyebrow": "If this feels like something for you",
     "title": "Fancy a chat?",
-    "text": "If this sounds interesting, just reply to my email. We can talk it through — no pressure."
+    "text": [
+      "I'd genuinely love to know what you think.",
+      "If I've been in touch about your work and this sounds like something you might like to be involved in, just drop me a reply.",
+      "There's no commitment at this stage, and you don't need to prepare anything or fill in a big questionnaire.",
+      "Even a quick “this sounds interesting, tell me more” would be brilliant.",
+      "We can take it from there!"
+    ]
+  },
+  "reply": {
+    "url": "mailto:theresa@thehopeanthology.art?subject=The%20Hope%20Anthology",
+    "navLabel": "Reply to Theresa",
+    "heroText": "Already curious?",
+    "heroLink": "Just reply to my email",
+    "buttonLabel": "Reply to Theresa"
   }
 };
