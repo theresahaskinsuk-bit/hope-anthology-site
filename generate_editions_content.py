@@ -201,12 +201,12 @@ def parse_artists(audit: Audit, ws: Any, header: int, pieces_header: int) -> lis
 
 
 def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any]], publish: bool) -> None:
-    fields = {"active": ["active"], "artist": ["artistslug"], "pieceOrder": ["pieceorder"], "title": ["piecetitle"], "world": ["world"], "status": ["status"], "medium": ["medium"], "price": ["pricenumberonly", "price"], "listingUrl": ["listingurl"], "featured": ["featured"], "meaning": ["meaning"], "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"], "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"], "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"], "image1Photo": ["image1photo"], "image2Photo": ["image2photo"], "image3Photo": ["image3photo"]}
+    fields = {"active": ["active"], "artist": ["artistslug"], "pieceOrder": ["pieceorder"], "title": ["piecetitle"], "world": ["world"], "status": ["status"], "medium": ["medium"], "price": ["pricenumberonly", "price"], "listingUrl": ["listingurl"], "featured": ["featured"], "meaning": ["meaning"], "chip1": ["chip1"], "chip2": ["chip2"], "chip3": ["chip3"], "chip4": ["chip4"], "chip5": ["chip5"], "image1Url": ["image1url"], "image1Alt": ["image1alt"], "image2Url": ["image2url"], "image2Alt": ["image2alt"], "image3Url": ["image3url"], "image3Alt": ["image3alt"], "notes": ["notes"], "image1Photo": ["image1photo"], "image2Photo": ["image2photo"], "image3Photo": ["image3photo"], "placeholder": ["placeholder"]}
     headers = hmap(ws, header); mapping: dict[str, tuple[int, Any]] = {}
     for key, aliases in fields.items():
         found = next((headers[name] for name in aliases if name in headers), None)
         if found: mapping[key] = found
-        elif not key.endswith("Photo"): audit.fatal(ws.title, str(header), key, "Required Pieces header is missing or renamed.")
+        elif not key.endswith("Photo") and key != "placeholder": audit.fatal(ws.title, str(header), key, "Required Pieces header is missing or renamed.")
     if any(re.fullmatch(r"chip[6-9]\d*", name) for name in headers): audit.required(ws.title, str(header), "Chips", "More than 5 Chip columns are not allowed.")
     by_artist = {artist["slug"]: artist for artist in artists}; seen: dict[str, set[int]] = {slug: set() for slug in by_artist}
     for row in range(header + 1, ws.max_row + 1):
@@ -251,6 +251,8 @@ def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any
         if order in seen[values["artist"]]: audit.required(ws.title, cells["pieceOrder"].coordinate if cells.get("pieceOrder") else str(row), "PieceOrder", f"Duplicate visible PieceOrder for {values['artist']}.")
         seen[values["artist"]].add(order)
         piece = {"active": active, "pieceOrder": order, "title": values.get("title", ""), "world": values.get("world", ""), "status": status, "medium": values.get("medium", ""), "listingUrl": values.get("listingUrl", ""), "meaning": values.get("meaning", ""), "featured": values.get("featured", "").upper() == "YES", "chips": chips, "images": images, "notes": values.get("notes", "")}
+        # Optional (21 Oct 2026): Placeholder? YES shows the demonstration label on the card (stock/sample images while artists are recruited).
+        if values.get("placeholder", "").strip().upper() == "YES": piece["placeholder"] = True
         if publish and cost is not None: piece.update({"price": "£" + format(cost.quantize(Decimal("0.01")), ".2f"), "priceNumber": float(cost)})
         by_artist[values["artist"]]["pieces"].append(piece)
     for artist in artists:
