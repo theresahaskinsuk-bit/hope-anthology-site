@@ -224,7 +224,9 @@ def parse_pieces(audit: Audit, ws: Any, header: int, artists: list[dict[str, Any
                 if not values.get(key): audit.required(ws.title, cells[key].coordinate if cells.get(key) else str(row), label, "Required visible piece value is blank.")
             if posint(values.get("pieceOrder")) is None: audit.required(ws.title, cells["pieceOrder"].coordinate if cells.get("pieceOrder") else str(row), "PieceOrder", "Must be a positive whole number.")
             if values.get("world") not in {"To Keep", "To Make"}: audit.required(ws.title, cells["world"].coordinate if cells.get("world") else str(row), "World", "Must be exactly To Keep or To Make.")
-            if not https(values.get("listingUrl")): audit.required(ws.title, cells["listingUrl"].coordinate if cells.get("listingUrl") else str(row), "Listing URL", "Must be an absolute https:// URL.")
+            # 21 Oct 2026: "#" means no shop link yet (demo cards, or an artist whose listing isn't ready). The card's link then does nothing.
+            if values.get("listingUrl") == "#": audit.warn(ws.title, cells["listingUrl"].coordinate if cells.get("listingUrl") else str(row), "Listing URL", "No shop link yet (#). The card's shop link will do nothing until a real https:// link is added.")
+            elif not https(values.get("listingUrl")): audit.required(ws.title, cells["listingUrl"].coordinate if cells.get("listingUrl") else str(row), "Listing URL", "Must be an absolute https:// URL.")
         images: list[dict[str, str]] = []
         for n in range(1, 4):
             u, al = values.get(f"image{n}Url", ""), values.get(f"image{n}Alt", "")
