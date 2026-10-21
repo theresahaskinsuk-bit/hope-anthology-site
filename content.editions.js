@@ -149,7 +149,7 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Handmade textured ceramic bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
@@ -170,7 +170,7 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Handmade textured ceramic bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
@@ -191,7 +191,7 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Handmade textured ceramic vase",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
@@ -212,7 +212,7 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Handmade textured ceramic serving bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": true,
               "chips": [],
               "images": [
@@ -229,27 +229,28 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "active": true,
-          "slug": "artist-c",
+          "slug": "artist-f",
           "artistOrder": 3,
-          "name": "Artist C",
-          "layout": "Feature and two beside",
+          "name": "Artist F",
+          "layout": "Two side by side",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "active": true,
               "pieceOrder": 1,
-              "title": "Artist C — Piece 1",
-              "world": "To Keep",
+              "title": "Artist F — Piece 1",
+              "world": "To Make",
               "status": "available",
-              "medium": "Print of mixed-media painting",
+              "medium": "Kinusaiga fabric art kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": true,
+              "meaning": "",
+              "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/76db4a31-4b86-4677-ad16-6388f5dbae16/Art_C_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 1",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -258,38 +259,19 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 2,
-              "title": "Artist C — Piece 2",
-              "world": "To Keep",
+              "title": "Artist F — Piece 2",
+              "world": "To Make",
               "status": "available",
-              "medium": "Print of mixed-media painting",
+              "medium": "Kinusaiga fabric art kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/55928f30-38dd-4c0d-880f-35f6681f2ed9/Art_C_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 2"
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Artist C — Piece 3",
-              "world": "To Keep",
-              "status": "available",
-              "medium": "Print of mixed-media painting",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/a942dd2b-dc1a-4cba-8c8b-7cf0b4a73420/Art_C_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 2",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -372,28 +354,27 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "active": true,
-          "slug": "artist-f",
+          "slug": "artist-c",
           "artistOrder": 5,
-          "name": "Artist F",
-          "layout": "Two side by side",
+          "name": "Artist C",
+          "layout": "Feature and two beside",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "active": true,
               "pieceOrder": 1,
-              "title": "Artist F — Piece 1",
-              "world": "To Make",
+              "title": "Artist C — Piece 1",
+              "world": "To Keep",
               "status": "available",
-              "medium": "Kinusaiga fabric art kit",
+              "medium": "Print of mixed-media painting",
               "listingUrl": "https://thehopeanthology.art",
               "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
+              "featured": true,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 1",
-                  "photo": true
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/76db4a31-4b86-4677-ad16-6388f5dbae16/Art_C_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 1"
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -402,19 +383,38 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 2,
-              "title": "Artist F — Piece 2",
-              "world": "To Make",
+              "title": "Artist C — Piece 2",
+              "world": "To Keep",
               "status": "available",
-              "medium": "Kinusaiga fabric art kit",
+              "medium": "Print of mixed-media painting",
               "listingUrl": "https://thehopeanthology.art",
               "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 2",
-                  "photo": true
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/55928f30-38dd-4c0d-880f-35f6681f2ed9/Art_C_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 2"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist C — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of mixed-media painting",
+              "listingUrl": "https://thehopeanthology.art",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/a942dd2b-dc1a-4cba-8c8b-7cf0b4a73420/Art_C_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 3"
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
