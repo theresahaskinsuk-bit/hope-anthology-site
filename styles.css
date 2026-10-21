@@ -3622,3 +3622,16 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 #ha-edition-v1 .is-small .ha-ed-demo-kicker::after{width:14px;margin:3px auto 1px;}
 #ha-edition-v1 .is-small .ha-ed-demo-title{font-size:9.5px;letter-spacing:.04em;white-space:nowrap;}
 #ha-edition-v1 .is-small .ha-ed-demo-sub{font-size:9px;line-height:1.25;}
+
+/* ============================================================
+   Edition cards close up when empty — 21 Oct 2026 (Claude)
+   No medium or single image: the title moves up under the image.
+   "Two side by side": the two cards share the artist's full width.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-card-mount + .ha-ed-medium-row{margin-top:12px;}
+#ha-edition-v1 .ha-ed-card-mount + h3{margin-top:14px;}
+#ha-edition-v1 .ha-ed-layout-two-side-by-side{grid-template-columns:repeat(2,minmax(0,1fr));}
+#ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-label{padding:10px 14px;gap:2px;}
+#ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-kicker{font-size:8px;}
+#ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-title{font-size:12px;}
+#ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-sub{font-size:11px;}

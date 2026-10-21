@@ -77,9 +77,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist B — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of acrylic painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
               "chips": [],
               "images": [
@@ -97,9 +97,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist B — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of acrylic painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -117,9 +117,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist B — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of acrylic painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -147,15 +147,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist D — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Handmade textured ceramic bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/aa1a84d0-f151-4603-9a47-039a8d64018e/Art_D_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 1"
+                  "alt": "Demonstration placeholder image for Artist D, piece 1",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -167,15 +168,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist D — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Handmade textured ceramic bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/07db4346-856c-42d9-903d-a3d0bcfca293/Art_D_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 2"
+                  "alt": "Demonstration placeholder image for Artist D, piece 2",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -187,15 +189,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist D — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Handmade textured ceramic vase",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8d1c33cd-a665-4310-83f8-e1cd121f065a/Art_D_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 3"
+                  "alt": "Demonstration placeholder image for Artist D, piece 3",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -207,15 +210,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist D — Piece 4",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Handmade textured ceramic serving bowl",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
               "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 4"
+                  "alt": "Demonstration placeholder image for Artist D, piece 4",
+                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
@@ -237,9 +241,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of mixed-media painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
               "chips": [],
               "images": [
@@ -257,9 +261,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of mixed-media painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -277,9 +281,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "",
+              "medium": "Print of mixed-media painting",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -295,10 +299,83 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "active": true,
-          "slug": "artist-f",
+          "slug": "artist-g",
           "artistOrder": 4,
+          "name": "Artist G",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist G — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass bowl",
+              "listingUrl": "https://thehopeanthology.art",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/725464e3-befb-49bd-bc71-00495e48e5b1/Art_G_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist G — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass jar",
+              "listingUrl": "https://thehopeanthology.art",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d2aaef36-76bb-44d3-b791-3bc96c144da9/Art_G_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist G — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass jug",
+              "listingUrl": "https://thehopeanthology.art",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/e334f296-bd09-4dcd-8802-0e6b095e1dfd/Art_G_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 3",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-f",
+          "artistOrder": 5,
           "name": "Artist F",
-          "layout": "Three above feature below",
+          "layout": "Two side by side",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
@@ -307,14 +384,14 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist F — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Kinusaiga fabric art kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/02858940-3aad-4e94-94eb-a6e786ee613b/Art_F_Temp_Img_1.jpg",
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
                   "alt": "Demonstration placeholder image for Artist F, piece 1",
                   "photo": true
                 }
@@ -328,57 +405,15 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist F — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Kinusaiga fabric art kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/e70216dc-17a9-425b-b521-8728a4f3fc50/Art_F_Temp_Img_2.jpg",
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
                   "alt": "Demonstration placeholder image for Artist F, piece 2",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Artist F — Piece 3",
-              "world": "To Make",
-              "status": "available",
-              "medium": "",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/936126ee-6e35-47a5-9f77-c06419b4bcb1/Art_F_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 3",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 4,
-              "title": "Artist F — Piece 4",
-              "world": "To Make",
-              "status": "available",
-              "medium": "",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
-              "featured": true,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/ac9de155-5a57-4082-8a82-388e1fa238c3/Art_F_Temp_Img_4.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 4",
                   "photo": true
                 }
               ],
@@ -390,7 +425,7 @@ window.HA_EDITIONS_CONTENT = {
         {
           "active": true,
           "slug": "artist-e",
-          "artistOrder": 5,
+          "artistOrder": 6,
           "name": "Artist E",
           "layout": "Three above feature and one below",
           "whyLine": "A few words from the artist about their work.",
@@ -401,9 +436,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist E — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Hand-building pottery kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -422,9 +457,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist E — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Hand-building pottery kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -443,9 +478,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist E — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Hand-building pottery kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
@@ -464,9 +499,9 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist E — Piece 4",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Hand-building pottery kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
               "chips": [],
               "images": [
@@ -485,88 +520,15 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist E — Piece 5",
               "world": "To Make",
               "status": "available",
-              "medium": "",
+              "medium": "Hand-building pottery kit",
               "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
+              "meaning": "A few words from the artist about this piece will go here.",
               "featured": false,
               "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/31c13665-0aec-40ad-850b-541dc4f29caa/Art_E_Temp_Img_5.jpg",
                   "alt": "Demonstration placeholder image for Artist E, piece 5",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            }
-          ]
-        },
-        {
-          "active": true,
-          "slug": "artist-g",
-          "artistOrder": 6,
-          "name": "Artist G",
-          "layout": "Feature and two beside",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "active": true,
-              "pieceOrder": 1,
-              "title": "Artist G — Piece 1",
-              "world": "To Make",
-              "status": "available",
-              "medium": "",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
-              "featured": true,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/725464e3-befb-49bd-bc71-00495e48e5b1/Art_G_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 1",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 2,
-              "title": "Artist G — Piece 2",
-              "world": "To Make",
-              "status": "available",
-              "medium": "",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d2aaef36-76bb-44d3-b791-3bc96c144da9/Art_G_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 2",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Artist G — Piece 3",
-              "world": "To Make",
-              "status": "available",
-              "medium": "",
-              "listingUrl": "https://thehopeanthology.art",
-              "meaning": "",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/e334f296-bd09-4dcd-8802-0e6b095e1dfd/Art_G_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 3",
                   "photo": true
                 }
               ],
