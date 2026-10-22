@@ -185,7 +185,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
     "paragraphs": [
       "This is the first of what I hope will be many Editions, each exploring a different part of human experience.",
       "_For Reasons of Your Own_ is about change, identity and becoming yourself again after leaving alcohol behind.",
-      "The work doesn't need to mention sobriety at all. I'm interested in art, and things to make, that might mean something to someone because of their own experiences — a reminder of how far they've come, something to get lost in while sitting with all the feelings, or a way to celebrate a milestone.",
+      "The work doesn't need to mention sobriety at all. I'm interested in art, to keep and to make, that might mean something to someone because of their own experiences — a reminder of how far they've come, something to get lost in while sitting with all the feelings, or a way to celebrate a milestone.",
       "The reasons I choose something are mine as a curator. The meaning someone finds in it is entirely their own.",
       "I've built a working version, which is probably the easiest way to show you what I mean!"
     ],
