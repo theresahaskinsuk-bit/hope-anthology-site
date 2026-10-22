@@ -125,8 +125,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
       "items": [
         "Agree which pieces to include",
         "Send me any existing images or details I need",
-        "Review and approve everything before it goes live",
-        "Let me know if something sells out"
+        "Review and approve everything before it goes live"
       ]
     },
     "me": {
