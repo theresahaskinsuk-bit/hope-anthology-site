@@ -185,7 +185,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
     "paragraphs": [
       "This is the first of what I hope will be many Editions, each exploring a different part of human experience.",
       "_For Reasons of Your Own_ is about change, identity and becoming yourself again after leaving alcohol behind.",
-      "The artwork doesn't need to mention sobriety at all. I'm interested in work that might mean something to someone who's left alcohol behind, whether they're finding their feet or feeling proud of how far they've come.",
+      "The work doesn't need to mention sobriety at all. I'm interested in art, and things to make, that might mean something to someone because of their own experiences — a reminder of how far they've come, something to get lost in while sitting with all the feelings, or a way to celebrate a milestone.",
       "The reasons I choose something are mine as a curator. The meaning someone finds in it is entirely their own.",
       "I've built a working version, which is probably the easiest way to show you what I mean!"
     ],
@@ -194,7 +194,7 @@ window.HA_ARTIST_INVITE_CONTENT = {
       "url": "/editions/for-reasons-of-your-own"
     },
     "image": {
-      "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8ea73c6b-7a45-4fd7-8c40-027a8305a495/reasons-of-your-own-hope-anthology.jpg?content-type=image%2Fjpeg",
+      "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bf8221ef-bd40-4070-8649-ba85b4e3ab0b/reasons-of-your-own-hope-anthology-sober.jpg?content-type=image%2Fjpeg",
       "alt": "A screenshot of the For Reasons of Your Own Edition page",
       "caption": ""
     }
