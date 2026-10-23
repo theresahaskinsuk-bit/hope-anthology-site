@@ -3649,3 +3649,10 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 #ha-edition-v1 .ha-ed-next{display:flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;border:.5px solid rgba(54,68,73,.22);border-radius:50%;background:#fff;color:var(--teal);font-size:15px;line-height:1;cursor:pointer;}
 #ha-edition-v1 .ha-ed-next:hover{border-color:var(--teal);}
 #ha-edition-v1 .ha-ed-next:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+
+/* ============================================================
+   Bigger chips on Edition cards — 23 Oct 2026 (Claude)
+   Edition pages only (artist pages unchanged for now).
+   ============================================================ */
+#ha-edition-v1 .ha-ed-chips span{font-size:12px;padding:5px 8px;}
+#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-chips span{font-size:11px;padding:4px 7px;}
