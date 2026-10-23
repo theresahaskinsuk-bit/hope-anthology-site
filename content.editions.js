@@ -81,7 +81,13 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "Colour lovers",
+                "Blank walls",
+                "Just because",
+                "Knowing",
+                "Every day"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/de8cd342-66ac-425f-bbc4-8a16497688fe/Art_B_Temp_Img_1.jpg",
@@ -214,11 +220,25 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "For sharing",
+                "Everyday favourite",
+                "The tactile type"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
                   "alt": "Demonstration placeholder image for Artist D, piece 4",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/df8afd4d-5839-4612-8851-6c6f75fc84ec/Art_D_Temp_Img_slice.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 4: a slice of the bowl",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/3993d306-b4a0-4d00-a9dc-22200742fd1d/Art_D_Temp_Img_kiln.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 4: the bowl by a kiln",
                   "photo": true
                 }
               ],
@@ -245,7 +265,11 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
-              "chips": [],
+              "chips": [
+                "Play again",
+                "Sitting with it",
+                "In your hands"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
@@ -551,15 +575,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -570,15 +595,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -589,15 +615,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -608,19 +635,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 4",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 4"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -631,15 +655,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 5",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 5"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -660,19 +685,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -683,15 +705,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -702,15 +725,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -731,15 +755,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -750,15 +775,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -769,15 +795,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -798,19 +825,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -821,15 +845,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -840,15 +865,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -869,15 +895,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -888,15 +915,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -907,15 +935,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -926,19 +955,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 4",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 4"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -949,15 +975,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 5",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 5"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1021,7 +1048,13 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "A few words from the artist about this piece will go here.",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "Colour lovers",
+                "Blank walls",
+                "Just because",
+                "Knowing",
+                "Every day"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/de8cd342-66ac-425f-bbc4-8a16497688fe/Art_B_Temp_Img_1.jpg",
@@ -1154,11 +1187,25 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "For sharing",
+                "Everyday favourite",
+                "The tactile type"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
                   "alt": "Demonstration placeholder image for Artist D, piece 4",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/df8afd4d-5839-4612-8851-6c6f75fc84ec/Art_D_Temp_Img_slice.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 4: a slice of the bowl",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/3993d306-b4a0-4d00-a9dc-22200742fd1d/Art_D_Temp_Img_kiln.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 4: the bowl by a kiln",
                   "photo": true
                 }
               ],
@@ -1185,7 +1232,11 @@ window.HA_EDITIONS_CONTENT = {
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
-              "chips": [],
+              "chips": [
+                "Play again",
+                "Sitting with it",
+                "In your hands"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
@@ -1491,15 +1542,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1510,15 +1562,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1529,15 +1582,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1548,19 +1602,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 4",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 4"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1571,15 +1622,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist H — Piece 5",
               "world": "To Keep",
               "status": "available",
-              "medium": "Giclée print",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist H — Piece 5"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1600,19 +1652,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1623,15 +1672,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1642,15 +1692,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist I — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist I — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1671,15 +1722,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1690,15 +1742,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1709,15 +1762,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist J — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist J — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1738,19 +1792,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1761,15 +1812,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1780,15 +1832,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist K — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Enamel jewellery",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist K — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1809,15 +1862,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 1",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1828,15 +1882,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 2",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1847,15 +1902,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 3",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1866,19 +1922,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 4",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A short line from the artist about what this piece is for.",
+              "meaning": "",
               "featured": true,
-              "chips": [
-                "A reminder",
-                "Quietly hopeful",
-                "Early days"
-              ],
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 4"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
@@ -1889,15 +1942,16 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist L — Piece 5",
               "world": "To Make",
               "status": "available",
-              "medium": "Craft kit",
+              "medium": "Medium",
               "listingUrl": "#",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
-                  "alt": "Placeholder image for Artist L — Piece 5"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/65fe08d6-297f-4291-b92f-dc67ae236ef3/artist-curation-in-progress-to-make-light-gold.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
               "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."

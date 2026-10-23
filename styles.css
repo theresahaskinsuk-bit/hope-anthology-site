@@ -3635,3 +3635,17 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 #ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-kicker{font-size:8px;}
 #ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-title{font-size:12px;}
 #ha-edition-v1 .ha-ed-layout-two-side-by-side .ha-ed-demo-sub{font-size:11px;}
+
+/* ============================================================
+   Clickable card images — 23 Oct 2026 (Claude)
+   The image opens the same shop link as "See it in the artist's shop".
+   Pieces with 2–3 images get a small arrow button beside the image counter to show the next image.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-art-link{display:block;cursor:pointer;}
+#ha-edition-v1 .ha-ed-art-link[data-ha-no-link]{cursor:default;}
+#ha-edition-v1 .ha-ed-art.is-single,#ha-edition-v1 .ha-ed-art.has-pile{cursor:inherit;}
+#ha-edition-v1 .ha-ed-count-row{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin:8px 0 6px;}
+#ha-edition-v1 .ha-ed-count-row .ha-ed-count{margin:0;height:auto;}
+#ha-edition-v1 .ha-ed-next{display:flex;align-items:center;justify-content:center;width:28px;height:28px;padding:0;border:.5px solid rgba(54,68,73,.22);border-radius:50%;background:#fff;color:var(--teal);font-size:15px;line-height:1;cursor:pointer;}
+#ha-edition-v1 .ha-ed-next:hover{border-color:var(--teal);}
+#ha-edition-v1 .ha-ed-next:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
