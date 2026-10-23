@@ -408,9 +408,9 @@ def validate_standalone_edition(root: Path) -> list[Finding]:
         number = str(edition.get("editionNumber", ""))
         if not number:
             findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} has no editionNumber."))
-        elif number in seen_numbers:
+        elif number in seen_numbers and edition.get("preview") is not True:  # 22 Oct 2026: a hidden preview copy may share its Edition's number
             findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Duplicate Edition number: {number}."))
-        seen_numbers.add(number)
+        if edition.get("preview") is not True: seen_numbers.add(number)
         artists = edition.get("artists")
         if not isinstance(artists, list) or not artists:
             findings.append(Finding("ERROR", "standalone-edition", STANDALONE_EDITION_CONTENT_FILE, f"Edition {slug!r} has no artists."))

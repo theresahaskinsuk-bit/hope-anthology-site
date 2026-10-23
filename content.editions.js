@@ -965,6 +965,946 @@ window.HA_EDITIONS_CONTENT = {
           ]
         }
       ]
+    },
+    "for-reasons-of-your-own-preview": {
+      "slug": "for-reasons-of-your-own-preview",
+      "pageUrl": "/editions/for-reasons-of-your-own-preview",
+      "editionNumber": "01",
+      "title": "For Reasons of Your Own",
+      "inSiteMenu": false,
+      "preview": true,
+      "strapline": "An edition for change and becoming you again.",
+      "metaDescription": "",
+      "heroParagraph1": "A sobriety journey can hold a lot at once (I know). Huge change, pride, discomfort, clarity, pain, relief — the list goes on. And somewhere in all of that can come a *growing sense of who you are* without the thing you’ve left behind.",
+      "heroParagraph2": "This edition brings together art and making to sit alongside that — for reasons that *mean something to you,* even if nobody else needs to understand why.",
+      "heroParagraph3": "All works are by independent artists and chosen to be within reach. Prices, availability and delivery are in each artist’s own shop.",
+      "heroSignoff": "Curated by humans. For humans.",
+      "thingsParagraph": "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. And sometimes, something to give when words don’t work.",
+      "painting": {
+        "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1814d4b1-0771-4932-9ec2-463101eb718b/the_hope_anthology_the_wind_Vallotton.jpg?content-type=image%2Fjpeg",
+        "alt": "A painting of tall, thin trees and dense green bushes bent sharply to the left by a strong wind, under a flat pale grey sky.",
+        "artist": "Félix Vallotton",
+        "title": "The Wind",
+        "year": "1910",
+        "medium": "Oil on canvas",
+        "collection": "National Gallery of Art, Washington",
+        "rights": "Public domain",
+        "line": "Art can hold what we live through."
+      },
+      "photo": null,
+      "partner": {
+        "name": "Organisation name",
+        "logoUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/971d692a-c88b-4521-82a3-0902190d69e0/edition-partner-logo-placeholder.png?content-type=image%2Fpng",
+        "logoAlt": "Placeholder for a collaborating organisation's logo"
+      },
+      "preFooterHeading": "Why this edition exists",
+      "preFooterParagraph1": "I’m Theresa, founder of The Hope Anthology. I created this edition from lived experience of sobriety — not because I think there is one kind of recovery, or one kind of art that belongs with it, but because I know how much private meaning we can attach to the things we find, keep, make and give along the way.",
+      "preFooterParagraph2": "At its core, The Hope Anthology is about helping people find art they might never have known to look for — work made by artists that can suddenly mean something because of where you are in your life. I curate the work and give it context, so that moment of recognition has a better chance of happening — even when nobody else needs to understand why.",
+      "personName": "Theresa Haskins",
+      "personRole": "Founder, The Hope Anthology",
+      "artists": [
+        {
+          "active": true,
+          "slug": "artist-b",
+          "artistOrder": 1,
+          "name": "Artist B",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist B — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of acrylic painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/de8cd342-66ac-425f-bbc4-8a16497688fe/Art_B_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 1"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist B — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of acrylic painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/41debba4-c276-4b39-81b5-22a17f058ffa/Art_B_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 2"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist B — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of acrylic painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/32b83e80-c199-4747-bc4b-48e8a7a1deb2/Art_B_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 3"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-d",
+          "artistOrder": 2,
+          "name": "Artist D",
+          "layout": "Three above feature below",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist D — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Handmade textured ceramic bowl",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/aa1a84d0-f151-4603-9a47-039a8d64018e/Art_D_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist D — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Handmade textured ceramic bowl",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/07db4346-856c-42d9-903d-a3d0bcfca293/Art_D_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist D — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Handmade textured ceramic vase",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8d1c33cd-a665-4310-83f8-e1cd121f065a/Art_D_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 3",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Artist D — Piece 4",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Handmade textured ceramic serving bowl",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
+                  "alt": "Demonstration placeholder image for Artist D, piece 4",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-f",
+          "artistOrder": 3,
+          "name": "Artist F",
+          "layout": "Two side by side",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist F — Piece 1",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Kinusaiga fabric art kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist F — Piece 2",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Kinusaiga fabric art kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-g",
+          "artistOrder": 4,
+          "name": "Artist G",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist G — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass bowl",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/725464e3-befb-49bd-bc71-00495e48e5b1/Art_G_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist G — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass jar",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d2aaef36-76bb-44d3-b791-3bc96c144da9/Art_G_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist G — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Hand-blown glass jug",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/e334f296-bd09-4dcd-8802-0e6b095e1dfd/Art_G_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 3",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-c",
+          "artistOrder": 5,
+          "name": "Artist C",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist C — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of mixed-media painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/76db4a31-4b86-4677-ad16-6388f5dbae16/Art_C_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 1"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist C — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of mixed-media painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/55928f30-38dd-4c0d-880f-35f6681f2ed9/Art_C_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 2"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist C — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Print of mixed-media painting",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/a942dd2b-dc1a-4cba-8c8b-7cf0b4a73420/Art_C_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist C, piece 3"
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-e",
+          "artistOrder": 6,
+          "name": "Artist E",
+          "layout": "Three above feature and one below",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist E — Piece 1",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Hand-building pottery kit",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/b4797d40-7515-4cc0-9493-6857c4642263/Art_E_Temp_Img_1.jpg",
+                  "alt": "Demonstration placeholder image for Artist E, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist E — Piece 2",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Hand-building pottery kit",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/42319fb4-8f35-4b9e-aa64-9b25dc6cb6c6/Art_E_Temp_Img_2.jpg",
+                  "alt": "Demonstration placeholder image for Artist E, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist E — Piece 3",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Hand-building pottery kit",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/06a315bb-a002-4f7b-ad0b-4e444fda81f4/Art_E_Temp_Img_3.jpg",
+                  "alt": "Demonstration placeholder image for Artist E, piece 3",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Artist E — Piece 4",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Hand-building pottery kit",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8cd5e6b9-58e7-4322-8d11-4add5193ddae/Art_E_Temp_Img_4.jpg",
+                  "alt": "Demonstration placeholder image for Artist E, piece 4",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "Artist E — Piece 5",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Hand-building pottery kit",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/31c13665-0aec-40ad-850b-541dc4f29caa/Art_E_Temp_Img_5.jpg",
+                  "alt": "Demonstration placeholder image for Artist E, piece 5",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-h",
+          "artistOrder": 7,
+          "name": "Artist H",
+          "layout": "Three above feature and one below",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist H — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Giclée print",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist H — Piece 1"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist H — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Giclée print",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist H — Piece 2"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist H — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Giclée print",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist H — Piece 3"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Artist H — Piece 4",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Giclée print",
+              "listingUrl": "#",
+              "meaning": "A short line from the artist about what this piece is for.",
+              "featured": true,
+              "chips": [
+                "A reminder",
+                "Quietly hopeful",
+                "Early days"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist H — Piece 4"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "Artist H — Piece 5",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Giclée print",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist H — Piece 5"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-i",
+          "artistOrder": 8,
+          "name": "Artist I",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist I — Piece 1",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "A short line from the artist about what this piece is for.",
+              "featured": true,
+              "chips": [
+                "A reminder",
+                "Quietly hopeful",
+                "Early days"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist I — Piece 1"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist I — Piece 2",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist I — Piece 2"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist I — Piece 3",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist I — Piece 3"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-j",
+          "artistOrder": 9,
+          "name": "Artist J",
+          "layout": "Three all small",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist J — Piece 1",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist J — Piece 1"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist J — Piece 2",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist J — Piece 2"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist J — Piece 3",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist J — Piece 3"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-k",
+          "artistOrder": 10,
+          "name": "Artist K",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist K — Piece 1",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Enamel jewellery",
+              "listingUrl": "#",
+              "meaning": "A short line from the artist about what this piece is for.",
+              "featured": true,
+              "chips": [
+                "A reminder",
+                "Quietly hopeful",
+                "Early days"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist K — Piece 1"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist K — Piece 2",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Enamel jewellery",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist K — Piece 2"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist K — Piece 3",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Enamel jewellery",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist K — Piece 3"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-l",
+          "artistOrder": 11,
+          "name": "Artist L",
+          "layout": "Three above feature and one below",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Artist L — Piece 1",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist L — Piece 1"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Artist L — Piece 2",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist L — Piece 2"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Artist L — Piece 3",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/0f57d04d-089f-43f7-b823-3f69aa082161/edition-placeholder-1.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist L — Piece 3"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Artist L — Piece 4",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "A short line from the artist about what this piece is for.",
+              "featured": true,
+              "chips": [
+                "A reminder",
+                "Quietly hopeful",
+                "Early days"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/2aa25b21-4a71-4547-aa7f-807a764030a9/edition-placeholder-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist L — Piece 4"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "Artist L — Piece 5",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Craft kit",
+              "listingUrl": "#",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7ccc48a-6134-424c-843d-7484cc120a42/edition-placeholder-3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Placeholder image for Artist L — Piece 5"
+                }
+              ],
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
+            }
+          ]
+        }
+      ]
     }
   },
   "partnerPages": {

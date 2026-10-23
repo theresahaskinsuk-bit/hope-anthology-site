@@ -143,10 +143,14 @@ def parse_roster(audit: Audit, wb: Any) -> list[dict[str, Any]]:
         expected = "/editions/" + entry["slug"]
         if entry["pageUrl"].rstrip("/") != expected:
             audit.required(ws.title, cells["pageUrl"].coordinate if cells["pageUrl"] else str(row), "Page URL", f"Active Edition route must be exactly {expected}; found {entry['pageUrl'] or 'blank'}.")
+        # Optional (22 Oct 2026): "Preview (YES/blank)" marks a hidden preview copy of an Edition, e.g. for-reasons-of-your-own-preview.
+        # A preview may share its Edition Number with the real Edition, so it is left out of the duplicate number check.
+        preview_cell = all_headers.get("preview"); is_preview = bool(preview_cell) and text(ws.cell(row, preview_cell[0]).value).strip().upper() == "YES"
         for seen, key, label in ((seen_slug, "slug", "Slug"), (seen_number, "number", "Edition Number"), (seen_path, "pageUrl", "Page URL")):
+            if key == "number" and is_preview: continue
             if entry[key] in seen: audit.required(ws.title, cells[key].coordinate if cells[key] else str(row), label, f"Duplicate active Edition {label.lower()}: {entry[key]}.")
             seen.add(entry[key])
-        out.append({"slug": entry["slug"], "editionNumber": entry["number"], "title": entry["title"], "pageUrl": entry["pageUrl"].rstrip("/"), "inSiteMenu": yesno(entry["inMenu"]) is True, "row": row})
+        out.append({"slug": entry["slug"], "editionNumber": entry["number"], "title": entry["title"], "pageUrl": entry["pageUrl"].rstrip("/"), "inSiteMenu": yesno(entry["inMenu"]) is True, "preview": is_preview, "row": row})
     if not out: audit.required(ws.title, "—", "Editions Roster", "At least one active Edition is required.")
     return out
 
@@ -295,7 +299,7 @@ def parse_edition(audit: Audit, wb: Any, roster: dict[str, Any], publish: bool) 
     artists = parse_artists(audit, ws, artists_header, pieces_header); parse_pieces(audit, ws, pieces_header, artists, publish)
     partner = {"name": partner_values["Partner Name"], "logoUrl": partner_values["Partner Logo URL"], "logoAlt": partner_values["Partner Logo Alt"]} if len(filled) == 3 else None
     photo = {"url": photo_url, "alt": photo_alt} if photo_url and photo_alt else None
-    return {"slug": roster["slug"], "pageUrl": roster["pageUrl"], "editionNumber": values["Edition Number"], "title": values["Title"], "inSiteMenu": roster["inSiteMenu"], "strapline": values["Strapline"], "metaDescription": meta_description, "heroParagraph1": values["Hero Paragraph 1"], "heroParagraph2": values["Hero Paragraph 2"], "heroParagraph3": values["Hero Paragraph 3"], "heroSignoff": values["Hero Sign-off"], "thingsParagraph": values["Things Paragraph"], "painting": {"url": values["Painting URL"], "alt": values["Painting Alt"], "artist": values["Painting Artist"], "title": values["Painting Title"], "year": values["Painting Year"], "medium": values["Painting Medium"], "collection": values["Painting Collection"], "rights": values["Painting Rights"], "line": values["Painting Line"]}, "photo": photo, "partner": partner, "preFooterHeading": values["Pre-footer Heading"], "preFooterParagraph1": values["Pre-footer Paragraph 1"], "preFooterParagraph2": values["Pre-footer Paragraph 2"], "personName": values["Person Name"], "personRole": values["Person Role"], "artists": artists}
+    return {"slug": roster["slug"], "pageUrl": roster["pageUrl"], "editionNumber": values["Edition Number"], "title": values["Title"], "inSiteMenu": roster["inSiteMenu"], **({"preview": True} if roster.get("preview") else {}), "strapline": values["Strapline"], "metaDescription": meta_description, "heroParagraph1": values["Hero Paragraph 1"], "heroParagraph2": values["Hero Paragraph 2"], "heroParagraph3": values["Hero Paragraph 3"], "heroSignoff": values["Hero Sign-off"], "thingsParagraph": values["Things Paragraph"], "painting": {"url": values["Painting URL"], "alt": values["Painting Alt"], "artist": values["Painting Artist"], "title": values["Painting Title"], "year": values["Painting Year"], "medium": values["Painting Medium"], "collection": values["Painting Collection"], "rights": values["Painting Rights"], "line": values["Painting Line"]}, "photo": photo, "partner": partner, "preFooterHeading": values["Pre-footer Heading"], "preFooterParagraph1": values["Pre-footer Paragraph 1"], "preFooterParagraph2": values["Pre-footer Paragraph 2"], "personName": values["Person Name"], "personRole": values["Person Role"], "artists": artists}
 
 
 # ---------------------------------------------------------------------------
