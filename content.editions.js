@@ -51,12 +51,11 @@ window.HA_EDITIONS_CONTENT = {
         "rights": "Public domain",
         "line": "Art can hold what we live through."
       },
-      "photo": null,
-      "partner": {
-        "name": "Organisation name",
-        "logoUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/971d692a-c88b-4521-82a3-0902190d69e0/edition-partner-logo-placeholder.png?content-type=image%2Fpng",
-        "logoAlt": "Placeholder for a collaborating organisation's logo"
+      "photo": {
+        "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1317f08c-50f4-4c42-82d7-ea72a72f1972/theresa-haskins-founder-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+        "alt": "Theresa Haskins, founder of The Hope Anthology"
       },
+      "partner": null,
       "preFooterHeading": "Why this edition exists",
       "preFooterParagraph1": "I’m Theresa, founder of The Hope Anthology. I created this edition from lived experience of sobriety — not because I think there is one kind of recovery, or one kind of art that belongs with it, but because I know how much private meaning we can attach to the things we find, keep, make and give along the way.",
       "preFooterParagraph2": "At its core, The Hope Anthology is about helping people find art they might never have known to look for — work made by artists that can suddenly mean something because of where you are in your life. I curate the work and give it context, so that moment of recognition has a better chance of happening — even when nobody else needs to understand why.",
@@ -1018,7 +1017,10 @@ window.HA_EDITIONS_CONTENT = {
         "rights": "Public domain",
         "line": "Art can hold what we live through."
       },
-      "photo": null,
+      "photo": {
+        "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1317f08c-50f4-4c42-82d7-ea72a72f1972/theresa-haskins-founder-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+        "alt": "Theresa Haskins, founder of The Hope Anthology"
+      },
       "partner": {
         "name": "Organisation name",
         "logoUrl": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/971d692a-c88b-4521-82a3-0902190d69e0/edition-partner-logo-placeholder.png?content-type=image%2Fpng",

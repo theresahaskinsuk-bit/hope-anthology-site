@@ -3656,3 +3656,20 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
    ============================================================ */
 #ha-edition-v1 .ha-ed-chips span{font-size:12px;padding:5px 8px;}
 #ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-chips span{font-size:11px;padding:4px 7px;}
+
+/* ============================================================
+   Edition pre-footer with a photo — 23 Oct 2026 (Claude)
+   Heading, round photo and name on the left; the two paragraphs on the right
+   (mirrors the hero, where the copy is on the left). Same round photo as the artist invitation.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-pre-grid.has-photo{grid-template-columns:5fr 7fr;column-gap:64px;}
+#ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-side h2{font-family:'Lora',Georgia,serif;font-size:clamp(28px,2.6vw,36px);line-height:1.15;font-weight:400;letter-spacing:-.01em;color:var(--teal);margin:0 0 26px;}
+#ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-figure{grid-column:auto;justify-self:start;max-width:none;width:auto;padding:0;margin:0;}
+#ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-figure img{width:180px;height:180px;border-radius:50%;object-fit:cover;object-position:center 30%;}
+#ha-edition-v1 .ha-ed-pre-grid.has-photo figcaption{margin-top:14px;}
+#ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-copy{grid-column:auto;max-width:620px;padding-top:6px;}
+@media(max-width:1100px){
+  #ha-edition-v1 .ha-ed-pre-grid.has-photo{grid-template-columns:1fr;row-gap:24px;}
+  #ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-figure img{width:140px;height:140px;}
+  #ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-copy{padding-top:0;}
+}
