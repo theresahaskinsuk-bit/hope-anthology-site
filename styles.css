@@ -3673,3 +3673,11 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
   #ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-figure img{width:140px;height:140px;}
   #ha-edition-v1 .ha-ed-pre-grid.has-photo .ha-ed-pre-copy{padding-top:0;}
 }
+
+/* ============================================================
+   Slimmer mount on Edition cards — 28 Oct 2026 (Claude)
+   Edition pages only (artist pages unchanged for now): thinner grey band and white mat,
+   so artwork shows bigger, especially on feature cards.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-art.is-single .ha-ed-art-front{top:1.75%;left:1.75%;width:96.5%;height:96.5%;}
+#ha-edition-v1 .ha-ed-art .ha-ed-art-front:not(.is-photo),#ha-edition-v1 .ha-ed-art .ha-ed-pile-layer:not(.is-photo){padding:2%;}

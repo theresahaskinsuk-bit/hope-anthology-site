@@ -1034,84 +1034,8 @@ window.HA_EDITIONS_CONTENT = {
       "artists": [
         {
           "active": true,
-          "slug": "artist-b",
-          "artistOrder": 1,
-          "name": "Artist B",
-          "layout": "Feature and two beside",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "active": true,
-              "pieceOrder": 1,
-              "title": "Artist B — Piece 1",
-              "world": "To Keep",
-              "status": "available",
-              "medium": "Print of acrylic painting",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": true,
-              "chips": [
-                "Colour lovers",
-                "Blank walls",
-                "Just because",
-                "Knowing",
-                "Every day"
-              ],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/de8cd342-66ac-425f-bbc4-8a16497688fe/Art_B_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 1"
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 2,
-              "title": "Artist B — Piece 2",
-              "world": "To Keep",
-              "status": "available",
-              "medium": "Print of acrylic painting",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/41debba4-c276-4b39-81b5-22a17f058ffa/Art_B_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 2"
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Artist B — Piece 3",
-              "world": "To Keep",
-              "status": "available",
-              "medium": "Print of acrylic painting",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/32b83e80-c199-4747-bc4b-48e8a7a1deb2/Art_B_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 3"
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            }
-          ]
-        },
-        {
-          "active": true,
           "slug": "artist-d",
-          "artistOrder": 2,
+          "artistOrder": 1,
           "name": "Artist D",
           "layout": "Three above feature below",
           "whyLine": "A few words from the artist about their work.",
@@ -1213,6 +1137,123 @@ window.HA_EDITIONS_CONTENT = {
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
               "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "orla-cunningham",
+          "artistOrder": 2,
+          "name": "Orla Cunningham",
+          "layout": "Three above feature and one below",
+          "whyLine": "My work tends to take an autoethnographic approach, stemming from sketchbook drawings responding to the nuances of day-to-day life.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Orange Juice River",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print | Original Illustration",
+              "listingUrl": "#",
+              "meaning": "Nothing can define us but we can form an ever-evolving identity.",
+              "featured": false,
+              "chips": [
+                "Colour lovers",
+                "Blank walls",
+                "Just because"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/df8604c2-66d0-4f2c-89b6-328f5c994252/orla-cunningham-orange-juice-river-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": ""
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Tree Giant",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print | Original Illustration",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79f4ad31-1f7d-4f22-bc97-73f88c9c4c15/orla-cunningham-tree-giant-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 2"
+                }
+              ],
+              "notes": ""
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Blame The Moon",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print | Original Illustration",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d39364ea-be0a-4cd5-b310-d4f8dec2685d/orla-cunningham-stop-blaming-the-moon-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 3",
+                  "photo": true
+                }
+              ],
+              "notes": ""
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Sit With it For a While",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print | Original Illustration",
+              "listingUrl": "#",
+              "meaning": "Original illustrated self-compassion art print, inspired by those moments\nwhen we need to slow down and allow ourselves to feel.",
+              "featured": true,
+              "chips": [
+                "Colour lovers",
+                "Blank walls",
+                "Just because",
+                "Knowing",
+                "Every day"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/957aa153-4ff1-492e-a7f0-531b14735e1e/orla-cunningham-sit-with-it-for-a-while-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 4"
+                }
+              ],
+              "notes": ""
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "I Cannot Make Lemonade In These Conditions",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print | Original Illustration",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc2eed5f-80ab-4c1d-ba2f-129bb1247744/orla-cunningham-I-cannot-make-lemonade-in-these-conditions-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Demonstration placeholder image for Artist B, piece 5"
+                }
+              ],
+              "notes": ""
             }
           ]
         },
