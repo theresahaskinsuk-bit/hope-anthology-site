@@ -1034,109 +1034,120 @@ window.HA_EDITIONS_CONTENT = {
       "artists": [
         {
           "active": true,
-          "slug": "artist-d",
+          "slug": "hannah-carvell",
           "artistOrder": 1,
-          "name": "Artist D",
-          "layout": "Three above feature below",
-          "whyLine": "A few words from the artist about their work.",
+          "name": "Hannah Carvell",
+          "layout": "Feature and two beside then one below",
+          "whyLine": "I am drawn to colour and the vibrancy screen printing gives by layering up the shades, I felt in my bones it was the Art I wanted make.",
           "pieces": [
             {
               "active": true,
               "pieceOrder": 1,
-              "title": "Artist D — Piece 1",
+              "title": "Small Hearts + Flowers | Blue and Double Orange",
               "world": "To Keep",
               "status": "available",
-              "medium": "Handmade textured ceramic bowl",
-              "listingUrl": "#",
+              "medium": "Designed & Screen Printed by Hand",
+              "listingUrl": "https://www.hannahcarvell.com/shop/p/small-hearts-flowers-ibiza-sunset-sswx3-m37yg-d92al-mk5nz-fykgs-t3zt7-8arcf-ldb5b",
               "meaning": "",
-              "featured": false,
-              "chips": [],
+              "featured": true,
+              "chips": [
+                "In full colour",
+                "Layer upon layer",
+                "A good clash",
+                "The bright sides"
+              ],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/aa1a84d0-f151-4603-9a47-039a8d64018e/Art_D_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 1",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/8dda1ba4-951a-4a27-ba2a-4eb92f3631d4/1-hannah-carvell-small-hearts-flowers-blue-double-orange-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "An abstract flower formed from overlapping heart-shaped petals in orange, red, pink, yellow and shades of blue, arranged in a circle on pale grey paper. Numbered and signed in pencil.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/ff77657d-e77b-4b7e-9511-4309d1e80a64/1-hannah-carvell-small-hearts-flowers-blue-double-orange-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Close-up angled photograph of an abstract flower print with overlapping heart-shaped petals in bright orange, red, coral, pink and blue. A pencil signature is visible below the design.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             },
             {
               "active": true,
               "pieceOrder": 2,
-              "title": "Artist D — Piece 2",
+              "title": "These are the Good Days",
               "world": "To Keep",
               "status": "available",
-              "medium": "Handmade textured ceramic bowl",
-              "listingUrl": "#",
+              "medium": "Designed & Screen Printed by Hand",
+              "listingUrl": "https://www.hannahcarvell.com/shop/p/product-6-yrdld-pcpw6-z6le3-a6a4j",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/07db4346-856c-42d9-903d-a3d0bcfca293/Art_D_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 2",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a31c3095-2fe1-450c-b2d3-11e190f2984a/2-hannah-carvell-these-are-the-good-days-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A typographic print reading “These are the good days” in large purple block letters with bright orange and pink offset shadows, centred on white paper. Numbered and signed in pencil.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d60178de-7fc1-4ab3-a1e4-fab4962dadae/2-hannah-carvell-these-are-the-good-days-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A framed typographic print reading “These are the good days” in large navy blue block letters with pink and blue offset shadows. Displayed in a blue and pink frame with a cream mount on a wooden surface.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9454027d-37c1-4fc8-ac38-ab44824214e6/2-hannah-carvell-these-are-the-good-days-hope-anthology-img3.jpg?content-type=image%2Fjpeg",
+                  "alt": "Several overlapping prints reading “These are the good days”, arranged on a white surface in different colour combinations including pink and red, navy and blue, and purple and orange.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             },
             {
               "active": true,
               "pieceOrder": 3,
-              "title": "Artist D — Piece 3",
+              "title": "Small Hearts + Flowers | Fresh Blues",
               "world": "To Keep",
               "status": "available",
-              "medium": "Handmade textured ceramic vase",
-              "listingUrl": "#",
+              "medium": "Designed & Screen Printed by Hand",
+              "listingUrl": "https://www.hannahcarvell.com/shop/p/small-hearts-flowers-ibiza-sunset-sswx3-ybn62",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8d1c33cd-a665-4310-83f8-e1cd121f065a/Art_D_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 3",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c307f32a-d5b3-4f9c-a1a1-1b1cb2b7552e/3-hannah-carvell-small-hearts-flowers-fresh-blues-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "An abstract circular flower made from overlapping heart-shaped petals in lime green, bright yellow, dark green, blue and pale grey. Printed on cream paper, numbered and signed in pencil.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             },
             {
               "active": true,
               "pieceOrder": 4,
-              "title": "Artist D — Piece 4",
+              "title": "Daisy",
               "world": "To Keep",
               "status": "available",
-              "medium": "Handmade textured ceramic serving bowl",
-              "listingUrl": "#",
+              "medium": "Designed & Screen Printed by Hand",
+              "listingUrl": "https://www.hannahcarvell.com/shop/p/daisy-limited-edition-screen-print",
               "meaning": "",
-              "featured": true,
+              "featured": false,
               "chips": [
-                "For sharing",
-                "Everyday favourite",
-                "The tactile type"
+                "Not so delicate",
+                "Petal by petal",
+                "Hardy by nature"
               ],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 4",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/9ccc0052-45f7-44d4-9343-7f07bbc02ce3/4-hannah-carvell-daisy-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A large white daisy with layers of overlapping petals and a textured golden-yellow centre against a plain taupe background. The print is numbered and signed in pencil.",
                   "photo": true
                 },
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/df8afd4d-5839-4612-8851-6c6f75fc84ec/Art_D_Temp_Img_slice.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 4: a slice of the bowl",
-                  "photo": true
-                },
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/3993d306-b4a0-4d00-a9dc-22200742fd1d/Art_D_Temp_Img_kiln.jpg",
-                  "alt": "Demonstration placeholder image for Artist D, piece 4: the bowl by a kiln",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/64992596-5bc0-4fa2-8cde-480cec0f5a81/4-hannah-carvell-daisy-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A framed print of a large white daisy with a yellow centre against a taupe background, hanging above a wooden cabinet surrounded by leafy houseplants and small decorative objects.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             }
           ]
         },
@@ -1145,28 +1156,147 @@ window.HA_EDITIONS_CONTENT = {
           "slug": "orla-cunningham",
           "artistOrder": 2,
           "name": "Orla Cunningham",
-          "layout": "Three above feature and one below",
+          "layout": "Feature and two beside then two below",
           "whyLine": "My work tends to take an autoethnographic approach, stemming from sketchbook drawings responding to the nuances of day-to-day life.",
           "pieces": [
             {
               "active": true,
               "pieceOrder": 1,
+              "title": "Sit With it For a While",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print, Original Illustration",
+              "listingUrl": "#",
+              "meaning": "Original illustrated self-compassion art print, inspired by those moments\nwhen we need to slow down and allow ourselves to feel.",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/957aa153-4ff1-492e-a7f0-531b14735e1e/orla-cunningham-sit-with-it-for-a-while-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A large, shaggy pink monster with horns, spiral eyes and long claws sits beside a small curled-up figure on a bright blue background. Pink lettering reads “Sit with it for a while.”"
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/c729f1c8-05ad-4ab5-9cc8-5f3ab71642e4/orla-cunningham-sit-with-it-for-a-while-the-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A black ink drawing on cream paper of a large, shaggy horned monster with spiral eyes and long claws, sitting beside a small curled-up figure. Handwritten text below reads “Sit with it for a while.”"
+                }
+              ],
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
               "title": "Orange Juice River",
               "world": "To Keep",
               "status": "available",
-              "medium": "Art Print | Original Illustration",
-              "listingUrl": "#",
+              "medium": "Art Print, Original Illustration",
+              "listingUrl": "https://www.etsy.com/uk/listing/4603565518/orange-juice-river-square-print?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_2&logging_key=f8a0f19ad77ed333753b9bf931c0264dee12301f%3A4603565518",
               "meaning": "Nothing can define us but we can form an ever-evolving identity.",
               "featured": false,
-              "chips": [
-                "Colour lovers",
-                "Blank walls",
-                "Just because"
-              ],
+              "chips": [],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/df8604c2-66d0-4f2c-89b6-328f5c994252/orla-cunningham-orange-juice-river-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 1",
+                  "alt": "A person lies on an orange slice floating along a swirling orange and black river, surrounded by densely patterned green trees, flowers and sliced oranges.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a0985fa9-6ac0-4def-9c04-d7bb77a96d19/orla-cunningham-orange-juice-river-the-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "An open sketchbook showing a detailed black ink drawing of a long-eared creature lying on an orange slice in a swirling river, surrounded by flowers, trees and sliced oranges. The drawing is uncoloured, with orange fabric underneath."
+                }
+              ],
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Tree Giant",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print, Original Illustration",
+              "listingUrl": "https://www.etsy.com/uk/listing/4603409899/tree-giant-print?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=49389d9e93e8ec0c0b96aa445199437da8888176%3A4603409899",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79f4ad31-1f7d-4f22-bc97-73f88c9c4c15/orla-cunningham-tree-giant-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A tree-like giant with a human face, closed-looking eyes and a bent arm, its body covered in flowing woodgrain patterns of yellow, purple, green and blue. Leafy branches grow from its head against a pale blue background."
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/7a2648b1-34b5-469b-a4c6-f1eecf6ba8d6/orla-cunningham-tree-giant-the-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A partially coloured drawing of a tree-like giant with a human face, pale eyes and a bent arm. Fine purple, blue and yellow lines form woodgrain patterns across its body, while bare branches extend from its head against white paper."
+                }
+              ],
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Blame The Moon",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print, Original Illustration",
+              "listingUrl": "https://www.etsy.com/uk/listing/4603548247/blame-the-moon-square-print?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=9a1842c512911ead987d1b4786461f8fb9112274%3A4603548247",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d39364ea-be0a-4cd5-b310-d4f8dec2685d/orla-cunningham-stop-blaming-the-moon-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A small pink figure sits beneath a large pink moon against a textured blue night sky. A speech bubble from the moon reads “Stop blaming me for everything.”",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4a6053bb-d88d-466b-9fcc-fe757fbdd216/orla-cunningham-stop-blaming-the-moon-the-hope-anthology-img2.jpg?content-type=image%2Fjpeg",
+                  "alt": "An open sketchbook on orange fabric showing a black ink drawing of a small seated figure looking up at a full moon against a densely scribbled night sky. A speech bubble reads “Stop blaming me for everything.”"
+                }
+              ],
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "I Cannot Make Lemonade In These Conditions",
+              "world": "To Keep",
+              "status": "available",
+              "medium": "Art Print, Original Illustration",
+              "listingUrl": "#",
+              "meaning": "A few words from the artist about this piece will go here.",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc2eed5f-80ab-4c1d-ba2f-129bb1247744/orla-cunningham-I-cannot-make-lemonade-in-these-conditions-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A bright yellow lemon outlined in black against a blue background, with hand-lettered text reading “I cannot make lemonade in these conditions.”"
+                }
+              ],
+              "notes": "Needs sign off"
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "life-beading",
+          "artistOrder": 3,
+          "name": "Life Beading",
+          "layout": "Feature and two beside then two below",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "The In-Between",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Guided reflection bracelet-making",
+              "listingUrl": "https://www.overthestile.co.uk/product-page/the-in-between-life-transition-kit",
+              "meaning": "",
+              "featured": true,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/838109a8-aae9-4b4b-95b1-2674a20fe2d9/life-beading-the-in-between-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A brown cardboard Life Beading bracelet-making kit with a cream sleeve reading “The In-Between”. A detailed green illustration of a bead shows a winding path through dense trees towards a clearing.",
                   "photo": true
                 }
               ],
@@ -1175,18 +1305,19 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 2,
-              "title": "Tree Giant",
-              "world": "To Keep",
+              "title": "The Purposeful Life",
+              "world": "To Make",
               "status": "available",
-              "medium": "Art Print | Original Illustration",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "medium": "Guided reflection bracelet-making",
+              "listingUrl": "https://www.overthestile.co.uk/product-page/the-purposeful-life-three-provocations-to-stop-sleepwalking-through-existence",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79f4ad31-1f7d-4f22-bc97-73f88c9c4c15/orla-cunningham-tree-giant-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f7c0a18c-348c-485e-b7aa-e2d57a2b59e3/life-beading-the-purposeful-life-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A brown cardboard Life Beading bracelet-making kit labelled “The Purposeful Life”. The cream sleeve features an intricate dark blue illustration of a bead with swirling lines, leafy branches, stars and a winding path leading towards a signpost.",
+                  "photo": true
                 }
               ],
               "notes": ""
@@ -1194,18 +1325,18 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 3,
-              "title": "Blame The Moon",
-              "world": "To Keep",
+              "title": "Summoning Courage",
+              "world": "To Make",
               "status": "available",
-              "medium": "Art Print | Original Illustration",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "medium": "Guided reflection bracelet-making",
+              "listingUrl": "https://www.overthestile.co.uk/product-page/summoning-courage-kit",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/d39364ea-be0a-4cd5-b310-d4f8dec2685d/orla-cunningham-stop-blaming-the-moon-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 3",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/6931927b-3010-45ac-bde1-8ed8944ad156/life-beading-summoning-courage-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A brown cardboard Life Beading bracelet-making kit labelled “Summoning Courage”. The cream packaging features a reddish-brown illustration of a bead showing a winding path leading towards a fence, surrounded by detailed foliage.",
                   "photo": true
                 }
               ],
@@ -1214,24 +1345,19 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 4,
-              "title": "Sit With it For a While",
-              "world": "To Keep",
+              "title": "Honouring the Body",
+              "world": "To Make",
               "status": "available",
-              "medium": "Art Print | Original Illustration",
-              "listingUrl": "#",
-              "meaning": "Original illustrated self-compassion art print, inspired by those moments\nwhen we need to slow down and allow ourselves to feel.",
-              "featured": true,
-              "chips": [
-                "Colour lovers",
-                "Blank walls",
-                "Just because",
-                "Knowing",
-                "Every day"
-              ],
+              "medium": "Guided reflection bracelet-making",
+              "listingUrl": "https://www.overthestile.co.uk/product-page/honouring-the-body-three-revelations-about-the-body-you-inhabit",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/957aa153-4ff1-492e-a7f0-531b14735e1e/orla-cunningham-sit-with-it-for-a-while-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 4"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/b768929f-a795-4ad4-8c42-f2f1ef52a079/life-beading-honouring-the-body-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A brown cardboard Life Beading bracelet-making kit with a cream sleeve reading “Honouring the Body”. The packaging features an intricate brown illustration of a bead with flowing patterns, leaves and hands. Pink and blue beads rest on the wooden surface in front.",
+                  "photo": true
                 }
               ],
               "notes": ""
@@ -1239,77 +1365,22 @@ window.HA_EDITIONS_CONTENT = {
             {
               "active": true,
               "pieceOrder": 5,
-              "title": "I Cannot Make Lemonade In These Conditions",
-              "world": "To Keep",
+              "title": "Peace & Wellbeing",
+              "world": "To Make",
               "status": "available",
-              "medium": "Art Print | Original Illustration",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "medium": "Guided reflection bracelet-making",
+              "listingUrl": "https://www.overthestile.co.uk/product-page/peace-wellbeing-kit",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/dc2eed5f-80ab-4c1d-ba2f-129bb1247744/orla-cunningham-I-cannot-make-lemonade-in-these-conditions-the-hope-anthology.jpg?content-type=image%2Fjpeg",
-                  "alt": "Demonstration placeholder image for Artist B, piece 5"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/986c4b89-69a7-47d8-b373-10fc4b74f4e1/life-beading-peace-and-wellbeing-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A brown cardboard Life Beading bracelet-making kit labelled “Peace & Wellbeing”, with a cream sleeve featuring an intricate blue illustration of a bead containing a winding river and leafy branches. Three blue and white beads sit beside the box.",
+                  "photo": true
                 }
               ],
               "notes": ""
-            }
-          ]
-        },
-        {
-          "active": true,
-          "slug": "artist-f",
-          "artistOrder": 3,
-          "name": "Artist F",
-          "layout": "Two side by side",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "active": true,
-              "pieceOrder": 1,
-              "title": "Artist F — Piece 1",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Kinusaiga fabric art kit",
-              "listingUrl": "#",
-              "meaning": "",
-              "featured": false,
-              "chips": [
-                "Play again",
-                "Sitting with it",
-                "In your hands"
-              ],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 1",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 2,
-              "title": "Artist F — Piece 2",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Kinusaiga fabric art kit",
-              "listingUrl": "#",
-              "meaning": "",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 2",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
             }
           ]
         },
@@ -1388,8 +1459,89 @@ window.HA_EDITIONS_CONTENT = {
         },
         {
           "active": true,
-          "slug": "artist-c",
+          "slug": "lizzies-embroidery-club",
           "artistOrder": 5,
+          "name": "Lizzie’s Embroidery Club",
+          "layout": "Feature and two beside",
+          "whyLine": "A few words from the artist about their work.",
+          "pieces": [
+            {
+              "active": true,
+              "pieceOrder": 1,
+              "title": "Snakes",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Embroidery Kits",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/snakes-quick-kit",
+              "meaning": "",
+              "featured": true,
+              "chips": [
+                "Play again",
+                "Sitting with it",
+                "In your hands"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 2,
+              "title": "Sun and Moon",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Embroidery Kits",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/sun-and-moon-quick-kit",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 2",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            },
+            {
+              "active": true,
+              "pieceOrder": 3,
+              "title": "Folky",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Embroidery Kits",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/folky-quick-kit",
+              "meaning": "",
+              "featured": false,
+              "chips": [
+                "Play again",
+                "Sitting with it",
+                "In your hands"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
+                  "alt": "Demonstration placeholder image for Artist F, piece 1",
+                  "photo": true
+                }
+              ],
+              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
+              "placeholder": true
+            }
+          ]
+        },
+        {
+          "active": true,
+          "slug": "artist-c",
+          "artistOrder": 6,
           "name": "Artist C",
           "layout": "Feature and two beside",
           "whyLine": "A few words from the artist about their work.",
@@ -1449,121 +1601,6 @@ window.HA_EDITIONS_CONTENT = {
                 {
                   "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/a942dd2b-dc1a-4cba-8c8b-7cf0b4a73420/Art_C_Temp_Img_3.jpg",
                   "alt": "Demonstration placeholder image for Artist C, piece 3"
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            }
-          ]
-        },
-        {
-          "active": true,
-          "slug": "artist-e",
-          "artistOrder": 6,
-          "name": "Artist E",
-          "layout": "Three above feature and one below",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "active": true,
-              "pieceOrder": 1,
-              "title": "Artist E — Piece 1",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Hand-building pottery kit",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/b4797d40-7515-4cc0-9493-6857c4642263/Art_E_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist E, piece 1",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 2,
-              "title": "Artist E — Piece 2",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Hand-building pottery kit",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/42319fb4-8f35-4b9e-aa64-9b25dc6cb6c6/Art_E_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist E, piece 2",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Artist E — Piece 3",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Hand-building pottery kit",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/06a315bb-a002-4f7b-ad0b-4e444fda81f4/Art_E_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist E, piece 3",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 4,
-              "title": "Artist E — Piece 4",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Hand-building pottery kit",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": true,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8cd5e6b9-58e7-4322-8d11-4add5193ddae/Art_E_Temp_Img_4.jpg",
-                  "alt": "Demonstration placeholder image for Artist E, piece 4",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 5,
-              "title": "Artist E — Piece 5",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Hand-building pottery kit",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/31c13665-0aec-40ad-850b-541dc4f29caa/Art_E_Temp_Img_5.jpg",
-                  "alt": "Demonstration placeholder image for Artist E, piece 5",
-                  "photo": true
                 }
               ],
               "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",

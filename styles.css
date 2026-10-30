@@ -3681,3 +3681,26 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
    ============================================================ */
 #ha-edition-v1 .ha-ed-art.is-single .ha-ed-art-front{top:1.75%;left:1.75%;width:96.5%;height:96.5%;}
 #ha-edition-v1 .ha-ed-art .ha-ed-art-front:not(.is-photo),#ha-edition-v1 .ha-ed-art .ha-ed-pile-layer:not(.is-photo){padding:2%;}
+
+/* ============================================================
+   Feature-first layouts with more pieces — 29 Oct 2026 (Claude)
+   "Feature and two beside then one below" (4) and "… then two below" (5):
+   feature first with two small cards beside it; the rest tuck straight under the feature (no gap).
+   The featured piece shows first on desktop and on phones; the others follow in piece order.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-piece-grid.is-tucked{grid-template-columns:calc((100% - 32px) * 2 / 3 + 16px) minmax(0,1fr);grid-template-rows:auto 1fr;}
+#ha-edition-v1 .ha-ed-piece-grid.is-tucked>.ha-ed-card-new{grid-column:1;grid-row:1;}
+#ha-edition-v1 .ha-ed-col-side{grid-column:2;grid-row:1 / span 2;display:flex;flex-direction:column;gap:16px;min-width:0;}
+#ha-edition-v1 .ha-ed-col-below{grid-column:1;grid-row:2;align-self:start;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start;min-width:0;}
+#ha-edition-v1 .ha-ed-col-below:empty{display:none;}
+@media(max-width:900px){
+  #ha-edition-v1 .ha-ed-piece-grid.is-tucked{grid-template-rows:none;}
+  #ha-edition-v1 .ha-ed-col-side,#ha-edition-v1 .ha-ed-col-below{display:contents;}
+}
+
+/* ============================================================
+   "Two on two large" — 29 Oct 2026 (Claude)
+   Like "Two on two", but the 2 x 2 block fills the artist's full width, so each card is half-width
+   (bigger than a small card, smaller than a feature). The original "Two on two" is unchanged.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-layout-two-on-two-large{grid-template-columns:repeat(2,minmax(0,1fr));}
