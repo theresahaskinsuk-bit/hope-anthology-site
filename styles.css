@@ -3842,3 +3842,25 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 @media (max-width:380px){
   #ha-home-v3 .ha-v3-ctas-three .ha-v3-btn{padding:12px 4px;font-size:13px;gap:.3em;}
 }
+
+/* To Gather: same frame as To Keep / To Make (31 Oct 2026) — full width, text on the logo's left edge,
+   same hero spacing and text widths, so the three sections don't jump around. */
+#ha-to-gather-v1 .ha-tg-wrap{max-width:none;padding:0 48px;}
+#ha-to-gather-v1 .ha-tg-hero{padding:52px 0 56px;}
+#ha-to-gather-v1 .ha-tg-hero-grid{grid-template-columns:minmax(0,1fr) minmax(0,420px);grid-template-areas:"top img" "body img";column-gap:64px;}
+#ha-to-gather-v1 .ha-tg-eyebrow{margin:0 0 12px;line-height:1.25;}
+#ha-to-gather-v1 .ha-tg-hero h1{line-height:1.12;margin:0 0 16px;}
+#ha-to-gather-v1 .ha-tg-hero-body p{max-width:540px;}
+/* Photo anchored to the frame: top with the eyebrow, right edge with the menu, down to the end of the text. No mat or shadow. */
+#ha-to-gather-v1 .ha-tg-hero-figure{position:relative;margin:0;padding:0;background:none;box-shadow:none;align-self:stretch;justify-self:end;width:100%;max-width:420px;min-height:320px;border-radius:3px;overflow:hidden;}
+#ha-to-gather-v1 .ha-tg-hero-photo{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;}
+#ha-to-gather-v1 .ha-tg-update-box{max-width:1040px;}
+@media(max-width:900px){
+  #ha-to-gather-v1 .ha-tg-wrap{padding:0 24px;}
+  #ha-to-gather-v1 .ha-tg-hero{padding:36px 0 44px;}
+  #ha-to-gather-v1 .ha-tg-hero-grid{grid-template-columns:1fr;grid-template-areas:"top" "body" "img";}
+  #ha-to-gather-v1 .ha-tg-hero h1{font-size:36px;}
+  #ha-to-gather-v1 .ha-tg-hero-figure{margin-top:24px;max-width:420px;justify-self:start;}
+  #ha-to-gather-v1 .ha-tg-hero-figure{min-height:0;}
+  #ha-to-gather-v1 .ha-tg-hero-photo{position:static;height:auto;aspect-ratio:1/1;}
+}
