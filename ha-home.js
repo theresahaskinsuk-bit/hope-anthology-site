@@ -82,6 +82,19 @@
     if(hasUrl(url)) return '<a class="'+className+' ha-v3-image-link" href="'+esc(url)+'" aria-label="'+esc(label || 'Open section')+'">'+imgHtml+'</a>';
     return '<div class="'+className+'">'+imgHtml+'</div>';
   }
+  /* Hero body: one or more paragraphs (bodyParagraphs), or the older single body plus tagline. */
+  function heroBody(hero){
+    if(hero.bodyParagraphs && hero.bodyParagraphs.length){
+      return hero.bodyParagraphs.map(function(t){ return '<p class="ha-v3-hero-body">'+esc(t)+'</p>'; }).join('');
+    }
+    return '<p class="ha-v3-hero-body">'+esc(hero.body)+(hero.bodyTagline ? '<br><em class="ha-v3-hero-tagline">'+esc(hero.bodyTagline)+'</em>' : '')+'</p>';
+  }
+  /* Hero buttons: skipped when there is no label; buttonStyle 'ghost' uses the italic outline style. */
+  function heroButton(hero,url,label){
+    if(!label) return '';
+    var cls = hero.buttonStyle === 'ghost' ? 'ha-v3-btn ha-v3-btn-ghost' : 'ha-v3-btn ha-v3-btn-primary';
+    return '<a class="'+cls+'" href="'+esc(url || '')+'">'+ctaLabel(label)+'</a>';
+  }
   function renderIntro(C,intro){
     intro = intro || {};
     if(!intro.bodyHtml && !intro.kicker) return '';
@@ -130,8 +143,8 @@
     var footer=C.footer || {};
     return ''+
       '<div id="ha-home-v3">'+
-        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — Symbolic art and meaningful making</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-v3-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-v3-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
-        '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="Angel number prints, a stained glass sunflower and fox in progress, framed prints reading Enough, Knowing and Soar, a suncatcher in a sunlit window, and hands writing Breathe in a notebook and colouring a letter W."><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><p class="ha-v3-hero-body">'+esc(hero.body)+(hero.bodyTagline ? '<br><em class="ha-v3-hero-tagline">'+esc(hero.bodyTagline)+'</em>' : '')+'</p><div class="ha-v3-hero-actions"><div class="ha-v3-ctas"><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.cta1Url || hero.primaryButtonUrl)+'">'+ctaLabel(hero.cta1Label || hero.primaryButtonLabel)+'</a><a class="ha-v3-btn ha-v3-btn-primary" href="'+esc(hero.cta2Url || '')+'">'+ctaLabel(hero.cta2Label || '')+'</a></div>'+( hero.secondaryButtonLabel ? '<div class="ha-v3-ctas ha-v3-ctas-secondary"><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div>' : '' )+'</div></div></section>'+
+        '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation"><a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="'+image(C,'logo')+'" alt=""><h1 class="ha-v3-sr-only">'+esc(hero.srTitle || 'The Hope Anthology')+'</h1></a><button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-v3-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button><div id="ha-v3-mobile-menu" class="ha-v3-links">'+navLinks(C.navigation)+'</div></nav>'+
+        '<section class="ha-v3-hero"><img class="ha-v3-hero-img" src="'+image(C,'hero')+'" alt="'+esc(hero.imageAlt || '')+'"><div class="ha-v3-hero-content"><p class="ha-v3-eyebrow">'+esc(hero.eyebrow)+'</p><h2 class="ha-v3-h1">'+safeHtml(hero.headlineHtml)+'</h2><div class="ha-v3-hero-text">'+heroBody(hero)+'</div><div class="ha-v3-hero-actions"><div class="ha-v3-ctas'+(hero.cta3Label ? ' ha-v3-ctas-three' : '')+'">'+heroButton(hero,hero.cta1Url || hero.primaryButtonUrl,hero.cta1Label || hero.primaryButtonLabel)+heroButton(hero,hero.cta2Url,hero.cta2Label)+heroButton(hero,hero.cta3Url,hero.cta3Label)+'</div>'+( hero.secondaryButtonLabel ? '<div class="ha-v3-ctas ha-v3-ctas-secondary"><a class="ha-v3-btn ha-v3-btn-ghost" href="'+esc(hero.secondaryButtonUrl)+'">'+ctaLabel(hero.secondaryButtonLabel)+'</a></div>' : '' )+'</div></div></section>'+
         renderIntro(C,intro)+
         '<section class="ha-v3-two"><div class="ha-v3-section-head"><p class="ha-v3-kicker">'+esc(worlds.kicker)+'</p><h2 class="ha-v3-h2">'+esc(worlds.heading)+'</h2></div><div class="ha-v3-panels">'+(worlds.panels||[]).map(function(p){var img='<img src="'+image(C,p.imageKey)+'" alt="'+esc(p.alt)+'">';return '<article class="ha-v3-panel">'+linkedImage('ha-v3-panel-img',p.linkUrl,img,p.label)+'<div class="ha-v3-panel-body"><p class="ha-v3-label '+esc(p.tone)+'">'+esc(p.label)+'</p><div class="ha-v3-panel-copy">'+esc(p.copy)+'</div><a class="ha-v3-panel-link '+esc(p.tone)+'" href="'+esc(p.linkUrl)+'">'+ctaLabel(p.linkLabel)+'</a></div></article>';}).join('')+'</div></section>'+
         '<section class="ha-v3-strip-head ha-home-artist-route" aria-label="For Artists"><div><p class="ha-v3-kicker">'+esc(artistRoute.eyebrow)+'</p><h2 class="ha-v3-strip-title">'+esc(artistRoute.heading)+'</h2><p class="ha-v3-card-copy">'+esc(artistRoute.body)+'</p></div><a class="ha-c-btn ha-c-btn-teal" href="'+esc(artistRoute.linkUrl)+'">'+ctaLabel(artistRoute.linkLabel)+'</a></section>'+

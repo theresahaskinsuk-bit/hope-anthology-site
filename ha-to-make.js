@@ -139,12 +139,12 @@
       '<!-- #ha-to-keep-v1 is nested for existing styling only; this is the To Make route. -->' +
       '<div id="ha-to-keep-v1">' +
         '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation">' +
-          '<a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="' + image(content, 'logo') + '" alt=""><h1 class="ha-v3-sr-only">The Hope Anthology — To Make</h1></a>' +
+          '<a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home"><img class="ha-v3-logo" src="' + image(content, 'logo') + '" alt=""><span class="ha-v3-sr-only">The Hope Anthology — To Make</span></a>' +
           '<button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-to-make-mobile-menu" aria-expanded="false"><span></span><span></span><span></span></button>' +
           '<div id="ha-to-make-mobile-menu" class="ha-v3-links">' + navLinks(content.navigation) + '</div>' +
         '</nav>' +
         '<main class="ha-tk-main">' +
-          '<header class="ha-kc-header"><p class="ha-kc-eyebrow">' + esc(page.eyebrow || 'To Make') + '</p><h2>' + safeHtml(page.headingHtml || 'Curated <em>Makers</em>') + '</h2><p>' + esc(page.intro || '') + '</p><div class="ha-kc-stats">' + statHtml + '</div></header>' +
+          '<header class="ha-kc-header"><p class="ha-kc-eyebrow">' + esc(page.eyebrow || 'To Make') + '</p><h1 class="ha-kc-title">' + safeHtml(page.headingHtml || 'Curated <em>Makers</em>') + '</h1><p>' + esc(page.intro || '') + '</p><div class="ha-kc-stats">' + statHtml + '</div></header>' +
           '<section class="ha-kc-grid-section">' + filterBar(content) + '<div class="ha-kc-card-grid ha-tk-grid" id="ha-to-make-grid">' + cards + '</div></section>' +
           '<section class="ha-kc-collective"><div><h2>' + esc(collective.heading || '') + '</h2><p>' + esc(collective.body || '') + '</p></div><a class="ha-kc-collective-btn" href="' + esc(collective.buttonUrl || '/collective') + '">' + ctaLabel(collective.buttonLabel || 'Join the Collective') + '</a></section>' +
         '</main>' +

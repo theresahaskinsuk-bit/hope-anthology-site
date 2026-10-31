@@ -26,8 +26,8 @@ window.HA_TO_KEEP_CONTENT = {
   ],
   "page": {
     "eyebrow": "To Keep",
-    "headingHtml": "Curated <em>Artists</em>",
-    "intro": "A growing anthology of artists whose work carries meaning — pieces to lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
+    "headingHtml": "For art that <em>means</em> something to <em>you</em>.",
+    "intro": "A growing collection of art and objects from independent artists. Pieces that might lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
     "stats": [
       {
         "value": 2,
@@ -58,7 +58,7 @@ window.HA_TO_KEEP_CONTENT = {
   },
   "collective": {
     "heading": "Something worth being part of.",
-    "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
+    "body": "New work, behind-the-scenes glimpses, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
     "buttonLabel": "Join the Collective",
     "buttonUrl": "/collective"
   },

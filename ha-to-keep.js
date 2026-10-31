@@ -168,7 +168,7 @@
       '<nav class="ha-v3-nav" aria-label="Hope Anthology navigation">' +
         '<a class="ha-v3-brand" href="/" aria-label="The Hope Anthology home">' +
           '<img class="ha-v3-logo" src="' + image(content, 'logo') + '" alt="">' +
-          '<h1 class="ha-v3-sr-only" style="' + srOnlyStyle + '">The Hope Anthology \u2014 To Keep</h1>' +
+          '<span class="ha-v3-sr-only" style="' + srOnlyStyle + '">The Hope Anthology \u2014 To Keep</span>' +
         '</a>' +
         '<button class="ha-v3-menu-toggle" type="button" aria-label="Open menu" aria-controls="ha-tk-mobile-menu" aria-expanded="false">' +
           '<span></span><span></span><span></span>' +
@@ -179,7 +179,7 @@
       '<main class="ha-tk-main">' +
         '<header class="ha-kc-header">' +
           '<p class="ha-kc-eyebrow">' + esc(page.eyebrow || 'To Keep') + '</p>' +
-          '<h2>' + safeHtml(page.headingHtml || 'Curated Artists') + '</h2>' +
+          '<h1 class="ha-kc-title">' + safeHtml(page.headingHtml || 'Curated Artists') + '</h1>' +
           '<p>' + esc(page.intro || '') + '</p>' +
           '<div class="ha-kc-stats">' + statsHtml + '</div>' +
         '</header>' +

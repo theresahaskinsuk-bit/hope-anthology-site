@@ -3796,3 +3796,49 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
   #ha-to-gather-v1 .ha-tg-ways h2,#ha-to-gather-v1 .ha-tg-invite h2{font-size:28px;}
   #ha-to-gather-v1 .ha-tg-invite{padding:60px 0;}
 }
+
+/* ============================================================
+   Homepage: three sections — To Keep · To Make · To Gather (Nov 2026)
+   ============================================================ */
+.ha-v3-label.gather,.ha-v3-panel-link.gather{color:var(--ha-twine);}
+/* The To Gather panel reuses the square To Gather hero photo; keep the faces and hands in view when cropped wide. */
+#ha-home-v3 .ha-v3-panel-img img[src*="to-gather-hero"]{object-position:center 42%;}
+/* Hero body can be two paragraphs; space between them, the usual gap before the buttons. */
+#ha-home-v3 .ha-v3-hero-text .ha-v3-hero-body{margin-bottom:12px;}
+#ha-home-v3 .ha-v3-hero-text .ha-v3-hero-body:last-child{margin-bottom:24px;}
+/* Three equal italic buttons in the hero. */
+#ha-home-v3 .ha-v3-ctas-three .ha-v3-btn{padding:14px 20px;white-space:nowrap;}
+#ha-home-v3 .ha-v3-hero-actions .ha-v3-ctas.ha-v3-ctas-three{flex-wrap:wrap;}
+/* Wider hero text so the headline sits on two lines; "be part of" never splits. */
+@media (min-width:901px){
+  #ha-home-v3 .ha-v3-hero-content{max-width:680px;}
+  #ha-home-v3 .ha-v3-hero-body{max-width:560px;}
+}
+#ha-home-v3 .ha-v3-h1 em{white-space:nowrap;}
+@media (max-width:600px){
+  #ha-home-v3 .ha-v3-hero-actions .ha-v3-ctas.ha-v3-ctas-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;}
+  #ha-home-v3 .ha-v3-ctas-three .ha-v3-btn{padding:13px 6px;font-size:14px;justify-content:center;}
+}
+/* Keep "be part of" together on one line. */
+#ha-home-v3 .ha-v3-h1 .ha-v3-nowrap{white-space:nowrap;}
+/* "What's here for you": all three labels and links in teal, the colour of the pages they lead to. */
+#ha-home-v3 .ha-v3-label.keep,#ha-home-v3 .ha-v3-label.make,#ha-home-v3 .ha-v3-label.gather,
+#ha-home-v3 .ha-v3-panel-link.keep,#ha-home-v3 .ha-v3-panel-link.make,#ha-home-v3 .ha-v3-panel-link.gather{color:var(--ha-teal);}
+/* For Artists strip: more breathing room now the heading runs to two lines. */
+#ha-home-v3 .ha-home-artist-route{padding:44px 48px;gap:48px;}
+#ha-home-v3 .ha-home-artist-route .ha-v3-strip-title{margin:0 0 14px;line-height:1.25;}
+#ha-home-v3 .ha-home-artist-route .ha-v3-kicker{margin-bottom:12px;}
+@media (max-width:700px){#ha-home-v3 .ha-home-artist-route{padding:36px 24px;gap:24px;}}
+/* To Keep / To Make: the visible headline is now the page's H1 (was an H2). Same look as before. */
+#ha-to-keep-v1 .ha-kc-header h1.ha-kc-title{font-family:'Hope Lora','Lora',Georgia,serif!important;font-size:48px!important;font-weight:400!important;color:#F2F3EF!important;line-height:1.12!important;margin:0 0 16px!important;letter-spacing:-.02em!important;max-width:820px;}
+#ha-to-keep-v1 .ha-kc-header h1.ha-kc-title em{font-style:italic!important;color:#FED22F!important;}
+@media(max-width:900px){#ha-to-keep-v1 .ha-kc-header h1.ha-kc-title{font-size:36px!important;}}
+/* Phones/tablets: keep the two hero paragraphs closer together than the gap before the buttons. */
+@media (max-width:900px){
+  #ha-home-v3 .ha-v3-hero-text .ha-v3-hero-body{margin-bottom:12px!important;}
+  #ha-home-v3 .ha-v3-hero-text .ha-v3-hero-body:last-child{margin-bottom:26px!important;}
+}
+/* Very narrow phones: let the three buttons breathe. */
+@media (max-width:380px){
+  #ha-home-v3 .ha-v3-ctas-three .ha-v3-btn{padding:12px 4px;font-size:13px;gap:.3em;}
+}

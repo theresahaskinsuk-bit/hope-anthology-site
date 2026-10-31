@@ -27,7 +27,7 @@ window.HA_TO_MAKE_MAKERS["ellien-bruce-e4"] = {
   ],
   "collective": {
     "heading": "Something worth being part of.",
-    "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
+    "body": "New work, behind-the-scenes glimpses, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
     "buttonLabel": "Join the Collective",
     "buttonUrl": "/collective"
   },

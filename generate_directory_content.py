@@ -42,7 +42,7 @@ NAV = [
     {"label": "The Story", "url": "/story"},
 ]
 FOOTER = {"privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"}
-COLLECTIVE = {"heading": "Something worth being part of.", "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"}
+COLLECTIVE = {"heading": "Something worth being part of.", "body": "New work, behind-the-scenes glimpses, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.", "buttonLabel": "Join the Collective", "buttonUrl": "/collective"}
 
 ROSTER = {
     "active": ["active"], "slug": ["slug"], "name": ["displayname"], "buttonName": ["buttonname"],
@@ -675,8 +675,8 @@ def index_payload(items: list[dict[str, Any]], make: bool, source: str, publicat
     works = [product for item in items for group in item["groups"] for product in group["products"]]
     return {
         "generatedFrom": source, "images": ASSETS, "navigation": NAV,
-        "page": {"eyebrow": "To Make" if make else "To Keep", "headingHtml": "Curated <em>Makers</em>" if make else "Curated <em>Artists</em>",
-                 "intro": "A growing anthology of people who design things for other people to make. Patterns, templates and guides — chosen because making is one of the oldest ways there is of getting through something." if make else "A growing anthology of artists whose work carries meaning — pieces to lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
+        "page": {"eyebrow": "To Make" if make else "To Keep", "headingHtml": "Art to <em>make</em>. For all sorts of <em>reasons</em>." if make else "For art that <em>means</em> something to <em>you</em>.",
+                 "intro": "A growing collection of kits, patterns and guides from independent artists and makers. Something new to try, something familiar to return to, or simply something to get lost in for a while. Sometimes it’s about what you make, and sometimes it’s about the making itself." if make else "A growing collection of art and objects from independent artists. Pieces that might lift you, anchor you, or simply stay with you. Every artist is here because their work holds a feeling worth keeping.",
                  "stats": [{"value": len(items), "label": "MAKERS" if make else "ARTISTS"}, {"value": len(works), "label": "PATTERNS" if make else "WORKS"}, {"value": len({p["collection"] for p in works if p["collection"]}), "label": "COLLECTIONS"}]},
         "filters": {"medium": (["All mediums"] if make else ["All"]) + sorted({item["filterMedium"] if make else item["medium"] for item in items if item["medium"]}), **({"level": ["All levels", "Beginner", "Improver"], "delivery": ["All delivery", "Instant download", "Posted to you"]} if make else {})},
         "recruitment": {"eyebrow": "FOR MAKERS" if make else "FOR ARTISTS", "heading": "Do you design things for other people to make?" if make else "Your work could be here.", "body": publication["recruitment"], "linkLabel": "See how it works for artists →", "linkUrl": "/for-artists"},

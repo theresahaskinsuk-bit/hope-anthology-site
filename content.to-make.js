@@ -26,8 +26,8 @@ window.HA_TO_MAKE_CONTENT = {
   ],
   "page": {
     "eyebrow": "To Make",
-    "headingHtml": "Curated <em>Makers</em>",
-    "intro": "A growing anthology of people who design things for other people to make. Patterns, templates and guides — chosen because making is one of the oldest ways there is of getting through something.",
+    "headingHtml": "Art to <em>make</em>. For all sorts of <em>reasons</em>.",
+    "intro": "A growing collection of kits, patterns and guides from independent artists and makers. Something new to try, something familiar to return to, or simply something to get lost in for a while. Sometimes it’s about what you make, and sometimes it’s about the making itself.",
     "stats": [
       {
         "value": 2,
@@ -68,7 +68,7 @@ window.HA_TO_MAKE_CONTENT = {
   },
   "collective": {
     "heading": "Something worth being part of.",
-    "body": "New designs, behind-the-scenes making, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
+    "body": "New work, behind-the-scenes glimpses, and the occasional reminder that you’re doing better than you think. No noise. No pressure. Just the Anthology.",
     "buttonLabel": "Join the Collective",
     "buttonUrl": "/collective"
   },

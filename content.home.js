@@ -10,7 +10,8 @@ window.HA_HOME_CONTENT = {
     hero: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4a154e4b-4dd8-438b-9c68-07d7037c4637/the-hope-anthology-art-for-everyday-human-home.jpg?content-type=image%2Fjpeg',
     keep: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/18cea152-1a12-4535-8cef-3099aab45bd5/home-panel-to-keep-symbolic-art.jpg?content-type=image%2Fjpeg',
     make: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/f8b5d4d6-304b-4edf-aa13-4c87597d4873/home-panel-to-make-stained-glass-patterns-luna.jpg?content-type=image%2Fjpeg',
-    why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5171904f-5f1a-405f-80af-ff1199448f4e/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg'
+    why: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5171904f-5f1a-405f-80af-ff1199448f4e/home-panel-story-family-making-table.jpg?content-type=image%2Fjpeg',
+    gather: 'https://images.squarespace-cdn.com/content/6a258894c750534b28845855/96111767-d686-472f-a2ea-f375d877103e/to-gather-hero-group-craft-workshop-the-hope-anthology.jpg?content-type=image%2Fjpeg'
   },
 
     navigation: [
@@ -21,16 +22,23 @@ window.HA_HOME_CONTENT = {
   ],
 
   hero: {
-    eyebrow: 'Symbolic art · meaningful making',
-    headlineHtml: 'An anthology of art to <em>keep</em> and things to <em>make.</em>',
-    body: "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. And sometimes, something to give when words don't work. Made by independent artists.",
+    eyebrow: 'The Hope Anthology',
+    imageAlt: 'A collage of art and making: framed letter prints reading Knowing, Enough and Soar, a fox print, a stained glass sunflower and a leaf suncatcher in a sunny window, a stained glass fox in progress, the word Rise drawn in outline, and a hand writing Breathe in a notebook beside a pot of coloured pencils.',
+    srTitle: 'The Hope Anthology — Art to keep, make and be part of',
+    headlineHtml: 'Art to <em>keep</em>, <em>make</em> and <span class="ha-v3-nowrap"><em>be part</em> of</span>.',
+    body: '',
+    bodyParagraphs: [
+      "Things to keep that lift you, anchor you, or simply stay with you. Things to make for the joy of it, or when you need something to get lost in. Things to do together, with your hands, your voice, your body or your imagination.",
+      "And sometimes, when words don't work, something else might."
+    ],
     bodyTagline: '',
     cta1Label: 'To Keep →',
     cta1Url: '/to-keep',
     cta2Label: 'To Make →',
     cta2Url: '/to-make',
-    secondaryButtonLabel: 'Read the story',
-    secondaryButtonUrl: '/story'
+    cta3Label: 'To Gather →',
+    cta3Url: '/to-gather',
+    buttonStyle: 'ghost'
   },
 
   intro: {
@@ -39,7 +47,7 @@ window.HA_HOME_CONTENT = {
     primaryButtonUrl: '/to-keep',
     secondaryButtonLabel: 'Read the story →',
     secondaryButtonUrl: '/story',
-    bodyHtml: 'The Hope Anthology brings together <em>independent artists</em> and <em>makers</em> — and the people <em>who need</em> what they make. A collection by <em>many hands</em> and <em>minds</em>. All curated for the <em>beautiful, complicated</em> parts of being <em>human</em>.',
+    bodyHtml: 'The Hope Anthology brings together <em>independent artists</em>, <em>makers</em> and <em>creative</em> people — and the people who might <em>find something</em> in what they do. A collection by <em>many hands</em> and <em>minds</em>. All curated for the <em>beautiful, complicated</em> parts of being <em>human</em>.',
     kicker: ''
   },
 
@@ -47,15 +55,15 @@ window.HA_HOME_CONTENT = {
     kicker: 'CURATED BY HUMANS. FOR HUMANS.',
     heading: "What's here for you",
     panels: [
-      { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art you can own that shows up for you every day.', linkLabel: 'To Keep →', linkUrl: '/to-keep' },
-      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Make something. Just for you. Just because.', linkLabel: 'To Make →', linkUrl: '/to-make' },
-      { label: 'Behind it all', tone: 'why', imageKey: 'why', alt: 'Hope Anthology story and family making table', copy: "There's a reason all of this exists.", linkLabel: 'The Story →', linkUrl: '/story' }
+      { label: 'To Keep', tone: 'keep', imageKey: 'keep', alt: 'Hope Anthology art to keep', copy: 'Art that means something to you, whether you know exactly why or not.', linkLabel: 'To Keep →', linkUrl: '/to-keep' },
+      { label: 'To Make', tone: 'make', imageKey: 'make', alt: 'Hope Anthology stained glass making project', copy: 'Art you can make for the joy of it, or when you need something to get lost in.', linkLabel: 'To Make →', linkUrl: '/to-make' },
+      { label: 'To Gather', tone: 'gather', imageKey: 'gather', alt: 'Four people sit around a paint-spattered workshop table, heads down and concentrating as they decorate round wooden discs with bird designs, using brushes, small tools and pieces of eggshell.', copy: 'Art that happens with you in it, in your own way.', linkLabel: 'To Gather →', linkUrl: '/to-gather' }
     ]
   },
 
   artistRoute: {
     eyebrow: 'FOR ARTISTS',
-    heading: "I'm looking for founding artists who believe in what Hope is trying to do",
+    heading: "I'm always looking for artists who believe in what Hope is trying to do",
     body: 'No commission, no exclusivity, and nothing for you to build.',
     linkLabel: 'See how it works for artists →',
     linkUrl: '/for-artists'
@@ -64,7 +72,7 @@ window.HA_HOME_CONTENT = {
   collective: {
     kicker: 'Collective',
     heading: 'Something worth being part of.',
-    body: "New designs, behind-the-scenes making, and the occasional reminder that you're doing better than you think. No noise. No pressure. Just the Anthology.",
+    body: "New work, behind-the-scenes glimpses, and the occasional reminder that you're doing better than you think. No noise. No pressure. Just the Anthology.",
     emailLabel: 'Email address',
     emailPlaceholder: 'Email address',
     emailFieldName: 'email',
