@@ -14,6 +14,10 @@ window.HA_STORY_CONTENT = {
       "href": "/to-make"
     },
     {
+      "label": "To Gather",
+      "href": "/to-gather"
+    },
+    {
       "label": "The Story",
       "href": "/story",
       "active": true
@@ -183,6 +187,10 @@ window.HA_STORY_CONTENT = {
           {
             "label": "To Make",
             "href": "/to-make"
+          },
+          {
+            "label": "To Gather",
+            "href": "/to-gather"
           },
           {
             "label": "The Story",

@@ -17,6 +17,10 @@ window.HA_TO_MAKE_MAKERS["nell-hardy-e3"] = {
       "url": "/to-make"
     },
     {
+      "label": "To Gather",
+      "url": "/to-gather"
+    },
+    {
       "label": "The Story",
       "url": "/story"
     }

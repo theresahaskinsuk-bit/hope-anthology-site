@@ -29,7 +29,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-EXPECTED_NAVIGATION = ["To Keep", "To Make", "The Story"]
+EXPECTED_NAVIGATION = ["To Keep", "To Make", "To Gather", "The Story"]
 KNOWN_FINDINGS_FILE = "site-contract-known-findings.json"
 
 # Page-level content sources. These are the files that supply a visible page's
@@ -46,6 +46,7 @@ ACTIVE_CONTENT_FILES = [
     "content.keep-collections.js",
     "content.make-template.js",
     "content.story.js",
+    "content.to-gather.js",
     "content.to-keep.js",
     "content.to-make.js",
     "content.to-make.nell-hardy-e3.js",
@@ -64,6 +65,7 @@ ACTIVE_RENDERER_FILES = [
     "ha-info-page-template.js",
     "ha-make-template.js",
     "ha-story.js",
+    "ha-to-gather.js",
     "ha-to-keep.js",
     "ha-to-make.js",
 ]
@@ -513,7 +515,7 @@ def markdown_report(status: dict[str, str], new_findings: list[Finding], pre_exi
         "## Checks",
         "",
         "1. Fresh remote baseline is fetched and is an ancestor of the current checkout.",
-        "2. Every active page content file has the exact navigation labels: To Keep, To Make, The Story.",
+        "2. Every active page content file has the exact navigation labels: To Keep, To Make, To Gather, The Story.",
         "3. Every active page's To Make navigation destination is `/to-make`.",
         "4. Every standard footer has a Collaborate column (For Artists, For Organisations) and a Collective link.",
         "5. The standalone Editions registry has valid `/editions/<slug>` routes, generated counts, and no public price output while publication prices are NO.",

@@ -20,6 +20,7 @@ window.HA_MAKE_TEMPLATE_CONTENT = {
     navigation: [
     { label: 'To Keep', url: '/to-keep' },
     { label: 'To Make', url: '/to-make' },
+    { label: 'To Gather', url: '/to-gather' },
     { label: 'The Story', url: '/story' }
   ],
 

@@ -16,6 +16,10 @@ window.HA_TO_MAKE_CONTENT = {
       "url": "/to-make"
     },
     {
+      "label": "To Gather",
+      "url": "/to-gather"
+    },
+    {
       "label": "The Story",
       "url": "/story"
     }

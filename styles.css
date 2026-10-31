@@ -3724,3 +3724,75 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
    (bigger than a small card, smaller than a feature). The original "Two on two" is unchanged.
    ============================================================ */
 #ha-edition-v1 .ha-ed-layout-two-on-two-large{grid-template-columns:repeat(2,minmax(0,1fr));}
+
+/* ============================================================
+   ha-to-gather-v1 — To Gather holding page (31 Oct 2026)
+   Shared nav and footer come from the global .ha-v3-* rules.
+   ============================================================ */
+#ha-to-gather-v1{background:var(--ha-cream);color:var(--ha-dark);font-family:'Hope DM Sans','DM Sans',sans-serif;line-height:1.5;min-height:100vh;}
+#ha-to-gather-v1,#ha-to-gather-v1 *{box-sizing:border-box;}
+#ha-to-gather-v1 img{display:block;max-width:100%;}
+#ha-to-gather-v1 .ha-v3-links a.is-active{color:var(--ha-gold)!important;}
+#ha-to-gather-v1 .ha-tg-wrap{max-width:1200px;margin:0 auto;padding:0 48px;}
+/* Hero */
+#ha-to-gather-v1 .ha-tg-hero{background:var(--ha-teal);color:var(--ha-cream);padding:84px 0 92px;}
+#ha-to-gather-v1 .ha-tg-hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,.6fr);grid-template-areas:"top ." "body img";column-gap:64px;align-items:start;}
+#ha-to-gather-v1 .ha-tg-hero-top{grid-area:top;}
+#ha-to-gather-v1 .ha-tg-hero-body{grid-area:body;}
+#ha-to-gather-v1 .ha-tg-hero-figure{grid-area:img;margin:6px 0 0;background:#f7f7f3;padding:10px;box-shadow:0 10px 30px rgba(0,0,0,.18);}
+#ha-to-gather-v1 .ha-tg-hero-photo{width:100%;aspect-ratio:1/1;object-fit:cover;}
+#ha-to-gather-v1 .ha-tg-eyebrow{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ha-gold);margin:0 0 14px;}
+#ha-to-gather-v1 .ha-tg-hero h1{font-family:'Hope Lora','Lora',Georgia,serif;font-weight:400;font-size:48px;line-height:1.1;letter-spacing:-.02em;color:var(--ha-cream);margin:0 0 22px;}
+#ha-to-gather-v1 .ha-tg-hero h1 em{font-style:italic;color:var(--ha-gold);}
+#ha-to-gather-v1 .ha-tg-hero-body p{font-size:16px;line-height:1.85;font-weight:300;color:rgba(242,243,239,.87);margin:0 0 16px;max-width:600px;}
+#ha-to-gather-v1 .ha-tg-hero-body p:last-child{margin-bottom:0;}
+/* A little update */
+#ha-to-gather-v1 .ha-tg-update{padding:72px 0 8px;}
+#ha-to-gather-v1 .ha-tg-update-box{border-left:3px solid var(--ha-gold);padding:4px 0 4px 26px;}
+#ha-to-gather-v1 .ha-tg-update h2{font-family:'Hope DM Sans','DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ha-twine);margin:0 0 12px;}
+#ha-to-gather-v1 .ha-tg-update p{font-family:'Hope Lora','Lora',Georgia,serif;font-size:18px;line-height:1.6;color:var(--ha-dark);margin:0;}
+/* Ways to gather */
+#ha-to-gather-v1 .ha-tg-ways{padding:64px 0 88px;}
+#ha-to-gather-v1 .ha-tg-ways h2{font-family:'Hope Lora','Lora',Georgia,serif;font-weight:400;font-size:32px;letter-spacing:-.01em;color:var(--ha-teal);margin:0 0 28px;}
+#ha-to-gather-v1 .ha-tg-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;}
+#ha-to-gather-v1 .ha-tg-card{background:#fff;border:1px solid rgba(54,68,73,.12);border-radius:6px;padding:16px 16px 26px;}
+#ha-to-gather-v1 .ha-tg-card-img{aspect-ratio:4/3;border-radius:3px;overflow:hidden;background:var(--ha-linen);margin-bottom:20px;}
+#ha-to-gather-v1 .ha-tg-card-photo{width:100%;height:100%;object-fit:cover;}
+#ha-to-gather-v1 .ha-tg-card h3{font-family:'Hope Lora','Lora',Georgia,serif;font-weight:400;font-size:22px;line-height:1.25;color:var(--ha-dark);margin:0 0 10px;}
+#ha-to-gather-v1 .ha-tg-card h3 em{font-style:italic;color:var(--ha-twine);}
+#ha-to-gather-v1 .ha-tg-card p{font-size:14px;line-height:1.75;font-weight:300;color:var(--ha-dark);margin:0;}
+/* Invitation to practitioners */
+#ha-to-gather-v1 .ha-tg-invite{background:var(--ha-teal);color:var(--ha-cream);padding:80px 0;}
+#ha-to-gather-v1 .ha-tg-invite h2{font-family:'Hope Lora','Lora',Georgia,serif;font-weight:400;font-size:32px;line-height:1.2;color:var(--ha-cream);margin:0 0 18px;max-width:760px;}
+#ha-to-gather-v1 .ha-tg-invite p{font-size:16px;line-height:1.8;font-weight:300;color:rgba(242,243,239,.87);max-width:680px;margin:0 0 28px;}
+#ha-to-gather-v1 .ha-tg-btn{font-family:'Hope Lora','Lora',Georgia,serif;font-size:15px;font-style:italic;}
+#ha-to-gather-v1 .ha-tg-btn:hover .ha-v3-cta-arrow,#ha-to-gather-v1 .ha-tg-btn:focus-visible .ha-v3-cta-arrow{transform:translateX(3px);}
+#ha-to-gather-v1 .ha-v3-footer{border-top:1px solid rgba(242,243,239,.14);}
+/* Mobile navigation (same pattern as the other pages) */
+#ha-to-gather-v1 .ha-v3-menu-toggle{display:none;appearance:none;background:transparent;border:0;width:44px;height:44px;padding:10px;margin:0;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px;color:var(--ha-cream);}
+#ha-to-gather-v1 .ha-v3-menu-toggle span{display:block;width:22px;height:1px;background:currentColor;transition:transform .2s ease,opacity .2s ease;}
+#ha-to-gather-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(1){transform:translateY(6px) rotate(45deg);}
+#ha-to-gather-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(2){opacity:0;}
+#ha-to-gather-v1.ha-v3-menu-open .ha-v3-menu-toggle span:nth-child(3){transform:translateY(-6px) rotate(-45deg);}
+@media(min-width:901px){
+  #ha-to-gather-v1 .ha-v3-footer-top{grid-template-columns:36px repeat(3,max-content)!important;column-gap:96px!important;justify-content:start!important;}
+}
+@media(max-width:900px){
+  #ha-to-gather-v1 .ha-v3-menu-toggle{display:inline-flex!important;position:relative;z-index:102;}
+  #ha-to-gather-v1 .ha-v3-nav .ha-v3-links{position:absolute;top:72px;left:0;right:0;display:flex!important;flex-direction:column;align-items:stretch;gap:0;background:var(--ha-teal);border-top:.5px solid rgba(242,243,239,.18);padding:8px 24px 18px;opacity:0;visibility:hidden;transform:translateY(-8px);pointer-events:none;transition:opacity .18s ease,visibility .18s ease,transform .18s ease;z-index:20;}
+  #ha-to-gather-v1.ha-v3-menu-open .ha-v3-nav .ha-v3-links{opacity:1;visibility:visible;transform:translateY(0);pointer-events:auto;}
+  #ha-to-gather-v1 .ha-v3-nav .ha-v3-links a{display:block;padding:12px 0;border-bottom:.5px solid rgba(242,243,239,.12);}
+  #ha-to-gather-v1 .ha-tg-cards{grid-template-columns:1fr;}
+  #ha-to-gather-v1 .ha-tg-hero-grid{grid-template-columns:1fr;grid-template-areas:"top" "body" "img";}
+  #ha-to-gather-v1 .ha-tg-hero-figure{margin-top:28px;max-width:440px;}
+}
+@media(max-width:700px){
+  #ha-to-gather-v1 .ha-tg-wrap{padding:0 20px;}
+  #ha-to-gather-v1 .ha-tg-hero{padding:48px 0 56px;}
+  #ha-to-gather-v1 .ha-tg-hero h1{font-size:36px;}
+  #ha-to-gather-v1 .ha-tg-update{padding:52px 0 0;}
+  #ha-to-gather-v1 .ha-tg-update p{font-size:17px;}
+  #ha-to-gather-v1 .ha-tg-ways{padding:48px 0 64px;}
+  #ha-to-gather-v1 .ha-tg-ways h2,#ha-to-gather-v1 .ha-tg-invite h2{font-size:28px;}
+  #ha-to-gather-v1 .ha-tg-invite{padding:60px 0;}
+}

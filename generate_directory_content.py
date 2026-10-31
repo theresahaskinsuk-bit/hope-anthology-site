@@ -38,6 +38,7 @@ ASSETS = {
 NAV = [
     {"label": "To Keep", "url": "/to-keep"},
     {"label": "To Make", "url": "/to-make"},
+    {"label": "To Gather", "url": "/to-gather"},
     {"label": "The Story", "url": "/story"},
 ]
 FOOTER = {"privacyUrl": "/privacy-policy", "accessibilityUrl": "/accessibility", "copyright": "© The Hope Anthology 2026"}
