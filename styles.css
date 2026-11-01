@@ -3867,3 +3867,44 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 
 /* Page headlines that are now real H1s (were H2s): same look, and nothing from Squarespace's own H1 style leaks in. */
 #ha-home-v3 h1.ha-v3-h1,#ha-keep-collection-v1 .ha-kc-header h1.ha-kc-title,.ha-col-header h1.ha-col-title{text-transform:none;font-style:normal;}
+
+/* ============================================================
+   Edition Enlarge (1 Nov 2026, Claude)
+   A round ⤢ button on the left of the row under each image (the same size as the next-image arrow),
+   desktop only; it opens #ha-ed-lightbox, the enlarged view. Colours are the site's own: dark #364449,
+   gold #FED22F, teal #265b70.
+   ============================================================ */
+#ha-edition-v1 .ha-ed-count-row .ha-ed-zoom{margin-right:auto;}
+#ha-edition-v1 .ha-ed-zoom{position:relative;display:flex;align-items:center;justify-content:center;flex:none;width:28px;height:28px;padding:0;border:.5px solid rgba(54,68,73,.22);border-radius:50%;background:#fff;color:var(--teal);cursor:zoom-in;}
+#ha-edition-v1 .ha-ed-zoom svg{display:block;width:13px;height:13px;}
+#ha-edition-v1 .ha-ed-zoom:hover{border-color:var(--teal);}
+#ha-edition-v1 .ha-ed-zoom:focus-visible{outline:3px solid var(--teal);outline-offset:2px;}
+#ha-edition-v1 .ha-ed-zoom::after{content:'Enlarge';position:absolute;left:36px;top:50%;transform:translateY(-50%);color:var(--teal);font:600 10px/1 'Hope DM Sans','DM Sans',Arial,sans-serif;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s ease;}
+#ha-edition-v1 .ha-ed-zoom:hover::after,#ha-edition-v1 .ha-ed-zoom:focus-visible::after{opacity:1;}
+@media (max-width:1100px){
+  #ha-edition-v1 .ha-ed-zoom{display:none;}
+  #ha-edition-v1 .ha-ed-count-row.is-zoom-only{display:none;}
+}
+#ha-ed-lightbox{position:fixed;inset:0;z-index:2147483000;display:flex;align-items:center;justify-content:center;padding:40px 88px 40px 72px;background:rgba(36,45,49,.95);box-sizing:border-box;font-family:'Hope DM Sans','DM Sans',Arial,sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+#ha-ed-lightbox[hidden]{display:none;}
+#ha-ed-lightbox [hidden]{display:none!important;}
+#ha-ed-lightbox *{box-sizing:border-box;}
+#ha-ed-lightbox .ha-ed-lb-inner{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:40px;align-items:center;width:100%;max-width:1240px;max-height:100%;}
+#ha-ed-lightbox .ha-ed-lb-fig{margin:0;display:flex;align-items:center;justify-content:center;height:calc(100vh - 80px);min-height:0;}
+#ha-ed-lightbox .ha-ed-lb-img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;background:#fff;box-shadow:0 10px 40px rgba(0,0,0,.4);}
+#ha-ed-lightbox .ha-ed-lb-info{color:#efe9dd;font-weight:300;max-height:calc(100vh - 80px);overflow:auto;}
+#ha-ed-lightbox .ha-ed-lb-artist{margin:0 0 8px;font-size:12px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:#FED22F;}
+#ha-ed-lightbox .ha-ed-lb-title{margin:0 0 8px;font-family:'Hope Lora','Lora',Georgia,serif;font-size:32px;font-weight:400;line-height:1.2;color:#fff;letter-spacing:0;text-transform:none;}
+#ha-ed-lightbox .ha-ed-lb-medium{margin:0 0 20px;font-size:13px;letter-spacing:.06em;text-transform:uppercase;opacity:.75;}
+#ha-ed-lightbox .ha-ed-lb-note{margin:0 0 16px;font-size:16px;line-height:1.6;opacity:.85;}
+#ha-ed-lightbox .ha-ed-lb-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 24px;}
+#ha-ed-lightbox .ha-ed-lb-chips span{font-size:12px;border:1px solid rgba(239,233,221,.4);padding:4px 10px;border-radius:2px;}
+#ha-ed-lightbox .ha-ed-lb-nav{display:flex;align-items:center;gap:16px;margin:0 0 28px;}
+#ha-ed-lightbox .ha-ed-lb-nav button{display:flex;align-items:center;justify-content:center;width:40px;height:40px;padding:0;border:1px solid rgba(239,233,221,.5);border-radius:50%;background:transparent;color:#efe9dd;font-size:18px;line-height:1;cursor:pointer;}
+#ha-ed-lightbox .ha-ed-lb-nav button:hover{background:rgba(255,255,255,.1);}
+#ha-ed-lightbox .ha-ed-lb-count{margin:0;min-width:44px;font-size:16px;text-align:center;}
+#ha-ed-lightbox .ha-ed-lb-shop{display:inline-flex;align-items:center;gap:.45em;min-height:44px;padding:14px 28px;border-radius:2px;background:#FED22F;color:#364449;font-family:'Hope Lora','Lora',Georgia,serif;font-size:17px;font-style:italic;font-weight:400;line-height:1.05;text-decoration:none;}
+#ha-ed-lightbox .ha-ed-lb-shop:hover,#ha-ed-lightbox .ha-ed-lb-shop:focus-visible{filter:brightness(1.06);}
+#ha-ed-lightbox .ha-ed-lb-shop:hover .ha-ed-lb-shop-text,#ha-ed-lightbox .ha-ed-lb-shop:focus-visible .ha-ed-lb-shop-text{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;}
+#ha-ed-lightbox .ha-ed-lb-close{position:fixed;top:20px;right:24px;width:44px;height:44px;padding:0;border:0;background:transparent;color:#efe9dd;font-size:26px;line-height:1;cursor:pointer;}
+#ha-ed-lightbox button:focus-visible,#ha-ed-lightbox a:focus-visible{outline:3px solid #FED22F;outline-offset:3px;}

@@ -1402,15 +1402,29 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist G — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Hand-blown glass bowl",
+              "medium": "Handmade textured ceramic serving bowl",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "For sharing",
+                "Everyday favourite",
+                "The tactile type"
+              ],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/725464e3-befb-49bd-bc71-00495e48e5b1/Art_G_Temp_Img_1.jpg",
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
                   "alt": "Demonstration placeholder image for Artist G, piece 1",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/df8afd4d-5839-4612-8851-6c6f75fc84ec/Art_D_Temp_Img_slice.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 1: a slice of the bowl",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/3993d306-b4a0-4d00-a9dc-22200742fd1d/Art_D_Temp_Img_kiln.jpg",
+                  "alt": "Demonstration placeholder image for Artist G, piece 1: the bowl by a kiln",
                   "photo": true
                 }
               ],
@@ -1423,14 +1437,14 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist G — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Hand-blown glass jar",
+              "medium": "Handmade textured ceramic bowl",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d2aaef36-76bb-44d3-b791-3bc96c144da9/Art_G_Temp_Img_2.jpg",
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/aa1a84d0-f151-4603-9a47-039a8d64018e/Art_D_Temp_Img_1.jpg",
                   "alt": "Demonstration placeholder image for Artist G, piece 2",
                   "photo": true
                 }
@@ -1444,96 +1458,15 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist G — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Hand-blown glass jug",
+              "medium": "Handmade textured ceramic vase",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/e334f296-bd09-4dcd-8802-0e6b095e1dfd/Art_G_Temp_Img_3.jpg",
+                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8d1c33cd-a665-4310-83f8-e1cd121f065a/Art_D_Temp_Img_3.jpg",
                   "alt": "Demonstration placeholder image for Artist G, piece 3",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            }
-          ]
-        },
-        {
-          "active": true,
-          "slug": "lizzies-embroidery-club",
-          "artistOrder": 5,
-          "name": "Lizzie’s Embroidery Club",
-          "layout": "Feature and two beside",
-          "whyLine": "A few words from the artist about their work.",
-          "pieces": [
-            {
-              "active": true,
-              "pieceOrder": 1,
-              "title": "Snakes",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Embroidery Kits",
-              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/snakes-quick-kit",
-              "meaning": "",
-              "featured": true,
-              "chips": [
-                "Play again",
-                "Sitting with it",
-                "In your hands"
-              ],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 1",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 2,
-              "title": "Sun and Moon",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Embroidery Kits",
-              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/sun-and-moon-quick-kit",
-              "meaning": "",
-              "featured": false,
-              "chips": [],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/2bedc7f8-a071-4246-abe3-4e5831e0dce8/Art_F_Temp_Img_6.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 2",
-                  "photo": true
-                }
-              ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
-            },
-            {
-              "active": true,
-              "pieceOrder": 3,
-              "title": "Folky",
-              "world": "To Make",
-              "status": "available",
-              "medium": "Embroidery Kits",
-              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/folky-quick-kit",
-              "meaning": "",
-              "featured": false,
-              "chips": [
-                "Play again",
-                "Sitting with it",
-                "In your hands"
-              ],
-              "images": [
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/d07940e9-b66a-4df4-88f5-fedab07902b1/Art_F_Temp_Img_5.jpg",
-                  "alt": "Demonstration placeholder image for Artist F, piece 1",
                   "photo": true
                 }
               ],
