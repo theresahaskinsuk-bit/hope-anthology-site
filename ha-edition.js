@@ -94,6 +94,13 @@
       '<section class="ha-ed-main" aria-label="Edition artists"><div class="ha-ed-artist-stream">'+artists.map(artist).join('')+'</div></section></main>'+
       '<footer class="ha-pt-footer"><p>'+[p.footer1,p.footer2].filter(Boolean).map(esc).join('<br>')+'</p>'+footLink+'</footer></div>';}
   function partnerHead(p){if(!document.querySelector('meta[name="robots"][content*="noindex"]')){var m=document.createElement('meta');m.name='robots';m.content='noindex, nofollow';document.head.appendChild(m);}if(p.titleFont==='Amatic SC'&&!document.getElementById('ha-pt-font')){var l=document.createElement('link');l.id='ha-pt-font';l.rel='stylesheet';l.href='https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap';document.head.appendChild(l);}}
-  function mount(){var c=window.HA_EDITIONS_CONTENT||{},e=find(),pp=e?null:findPartner();if((!e&&!pp)||document.getElementById('ha-edition-v1'))return;var box=document.createElement('div');if(pp)partnerHead(pp.p);box.innerHTML=pp?partnerHtml(pp,c):html(e,c);var root=box.firstChild;document.body.insertBefore(root,document.body.firstChild);document.body.classList.add('ha-edition-v1-active');columns(root);bind(root);lightbox(root);}
+    /* 6 Nov 2026: per-artist preview links. On a preview Edition only (its address ends in -preview), adding
+     ?artist=<artist slug from the Sheet> moves that artist to the top of the page, and &at=<number> to that position
+     instead (at=1 is the top). Everyone else keeps the Sheet order. An unknown slug or a bad number changes nothing,
+     and the public Edition always follows the Sheet. */
+  function previewOrder(e){if(!e||!/-preview$/.test(path))return e;var q,slug,at;try{q=new URLSearchParams(location.search);slug=(q.get('artist')||'').trim().toLowerCase();at=parseInt(q.get('at')||'1',10);}catch(err){return e;}
+    var list=(e.artists||[]).slice(),i=-1;if(!slug)return e;for(var n=0;n<list.length;n++){if(String(list[n].slug||'').toLowerCase()===slug){i=n;break;}}if(i<0)return e;
+    if(!(at>=1))at=1;at=Math.min(at,list.length);var a=list.splice(i,1)[0];list.splice(at-1,0,a);var copy={};for(var k in e){if(Object.prototype.hasOwnProperty.call(e,k))copy[k]=e[k];}copy.artists=list;return copy;}
+function mount(){var c=window.HA_EDITIONS_CONTENT||{},e=previewOrder(find()),pp=e?null:findPartner();if((!e&&!pp)||document.getElementById('ha-edition-v1'))return;var box=document.createElement('div');if(pp)partnerHead(pp.p);box.innerHTML=pp?partnerHtml(pp,c):html(e,c);var root=box.firstChild;document.body.insertBefore(root,document.body.firstChild);document.body.classList.add('ha-edition-v1-active');columns(root);bind(root);lightbox(root);}
   loadCss();loadContent(function(){if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',mount);else mount();});
 })();

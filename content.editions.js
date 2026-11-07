@@ -1304,7 +1304,7 @@ window.HA_EDITIONS_CONTENT = {
                   "photo": true
                 }
               ],
-              "notes": ""
+              "notes": "Needs sign off"
             },
             {
               "active": true,
@@ -1324,7 +1324,7 @@ window.HA_EDITIONS_CONTENT = {
                   "photo": true
                 }
               ],
-              "notes": ""
+              "notes": "Needs sign off"
             },
             {
               "active": true,
@@ -1344,7 +1344,7 @@ window.HA_EDITIONS_CONTENT = {
                   "photo": true
                 }
               ],
-              "notes": ""
+              "notes": "Needs sign off"
             },
             {
               "active": true,
@@ -1364,7 +1364,7 @@ window.HA_EDITIONS_CONTENT = {
                   "photo": true
                 }
               ],
-              "notes": ""
+              "notes": "Needs sign off"
             },
             {
               "active": true,
@@ -1384,94 +1384,150 @@ window.HA_EDITIONS_CONTENT = {
                   "photo": true
                 }
               ],
-              "notes": ""
+              "notes": "Needs sign off"
             }
           ]
         },
         {
           "active": true,
-          "slug": "artist-g",
+          "slug": "lizzies-embroidery-club",
           "artistOrder": 4,
-          "name": "Artist G",
-          "layout": "Feature and two beside",
+          "name": "Lizzie’s Embroidery Club",
+          "layout": "Feature and two beside then two below",
           "whyLine": "A few words from the artist about their work.",
           "pieces": [
             {
               "active": true,
               "pieceOrder": 1,
-              "title": "Artist G — Piece 1",
-              "world": "To Keep",
+              "title": "Snakes",
+              "world": "To Make",
               "status": "available",
-              "medium": "Handmade textured ceramic serving bowl",
-              "listingUrl": "#",
+              "medium": "Embroidery kit",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/snakes-quick-kit",
               "meaning": "",
               "featured": true,
               "chips": [
-                "For sharing",
-                "Everyday favourite",
-                "The tactile type"
+                "Play again",
+                "Sitting with it",
+                "In your hands"
               ],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/890c8aaf-20dd-45f5-a109-408b5a782979/Art_D_Temp_Img_4.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 1",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19a03b86-3a55-4606-836f-ad23663d73d6/LizzieEmbroideryClub-snake-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Snakes embroidery kit by Lizzie's Embroidery Club: a stitched snake winding through leaves and tiny flowers.",
                   "photo": true
                 },
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/df8afd4d-5839-4612-8851-6c6f75fc84ec/Art_D_Temp_Img_slice.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 1: a slice of the bowl",
-                  "photo": true
-                },
-                {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/3993d306-b4a0-4d00-a9dc-22200742fd1d/Art_D_Temp_Img_kiln.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 1: the bowl by a kiln",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/a6e64a82-b5a3-463f-b0df-b0e21760f5a9/LizzieEmbroideryClub-snake-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A second view of the Snakes embroidery design, a snake among leaves and small blooms.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             },
             {
               "active": true,
               "pieceOrder": 2,
-              "title": "Artist G — Piece 2",
-              "world": "To Keep",
+              "title": "Sun and Moon",
+              "world": "To Make",
               "status": "available",
-              "medium": "Handmade textured ceramic bowl",
-              "listingUrl": "#",
+              "medium": "Embroidery kit",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/sun-and-moon-quick-kit",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/aa1a84d0-f151-4603-9a47-039a8d64018e/Art_D_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 2",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bd8cc983-077f-46c1-8b2a-b6a67aa935b4/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "Sun and Moon embroidery kit by Lizzie's Embroidery Club: a stitched sun and moon with glowing rays and little stars.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/261eaef0-7cfa-4893-b18a-30e9f50fb7d3/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "A second view of the Sun and Moon embroidery design, with its rays and starry details.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
             },
             {
               "active": true,
               "pieceOrder": 3,
-              "title": "Artist G — Piece 3",
-              "world": "To Keep",
+              "title": "Folky",
+              "world": "To Make",
               "status": "available",
-              "medium": "Handmade textured ceramic vase",
-              "listingUrl": "#",
+              "medium": "Embroidery kit",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/folky-quick-kit",
+              "meaning": "",
+              "featured": false,
+              "chips": [
+                "Play again",
+                "Sitting with it",
+                "In your hands"
+              ],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/970fc9e4-a128-4f9e-ae4c-a9eaca5dc219/LizzieEmbroideryClub-folky-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Folky embroidery kit by Lizzie's Embroidery Club: a folk-inspired design of bold, symmetrical motifs.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/eae50f92-0f5e-4fc7-b600-a238eba94a75/LizzieEmbroideryClub-folky-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A second view of the Folky embroidery design and its traditional folk details.",
+                  "photo": true
+                }
+              ],
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 4,
+              "title": "Botanical Bug",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Embroidery kit",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/botanical-bug-embroidery-kit-1",
               "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/8d1c33cd-a665-4310-83f8-e1cd121f065a/Art_D_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist G, piece 3",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/318227c3-956e-4b5e-8a45-a41f8e4027d6/LizzieEmbroideryClub-botanical-bug-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Botanical Bug embroidery kit by Lizzie's Embroidery Club: a stitched bug surrounded by flowers, petals and leaves.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/4b70e5dc-454d-4816-854a-86a1f2f10eba/LizzieEmbroideryClub-botanical-bug-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A second view of the Botanical Bug embroidery design, with its floral and leafy details.",
                   "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "Needs sign off"
+            },
+            {
+              "active": true,
+              "pieceOrder": 5,
+              "title": "Mushroom",
+              "world": "To Make",
+              "status": "available",
+              "medium": "Embroidery kit",
+              "listingUrl": "https://www.lizziesembroideryclub.co.uk/product-page/mushroom-quick-kit",
+              "meaning": "",
+              "featured": false,
+              "chips": [],
+              "images": [
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/24dd3364-eb0f-4379-b7de-4c2ab12c1c7b/LizzieEmbroideryClub-mushroom-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "alt": "Mushroom embroidery kit by Lizzie's Embroidery Club: a stitched woodland mushroom with detailed caps.",
+                  "photo": true
+                },
+                {
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/5ff927c3-c7dd-489b-af51-4025b03bba57/LizzieEmbroideryClub-mushroom-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "alt": "A second view of the Mushroom embroidery design, with its woodland details.",
+                  "photo": true
+                }
+              ],
+              "notes": "Needs sign off"
             }
           ]
         },
