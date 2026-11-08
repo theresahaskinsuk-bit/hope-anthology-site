@@ -3909,3 +3909,23 @@ body.ha-artist-invite-active > #siteWrapper{display:none!important;}
 #ha-ed-lightbox .ha-ed-lb-shop:hover .ha-ed-lb-shop-text,#ha-ed-lightbox .ha-ed-lb-shop:focus-visible .ha-ed-lb-shop-text{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:5px;}
 #ha-ed-lightbox .ha-ed-lb-close{position:fixed;top:20px;right:24px;width:44px;height:44px;padding:0;border:0;background:transparent;color:#efe9dd;font-size:26px;line-height:1;cursor:pointer;}
 #ha-ed-lightbox button:focus-visible,#ha-ed-lightbox a:focus-visible{outline:3px solid #FED22F;outline-offset:3px;}
+
+/* ============================================================
+   Edition hero, option E (8 Nov 2026, Claude)
+   Tighter hero spacing and "Curated by humans" beside the numbers on desktop, so the first artwork
+   peeks above the fold on a typical laptop; the "Things to keep..." lines become a quote with
+   matching gold speech marks. Body copy keeps its 560px width (about 65 characters a line).
+   ============================================================ */
+#ha-edition-v1 .ha-ed-things{font-size:15.5px;}
+#ha-edition-v1 .ha-ed-things::before,#ha-edition-v1 .ha-ed-things::after{color:var(--gold);font-style:normal;font-size:1.35em;line-height:0;vertical-align:-0.18em;}
+#ha-edition-v1 .ha-ed-things::before{content:'\201C';margin-right:3px;}
+#ha-edition-v1 .ha-ed-things::after{content:'\201D';margin-left:2px;}
+@media (min-width:901px){
+  #ha-edition-v1 .ha-ed-hero{padding-top:40px;padding-bottom:36px;}
+  #ha-edition-v1 .ha-ed-hero h1{margin-bottom:14px;}
+  #ha-edition-v1 .ha-ed-hero-body{margin-bottom:12px;}
+  #ha-edition-v1 .ha-ed-hero-reach{margin-top:14px;margin-bottom:12px;}
+  #ha-edition-v1 .ha-ed-hero-signoff{display:inline-block;vertical-align:middle;max-width:none;margin:14px 40px 0 0;padding-top:12px;}
+  #ha-edition-v1 .ha-ed-hero-copy .ha-ed-stats{display:inline-flex;vertical-align:middle;margin-top:14px;}
+  #ha-edition-v1 .ha-ed-main{padding-top:28px;}
+}

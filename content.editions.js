@@ -1290,9 +1290,9 @@ window.HA_EDITIONS_CONTENT = {
           "active": true,
           "slug": "life-beading",
           "artistOrder": 3,
-          "name": "Life Beading",
+          "name": "Life Beading by Suzannah Husey",
           "layout": "Feature and two beside then two below",
-          "whyLine": "A few words from the artist about their work.",
+          "whyLine": "Created by Suzannah, these are like modern prayer beads, only the meaning is entirely your own.",
           "pieces": [
             {
               "active": true,
@@ -1402,7 +1402,7 @@ window.HA_EDITIONS_CONTENT = {
           "artistOrder": 4,
           "name": "Lizzie’s Embroidery Club",
           "layout": "Feature and two beside then two below",
-          "whyLine": "A few words from the artist about their work.",
+          "whyLine": "I've been obsessed with the endless world of threads, textures and colours for over eight years. My mission has always been to prove that embroidery is for everyone.",
           "pieces": [
             {
               "active": true,
@@ -1553,19 +1553,19 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 1",
               "world": "To Keep",
               "status": "available",
-              "medium": "Print of mixed-media painting",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": true,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/76db4a31-4b86-4677-ad16-6388f5dbae16/Art_C_Temp_Img_1.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 1"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
             },
             {
               "active": true,
@@ -1573,19 +1573,19 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 2",
               "world": "To Keep",
               "status": "available",
-              "medium": "Print of mixed-media painting",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/55928f30-38dd-4c0d-880f-35f6681f2ed9/Art_C_Temp_Img_2.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 2"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
             },
             {
               "active": true,
@@ -1593,19 +1593,19 @@ window.HA_EDITIONS_CONTENT = {
               "title": "Artist C — Piece 3",
               "world": "To Keep",
               "status": "available",
-              "medium": "Print of mixed-media painting",
+              "medium": "Medium",
               "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/v1/6a258894c750534b28845855/a942dd2b-dc1a-4cba-8c8b-7cf0b4a73420/Art_C_Temp_Img_3.jpg",
-                  "alt": "Demonstration placeholder image for Artist C, piece 3"
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/19ea8fbc-f3ee-4574-b1db-5019f2918eed/artist-curation-in-progress-to-keep-light-blue.jpg?content-type=image%2Fjpeg",
+                  "alt": "Artist curation in progress",
+                  "photo": true
                 }
               ],
-              "notes": "DEMO placeholder (Canva stock image). The link goes to the Hope homepage.",
-              "placeholder": true
+              "notes": "DUMMY piece. The link goes to the Hope homepage until real listings are added."
             }
           ]
         },
