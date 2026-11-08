@@ -3153,7 +3153,8 @@ body.ha-artist-page-v2-active > #siteWrapper > main#page{display:none!important;
 #ha-edition-v1 .ha-ed-card-new h3{font-size:18px;margin-top:9px;}
 #ha-edition-v1 .ha-ed-card-new.is-small{padding:10px;}
 #ha-edition-v1 .ha-ed-card-new.is-small h3{font-size:15px;margin-top:8px;}
-#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-meaning{font-size:12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+/* 8 Nov 2026: small cards show the whole note (no 2-line cut-off); the card grows to fit. */
+#ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-meaning{font-size:12px;}
 #ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-chips span{font-size:9px;}
 #ha-edition-v1 .ha-ed-card-new.is-small .ha-ed-card-shop{font-size:12px;}
 @media (prefers-reduced-motion:reduce){#ha-artist-page-v2 .ha-ap-pile-layer,#ha-edition-v1 .ha-ed-pile-layer{transition:none!important;}}

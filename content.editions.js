@@ -1170,10 +1170,14 @@ window.HA_EDITIONS_CONTENT = {
               "world": "To Keep",
               "status": "available",
               "medium": "Art Print, Original Illustration",
-              "listingUrl": "#",
+              "listingUrl": "https://www.etsy.com/uk/listing/4610388503/sit-with-it-for-a-while-print",
               "meaning": "Original illustrated self-compassion art print, inspired by those moments\nwhen we need to slow down and allow ourselves to feel.",
               "featured": true,
-              "chips": [],
+              "chips": [
+                "Sit with it",
+                "For now",
+                "Feeling it all"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/957aa153-4ff1-492e-a7f0-531b14735e1e/orla-cunningham-sit-with-it-for-a-while-the-hope-anthology.jpg?content-type=image%2Fjpeg",
@@ -1218,9 +1222,13 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Art Print, Original Illustration",
               "listingUrl": "https://www.etsy.com/uk/listing/4603409899/tree-giant-print?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_5&logging_key=49389d9e93e8ec0c0b96aa445199437da8888176%3A4603409899",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "Original watercolour art print, inspired by the ways living things grow, connect and support one another.",
               "featured": false,
-              "chips": [],
+              "chips": [
+                "Always evolving",
+                "Changing pathways",
+                "Room to grow"
+              ],
               "images": [
                 {
                   "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/79f4ad31-1f7d-4f22-bc97-73f88c9c4c15/orla-cunningham-tree-giant-the-hope-anthology.jpg?content-type=image%2Fjpeg",
@@ -1241,7 +1249,7 @@ window.HA_EDITIONS_CONTENT = {
               "status": "available",
               "medium": "Art Print, Original Illustration",
               "listingUrl": "https://www.etsy.com/uk/listing/4603548247/blame-the-moon-square-print?sr_prefetch=1&pf_from=shop_home&ref=shop_home_active_1&logging_key=9a1842c512911ead987d1b4786461f8fb9112274%3A4603548247",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
@@ -1264,8 +1272,8 @@ window.HA_EDITIONS_CONTENT = {
               "world": "To Keep",
               "status": "available",
               "medium": "Art Print, Original Illustration",
-              "listingUrl": "#",
-              "meaning": "A few words from the artist about this piece will go here.",
+              "listingUrl": "https://www.etsy.com/uk/listing/4610400949/lemonade-a5-print",
+              "meaning": "",
               "featured": false,
               "chips": [],
               "images": [
