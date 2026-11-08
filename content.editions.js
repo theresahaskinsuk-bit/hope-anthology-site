@@ -43,7 +43,7 @@ window.HA_EDITIONS_CONTENT = {
       "heroParagraph2": "This edition brings together art and making to sit alongside that — for reasons that *mean something to you,* even if nobody else needs to understand why.",
       "heroParagraph3": "All works are by independent artists and chosen to be within reach. Prices, availability and delivery are in each artist’s own shop.",
       "heroSignoff": "Curated by humans. For humans.",
-      "thingsParagraph": "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. And sometimes, something to give when words don’t work.",
+      "thingsParagraph": "Things to keep that lift you, anchor you, or simply stay with you. Things to make for the joy of it, or when you need something to get lost in. And sometimes, something to give when words don’t work.",
       "painting": {
         "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1814d4b1-0771-4932-9ec2-463101eb718b/the_hope_anthology_the_wind_Vallotton.jpg?content-type=image%2Fjpeg",
         "alt": "A painting of tall, thin trees and dense green bushes bent sharply to the left by a strong wind, under a flat pale grey sky.",
@@ -1009,7 +1009,7 @@ window.HA_EDITIONS_CONTENT = {
       "heroParagraph2": "This edition brings together art and making to sit alongside that — for reasons that *mean something to you,* even if nobody else needs to understand why.",
       "heroParagraph3": "All works are by independent artists and chosen to be within reach. Prices, availability and delivery are in each artist’s own shop.",
       "heroSignoff": "Curated by humans. For humans.",
-      "thingsParagraph": "Things to keep that lift you, anchor you, or just make you smile. Things to make that give you space to slow down and just be. And sometimes, something to give when words don’t work.",
+      "thingsParagraph": "Things to keep that lift you, anchor you, or simply stay with you. Things to make for the joy of it, or when you need something to get lost in. And sometimes, something to give when words don’t work.",
       "painting": {
         "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/1814d4b1-0771-4932-9ec2-463101eb718b/the_hope_anthology_the_wind_Vallotton.jpg?content-type=image%2Fjpeg",
         "alt": "A painting of tall, thin trees and dense green bushes bent sharply to the left by a strong wind, under a flat pale grey sky.",
@@ -1438,12 +1438,12 @@ window.HA_EDITIONS_CONTENT = {
               "chips": [],
               "images": [
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bd8cc983-077f-46c1-8b2a-b6a67aa935b4/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/261eaef0-7cfa-4893-b18a-30e9f50fb7d3/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology.jpg?content-type=image%2Fjpeg",
                   "alt": "Sun and Moon embroidery kit by Lizzie's Embroidery Club: a stitched sun and moon with glowing rays and little stars.",
                   "photo": true
                 },
                 {
-                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/261eaef0-7cfa-4893-b18a-30e9f50fb7d3/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology.jpg?content-type=image%2Fjpeg",
+                  "url": "https://images.squarespace-cdn.com/content/6a258894c750534b28845855/bd8cc983-077f-46c1-8b2a-b6a67aa935b4/LizzieEmbroideryClub-moon-and-stars-the-hope-anthology-2.jpg?content-type=image%2Fjpeg",
                   "alt": "A second view of the Sun and Moon embroidery design, with its rays and starry details.",
                   "photo": true
                 }
